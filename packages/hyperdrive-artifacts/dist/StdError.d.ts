@@ -1,94 +1,94 @@
 export declare const StdError: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "arithmeticError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "assertionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "divisionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "encodeStorageError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "enumConversionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "indexOOBError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "memOverflowError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "popError";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [];
-        readonly name: "zeroVarError";
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
+    }, {
         readonly type: "function";
+        readonly name: "zeroVarError";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly internalType: "bytes";
+        }];
+        readonly stateMutability: "view";
     }];
     readonly bytecode: {
         readonly object: "0x61024f61003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361061009d5760003560e01c8063986c5f6811610070578063986c5f68146100d8578063b22dc54d146100e0578063b67689da146100e8578063d160e4de146100f0578063fa784a44146100f857600080fd5b806305ee8612146100a257806310332977146100c05780631de45560146100c85780638995290f146100d0575b600080fd5b6100aa610100565b6040516100b791906101cb565b60405180910390f35b6100aa61013b565b6100aa61014d565b6100aa61015f565b6100aa610171565b6100aa610183565b6100aa610195565b6100aa6101a7565b6100aa6101b9565b604051603260248201526044015b60408051601f198184030181529190526020810180516001600160e01b0316634e487b7160e01b17905281565b6040516001602482015260440161010e565b6040516021602482015260440161010e565b6040516011602482015260440161010e565b6040516041602482015260440161010e565b6040516031602482015260440161010e565b6040516051602482015260440161010e565b6040516022602482015260440161010e565b6040516012602482015260440161010e565b600060208083528351808285015260005b818110156101f8578581018301518582016040015282016101dc565b506000604082860101526040601f19601f830116850101925050509291505056fea2646970667358221220d6683879f2452aa89eea49fcfb89bd2bbd30e5d6342a5c98defd3ce84d64583864736f6c63430008140033";
@@ -245,24 +245,24 @@ export declare const StdError: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/StdError.sol";
-        readonly id: 35061;
+        readonly id: 35109;
         readonly exportedSymbols: {
-            readonly stdError: readonly [35060];
+            readonly stdError: readonly [35108];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "129:884:150";
         readonly nodes: readonly [{
-            readonly id: 34996;
+            readonly id: 35044;
             readonly nodeType: "PragmaDirective";
             readonly src: "129:31:150";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 35060;
+            readonly id: 35108;
             readonly nodeType: "ContractDefinition";
             readonly src: "162:850:150";
             readonly nodes: readonly [{
-                readonly id: 35003;
+                readonly id: 35051;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "185:86:150";
                 readonly nodes: readonly [];
@@ -271,7 +271,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "assertionError";
                 readonly nameLocation: "207:14:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -279,7 +279,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 34997;
+                    readonly id: 35045;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "185:5:150";
@@ -291,7 +291,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35000;
+                        readonly id: 35048;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -306,7 +306,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783031";
-                        readonly id: 35001;
+                        readonly id: 35049;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -329,7 +329,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 1";
                         }];
                         readonly expression: {
-                            readonly id: 34998;
+                            readonly id: 35046;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -340,7 +340,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 34999;
+                        readonly id: 35047;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -354,7 +354,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35002;
+                    readonly id: 35050;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -372,7 +372,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35010;
+                readonly id: 35058;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "277:87:150";
                 readonly nodes: readonly [];
@@ -381,7 +381,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "arithmeticError";
                 readonly nameLocation: "299:15:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -389,7 +389,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35004;
+                    readonly id: 35052;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "277:5:150";
@@ -401,7 +401,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35007;
+                        readonly id: 35055;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -416,7 +416,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783131";
-                        readonly id: 35008;
+                        readonly id: 35056;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -439,7 +439,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 17";
                         }];
                         readonly expression: {
-                            readonly id: 35005;
+                            readonly id: 35053;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -450,7 +450,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35006;
+                        readonly id: 35054;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -464,7 +464,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35009;
+                    readonly id: 35057;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -482,7 +482,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35017;
+                readonly id: 35065;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "370:85:150";
                 readonly nodes: readonly [];
@@ -491,7 +491,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "divisionError";
                 readonly nameLocation: "392:13:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -499,7 +499,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35011;
+                    readonly id: 35059;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "370:5:150";
@@ -511,7 +511,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35014;
+                        readonly id: 35062;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -526,7 +526,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783132";
-                        readonly id: 35015;
+                        readonly id: 35063;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -549,7 +549,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 18";
                         }];
                         readonly expression: {
-                            readonly id: 35012;
+                            readonly id: 35060;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -560,7 +560,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35013;
+                        readonly id: 35061;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -574,7 +574,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35016;
+                    readonly id: 35064;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -592,7 +592,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35024;
+                readonly id: 35072;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "461:91:150";
                 readonly nodes: readonly [];
@@ -601,7 +601,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "enumConversionError";
                 readonly nameLocation: "483:19:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -609,7 +609,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35018;
+                    readonly id: 35066;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "461:5:150";
@@ -621,7 +621,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35021;
+                        readonly id: 35069;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -636,7 +636,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783231";
-                        readonly id: 35022;
+                        readonly id: 35070;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -659,7 +659,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 33";
                         }];
                         readonly expression: {
-                            readonly id: 35019;
+                            readonly id: 35067;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -670,7 +670,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35020;
+                        readonly id: 35068;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -684,7 +684,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35023;
+                    readonly id: 35071;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -702,7 +702,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35031;
+                readonly id: 35079;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "558:90:150";
                 readonly nodes: readonly [];
@@ -711,7 +711,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "encodeStorageError";
                 readonly nameLocation: "580:18:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -719,7 +719,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35025;
+                    readonly id: 35073;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "558:5:150";
@@ -731,7 +731,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35028;
+                        readonly id: 35076;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -746,7 +746,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783232";
-                        readonly id: 35029;
+                        readonly id: 35077;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -769,7 +769,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 34";
                         }];
                         readonly expression: {
-                            readonly id: 35026;
+                            readonly id: 35074;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -780,7 +780,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35027;
+                        readonly id: 35075;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -794,7 +794,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35030;
+                    readonly id: 35078;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -812,7 +812,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35038;
+                readonly id: 35086;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "654:80:150";
                 readonly nodes: readonly [];
@@ -821,7 +821,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "popError";
                 readonly nameLocation: "676:8:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -829,7 +829,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35032;
+                    readonly id: 35080;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "654:5:150";
@@ -841,7 +841,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35035;
+                        readonly id: 35083;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -856,7 +856,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783331";
-                        readonly id: 35036;
+                        readonly id: 35084;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -879,7 +879,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 49";
                         }];
                         readonly expression: {
-                            readonly id: 35033;
+                            readonly id: 35081;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -890,7 +890,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35034;
+                        readonly id: 35082;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -904,7 +904,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35037;
+                    readonly id: 35085;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -922,7 +922,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35045;
+                readonly id: 35093;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "740:85:150";
                 readonly nodes: readonly [];
@@ -931,7 +931,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "indexOOBError";
                 readonly nameLocation: "762:13:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -939,7 +939,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35039;
+                    readonly id: 35087;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "740:5:150";
@@ -951,7 +951,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35042;
+                        readonly id: 35090;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -966,7 +966,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783332";
-                        readonly id: 35043;
+                        readonly id: 35091;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -989,7 +989,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 50";
                         }];
                         readonly expression: {
-                            readonly id: 35040;
+                            readonly id: 35088;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -1000,7 +1000,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35041;
+                        readonly id: 35089;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1014,7 +1014,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35044;
+                    readonly id: 35092;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -1032,7 +1032,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35052;
+                readonly id: 35100;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "831:88:150";
                 readonly nodes: readonly [];
@@ -1041,7 +1041,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "memOverflowError";
                 readonly nameLocation: "853:16:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1049,7 +1049,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35046;
+                    readonly id: 35094;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "831:5:150";
@@ -1061,7 +1061,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35049;
+                        readonly id: 35097;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1076,7 +1076,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783431";
-                        readonly id: 35050;
+                        readonly id: 35098;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1099,7 +1099,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 65";
                         }];
                         readonly expression: {
-                            readonly id: 35047;
+                            readonly id: 35095;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -1110,7 +1110,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35048;
+                        readonly id: 35096;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1124,7 +1124,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35051;
+                    readonly id: 35099;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -1142,7 +1142,7 @@ export declare const StdError: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 35059;
+                readonly id: 35107;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "925:84:150";
                 readonly nodes: readonly [];
@@ -1151,7 +1151,7 @@ export declare const StdError: {
                 readonly mutability: "constant";
                 readonly name: "zeroVarError";
                 readonly nameLocation: "947:12:150";
-                readonly scope: 35060;
+                readonly scope: 35108;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1159,7 +1159,7 @@ export declare const StdError: {
                     readonly typeString: "bytes";
                 };
                 readonly typeName: {
-                    readonly id: 35053;
+                    readonly id: 35101;
                     readonly name: "bytes";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "925:5:150";
@@ -1171,7 +1171,7 @@ export declare const StdError: {
                 readonly value: {
                     readonly arguments: readonly [{
                         readonly hexValue: "50616e69632875696e7432353629";
-                        readonly id: 35056;
+                        readonly id: 35104;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1186,7 +1186,7 @@ export declare const StdError: {
                         readonly value: "Panic(uint256)";
                     }, {
                         readonly hexValue: "30783531";
-                        readonly id: 35057;
+                        readonly id: 35105;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1209,7 +1209,7 @@ export declare const StdError: {
                             readonly typeString: "int_const 81";
                         }];
                         readonly expression: {
-                            readonly id: 35054;
+                            readonly id: 35102;
                             readonly name: "abi";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
@@ -1220,7 +1220,7 @@ export declare const StdError: {
                                 readonly typeString: "abi";
                             };
                         };
-                        readonly id: 35055;
+                        readonly id: 35103;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -1234,7 +1234,7 @@ export declare const StdError: {
                             readonly typeString: "function (string memory) pure returns (bytes memory)";
                         };
                     };
-                    readonly id: 35058;
+                    readonly id: 35106;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -1258,10 +1258,10 @@ export declare const StdError: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [35060];
+            readonly linearizedBaseContracts: readonly [35108];
             readonly name: "stdError";
             readonly nameLocation: "170:8:150";
-            readonly scope: 35061;
+            readonly scope: 35109;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

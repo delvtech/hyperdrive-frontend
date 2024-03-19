@@ -1,390 +1,390 @@
 export declare const IRocketStorage: {
     readonly abi: readonly [{
+        readonly type: "function";
+        readonly name: "addUint";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "addUint";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "confirmGuardian";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "confirmWithdrawalAddress";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_nodeAddress";
             readonly type: "address";
-        }];
-        readonly name: "confirmWithdrawalAddress";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteAddress";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteBool";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteBytes";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteBytes32";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteInt";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteString";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "deleteUint";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "_key";
-            readonly type: "bytes32";
-        }];
-        readonly name: "getAddress";
-        readonly outputs: readonly [{
             readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteAddress";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteBool";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteBytes";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteBytes32";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteInt";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteString";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "deleteUint";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getAddress";
+        readonly inputs: readonly [{
+            readonly name: "_key";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getBool";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "getBool";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getBytes";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "getBytes";
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getBytes32";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
-        }];
-        readonly name: "getBytes32";
-        readonly outputs: readonly [{
             readonly internalType: "bytes32";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getDeployedStatus";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getGuardian";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getInt";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "getInt";
         readonly outputs: readonly [{
-            readonly internalType: "int256";
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_nodeAddress";
-            readonly type: "address";
-        }];
+        readonly type: "function";
         readonly name: "getNodePendingWithdrawalAddress";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_nodeAddress";
             readonly type: "address";
-        }];
-        readonly name: "getNodeWithdrawalAddress";
-        readonly outputs: readonly [{
             readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getNodeWithdrawalAddress";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
+            readonly name: "_nodeAddress";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getString";
+        readonly inputs: readonly [{
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "getString";
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getUint";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "getUint";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setAddress";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "address";
             readonly name: "_value";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "setAddress";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setBool";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "bool";
             readonly name: "_value";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setBool";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setBytes";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "bytes";
             readonly name: "_value";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
-        readonly name: "setBytes";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setBytes32";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
-        }, {
             readonly internalType: "bytes32";
+        }, {
             readonly name: "_value";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "setBytes32";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setGuardian";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_newAddress";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "setGuardian";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setInt";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "int256";
             readonly name: "_value";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
-        readonly name: "setInt";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setString";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "string";
             readonly name: "_value";
             readonly type: "string";
+            readonly internalType: "string";
         }];
-        readonly name: "setString";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setUint";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_value";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "setUint";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setWithdrawalAddress";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_nodeAddress";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_newWithdrawalAddress";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bool";
             readonly name: "_confirm";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setWithdrawalAddress";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "subUint";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_key";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "subUint";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -839,24 +839,24 @@ export declare const IRocketStorage: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRocketStorage.sol";
-        readonly id: 12658;
+        readonly id: 12706;
         readonly exportedSymbols: {
-            readonly IRocketStorage: readonly [12657];
+            readonly IRocketStorage: readonly [12705];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:2256:107";
         readonly nodes: readonly [{
-            readonly id: 12463;
+            readonly id: 12511;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:107";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12657;
+            readonly id: 12705;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:2230:107";
             readonly nodes: readonly [{
-                readonly id: 12468;
+                readonly id: 12516;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "116:58:107";
                 readonly nodes: readonly [];
@@ -867,22 +867,22 @@ export declare const IRocketStorage: {
                 readonly name: "getDeployedStatus";
                 readonly nameLocation: "125:17:107";
                 readonly parameters: {
-                    readonly id: 12464;
+                    readonly id: 12512;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "142:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12467;
+                    readonly id: 12515;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12466;
+                        readonly id: 12514;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12468;
+                        readonly scope: 12516;
                         readonly src: "168:4:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -891,7 +891,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12465;
+                            readonly id: 12513;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "168:4:107";
@@ -904,12 +904,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "167:6:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12473;
+                readonly id: 12521;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "196:55:107";
                 readonly nodes: readonly [];
@@ -920,22 +920,22 @@ export declare const IRocketStorage: {
                 readonly name: "getGuardian";
                 readonly nameLocation: "205:11:107";
                 readonly parameters: {
-                    readonly id: 12469;
+                    readonly id: 12517;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "216:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12472;
+                    readonly id: 12520;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12471;
+                        readonly id: 12519;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12473;
+                        readonly scope: 12521;
                         readonly src: "242:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -944,7 +944,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12470;
+                            readonly id: 12518;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "242:7:107";
@@ -958,12 +958,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "241:9:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12478;
+                readonly id: 12526;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "257:51:107";
                 readonly nodes: readonly [];
@@ -974,16 +974,16 @@ export declare const IRocketStorage: {
                 readonly name: "setGuardian";
                 readonly nameLocation: "266:11:107";
                 readonly parameters: {
-                    readonly id: 12476;
+                    readonly id: 12524;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12475;
+                        readonly id: 12523;
                         readonly mutability: "mutable";
                         readonly name: "_newAddress";
                         readonly nameLocation: "286:11:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12478;
+                        readonly scope: 12526;
                         readonly src: "278:19:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -992,7 +992,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12474;
+                            readonly id: 12522;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "278:7:107";
@@ -1007,17 +1007,17 @@ export declare const IRocketStorage: {
                     readonly src: "277:21:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12477;
+                    readonly id: 12525;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "307:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12481;
+                readonly id: 12529;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "314:36:107";
                 readonly nodes: readonly [];
@@ -1028,23 +1028,23 @@ export declare const IRocketStorage: {
                 readonly name: "confirmGuardian";
                 readonly nameLocation: "323:15:107";
                 readonly parameters: {
-                    readonly id: 12479;
+                    readonly id: 12527;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "338:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12480;
+                    readonly id: 12528;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "349:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12488;
+                readonly id: 12536;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "371:66:107";
                 readonly nodes: readonly [];
@@ -1055,16 +1055,16 @@ export declare const IRocketStorage: {
                 readonly name: "getAddress";
                 readonly nameLocation: "380:10:107";
                 readonly parameters: {
-                    readonly id: 12484;
+                    readonly id: 12532;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12483;
+                        readonly id: 12531;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "399:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12488;
+                        readonly scope: 12536;
                         readonly src: "391:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1073,7 +1073,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12482;
+                            readonly id: 12530;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "391:7:107";
@@ -1087,16 +1087,16 @@ export declare const IRocketStorage: {
                     readonly src: "390:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12487;
+                    readonly id: 12535;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12486;
+                        readonly id: 12534;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12488;
+                        readonly scope: 12536;
                         readonly src: "428:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1105,7 +1105,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12485;
+                            readonly id: 12533;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "428:7:107";
@@ -1119,12 +1119,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "427:9:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12495;
+                readonly id: 12543;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "443:60:107";
                 readonly nodes: readonly [];
@@ -1135,16 +1135,16 @@ export declare const IRocketStorage: {
                 readonly name: "getUint";
                 readonly nameLocation: "452:7:107";
                 readonly parameters: {
-                    readonly id: 12491;
+                    readonly id: 12539;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12490;
+                        readonly id: 12538;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "468:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12495;
+                        readonly scope: 12543;
                         readonly src: "460:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1153,7 +1153,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12489;
+                            readonly id: 12537;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "460:7:107";
@@ -1167,16 +1167,16 @@ export declare const IRocketStorage: {
                     readonly src: "459:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12494;
+                    readonly id: 12542;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12493;
+                        readonly id: 12541;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12495;
+                        readonly scope: 12543;
                         readonly src: "497:4:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1185,7 +1185,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12492;
+                            readonly id: 12540;
                             readonly name: "uint";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "497:4:107";
@@ -1198,12 +1198,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "496:6:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12502;
+                readonly id: 12550;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "509:71:107";
                 readonly nodes: readonly [];
@@ -1214,16 +1214,16 @@ export declare const IRocketStorage: {
                 readonly name: "getString";
                 readonly nameLocation: "518:9:107";
                 readonly parameters: {
-                    readonly id: 12498;
+                    readonly id: 12546;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12497;
+                        readonly id: 12545;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "536:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12502;
+                        readonly scope: 12550;
                         readonly src: "528:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1232,7 +1232,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12496;
+                            readonly id: 12544;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "528:7:107";
@@ -1246,16 +1246,16 @@ export declare const IRocketStorage: {
                     readonly src: "527:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12501;
+                    readonly id: 12549;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12500;
+                        readonly id: 12548;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12502;
+                        readonly scope: 12550;
                         readonly src: "565:13:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1264,7 +1264,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 12499;
+                            readonly id: 12547;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "565:6:107";
@@ -1277,12 +1277,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "564:15:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12509;
+                readonly id: 12557;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "586:69:107";
                 readonly nodes: readonly [];
@@ -1293,16 +1293,16 @@ export declare const IRocketStorage: {
                 readonly name: "getBytes";
                 readonly nameLocation: "595:8:107";
                 readonly parameters: {
-                    readonly id: 12505;
+                    readonly id: 12553;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12504;
+                        readonly id: 12552;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "612:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12509;
+                        readonly scope: 12557;
                         readonly src: "604:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1311,7 +1311,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12503;
+                            readonly id: 12551;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "604:7:107";
@@ -1325,16 +1325,16 @@ export declare const IRocketStorage: {
                     readonly src: "603:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12508;
+                    readonly id: 12556;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12507;
+                        readonly id: 12555;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12509;
+                        readonly scope: 12557;
                         readonly src: "641:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1343,7 +1343,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 12506;
+                            readonly id: 12554;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "641:5:107";
@@ -1356,12 +1356,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "640:14:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12516;
+                readonly id: 12564;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "661:60:107";
                 readonly nodes: readonly [];
@@ -1372,16 +1372,16 @@ export declare const IRocketStorage: {
                 readonly name: "getBool";
                 readonly nameLocation: "670:7:107";
                 readonly parameters: {
-                    readonly id: 12512;
+                    readonly id: 12560;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12511;
+                        readonly id: 12559;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "686:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12516;
+                        readonly scope: 12564;
                         readonly src: "678:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1390,7 +1390,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12510;
+                            readonly id: 12558;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "678:7:107";
@@ -1404,16 +1404,16 @@ export declare const IRocketStorage: {
                     readonly src: "677:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12515;
+                    readonly id: 12563;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12514;
+                        readonly id: 12562;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12516;
+                        readonly scope: 12564;
                         readonly src: "715:4:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1422,7 +1422,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12513;
+                            readonly id: 12561;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "715:4:107";
@@ -1435,12 +1435,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "714:6:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12523;
+                readonly id: 12571;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "727:58:107";
                 readonly nodes: readonly [];
@@ -1451,16 +1451,16 @@ export declare const IRocketStorage: {
                 readonly name: "getInt";
                 readonly nameLocation: "736:6:107";
                 readonly parameters: {
-                    readonly id: 12519;
+                    readonly id: 12567;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12518;
+                        readonly id: 12566;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "751:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12523;
+                        readonly scope: 12571;
                         readonly src: "743:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1469,7 +1469,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12517;
+                            readonly id: 12565;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "743:7:107";
@@ -1483,16 +1483,16 @@ export declare const IRocketStorage: {
                     readonly src: "742:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12522;
+                    readonly id: 12570;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12521;
+                        readonly id: 12569;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12523;
+                        readonly scope: 12571;
                         readonly src: "780:3:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1501,7 +1501,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 12520;
+                            readonly id: 12568;
                             readonly name: "int";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "780:3:107";
@@ -1514,12 +1514,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "779:5:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12530;
+                readonly id: 12578;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "791:66:107";
                 readonly nodes: readonly [];
@@ -1530,16 +1530,16 @@ export declare const IRocketStorage: {
                 readonly name: "getBytes32";
                 readonly nameLocation: "800:10:107";
                 readonly parameters: {
-                    readonly id: 12526;
+                    readonly id: 12574;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12525;
+                        readonly id: 12573;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "819:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12530;
+                        readonly scope: 12578;
                         readonly src: "811:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1548,7 +1548,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12524;
+                            readonly id: 12572;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "811:7:107";
@@ -1562,16 +1562,16 @@ export declare const IRocketStorage: {
                     readonly src: "810:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12529;
+                    readonly id: 12577;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12528;
+                        readonly id: 12576;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12530;
+                        readonly scope: 12578;
                         readonly src: "848:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1580,7 +1580,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12527;
+                            readonly id: 12575;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "848:7:107";
@@ -1593,12 +1593,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "847:9:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12537;
+                readonly id: 12585;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "878:59:107";
                 readonly nodes: readonly [];
@@ -1609,16 +1609,16 @@ export declare const IRocketStorage: {
                 readonly name: "setAddress";
                 readonly nameLocation: "887:10:107";
                 readonly parameters: {
-                    readonly id: 12535;
+                    readonly id: 12583;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12532;
+                        readonly id: 12580;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "906:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12537;
+                        readonly scope: 12585;
                         readonly src: "898:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1627,7 +1627,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12531;
+                            readonly id: 12579;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "898:7:107";
@@ -1639,12 +1639,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12534;
+                        readonly id: 12582;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "920:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12537;
+                        readonly scope: 12585;
                         readonly src: "912:14:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1653,7 +1653,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12533;
+                            readonly id: 12581;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "912:7:107";
@@ -1668,17 +1668,17 @@ export declare const IRocketStorage: {
                     readonly src: "897:30:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12536;
+                    readonly id: 12584;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "936:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12544;
+                readonly id: 12592;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "943:53:107";
                 readonly nodes: readonly [];
@@ -1689,16 +1689,16 @@ export declare const IRocketStorage: {
                 readonly name: "setUint";
                 readonly nameLocation: "952:7:107";
                 readonly parameters: {
-                    readonly id: 12542;
+                    readonly id: 12590;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12539;
+                        readonly id: 12587;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "968:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12544;
+                        readonly scope: 12592;
                         readonly src: "960:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1707,7 +1707,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12538;
+                            readonly id: 12586;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "960:7:107";
@@ -1719,12 +1719,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12541;
+                        readonly id: 12589;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "979:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12544;
+                        readonly scope: 12592;
                         readonly src: "974:11:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1733,7 +1733,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12540;
+                            readonly id: 12588;
                             readonly name: "uint";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "974:4:107";
@@ -1747,17 +1747,17 @@ export declare const IRocketStorage: {
                     readonly src: "959:27:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12543;
+                    readonly id: 12591;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "995:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12551;
+                readonly id: 12599;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1002:66:107";
                 readonly nodes: readonly [];
@@ -1768,16 +1768,16 @@ export declare const IRocketStorage: {
                 readonly name: "setString";
                 readonly nameLocation: "1011:9:107";
                 readonly parameters: {
-                    readonly id: 12549;
+                    readonly id: 12597;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12546;
+                        readonly id: 12594;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1029:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12551;
+                        readonly scope: 12599;
                         readonly src: "1021:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1786,7 +1786,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12545;
+                            readonly id: 12593;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1021:7:107";
@@ -1798,12 +1798,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12548;
+                        readonly id: 12596;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1051:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12551;
+                        readonly scope: 12599;
                         readonly src: "1035:22:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -1812,7 +1812,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 12547;
+                            readonly id: 12595;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1035:6:107";
@@ -1826,17 +1826,17 @@ export declare const IRocketStorage: {
                     readonly src: "1020:38:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12550;
+                    readonly id: 12598;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1067:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12558;
+                readonly id: 12606;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1074:64:107";
                 readonly nodes: readonly [];
@@ -1847,16 +1847,16 @@ export declare const IRocketStorage: {
                 readonly name: "setBytes";
                 readonly nameLocation: "1083:8:107";
                 readonly parameters: {
-                    readonly id: 12556;
+                    readonly id: 12604;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12553;
+                        readonly id: 12601;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1100:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12558;
+                        readonly scope: 12606;
                         readonly src: "1092:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1865,7 +1865,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12552;
+                            readonly id: 12600;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1092:7:107";
@@ -1877,12 +1877,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12555;
+                        readonly id: 12603;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1121:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12558;
+                        readonly scope: 12606;
                         readonly src: "1106:21:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -1891,7 +1891,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 12554;
+                            readonly id: 12602;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1106:5:107";
@@ -1905,17 +1905,17 @@ export declare const IRocketStorage: {
                     readonly src: "1091:37:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12557;
+                    readonly id: 12605;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1137:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12565;
+                readonly id: 12613;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1144:53:107";
                 readonly nodes: readonly [];
@@ -1926,16 +1926,16 @@ export declare const IRocketStorage: {
                 readonly name: "setBool";
                 readonly nameLocation: "1153:7:107";
                 readonly parameters: {
-                    readonly id: 12563;
+                    readonly id: 12611;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12560;
+                        readonly id: 12608;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1169:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12565;
+                        readonly scope: 12613;
                         readonly src: "1161:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1944,7 +1944,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12559;
+                            readonly id: 12607;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1161:7:107";
@@ -1956,12 +1956,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12562;
+                        readonly id: 12610;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1180:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12565;
+                        readonly scope: 12613;
                         readonly src: "1175:11:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1970,7 +1970,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12561;
+                            readonly id: 12609;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1175:4:107";
@@ -1984,17 +1984,17 @@ export declare const IRocketStorage: {
                     readonly src: "1160:27:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12564;
+                    readonly id: 12612;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1196:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12572;
+                readonly id: 12620;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1203:51:107";
                 readonly nodes: readonly [];
@@ -2005,16 +2005,16 @@ export declare const IRocketStorage: {
                 readonly name: "setInt";
                 readonly nameLocation: "1212:6:107";
                 readonly parameters: {
-                    readonly id: 12570;
+                    readonly id: 12618;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12567;
+                        readonly id: 12615;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1227:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12572;
+                        readonly scope: 12620;
                         readonly src: "1219:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2023,7 +2023,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12566;
+                            readonly id: 12614;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1219:7:107";
@@ -2035,12 +2035,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12569;
+                        readonly id: 12617;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1237:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12572;
+                        readonly scope: 12620;
                         readonly src: "1233:10:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2049,7 +2049,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 12568;
+                            readonly id: 12616;
                             readonly name: "int";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1233:3:107";
@@ -2063,17 +2063,17 @@ export declare const IRocketStorage: {
                     readonly src: "1218:26:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12571;
+                    readonly id: 12619;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1253:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12579;
+                readonly id: 12627;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1260:59:107";
                 readonly nodes: readonly [];
@@ -2084,16 +2084,16 @@ export declare const IRocketStorage: {
                 readonly name: "setBytes32";
                 readonly nameLocation: "1269:10:107";
                 readonly parameters: {
-                    readonly id: 12577;
+                    readonly id: 12625;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12574;
+                        readonly id: 12622;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1288:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12579;
+                        readonly scope: 12627;
                         readonly src: "1280:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2102,7 +2102,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12573;
+                            readonly id: 12621;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1280:7:107";
@@ -2114,12 +2114,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12576;
+                        readonly id: 12624;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1302:6:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12579;
+                        readonly scope: 12627;
                         readonly src: "1294:14:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2128,7 +2128,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12575;
+                            readonly id: 12623;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1294:7:107";
@@ -2142,17 +2142,17 @@ export declare const IRocketStorage: {
                     readonly src: "1279:30:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12578;
+                    readonly id: 12626;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1318:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12584;
+                readonly id: 12632;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1341:46:107";
                 readonly nodes: readonly [];
@@ -2163,16 +2163,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteAddress";
                 readonly nameLocation: "1350:13:107";
                 readonly parameters: {
-                    readonly id: 12582;
+                    readonly id: 12630;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12581;
+                        readonly id: 12629;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1372:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12584;
+                        readonly scope: 12632;
                         readonly src: "1364:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2181,7 +2181,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12580;
+                            readonly id: 12628;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1364:7:107";
@@ -2195,17 +2195,17 @@ export declare const IRocketStorage: {
                     readonly src: "1363:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12583;
+                    readonly id: 12631;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1386:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12589;
+                readonly id: 12637;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1393:43:107";
                 readonly nodes: readonly [];
@@ -2216,16 +2216,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteUint";
                 readonly nameLocation: "1402:10:107";
                 readonly parameters: {
-                    readonly id: 12587;
+                    readonly id: 12635;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12586;
+                        readonly id: 12634;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1421:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12589;
+                        readonly scope: 12637;
                         readonly src: "1413:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2234,7 +2234,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12585;
+                            readonly id: 12633;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1413:7:107";
@@ -2248,17 +2248,17 @@ export declare const IRocketStorage: {
                     readonly src: "1412:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12588;
+                    readonly id: 12636;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1435:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12594;
+                readonly id: 12642;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1442:45:107";
                 readonly nodes: readonly [];
@@ -2269,16 +2269,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteString";
                 readonly nameLocation: "1451:12:107";
                 readonly parameters: {
-                    readonly id: 12592;
+                    readonly id: 12640;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12591;
+                        readonly id: 12639;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1472:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12594;
+                        readonly scope: 12642;
                         readonly src: "1464:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2287,7 +2287,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12590;
+                            readonly id: 12638;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1464:7:107";
@@ -2301,17 +2301,17 @@ export declare const IRocketStorage: {
                     readonly src: "1463:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12593;
+                    readonly id: 12641;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1486:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12599;
+                readonly id: 12647;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1493:44:107";
                 readonly nodes: readonly [];
@@ -2322,16 +2322,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteBytes";
                 readonly nameLocation: "1502:11:107";
                 readonly parameters: {
-                    readonly id: 12597;
+                    readonly id: 12645;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12596;
+                        readonly id: 12644;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1522:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12599;
+                        readonly scope: 12647;
                         readonly src: "1514:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2340,7 +2340,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12595;
+                            readonly id: 12643;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1514:7:107";
@@ -2354,17 +2354,17 @@ export declare const IRocketStorage: {
                     readonly src: "1513:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12598;
+                    readonly id: 12646;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1536:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12604;
+                readonly id: 12652;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1543:43:107";
                 readonly nodes: readonly [];
@@ -2375,16 +2375,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteBool";
                 readonly nameLocation: "1552:10:107";
                 readonly parameters: {
-                    readonly id: 12602;
+                    readonly id: 12650;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12601;
+                        readonly id: 12649;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1571:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12604;
+                        readonly scope: 12652;
                         readonly src: "1563:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2393,7 +2393,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12600;
+                            readonly id: 12648;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1563:7:107";
@@ -2407,17 +2407,17 @@ export declare const IRocketStorage: {
                     readonly src: "1562:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12603;
+                    readonly id: 12651;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1585:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12609;
+                readonly id: 12657;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1592:42:107";
                 readonly nodes: readonly [];
@@ -2428,16 +2428,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteInt";
                 readonly nameLocation: "1601:9:107";
                 readonly parameters: {
-                    readonly id: 12607;
+                    readonly id: 12655;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12606;
+                        readonly id: 12654;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1619:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12609;
+                        readonly scope: 12657;
                         readonly src: "1611:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2446,7 +2446,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12605;
+                            readonly id: 12653;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1611:7:107";
@@ -2460,17 +2460,17 @@ export declare const IRocketStorage: {
                     readonly src: "1610:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12608;
+                    readonly id: 12656;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1633:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12614;
+                readonly id: 12662;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1640:46:107";
                 readonly nodes: readonly [];
@@ -2481,16 +2481,16 @@ export declare const IRocketStorage: {
                 readonly name: "deleteBytes32";
                 readonly nameLocation: "1649:13:107";
                 readonly parameters: {
-                    readonly id: 12612;
+                    readonly id: 12660;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12611;
+                        readonly id: 12659;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1671:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12614;
+                        readonly scope: 12662;
                         readonly src: "1663:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2499,7 +2499,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12610;
+                            readonly id: 12658;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1663:7:107";
@@ -2513,17 +2513,17 @@ export declare const IRocketStorage: {
                     readonly src: "1662:14:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12613;
+                    readonly id: 12661;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1685:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12621;
+                readonly id: 12669;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1710:57:107";
                 readonly nodes: readonly [];
@@ -2534,16 +2534,16 @@ export declare const IRocketStorage: {
                 readonly name: "addUint";
                 readonly nameLocation: "1719:7:107";
                 readonly parameters: {
-                    readonly id: 12619;
+                    readonly id: 12667;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12616;
+                        readonly id: 12664;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1735:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12621;
+                        readonly scope: 12669;
                         readonly src: "1727:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2552,7 +2552,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12615;
+                            readonly id: 12663;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1727:7:107";
@@ -2564,12 +2564,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12618;
+                        readonly id: 12666;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
                         readonly nameLocation: "1749:7:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12621;
+                        readonly scope: 12669;
                         readonly src: "1741:15:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2578,7 +2578,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12617;
+                            readonly id: 12665;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1741:7:107";
@@ -2592,17 +2592,17 @@ export declare const IRocketStorage: {
                     readonly src: "1726:31:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12620;
+                    readonly id: 12668;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1766:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12628;
+                readonly id: 12676;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1773:57:107";
                 readonly nodes: readonly [];
@@ -2613,16 +2613,16 @@ export declare const IRocketStorage: {
                 readonly name: "subUint";
                 readonly nameLocation: "1782:7:107";
                 readonly parameters: {
-                    readonly id: 12626;
+                    readonly id: 12674;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12623;
+                        readonly id: 12671;
                         readonly mutability: "mutable";
                         readonly name: "_key";
                         readonly nameLocation: "1798:4:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12628;
+                        readonly scope: 12676;
                         readonly src: "1790:12:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2631,7 +2631,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 12622;
+                            readonly id: 12670;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1790:7:107";
@@ -2643,12 +2643,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12625;
+                        readonly id: 12673;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
                         readonly nameLocation: "1812:7:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12628;
+                        readonly scope: 12676;
                         readonly src: "1804:15:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2657,7 +2657,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12624;
+                            readonly id: 12672;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1804:7:107";
@@ -2671,17 +2671,17 @@ export declare const IRocketStorage: {
                     readonly src: "1789:31:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12627;
+                    readonly id: 12675;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1829:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12635;
+                readonly id: 12683;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1861:102:107";
                 readonly nodes: readonly [];
@@ -2692,16 +2692,16 @@ export declare const IRocketStorage: {
                 readonly name: "getNodeWithdrawalAddress";
                 readonly nameLocation: "1870:24:107";
                 readonly parameters: {
-                    readonly id: 12631;
+                    readonly id: 12679;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12630;
+                        readonly id: 12678;
                         readonly mutability: "mutable";
                         readonly name: "_nodeAddress";
                         readonly nameLocation: "1912:12:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12635;
+                        readonly scope: 12683;
                         readonly src: "1904:20:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2710,7 +2710,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12629;
+                            readonly id: 12677;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1904:7:107";
@@ -2725,16 +2725,16 @@ export declare const IRocketStorage: {
                     readonly src: "1894:36:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12634;
+                    readonly id: 12682;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12633;
+                        readonly id: 12681;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12635;
+                        readonly scope: 12683;
                         readonly src: "1954:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2743,7 +2743,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12632;
+                            readonly id: 12680;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1954:7:107";
@@ -2757,12 +2757,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "1953:9:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12642;
+                readonly id: 12690;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1969:109:107";
                 readonly nodes: readonly [];
@@ -2773,16 +2773,16 @@ export declare const IRocketStorage: {
                 readonly name: "getNodePendingWithdrawalAddress";
                 readonly nameLocation: "1978:31:107";
                 readonly parameters: {
-                    readonly id: 12638;
+                    readonly id: 12686;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12637;
+                        readonly id: 12685;
                         readonly mutability: "mutable";
                         readonly name: "_nodeAddress";
                         readonly nameLocation: "2027:12:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12642;
+                        readonly scope: 12690;
                         readonly src: "2019:20:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2791,7 +2791,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12636;
+                            readonly id: 12684;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2019:7:107";
@@ -2806,16 +2806,16 @@ export declare const IRocketStorage: {
                     readonly src: "2009:36:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12641;
+                    readonly id: 12689;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12640;
+                        readonly id: 12688;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12642;
+                        readonly scope: 12690;
                         readonly src: "2069:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2824,7 +2824,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12639;
+                            readonly id: 12687;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2069:7:107";
@@ -2838,12 +2838,12 @@ export declare const IRocketStorage: {
                     }];
                     readonly src: "2068:9:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12651;
+                readonly id: 12699;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2084:137:107";
                 readonly nodes: readonly [];
@@ -2854,16 +2854,16 @@ export declare const IRocketStorage: {
                 readonly name: "setWithdrawalAddress";
                 readonly nameLocation: "2093:20:107";
                 readonly parameters: {
-                    readonly id: 12649;
+                    readonly id: 12697;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12644;
+                        readonly id: 12692;
                         readonly mutability: "mutable";
                         readonly name: "_nodeAddress";
                         readonly nameLocation: "2131:12:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12651;
+                        readonly scope: 12699;
                         readonly src: "2123:20:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2872,7 +2872,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12643;
+                            readonly id: 12691;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2123:7:107";
@@ -2885,12 +2885,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12646;
+                        readonly id: 12694;
                         readonly mutability: "mutable";
                         readonly name: "_newWithdrawalAddress";
                         readonly nameLocation: "2161:21:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12651;
+                        readonly scope: 12699;
                         readonly src: "2153:29:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2899,7 +2899,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12645;
+                            readonly id: 12693;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2153:7:107";
@@ -2912,12 +2912,12 @@ export declare const IRocketStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12648;
+                        readonly id: 12696;
                         readonly mutability: "mutable";
                         readonly name: "_confirm";
                         readonly nameLocation: "2197:8:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12651;
+                        readonly scope: 12699;
                         readonly src: "2192:13:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2926,7 +2926,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12647;
+                            readonly id: 12695;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2192:4:107";
@@ -2940,17 +2940,17 @@ export declare const IRocketStorage: {
                     readonly src: "2113:98:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12650;
+                    readonly id: 12698;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2220:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12656;
+                readonly id: 12704;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2227:65:107";
                 readonly nodes: readonly [];
@@ -2961,16 +2961,16 @@ export declare const IRocketStorage: {
                 readonly name: "confirmWithdrawalAddress";
                 readonly nameLocation: "2236:24:107";
                 readonly parameters: {
-                    readonly id: 12654;
+                    readonly id: 12702;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12653;
+                        readonly id: 12701;
                         readonly mutability: "mutable";
                         readonly name: "_nodeAddress";
                         readonly nameLocation: "2269:12:107";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12656;
+                        readonly scope: 12704;
                         readonly src: "2261:20:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2979,7 +2979,7 @@ export declare const IRocketStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12652;
+                            readonly id: 12700;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2261:7:107";
@@ -2994,12 +2994,12 @@ export declare const IRocketStorage: {
                     readonly src: "2260:22:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12655;
+                    readonly id: 12703;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2291:0:107";
                 };
-                readonly scope: 12657;
+                readonly scope: 12705;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -3010,10 +3010,10 @@ export declare const IRocketStorage: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12657];
+            readonly linearizedBaseContracts: readonly [12705];
             readonly name: "IRocketStorage";
             readonly nameLocation: "74:14:107";
-            readonly scope: 12658;
+            readonly scope: 12706;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

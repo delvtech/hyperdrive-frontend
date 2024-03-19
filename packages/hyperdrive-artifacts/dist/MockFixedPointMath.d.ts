@@ -1,208 +1,208 @@
 export declare const MockFixedPointMath: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ExpInvalidExponent";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "LnInvalidInput";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToInt256";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "a";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "b";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "divDown";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "a";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "b";
             readonly type: "uint256";
-        }];
-        readonly name: "divUp";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "divUp";
         readonly inputs: readonly [{
-            readonly internalType: "int256";
+            readonly name: "a";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "b";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "exp";
+        readonly inputs: readonly [{
             readonly name: "x";
             readonly type: "int256";
-        }];
-        readonly name: "exp";
-        readonly outputs: readonly [{
             readonly internalType: "int256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "r";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "int256";
-            readonly name: "x";
-            readonly type: "int256";
-        }];
+        readonly type: "function";
         readonly name: "ln";
-        readonly outputs: readonly [{
+        readonly inputs: readonly [{
+            readonly name: "x";
+            readonly type: "int256";
             readonly internalType: "int256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "x";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "y";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "d";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "mulDivDown";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "z";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "y";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "d";
             readonly type: "uint256";
-        }];
-        readonly name: "mulDivUp";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "z";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "a";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "b";
-            readonly type: "uint256";
-        }];
-        readonly name: "mulDown";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
         readonly type: "function";
-    }, {
+        readonly name: "mulDivUp";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "a";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "b";
-            readonly type: "uint256";
-        }];
-        readonly name: "mulUp";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "y";
             readonly type: "uint256";
-        }];
-        readonly name: "pow";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
-            readonly name: "";
+        }, {
+            readonly name: "d";
             readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "z";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "mulDown";
         readonly inputs: readonly [{
+            readonly name: "a";
+            readonly type: "uint256";
             readonly internalType: "uint256";
+        }, {
+            readonly name: "b";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "mulUp";
+        readonly inputs: readonly [{
+            readonly name: "a";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "b";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "pow";
+        readonly inputs: readonly [{
+            readonly name: "x";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "y";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "updateWeightedAverage";
+        readonly inputs: readonly [{
             readonly name: "_average";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_totalWeight";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_delta";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_deltaWeight";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "bool";
             readonly name: "_isAdding";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "updateWeightedAverage";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "average";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "ExpInvalidExponent";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "LnInvalidInput";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToInt256";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b5061096d806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80639ba5f52e116100665780639ba5f52e14610114578063b67bee0414610127578063cbe8623f1461013a578063e46751e31461014d578063f3e4f87c1461016057600080fd5b80630c9b9881146100a357806312bd6ac0146100c85780632e4c697f146100db57806381e5f7c9146100ee5780638e6f235314610101575b600080fd5b6100b66100b1366004610806565b610173565b60405190815260200160405180910390f35b6100b66100d6366004610828565b61018a565b6100b66100e9366004610806565b6101a1565b6100b66100fc366004610854565b6101ae565b6100b661010f3660046108a6565b6101c9565b6100b6610122366004610806565b6101dc565b6100b6610135366004610828565b6101e9565b6100b6610148366004610806565b6101f7565b6100b661015b3660046108a6565b610204565b6100b661016e366004610806565b610210565b600080610180848461021d565b9150505b92915050565b600080610198858585610232565b95945050505050565b6000806101808484610258565b6000806101be87878787876102cd565b979650505050505050565b6000806101d583610390565b9392505050565b60008061018084846105bf565b6000806101988585856105d0565b60008061018084846105ee565b6000806101d583610603565b6000806101808484610798565b60006101d58383670de0b6b3a76400006105d0565b600082600019048411830215820261024957600080fd5b50910281810615159190040190565b6000816000036102715750670de0b6b3a7640000610184565b8260000361028157506000610184565b600061028c836107ad565b905060006102a161029c866107ad565b610390565b90508181026102b8670de0b6b3a7640000826108d5565b90506102c381610603565b9695505050505050565b6000826000036102de575084610198565b8115610356576103156102f18487610911565b6102fb858761021d565b610305888a61021d565b61030f9190610911565b906105bf565b9050600061032385886107db565b9050600061033186896107f0565b9050818310156103435781925061034f565b8083111561034f578092505b5050610198565b82850361036557506000610198565b6102c36103728487610924565b61037c8587610798565b610386888a61021d565b61030f9190610924565b60008082136103b25760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f1982019061043e9084901c6107ad565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b60006101d583670de0b6b3a7640000845b60008260001904841183021582026105e757600080fd5b5091020490565b60006101d583670de0b6b3a764000084610232565b6000680248ce36a70cb26b3e19821361061e57506000919050565b680755bf798b4a1bf1e58212610647576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b0181810595509293509091906102c374029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c6107ad565b60006101d58383670de0b6b3a7640000610232565b60006001600160ff1b038211156107d75760405163396ea70160e11b815260040160405180910390fd5b5090565b60008183116107ea57826101d5565b50919050565b60008183116107ff57816101d5565b5090919050565b6000806040838503121561081957600080fd5b50508035926020909101359150565b60008060006060848603121561083d57600080fd5b505081359360208301359350604090920135919050565b600080600080600060a0868803121561086c57600080fd5b853594506020860135935060408601359250606086013591506080860135801515811461089857600080fd5b809150509295509295909350565b6000602082840312156108b857600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b6000826108f257634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561090c5761090c6108bf565b500590565b80820180821115610184576101846108bf565b81810381811115610184576101846108bf56fea26469706673582212203b95995af11ea6faad241cde91404e8cc8d2d5fe485a3701566a784ff495cab664736f6c63430008140033";
@@ -534,36 +534,36 @@ export declare const MockFixedPointMath: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockFixedPointMath.sol";
-        readonly id: 24660;
+        readonly id: 24708;
         readonly exportedSymbols: {
-            readonly FixedPointMath: readonly [19394];
-            readonly MockFixedPointMath: readonly [24659];
+            readonly FixedPointMath: readonly [19442];
+            readonly MockFixedPointMath: readonly [24707];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "40:2095:136";
         readonly nodes: readonly [{
-            readonly id: 24444;
+            readonly id: 24492;
             readonly nodeType: "PragmaDirective";
             readonly src: "40:23:136";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 24446;
+            readonly id: 24494;
             readonly nodeType: "ImportDirective";
             readonly src: "65:69:136";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../src/libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 24660;
-            readonly sourceUnit: 19395;
+            readonly scope: 24708;
+            readonly sourceUnit: 19443;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 24445;
+                    readonly id: 24493;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "74:14:136";
                     readonly typeDescriptions: {};
                 };
@@ -571,25 +571,25 @@ export declare const MockFixedPointMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 24659;
+            readonly id: 24707;
             readonly nodeType: "ContractDefinition";
             readonly src: "136:1998:136";
             readonly nodes: readonly [{
-                readonly id: 24449;
+                readonly id: 24497;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "170:33:136";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 24447;
+                    readonly id: 24495;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["176:14:136"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "176:14:136";
                 };
                 readonly typeName: {
-                    readonly id: 24448;
+                    readonly id: 24496;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "195:7:136";
@@ -599,25 +599,25 @@ export declare const MockFixedPointMath: {
                     };
                 };
             }, {
-                readonly id: 24472;
+                readonly id: 24520;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "209:208:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24471;
+                    readonly id: 24519;
                     readonly nodeType: "Block";
                     readonly src: "326:91:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24461];
+                        readonly assignments: readonly [24509];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24461;
+                            readonly id: 24509;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "344:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24471;
+                            readonly scope: 24519;
                             readonly src: "336:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -626,7 +626,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24460;
+                                readonly id: 24508;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "336:7:136";
@@ -637,36 +637,36 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24468;
+                        readonly id: 24516;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24464;
+                                readonly id: 24512;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24451;
+                                readonly referencedDeclaration: 24499;
                                 readonly src: "379:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24465;
+                                readonly id: 24513;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24453;
+                                readonly referencedDeclaration: 24501;
                                 readonly src: "382:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24466;
+                                readonly id: 24514;
                                 readonly name: "d";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24455;
+                                readonly referencedDeclaration: 24503;
                                 readonly src: "385:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -685,18 +685,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24462;
+                                    readonly id: 24510;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "353:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24463;
+                                readonly id: 24511;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -704,14 +704,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "368:10:136";
                                 readonly memberName: "mulDivDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18656;
+                                readonly referencedDeclaration: 18704;
                                 readonly src: "353:25:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24467;
+                            readonly id: 24515;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -731,19 +731,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "336:51:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24469;
+                            readonly id: 24517;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24461;
+                            readonly referencedDeclaration: 24509;
                             readonly src: "404:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24459;
-                        readonly id: 24470;
+                        readonly functionReturnParameters: 24507;
+                        readonly id: 24518;
                         readonly nodeType: "Return";
                         readonly src: "397:13:136";
                     }];
@@ -755,16 +755,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "mulDivDown";
                 readonly nameLocation: "218:10:136";
                 readonly parameters: {
-                    readonly id: 24456;
+                    readonly id: 24504;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24451;
+                        readonly id: 24499;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "246:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24472;
+                        readonly scope: 24520;
                         readonly src: "238:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -773,7 +773,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24450;
+                            readonly id: 24498;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "238:7:136";
@@ -785,12 +785,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24453;
+                        readonly id: 24501;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "265:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24472;
+                        readonly scope: 24520;
                         readonly src: "257:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -799,7 +799,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24452;
+                            readonly id: 24500;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "257:7:136";
@@ -811,12 +811,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24455;
+                        readonly id: 24503;
                         readonly mutability: "mutable";
                         readonly name: "d";
                         readonly nameLocation: "284:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24472;
+                        readonly scope: 24520;
                         readonly src: "276:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -825,7 +825,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24454;
+                            readonly id: 24502;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "276:7:136";
@@ -839,16 +839,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "228:63:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24459;
+                    readonly id: 24507;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24458;
+                        readonly id: 24506;
                         readonly mutability: "mutable";
                         readonly name: "z";
                         readonly nameLocation: "323:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24472;
+                        readonly scope: 24520;
                         readonly src: "315:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -857,7 +857,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24457;
+                            readonly id: 24505;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "315:7:136";
@@ -870,30 +870,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "314:11:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24492;
+                readonly id: 24540;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "423:156:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24491;
+                    readonly id: 24539;
                     readonly nodeType: "Block";
                     readonly src: "494:85:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24482];
+                        readonly assignments: readonly [24530];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24482;
+                            readonly id: 24530;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "512:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24491;
+                            readonly scope: 24539;
                             readonly src: "504:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -902,7 +902,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24481;
+                                readonly id: 24529;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "504:7:136";
@@ -913,25 +913,25 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24488;
+                        readonly id: 24536;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24485;
+                                readonly id: 24533;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24474;
+                                readonly referencedDeclaration: 24522;
                                 readonly src: "544:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24486;
+                                readonly id: 24534;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24476;
+                                readonly referencedDeclaration: 24524;
                                 readonly src: "547:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -947,18 +947,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24483;
+                                    readonly id: 24531;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "521:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24484;
+                                readonly id: 24532;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -966,14 +966,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "536:7:136";
                                 readonly memberName: "mulDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18674;
+                                readonly referencedDeclaration: 18722;
                                 readonly src: "521:22:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24487;
+                            readonly id: 24535;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -993,19 +993,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "504:45:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24489;
+                            readonly id: 24537;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24482;
+                            readonly referencedDeclaration: 24530;
                             readonly src: "566:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24480;
-                        readonly id: 24490;
+                        readonly functionReturnParameters: 24528;
+                        readonly id: 24538;
                         readonly nodeType: "Return";
                         readonly src: "559:13:136";
                     }];
@@ -1017,16 +1017,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "mulDown";
                 readonly nameLocation: "432:7:136";
                 readonly parameters: {
-                    readonly id: 24477;
+                    readonly id: 24525;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24474;
+                        readonly id: 24522;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "448:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24492;
+                        readonly scope: 24540;
                         readonly src: "440:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1035,7 +1035,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24473;
+                            readonly id: 24521;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "440:7:136";
@@ -1047,12 +1047,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24476;
+                        readonly id: 24524;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "459:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24492;
+                        readonly scope: 24540;
                         readonly src: "451:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1061,7 +1061,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24475;
+                            readonly id: 24523;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "451:7:136";
@@ -1075,16 +1075,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "439:22:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24480;
+                    readonly id: 24528;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24479;
+                        readonly id: 24527;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24492;
+                        readonly scope: 24540;
                         readonly src: "485:7:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1093,7 +1093,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24478;
+                            readonly id: 24526;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "485:7:136";
@@ -1106,30 +1106,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "484:9:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24512;
+                readonly id: 24560;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "585:156:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24511;
+                    readonly id: 24559;
                     readonly nodeType: "Block";
                     readonly src: "656:85:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24502];
+                        readonly assignments: readonly [24550];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24502;
+                            readonly id: 24550;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "674:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24511;
+                            readonly scope: 24559;
                             readonly src: "666:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1138,7 +1138,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24501;
+                                readonly id: 24549;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "666:7:136";
@@ -1149,25 +1149,25 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24508;
+                        readonly id: 24556;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24505;
+                                readonly id: 24553;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24494;
+                                readonly referencedDeclaration: 24542;
                                 readonly src: "706:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24506;
+                                readonly id: 24554;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24496;
+                                readonly referencedDeclaration: 24544;
                                 readonly src: "709:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1183,18 +1183,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24503;
+                                    readonly id: 24551;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "683:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24504;
+                                readonly id: 24552;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1202,14 +1202,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "698:7:136";
                                 readonly memberName: "divDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18692;
+                                readonly referencedDeclaration: 18740;
                                 readonly src: "683:22:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24507;
+                            readonly id: 24555;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1229,19 +1229,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "666:45:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24509;
+                            readonly id: 24557;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24502;
+                            readonly referencedDeclaration: 24550;
                             readonly src: "728:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24500;
-                        readonly id: 24510;
+                        readonly functionReturnParameters: 24548;
+                        readonly id: 24558;
                         readonly nodeType: "Return";
                         readonly src: "721:13:136";
                     }];
@@ -1253,16 +1253,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "divDown";
                 readonly nameLocation: "594:7:136";
                 readonly parameters: {
-                    readonly id: 24497;
+                    readonly id: 24545;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24494;
+                        readonly id: 24542;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "610:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24512;
+                        readonly scope: 24560;
                         readonly src: "602:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1271,7 +1271,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24493;
+                            readonly id: 24541;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "602:7:136";
@@ -1283,12 +1283,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24496;
+                        readonly id: 24544;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "621:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24512;
+                        readonly scope: 24560;
                         readonly src: "613:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1297,7 +1297,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24495;
+                            readonly id: 24543;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "613:7:136";
@@ -1311,16 +1311,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "601:22:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24500;
+                    readonly id: 24548;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24499;
+                        readonly id: 24547;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24512;
+                        readonly scope: 24560;
                         readonly src: "647:7:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1329,7 +1329,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24498;
+                            readonly id: 24546;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "647:7:136";
@@ -1342,30 +1342,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "646:9:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24535;
+                readonly id: 24583;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "747:204:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24534;
+                    readonly id: 24582;
                     readonly nodeType: "Block";
                     readonly src: "862:89:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24524];
+                        readonly assignments: readonly [24572];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24524;
+                            readonly id: 24572;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "880:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24534;
+                            readonly scope: 24582;
                             readonly src: "872:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1374,7 +1374,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24523;
+                                readonly id: 24571;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "872:7:136";
@@ -1385,36 +1385,36 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24531;
+                        readonly id: 24579;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24527;
+                                readonly id: 24575;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24514;
+                                readonly referencedDeclaration: 24562;
                                 readonly src: "913:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24528;
+                                readonly id: 24576;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24516;
+                                readonly referencedDeclaration: 24564;
                                 readonly src: "916:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24529;
+                                readonly id: 24577;
                                 readonly name: "d";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24518;
+                                readonly referencedDeclaration: 24566;
                                 readonly src: "919:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1433,18 +1433,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24525;
+                                    readonly id: 24573;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "889:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24526;
+                                readonly id: 24574;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1452,14 +1452,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "904:8:136";
                                 readonly memberName: "mulDivUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18706;
+                                readonly referencedDeclaration: 18754;
                                 readonly src: "889:23:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24530;
+                            readonly id: 24578;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1479,19 +1479,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "872:49:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24532;
+                            readonly id: 24580;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24524;
+                            readonly referencedDeclaration: 24572;
                             readonly src: "938:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24522;
-                        readonly id: 24533;
+                        readonly functionReturnParameters: 24570;
+                        readonly id: 24581;
                         readonly nodeType: "Return";
                         readonly src: "931:13:136";
                     }];
@@ -1503,16 +1503,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "mulDivUp";
                 readonly nameLocation: "756:8:136";
                 readonly parameters: {
-                    readonly id: 24519;
+                    readonly id: 24567;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24514;
+                        readonly id: 24562;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "782:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24535;
+                        readonly scope: 24583;
                         readonly src: "774:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1521,7 +1521,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24513;
+                            readonly id: 24561;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "774:7:136";
@@ -1533,12 +1533,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24516;
+                        readonly id: 24564;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "801:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24535;
+                        readonly scope: 24583;
                         readonly src: "793:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1547,7 +1547,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24515;
+                            readonly id: 24563;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "793:7:136";
@@ -1559,12 +1559,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24518;
+                        readonly id: 24566;
                         readonly mutability: "mutable";
                         readonly name: "d";
                         readonly nameLocation: "820:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24535;
+                        readonly scope: 24583;
                         readonly src: "812:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1573,7 +1573,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24517;
+                            readonly id: 24565;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "812:7:136";
@@ -1587,16 +1587,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "764:63:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24522;
+                    readonly id: 24570;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24521;
+                        readonly id: 24569;
                         readonly mutability: "mutable";
                         readonly name: "z";
                         readonly nameLocation: "859:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24535;
+                        readonly scope: 24583;
                         readonly src: "851:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1605,7 +1605,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24520;
+                            readonly id: 24568;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "851:7:136";
@@ -1618,30 +1618,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "850:11:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24555;
+                readonly id: 24603;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "957:152:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24554;
+                    readonly id: 24602;
                     readonly nodeType: "Block";
                     readonly src: "1026:83:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24545];
+                        readonly assignments: readonly [24593];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24545;
+                            readonly id: 24593;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1044:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24554;
+                            readonly scope: 24602;
                             readonly src: "1036:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1650,7 +1650,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24544;
+                                readonly id: 24592;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1036:7:136";
@@ -1661,25 +1661,25 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24551;
+                        readonly id: 24599;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24548;
+                                readonly id: 24596;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24537;
+                                readonly referencedDeclaration: 24585;
                                 readonly src: "1074:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24549;
+                                readonly id: 24597;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24539;
+                                readonly referencedDeclaration: 24587;
                                 readonly src: "1077:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1695,18 +1695,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24546;
+                                    readonly id: 24594;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1053:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24547;
+                                readonly id: 24595;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1714,14 +1714,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1068:5:136";
                                 readonly memberName: "mulUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18724;
+                                readonly referencedDeclaration: 18772;
                                 readonly src: "1053:20:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24550;
+                            readonly id: 24598;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1741,19 +1741,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1036:43:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24552;
+                            readonly id: 24600;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24545;
+                            readonly referencedDeclaration: 24593;
                             readonly src: "1096:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24543;
-                        readonly id: 24553;
+                        readonly functionReturnParameters: 24591;
+                        readonly id: 24601;
                         readonly nodeType: "Return";
                         readonly src: "1089:13:136";
                     }];
@@ -1765,16 +1765,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "mulUp";
                 readonly nameLocation: "966:5:136";
                 readonly parameters: {
-                    readonly id: 24540;
+                    readonly id: 24588;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24537;
+                        readonly id: 24585;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "980:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24555;
+                        readonly scope: 24603;
                         readonly src: "972:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1783,7 +1783,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24536;
+                            readonly id: 24584;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "972:7:136";
@@ -1795,12 +1795,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24539;
+                        readonly id: 24587;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "991:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24555;
+                        readonly scope: 24603;
                         readonly src: "983:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1809,7 +1809,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24538;
+                            readonly id: 24586;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "983:7:136";
@@ -1823,16 +1823,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "971:22:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24543;
+                    readonly id: 24591;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24542;
+                        readonly id: 24590;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24555;
+                        readonly scope: 24603;
                         readonly src: "1017:7:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1841,7 +1841,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24541;
+                            readonly id: 24589;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1017:7:136";
@@ -1854,30 +1854,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1016:9:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24575;
+                readonly id: 24623;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1115:152:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24574;
+                    readonly id: 24622;
                     readonly nodeType: "Block";
                     readonly src: "1184:83:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24565];
+                        readonly assignments: readonly [24613];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24565;
+                            readonly id: 24613;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1202:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24574;
+                            readonly scope: 24622;
                             readonly src: "1194:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1886,7 +1886,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24564;
+                                readonly id: 24612;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1194:7:136";
@@ -1897,25 +1897,25 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24571;
+                        readonly id: 24619;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24568;
+                                readonly id: 24616;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24557;
+                                readonly referencedDeclaration: 24605;
                                 readonly src: "1232:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24569;
+                                readonly id: 24617;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24559;
+                                readonly referencedDeclaration: 24607;
                                 readonly src: "1235:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1931,18 +1931,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24566;
+                                    readonly id: 24614;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1211:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24567;
+                                readonly id: 24615;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1950,14 +1950,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1226:5:136";
                                 readonly memberName: "divUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18742;
+                                readonly referencedDeclaration: 18790;
                                 readonly src: "1211:20:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24570;
+                            readonly id: 24618;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1977,19 +1977,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1194:43:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24572;
+                            readonly id: 24620;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24565;
+                            readonly referencedDeclaration: 24613;
                             readonly src: "1254:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24563;
-                        readonly id: 24573;
+                        readonly functionReturnParameters: 24611;
+                        readonly id: 24621;
                         readonly nodeType: "Return";
                         readonly src: "1247:13:136";
                     }];
@@ -2001,16 +2001,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "divUp";
                 readonly nameLocation: "1124:5:136";
                 readonly parameters: {
-                    readonly id: 24560;
+                    readonly id: 24608;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24557;
+                        readonly id: 24605;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "1138:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24575;
+                        readonly scope: 24623;
                         readonly src: "1130:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2019,7 +2019,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24556;
+                            readonly id: 24604;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1130:7:136";
@@ -2031,12 +2031,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24559;
+                        readonly id: 24607;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "1149:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24575;
+                        readonly scope: 24623;
                         readonly src: "1141:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2045,7 +2045,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24558;
+                            readonly id: 24606;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1141:7:136";
@@ -2059,16 +2059,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "1129:22:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24563;
+                    readonly id: 24611;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24562;
+                        readonly id: 24610;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24575;
+                        readonly scope: 24623;
                         readonly src: "1175:7:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2077,7 +2077,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24561;
+                            readonly id: 24609;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1175:7:136";
@@ -2090,30 +2090,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1174:9:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24595;
+                readonly id: 24643;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1273:148:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24594;
+                    readonly id: 24642;
                     readonly nodeType: "Block";
                     readonly src: "1340:81:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24585];
+                        readonly assignments: readonly [24633];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24585;
+                            readonly id: 24633;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1358:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24594;
+                            readonly scope: 24642;
                             readonly src: "1350:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2122,7 +2122,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24584;
+                                readonly id: 24632;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1350:7:136";
@@ -2133,25 +2133,25 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24591;
+                        readonly id: 24639;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24588;
+                                readonly id: 24636;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24577;
+                                readonly referencedDeclaration: 24625;
                                 readonly src: "1386:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24589;
+                                readonly id: 24637;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24579;
+                                readonly referencedDeclaration: 24627;
                                 readonly src: "1389:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2167,18 +2167,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24586;
+                                    readonly id: 24634;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1367:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24587;
+                                readonly id: 24635;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2186,14 +2186,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1382:3:136";
                                 readonly memberName: "pow";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18799;
+                                readonly referencedDeclaration: 18847;
                                 readonly src: "1367:18:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24590;
+                            readonly id: 24638;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2213,19 +2213,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1350:41:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24592;
+                            readonly id: 24640;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24585;
+                            readonly referencedDeclaration: 24633;
                             readonly src: "1408:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24583;
-                        readonly id: 24593;
+                        readonly functionReturnParameters: 24631;
+                        readonly id: 24641;
                         readonly nodeType: "Return";
                         readonly src: "1401:13:136";
                     }];
@@ -2237,16 +2237,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "pow";
                 readonly nameLocation: "1282:3:136";
                 readonly parameters: {
-                    readonly id: 24580;
+                    readonly id: 24628;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24577;
+                        readonly id: 24625;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "1294:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24595;
+                        readonly scope: 24643;
                         readonly src: "1286:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2255,7 +2255,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24576;
+                            readonly id: 24624;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1286:7:136";
@@ -2267,12 +2267,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24579;
+                        readonly id: 24627;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "1305:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24595;
+                        readonly scope: 24643;
                         readonly src: "1297:9:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2281,7 +2281,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24578;
+                            readonly id: 24626;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1297:7:136";
@@ -2295,16 +2295,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "1285:22:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24583;
+                    readonly id: 24631;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24582;
+                        readonly id: 24630;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24595;
+                        readonly scope: 24643;
                         readonly src: "1331:7:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2313,7 +2313,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24581;
+                            readonly id: 24629;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1331:7:136";
@@ -2326,30 +2326,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1330:9:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24612;
+                readonly id: 24660;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1427:133:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24611;
+                    readonly id: 24659;
                     readonly nodeType: "Block";
                     readonly src: "1483:77:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24603];
+                        readonly assignments: readonly [24651];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24603;
+                            readonly id: 24651;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1500:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24611;
+                            readonly scope: 24659;
                             readonly src: "1493:13:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2358,7 +2358,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 24602;
+                                readonly id: 24650;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1493:6:136";
@@ -2369,14 +2369,14 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24608;
+                        readonly id: 24656;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24606;
+                                readonly id: 24654;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24597;
+                                readonly referencedDeclaration: 24645;
                                 readonly src: "1528:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -2389,18 +2389,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "int256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24604;
+                                    readonly id: 24652;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1509:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24605;
+                                readonly id: 24653;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2408,14 +2408,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1524:3:136";
                                 readonly memberName: "exp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18996;
+                                readonly referencedDeclaration: 19044;
                                 readonly src: "1509:18:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_int256_$";
                                     readonly typeString: "function (int256) pure returns (int256)";
                                 };
                             };
-                            readonly id: 24607;
+                            readonly id: 24655;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2435,19 +2435,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1493:37:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24609;
+                            readonly id: 24657;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24603;
+                            readonly referencedDeclaration: 24651;
                             readonly src: "1547:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 24601;
-                        readonly id: 24610;
+                        readonly functionReturnParameters: 24649;
+                        readonly id: 24658;
                         readonly nodeType: "Return";
                         readonly src: "1540:13:136";
                     }];
@@ -2459,16 +2459,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "exp";
                 readonly nameLocation: "1436:3:136";
                 readonly parameters: {
-                    readonly id: 24598;
+                    readonly id: 24646;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24597;
+                        readonly id: 24645;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "1447:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24612;
+                        readonly scope: 24660;
                         readonly src: "1440:8:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2477,7 +2477,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 24596;
+                            readonly id: 24644;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1440:6:136";
@@ -2491,16 +2491,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "1439:10:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24601;
+                    readonly id: 24649;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24600;
+                        readonly id: 24648;
                         readonly mutability: "mutable";
                         readonly name: "r";
                         readonly nameLocation: "1480:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24612;
+                        readonly scope: 24660;
                         readonly src: "1473:8:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2509,7 +2509,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 24599;
+                            readonly id: 24647;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1473:6:136";
@@ -2522,30 +2522,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1472:10:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24629;
+                readonly id: 24677;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1566:129:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24628;
+                    readonly id: 24676;
                     readonly nodeType: "Block";
                     readonly src: "1619:76:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24620];
+                        readonly assignments: readonly [24668];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24620;
+                            readonly id: 24668;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1636:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24628;
+                            readonly scope: 24676;
                             readonly src: "1629:13:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2554,7 +2554,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 24619;
+                                readonly id: 24667;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1629:6:136";
@@ -2565,14 +2565,14 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24625;
+                        readonly id: 24673;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24623;
+                                readonly id: 24671;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24614;
+                                readonly referencedDeclaration: 24662;
                                 readonly src: "1663:1:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -2585,18 +2585,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "int256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24621;
+                                    readonly id: 24669;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1645:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24622;
+                                readonly id: 24670;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2604,14 +2604,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1660:2:136";
                                 readonly memberName: "ln";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19218;
+                                readonly referencedDeclaration: 19266;
                                 readonly src: "1645:17:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_int256_$";
                                     readonly typeString: "function (int256) pure returns (int256)";
                                 };
                             };
-                            readonly id: 24624;
+                            readonly id: 24672;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2631,19 +2631,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1629:36:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24626;
+                            readonly id: 24674;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24620;
+                            readonly referencedDeclaration: 24668;
                             readonly src: "1682:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 24618;
-                        readonly id: 24627;
+                        readonly functionReturnParameters: 24666;
+                        readonly id: 24675;
                         readonly nodeType: "Return";
                         readonly src: "1675:13:136";
                     }];
@@ -2655,16 +2655,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "ln";
                 readonly nameLocation: "1575:2:136";
                 readonly parameters: {
-                    readonly id: 24615;
+                    readonly id: 24663;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24614;
+                        readonly id: 24662;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "1585:1:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24629;
+                        readonly scope: 24677;
                         readonly src: "1578:8:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2673,7 +2673,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 24613;
+                            readonly id: 24661;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1578:6:136";
@@ -2687,16 +2687,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "1577:10:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24618;
+                    readonly id: 24666;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24617;
+                        readonly id: 24665;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24629;
+                        readonly scope: 24677;
                         readonly src: "1611:6:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2705,7 +2705,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 24616;
+                            readonly id: 24664;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1611:6:136";
@@ -2718,30 +2718,30 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1610:8:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24658;
+                readonly id: 24706;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1701:431:136";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24657;
+                    readonly id: 24705;
                     readonly nodeType: "Block";
                     readonly src: "1912:220:136";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24645];
+                        readonly assignments: readonly [24693];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24645;
+                            readonly id: 24693;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1930:6:136";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24657;
+                            readonly scope: 24705;
                             readonly src: "1922:14:136";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2750,7 +2750,7 @@ export declare const MockFixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24644;
+                                readonly id: 24692;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1922:7:136";
@@ -2761,58 +2761,58 @@ export declare const MockFixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24654;
+                        readonly id: 24702;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24648;
+                                readonly id: 24696;
                                 readonly name: "_average";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24631;
+                                readonly referencedDeclaration: 24679;
                                 readonly src: "1989:8:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24649;
+                                readonly id: 24697;
                                 readonly name: "_totalWeight";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24633;
+                                readonly referencedDeclaration: 24681;
                                 readonly src: "2011:12:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24650;
+                                readonly id: 24698;
                                 readonly name: "_delta";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24635;
+                                readonly referencedDeclaration: 24683;
                                 readonly src: "2037:6:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24651;
+                                readonly id: 24699;
                                 readonly name: "_deltaWeight";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24637;
+                                readonly referencedDeclaration: 24685;
                                 readonly src: "2057:12:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 24652;
+                                readonly id: 24700;
                                 readonly name: "_isAdding";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24639;
+                                readonly referencedDeclaration: 24687;
                                 readonly src: "2083:9:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -2837,18 +2837,18 @@ export declare const MockFixedPointMath: {
                                     readonly typeString: "bool";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24646;
+                                    readonly id: 24694;
                                     readonly name: "FixedPointMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19394;
+                                    readonly referencedDeclaration: 19442;
                                     readonly src: "1939:14:136";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19394_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_FixedPointMath_$19442_$";
                                         readonly typeString: "type(library FixedPointMath)";
                                     };
                                 };
-                                readonly id: 24647;
+                                readonly id: 24695;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2856,14 +2856,14 @@ export declare const MockFixedPointMath: {
                                 readonly memberLocation: "1954:21:136";
                                 readonly memberName: "updateWeightedAverage";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19321;
+                                readonly referencedDeclaration: 19369;
                                 readonly src: "1939:36:136";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 24653;
+                            readonly id: 24701;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2883,19 +2883,19 @@ export declare const MockFixedPointMath: {
                         readonly src: "1922:180:136";
                     }, {
                         readonly expression: {
-                            readonly id: 24655;
+                            readonly id: 24703;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24645;
+                            readonly referencedDeclaration: 24693;
                             readonly src: "2119:6:136";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 24643;
-                        readonly id: 24656;
+                        readonly functionReturnParameters: 24691;
+                        readonly id: 24704;
                         readonly nodeType: "Return";
                         readonly src: "2112:13:136";
                     }];
@@ -2907,16 +2907,16 @@ export declare const MockFixedPointMath: {
                 readonly name: "updateWeightedAverage";
                 readonly nameLocation: "1710:21:136";
                 readonly parameters: {
-                    readonly id: 24640;
+                    readonly id: 24688;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24631;
+                        readonly id: 24679;
                         readonly mutability: "mutable";
                         readonly name: "_average";
                         readonly nameLocation: "1749:8:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1741:16:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2925,7 +2925,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24630;
+                            readonly id: 24678;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1741:7:136";
@@ -2937,12 +2937,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24633;
+                        readonly id: 24681;
                         readonly mutability: "mutable";
                         readonly name: "_totalWeight";
                         readonly nameLocation: "1775:12:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1767:20:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2951,7 +2951,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24632;
+                            readonly id: 24680;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1767:7:136";
@@ -2963,12 +2963,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24635;
+                        readonly id: 24683;
                         readonly mutability: "mutable";
                         readonly name: "_delta";
                         readonly nameLocation: "1805:6:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1797:14:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2977,7 +2977,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24634;
+                            readonly id: 24682;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1797:7:136";
@@ -2989,12 +2989,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24637;
+                        readonly id: 24685;
                         readonly mutability: "mutable";
                         readonly name: "_deltaWeight";
                         readonly nameLocation: "1829:12:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1821:20:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3003,7 +3003,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24636;
+                            readonly id: 24684;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1821:7:136";
@@ -3015,12 +3015,12 @@ export declare const MockFixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24639;
+                        readonly id: 24687;
                         readonly mutability: "mutable";
                         readonly name: "_isAdding";
                         readonly nameLocation: "1856:9:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1851:14:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3029,7 +3029,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 24638;
+                            readonly id: 24686;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1851:4:136";
@@ -3043,16 +3043,16 @@ export declare const MockFixedPointMath: {
                     readonly src: "1731:140:136";
                 };
                 readonly returnParameters: {
-                    readonly id: 24643;
+                    readonly id: 24691;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24642;
+                        readonly id: 24690;
                         readonly mutability: "mutable";
                         readonly name: "average";
                         readonly nameLocation: "1903:7:136";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24658;
+                        readonly scope: 24706;
                         readonly src: "1895:15:136";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3061,7 +3061,7 @@ export declare const MockFixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24641;
+                            readonly id: 24689;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1895:7:136";
@@ -3074,7 +3074,7 @@ export declare const MockFixedPointMath: {
                     }];
                     readonly src: "1894:17:136";
                 };
-                readonly scope: 24659;
+                readonly scope: 24707;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -3085,11 +3085,11 @@ export declare const MockFixedPointMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [24659];
+            readonly linearizedBaseContracts: readonly [24707];
             readonly name: "MockFixedPointMath";
             readonly nameLocation: "145:18:136";
-            readonly scope: 24660;
-            readonly usedErrors: readonly [10890, 10935, 10991];
+            readonly scope: 24708;
+            readonly usedErrors: readonly [10938, 10983, 11039];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

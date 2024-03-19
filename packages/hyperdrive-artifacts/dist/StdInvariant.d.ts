@@ -1,102 +1,102 @@
 export declare const StdInvariant: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeArtifacts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string[]";
             readonly name: "excludedArtifacts_";
             readonly type: "string[]";
+            readonly internalType: "string[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeContracts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedContracts_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetArtifactSelectors";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "address";
-                readonly name: "addr";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes4[]";
-                readonly name: "selectors";
-                readonly type: "bytes4[]";
-            }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly name: "targetedArtifactSelectors_";
             readonly type: "tuple[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetArtifacts";
-        readonly outputs: readonly [{
-            readonly internalType: "string[]";
-            readonly name: "targetedArtifacts_";
-            readonly type: "string[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetContracts";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "targetedContracts_";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetSelectors";
-        readonly outputs: readonly [{
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly components: readonly [{
-                readonly internalType: "address";
                 readonly name: "addr";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly internalType: "bytes4[]";
                 readonly name: "selectors";
                 readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
             }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetArtifacts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedArtifacts_";
+            readonly type: "string[]";
+            readonly internalType: "string[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetContracts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedContracts_";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetSelectors";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
             readonly name: "targetedSelectors_";
             readonly type: "tuple[]";
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+            readonly components: readonly [{
+                readonly name: "addr";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "selectors";
+                readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
+            }];
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "targetedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -260,42 +260,42 @@ export declare const StdInvariant: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/StdInvariant.sol";
-        readonly id: 35285;
+        readonly id: 35333;
         readonly exportedSymbols: {
-            readonly StdInvariant: readonly [35284];
+            readonly StdInvariant: readonly [35332];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:3043:151";
         readonly nodes: readonly [{
-            readonly id: 35062;
+            readonly id: 35110;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:151";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 35063;
+            readonly id: 35111;
             readonly nodeType: "PragmaDirective";
             readonly src: "65:33:151";
             readonly nodes: readonly [];
             readonly literals: readonly ["experimental", "ABIEncoderV2"];
         }, {
-            readonly id: 35284;
+            readonly id: 35332;
             readonly nodeType: "ContractDefinition";
             readonly src: "100:2974:151";
             readonly nodes: readonly [{
-                readonly id: 35069;
+                readonly id: 35117;
                 readonly nodeType: "StructDefinition";
                 readonly src: "137:77:151";
                 readonly nodes: readonly [];
                 readonly canonicalName: "StdInvariant.FuzzSelector";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 35065;
+                    readonly id: 35113;
                     readonly mutability: "mutable";
                     readonly name: "addr";
                     readonly nameLocation: "175:4:151";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 35069;
+                    readonly scope: 35117;
                     readonly src: "167:12:151";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -304,7 +304,7 @@ export declare const StdInvariant: {
                         readonly typeString: "address";
                     };
                     readonly typeName: {
-                        readonly id: 35064;
+                        readonly id: 35112;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "167:7:151";
@@ -317,12 +317,12 @@ export declare const StdInvariant: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 35068;
+                    readonly id: 35116;
                     readonly mutability: "mutable";
                     readonly name: "selectors";
                     readonly nameLocation: "198:9:151";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 35069;
+                    readonly scope: 35117;
                     readonly src: "189:18:151";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -332,7 +332,7 @@ export declare const StdInvariant: {
                     };
                     readonly typeName: {
                         readonly baseType: {
-                            readonly id: 35066;
+                            readonly id: 35114;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "189:6:151";
@@ -341,7 +341,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "bytes4";
                             };
                         };
-                        readonly id: 35067;
+                        readonly id: 35115;
                         readonly nodeType: "ArrayTypeName";
                         readonly src: "189:8:151";
                         readonly typeDescriptions: {
@@ -353,10 +353,10 @@ export declare const StdInvariant: {
                 }];
                 readonly name: "FuzzSelector";
                 readonly nameLocation: "144:12:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly visibility: "public";
             }, {
-                readonly id: 35072;
+                readonly id: 35120;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "220:36:151";
                 readonly nodes: readonly [];
@@ -364,7 +364,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_excludedContracts";
                 readonly nameLocation: "238:18:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -373,7 +373,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35070;
+                        readonly id: 35118;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "220:7:151";
@@ -383,7 +383,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                     };
-                    readonly id: 35071;
+                    readonly id: 35119;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "220:9:151";
                     readonly typeDescriptions: {
@@ -393,7 +393,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35075;
+                readonly id: 35123;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "262:34:151";
                 readonly nodes: readonly [];
@@ -401,7 +401,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_excludedSenders";
                 readonly nameLocation: "280:16:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -410,7 +410,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35073;
+                        readonly id: 35121;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "262:7:151";
@@ -420,7 +420,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                     };
-                    readonly id: 35074;
+                    readonly id: 35122;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "262:9:151";
                     readonly typeDescriptions: {
@@ -430,7 +430,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35078;
+                readonly id: 35126;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "302:36:151";
                 readonly nodes: readonly [];
@@ -438,7 +438,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_targetedContracts";
                 readonly nameLocation: "320:18:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -447,7 +447,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35076;
+                        readonly id: 35124;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "302:7:151";
@@ -457,7 +457,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                     };
-                    readonly id: 35077;
+                    readonly id: 35125;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "302:9:151";
                     readonly typeDescriptions: {
@@ -467,7 +467,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35081;
+                readonly id: 35129;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "344:34:151";
                 readonly nodes: readonly [];
@@ -475,7 +475,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_targetedSenders";
                 readonly nameLocation: "362:16:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -484,7 +484,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35079;
+                        readonly id: 35127;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "344:7:151";
@@ -494,7 +494,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                     };
-                    readonly id: 35080;
+                    readonly id: 35128;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "344:9:151";
                     readonly typeDescriptions: {
@@ -504,7 +504,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35084;
+                readonly id: 35132;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "385:35:151";
                 readonly nodes: readonly [];
@@ -512,7 +512,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_excludedArtifacts";
                 readonly nameLocation: "402:18:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -521,7 +521,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35082;
+                        readonly id: 35130;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "385:6:151";
@@ -530,7 +530,7 @@ export declare const StdInvariant: {
                             readonly typeString: "string";
                         };
                     };
-                    readonly id: 35083;
+                    readonly id: 35131;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "385:8:151";
                     readonly typeDescriptions: {
@@ -540,7 +540,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35087;
+                readonly id: 35135;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "426:35:151";
                 readonly nodes: readonly [];
@@ -548,7 +548,7 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_targetedArtifacts";
                 readonly nameLocation: "443:18:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -557,7 +557,7 @@ export declare const StdInvariant: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35085;
+                        readonly id: 35133;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "426:6:151";
@@ -566,7 +566,7 @@ export declare const StdInvariant: {
                             readonly typeString: "string";
                         };
                     };
-                    readonly id: 35086;
+                    readonly id: 35134;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "426:8:151";
                     readonly typeDescriptions: {
@@ -576,7 +576,7 @@ export declare const StdInvariant: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35091;
+                readonly id: 35139;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "468:49:151";
                 readonly nodes: readonly [];
@@ -584,43 +584,43 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_targetedArtifactSelectors";
                 readonly nameLocation: "491:26:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                     readonly typeString: "struct StdInvariant.FuzzSelector[]";
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35089;
+                        readonly id: 35137;
                         readonly nodeType: "UserDefinedTypeName";
                         readonly pathNode: {
-                            readonly id: 35088;
+                            readonly id: 35136;
                             readonly name: "FuzzSelector";
                             readonly nameLocations: readonly ["468:12:151"];
                             readonly nodeType: "IdentifierPath";
-                            readonly referencedDeclaration: 35069;
+                            readonly referencedDeclaration: 35117;
                             readonly src: "468:12:151";
                         };
-                        readonly referencedDeclaration: 35069;
+                        readonly referencedDeclaration: 35117;
                         readonly src: "468:12:151";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector";
                         };
                     };
-                    readonly id: 35090;
+                    readonly id: 35138;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "468:14:151";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr";
+                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr";
                         readonly typeString: "struct StdInvariant.FuzzSelector[]";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35095;
+                readonly id: 35143;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "523:41:151";
                 readonly nodes: readonly [];
@@ -628,59 +628,59 @@ export declare const StdInvariant: {
                 readonly mutability: "mutable";
                 readonly name: "_targetedSelectors";
                 readonly nameLocation: "546:18:151";
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                     readonly typeString: "struct StdInvariant.FuzzSelector[]";
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35093;
+                        readonly id: 35141;
                         readonly nodeType: "UserDefinedTypeName";
                         readonly pathNode: {
-                            readonly id: 35092;
+                            readonly id: 35140;
                             readonly name: "FuzzSelector";
                             readonly nameLocations: readonly ["523:12:151"];
                             readonly nodeType: "IdentifierPath";
-                            readonly referencedDeclaration: 35069;
+                            readonly referencedDeclaration: 35117;
                             readonly src: "523:12:151";
                         };
-                        readonly referencedDeclaration: 35069;
+                        readonly referencedDeclaration: 35117;
                         readonly src: "523:12:151";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector";
                         };
                     };
-                    readonly id: 35094;
+                    readonly id: 35142;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "523:14:151";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr";
+                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr";
                         readonly typeString: "struct StdInvariant.FuzzSelector[]";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35107;
+                readonly id: 35155;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "649:126:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35106;
+                    readonly id: 35154;
                     readonly nodeType: "Block";
                     readonly src: "713:62:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35103;
+                                readonly id: 35151;
                                 readonly name: "newExcludedContract_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35097;
+                                readonly referencedDeclaration: 35145;
                                 readonly src: "747:20:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -693,18 +693,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35100;
+                                    readonly id: 35148;
                                     readonly name: "_excludedContracts";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35072;
+                                    readonly referencedDeclaration: 35120;
                                     readonly src: "723:18:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
                                         readonly typeString: "address[] storage ref";
                                     };
                                 };
-                                readonly id: 35102;
+                                readonly id: 35150;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -718,7 +718,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (address[] storage pointer,address)";
                                 };
                             };
-                            readonly id: 35104;
+                            readonly id: 35152;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -734,7 +734,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35105;
+                        readonly id: 35153;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "723:45:151";
                     }];
@@ -745,16 +745,16 @@ export declare const StdInvariant: {
                 readonly name: "excludeContract";
                 readonly nameLocation: "658:15:151";
                 readonly parameters: {
-                    readonly id: 35098;
+                    readonly id: 35146;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35097;
+                        readonly id: 35145;
                         readonly mutability: "mutable";
                         readonly name: "newExcludedContract_";
                         readonly nameLocation: "682:20:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35107;
+                        readonly scope: 35155;
                         readonly src: "674:28:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -763,7 +763,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35096;
+                            readonly id: 35144;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "674:7:151";
@@ -778,33 +778,33 @@ export declare const StdInvariant: {
                     readonly src: "673:30:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35099;
+                    readonly id: 35147;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "713:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35119;
+                readonly id: 35167;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "781:118:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35118;
+                    readonly id: 35166;
                     readonly nodeType: "Block";
                     readonly src: "841:58:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35115;
+                                readonly id: 35163;
                                 readonly name: "newExcludedSender_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35109;
+                                readonly referencedDeclaration: 35157;
                                 readonly src: "873:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -817,18 +817,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35112;
+                                    readonly id: 35160;
                                     readonly name: "_excludedSenders";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35075;
+                                    readonly referencedDeclaration: 35123;
                                     readonly src: "851:16:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
                                         readonly typeString: "address[] storage ref";
                                     };
                                 };
-                                readonly id: 35114;
+                                readonly id: 35162;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -842,7 +842,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (address[] storage pointer,address)";
                                 };
                             };
-                            readonly id: 35116;
+                            readonly id: 35164;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -858,7 +858,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35117;
+                        readonly id: 35165;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "851:41:151";
                     }];
@@ -869,16 +869,16 @@ export declare const StdInvariant: {
                 readonly name: "excludeSender";
                 readonly nameLocation: "790:13:151";
                 readonly parameters: {
-                    readonly id: 35110;
+                    readonly id: 35158;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35109;
+                        readonly id: 35157;
                         readonly mutability: "mutable";
                         readonly name: "newExcludedSender_";
                         readonly nameLocation: "812:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35119;
+                        readonly scope: 35167;
                         readonly src: "804:26:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -887,7 +887,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35108;
+                            readonly id: 35156;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "804:7:151";
@@ -902,33 +902,33 @@ export declare const StdInvariant: {
                     readonly src: "803:28:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35111;
+                    readonly id: 35159;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "841:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35131;
+                readonly id: 35179;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "905:132:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35130;
+                    readonly id: 35178;
                     readonly nodeType: "Block";
                     readonly src: "975:62:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35127;
+                                readonly id: 35175;
                                 readonly name: "newExcludedArtifact_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35121;
+                                readonly referencedDeclaration: 35169;
                                 readonly src: "1009:20:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -941,18 +941,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "string memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35124;
+                                    readonly id: 35172;
                                     readonly name: "_excludedArtifacts";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35084;
+                                    readonly referencedDeclaration: 35132;
                                     readonly src: "985:18:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_string_storage_$dyn_storage";
                                         readonly typeString: "string storage ref[] storage ref";
                                     };
                                 };
-                                readonly id: 35126;
+                                readonly id: 35174;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -966,7 +966,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (string storage ref[] storage pointer,string storage ref)";
                                 };
                             };
-                            readonly id: 35128;
+                            readonly id: 35176;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -982,7 +982,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35129;
+                        readonly id: 35177;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "985:45:151";
                     }];
@@ -993,16 +993,16 @@ export declare const StdInvariant: {
                 readonly name: "excludeArtifact";
                 readonly nameLocation: "914:15:151";
                 readonly parameters: {
-                    readonly id: 35122;
+                    readonly id: 35170;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35121;
+                        readonly id: 35169;
                         readonly mutability: "mutable";
                         readonly name: "newExcludedArtifact_";
                         readonly nameLocation: "944:20:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35131;
+                        readonly scope: 35179;
                         readonly src: "930:34:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1011,7 +1011,7 @@ export declare const StdInvariant: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 35120;
+                            readonly id: 35168;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "930:6:151";
@@ -1025,33 +1025,33 @@ export declare const StdInvariant: {
                     readonly src: "929:36:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35123;
+                    readonly id: 35171;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "975:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35143;
+                readonly id: 35191;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1043:131:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35142;
+                    readonly id: 35190;
                     readonly nodeType: "Block";
                     readonly src: "1112:62:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35139;
+                                readonly id: 35187;
                                 readonly name: "newTargetedArtifact_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35133;
+                                readonly referencedDeclaration: 35181;
                                 readonly src: "1146:20:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -1064,18 +1064,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "string memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35136;
+                                    readonly id: 35184;
                                     readonly name: "_targetedArtifacts";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35087;
+                                    readonly referencedDeclaration: 35135;
                                     readonly src: "1122:18:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_string_storage_$dyn_storage";
                                         readonly typeString: "string storage ref[] storage ref";
                                     };
                                 };
-                                readonly id: 35138;
+                                readonly id: 35186;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1089,7 +1089,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (string storage ref[] storage pointer,string storage ref)";
                                 };
                             };
-                            readonly id: 35140;
+                            readonly id: 35188;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1105,7 +1105,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35141;
+                        readonly id: 35189;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1122:45:151";
                     }];
@@ -1116,16 +1116,16 @@ export declare const StdInvariant: {
                 readonly name: "targetArtifact";
                 readonly nameLocation: "1052:14:151";
                 readonly parameters: {
-                    readonly id: 35134;
+                    readonly id: 35182;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35133;
+                        readonly id: 35181;
                         readonly mutability: "mutable";
                         readonly name: "newTargetedArtifact_";
                         readonly nameLocation: "1081:20:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35143;
+                        readonly scope: 35191;
                         readonly src: "1067:34:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1134,7 +1134,7 @@ export declare const StdInvariant: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 35132;
+                            readonly id: 35180;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1067:6:151";
@@ -1148,57 +1148,57 @@ export declare const StdInvariant: {
                     readonly src: "1066:36:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35135;
+                    readonly id: 35183;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1112:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35156;
+                readonly id: 35204;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1180:169:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35155;
+                    readonly id: 35203;
                     readonly nodeType: "Block";
                     readonly src: "1271:78:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35152;
+                                readonly id: 35200;
                                 readonly name: "newTargetedArtifactSelector_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35146;
+                                readonly referencedDeclaration: 35194;
                                 readonly src: "1313:28:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35149;
+                                    readonly id: 35197;
                                     readonly name: "_targetedArtifactSelectors";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35091;
+                                    readonly referencedDeclaration: 35139;
                                     readonly src: "1281:26:151";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                                         readonly typeString: "struct StdInvariant.FuzzSelector storage ref[] storage ref";
                                     };
                                 };
-                                readonly id: 35151;
+                                readonly id: 35199;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1208,11 +1208,11 @@ export declare const StdInvariant: {
                                 readonly nodeType: "MemberAccess";
                                 readonly src: "1281:31:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$35069_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$35117_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr_$";
                                     readonly typeString: "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)";
                                 };
                             };
-                            readonly id: 35153;
+                            readonly id: 35201;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1228,7 +1228,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35154;
+                        readonly id: 35202;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1281:61:151";
                     }];
@@ -1239,38 +1239,38 @@ export declare const StdInvariant: {
                 readonly name: "targetArtifactSelector";
                 readonly nameLocation: "1189:22:151";
                 readonly parameters: {
-                    readonly id: 35147;
+                    readonly id: 35195;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35146;
+                        readonly id: 35194;
                         readonly mutability: "mutable";
                         readonly name: "newTargetedArtifactSelector_";
                         readonly nameLocation: "1232:28:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35156;
+                        readonly scope: 35204;
                         readonly src: "1212:48:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector";
                         };
                         readonly typeName: {
-                            readonly id: 35145;
+                            readonly id: 35193;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 35144;
+                                readonly id: 35192;
                                 readonly name: "FuzzSelector";
                                 readonly nameLocations: readonly ["1212:12:151"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35069;
+                                readonly referencedDeclaration: 35117;
                                 readonly src: "1212:12:151";
                             };
-                            readonly referencedDeclaration: 35069;
+                            readonly referencedDeclaration: 35117;
                             readonly src: "1212:12:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector";
                             };
                         };
@@ -1279,33 +1279,33 @@ export declare const StdInvariant: {
                     readonly src: "1211:50:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35148;
+                    readonly id: 35196;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1271:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35168;
+                readonly id: 35216;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1355:125:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35167;
+                    readonly id: 35215;
                     readonly nodeType: "Block";
                     readonly src: "1418:62:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35164;
+                                readonly id: 35212;
                                 readonly name: "newTargetedContract_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35158;
+                                readonly referencedDeclaration: 35206;
                                 readonly src: "1452:20:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -1318,18 +1318,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35161;
+                                    readonly id: 35209;
                                     readonly name: "_targetedContracts";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35078;
+                                    readonly referencedDeclaration: 35126;
                                     readonly src: "1428:18:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
                                         readonly typeString: "address[] storage ref";
                                     };
                                 };
-                                readonly id: 35163;
+                                readonly id: 35211;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1343,7 +1343,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (address[] storage pointer,address)";
                                 };
                             };
-                            readonly id: 35165;
+                            readonly id: 35213;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1359,7 +1359,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35166;
+                        readonly id: 35214;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1428:45:151";
                     }];
@@ -1370,16 +1370,16 @@ export declare const StdInvariant: {
                 readonly name: "targetContract";
                 readonly nameLocation: "1364:14:151";
                 readonly parameters: {
-                    readonly id: 35159;
+                    readonly id: 35207;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35158;
+                        readonly id: 35206;
                         readonly mutability: "mutable";
                         readonly name: "newTargetedContract_";
                         readonly nameLocation: "1387:20:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35168;
+                        readonly scope: 35216;
                         readonly src: "1379:28:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1388,7 +1388,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35157;
+                            readonly id: 35205;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1379:7:151";
@@ -1403,57 +1403,57 @@ export declare const StdInvariant: {
                     readonly src: "1378:30:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35160;
+                    readonly id: 35208;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1418:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35181;
+                readonly id: 35229;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1486:137:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35180;
+                    readonly id: 35228;
                     readonly nodeType: "Block";
                     readonly src: "1561:62:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35177;
+                                readonly id: 35225;
                                 readonly name: "newTargetedSelector_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35171;
+                                readonly referencedDeclaration: 35219;
                                 readonly src: "1595:20:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35174;
+                                    readonly id: 35222;
                                     readonly name: "_targetedSelectors";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35095;
+                                    readonly referencedDeclaration: 35143;
                                     readonly src: "1571:18:151";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                                        readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                                         readonly typeString: "struct StdInvariant.FuzzSelector storage ref[] storage ref";
                                     };
                                 };
-                                readonly id: 35176;
+                                readonly id: 35224;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1463,11 +1463,11 @@ export declare const StdInvariant: {
                                 readonly nodeType: "MemberAccess";
                                 readonly src: "1571:23:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$35069_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$35117_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr_$";
                                     readonly typeString: "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)";
                                 };
                             };
-                            readonly id: 35178;
+                            readonly id: 35226;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1483,7 +1483,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35179;
+                        readonly id: 35227;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1571:45:151";
                     }];
@@ -1494,38 +1494,38 @@ export declare const StdInvariant: {
                 readonly name: "targetSelector";
                 readonly nameLocation: "1495:14:151";
                 readonly parameters: {
-                    readonly id: 35172;
+                    readonly id: 35220;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35171;
+                        readonly id: 35219;
                         readonly mutability: "mutable";
                         readonly name: "newTargetedSelector_";
                         readonly nameLocation: "1530:20:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35181;
+                        readonly scope: 35229;
                         readonly src: "1510:40:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_memory_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector";
                         };
                         readonly typeName: {
-                            readonly id: 35170;
+                            readonly id: 35218;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 35169;
+                                readonly id: 35217;
                                 readonly name: "FuzzSelector";
                                 readonly nameLocations: readonly ["1510:12:151"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35069;
+                                readonly referencedDeclaration: 35117;
                                 readonly src: "1510:12:151";
                             };
-                            readonly referencedDeclaration: 35069;
+                            readonly referencedDeclaration: 35117;
                             readonly src: "1510:12:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector";
                             };
                         };
@@ -1534,33 +1534,33 @@ export declare const StdInvariant: {
                     readonly src: "1509:42:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35173;
+                    readonly id: 35221;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1561:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35193;
+                readonly id: 35241;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1629:117:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35192;
+                    readonly id: 35240;
                     readonly nodeType: "Block";
                     readonly src: "1688:58:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 35189;
+                                readonly id: 35237;
                                 readonly name: "newTargetedSender_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35183;
+                                readonly referencedDeclaration: 35231;
                                 readonly src: "1720:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -1573,18 +1573,18 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35186;
+                                    readonly id: 35234;
                                     readonly name: "_targetedSenders";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35081;
+                                    readonly referencedDeclaration: 35129;
                                     readonly src: "1698:16:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
                                         readonly typeString: "address[] storage ref";
                                     };
                                 };
-                                readonly id: 35188;
+                                readonly id: 35236;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1598,7 +1598,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "function (address[] storage pointer,address)";
                                 };
                             };
-                            readonly id: 35190;
+                            readonly id: 35238;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1614,7 +1614,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35191;
+                        readonly id: 35239;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1698:41:151";
                     }];
@@ -1625,16 +1625,16 @@ export declare const StdInvariant: {
                 readonly name: "targetSender";
                 readonly nameLocation: "1638:12:151";
                 readonly parameters: {
-                    readonly id: 35184;
+                    readonly id: 35232;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35183;
+                        readonly id: 35231;
                         readonly mutability: "mutable";
                         readonly name: "newTargetedSender_";
                         readonly nameLocation: "1659:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35193;
+                        readonly scope: 35241;
                         readonly src: "1651:26:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1643,7 +1643,7 @@ export declare const StdInvariant: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35182;
+                            readonly id: 35230;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1651:7:151";
@@ -1658,38 +1658,38 @@ export declare const StdInvariant: {
                     readonly src: "1650:28:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35185;
+                    readonly id: 35233;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1688:0:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35204;
+                readonly id: 35252;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1875:141:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35203;
+                    readonly id: 35251;
                     readonly nodeType: "Block";
                     readonly src: "1960:56:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35201;
+                            readonly id: 35249;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35199;
+                                readonly id: 35247;
                                 readonly name: "excludedArtifacts_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35197;
+                                readonly referencedDeclaration: 35245;
                                 readonly src: "1970:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_string_memory_ptr_$dyn_memory_ptr";
@@ -1699,11 +1699,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35200;
+                                readonly id: 35248;
                                 readonly name: "_excludedArtifacts";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35084;
+                                readonly referencedDeclaration: 35132;
                                 readonly src: "1991:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_string_storage_$dyn_storage";
@@ -1716,7 +1716,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "string memory[] memory";
                             };
                         };
-                        readonly id: 35202;
+                        readonly id: 35250;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1970:39:151";
                     }];
@@ -1728,22 +1728,22 @@ export declare const StdInvariant: {
                 readonly name: "excludeArtifacts";
                 readonly nameLocation: "1884:16:151";
                 readonly parameters: {
-                    readonly id: 35194;
+                    readonly id: 35242;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1900:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35198;
+                    readonly id: 35246;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35197;
+                        readonly id: 35245;
                         readonly mutability: "mutable";
                         readonly name: "excludedArtifacts_";
                         readonly nameLocation: "1940:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35204;
+                        readonly scope: 35252;
                         readonly src: "1924:34:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1753,7 +1753,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35195;
+                                readonly id: 35243;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1924:6:151";
@@ -1762,7 +1762,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 35196;
+                            readonly id: 35244;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1924:8:151";
                             readonly typeDescriptions: {
@@ -1774,33 +1774,33 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "1923:36:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35215;
+                readonly id: 35263;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2022:142:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35214;
+                    readonly id: 35262;
                     readonly nodeType: "Block";
                     readonly src: "2108:56:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35212;
+                            readonly id: 35260;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35210;
+                                readonly id: 35258;
                                 readonly name: "excludedContracts_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35208;
+                                readonly referencedDeclaration: 35256;
                                 readonly src: "2118:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_memory_ptr";
@@ -1810,11 +1810,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35211;
+                                readonly id: 35259;
                                 readonly name: "_excludedContracts";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35072;
+                                readonly referencedDeclaration: 35120;
                                 readonly src: "2139:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
@@ -1827,7 +1827,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "address[] memory";
                             };
                         };
-                        readonly id: 35213;
+                        readonly id: 35261;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2118:39:151";
                     }];
@@ -1839,22 +1839,22 @@ export declare const StdInvariant: {
                 readonly name: "excludeContracts";
                 readonly nameLocation: "2031:16:151";
                 readonly parameters: {
-                    readonly id: 35205;
+                    readonly id: 35253;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2047:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35209;
+                    readonly id: 35257;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35208;
+                        readonly id: 35256;
                         readonly mutability: "mutable";
                         readonly name: "excludedContracts_";
                         readonly nameLocation: "2088:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35215;
+                        readonly scope: 35263;
                         readonly src: "2071:35:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1864,7 +1864,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35206;
+                                readonly id: 35254;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2071:7:151";
@@ -1874,7 +1874,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 35207;
+                            readonly id: 35255;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2071:9:151";
                             readonly typeDescriptions: {
@@ -1886,33 +1886,33 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2070:37:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35226;
+                readonly id: 35274;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2170:134:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35225;
+                    readonly id: 35273;
                     readonly nodeType: "Block";
                     readonly src: "2252:52:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35223;
+                            readonly id: 35271;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35221;
+                                readonly id: 35269;
                                 readonly name: "excludedSenders_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35219;
+                                readonly referencedDeclaration: 35267;
                                 readonly src: "2262:16:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_memory_ptr";
@@ -1922,11 +1922,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35222;
+                                readonly id: 35270;
                                 readonly name: "_excludedSenders";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35075;
+                                readonly referencedDeclaration: 35123;
                                 readonly src: "2281:16:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
@@ -1939,7 +1939,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "address[] memory";
                             };
                         };
-                        readonly id: 35224;
+                        readonly id: 35272;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2262:35:151";
                     }];
@@ -1951,22 +1951,22 @@ export declare const StdInvariant: {
                 readonly name: "excludeSenders";
                 readonly nameLocation: "2179:14:151";
                 readonly parameters: {
-                    readonly id: 35216;
+                    readonly id: 35264;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2193:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35220;
+                    readonly id: 35268;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35219;
+                        readonly id: 35267;
                         readonly mutability: "mutable";
                         readonly name: "excludedSenders_";
                         readonly nameLocation: "2234:16:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35226;
+                        readonly scope: 35274;
                         readonly src: "2217:33:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1976,7 +1976,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35217;
+                                readonly id: 35265;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2217:7:151";
@@ -1986,7 +1986,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 35218;
+                            readonly id: 35266;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2217:9:151";
                             readonly typeDescriptions: {
@@ -1998,33 +1998,33 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2216:35:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35237;
+                readonly id: 35285;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2310:140:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35236;
+                    readonly id: 35284;
                     readonly nodeType: "Block";
                     readonly src: "2394:56:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35234;
+                            readonly id: 35282;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35232;
+                                readonly id: 35280;
                                 readonly name: "targetedArtifacts_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35230;
+                                readonly referencedDeclaration: 35278;
                                 readonly src: "2404:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_string_memory_ptr_$dyn_memory_ptr";
@@ -2034,11 +2034,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35233;
+                                readonly id: 35281;
                                 readonly name: "_targetedArtifacts";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35087;
+                                readonly referencedDeclaration: 35135;
                                 readonly src: "2425:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_string_storage_$dyn_storage";
@@ -2051,7 +2051,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "string memory[] memory";
                             };
                         };
-                        readonly id: 35235;
+                        readonly id: 35283;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2404:39:151";
                     }];
@@ -2063,22 +2063,22 @@ export declare const StdInvariant: {
                 readonly name: "targetArtifacts";
                 readonly nameLocation: "2319:15:151";
                 readonly parameters: {
-                    readonly id: 35227;
+                    readonly id: 35275;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2334:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35231;
+                    readonly id: 35279;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35230;
+                        readonly id: 35278;
                         readonly mutability: "mutable";
                         readonly name: "targetedArtifacts_";
                         readonly nameLocation: "2374:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35237;
+                        readonly scope: 35285;
                         readonly src: "2358:34:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2088,7 +2088,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35228;
+                                readonly id: 35276;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2358:6:151";
@@ -2097,7 +2097,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 35229;
+                            readonly id: 35277;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2358:8:151";
                             readonly typeDescriptions: {
@@ -2109,60 +2109,60 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2357:36:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35249;
+                readonly id: 35297;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2456:178:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35248;
+                    readonly id: 35296;
                     readonly nodeType: "Block";
                     readonly src: "2562:72:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35246;
+                            readonly id: 35294;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35244;
+                                readonly id: 35292;
                                 readonly name: "targetedArtifactSelectors_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35242;
+                                readonly referencedDeclaration: 35290;
                                 readonly src: "2572:26:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory[] memory";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35245;
+                                readonly id: 35293;
                                 readonly name: "_targetedArtifactSelectors";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35091;
+                                readonly referencedDeclaration: 35139;
                                 readonly src: "2601:26:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                                     readonly typeString: "struct StdInvariant.FuzzSelector storage ref[] storage ref";
                                 };
                             };
                             readonly src: "2572:55:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector memory[] memory";
                             };
                         };
-                        readonly id: 35247;
+                        readonly id: 35295;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2572:55:151";
                     }];
@@ -2174,53 +2174,53 @@ export declare const StdInvariant: {
                 readonly name: "targetArtifactSelectors";
                 readonly nameLocation: "2465:23:151";
                 readonly parameters: {
-                    readonly id: 35238;
+                    readonly id: 35286;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2488:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35243;
+                    readonly id: 35291;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35242;
+                        readonly id: 35290;
                         readonly mutability: "mutable";
                         readonly name: "targetedArtifactSelectors_";
                         readonly nameLocation: "2534:26:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35249;
+                        readonly scope: 35297;
                         readonly src: "2512:48:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35240;
+                                readonly id: 35288;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 35239;
+                                    readonly id: 35287;
                                     readonly name: "FuzzSelector";
                                     readonly nameLocations: readonly ["2512:12:151"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 35069;
+                                    readonly referencedDeclaration: 35117;
                                     readonly src: "2512:12:151";
                                 };
-                                readonly referencedDeclaration: 35069;
+                                readonly referencedDeclaration: 35117;
                                 readonly src: "2512:12:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector";
                                 };
                             };
-                            readonly id: 35241;
+                            readonly id: 35289;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2512:14:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector[]";
                             };
                         };
@@ -2228,33 +2228,33 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2511:50:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35260;
+                readonly id: 35308;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2640:141:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35259;
+                    readonly id: 35307;
                     readonly nodeType: "Block";
                     readonly src: "2725:56:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35257;
+                            readonly id: 35305;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35255;
+                                readonly id: 35303;
                                 readonly name: "targetedContracts_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35253;
+                                readonly referencedDeclaration: 35301;
                                 readonly src: "2735:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_memory_ptr";
@@ -2264,11 +2264,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35256;
+                                readonly id: 35304;
                                 readonly name: "_targetedContracts";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35078;
+                                readonly referencedDeclaration: 35126;
                                 readonly src: "2756:18:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
@@ -2281,7 +2281,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "address[] memory";
                             };
                         };
-                        readonly id: 35258;
+                        readonly id: 35306;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2735:39:151";
                     }];
@@ -2293,22 +2293,22 @@ export declare const StdInvariant: {
                 readonly name: "targetContracts";
                 readonly nameLocation: "2649:15:151";
                 readonly parameters: {
-                    readonly id: 35250;
+                    readonly id: 35298;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2664:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35254;
+                    readonly id: 35302;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35253;
+                        readonly id: 35301;
                         readonly mutability: "mutable";
                         readonly name: "targetedContracts_";
                         readonly nameLocation: "2705:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35260;
+                        readonly scope: 35308;
                         readonly src: "2688:35:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2318,7 +2318,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35251;
+                                readonly id: 35299;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2688:7:151";
@@ -2328,7 +2328,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 35252;
+                            readonly id: 35300;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2688:9:151";
                             readonly typeDescriptions: {
@@ -2340,60 +2340,60 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2687:37:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35272;
+                readonly id: 35320;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2787:146:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35271;
+                    readonly id: 35319;
                     readonly nodeType: "Block";
                     readonly src: "2877:56:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35269;
+                            readonly id: 35317;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35267;
+                                readonly id: 35315;
                                 readonly name: "targetedSelectors_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35265;
+                                readonly referencedDeclaration: 35313;
                                 readonly src: "2887:18:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector memory[] memory";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35268;
+                                readonly id: 35316;
                                 readonly name: "_targetedSelectors";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35095;
+                                readonly referencedDeclaration: 35143;
                                 readonly src: "2908:18:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage";
+                                    readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage";
                                     readonly typeString: "struct StdInvariant.FuzzSelector storage ref[] storage ref";
                                 };
                             };
                             readonly src: "2887:39:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector memory[] memory";
                             };
                         };
-                        readonly id: 35270;
+                        readonly id: 35318;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2887:39:151";
                     }];
@@ -2405,53 +2405,53 @@ export declare const StdInvariant: {
                 readonly name: "targetSelectors";
                 readonly nameLocation: "2796:15:151";
                 readonly parameters: {
-                    readonly id: 35261;
+                    readonly id: 35309;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2811:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35266;
+                    readonly id: 35314;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35265;
+                        readonly id: 35313;
                         readonly mutability: "mutable";
                         readonly name: "targetedSelectors_";
                         readonly nameLocation: "2857:18:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35272;
+                        readonly scope: 35320;
                         readonly src: "2835:40:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct StdInvariant.FuzzSelector[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35263;
+                                readonly id: 35311;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 35262;
+                                    readonly id: 35310;
                                     readonly name: "FuzzSelector";
                                     readonly nameLocations: readonly ["2835:12:151"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 35069;
+                                    readonly referencedDeclaration: 35117;
                                     readonly src: "2835:12:151";
                                 };
-                                readonly referencedDeclaration: 35069;
+                                readonly referencedDeclaration: 35117;
                                 readonly src: "2835:12:151";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35069_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_FuzzSelector_$35117_storage_ptr";
                                     readonly typeString: "struct StdInvariant.FuzzSelector";
                                 };
                             };
-                            readonly id: 35264;
+                            readonly id: 35312;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2835:14:151";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35069_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_FuzzSelector_$35117_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct StdInvariant.FuzzSelector[]";
                             };
                         };
@@ -2459,33 +2459,33 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2834:42:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 35283;
+                readonly id: 35331;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2939:133:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35282;
+                    readonly id: 35330;
                     readonly nodeType: "Block";
                     readonly src: "3020:52:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 35280;
+                            readonly id: 35328;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 35278;
+                                readonly id: 35326;
                                 readonly name: "targetedSenders_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35276;
+                                readonly referencedDeclaration: 35324;
                                 readonly src: "3030:16:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_memory_ptr";
@@ -2495,11 +2495,11 @@ export declare const StdInvariant: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 35279;
+                                readonly id: 35327;
                                 readonly name: "_targetedSenders";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35081;
+                                readonly referencedDeclaration: 35129;
                                 readonly src: "3049:16:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_address_$dyn_storage";
@@ -2512,7 +2512,7 @@ export declare const StdInvariant: {
                                 readonly typeString: "address[] memory";
                             };
                         };
-                        readonly id: 35281;
+                        readonly id: 35329;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3030:35:151";
                     }];
@@ -2524,22 +2524,22 @@ export declare const StdInvariant: {
                 readonly name: "targetSenders";
                 readonly nameLocation: "2948:13:151";
                 readonly parameters: {
-                    readonly id: 35273;
+                    readonly id: 35321;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2961:2:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35277;
+                    readonly id: 35325;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35276;
+                        readonly id: 35324;
                         readonly mutability: "mutable";
                         readonly name: "targetedSenders_";
                         readonly nameLocation: "3002:16:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35283;
+                        readonly scope: 35331;
                         readonly src: "2985:33:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2549,7 +2549,7 @@ export declare const StdInvariant: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 35274;
+                                readonly id: 35322;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2985:7:151";
@@ -2559,7 +2559,7 @@ export declare const StdInvariant: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 35275;
+                            readonly id: 35323;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2985:9:151";
                             readonly typeDescriptions: {
@@ -2571,7 +2571,7 @@ export declare const StdInvariant: {
                     }];
                     readonly src: "2984:35:151";
                 };
-                readonly scope: 35284;
+                readonly scope: 35332;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
@@ -2582,10 +2582,10 @@ export declare const StdInvariant: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [35284];
+            readonly linearizedBaseContracts: readonly [35332];
             readonly name: "StdInvariant";
             readonly nameLocation: "118:12:151";
-            readonly scope: 35285;
+            readonly scope: 35333;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

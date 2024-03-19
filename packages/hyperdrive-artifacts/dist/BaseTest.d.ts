@@ -1,501 +1,501 @@
 export declare const BaseTest: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "WhaleBalanceExceeded";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "WhaleIsContract";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly name: "log_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "";
-            readonly type: "int256";
-        }];
-        readonly name: "log_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "val";
-            readonly type: "address";
-        }];
-        readonly name: "log_named_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "val";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_named_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "val";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_named_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }];
-        readonly name: "log_named_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "val";
-            readonly type: "string";
-        }];
-        readonly name: "log_named_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "logs";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "IS_TEST";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "assertWithDelta";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_value";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "int256";
             readonly name: "_delta";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_targetValue";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "assertWithDelta";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "createUser";
         readonly inputs: readonly [{
-            readonly internalType: "string";
             readonly name: "name";
             readonly type: "string";
+            readonly internalType: "string";
         }];
-        readonly name: "createUser";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_user";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeArtifacts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string[]";
             readonly name: "excludedArtifacts_";
             readonly type: "string[]";
+            readonly internalType: "string[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeContracts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedContracts_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "failed";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "setUp";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetArtifactSelectors";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "address";
-                readonly name: "addr";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes4[]";
-                readonly name: "selectors";
-                readonly type: "bytes4[]";
-            }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly name: "targetedArtifactSelectors_";
             readonly type: "tuple[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetArtifacts";
-        readonly outputs: readonly [{
-            readonly internalType: "string[]";
-            readonly name: "targetedArtifacts_";
-            readonly type: "string[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetContracts";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "targetedContracts_";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetSelectors";
-        readonly outputs: readonly [{
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly components: readonly [{
-                readonly internalType: "address";
                 readonly name: "addr";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly internalType: "bytes4[]";
                 readonly name: "selectors";
                 readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
             }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetArtifacts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedArtifacts_";
+            readonly type: "string[]";
+            readonly internalType: "string[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetContracts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedContracts_";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetSelectors";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
             readonly name: "targetedSelectors_";
             readonly type: "tuple[]";
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+            readonly components: readonly [{
+                readonly name: "addr";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "selectors";
+                readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
+            }];
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "targetedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "whaleTransfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "whale";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract IERC20";
             readonly name: "token";
             readonly type: "address";
+            readonly internalType: "contract IERC20";
         }, {
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "whaleTransfer";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "whaleTransfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "whale";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract IERC20";
             readonly name: "token";
             readonly type: "address";
+            readonly internalType: "contract IERC20";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "whaleTransfer";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "log";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_address";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_int";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_address";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_string";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_string";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_uint";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "logs";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "WhaleBalanceExceeded";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "WhaleIsContract";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x6080604081905260078054600160ff199182168117909255600b8054909116909117905563f877cb1960e01b90526020608452600f60a4526e1350525393915517d49410d7d55493608a1b60c452737109709ecfa91a80626ff3989d68f67f5b1dd12d63f877cb1960e4600060405180830381865afa15801562000087573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052620000b1919081019062000194565b602a90620000c09082620002f8565b5060405163f877cb1960e01b815260206004820152600e60248201526d11d3d154931257d49410d7d5549360921b6044820152737109709ecfa91a80626ff3989d68f67f5b1dd12d9063f877cb1990606401600060405180830381865afa15801562000130573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526200015a919081019062000194565b602b90620001699082620002f8565b503480156200017757600080fd5b50620003c4565b634e487b7160e01b600052604160045260246000fd5b60006020808385031215620001a857600080fd5b82516001600160401b0380821115620001c057600080fd5b818501915085601f830112620001d557600080fd5b815181811115620001ea57620001ea6200017e565b604051601f8201601f19908116603f011681019083821181831017156200021557620002156200017e565b8160405282815288868487010111156200022e57600080fd5b600093505b8284101562000252578484018601518185018701529285019262000233565b600086848301015280965050505050505092915050565b600181811c908216806200027e57607f821691505b6020821081036200029f57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115620002f357600081815260208120601f850160051c81016020861015620002ce5750805b601f850160051c820191505b81811015620002ef57828155600101620002da565b5050505b505050565b81516001600160401b038111156200031457620003146200017e565b6200032c8162000325845462000269565b84620002a5565b602080601f8311600181146200036457600084156200034b5750858301515b600019600386901b1c1916600185901b178555620002ef565b600085815260208120601f198616915b82811015620003955788860151825594840194600190910190840162000374565b5085821015620003b45787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b611de480620003d46000396000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806366d9a9a011610097578063b5508aa911610066578063b5508aa9146101d2578063ba414fa6146101da578063e20c9f71146101f2578063fa7626d4146101fa57600080fd5b806366d9a9a01461018d57806385226c81146101a2578063916a17c6146101b7578063ab75e7c3146101bf57600080fd5b80633e5e0d26116100d35780633e5e0d261461013f5780633e5e3c23146101525780633f7286f41461015a578063507ffba51461016257600080fd5b80630a9254e4146100fa57806310716760146101045780631ed7831c1461012a575b600080fd5b610102610207565b005b6101176101123660046117ad565b610521565b6040519081526020015b60405180910390f35b6101326105a4565b60405161012191906117f8565b61011761014d366004611845565b610606565b610132610874565b6101326108d4565b6101756101703660046118ae565b610934565b6040516001600160a01b039091168152602001610121565b610195610a4c565b604051610121919061195f565b6101aa610b3b565b6040516101219190611a62565b610195610c0b565b6101026101cd366004611ac4565b610cf1565b6101aa610ff7565b6101e26110c7565b6040519015158152602001610121565b6101326111f4565b6007546101e29060ff1681565b61022d60405180604001604052806005815260200164616c69636560d81b815250610934565b601c80546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260038152623137b160e91b602082015261027090610934565b601d80546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600681526563656c696e6560d01b60208201526102b690610934565b601e80546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260038152623230b760e91b60208201526102f990610934565b601f80546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600381526265766560e81b602082015261033c90610934565b602060006101000a8154816001600160a01b0302191690836001600160a01b0316021790555061038b604051806040016040528060088152602001673232b83637bcb2b960c11b815250610934565b602280546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600681526536b4b73a32b960d11b60208201526103d190610934565b602180546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600c81526b3332b2a1b7b63632b1ba37b960a11b602082015261041d90610934565b602380546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600e81526d39bbb2b2b821b7b63632b1ba37b960911b602082015261046b90610934565b602480546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600a815269676f7665726e616e636560b01b60208201526104b590610934565b602580546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260068152653830bab9b2b960d11b60208201526104fb90610934565b602680546001600160a01b0319166001600160a01b039290921691909117905542602955565b6040516370a0823160e01b81526001600160a01b03808516600483015260009161059c91869186918216906370a0823190602401602060405180830381865afa158015610572573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105969190611af0565b85610606565b949350505050565b606060148054806020026020016040519081016040528092919081815260200182805480156105fc57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116105de575b5050505050905090565b6040516370a0823160e01b81526001600160a01b03858116600483015260009182918616906370a0823190602401602060405180830381865afa158015610651573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106759190611af0565b9050808411156106985760405163188c93a560e31b815260040160405180910390fd5b7f885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d60001c6001600160a01b03166390c5013b6040518163ffffffff1660e01b8152600401600060405180830381600087803b1580156106f657600080fd5b505af115801561070a573d6000803e3d6000fd5b50506040516303223eab60e11b81526001600160a01b0389166004820152737109709ecfa91a80626ff3989d68f67f5b1dd12d92506306447d569150602401600060405180830381600087803b15801561076357600080fd5b505af1158015610777573d6000803e3d6000fd5b505060405163c88a5e6d60e01b81526001600160a01b0389166004820152670de0b6b3a76400006024820152737109709ecfa91a80626ff3989d68f67f5b1dd12d925063c88a5e6d9150604401600060405180830381600087803b1580156107de57600080fd5b505af11580156107f2573d6000803e3d6000fd5b505060405163a9059cbb60e01b81526001600160a01b038681166004830152602482018890528816925063a9059cbb91506044016020604051808303816000875af1158015610845573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108699190611b09565b509295945050505050565b606060168054806020026020016040519081016040528092919081815260200182805480156105fc576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116105de575050505050905090565b606060158054806020026020016040519081016040528092919081815260200182805480156105fc576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116105de575050505050905090565b6000816040516020016109479190611b32565b60408051601f198184030181529082905280516020909101206318caf8e360e31b82529150737109709ecfa91a80626ff3989d68f67f5b1dd12d9063c657c718906109989084908690600401611b45565b600060405180830381600087803b1580156109b257600080fd5b505af11580156109c6573d6000803e3d6000fd5b505060405163c88a5e6d60e01b81526001600160a01b038416600482015269021e19e0c9bab24000006024820152737109709ecfa91a80626ff3989d68f67f5b1dd12d925063c88a5e6d9150604401600060405180830381600087803b158015610a2f57600080fd5b505af1158015610a43573d6000803e3d6000fd5b50505050919050565b60606019805480602002602001604051908101604052809291908181526020016000905b82821015610b325760008481526020908190206040805180820182526002860290920180546001600160a01b03168352600181018054835181870281018701909452808452939491938583019392830182828015610b1a57602002820191906000526020600020906000905b82829054906101000a900460e01b6001600160e01b03191681526020019060040190602082600301049283019260010382029150808411610adc5790505b50505050508152505081526020019060010190610a70565b50505050905090565b60606018805480602002602001604051908101604052809291908181526020016000905b82821015610b32578382906000526020600020018054610b7e90611b69565b80601f0160208091040260200160405190810160405280929190818152602001828054610baa90611b69565b8015610bf75780601f10610bcc57610100808354040283529160200191610bf7565b820191906000526020600020905b815481529060010190602001808311610bda57829003601f168201915b505050505081526020019060010190610b5f565b6060601a805480602002602001604051908101604052809291908181526020016000905b82821015610b325760008481526020908190206040805180820182526002860290920180546001600160a01b03168352600181018054835181870281018701909452808452939491938583019392830182828015610cd957602002820191906000526020600020906000905b82829054906101000a900460e01b6001600160e01b03191681526020019060040190602082600301049283019260010382029150808411610c9b5790505b50505050508152505081526020019060010190610c2f565b60008212801590610d2657610d2184831015604051806060016040528060368152602001611d7960369139611254565b610d4a565b610d4a828511604051806060016040528060278152602001611ce060279139611254565b600081610d575784610d61565b610d618486611bb9565b905060008215610d715785610d84565b610d7a85611bd2565b610d849087611bee565b905080841080610d9357508184115b15610e0c57610dce848260405180604001604052806013815260200172195e18d959591cc81b1bddd95c88189bdd5b99606a1b81525061128b565b610e04848360405180604001604052806013815260200172195e18d959591cc81d5c1c195c88189bdd5b99606a1b8152506112c7565b505050505050565b8215610efb576000610e1e8786611bee565b905085811015610ed25760408051808201909152601a81527f507265636973696f6e20696e637265617365642062793a2025730000000000006020820152610e6f90610e6a8389611bee565b6112fe565b610e9e6040518060400160405280600d81526020016c4f6c642044656c74613a20257360981b81525087611343565b610ecd6040518060400160405280600d81526020016c4e65772044656c74613a20257360981b815250826112fe565b610ef5565b610ef58386604051806060016040528060298152602001611d0760299139611388565b50610e04565b6000610f078588611bee565b9050610f1286611bd2565b811015610fcb57610f676040518060400160405280601a81526020017f507265636973696f6e20696e637265617365642062793a2025730000000000008152508288610f5d90611bd2565b610e6a9190611bee565b610f966040518060400160405280600d81526020016c4f6c642044656c74613a20257360981b81525087611343565b610fc66040518060400160405280600e81526020016d4e65772044656c74613a202d257360901b815250826112fe565b610fee565b610fee8286604051806060016040528060298152602001611d3060299139611388565b50505050505050565b60606017805480602002602001604051908101604052809291908181526020016000905b82821015610b3257838290600052602060002001805461103a90611b69565b80601f016020809104026020016040519081016040528092919081815260200182805461106690611b69565b80156110b35780601f10611088576101008083540402835291602001916110b3565b820191906000526020600020905b81548152906001019060200180831161109657829003601f168201915b50505050508152602001906001019061101b565b600754600090610100900460ff16156110e95750600754610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b156111ef5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091611177917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc491608001611c01565b60408051601f198184030181529082905261119191611c32565b6000604051808303816000865af19150503d80600081146111ce576040519150601f19603f3d011682016040523d82523d6000602084013e6111d3565b606091505b50915050808060200190518101906111eb9190611b09565b9150505b919050565b606060138054806020026020016040519081016040528092919081815260200182805480156105fc576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116105de575050505050905090565b8161128757600080516020611cc0833981519152816040516112769190611c4e565b60405180910390a1611287826113be565b5050565b818310156112c257600080516020611cc0833981519152816040516112b09190611c4e565b60405180910390a16112c28383611423565b505050565b818311156112c257600080516020611cc0833981519152816040516112ec9190611c4e565b60405180910390a16112c28383611518565b6112878282604051602401611314929190611c7d565b60408051601f198184030181529190526020810180516001600160e01b0316632d839cb360e21b179052611578565b6112878282604051602401611359929190611c7d565b60408051601f198184030181529190526020810180516001600160e01b0316631e53134760e11b179052611578565b8183146112c257600080516020611cc0833981519152816040516113ac9190611c4e565b60405180910390a16112c28383611581565b8061142057600080516020611ca08339815191526040516114109060208082526017908201527f4572726f723a20417373657274696f6e204661696c6564000000000000000000604082015260600190565b60405180910390a161142061166b565b50565b8082101561128757600080516020611ca08339815191526040516114839060208082526022908201527f4572726f723a2061203e3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b60405180910390a16040805181815260098183015268202056616c7565206160b81b6060820152602081018490529051600080516020611d598339815191529181900360800190a1604080518181526009918101919091526810102b30b63ab2903160b91b606082015260208101829052600080516020611d59833981519152906080015b60405180910390a161128761166b565b8082111561128757600080516020611ca08339815191526040516114839060208082526022908201527f4572726f723a2061203c3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b61142081611777565b80821461128757600080516020611ca08339815191526040516115e09060208082526022908201527f4572726f723a2061203d3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b60405180910390a160408051818152600a81830152690808080808081319599d60b21b6060820152602081018490529051600080516020611d598339815191529181900360800190a160408051818152600a91810191909152690808080808149a59da1d60b21b606082015260208101829052600080516020611d5983398151915290608001611508565b737109709ecfa91a80626ff3989d68f67f5b1dd12d3b156117665760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b9282019290925260016060820152600091907f70ca10bbd0dbfd9020a9f4b13402c16cb120705e0d1c0aeab10fa353ae586fc49060800160408051601f19818403018152908290526117059291602001611c01565b60408051601f198184030181529082905261171f91611c32565b6000604051808303816000865af19150503d806000811461175c576040519150601f19603f3d011682016040523d82523d6000602084013e611761565b606091505b505050505b6007805461ff001916610100179055565b80516a636f6e736f6c652e6c6f67602083016000808483855afa5050505050565b6001600160a01b038116811461142057600080fd5b6000806000606084860312156117c257600080fd5b83356117cd81611798565b925060208401356117dd81611798565b915060408401356117ed81611798565b809150509250925092565b6020808252825182820181905260009190848201906040850190845b818110156118395783516001600160a01b031683529284019291840191600101611814565b50909695505050505050565b6000806000806080858703121561185b57600080fd5b843561186681611798565b9350602085013561187681611798565b925060408501359150606085013561188d81611798565b939692955090935050565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156118c057600080fd5b813567ffffffffffffffff808211156118d857600080fd5b818401915084601f8301126118ec57600080fd5b8135818111156118fe576118fe611898565b604051601f8201601f19908116603f0116810190838211818310171561192657611926611898565b8160405282815287602084870101111561193f57600080fd5b826020860160208301376000928101602001929092525095945050505050565b60006020808301818452808551808352604092508286019150828160051b8701018488016000805b84811015611a0357898403603f19018652825180516001600160a01b03168552880151888501889052805188860181905290890190839060608701905b808310156119ee5783516001600160e01b0319168252928b019260019290920191908b01906119c4565b50978a01979550505091870191600101611987565b50919998505050505050505050565b60005b83811015611a2d578181015183820152602001611a15565b50506000910152565b60008151808452611a4e816020860160208601611a12565b601f01601f19169290920160200192915050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b82811015611ab757603f19888603018452611aa5858351611a36565b94509285019290850190600101611a89565b5092979650505050505050565b600080600060608486031215611ad957600080fd5b505081359360208301359350604090920135919050565b600060208284031215611b0257600080fd5b5051919050565b600060208284031215611b1b57600080fd5b81518015158114611b2b57600080fd5b9392505050565b602081526000611b2b6020830184611a36565b6001600160a01b038316815260406020820181905260009061059c90830184611a36565b600181811c90821680611b7d57607f821691505b602082108103611b9d57634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b80820180821115611bcc57611bcc611ba3565b92915050565b6000600160ff1b8201611be757611be7611ba3565b5060000390565b81810381811115611bcc57611bcc611ba3565b6001600160e01b0319831681528151600090611c24816004850160208701611a12565b919091016004019392505050565b60008251611c44818460208701611a12565b9190910192915050565b60408152600560408201526422b93937b960d91b6060820152608060208201526000611b2b6080830184611a36565b604081526000611c906040830185611a36565b9050826020830152939250505056fe41304facd9323d75b11bcdd609cb38effffdb05710f7caf0e9b16c6d9d709f50280f4446b28a1372417dda658d30b95b2992b12ac9c7f378535f29a97acf35835f74617267657456616c75652073686f756c64206265206c657373207468616e205f76616c75656578706563746564207570706572426f756e6420746f206d61746368205f74617267657456616c75656578706563746564206c6f776572426f756e6420746f206d61746368205f74617267657456616c7565b2de2fbe801a0df6c0cbddfd448ba3c41d48a040ca35c56c8196ef0fcae721a85f74617267657456616c75652073686f756c642062652067726561746572207468616e206f7220657175616c20746f205f76616c7565a2646970667358221220b07e40feb78775ea9d53f1220c604901e506b4da8ff9a7467963baf34909368d64736f6c63430008140033";
@@ -1226,10 +1226,10 @@ export declare const BaseTest: {
         readonly id: 154918;
         readonly exportedSymbols: {
             readonly BaseTest: readonly [154917];
-            readonly ERC20ForwarderFactory: readonly [23806];
-            readonly IERC20: readonly [10319];
-            readonly Test: readonly [39597];
-            readonly console2: readonly [57323];
+            readonly ERC20ForwarderFactory: readonly [23854];
+            readonly IERC20: readonly [10358];
+            readonly Test: readonly [39645];
+            readonly console2: readonly [57371];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:5707:230";
@@ -1248,14 +1248,14 @@ export declare const BaseTest: {
             readonly file: "forge-std/console2.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 154918;
-            readonly sourceUnit: 57324;
+            readonly sourceUnit: 57372;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 154359;
                     readonly name: "console2";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 57323;
+                    readonly referencedDeclaration: 57371;
                     readonly src: "73:8:230";
                     readonly typeDescriptions: {};
                 };
@@ -1271,14 +1271,14 @@ export declare const BaseTest: {
             readonly file: "forge-std/Test.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 154918;
-            readonly sourceUnit: 39598;
+            readonly sourceUnit: 39646;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 154361;
                     readonly name: "Test";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 39597;
+                    readonly referencedDeclaration: 39645;
                     readonly src: "124:4:230";
                     readonly typeDescriptions: {};
                 };
@@ -1294,14 +1294,14 @@ export declare const BaseTest: {
             readonly file: "contracts/src/interfaces/IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 154918;
-            readonly sourceUnit: 10320;
+            readonly sourceUnit: 10359;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 154363;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10319;
+                    readonly referencedDeclaration: 10358;
                     readonly src: "167:6:230";
                     readonly typeDescriptions: {};
                 };
@@ -1317,14 +1317,14 @@ export declare const BaseTest: {
             readonly file: "contracts/src/token/ERC20ForwarderFactory.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 154918;
-            readonly sourceUnit: 23807;
+            readonly sourceUnit: 23855;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 154365;
                     readonly name: "ERC20ForwarderFactory";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 23806;
+                    readonly referencedDeclaration: 23854;
                     readonly src: "229:21:230";
                     readonly typeDescriptions: {};
                 };
@@ -1348,7 +1348,7 @@ export declare const BaseTest: {
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23806";
+                    readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23854";
                     readonly typeString: "contract ERC20ForwarderFactory";
                 };
                 readonly typeName: {
@@ -1359,13 +1359,13 @@ export declare const BaseTest: {
                         readonly name: "ERC20ForwarderFactory";
                         readonly nameLocations: readonly ["340:21:230"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 23806;
+                        readonly referencedDeclaration: 23854;
                         readonly src: "340:21:230";
                     };
-                    readonly referencedDeclaration: 23806;
+                    readonly referencedDeclaration: 23854;
                     readonly src: "340:21:230";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23806";
+                        readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23854";
                         readonly typeString: "contract ERC20ForwarderFactory";
                     };
                 };
@@ -1840,10 +1840,10 @@ export declare const BaseTest: {
                             readonly name: "vm";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 30022;
+                            readonly referencedDeclaration: 30070;
                             readonly src: "814:2:230";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                readonly typeIdentifier: "t_contract$_Vm_$41182";
                                 readonly typeString: "contract Vm";
                             };
                         };
@@ -1855,7 +1855,7 @@ export declare const BaseTest: {
                         readonly memberLocation: "817:9:230";
                         readonly memberName: "envString";
                         readonly nodeType: "MemberAccess";
-                        readonly referencedDeclaration: 39738;
+                        readonly referencedDeclaration: 39786;
                         readonly src: "814:12:230";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
@@ -1932,10 +1932,10 @@ export declare const BaseTest: {
                             readonly name: "vm";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 30022;
+                            readonly referencedDeclaration: 30070;
                             readonly src: "875:2:230";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                readonly typeIdentifier: "t_contract$_Vm_$41182";
                                 readonly typeString: "contract Vm";
                             };
                         };
@@ -1947,7 +1947,7 @@ export declare const BaseTest: {
                         readonly memberLocation: "878:9:230";
                         readonly memberName: "envString";
                         readonly nodeType: "MemberAccess";
-                        readonly referencedDeclaration: 39738;
+                        readonly referencedDeclaration: 39786;
                         readonly src: "875:12:230";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
@@ -3012,10 +3012,10 @@ export declare const BaseTest: {
                                         readonly name: "vm";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 30022;
+                                        readonly referencedDeclaration: 30070;
                                         readonly src: "1535:2:230";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                            readonly typeIdentifier: "t_contract$_Vm_$41182";
                                             readonly typeString: "contract Vm";
                                         };
                                     };
@@ -3027,7 +3027,7 @@ export declare const BaseTest: {
                                     readonly memberLocation: "1538:10:230";
                                     readonly memberName: "createFork";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 41002;
+                                    readonly referencedDeclaration: 41050;
                                     readonly src: "1535:13:230";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_uint256_$";
@@ -3083,10 +3083,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "1575:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3098,7 +3098,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "1578:10:230";
                                 readonly memberName: "selectFork";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 41041;
+                                readonly referencedDeclaration: 41089;
                                 readonly src: "1575:13:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
@@ -3148,10 +3148,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "1613:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3163,7 +3163,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "1616:8:230";
                                 readonly memberName: "rollFork";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 41052;
+                                readonly referencedDeclaration: 41100;
                                 readonly src: "1613:11:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
@@ -3331,10 +3331,10 @@ export declare const BaseTest: {
                                         readonly name: "vm";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 30022;
+                                        readonly referencedDeclaration: 30070;
                                         readonly src: "1756:2:230";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                            readonly typeIdentifier: "t_contract$_Vm_$41182";
                                             readonly typeString: "contract Vm";
                                         };
                                     };
@@ -3346,7 +3346,7 @@ export declare const BaseTest: {
                                     readonly memberLocation: "1759:10:230";
                                     readonly memberName: "createFork";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 41002;
+                                    readonly referencedDeclaration: 41050;
                                     readonly src: "1756:13:230";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_uint256_$";
@@ -3402,10 +3402,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "1795:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3417,7 +3417,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "1798:10:230";
                                 readonly memberName: "selectFork";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 41041;
+                                readonly referencedDeclaration: 41089;
                                 readonly src: "1795:13:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
@@ -3467,10 +3467,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "1832:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3482,7 +3482,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "1835:8:230";
                                 readonly memberName: "rollFork";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 41052;
+                                readonly referencedDeclaration: 41100;
                                 readonly src: "1832:11:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
@@ -3890,10 +3890,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "2081:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3905,7 +3905,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2084:5:230";
                                 readonly memberName: "label";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40004;
+                                readonly referencedDeclaration: 40052;
                                 readonly src: "2081:8:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$";
@@ -3974,10 +3974,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "2112:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -3989,7 +3989,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2115:4:230";
                                 readonly memberName: "deal";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40771;
+                                readonly referencedDeclaration: 40819;
                                 readonly src: "2112:7:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$";
@@ -4123,7 +4123,7 @@ export declare const BaseTest: {
                                 readonly referencedDeclaration: 154595;
                                 readonly src: "2309:5:230";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                    readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                     readonly typeString: "contract IERC20";
                                 };
                             }, {
@@ -4152,7 +4152,7 @@ export declare const BaseTest: {
                                         readonly referencedDeclaration: 154595;
                                         readonly src: "2316:5:230";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                             readonly typeString: "contract IERC20";
                                         };
                                     };
@@ -4164,7 +4164,7 @@ export declare const BaseTest: {
                                     readonly memberLocation: "2322:9:230";
                                     readonly memberName: "balanceOf";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 10318;
+                                    readonly referencedDeclaration: 10357;
                                     readonly src: "2316:15:230";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
@@ -4203,7 +4203,7 @@ export declare const BaseTest: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }, {
-                                    readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                    readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                     readonly typeString: "contract IERC20";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
@@ -4219,7 +4219,7 @@ export declare const BaseTest: {
                                 readonly referencedDeclaration: 154669;
                                 readonly src: "2288:13:230";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$10319_$_t_uint256_$_t_address_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$10358_$_t_uint256_$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address,contract IERC20,uint256,address) returns (uint256)";
                                 };
                             };
@@ -4293,7 +4293,7 @@ export declare const BaseTest: {
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
@@ -4304,13 +4304,13 @@ export declare const BaseTest: {
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["2207:6:230"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10319;
+                                readonly referencedDeclaration: 10358;
                                 readonly src: "2207:6:230";
                             };
-                            readonly referencedDeclaration: 10319;
+                            readonly referencedDeclaration: 10358;
                             readonly src: "2207:6:230";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                 readonly typeString: "contract IERC20";
                             };
                         };
@@ -4447,7 +4447,7 @@ export declare const BaseTest: {
                                     readonly referencedDeclaration: 154618;
                                     readonly src: "2532:5:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -4459,7 +4459,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2538:9:230";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10318;
+                                readonly referencedDeclaration: 10357;
                                 readonly src: "2532:15:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
@@ -4576,10 +4576,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "2630:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -4591,7 +4591,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2633:9:230";
                                 readonly memberName: "stopPrank";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40754;
+                                readonly referencedDeclaration: 40802;
                                 readonly src: "2630:12:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$__$returns$__$";
@@ -4641,10 +4641,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "2654:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -4656,7 +4656,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2657:10:230";
                                 readonly memberName: "startPrank";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40737;
+                                readonly referencedDeclaration: 40785;
                                 readonly src: "2654:13:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$returns$__$";
@@ -4725,10 +4725,10 @@ export declare const BaseTest: {
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 30022;
+                                    readonly referencedDeclaration: 30070;
                                     readonly src: "2684:2:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                        readonly typeIdentifier: "t_contract$_Vm_$41182";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
@@ -4740,7 +4740,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2687:4:230";
                                 readonly memberName: "deal";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40771;
+                                readonly referencedDeclaration: 40819;
                                 readonly src: "2684:7:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$";
@@ -4807,7 +4807,7 @@ export declare const BaseTest: {
                                     readonly referencedDeclaration: 154618;
                                     readonly src: "2717:5:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -4819,7 +4819,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2723:8:230";
                                 readonly memberName: "transfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10264;
+                                readonly referencedDeclaration: 10303;
                                 readonly src: "2717:14:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$";
@@ -4912,7 +4912,7 @@ export declare const BaseTest: {
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
@@ -4923,13 +4923,13 @@ export declare const BaseTest: {
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["2411:6:230"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10319;
+                                readonly referencedDeclaration: 10358;
                                 readonly src: "2411:6:230";
                             };
-                            readonly referencedDeclaration: 10319;
+                            readonly referencedDeclaration: 10358;
                             readonly src: "2411:6:230";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                 readonly typeString: "contract IERC20";
                             };
                         };
@@ -5092,7 +5092,7 @@ export declare const BaseTest: {
                                     readonly referencedDeclaration: 154674;
                                     readonly src: "2959:5:230";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -5104,7 +5104,7 @@ export declare const BaseTest: {
                                 readonly memberLocation: "2965:9:230";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10318;
+                                readonly referencedDeclaration: 10357;
                                 readonly src: "2959:15:230";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
@@ -5155,7 +5155,7 @@ export declare const BaseTest: {
                                         readonly referencedDeclaration: 154674;
                                         readonly src: "3158:5:230";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                             readonly typeString: "contract IERC20";
                                         };
                                     }, {
@@ -5256,7 +5256,7 @@ export declare const BaseTest: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }, {
-                                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                             readonly typeString: "contract IERC20";
                                         }, {
                                             readonly typeIdentifier: "t_uint256";
@@ -5272,7 +5272,7 @@ export declare const BaseTest: {
                                         readonly referencedDeclaration: 154669;
                                         readonly src: "3103:13:230";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$10319_$_t_uint256_$_t_address_$returns$_t_uint256_$";
+                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$10358_$_t_uint256_$_t_address_$returns$_t_uint256_$";
                                             readonly typeString: "function (address,contract IERC20,uint256,address) returns (uint256)";
                                         };
                                     };
@@ -5344,10 +5344,10 @@ export declare const BaseTest: {
                                             readonly name: "vm";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 30022;
+                                            readonly referencedDeclaration: 30070;
                                             readonly src: "3330:2:230";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Vm_$41134";
+                                                readonly typeIdentifier: "t_contract$_Vm_$41182";
                                                 readonly typeString: "contract Vm";
                                             };
                                         };
@@ -5359,7 +5359,7 @@ export declare const BaseTest: {
                                         readonly memberLocation: "3333:10:230";
                                         readonly memberName: "startPrank";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 40737;
+                                        readonly referencedDeclaration: 40785;
                                         readonly src: "3330:13:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$returns$__$";
@@ -5482,7 +5482,7 @@ export declare const BaseTest: {
                                             readonly referencedDeclaration: 154674;
                                             readonly src: "3370:5:230";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         };
@@ -5494,7 +5494,7 @@ export declare const BaseTest: {
                                         readonly memberLocation: "3376:7:230";
                                         readonly memberName: "approve";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10254;
+                                        readonly referencedDeclaration: 10293;
                                         readonly src: "3370:13:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$";
@@ -5712,7 +5712,7 @@ export declare const BaseTest: {
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
@@ -5723,13 +5723,13 @@ export declare const BaseTest: {
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["2838:6:230"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10319;
+                                readonly referencedDeclaration: 10358;
                                 readonly src: "2838:6:230";
                             };
-                            readonly referencedDeclaration: 10319;
+                            readonly referencedDeclaration: 10358;
                             readonly src: "2838:6:230";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                 readonly typeString: "contract IERC20";
                             };
                         };
@@ -5985,8 +5985,8 @@ export declare const BaseTest: {
                                         readonly id: 154758;
                                         readonly name: "assertTrue";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [27941, 27962];
-                                        readonly referencedDeclaration: 27962;
+                                        readonly overloadedDeclarations: readonly [27989, 28010];
+                                        readonly referencedDeclaration: 28010;
                                         readonly src: "3807:10:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_bool_$_t_string_memory_ptr_$returns$__$";
@@ -6091,8 +6091,8 @@ export declare const BaseTest: {
                                         readonly id: 154750;
                                         readonly name: "assertTrue";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [27941, 27962];
-                                        readonly referencedDeclaration: 27962;
+                                        readonly overloadedDeclarations: readonly [27989, 28010];
+                                        readonly referencedDeclaration: 28010;
                                         readonly src: "3638:10:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_bool_$_t_string_memory_ptr_$returns$__$";
@@ -6618,8 +6618,8 @@ export declare const BaseTest: {
                                         readonly id: 154800;
                                         readonly name: "assertGe";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [28972, 28997, 29027, 29052];
-                                        readonly referencedDeclaration: 28997;
+                                        readonly overloadedDeclarations: readonly [29020, 29045, 29075, 29100];
+                                        readonly referencedDeclaration: 29045;
                                         readonly src: "4259:8:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$";
@@ -6699,8 +6699,8 @@ export declare const BaseTest: {
                                         readonly id: 154806;
                                         readonly name: "assertLe";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [29440, 29465, 29495, 29520];
-                                        readonly referencedDeclaration: 29465;
+                                        readonly overloadedDeclarations: readonly [29488, 29513, 29543, 29568];
+                                        readonly referencedDeclaration: 29513;
                                         readonly src: "4330:8:230";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$";
@@ -6981,8 +6981,8 @@ export declare const BaseTest: {
                                                 readonly id: 154905;
                                                 readonly name: "assertEq";
                                                 readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [30157, 30182, 30195, 30211, 30253, 30295, 30337, 30374, 30411, 30448, 27992, 28017, 28047, 28072, 28131, 28156, 28186, 28211, 29684, 29719];
-                                                readonly referencedDeclaration: 28211;
+                                                readonly overloadedDeclarations: readonly [30205, 30230, 30243, 30259, 30301, 30343, 30385, 30422, 30459, 30496, 28040, 28065, 28095, 28120, 28179, 28204, 28234, 28259, 29732, 29767];
+                                                readonly referencedDeclaration: 28259;
                                                 readonly src: "5555:8:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$";
@@ -7145,10 +7145,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "5264:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7160,7 +7160,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "5273:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49950;
+                                                readonly referencedDeclaration: 49998;
                                                 readonly src: "5264:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$";
@@ -7228,10 +7228,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "5416:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7243,7 +7243,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "5425:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49967;
+                                                readonly referencedDeclaration: 50015;
                                                 readonly src: "5416:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_int256_$returns$__$";
@@ -7311,10 +7311,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "5471:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7326,7 +7326,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "5480:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49950;
+                                                readonly referencedDeclaration: 49998;
                                                 readonly src: "5471:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$";
@@ -7579,8 +7579,8 @@ export declare const BaseTest: {
                                                 readonly id: 154855;
                                                 readonly name: "assertEq";
                                                 readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [30157, 30182, 30195, 30211, 30253, 30295, 30337, 30374, 30411, 30448, 27992, 28017, 28047, 28072, 28131, 28156, 28186, 28211, 29684, 29719];
-                                                readonly referencedDeclaration: 28211;
+                                                readonly overloadedDeclarations: readonly [30205, 30230, 30243, 30259, 30301, 30343, 30385, 30422, 30459, 30496, 28040, 28065, 28095, 28120, 28179, 28204, 28234, 28259, 29732, 29767];
+                                                readonly referencedDeclaration: 28259;
                                                 readonly src: "4947:8:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$";
@@ -7728,10 +7728,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "4658:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7743,7 +7743,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "4667:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49950;
+                                                readonly referencedDeclaration: 49998;
                                                 readonly src: "4658:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$";
@@ -7811,10 +7811,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "4809:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7826,7 +7826,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "4818:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49967;
+                                                readonly referencedDeclaration: 50015;
                                                 readonly src: "4809:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_int256_$returns$__$";
@@ -7894,10 +7894,10 @@ export declare const BaseTest: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "4864:8:230";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -7909,7 +7909,7 @@ export declare const BaseTest: {
                                                 readonly memberLocation: "4873:3:230";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49950;
+                                                readonly referencedDeclaration: 49998;
                                                 readonly src: "4864:12:230";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$";
@@ -8049,7 +8049,7 @@ export declare const BaseTest: {
                     readonly name: "Test";
                     readonly nameLocations: readonly ["329:4:230"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 39597;
+                    readonly referencedDeclaration: 39645;
                     readonly src: "329:4:230";
                 };
                 readonly id: 154368;
@@ -8061,14 +8061,14 @@ export declare const BaseTest: {
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
             readonly internalFunctionIDs: {
-                readonly "49252": 1;
+                readonly "49300": 1;
             };
-            readonly linearizedBaseContracts: readonly [154917, 39597, 39546, 35284, 34994, 34230, 32176, 31456, 29963, 30029, 30026];
+            readonly linearizedBaseContracts: readonly [154917, 39645, 39594, 35332, 35042, 34278, 32224, 31504, 30011, 30077, 30074];
             readonly name: "BaseTest";
             readonly nameLocation: "317:8:230";
             readonly scope: 154918;
             readonly usedErrors: readonly [154395, 154397];
-            readonly usedEvents: readonly [27677, 27681, 27685, 27689, 27693, 27697, 27701, 27705, 27711, 27717, 27725, 27733, 27739, 27745, 27751, 27757, 30051, 30056, 30061, 30068, 30075, 30082];
+            readonly usedEvents: readonly [27725, 27729, 27733, 27737, 27741, 27745, 27749, 27753, 27759, 27765, 27773, 27781, 27787, 27793, 27799, 27805, 30099, 30104, 30109, 30116, 30123, 30130];
         }];
         readonly license: "Apache-2.0";
     };

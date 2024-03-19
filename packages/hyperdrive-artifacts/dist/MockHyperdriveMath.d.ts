@@ -1,631 +1,631 @@
 export declare const MockHyperdriveMath: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ExpInvalidExponent";
-        readonly type: "error";
-    }, {
+        readonly type: "function";
+        readonly name: "calculateAbsoluteMaxLong";
         readonly inputs: readonly [{
-            readonly internalType: "enum IHyperdrive.InsufficientLiquidityReason";
-            readonly name: "reason";
-            readonly type: "uint8";
-        }];
-        readonly name: "InsufficientLiquidity";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "LnInvalidInput";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToInt256";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
             readonly name: "_params";
             readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
         }, {
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_spotPrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateAbsoluteMaxLong";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateCloseLong";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountIn";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_normalizedTimeRemaining";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateCloseLong";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateCloseShort";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountOut";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_normalizedTimeRemaining";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateCloseShort";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateInitialBondReserves";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_apr";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_positionDuration";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateInitialBondReserves";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
-            readonly name: "_params";
-            readonly type: "tuple";
-        }, {
-            readonly internalType: "int256";
-            readonly name: "_checkpointExposure";
-            readonly type: "int256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_maxIterations";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "calculateMaxLong";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
             readonly name: "_params";
             readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
         }, {
-            readonly internalType: "int256";
             readonly name: "_checkpointExposure";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_maxIterations";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateMaxShort";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateMaxShort";
         readonly inputs: readonly [{
+            readonly name: "_params";
+            readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }, {
+            readonly name: "_checkpointExposure";
+            readonly type: "int256";
+            readonly internalType: "int256";
+        }, {
+            readonly name: "_maxIterations";
+            readonly type: "uint256";
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateNegativeInterestOnClose";
+        readonly inputs: readonly [{
             readonly name: "_shareProceeds";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_shareReservesDelta";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_shareCurveDelta";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_totalGovernanceFee";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_openVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_closeVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "bool";
             readonly name: "_isLong";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "calculateNegativeInterestOnClose";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "int256";
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_effectiveShareReserves";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_bondReserves";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_amountIn";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_timeStretch";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_initialVaultSharePrice";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "calculateOpenLong";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountIn";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "calculateOpenShort";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_bondAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_openVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_closeVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_flatFee";
-            readonly type: "uint256";
-        }];
-        readonly name: "calculateShortProceedsDown";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_bondAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_openVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_closeVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_flatFee";
-            readonly type: "uint256";
-        }];
-        readonly name: "calculateShortProceedsUp";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
+            readonly name: "_amountIn";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_timeStretch";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateShortProceedsDown";
+        readonly inputs: readonly [{
+            readonly name: "_bondAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_openVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_closeVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_flatFee";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateShortProceedsUp";
+        readonly inputs: readonly [{
+            readonly name: "_bondAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_openVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_closeVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_flatFee";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateSpotAPR";
+        readonly inputs: readonly [{
+            readonly name: "_effectiveShareReserves";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_bondReserves";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_initialVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "_positionDuration";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateSpotAPR";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateSpotPrice";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_shareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateSpotPrice";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateTimeStretch";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "apr";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "positionDuration";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateTimeStretch";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "ExpInvalidExponent";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InsufficientLiquidity";
+        readonly inputs: readonly [{
+            readonly name: "reason";
+            readonly type: "uint8";
+            readonly internalType: "enum IHyperdrive.InsufficientLiquidityReason";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "LnInvalidInput";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToInt256";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b506123e5806100206000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063902b10991161008c578063a280a28211610066578063a280a28214610218578063dbab85121461022b578063e7acd3ad1461023e578063f87845f21461025157600080fd5b8063902b1099146101c457806394169d49146101d75780639e489b991461020557600080fd5b80635e6d9d36116100c85780635e6d9d36146101505780636ceebe1d146101635780637ef99f871461017657806382a4d306146101b157600080fd5b80632471caed146100ef5780632810a036146101155780633f77b61714610128575b600080fd5b6101026100fd366004612014565b610264565b6040519081526020015b60405180910390f35b610102610123366004612046565b61027d565b61013b610136366004612156565b610298565b6040805192835260208301919091520161010c565b61010261015e36600461218d565b6102b9565b61010261017136600461218d565b6102d6565b6101896101843660046121d0565b6102e7565b604080519586526020860194909452928401919091526060830152608082015260a00161010c565b6101026101bf366004612046565b61036b565b6101026101d236600461218d565b61037b565b6101ea6101e5366004612235565b61038c565b6040805193845260208401929092529082015260600161010c565b610102610213366004612156565b6103bc565b61013b610226366004612156565b6103d3565b610102610239366004612281565b6103e4565b61010261024c36600461218d565b6103fb565b6101ea61025f366004612235565b61040c565b60008061027386868686610424565b9695505050505050565b60008061028d8787878787610444565b979650505050505050565b6000806000806102a987878761047f565b909450925050505b935093915050565b6000806102ca888888888888610693565b98975050505050505050565b6000806102ca8888888888886106b4565b60008060008060006103216040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6103308d8d8d8d8d8d8d6106d5565b608086018190526060860182905260408601839052602086018490529484905292985090965094509250905097509750975097509792505050565b60008061028d8787878787610774565b6000806102ca888888888888610805565b6000806000806000806103a48d8d8d8d8d8d8d61084f565b919750955093505050505b9750975097945050505050565b60006103c98484846108be565b90505b9392505050565b6000806000806102a9878787610a70565b6000806103f18484610cc0565b9150505b92915050565b6000806102ca888888888888610d57565b6000806000806000806103a48d8d8d8d8d8d8d610d76565b600061043b82610435858888610dca565b90610de8565b95945050505050565b60008061045387878786610424565b905061028d61046782866301e13380610e4e565b61047983670de0b6b3a76400006122b9565b90610e74565b600080600061049686600001518760200151610e89565b905060006104b28288604001518960e001518a60a00151610424565b90506000806104c2898585610a70565b909250905060006104d68a8a858588610eb1565b91505080156104ed575090945092506102b1915050565b506104fa89838a86610fe9565b955061050889878686611089565b945060008061051a8b8b8a8a89610eb1565b915091508061058a5760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d61784c6f6044820152703733b01034b99034b739b7b63b32b73a1760791b60648201526084015b60405180910390fd5b60005b89811015610684578489106106005760405162461bcd60e51b815260206004820152603360248201527f52656163686564206162736f6c757465206d617820626f6e6420616d6f756e746044820152721034b7103033b2ba2fb6b0bc2fb637b733b01760691b6064820152608401610581565b600061060e8d8b8a8a6110dc565b935090508261061d5750610684565b60006106298583610e74565b610633908c6122cc565b905060006106438f838c8c611089565b90506106528f8f84848d610eb1565b9096509450841561066857819b50809a50610670565b505050610684565b5050508061067d906122df565b905061058d565b50505050505050935093915050565b600061028d8787876106ad88670de0b6b3a76400006122b9565b8787611175565b600061028d8787876106ce88670de0b6b3a76400006122b9565b8787611226565b600080600080600080888810156107445786156106fa576106f78d898b610dca565b9c505b6107058c898b610dca565b9b506107108b61124b565b6107198d61124b565b61072391906122f8565b90506107308b898b610dca565b9a5061073d8a898b610dca565b9950610763565b61074d8b61124b565b6107568d61124b565b61076091906122f8565b90505b9b9c9a9b999a975050505050505050565b600080610785846301e13380610e74565b905060006107938683611279565b6107a590670de0b6b3a76400006122cc565b9050670de0b6b3a764000081106107d9576107d26107cb670de0b6b3a764000086610e74565b8290610de8565b90506107f1565b6107ee6107cb670de0b6b3a76400008661128e565b90505b6102ca816107ff898b611279565b90611279565b60008061081d846108178a888a610e4e565b9061128e565b905061082a888486610e4e565b61083490826122cc565b9050868111156108445786810391505b509695505050505050565b6000808061087061086888670de0b6b3a76400006122b9565b899087610dca565b905086156103af576108828888611279565b91506108a38a8a8461089c8a670de0b6b3a76400006122b9565b8989611226565b92506108af83826122cc565b90509750975097945050505050565b6040805160608101825260008082526020820181905291810182905260006108ee86600001518760200151610e89565b9050600061090a8288604001518960e001518a60a00151610424565b9050600061091888846112a3565b9050610927888285858b6113c3565b15801560408701529085526109415793506103cc92505050565b600061094e89848a6114b9565b905061095d898286868c6113c3565b1515604087018190529086526109cf5760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d617853686044820152701bdc9d18081a5cc81a5b9cdbdb1d995b9d607a1b6064820152608401610581565b60005b87811015610a63576109e68a83868861158f565b15801560408901526020880191909152610a635760208601518651600091610a0e9190610e74565b610a1890846122cc565b905083811115610a285750610a63565b610a358b8288888e6113c3565b15801560408a0152908852610a4c57809250610a52565b50610a63565b50610a5c816122df565b90506109d2565b5098975050505050505050565b600080600080610aa68688604001518960a00151670de0b6b3a7640000610a9791906122b9565b8a60c001518b60e00151611616565b9050610af6876101400151670de0b6b3a7640000610ac491906122b9565b610af0670de0b6b3a7640000610ada818a61128e565b610ae491906122b9565b6101208b015190611645565b90611645565b9150610b26876101400151670de0b6b3a7640000610b1491906122b9565b61081784670de0b6b3a76400006122cc565b60a0880151909250610b4f90610b489061047981670de0b6b3a76400006122b9565b8390610de8565b9150610b6c8760e001518860c0015161128e90919063ffffffff16565b610b7690836122cc565b9150610b828183610e74565b9150610bb1610b488860a00151670de0b6b3a7640000610ba291906122b9565b670de0b6b3a764000090610e74565b9150506000610bcd8760e0015183610e7490919063ffffffff16565b9050600080610c1a896101400151670de0b6b3a7640000610bee91906122b9565b6107ff670de0b6b3a7640000610c04818c610e74565b610c0e91906122b9565b6101208d015190611279565b9050610c70846107ff610c428c60a00151670de0b6b3a764000061128e90919063ffffffff16565b6104358d6101400151670de0b6b3a7640000610c5e91906122b9565b61047987670de0b6b3a76400006122cc565b915050610c878860c0015188846107ff91906122b9565b9450610c9985878a610120015161165a565b818960400151610ca991906122b9565b610cb391906122b9565b9350505050935093915050565b600080610cf1610ce2610cd4866064612318565b66a5bbed86c5a00090611279565b6748cd4072281e000090610e74565b9050610d05670de0b6b3a764000082610e74565b90506103f1816107ff610d30610d2b610d2689670de0b6b3a76400006122cc565b61124b565b611687565b610479610d2b610d458a8a6301e13380610dca565b610d2690670de0b6b3a76400006122cc565b600080610d69846104798a888a610dca565b905061082a888486610dca565b60008080610d97610d8f88670de0b6b3a76400006122b9565b899087610e4e565b905086156103af57610da98888611645565b91506108a38a8a84610dc38a670de0b6b3a76400006122b9565b89896118b6565b6000826000190484118302158202610de157600080fd5b5091020490565b600081600003610e015750670de0b6b3a76400006103f5565b82600003610e11575060006103f5565b6000610e1c8361124b565b90506000610e2c610d2b8661124b565b9050818102610e43670de0b6b3a76400008261232f565b9050610273816118c7565b6000826000190484118302158202610e6557600080fd5b50910281810615159190040190565b60006103cc83670de0b6b3a764000084610dca565b600080610e968484611a5c565b909250905080610eaa57610eaa6001611a9b565b5092915050565b6000806000610ecc86858a61012001518b6101600151611ab6565b90506000610ee78960c0015183610e7490919063ffffffff16565b60c08a0151610ef7908990610e74565b8a51610f0391906122cc565b610f0d91906122b9565b90506000868a60800151610f2191906122cc565b90506000610f2f8a82611ad0565b610f389061236b565b90508a6101000151610f578c60c0015184610e7490919063ffffffff16565b610f6191906122cc565b60c08c0151610f71908390610e74565b610f7b90856122cc565b10610fd3576101008b015160c08c0151610f96908490610e74565b60c08d0151610fa6908490610e74565b610fb090866122cc565b610fba91906122b9565b610fc491906122b9565b60019550955050505050610fdf565b60008095509550505050505b9550959350505050565b600080610ff886858586611ae5565b9050600061103f670b1a2bc2ec5000006107ff6110358a60a00151670de0b6b3a764000061102691906122b9565b670de0b6b3a76400009061128e565b610435868b610e74565b90506000611055670de0b6b3a764000083611279565b61107161106a84670de0b6b3a76400006122b9565b8790611279565b61107b91906122cc565b90506102ca88878784611ae5565b6000806110c08487604001516110ac8960c0015189610e7490919063ffffffff16565b8960a001518a60c001518b60e00151610693565b90506110d2858488610120015161165a565b61027390826122b9565b6000806110eb86868686611be8565b9092509050806110fe576000915061116c565b61112861111384670de0b6b3a76400006122b9565b6101208801516101608901516107ff91611279565b61113290836122cc565b9150611146670de0b6b3a7640000836122b9565b9150611169670de0b6b3a76400008760c0015184610dca9092919063ffffffff16565b91505b94509492505050565b6000806111858888878787611d38565b905061119f85610435611198898c6122cc565b8690611279565b97506111ac848985610dca565b9750878110156111c0576111c06000611a9b565b878103670de0b6b3a764000081106111ee576111e76107cb670de0b6b3a76400008861128e565b9050611206565b6112036107cb670de0b6b3a764000088610e74565b90505b80881015611218576112186000611a9b565b909603979650505050505050565b600080611237888888888888611d5d565b909250905080610844576108446000611a9b565b60006001600160ff1b038211156112755760405163396ea70160e11b815260040160405180910390fd5b5090565b60006103cc8383670de0b6b3a7640000610dca565b60006103cc83670de0b6b3a764000084610e4e565b6000806112be60008560200151611e2090919063ffffffff16565b8461010001516112ce91906122cc565b905060006113028486604001518760a00151670de0b6b3a76400006112f391906122b9565b8860c001518960e00151611616565b905060006113536113408760a00151670de0b6b3a764000061132491906122b9565b610435611335878b60200151610e89565b60e08b015190611645565b60e088015160c0890151610af09161128e565b61135d90836122b9565b9050670de0b6b3a764000081106113935761138c6107cb8760a00151670de0b6b3a7640000610ba291906122b9565b90506113b4565b6113b16107cb8760a00151670de0b6b3a764000061102691906122b9565b90505b604086015161027390826122b9565b6000806000806113fa878a604001518a8c60a00151670de0b6b3a76400006113eb91906122b9565b8d60c001518e60e00151611d5d565b915091508061141157600080935093505050610fdf565b600061144b8a60c001516114318b8a8e61012001518f6101600151611e36565b6114418c8b8f6101200151611e4d565b61047991906122b9565b61145590846122b9565b8a5161146191906122b9565b905060006114908b60c0015161148160008a611e2090919063ffffffff16565b8d6080015161047991906122b9565b90508a6101000151816114a391906122cc565b8210610fd3576101008b0151610fba82846122b9565b60008083905060006115248661010001516114e58860c001518960800151610e7490919063ffffffff16565b60c08901516114f990610479896000611e20565b895161150591906122cc565b61150f91906122b9565b61151991906122b9565b60c088015190611279565b905061027361155361153e87670de0b6b3a76400006122b9565b6101208901516101608a01516107ff91611279565b61157461156888670de0b6b3a76400006122b9565b6101208a015190611279565b61157e90856122b9565b61158891906122cc565b8290610e74565b600080600061159f878786611e68565b905060006115e88860c001516104798a6101600151670de0b6b3a76400006115c791906122b9565b6107ff6115dc8b670de0b6b3a76400006122b9565b6101208e015190611279565b9050808210611608576115fb81836122b9565b600193509350505061116c565b60008093509350505061116c565b60006116228585610de8565b61163b61163386610435868b611279565b859085610dca565b61027391906122cc565b60006103cc8383670de0b6b3a7640000610e4e565b60006103c9846107ff670de0b6b3a76400006116768188610e74565b61168091906122b9565b8590611279565b60008082136116a95760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f198201906117359084901c61124b565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b600080611237888888888888611f3d565b6000680248ce36a70cb26b3e1982136118e257506000919050565b680755bf798b4a1bf1e5821261190b576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b01818105955092935090919061027374029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c61124b565b600080600083611a6b8661124b565b611a7591906122f8565b90506000811215611a8d576000809250925050611a94565b9150600190505b9250929050565b80604051633c06d78b60e11b81526004016105819190612387565b600061043b611ac686868661165a565b6107ff8487611279565b6000818313611adf57826103cc565b50919050565b600080611af28582611ad0565b611afb9061236b565b90506000611b688760c00151671bc16d674ec80000896101000151611b318b60c001518c60800151610e7490919063ffffffff16565b60c08c0151611b41908890610e74565b8c51611b4d91906122cc565b611b5791906122b9565b611b6191906122b9565b9190610dca565b905061028d611b8d670de0b6b3a7640000611b838189610e74565b61156891906122b9565b670de0b6b3a7640000611bb8611ba389836122b9565b6101208c01516101608d01516107ff91611279565b611bca670de0b6b3a764000089610e74565b611bd491906122cc565b611bde91906122b9565b61158891906122b9565b6000806000611c048760c0015187610e7490919063ffffffff16565b90506000611c20611c1583886122cc565b60e08a015190611279565b90506000611c54878a604001518b60a00151670de0b6b3a7640000611c4591906122b9565b8c60c001518d60e00151611616565b9050611c70610ba28a60a0015184610de890919063ffffffff16565b94506000611c9f611c8e8b60a0015185610de890919063ffffffff16565b60e08c015160c08d01519190610dca565b905080821015611cb957600080955095505050505061116c565b611cef61106a611ce58c60a00151670de0b6b3a7640000611cda91906122b9565b60a08e01519061128e565b61043584866122b9565b9550611d1d670de0b6b3a7640000611d07818a610e74565b611d1191906122b9565b6101208c015190611279565b611d2790876122b9565b9a60019a5098505050505050505050565b6000611d448585610de8565b61163b611d5586610435868b611645565b859085610e4e565b6000806000611d6f8989888888611d38565b9050611d7f86610435898b6122cc565b975087811015611d96576000809250925050611e15565b878103611da4818688610e4e565b9050670de0b6b3a76400008110611dd157611dca6107cb670de0b6b3a76400008961128e565b9050611de9565b611de66107cb670de0b6b3a764000089610e74565b90505b611df3818661128e565b9050808a1015611e0b57600080935093505050611e15565b8903925060019150505b965096945050505050565b6000818313611e2f57816103cc565b5090919050565b600061043b611e46868686611e4d565b8390611279565b60006103c9846107ff61168086670de0b6b3a76400006122b9565b600080611e8c8386604001518760a00151670de0b6b3a76400006112f391906122b9565b90506000611eb9610ba2611eae8860a00151888a6040015161043591906122cc565b60c089015190611645565b90506000611f31611ee68860a00151670de0b6b3a7640000611edb91906122b9565b60a08a01519061128e565b610435611f148a60a00151670de0b6b3a7640000611f0491906122b9565b8a8c6040015161043591906122cc565b611f1e90876122b9565b60c08b015160e08c01516107ff91610e74565b905061028d8282611279565b6000806000611f4f8989888888611d38565b905086881015611f66576000809250925050611e15565b9686900396611f758887610de8565b975087811015611f8c576000809250925050611e15565b878103611f9a818688610e4e565b9050670de0b6b3a76400008110611fc757611fc06107cb670de0b6b3a76400008961128e565b9050611fdf565b611fdc6107cb670de0b6b3a764000089610e74565b90505b611fe9818661128e565b90508981101561200157600080935093505050611e15565b9890980398600198509650505050505050565b6000806000806080858703121561202a57600080fd5b5050823594602084013594506040840135936060013592509050565b600080600080600060a0868803121561205e57600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b604051610180810167ffffffffffffffff811182821017156120b357634e487b7160e01b600052604160045260246000fd5b60405290565b600061018082840312156120cc57600080fd5b6120d4612081565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525061016080830135818301525092915050565b60008060006101c0848603121561216c57600080fd5b61217685856120b9565b9561018085013595506101a0909401359392505050565b60008060008060008060c087890312156121a657600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a0312156121eb57600080fd5b873596506020880135955060408801359450606088013593506080880135925060a0880135915060c0880135801515811461222557600080fd5b8091505092959891949750929550565b600080600080600080600060e0888a03121561225057600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b6000806040838503121561229457600080fd5b50508035926020909101359150565b634e487b7160e01b600052601160045260246000fd5b818103818111156103f5576103f56122a3565b808201808211156103f5576103f56122a3565b6000600182016122f1576122f16122a3565b5060010190565b8181036000831280158383131683831282161715610eaa57610eaa6122a3565b80820281158282048414176103f5576103f56122a3565b60008261234c57634e487b7160e01b600052601260045260246000fd5b600160ff1b821460001984141615612366576123666122a3565b500590565b6000600160ff1b8201612380576123806122a3565b5060000390565b60208101600483106123a957634e487b7160e01b600052602160045260246000fd5b9190529056fea26469706673582212205c72c46edf2b756657ebee0f2695c1b504f1ed7803bb3d5c7de83127bd39282564736f6c63430008140033";
@@ -1414,37 +1414,37 @@ export declare const MockHyperdriveMath: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockHyperdriveMath.sol";
-        readonly id: 26431;
+        readonly id: 26479;
         readonly exportedSymbols: {
-            readonly HyperdriveMath: readonly [20142];
+            readonly HyperdriveMath: readonly [20190];
             readonly HyperdriveUtils: readonly [161325];
-            readonly MockHyperdriveMath: readonly [26430];
+            readonly MockHyperdriveMath: readonly [26478];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:8241:139";
         readonly nodes: readonly [{
-            readonly id: 25942;
+            readonly id: 25990;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:139";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 25944;
+            readonly id: 25992;
             readonly nodeType: "ImportDirective";
             readonly src: "64:76:139";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/HyperdriveMath.sol";
             readonly file: "contracts/src/libraries/HyperdriveMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 26431;
-            readonly sourceUnit: 20143;
+            readonly scope: 26479;
+            readonly sourceUnit: 20191;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 25943;
+                    readonly id: 25991;
                     readonly name: "HyperdriveMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 20142;
+                    readonly referencedDeclaration: 20190;
                     readonly src: "73:14:139";
                     readonly typeDescriptions: {};
                 };
@@ -1452,18 +1452,18 @@ export declare const MockHyperdriveMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 25946;
+            readonly id: 25994;
             readonly nodeType: "ImportDirective";
             readonly src: "141:65:139";
             readonly nodes: readonly [];
             readonly absolutePath: "test/utils/HyperdriveUtils.sol";
             readonly file: "test/utils/HyperdriveUtils.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 26431;
+            readonly scope: 26479;
             readonly sourceUnit: 161326;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 25945;
+                    readonly id: 25993;
                     readonly name: "HyperdriveUtils";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
@@ -1475,29 +1475,29 @@ export declare const MockHyperdriveMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 26430;
+            readonly id: 26478;
             readonly nodeType: "ContractDefinition";
             readonly src: "208:8071:139";
             readonly nodes: readonly [{
-                readonly id: 25975;
+                readonly id: 26023;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "242:498:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 25974;
+                    readonly id: 26022;
                     readonly nodeType: "Block";
                     readonly src: "484:256:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [25962];
+                        readonly assignments: readonly [26010];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 25962;
+                            readonly id: 26010;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "502:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 25974;
+                            readonly scope: 26022;
                             readonly src: "494:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1506,7 +1506,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 25961;
+                                readonly id: 26009;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "494:7:139";
@@ -1517,58 +1517,58 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 25971;
+                        readonly id: 26019;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 25965;
+                                readonly id: 26013;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25948;
+                                readonly referencedDeclaration: 25996;
                                 readonly src: "556:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25966;
+                                readonly id: 26014;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25950;
+                                readonly referencedDeclaration: 25998;
                                 readonly src: "593:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25967;
+                                readonly id: 26015;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25952;
+                                readonly referencedDeclaration: 26000;
                                 readonly src: "620:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25968;
+                                readonly id: 26016;
                                 readonly name: "_positionDuration";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25954;
+                                readonly referencedDeclaration: 26002;
                                 readonly src: "657:17:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25969;
+                                readonly id: 26017;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25956;
+                                readonly referencedDeclaration: 26004;
                                 readonly src: "688:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1593,18 +1593,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 25963;
+                                    readonly id: 26011;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "511:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 25964;
+                                readonly id: 26012;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1612,14 +1612,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "526:16:139";
                                 readonly memberName: "calculateSpotAPR";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19550;
+                                readonly referencedDeclaration: 19598;
                                 readonly src: "511:31:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 25970;
+                            readonly id: 26018;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1639,19 +1639,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "494:216:139";
                     }, {
                         readonly expression: {
-                            readonly id: 25972;
+                            readonly id: 26020;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 25962;
+                            readonly referencedDeclaration: 26010;
                             readonly src: "727:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 25960;
-                        readonly id: 25973;
+                        readonly functionReturnParameters: 26008;
+                        readonly id: 26021;
                         readonly nodeType: "Return";
                         readonly src: "720:13:139";
                     }];
@@ -1663,16 +1663,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateSpotAPR";
                 readonly nameLocation: "251:16:139";
                 readonly parameters: {
-                    readonly id: 25957;
+                    readonly id: 26005;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25948;
+                        readonly id: 25996;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "285:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "277:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1681,7 +1681,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25947;
+                            readonly id: 25995;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "277:7:139";
@@ -1693,12 +1693,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25950;
+                        readonly id: 25998;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "326:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "318:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1707,7 +1707,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25949;
+                            readonly id: 25997;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "318:7:139";
@@ -1719,12 +1719,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25952;
+                        readonly id: 26000;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "357:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "349:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1733,7 +1733,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25951;
+                            readonly id: 25999;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "349:7:139";
@@ -1745,12 +1745,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25954;
+                        readonly id: 26002;
                         readonly mutability: "mutable";
                         readonly name: "_positionDuration";
                         readonly nameLocation: "398:17:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "390:25:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1759,7 +1759,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25953;
+                            readonly id: 26001;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "390:7:139";
@@ -1771,12 +1771,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25956;
+                        readonly id: 26004;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "433:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "425:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1785,7 +1785,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25955;
+                            readonly id: 26003;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "425:7:139";
@@ -1799,16 +1799,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "267:184:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 25960;
+                    readonly id: 26008;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25959;
+                        readonly id: 26007;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 25975;
+                        readonly scope: 26023;
                         readonly src: "475:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1817,7 +1817,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25958;
+                            readonly id: 26006;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "475:7:139";
@@ -1830,30 +1830,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "474:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26004;
+                readonly id: 26052;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "746:504:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26003;
+                    readonly id: 26051;
                     readonly nodeType: "Block";
                     readonly src: "991:259:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [25991];
+                        readonly assignments: readonly [26039];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 25991;
+                            readonly id: 26039;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1009:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26003;
+                            readonly scope: 26051;
                             readonly src: "1001:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1862,7 +1862,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 25990;
+                                readonly id: 26038;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1001:7:139";
@@ -1873,58 +1873,58 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26000;
+                        readonly id: 26048;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 25994;
+                                readonly id: 26042;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25977;
+                                readonly referencedDeclaration: 26025;
                                 readonly src: "1075:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25995;
+                                readonly id: 26043;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25979;
+                                readonly referencedDeclaration: 26027;
                                 readonly src: "1112:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25996;
+                                readonly id: 26044;
                                 readonly name: "_apr";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25981;
+                                readonly referencedDeclaration: 26029;
                                 readonly src: "1149:4:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25997;
+                                readonly id: 26045;
                                 readonly name: "_positionDuration";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25983;
+                                readonly referencedDeclaration: 26031;
                                 readonly src: "1167:17:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 25998;
+                                readonly id: 26046;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25985;
+                                readonly referencedDeclaration: 26033;
                                 readonly src: "1198:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1949,18 +1949,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 25992;
+                                    readonly id: 26040;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "1018:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 25993;
+                                readonly id: 26041;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1968,14 +1968,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "1033:28:139";
                                 readonly memberName: "calculateInitialBondReserves";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19689;
+                                readonly referencedDeclaration: 19737;
                                 readonly src: "1018:43:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 25999;
+                            readonly id: 26047;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1995,19 +1995,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "1001:219:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26001;
+                            readonly id: 26049;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 25991;
+                            readonly referencedDeclaration: 26039;
                             readonly src: "1237:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 25989;
-                        readonly id: 26002;
+                        readonly functionReturnParameters: 26037;
+                        readonly id: 26050;
                         readonly nodeType: "Return";
                         readonly src: "1230:13:139";
                     }];
@@ -2019,16 +2019,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateInitialBondReserves";
                 readonly nameLocation: "755:28:139";
                 readonly parameters: {
-                    readonly id: 25986;
+                    readonly id: 26034;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25977;
+                        readonly id: 26025;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "801:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "793:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2037,7 +2037,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25976;
+                            readonly id: 26024;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "793:7:139";
@@ -2049,12 +2049,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25979;
+                        readonly id: 26027;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "842:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "834:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2063,7 +2063,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25978;
+                            readonly id: 26026;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "834:7:139";
@@ -2075,12 +2075,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25981;
+                        readonly id: 26029;
                         readonly mutability: "mutable";
                         readonly name: "_apr";
                         readonly nameLocation: "883:4:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "875:12:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2089,7 +2089,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25980;
+                            readonly id: 26028;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "875:7:139";
@@ -2101,12 +2101,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25983;
+                        readonly id: 26031;
                         readonly mutability: "mutable";
                         readonly name: "_positionDuration";
                         readonly nameLocation: "905:17:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "897:25:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2115,7 +2115,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25982;
+                            readonly id: 26030;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "897:7:139";
@@ -2127,12 +2127,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25985;
+                        readonly id: 26033;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "940:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "932:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2141,7 +2141,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25984;
+                            readonly id: 26032;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "932:7:139";
@@ -2155,16 +2155,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "783:175:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 25989;
+                    readonly id: 26037;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25988;
+                        readonly id: 26036;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26004;
+                        readonly scope: 26052;
                         readonly src: "982:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2173,7 +2173,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25987;
+                            readonly id: 26035;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "982:7:139";
@@ -2186,30 +2186,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "981:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26036;
+                readonly id: 26084;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1256:548:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26035;
+                    readonly id: 26083;
                     readonly nodeType: "Block";
                     readonly src: "1525:279:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26022];
+                        readonly assignments: readonly [26070];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26022;
+                            readonly id: 26070;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "1543:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26035;
+                            readonly scope: 26083;
                             readonly src: "1535:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2218,7 +2218,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26021;
+                                readonly id: 26069;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1535:7:139";
@@ -2229,69 +2229,69 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26032;
+                        readonly id: 26080;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26025;
+                                readonly id: 26073;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26006;
+                                readonly referencedDeclaration: 26054;
                                 readonly src: "1598:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26026;
+                                readonly id: 26074;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26008;
+                                readonly referencedDeclaration: 26056;
                                 readonly src: "1635:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26027;
+                                readonly id: 26075;
                                 readonly name: "_amountIn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26010;
+                                readonly referencedDeclaration: 26058;
                                 readonly src: "1662:9:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26028;
+                                readonly id: 26076;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26012;
+                                readonly referencedDeclaration: 26060;
                                 readonly src: "1685:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26029;
+                                readonly id: 26077;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26014;
+                                readonly referencedDeclaration: 26062;
                                 readonly src: "1711:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26030;
+                                readonly id: 26078;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26016;
+                                readonly referencedDeclaration: 26064;
                                 readonly src: "1741:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2319,18 +2319,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26023;
+                                    readonly id: 26071;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "1552:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26024;
+                                readonly id: 26072;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2338,14 +2338,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "1567:17:139";
                                 readonly memberName: "calculateOpenLong";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19880;
+                                readonly referencedDeclaration: 19928;
                                 readonly src: "1552:32:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26031;
+                            readonly id: 26079;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2365,19 +2365,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "1535:239:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26033;
+                            readonly id: 26081;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26022;
+                            readonly referencedDeclaration: 26070;
                             readonly src: "1791:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26020;
-                        readonly id: 26034;
+                        readonly functionReturnParameters: 26068;
+                        readonly id: 26082;
                         readonly nodeType: "Return";
                         readonly src: "1784:13:139";
                     }];
@@ -2389,16 +2389,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateOpenLong";
                 readonly nameLocation: "1265:17:139";
                 readonly parameters: {
-                    readonly id: 26017;
+                    readonly id: 26065;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26006;
+                        readonly id: 26054;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "1300:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1292:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2407,7 +2407,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26005;
+                            readonly id: 26053;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1292:7:139";
@@ -2419,12 +2419,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26008;
+                        readonly id: 26056;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "1341:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1333:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2433,7 +2433,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26007;
+                            readonly id: 26055;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1333:7:139";
@@ -2445,12 +2445,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26010;
+                        readonly id: 26058;
                         readonly mutability: "mutable";
                         readonly name: "_amountIn";
                         readonly nameLocation: "1372:9:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1364:17:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2459,7 +2459,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26009;
+                            readonly id: 26057;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1364:7:139";
@@ -2471,12 +2471,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26012;
+                        readonly id: 26060;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "1399:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1391:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2485,7 +2485,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26011;
+                            readonly id: 26059;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1391:7:139";
@@ -2497,12 +2497,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26014;
+                        readonly id: 26062;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "1429:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1421:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2511,7 +2511,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26013;
+                            readonly id: 26061;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1421:7:139";
@@ -2523,12 +2523,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26016;
+                        readonly id: 26064;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "1463:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1455:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2537,7 +2537,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26015;
+                            readonly id: 26063;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1455:7:139";
@@ -2551,16 +2551,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "1282:210:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26020;
+                    readonly id: 26068;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26019;
+                        readonly id: 26067;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26036;
+                        readonly scope: 26084;
                         readonly src: "1516:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2569,7 +2569,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26018;
+                            readonly id: 26066;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1516:7:139";
@@ -2582,30 +2582,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "1515:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26082;
+                readonly id: 26130;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1810:751:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26081;
+                    readonly id: 26129;
                     readonly nodeType: "Block";
                     readonly src: "2140:421:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26060, 26062, 26064];
+                        readonly assignments: readonly [26108, 26110, 26112];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26060;
+                            readonly id: 26108;
                             readonly mutability: "mutable";
                             readonly name: "result1";
                             readonly nameLocation: "2159:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26081;
+                            readonly scope: 26129;
                             readonly src: "2151:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2614,7 +2614,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26059;
+                                readonly id: 26107;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2151:7:139";
@@ -2626,12 +2626,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26062;
+                            readonly id: 26110;
                             readonly mutability: "mutable";
                             readonly name: "result2";
                             readonly nameLocation: "2176:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26081;
+                            readonly scope: 26129;
                             readonly src: "2168:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2640,7 +2640,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26061;
+                                readonly id: 26109;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2168:7:139";
@@ -2652,12 +2652,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26064;
+                            readonly id: 26112;
                             readonly mutability: "mutable";
                             readonly name: "result3";
                             readonly nameLocation: "2193:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26081;
+                            readonly scope: 26129;
                             readonly src: "2185:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2666,7 +2666,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26063;
+                                readonly id: 26111;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2185:7:139";
@@ -2677,80 +2677,80 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26075;
+                        readonly id: 26123;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26067;
+                                readonly id: 26115;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26038;
+                                readonly referencedDeclaration: 26086;
                                 readonly src: "2268:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26068;
+                                readonly id: 26116;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26040;
+                                readonly referencedDeclaration: 26088;
                                 readonly src: "2309:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26069;
+                                readonly id: 26117;
                                 readonly name: "_amountIn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26042;
+                                readonly referencedDeclaration: 26090;
                                 readonly src: "2340:9:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26070;
+                                readonly id: 26118;
                                 readonly name: "_normalizedTimeRemaining";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26044;
+                                readonly referencedDeclaration: 26092;
                                 readonly src: "2367:24:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26071;
+                                readonly id: 26119;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26046;
+                                readonly referencedDeclaration: 26094;
                                 readonly src: "2409:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26072;
+                                readonly id: 26120;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26048;
+                                readonly referencedDeclaration: 26096;
                                 readonly src: "2439:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26073;
+                                readonly id: 26121;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26050;
+                                readonly referencedDeclaration: 26098;
                                 readonly src: "2473:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2781,18 +2781,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26065;
+                                    readonly id: 26113;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "2204:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26066;
+                                readonly id: 26114;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2800,14 +2800,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "2232:18:139";
                                 readonly memberName: "calculateCloseLong";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19945;
+                                readonly referencedDeclaration: 19993;
                                 readonly src: "2204:46:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)";
                                 };
                             };
-                            readonly id: 26074;
+                            readonly id: 26122;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2828,40 +2828,40 @@ export declare const MockHyperdriveMath: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 26076;
+                                readonly id: 26124;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26060;
+                                readonly referencedDeclaration: 26108;
                                 readonly src: "2528:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26077;
+                                readonly id: 26125;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26062;
+                                readonly referencedDeclaration: 26110;
                                 readonly src: "2537:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26078;
+                                readonly id: 26126;
                                 readonly name: "result3";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26064;
+                                readonly referencedDeclaration: 26112;
                                 readonly src: "2546:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 26079;
+                            readonly id: 26127;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -2874,8 +2874,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple(uint256,uint256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 26058;
-                        readonly id: 26080;
+                        readonly functionReturnParameters: 26106;
+                        readonly id: 26128;
                         readonly nodeType: "Return";
                         readonly src: "2520:34:139";
                     }];
@@ -2887,16 +2887,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateCloseLong";
                 readonly nameLocation: "1819:18:139";
                 readonly parameters: {
-                    readonly id: 26051;
+                    readonly id: 26099;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26038;
+                        readonly id: 26086;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "1855:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "1847:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2905,7 +2905,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26037;
+                            readonly id: 26085;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1847:7:139";
@@ -2917,12 +2917,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26040;
+                        readonly id: 26088;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "1896:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "1888:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2931,7 +2931,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26039;
+                            readonly id: 26087;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1888:7:139";
@@ -2943,12 +2943,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26042;
+                        readonly id: 26090;
                         readonly mutability: "mutable";
                         readonly name: "_amountIn";
                         readonly nameLocation: "1927:9:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "1919:17:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2957,7 +2957,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26041;
+                            readonly id: 26089;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1919:7:139";
@@ -2969,12 +2969,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26044;
+                        readonly id: 26092;
                         readonly mutability: "mutable";
                         readonly name: "_normalizedTimeRemaining";
                         readonly nameLocation: "1954:24:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "1946:32:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2983,7 +2983,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26043;
+                            readonly id: 26091;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1946:7:139";
@@ -2995,12 +2995,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26046;
+                        readonly id: 26094;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "1996:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "1988:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3009,7 +3009,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26045;
+                            readonly id: 26093;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1988:7:139";
@@ -3021,12 +3021,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26048;
+                        readonly id: 26096;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "2026:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "2018:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3035,7 +3035,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26047;
+                            readonly id: 26095;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2018:7:139";
@@ -3047,12 +3047,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26050;
+                        readonly id: 26098;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "2060:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "2052:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3061,7 +3061,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26049;
+                            readonly id: 26097;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2052:7:139";
@@ -3075,16 +3075,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "1837:252:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26058;
+                    readonly id: 26106;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26053;
+                        readonly id: 26101;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "2113:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3093,7 +3093,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26052;
+                            readonly id: 26100;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2113:7:139";
@@ -3105,12 +3105,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26055;
+                        readonly id: 26103;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "2122:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3119,7 +3119,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26054;
+                            readonly id: 26102;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2122:7:139";
@@ -3131,12 +3131,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26057;
+                        readonly id: 26105;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26082;
+                        readonly scope: 26130;
                         readonly src: "2131:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3145,7 +3145,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26056;
+                            readonly id: 26104;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2131:7:139";
@@ -3158,30 +3158,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "2112:27:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26114;
+                readonly id: 26162;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2567:550:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26113;
+                    readonly id: 26161;
                     readonly nodeType: "Block";
                     readonly src: "2837:280:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26100];
+                        readonly assignments: readonly [26148];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26100;
+                            readonly id: 26148;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "2855:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26113;
+                            readonly scope: 26161;
                             readonly src: "2847:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3190,7 +3190,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26099;
+                                readonly id: 26147;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2847:7:139";
@@ -3201,69 +3201,69 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26110;
+                        readonly id: 26158;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26103;
+                                readonly id: 26151;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26084;
+                                readonly referencedDeclaration: 26132;
                                 readonly src: "2911:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26104;
+                                readonly id: 26152;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26086;
+                                readonly referencedDeclaration: 26134;
                                 readonly src: "2948:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26105;
+                                readonly id: 26153;
                                 readonly name: "_amountIn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26088;
+                                readonly referencedDeclaration: 26136;
                                 readonly src: "2975:9:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26106;
+                                readonly id: 26154;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26090;
+                                readonly referencedDeclaration: 26138;
                                 readonly src: "2998:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26107;
+                                readonly id: 26155;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26092;
+                                readonly referencedDeclaration: 26140;
                                 readonly src: "3024:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26108;
+                                readonly id: 26156;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26094;
+                                readonly referencedDeclaration: 26142;
                                 readonly src: "3054:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3291,18 +3291,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26101;
+                                    readonly id: 26149;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "2864:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26102;
+                                readonly id: 26150;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3310,14 +3310,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "2879:18:139";
                                 readonly memberName: "calculateOpenShort";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19976;
+                                readonly referencedDeclaration: 20024;
                                 readonly src: "2864:33:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26109;
+                            readonly id: 26157;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3337,19 +3337,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "2847:240:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26111;
+                            readonly id: 26159;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26100;
+                            readonly referencedDeclaration: 26148;
                             readonly src: "3104:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26098;
-                        readonly id: 26112;
+                        readonly functionReturnParameters: 26146;
+                        readonly id: 26160;
                         readonly nodeType: "Return";
                         readonly src: "3097:13:139";
                     }];
@@ -3361,16 +3361,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateOpenShort";
                 readonly nameLocation: "2576:18:139";
                 readonly parameters: {
-                    readonly id: 26095;
+                    readonly id: 26143;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26084;
+                        readonly id: 26132;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "2612:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2604:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3379,7 +3379,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26083;
+                            readonly id: 26131;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2604:7:139";
@@ -3391,12 +3391,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26086;
+                        readonly id: 26134;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "2653:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2645:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3405,7 +3405,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26085;
+                            readonly id: 26133;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2645:7:139";
@@ -3417,12 +3417,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26088;
+                        readonly id: 26136;
                         readonly mutability: "mutable";
                         readonly name: "_amountIn";
                         readonly nameLocation: "2684:9:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2676:17:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3431,7 +3431,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26087;
+                            readonly id: 26135;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2676:7:139";
@@ -3443,12 +3443,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26090;
+                        readonly id: 26138;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "2711:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2703:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3457,7 +3457,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26089;
+                            readonly id: 26137;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2703:7:139";
@@ -3469,12 +3469,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26092;
+                        readonly id: 26140;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "2741:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2733:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3483,7 +3483,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26091;
+                            readonly id: 26139;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2733:7:139";
@@ -3495,12 +3495,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26094;
+                        readonly id: 26142;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "2775:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2767:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3509,7 +3509,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26093;
+                            readonly id: 26141;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2767:7:139";
@@ -3523,16 +3523,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "2594:210:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26098;
+                    readonly id: 26146;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26097;
+                        readonly id: 26145;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26114;
+                        readonly scope: 26162;
                         readonly src: "2828:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3541,7 +3541,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26096;
+                            readonly id: 26144;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2828:7:139";
@@ -3554,30 +3554,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "2827:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26160;
+                readonly id: 26208;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3123:755:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26159;
+                    readonly id: 26207;
                     readonly nodeType: "Block";
                     readonly src: "3455:423:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26138, 26140, 26142];
+                        readonly assignments: readonly [26186, 26188, 26190];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26138;
+                            readonly id: 26186;
                             readonly mutability: "mutable";
                             readonly name: "result1";
                             readonly nameLocation: "3474:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26159;
+                            readonly scope: 26207;
                             readonly src: "3466:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3586,7 +3586,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26137;
+                                readonly id: 26185;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3466:7:139";
@@ -3598,12 +3598,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26140;
+                            readonly id: 26188;
                             readonly mutability: "mutable";
                             readonly name: "result2";
                             readonly nameLocation: "3491:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26159;
+                            readonly scope: 26207;
                             readonly src: "3483:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3612,7 +3612,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26139;
+                                readonly id: 26187;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3483:7:139";
@@ -3624,12 +3624,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26142;
+                            readonly id: 26190;
                             readonly mutability: "mutable";
                             readonly name: "result3";
                             readonly nameLocation: "3508:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26159;
+                            readonly scope: 26207;
                             readonly src: "3500:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3638,7 +3638,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26141;
+                                readonly id: 26189;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3500:7:139";
@@ -3649,80 +3649,80 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26153;
+                        readonly id: 26201;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26145;
+                                readonly id: 26193;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26116;
+                                readonly referencedDeclaration: 26164;
                                 readonly src: "3584:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26146;
+                                readonly id: 26194;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26118;
+                                readonly referencedDeclaration: 26166;
                                 readonly src: "3625:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26147;
+                                readonly id: 26195;
                                 readonly name: "_amountOut";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26120;
+                                readonly referencedDeclaration: 26168;
                                 readonly src: "3656:10:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26148;
+                                readonly id: 26196;
                                 readonly name: "_normalizedTimeRemaining";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26122;
+                                readonly referencedDeclaration: 26170;
                                 readonly src: "3684:24:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26149;
+                                readonly id: 26197;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26124;
+                                readonly referencedDeclaration: 26172;
                                 readonly src: "3726:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26150;
+                                readonly id: 26198;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26126;
+                                readonly referencedDeclaration: 26174;
                                 readonly src: "3756:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26151;
+                                readonly id: 26199;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26128;
+                                readonly referencedDeclaration: 26176;
                                 readonly src: "3790:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3753,18 +3753,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26143;
+                                    readonly id: 26191;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "3519:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26144;
+                                readonly id: 26192;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3772,14 +3772,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "3547:19:139";
                                 readonly memberName: "calculateCloseShort";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 20041;
+                                readonly referencedDeclaration: 20089;
                                 readonly src: "3519:47:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)";
                                 };
                             };
-                            readonly id: 26152;
+                            readonly id: 26200;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3800,40 +3800,40 @@ export declare const MockHyperdriveMath: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 26154;
+                                readonly id: 26202;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26138;
+                                readonly referencedDeclaration: 26186;
                                 readonly src: "3845:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26155;
+                                readonly id: 26203;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26140;
+                                readonly referencedDeclaration: 26188;
                                 readonly src: "3854:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26156;
+                                readonly id: 26204;
                                 readonly name: "result3";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26142;
+                                readonly referencedDeclaration: 26190;
                                 readonly src: "3863:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 26157;
+                            readonly id: 26205;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -3846,8 +3846,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple(uint256,uint256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 26136;
-                        readonly id: 26158;
+                        readonly functionReturnParameters: 26184;
+                        readonly id: 26206;
                         readonly nodeType: "Return";
                         readonly src: "3837:34:139";
                     }];
@@ -3859,16 +3859,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateCloseShort";
                 readonly nameLocation: "3132:19:139";
                 readonly parameters: {
-                    readonly id: 26129;
+                    readonly id: 26177;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26116;
+                        readonly id: 26164;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "3169:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3161:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3877,7 +3877,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26115;
+                            readonly id: 26163;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3161:7:139";
@@ -3889,12 +3889,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26118;
+                        readonly id: 26166;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "3210:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3202:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3903,7 +3903,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26117;
+                            readonly id: 26165;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3202:7:139";
@@ -3915,12 +3915,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26120;
+                        readonly id: 26168;
                         readonly mutability: "mutable";
                         readonly name: "_amountOut";
                         readonly nameLocation: "3241:10:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3233:18:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3929,7 +3929,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26119;
+                            readonly id: 26167;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3233:7:139";
@@ -3941,12 +3941,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26122;
+                        readonly id: 26170;
                         readonly mutability: "mutable";
                         readonly name: "_normalizedTimeRemaining";
                         readonly nameLocation: "3269:24:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3261:32:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3955,7 +3955,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26121;
+                            readonly id: 26169;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3261:7:139";
@@ -3967,12 +3967,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26124;
+                        readonly id: 26172;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "3311:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3303:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3981,7 +3981,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26123;
+                            readonly id: 26171;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3303:7:139";
@@ -3993,12 +3993,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26126;
+                        readonly id: 26174;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "3341:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3333:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4007,7 +4007,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26125;
+                            readonly id: 26173;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3333:7:139";
@@ -4019,12 +4019,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26128;
+                        readonly id: 26176;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "3375:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3367:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4033,7 +4033,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26127;
+                            readonly id: 26175;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3367:7:139";
@@ -4047,16 +4047,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "3151:253:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26136;
+                    readonly id: 26184;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26131;
+                        readonly id: 26179;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3428:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4065,7 +4065,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26130;
+                            readonly id: 26178;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3428:7:139";
@@ -4077,12 +4077,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26133;
+                        readonly id: 26181;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3437:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4091,7 +4091,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26132;
+                            readonly id: 26180;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3437:7:139";
@@ -4103,12 +4103,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26135;
+                        readonly id: 26183;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26160;
+                        readonly scope: 26208;
                         readonly src: "3446:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4117,7 +4117,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26134;
+                            readonly id: 26182;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3446:7:139";
@@ -4130,24 +4130,24 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "3427:27:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26171;
+                readonly id: 26219;
                 readonly nodeType: "StructDefinition";
                 readonly src: "3884:217:139";
                 readonly nodes: readonly [];
                 readonly canonicalName: "MockHyperdriveMath.NegativeInterestOnCloseOutput";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 26162;
+                    readonly id: 26210;
                     readonly mutability: "mutable";
                     readonly name: "shareProceeds";
                     readonly nameLocation: "3939:13:139";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 26171;
+                    readonly scope: 26219;
                     readonly src: "3931:21:139";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4156,7 +4156,7 @@ export declare const MockHyperdriveMath: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 26161;
+                        readonly id: 26209;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "3931:7:139";
@@ -4168,12 +4168,12 @@ export declare const MockHyperdriveMath: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 26164;
+                    readonly id: 26212;
                     readonly mutability: "mutable";
                     readonly name: "shareReservesDelta";
                     readonly nameLocation: "3970:18:139";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 26171;
+                    readonly scope: 26219;
                     readonly src: "3962:26:139";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4182,7 +4182,7 @@ export declare const MockHyperdriveMath: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 26163;
+                        readonly id: 26211;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "3962:7:139";
@@ -4194,12 +4194,12 @@ export declare const MockHyperdriveMath: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 26166;
+                    readonly id: 26214;
                     readonly mutability: "mutable";
                     readonly name: "shareCurveDelta";
                     readonly nameLocation: "4006:15:139";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 26171;
+                    readonly scope: 26219;
                     readonly src: "3998:23:139";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4208,7 +4208,7 @@ export declare const MockHyperdriveMath: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 26165;
+                        readonly id: 26213;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "3998:7:139";
@@ -4220,12 +4220,12 @@ export declare const MockHyperdriveMath: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 26168;
+                    readonly id: 26216;
                     readonly mutability: "mutable";
                     readonly name: "shareAdjustmentDelta";
                     readonly nameLocation: "4038:20:139";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 26171;
+                    readonly scope: 26219;
                     readonly src: "4031:27:139";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4234,7 +4234,7 @@ export declare const MockHyperdriveMath: {
                         readonly typeString: "int256";
                     };
                     readonly typeName: {
-                        readonly id: 26167;
+                        readonly id: 26215;
                         readonly name: "int256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "4031:6:139";
@@ -4246,12 +4246,12 @@ export declare const MockHyperdriveMath: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 26170;
+                    readonly id: 26218;
                     readonly mutability: "mutable";
                     readonly name: "totalGovernanceFee";
                     readonly nameLocation: "4076:18:139";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 26171;
+                    readonly scope: 26219;
                     readonly src: "4068:26:139";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4260,7 +4260,7 @@ export declare const MockHyperdriveMath: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 26169;
+                        readonly id: 26217;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "4068:7:139";
@@ -4273,61 +4273,61 @@ export declare const MockHyperdriveMath: {
                 }];
                 readonly name: "NegativeInterestOnCloseOutput";
                 readonly nameLocation: "3891:29:139";
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly visibility: "public";
             }, {
-                readonly id: 26239;
+                readonly id: 26287;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4107:1113:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26238;
+                    readonly id: 26286;
                     readonly nodeType: "Block";
                     readonly src: "4461:759:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26200];
+                        readonly assignments: readonly [26248];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26200;
+                            readonly id: 26248;
                             readonly mutability: "mutable";
                             readonly name: "output";
                             readonly nameLocation: "4508:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26238;
+                            readonly scope: 26286;
                             readonly src: "4471:43:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                 readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput";
                             };
                             readonly typeName: {
-                                readonly id: 26199;
+                                readonly id: 26247;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 26198;
+                                    readonly id: 26246;
                                     readonly name: "NegativeInterestOnCloseOutput";
                                     readonly nameLocations: readonly ["4471:29:139"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 26171;
+                                    readonly referencedDeclaration: 26219;
                                     readonly src: "4471:29:139";
                                 };
-                                readonly referencedDeclaration: 26171;
+                                readonly referencedDeclaration: 26219;
                                 readonly src: "4471:29:139";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_storage_ptr";
                                     readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput";
                                 };
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26201;
+                        readonly id: 26249;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4471:43:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26224;
+                            readonly id: 26272;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4335,18 +4335,18 @@ export declare const MockHyperdriveMath: {
                             readonly leftHandSide: {
                                 readonly components: readonly [{
                                     readonly expression: {
-                                        readonly id: 26202;
+                                        readonly id: 26250;
                                         readonly name: "output";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 26200;
+                                        readonly referencedDeclaration: 26248;
                                         readonly src: "4538:6:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                             readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                         };
                                     };
-                                    readonly id: 26204;
+                                    readonly id: 26252;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -4354,7 +4354,7 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4545:13:139";
                                     readonly memberName: "shareProceeds";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 26162;
+                                    readonly referencedDeclaration: 26210;
                                     readonly src: "4538:20:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4362,18 +4362,18 @@ export declare const MockHyperdriveMath: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 26205;
+                                        readonly id: 26253;
                                         readonly name: "output";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 26200;
+                                        readonly referencedDeclaration: 26248;
                                         readonly src: "4572:6:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                             readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                         };
                                     };
-                                    readonly id: 26206;
+                                    readonly id: 26254;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -4381,7 +4381,7 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4579:18:139";
                                     readonly memberName: "shareReservesDelta";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 26164;
+                                    readonly referencedDeclaration: 26212;
                                     readonly src: "4572:25:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4389,18 +4389,18 @@ export declare const MockHyperdriveMath: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 26207;
+                                        readonly id: 26255;
                                         readonly name: "output";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 26200;
+                                        readonly referencedDeclaration: 26248;
                                         readonly src: "4611:6:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                             readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                         };
                                     };
-                                    readonly id: 26208;
+                                    readonly id: 26256;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -4408,7 +4408,7 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4618:15:139";
                                     readonly memberName: "shareCurveDelta";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 26166;
+                                    readonly referencedDeclaration: 26214;
                                     readonly src: "4611:22:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4416,18 +4416,18 @@ export declare const MockHyperdriveMath: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 26209;
+                                        readonly id: 26257;
                                         readonly name: "output";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 26200;
+                                        readonly referencedDeclaration: 26248;
                                         readonly src: "4647:6:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                             readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                         };
                                     };
-                                    readonly id: 26210;
+                                    readonly id: 26258;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -4435,7 +4435,7 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4654:20:139";
                                     readonly memberName: "shareAdjustmentDelta";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 26168;
+                                    readonly referencedDeclaration: 26216;
                                     readonly src: "4647:27:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -4443,18 +4443,18 @@ export declare const MockHyperdriveMath: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 26211;
+                                        readonly id: 26259;
                                         readonly name: "output";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 26200;
+                                        readonly referencedDeclaration: 26248;
                                         readonly src: "4688:6:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                             readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                         };
                                     };
-                                    readonly id: 26212;
+                                    readonly id: 26260;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -4462,14 +4462,14 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4695:18:139";
                                     readonly memberName: "totalGovernanceFee";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 26170;
+                                    readonly referencedDeclaration: 26218;
                                     readonly src: "4688:25:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }];
-                                readonly id: 26213;
+                                readonly id: 26261;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: true;
@@ -4486,77 +4486,77 @@ export declare const MockHyperdriveMath: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 26216;
+                                    readonly id: 26264;
                                     readonly name: "_shareProceeds";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26173;
+                                    readonly referencedDeclaration: 26221;
                                     readonly src: "4787:14:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26217;
+                                    readonly id: 26265;
                                     readonly name: "_shareReservesDelta";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26175;
+                                    readonly referencedDeclaration: 26223;
                                     readonly src: "4815:19:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26218;
+                                    readonly id: 26266;
                                     readonly name: "_shareCurveDelta";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26177;
+                                    readonly referencedDeclaration: 26225;
                                     readonly src: "4848:16:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26219;
+                                    readonly id: 26267;
                                     readonly name: "_totalGovernanceFee";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26179;
+                                    readonly referencedDeclaration: 26227;
                                     readonly src: "4878:19:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26220;
+                                    readonly id: 26268;
                                     readonly name: "_openVaultSharePrice";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26181;
+                                    readonly referencedDeclaration: 26229;
                                     readonly src: "4911:20:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26221;
+                                    readonly id: 26269;
                                     readonly name: "_closeVaultSharePrice";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26183;
+                                    readonly referencedDeclaration: 26231;
                                     readonly src: "4945:21:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26222;
+                                    readonly id: 26270;
                                     readonly name: "_isLong";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26185;
+                                    readonly referencedDeclaration: 26233;
                                     readonly src: "4980:7:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
@@ -4587,18 +4587,18 @@ export declare const MockHyperdriveMath: {
                                         readonly typeString: "bool";
                                     }];
                                     readonly expression: {
-                                        readonly id: 26214;
+                                        readonly id: 26262;
                                         readonly name: "HyperdriveMath";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 20142;
+                                        readonly referencedDeclaration: 20190;
                                         readonly src: "4726:14:139";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                             readonly typeString: "type(library HyperdriveMath)";
                                         };
                                     };
-                                    readonly id: 26215;
+                                    readonly id: 26263;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4606,14 +4606,14 @@ export declare const MockHyperdriveMath: {
                                     readonly memberLocation: "4741:32:139";
                                     readonly memberName: "calculateNegativeInterestOnClose";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 20141;
+                                    readonly referencedDeclaration: 20189;
                                     readonly src: "4726:47:139";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)";
                                     };
                                 };
-                                readonly id: 26223;
+                                readonly id: 26271;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4635,25 +4635,25 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 26225;
+                        readonly id: 26273;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4524:473:139";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
                                 readonly expression: {
-                                    readonly id: 26226;
+                                    readonly id: 26274;
                                     readonly name: "output";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26200;
+                                    readonly referencedDeclaration: 26248;
                                     readonly src: "5028:6:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                         readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                     };
                                 };
-                                readonly id: 26227;
+                                readonly id: 26275;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -4661,7 +4661,7 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5035:13:139";
                                 readonly memberName: "shareProceeds";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 26162;
+                                readonly referencedDeclaration: 26210;
                                 readonly src: "5028:20:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4669,18 +4669,18 @@ export declare const MockHyperdriveMath: {
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 26228;
+                                    readonly id: 26276;
                                     readonly name: "output";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26200;
+                                    readonly referencedDeclaration: 26248;
                                     readonly src: "5062:6:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                         readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                     };
                                 };
-                                readonly id: 26229;
+                                readonly id: 26277;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -4688,7 +4688,7 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5069:18:139";
                                 readonly memberName: "shareReservesDelta";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 26164;
+                                readonly referencedDeclaration: 26212;
                                 readonly src: "5062:25:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4696,18 +4696,18 @@ export declare const MockHyperdriveMath: {
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 26230;
+                                    readonly id: 26278;
                                     readonly name: "output";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26200;
+                                    readonly referencedDeclaration: 26248;
                                     readonly src: "5101:6:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                         readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                     };
                                 };
-                                readonly id: 26231;
+                                readonly id: 26279;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -4715,7 +4715,7 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5108:15:139";
                                 readonly memberName: "shareCurveDelta";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 26166;
+                                readonly referencedDeclaration: 26214;
                                 readonly src: "5101:22:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4723,18 +4723,18 @@ export declare const MockHyperdriveMath: {
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 26232;
+                                    readonly id: 26280;
                                     readonly name: "output";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26200;
+                                    readonly referencedDeclaration: 26248;
                                     readonly src: "5137:6:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                         readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                     };
                                 };
-                                readonly id: 26233;
+                                readonly id: 26281;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -4742,7 +4742,7 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5144:20:139";
                                 readonly memberName: "shareAdjustmentDelta";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 26168;
+                                readonly referencedDeclaration: 26216;
                                 readonly src: "5137:27:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -4750,18 +4750,18 @@ export declare const MockHyperdriveMath: {
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 26234;
+                                    readonly id: 26282;
                                     readonly name: "output";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 26200;
+                                    readonly referencedDeclaration: 26248;
                                     readonly src: "5178:6:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26171_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_NegativeInterestOnCloseOutput_$26219_memory_ptr";
                                         readonly typeString: "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory";
                                     };
                                 };
-                                readonly id: 26235;
+                                readonly id: 26283;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -4769,14 +4769,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5185:18:139";
                                 readonly memberName: "totalGovernanceFee";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 26170;
+                                readonly referencedDeclaration: 26218;
                                 readonly src: "5178:25:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 26236;
+                            readonly id: 26284;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -4789,8 +4789,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple(uint256,uint256,uint256,int256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 26197;
-                        readonly id: 26237;
+                        readonly functionReturnParameters: 26245;
+                        readonly id: 26285;
                         readonly nodeType: "Return";
                         readonly src: "5007:206:139";
                     }];
@@ -4802,16 +4802,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateNegativeInterestOnClose";
                 readonly nameLocation: "4116:32:139";
                 readonly parameters: {
-                    readonly id: 26186;
+                    readonly id: 26234;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26173;
+                        readonly id: 26221;
                         readonly mutability: "mutable";
                         readonly name: "_shareProceeds";
                         readonly nameLocation: "4166:14:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4158:22:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4820,7 +4820,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26172;
+                            readonly id: 26220;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4158:7:139";
@@ -4832,12 +4832,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26175;
+                        readonly id: 26223;
                         readonly mutability: "mutable";
                         readonly name: "_shareReservesDelta";
                         readonly nameLocation: "4198:19:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4190:27:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4846,7 +4846,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26174;
+                            readonly id: 26222;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4190:7:139";
@@ -4858,12 +4858,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26177;
+                        readonly id: 26225;
                         readonly mutability: "mutable";
                         readonly name: "_shareCurveDelta";
                         readonly nameLocation: "4235:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4227:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4872,7 +4872,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26176;
+                            readonly id: 26224;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4227:7:139";
@@ -4884,12 +4884,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26179;
+                        readonly id: 26227;
                         readonly mutability: "mutable";
                         readonly name: "_totalGovernanceFee";
                         readonly nameLocation: "4269:19:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4261:27:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4898,7 +4898,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26178;
+                            readonly id: 26226;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4261:7:139";
@@ -4910,12 +4910,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26181;
+                        readonly id: 26229;
                         readonly mutability: "mutable";
                         readonly name: "_openVaultSharePrice";
                         readonly nameLocation: "4306:20:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4298:28:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4924,7 +4924,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26180;
+                            readonly id: 26228;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4298:7:139";
@@ -4936,12 +4936,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26183;
+                        readonly id: 26231;
                         readonly mutability: "mutable";
                         readonly name: "_closeVaultSharePrice";
                         readonly nameLocation: "4344:21:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4336:29:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4950,7 +4950,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26182;
+                            readonly id: 26230;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4336:7:139";
@@ -4962,12 +4962,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26185;
+                        readonly id: 26233;
                         readonly mutability: "mutable";
                         readonly name: "_isLong";
                         readonly nameLocation: "4380:7:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4375:12:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4976,7 +4976,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 26184;
+                            readonly id: 26232;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4375:4:139";
@@ -4990,16 +4990,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "4148:245:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26197;
+                    readonly id: 26245;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26188;
+                        readonly id: 26236;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4417:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5008,7 +5008,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26187;
+                            readonly id: 26235;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4417:7:139";
@@ -5020,12 +5020,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26190;
+                        readonly id: 26238;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4426:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5034,7 +5034,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26189;
+                            readonly id: 26237;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4426:7:139";
@@ -5046,12 +5046,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26192;
+                        readonly id: 26240;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4435:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5060,7 +5060,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26191;
+                            readonly id: 26239;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4435:7:139";
@@ -5072,12 +5072,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26194;
+                        readonly id: 26242;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4444:6:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5086,7 +5086,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26193;
+                            readonly id: 26241;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4444:6:139";
@@ -5098,12 +5098,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26196;
+                        readonly id: 26244;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26239;
+                        readonly scope: 26287;
                         readonly src: "4452:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5112,7 +5112,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26195;
+                            readonly id: 26243;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4452:7:139";
@@ -5125,30 +5125,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "4416:44:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26259;
+                readonly id: 26307;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5226:272:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26258;
+                    readonly id: 26306;
                     readonly nodeType: "Block";
                     readonly src: "5349:149:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26249];
+                        readonly assignments: readonly [26297];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26249;
+                            readonly id: 26297;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "5367:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26258;
+                            readonly scope: 26306;
                             readonly src: "5359:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5157,7 +5157,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26248;
+                                readonly id: 26296;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5359:7:139";
@@ -5168,25 +5168,25 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26255;
+                        readonly id: 26303;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26252;
+                                readonly id: 26300;
                                 readonly name: "apr";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26241;
+                                readonly referencedDeclaration: 26289;
                                 readonly src: "5425:3:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26253;
+                                readonly id: 26301;
                                 readonly name: "positionDuration";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26243;
+                                readonly referencedDeclaration: 26291;
                                 readonly src: "5442:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5202,18 +5202,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26250;
+                                    readonly id: 26298;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "5376:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26251;
+                                readonly id: 26299;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -5221,14 +5221,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "5391:20:139";
                                 readonly memberName: "calculateTimeStretch";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19486;
+                                readonly referencedDeclaration: 19534;
                                 readonly src: "5376:35:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26254;
+                            readonly id: 26302;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5248,19 +5248,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "5359:109:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26256;
+                            readonly id: 26304;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26249;
+                            readonly referencedDeclaration: 26297;
                             readonly src: "5485:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26247;
-                        readonly id: 26257;
+                        readonly functionReturnParameters: 26295;
+                        readonly id: 26305;
                         readonly nodeType: "Return";
                         readonly src: "5478:13:139";
                     }];
@@ -5272,16 +5272,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateTimeStretch";
                 readonly nameLocation: "5235:20:139";
                 readonly parameters: {
-                    readonly id: 26244;
+                    readonly id: 26292;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26241;
+                        readonly id: 26289;
                         readonly mutability: "mutable";
                         readonly name: "apr";
                         readonly nameLocation: "5273:3:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26259;
+                        readonly scope: 26307;
                         readonly src: "5265:11:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5290,7 +5290,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26240;
+                            readonly id: 26288;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5265:7:139";
@@ -5302,12 +5302,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26243;
+                        readonly id: 26291;
                         readonly mutability: "mutable";
                         readonly name: "positionDuration";
                         readonly nameLocation: "5294:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26259;
+                        readonly scope: 26307;
                         readonly src: "5286:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5316,7 +5316,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26242;
+                            readonly id: 26290;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5286:7:139";
@@ -5330,16 +5330,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "5255:61:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26247;
+                    readonly id: 26295;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26246;
+                        readonly id: 26294;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26259;
+                        readonly scope: 26307;
                         readonly src: "5340:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5348,7 +5348,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26245;
+                            readonly id: 26293;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5340:7:139";
@@ -5361,30 +5361,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "5339:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26289;
+                readonly id: 26337;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5504:409:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26288;
+                    readonly id: 26336;
                     readonly nodeType: "Block";
                     readonly src: "5700:213:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26274, 26276];
+                        readonly assignments: readonly [26322, 26324];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26274;
+                            readonly id: 26322;
                             readonly mutability: "mutable";
                             readonly name: "result1";
                             readonly nameLocation: "5719:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26288;
+                            readonly scope: 26336;
                             readonly src: "5711:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5393,7 +5393,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26273;
+                                readonly id: 26321;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5711:7:139";
@@ -5405,12 +5405,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26276;
+                            readonly id: 26324;
                             readonly mutability: "mutable";
                             readonly name: "result2";
                             readonly nameLocation: "5736:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26288;
+                            readonly scope: 26336;
                             readonly src: "5728:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5419,7 +5419,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26275;
+                                readonly id: 26323;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5728:7:139";
@@ -5430,36 +5430,36 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26283;
+                        readonly id: 26331;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26279;
+                                readonly id: 26327;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26262;
+                                readonly referencedDeclaration: 26310;
                                 readonly src: "5793:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_MaxTradeParams_$159351_memory_ptr";
                                     readonly typeString: "struct HyperdriveUtils.MaxTradeParams memory";
                                 };
                             }, {
-                                readonly id: 26280;
+                                readonly id: 26328;
                                 readonly name: "_checkpointExposure";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26264;
+                                readonly referencedDeclaration: 26312;
                                 readonly src: "5814:19:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             }, {
-                                readonly id: 26281;
+                                readonly id: 26329;
                                 readonly name: "_maxIterations";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26266;
+                                readonly referencedDeclaration: 26314;
                                 readonly src: "5847:14:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5478,7 +5478,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26277;
+                                    readonly id: 26325;
                                     readonly name: "HyperdriveUtils";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -5489,7 +5489,7 @@ export declare const MockHyperdriveMath: {
                                         readonly typeString: "type(library HyperdriveUtils)";
                                     };
                                 };
-                                readonly id: 26278;
+                                readonly id: 26326;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -5504,7 +5504,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "function (struct HyperdriveUtils.MaxTradeParams memory,int256,uint256) pure returns (uint256,uint256)";
                                 };
                             };
-                            readonly id: 26282;
+                            readonly id: 26330;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5525,29 +5525,29 @@ export declare const MockHyperdriveMath: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 26284;
+                                readonly id: 26332;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26274;
+                                readonly referencedDeclaration: 26322;
                                 readonly src: "5889:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26285;
+                                readonly id: 26333;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26276;
+                                readonly referencedDeclaration: 26324;
                                 readonly src: "5898:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 26286;
+                            readonly id: 26334;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -5560,8 +5560,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple(uint256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 26272;
-                        readonly id: 26287;
+                        readonly functionReturnParameters: 26320;
+                        readonly id: 26335;
                         readonly nodeType: "Return";
                         readonly src: "5881:25:139";
                     }];
@@ -5573,16 +5573,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateMaxLong";
                 readonly nameLocation: "5513:16:139";
                 readonly parameters: {
-                    readonly id: 26267;
+                    readonly id: 26315;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26262;
+                        readonly id: 26310;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "5577:7:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26289;
+                        readonly scope: 26337;
                         readonly src: "5539:45:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -5591,10 +5591,10 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "struct HyperdriveUtils.MaxTradeParams";
                         };
                         readonly typeName: {
-                            readonly id: 26261;
+                            readonly id: 26309;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26260;
+                                readonly id: 26308;
                                 readonly name: "HyperdriveUtils.MaxTradeParams";
                                 readonly nameLocations: readonly ["5539:15:139", "5555:14:139"];
                                 readonly nodeType: "IdentifierPath";
@@ -5611,12 +5611,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26264;
+                        readonly id: 26312;
                         readonly mutability: "mutable";
                         readonly name: "_checkpointExposure";
                         readonly nameLocation: "5601:19:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26289;
+                        readonly scope: 26337;
                         readonly src: "5594:26:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5625,7 +5625,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26263;
+                            readonly id: 26311;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5594:6:139";
@@ -5637,12 +5637,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26266;
+                        readonly id: 26314;
                         readonly mutability: "mutable";
                         readonly name: "_maxIterations";
                         readonly nameLocation: "5638:14:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26289;
+                        readonly scope: 26337;
                         readonly src: "5630:22:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5651,7 +5651,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26265;
+                            readonly id: 26313;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5630:7:139";
@@ -5665,16 +5665,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "5529:129:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26272;
+                    readonly id: 26320;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26269;
+                        readonly id: 26317;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26289;
+                        readonly scope: 26337;
                         readonly src: "5682:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5683,7 +5683,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26268;
+                            readonly id: 26316;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5682:7:139";
@@ -5695,12 +5695,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26271;
+                        readonly id: 26319;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26289;
+                        readonly scope: 26337;
                         readonly src: "5691:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5709,7 +5709,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26270;
+                            readonly id: 26318;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5691:7:139";
@@ -5722,30 +5722,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "5681:18:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26319;
+                readonly id: 26367;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5919:455:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26318;
+                    readonly id: 26366;
                     readonly nodeType: "Block";
                     readonly src: "6124:250:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26304, 26306];
+                        readonly assignments: readonly [26352, 26354];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26304;
+                            readonly id: 26352;
                             readonly mutability: "mutable";
                             readonly name: "result1";
                             readonly nameLocation: "6143:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26318;
+                            readonly scope: 26366;
                             readonly src: "6135:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5754,7 +5754,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26303;
+                                readonly id: 26351;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6135:7:139";
@@ -5766,12 +5766,12 @@ export declare const MockHyperdriveMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26306;
+                            readonly id: 26354;
                             readonly mutability: "mutable";
                             readonly name: "result2";
                             readonly nameLocation: "6160:7:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26318;
+                            readonly scope: 26366;
                             readonly src: "6152:15:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5780,7 +5780,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26305;
+                                readonly id: 26353;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6152:7:139";
@@ -5791,36 +5791,36 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26313;
+                        readonly id: 26361;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26309;
+                                readonly id: 26357;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26292;
+                                readonly referencedDeclaration: 26340;
                                 readonly src: "6242:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_MaxTradeParams_$159351_memory_ptr";
                                     readonly typeString: "struct HyperdriveUtils.MaxTradeParams memory";
                                 };
                             }, {
-                                readonly id: 26310;
+                                readonly id: 26358;
                                 readonly name: "_effectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26294;
+                                readonly referencedDeclaration: 26342;
                                 readonly src: "6267:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26311;
+                                readonly id: 26359;
                                 readonly name: "_spotPrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26296;
+                                readonly referencedDeclaration: 26344;
                                 readonly src: "6308:10:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5839,7 +5839,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26307;
+                                    readonly id: 26355;
                                     readonly name: "HyperdriveUtils";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -5850,7 +5850,7 @@ export declare const MockHyperdriveMath: {
                                         readonly typeString: "type(library HyperdriveUtils)";
                                     };
                                 };
-                                readonly id: 26308;
+                                readonly id: 26356;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -5865,7 +5865,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "function (struct HyperdriveUtils.MaxTradeParams memory,uint256,uint256) pure returns (uint256,uint256)";
                                 };
                             };
-                            readonly id: 26312;
+                            readonly id: 26360;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5886,29 +5886,29 @@ export declare const MockHyperdriveMath: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 26314;
+                                readonly id: 26362;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26304;
+                                readonly referencedDeclaration: 26352;
                                 readonly src: "6350:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26315;
+                                readonly id: 26363;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26306;
+                                readonly referencedDeclaration: 26354;
                                 readonly src: "6359:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 26316;
+                            readonly id: 26364;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -5921,8 +5921,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "tuple(uint256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 26302;
-                        readonly id: 26317;
+                        readonly functionReturnParameters: 26350;
+                        readonly id: 26365;
                         readonly nodeType: "Return";
                         readonly src: "6342:25:139";
                     }];
@@ -5934,16 +5934,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateAbsoluteMaxLong";
                 readonly nameLocation: "5928:24:139";
                 readonly parameters: {
-                    readonly id: 26297;
+                    readonly id: 26345;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26292;
+                        readonly id: 26340;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "6000:7:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26319;
+                        readonly scope: 26367;
                         readonly src: "5962:45:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -5952,10 +5952,10 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "struct HyperdriveUtils.MaxTradeParams";
                         };
                         readonly typeName: {
-                            readonly id: 26291;
+                            readonly id: 26339;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26290;
+                                readonly id: 26338;
                                 readonly name: "HyperdriveUtils.MaxTradeParams";
                                 readonly nameLocations: readonly ["5962:15:139", "5978:14:139"];
                                 readonly nodeType: "IdentifierPath";
@@ -5972,12 +5972,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26294;
+                        readonly id: 26342;
                         readonly mutability: "mutable";
                         readonly name: "_effectiveShareReserves";
                         readonly nameLocation: "6025:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26319;
+                        readonly scope: 26367;
                         readonly src: "6017:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5986,7 +5986,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26293;
+                            readonly id: 26341;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6017:7:139";
@@ -5998,12 +5998,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26296;
+                        readonly id: 26344;
                         readonly mutability: "mutable";
                         readonly name: "_spotPrice";
                         readonly nameLocation: "6066:10:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26319;
+                        readonly scope: 26367;
                         readonly src: "6058:18:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6012,7 +6012,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26295;
+                            readonly id: 26343;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6058:7:139";
@@ -6026,16 +6026,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "5952:130:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26302;
+                    readonly id: 26350;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26299;
+                        readonly id: 26347;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26319;
+                        readonly scope: 26367;
                         readonly src: "6106:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6044,7 +6044,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26298;
+                            readonly id: 26346;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6106:7:139";
@@ -6056,12 +6056,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26301;
+                        readonly id: 26349;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26319;
+                        readonly scope: 26367;
                         readonly src: "6115:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6070,7 +6070,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26300;
+                            readonly id: 26348;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6115:7:139";
@@ -6083,50 +6083,50 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "6105:18:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26339;
+                readonly id: 26387;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6380:365:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26338;
+                    readonly id: 26386;
                     readonly nodeType: "Block";
                     readonly src: "6568:177:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26333;
+                                readonly id: 26381;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26322;
+                                readonly referencedDeclaration: 26370;
                                 readonly src: "6648:7:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_MaxTradeParams_$159351_memory_ptr";
                                     readonly typeString: "struct HyperdriveUtils.MaxTradeParams memory";
                                 };
                             }, {
-                                readonly id: 26334;
+                                readonly id: 26382;
                                 readonly name: "_checkpointExposure";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26324;
+                                readonly referencedDeclaration: 26372;
                                 readonly src: "6673:19:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             }, {
-                                readonly id: 26335;
+                                readonly id: 26383;
                                 readonly name: "_maxIterations";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26326;
+                                readonly referencedDeclaration: 26374;
                                 readonly src: "6710:14:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6145,7 +6145,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26331;
+                                    readonly id: 26379;
                                     readonly name: "HyperdriveUtils";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -6156,7 +6156,7 @@ export declare const MockHyperdriveMath: {
                                         readonly typeString: "type(library HyperdriveUtils)";
                                     };
                                 };
-                                readonly id: 26332;
+                                readonly id: 26380;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -6171,7 +6171,7 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "function (struct HyperdriveUtils.MaxTradeParams memory,int256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26336;
+                            readonly id: 26384;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6187,8 +6187,8 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26330;
-                        readonly id: 26337;
+                        readonly functionReturnParameters: 26378;
+                        readonly id: 26385;
                         readonly nodeType: "Return";
                         readonly src: "6578:160:139";
                     }];
@@ -6200,16 +6200,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateMaxShort";
                 readonly nameLocation: "6389:17:139";
                 readonly parameters: {
-                    readonly id: 26327;
+                    readonly id: 26375;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26322;
+                        readonly id: 26370;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "6454:7:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26339;
+                        readonly scope: 26387;
                         readonly src: "6416:45:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6218,10 +6218,10 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "struct HyperdriveUtils.MaxTradeParams";
                         };
                         readonly typeName: {
-                            readonly id: 26321;
+                            readonly id: 26369;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26320;
+                                readonly id: 26368;
                                 readonly name: "HyperdriveUtils.MaxTradeParams";
                                 readonly nameLocations: readonly ["6416:15:139", "6432:14:139"];
                                 readonly nodeType: "IdentifierPath";
@@ -6238,12 +6238,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26324;
+                        readonly id: 26372;
                         readonly mutability: "mutable";
                         readonly name: "_checkpointExposure";
                         readonly nameLocation: "6478:19:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26339;
+                        readonly scope: 26387;
                         readonly src: "6471:26:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6252,7 +6252,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26323;
+                            readonly id: 26371;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6471:6:139";
@@ -6264,12 +6264,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26326;
+                        readonly id: 26374;
                         readonly mutability: "mutable";
                         readonly name: "_maxIterations";
                         readonly nameLocation: "6515:14:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26339;
+                        readonly scope: 26387;
                         readonly src: "6507:22:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6278,7 +6278,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26325;
+                            readonly id: 26373;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6507:7:139";
@@ -6292,16 +6292,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "6406:129:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26330;
+                    readonly id: 26378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26329;
+                        readonly id: 26377;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26339;
+                        readonly scope: 26387;
                         readonly src: "6559:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6310,7 +6310,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26328;
+                            readonly id: 26376;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6559:7:139";
@@ -6323,30 +6323,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "6558:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26365;
+                readonly id: 26413;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6751:418:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26364;
+                    readonly id: 26412;
                     readonly nodeType: "Block";
                     readonly src: "6951:218:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26353];
+                        readonly assignments: readonly [26401];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26353;
+                            readonly id: 26401;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "6969:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26364;
+                            readonly scope: 26412;
                             readonly src: "6961:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -6355,7 +6355,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26352;
+                                readonly id: 26400;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6961:7:139";
@@ -6366,47 +6366,47 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26361;
+                        readonly id: 26409;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26356;
+                                readonly id: 26404;
                                 readonly name: "_shareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26341;
+                                readonly referencedDeclaration: 26389;
                                 readonly src: "7025:14:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26357;
+                                readonly id: 26405;
                                 readonly name: "_bondReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26343;
+                                readonly referencedDeclaration: 26391;
                                 readonly src: "7053:13:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26358;
+                                readonly id: 26406;
                                 readonly name: "_initialVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26345;
+                                readonly referencedDeclaration: 26393;
                                 readonly src: "7080:23:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26359;
+                                readonly id: 26407;
                                 readonly name: "_timeStretch";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26347;
+                                readonly referencedDeclaration: 26395;
                                 readonly src: "7117:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6428,18 +6428,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26354;
+                                    readonly id: 26402;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "6978:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26355;
+                                readonly id: 26403;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -6447,14 +6447,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "6993:18:139";
                                 readonly memberName: "calculateSpotPrice";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19512;
+                                readonly referencedDeclaration: 19560;
                                 readonly src: "6978:33:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26360;
+                            readonly id: 26408;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6474,19 +6474,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "6961:178:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26362;
+                            readonly id: 26410;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26353;
+                            readonly referencedDeclaration: 26401;
                             readonly src: "7156:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26351;
-                        readonly id: 26363;
+                        readonly functionReturnParameters: 26399;
+                        readonly id: 26411;
                         readonly nodeType: "Return";
                         readonly src: "7149:13:139";
                     }];
@@ -6498,16 +6498,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateSpotPrice";
                 readonly nameLocation: "6760:18:139";
                 readonly parameters: {
-                    readonly id: 26348;
+                    readonly id: 26396;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26341;
+                        readonly id: 26389;
                         readonly mutability: "mutable";
                         readonly name: "_shareReserves";
                         readonly nameLocation: "6796:14:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26365;
+                        readonly scope: 26413;
                         readonly src: "6788:22:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6516,7 +6516,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26340;
+                            readonly id: 26388;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6788:7:139";
@@ -6528,12 +6528,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26343;
+                        readonly id: 26391;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "6828:13:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26365;
+                        readonly scope: 26413;
                         readonly src: "6820:21:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6542,7 +6542,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26342;
+                            readonly id: 26390;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6820:7:139";
@@ -6554,12 +6554,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26345;
+                        readonly id: 26393;
                         readonly mutability: "mutable";
                         readonly name: "_initialVaultSharePrice";
                         readonly nameLocation: "6859:23:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26365;
+                        readonly scope: 26413;
                         readonly src: "6851:31:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6568,7 +6568,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26344;
+                            readonly id: 26392;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6851:7:139";
@@ -6580,12 +6580,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26347;
+                        readonly id: 26395;
                         readonly mutability: "mutable";
                         readonly name: "_timeStretch";
                         readonly nameLocation: "6900:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26365;
+                        readonly scope: 26413;
                         readonly src: "6892:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6594,7 +6594,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26346;
+                            readonly id: 26394;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6892:7:139";
@@ -6608,16 +6608,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "6778:140:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26351;
+                    readonly id: 26399;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26350;
+                        readonly id: 26398;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26365;
+                        readonly scope: 26413;
                         readonly src: "6942:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6626,7 +6626,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26349;
+                            readonly id: 26397;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6942:7:139";
@@ -6639,30 +6639,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "6941:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26397;
+                readonly id: 26445;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7175:546:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26396;
+                    readonly id: 26444;
                     readonly nodeType: "Block";
                     readonly src: "7443:278:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26383];
+                        readonly assignments: readonly [26431];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26383;
+                            readonly id: 26431;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "7461:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26396;
+                            readonly scope: 26444;
                             readonly src: "7453:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -6671,7 +6671,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26382;
+                                readonly id: 26430;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "7453:7:139";
@@ -6682,69 +6682,69 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26393;
+                        readonly id: 26441;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26386;
+                                readonly id: 26434;
                                 readonly name: "_bondAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26367;
+                                readonly referencedDeclaration: 26415;
                                 readonly src: "7523:11:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26387;
+                                readonly id: 26435;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26369;
+                                readonly referencedDeclaration: 26417;
                                 readonly src: "7548:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26388;
+                                readonly id: 26436;
                                 readonly name: "_openVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26371;
+                                readonly referencedDeclaration: 26419;
                                 readonly src: "7574:20:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26389;
+                                readonly id: 26437;
                                 readonly name: "_closeVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26373;
+                                readonly referencedDeclaration: 26421;
                                 readonly src: "7608:21:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26390;
+                                readonly id: 26438;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26375;
+                                readonly referencedDeclaration: 26423;
                                 readonly src: "7643:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26391;
+                                readonly id: 26439;
                                 readonly name: "_flatFee";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26377;
+                                readonly referencedDeclaration: 26425;
                                 readonly src: "7673:8:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6772,18 +6772,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26384;
+                                    readonly id: 26432;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "7470:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26385;
+                                readonly id: 26433;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -6791,14 +6791,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "7485:24:139";
                                 readonly memberName: "calculateShortProceedsUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19741;
+                                readonly referencedDeclaration: 19789;
                                 readonly src: "7470:39:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26392;
+                            readonly id: 26440;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6818,19 +6818,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "7453:238:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26394;
+                            readonly id: 26442;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26383;
+                            readonly referencedDeclaration: 26431;
                             readonly src: "7708:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26381;
-                        readonly id: 26395;
+                        readonly functionReturnParameters: 26429;
+                        readonly id: 26443;
                         readonly nodeType: "Return";
                         readonly src: "7701:13:139";
                     }];
@@ -6842,16 +6842,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateShortProceedsUp";
                 readonly nameLocation: "7184:24:139";
                 readonly parameters: {
-                    readonly id: 26378;
+                    readonly id: 26426;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26367;
+                        readonly id: 26415;
                         readonly mutability: "mutable";
                         readonly name: "_bondAmount";
                         readonly nameLocation: "7226:11:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7218:19:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6860,7 +6860,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26366;
+                            readonly id: 26414;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7218:7:139";
@@ -6872,12 +6872,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26369;
+                        readonly id: 26417;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "7255:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7247:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6886,7 +6886,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26368;
+                            readonly id: 26416;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7247:7:139";
@@ -6898,12 +6898,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26371;
+                        readonly id: 26419;
                         readonly mutability: "mutable";
                         readonly name: "_openVaultSharePrice";
                         readonly nameLocation: "7285:20:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7277:28:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6912,7 +6912,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26370;
+                            readonly id: 26418;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7277:7:139";
@@ -6924,12 +6924,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26373;
+                        readonly id: 26421;
                         readonly mutability: "mutable";
                         readonly name: "_closeVaultSharePrice";
                         readonly nameLocation: "7323:21:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7315:29:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6938,7 +6938,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26372;
+                            readonly id: 26420;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7315:7:139";
@@ -6950,12 +6950,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26375;
+                        readonly id: 26423;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "7362:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7354:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6964,7 +6964,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26374;
+                            readonly id: 26422;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7354:7:139";
@@ -6976,12 +6976,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26377;
+                        readonly id: 26425;
                         readonly mutability: "mutable";
                         readonly name: "_flatFee";
                         readonly nameLocation: "7396:8:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7388:16:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6990,7 +6990,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26376;
+                            readonly id: 26424;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7388:7:139";
@@ -7004,16 +7004,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "7208:202:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26381;
+                    readonly id: 26429;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26380;
+                        readonly id: 26428;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26397;
+                        readonly scope: 26445;
                         readonly src: "7434:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7022,7 +7022,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26379;
+                            readonly id: 26427;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7434:7:139";
@@ -7035,30 +7035,30 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "7433:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26429;
+                readonly id: 26477;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7727:550:139";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26428;
+                    readonly id: 26476;
                     readonly nodeType: "Block";
                     readonly src: "7997:280:139";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26415];
+                        readonly assignments: readonly [26463];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26415;
+                            readonly id: 26463;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "8015:6:139";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26428;
+                            readonly scope: 26476;
                             readonly src: "8007:14:139";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -7067,7 +7067,7 @@ export declare const MockHyperdriveMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 26414;
+                                readonly id: 26462;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "8007:7:139";
@@ -7078,69 +7078,69 @@ export declare const MockHyperdriveMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26425;
+                        readonly id: 26473;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26418;
+                                readonly id: 26466;
                                 readonly name: "_bondAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26399;
+                                readonly referencedDeclaration: 26447;
                                 readonly src: "8079:11:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26419;
+                                readonly id: 26467;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26401;
+                                readonly referencedDeclaration: 26449;
                                 readonly src: "8104:12:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26420;
+                                readonly id: 26468;
                                 readonly name: "_openVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26403;
+                                readonly referencedDeclaration: 26451;
                                 readonly src: "8130:20:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26421;
+                                readonly id: 26469;
                                 readonly name: "_closeVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26405;
+                                readonly referencedDeclaration: 26453;
                                 readonly src: "8164:21:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26422;
+                                readonly id: 26470;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26407;
+                                readonly referencedDeclaration: 26455;
                                 readonly src: "8199:16:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26423;
+                                readonly id: 26471;
                                 readonly name: "_flatFee";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26409;
+                                readonly referencedDeclaration: 26457;
                                 readonly src: "8229:8:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -7168,18 +7168,18 @@ export declare const MockHyperdriveMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26416;
+                                    readonly id: 26464;
                                     readonly name: "HyperdriveMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 20142;
+                                    readonly referencedDeclaration: 20190;
                                     readonly src: "8024:14:139";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                         readonly typeString: "type(library HyperdriveMath)";
                                     };
                                 };
-                                readonly id: 26417;
+                                readonly id: 26465;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7187,14 +7187,14 @@ export declare const MockHyperdriveMath: {
                                 readonly memberLocation: "8039:26:139";
                                 readonly memberName: "calculateShortProceedsDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 19793;
+                                readonly referencedDeclaration: 19841;
                                 readonly src: "8024:41:139";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26424;
+                            readonly id: 26472;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7214,19 +7214,19 @@ export declare const MockHyperdriveMath: {
                         readonly src: "8007:240:139";
                     }, {
                         readonly expression: {
-                            readonly id: 26426;
+                            readonly id: 26474;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26415;
+                            readonly referencedDeclaration: 26463;
                             readonly src: "8264:6:139";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26413;
-                        readonly id: 26427;
+                        readonly functionReturnParameters: 26461;
+                        readonly id: 26475;
                         readonly nodeType: "Return";
                         readonly src: "8257:13:139";
                     }];
@@ -7238,16 +7238,16 @@ export declare const MockHyperdriveMath: {
                 readonly name: "calculateShortProceedsDown";
                 readonly nameLocation: "7736:26:139";
                 readonly parameters: {
-                    readonly id: 26410;
+                    readonly id: 26458;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26399;
+                        readonly id: 26447;
                         readonly mutability: "mutable";
                         readonly name: "_bondAmount";
                         readonly nameLocation: "7780:11:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7772:19:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7256,7 +7256,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26398;
+                            readonly id: 26446;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7772:7:139";
@@ -7268,12 +7268,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26401;
+                        readonly id: 26449;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "7809:12:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7801:20:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7282,7 +7282,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26400;
+                            readonly id: 26448;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7801:7:139";
@@ -7294,12 +7294,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26403;
+                        readonly id: 26451;
                         readonly mutability: "mutable";
                         readonly name: "_openVaultSharePrice";
                         readonly nameLocation: "7839:20:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7831:28:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7308,7 +7308,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26402;
+                            readonly id: 26450;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7831:7:139";
@@ -7320,12 +7320,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26405;
+                        readonly id: 26453;
                         readonly mutability: "mutable";
                         readonly name: "_closeVaultSharePrice";
                         readonly nameLocation: "7877:21:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7869:29:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7334,7 +7334,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26404;
+                            readonly id: 26452;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7869:7:139";
@@ -7346,12 +7346,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26407;
+                        readonly id: 26455;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "7916:16:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7908:24:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7360,7 +7360,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26406;
+                            readonly id: 26454;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7908:7:139";
@@ -7372,12 +7372,12 @@ export declare const MockHyperdriveMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26409;
+                        readonly id: 26457;
                         readonly mutability: "mutable";
                         readonly name: "_flatFee";
                         readonly nameLocation: "7950:8:139";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7942:16:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7386,7 +7386,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26408;
+                            readonly id: 26456;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7942:7:139";
@@ -7400,16 +7400,16 @@ export declare const MockHyperdriveMath: {
                     readonly src: "7762:202:139";
                 };
                 readonly returnParameters: {
-                    readonly id: 26413;
+                    readonly id: 26461;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26412;
+                        readonly id: 26460;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26429;
+                        readonly scope: 26477;
                         readonly src: "7988:7:139";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7418,7 +7418,7 @@ export declare const MockHyperdriveMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26411;
+                            readonly id: 26459;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7988:7:139";
@@ -7431,7 +7431,7 @@ export declare const MockHyperdriveMath: {
                     }];
                     readonly src: "7987:9:139";
                 };
-                readonly scope: 26430;
+                readonly scope: 26478;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -7442,11 +7442,11 @@ export declare const MockHyperdriveMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [26430];
+            readonly linearizedBaseContracts: readonly [26478];
             readonly name: "MockHyperdriveMath";
             readonly nameLocation: "217:18:139";
-            readonly scope: 26431;
-            readonly usedErrors: readonly [10890, 10902, 10935, 10991];
+            readonly scope: 26479;
+            readonly usedErrors: readonly [10938, 10950, 10983, 11039];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

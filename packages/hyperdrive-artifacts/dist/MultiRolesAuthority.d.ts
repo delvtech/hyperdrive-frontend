@@ -1,334 +1,334 @@
 export declare const MultiRolesAuthority: {
     readonly abi: readonly [{
+        readonly type: "constructor";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_owner";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract Authority";
             readonly name: "_authority";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "constructor";
     }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-            readonly name: "newAuthority";
-            readonly type: "address";
-        }];
-        readonly name: "AuthorityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "newOwner";
-            readonly type: "address";
-        }];
-        readonly name: "OwnershipTransferred";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "bytes4";
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "PublicCapabilityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "uint8";
-            readonly name: "role";
-            readonly type: "uint8";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "bytes4";
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "RoleCapabilityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "target";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-            readonly name: "authority";
-            readonly type: "address";
-        }];
-        readonly name: "TargetCustomAuthorityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "uint8";
-            readonly name: "role";
-            readonly type: "uint8";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "UserRoleUpdated";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "authority";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "contract Authority";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "canCall";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "target";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "canCall";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "doesRoleHaveCapability";
         readonly inputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "doesRoleHaveCapability";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "doesUserHaveRole";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
-        readonly name: "doesUserHaveRole";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes4";
-            readonly name: "";
-            readonly type: "bytes4";
-        }];
+        readonly type: "function";
         readonly name: "getRolesWithCapability";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly name: "getTargetCustomAuthority";
-        readonly outputs: readonly [{
-            readonly internalType: "contract Authority";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly name: "getUserRoles";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "isCapabilityPublic";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
-            readonly type: "bool";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
-        readonly name: "owner";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
+        readonly type: "function";
+        readonly name: "getTargetCustomAuthority";
+        readonly inputs: readonly [{
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getUserRoles";
         readonly inputs: readonly [{
-            readonly internalType: "contract Authority";
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "isCapabilityPublic";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes4";
+            readonly internalType: "bytes4";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "owner";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "setAuthority";
+        readonly inputs: readonly [{
             readonly name: "newAuthority";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
-        readonly name: "setAuthority";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setPublicCapability";
         readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setPublicCapability";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setRoleCapability";
         readonly inputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setRoleCapability";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setTargetCustomAuthority";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "target";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract Authority";
             readonly name: "customAuthority";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
-        readonly name: "setTargetCustomAuthority";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setUserRole";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setUserRole";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferOwnership";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "newOwner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "transferOwnership";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "AuthorityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "newAuthority";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OwnershipTransferred";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "newOwner";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PublicCapabilityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+            readonly indexed: true;
+            readonly internalType: "bytes4";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RoleCapabilityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "role";
+            readonly type: "uint8";
+            readonly indexed: true;
+            readonly internalType: "uint8";
+        }, {
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+            readonly indexed: true;
+            readonly internalType: "bytes4";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TargetCustomAuthorityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "target";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "authority";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "UserRoleUpdated";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "role";
+            readonly type: "uint8";
+            readonly indexed: true;
+            readonly internalType: "uint8";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b50604051610c8c380380610c8c83398101604081905261002f916100e1565b600080546001600160a01b03199081166001600160a01b0385811691821784556001805490931690851617909155604051849284929133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36040516001600160a01b0382169033907fa3396fd7f6e0a21b50e5089d2da70d5ac0a3bbbd1f617a93f134b7638998019890600090a35050505061011b565b6001600160a01b03811681146100de57600080fd5b50565b600080604083850312156100f457600080fd5b82516100ff816100c9565b6020840151909250610110816100c9565b809150509250929050565b610b628061012a6000396000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c80638da5cb5b11610097578063e688747b11610066578063e688747b1461023b578063ea7ca27614610271578063ed0d0efb146102a8578063f2fde38b146102c857600080fd5b80638da5cb5b146101c1578063b7009613146101ec578063bf7e214f146101ff578063c53a39851461021257600080fd5b80634b5159da116100d35780634b5159da1461017557806367aff48414610188578063728b952b1461019b5780637a9e5e4b146101ae57600080fd5b806306a36aee146100fa5780630bade8a41461012d5780630ea9b75b14610160575b600080fd5b61011a6101083660046108c8565b60036020526000908152604090205481565b6040519081526020015b60405180910390f35b61015061013b366004610902565b60046020526000908152604090205460ff1681565b6040519015158152602001610124565b61017361016e36600461093c565b6102db565b005b610173610183366004610983565b6103bc565b6101736101963660046109ba565b61044e565b6101736101a93660046109e8565b610516565b6101736101bc3660046108c8565b61059f565b6000546101d4906001600160a01b031681565b6040516001600160a01b039091168152602001610124565b6101506101fa366004610a16565b610689565b6001546101d4906001600160a01b031681565b6101d46102203660046108c8565b6002602052600090815260409020546001600160a01b031681565b610150610249366004610a5d565b6001600160e01b03191660009081526005602052604090205460ff919091161c600116151590565b61015061027f366004610a90565b6001600160a01b0391909116600090815260036020526040902054600160ff9092161c16151590565b61011a6102b6366004610902565b60056020526000908152604090205481565b6101736102d63660046108c8565b610789565b6102f1336000356001600160e01b031916610806565b6103165760405162461bcd60e51b815260040161030d90610abc565b60405180910390fd5b8015610346576001600160e01b0319821660009081526005602052604090208054600160ff86161b17905561036d565b6001600160e01b0319821660009081526005602052604090208054600160ff86161b191690555b816001600160e01b0319168360ff167fbfe16b2c35ce23dfd1ab0e7b5d086a10060c9b52d1574e1680c881b3b3a2b151836040516103af911515815260200190565b60405180910390a3505050565b6103d2336000356001600160e01b031916610806565b6103ee5760405162461bcd60e51b815260040161030d90610abc565b6001600160e01b03198216600081815260046020908152604091829020805460ff191685151590811790915591519182527f36d28126bef21a4f3765d7fcb7c45cead463ae4c41094ef3b771ede598544103910160405180910390a25050565b610464336000356001600160e01b031916610806565b6104805760405162461bcd60e51b815260040161030d90610abc565b80156104af576001600160a01b03831660009081526003602052604090208054600160ff85161b1790556104d5565b6001600160a01b03831660009081526003602052604090208054600160ff85161b191690555b8160ff16836001600160a01b03167f4c9bdd0c8e073eb5eda2250b18d8e5121ff27b62064fbeeeed4869bb99bc5bf2836040516103af911515815260200190565b61052c336000356001600160e01b031916610806565b6105485760405162461bcd60e51b815260040161030d90610abc565b6001600160a01b0382811660008181526002602052604080822080546001600160a01b0319169486169485179055517fa4908e11a5f895b13d51526c331ac93cdd30e59772361c5d07874eb36bff20659190a35050565b6000546001600160a01b0316331480610634575060015460405163b700961360e01b81526001600160a01b039091169063b7009613906105f390339030906001600160e01b03196000351690600401610ae2565b602060405180830381865afa158015610610573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106349190610b0f565b61063d57600080fd5b600180546001600160a01b0319166001600160a01b03831690811790915560405133907fa3396fd7f6e0a21b50e5089d2da70d5ac0a3bbbd1f617a93f134b7638998019890600090a350565b6001600160a01b0380831660009081526002602052604081205490911680156107255760405163b700961360e01b81526001600160a01b0382169063b7009613906106dc90889088908890600401610ae2565b602060405180830381865afa1580156106f9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061071d9190610b0f565b915050610782565b6001600160e01b0319831660009081526004602052604090205460ff168061077e57506001600160e01b031983166000908152600560209081526040808320546001600160a01b03891684526003909252909120541615155b9150505b9392505050565b61079f336000356001600160e01b031916610806565b6107bb5760405162461bcd60e51b815260040161030d90610abc565b600080546001600160a01b0319166001600160a01b0383169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b6001546000906001600160a01b03168015801590610890575060405163b700961360e01b81526001600160a01b0382169063b70096139061084f90879030908890600401610ae2565b602060405180830381865afa15801561086c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108909190610b0f565b806108a857506000546001600160a01b038581169116145b949350505050565b6001600160a01b03811681146108c557600080fd5b50565b6000602082840312156108da57600080fd5b8135610782816108b0565b80356001600160e01b0319811681146108fd57600080fd5b919050565b60006020828403121561091457600080fd5b610782826108e5565b803560ff811681146108fd57600080fd5b80151581146108c557600080fd5b60008060006060848603121561095157600080fd5b61095a8461091d565b9250610968602085016108e5565b915060408401356109788161092e565b809150509250925092565b6000806040838503121561099657600080fd5b61099f836108e5565b915060208301356109af8161092e565b809150509250929050565b6000806000606084860312156109cf57600080fd5b83356109da816108b0565b92506109686020850161091d565b600080604083850312156109fb57600080fd5b8235610a06816108b0565b915060208301356109af816108b0565b600080600060608486031215610a2b57600080fd5b8335610a36816108b0565b92506020840135610a46816108b0565b9150610a54604085016108e5565b90509250925092565b60008060408385031215610a7057600080fd5b610a798361091d565b9150610a87602084016108e5565b90509250929050565b60008060408385031215610aa357600080fd5b8235610aae816108b0565b9150610a876020840161091d565b6020808252600c908201526b15539055551213d49256915160a21b604082015260600190565b6001600160a01b0393841681529190921660208201526001600160e01b0319909116604082015260600190565b600060208284031215610b2157600080fd5b81516107828161092e56fea2646970667358221220954953fe2bd851fc2326caca9528d023b1200629cc0872f35f12fafd78c198cd64736f6c63430008140033";
@@ -730,48 +730,48 @@ export declare const MultiRolesAuthority: {
     };
     readonly ast: {
         readonly absolutePath: "lib/solmate/src/auth/authorities/MultiRolesAuthority.sol";
-        readonly id: 72473;
+        readonly id: 72521;
         readonly exportedSymbols: {
-            readonly Auth: readonly [72154];
-            readonly Authority: readonly [72167];
-            readonly MultiRolesAuthority: readonly [72472];
+            readonly Auth: readonly [72202];
+            readonly Authority: readonly [72215];
+            readonly MultiRolesAuthority: readonly [72520];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "42:4747:173";
         readonly nodes: readonly [{
-            readonly id: 72169;
+            readonly id: 72217;
             readonly nodeType: "PragmaDirective";
             readonly src: "42:24:173";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.8", ".0"];
         }, {
-            readonly id: 72172;
+            readonly id: 72220;
             readonly nodeType: "ImportDirective";
             readonly src: "68:44:173";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/solmate/src/auth/Auth.sol";
             readonly file: "../Auth.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 72473;
-            readonly sourceUnit: 72168;
+            readonly scope: 72521;
+            readonly sourceUnit: 72216;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 72170;
+                    readonly id: 72218;
                     readonly name: "Auth";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 72154;
+                    readonly referencedDeclaration: 72202;
                     readonly src: "76:4:173";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 72171;
+                    readonly id: 72219;
                     readonly name: "Authority";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 72167;
+                    readonly referencedDeclaration: 72215;
                     readonly src: "82:9:173";
                     readonly typeDescriptions: {};
                 };
@@ -779,11 +779,11 @@ export declare const MultiRolesAuthority: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 72472;
+            readonly id: 72520;
             readonly nodeType: "ContractDefinition";
             readonly src: "327:4461:173";
             readonly nodes: readonly [{
-                readonly id: 72185;
+                readonly id: 72233;
                 readonly nodeType: "EventDefinition";
                 readonly src: "560:78:173";
                 readonly nodes: readonly [];
@@ -792,17 +792,17 @@ export declare const MultiRolesAuthority: {
                 readonly name: "UserRoleUpdated";
                 readonly nameLocation: "566:15:173";
                 readonly parameters: {
-                    readonly id: 72184;
+                    readonly id: 72232;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72179;
+                        readonly id: 72227;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "user";
                         readonly nameLocation: "598:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72185;
+                        readonly scope: 72233;
                         readonly src: "582:20:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -811,7 +811,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72178;
+                            readonly id: 72226;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "582:7:173";
@@ -824,13 +824,13 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72181;
+                        readonly id: 72229;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "618:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72185;
+                        readonly scope: 72233;
                         readonly src: "604:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -839,7 +839,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72180;
+                            readonly id: 72228;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "604:5:173";
@@ -851,13 +851,13 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72183;
+                        readonly id: 72231;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "629:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72185;
+                        readonly scope: 72233;
                         readonly src: "624:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -866,7 +866,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72182;
+                            readonly id: 72230;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "624:4:173";
@@ -880,7 +880,7 @@ export declare const MultiRolesAuthority: {
                     readonly src: "581:56:173";
                 };
             }, {
-                readonly id: 72191;
+                readonly id: 72239;
                 readonly nodeType: "EventDefinition";
                 readonly src: "644:72:173";
                 readonly nodes: readonly [];
@@ -889,17 +889,17 @@ export declare const MultiRolesAuthority: {
                 readonly name: "PublicCapabilityUpdated";
                 readonly nameLocation: "650:23:173";
                 readonly parameters: {
-                    readonly id: 72190;
+                    readonly id: 72238;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72187;
+                        readonly id: 72235;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "689:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72191;
+                        readonly scope: 72239;
                         readonly src: "674:26:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -908,7 +908,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72186;
+                            readonly id: 72234;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "674:6:173";
@@ -920,13 +920,13 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72189;
+                        readonly id: 72237;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "707:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72191;
+                        readonly scope: 72239;
                         readonly src: "702:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -935,7 +935,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72188;
+                            readonly id: 72236;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "702:4:173";
@@ -949,7 +949,7 @@ export declare const MultiRolesAuthority: {
                     readonly src: "673:42:173";
                 };
             }, {
-                readonly id: 72199;
+                readonly id: 72247;
                 readonly nodeType: "EventDefinition";
                 readonly src: "722:90:173";
                 readonly nodes: readonly [];
@@ -958,17 +958,17 @@ export declare const MultiRolesAuthority: {
                 readonly name: "RoleCapabilityUpdated";
                 readonly nameLocation: "728:21:173";
                 readonly parameters: {
-                    readonly id: 72198;
+                    readonly id: 72246;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72193;
+                        readonly id: 72241;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "764:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72199;
+                        readonly scope: 72247;
                         readonly src: "750:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -977,7 +977,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72192;
+                            readonly id: 72240;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "750:5:173";
@@ -989,13 +989,13 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72195;
+                        readonly id: 72243;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "785:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72199;
+                        readonly scope: 72247;
                         readonly src: "770:26:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1004,7 +1004,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72194;
+                            readonly id: 72242;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "770:6:173";
@@ -1016,13 +1016,13 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72197;
+                        readonly id: 72245;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "803:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72199;
+                        readonly scope: 72247;
                         readonly src: "798:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1031,7 +1031,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72196;
+                            readonly id: 72244;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "798:4:173";
@@ -1045,7 +1045,7 @@ export declare const MultiRolesAuthority: {
                     readonly src: "749:62:173";
                 };
             }, {
-                readonly id: 72206;
+                readonly id: 72254;
                 readonly nodeType: "EventDefinition";
                 readonly src: "818:88:173";
                 readonly nodes: readonly [];
@@ -1054,17 +1054,17 @@ export declare const MultiRolesAuthority: {
                 readonly name: "TargetCustomAuthorityUpdated";
                 readonly nameLocation: "824:28:173";
                 readonly parameters: {
-                    readonly id: 72205;
+                    readonly id: 72253;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72201;
+                        readonly id: 72249;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "869:6:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72206;
+                        readonly scope: 72254;
                         readonly src: "853:22:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1073,7 +1073,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72200;
+                            readonly id: 72248;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "853:7:173";
@@ -1086,35 +1086,35 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72204;
+                        readonly id: 72252;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "authority";
                         readonly nameLocation: "895:9:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72206;
+                        readonly scope: 72254;
                         readonly src: "877:27:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 72203;
+                            readonly id: 72251;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 72202;
+                                readonly id: 72250;
                                 readonly name: "Authority";
                                 readonly nameLocations: readonly ["877:9:173"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72167;
+                                readonly referencedDeclaration: 72215;
                                 readonly src: "877:9:173";
                             };
-                            readonly referencedDeclaration: 72167;
+                            readonly referencedDeclaration: 72215;
                             readonly src: "877:9:173";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                         };
@@ -1123,12 +1123,12 @@ export declare const MultiRolesAuthority: {
                     readonly src: "852:53:173";
                 };
             }, {
-                readonly id: 72219;
+                readonly id: 72267;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1094:77:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72218;
+                    readonly id: 72266;
                     readonly nodeType: "Block";
                     readonly src: "1169:2:173";
                     readonly nodes: readonly [];
@@ -1138,36 +1138,36 @@ export declare const MultiRolesAuthority: {
                 readonly kind: "constructor";
                 readonly modifiers: readonly [{
                     readonly arguments: readonly [{
-                        readonly id: 72214;
+                        readonly id: 72262;
                         readonly name: "_owner";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 72208;
+                        readonly referencedDeclaration: 72256;
                         readonly src: "1149:6:173";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         };
                     }, {
-                        readonly id: 72215;
+                        readonly id: 72263;
                         readonly name: "_authority";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 72211;
+                        readonly referencedDeclaration: 72259;
                         readonly src: "1157:10:173";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                             readonly typeString: "contract Authority";
                         };
                     }];
-                    readonly id: 72216;
+                    readonly id: 72264;
                     readonly kind: "baseConstructorSpecifier";
                     readonly modifierName: {
-                        readonly id: 72213;
+                        readonly id: 72261;
                         readonly name: "Auth";
                         readonly nameLocations: readonly ["1144:4:173"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72154;
+                        readonly referencedDeclaration: 72202;
                         readonly src: "1144:4:173";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -1176,16 +1176,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 72212;
+                    readonly id: 72260;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72208;
+                        readonly id: 72256;
                         readonly mutability: "mutable";
                         readonly name: "_owner";
                         readonly nameLocation: "1114:6:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72219;
+                        readonly scope: 72267;
                         readonly src: "1106:14:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1194,7 +1194,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72207;
+                            readonly id: 72255;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1106:7:173";
@@ -1207,34 +1207,34 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72211;
+                        readonly id: 72259;
                         readonly mutability: "mutable";
                         readonly name: "_authority";
                         readonly nameLocation: "1132:10:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72219;
+                        readonly scope: 72267;
                         readonly src: "1122:20:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 72210;
+                            readonly id: 72258;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 72209;
+                                readonly id: 72257;
                                 readonly name: "Authority";
                                 readonly nameLocations: readonly ["1122:9:173"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72167;
+                                readonly referencedDeclaration: 72215;
                                 readonly src: "1122:9:173";
                             };
-                            readonly referencedDeclaration: 72167;
+                            readonly referencedDeclaration: 72215;
                             readonly src: "1122:9:173";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                         };
@@ -1243,17 +1243,17 @@ export declare const MultiRolesAuthority: {
                     readonly src: "1105:38:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72217;
+                    readonly id: 72265;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1169:0:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 72224;
+                readonly id: 72272;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1369:61:173";
                 readonly nodes: readonly [];
@@ -1262,19 +1262,19 @@ export declare const MultiRolesAuthority: {
                 readonly mutability: "mutable";
                 readonly name: "getTargetCustomAuthority";
                 readonly nameLocation: "1406:24:173";
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72167_$";
+                    readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72215_$";
                     readonly typeString: "mapping(address => contract Authority)";
                 };
                 readonly typeName: {
-                    readonly id: 72223;
+                    readonly id: 72271;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72220;
+                        readonly id: 72268;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1377:7:173";
@@ -1286,33 +1286,33 @@ export declare const MultiRolesAuthority: {
                     readonly nodeType: "Mapping";
                     readonly src: "1369:29:173";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72167_$";
+                        readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72215_$";
                         readonly typeString: "mapping(address => contract Authority)";
                     };
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72222;
+                        readonly id: 72270;
                         readonly nodeType: "UserDefinedTypeName";
                         readonly pathNode: {
-                            readonly id: 72221;
+                            readonly id: 72269;
                             readonly name: "Authority";
                             readonly nameLocations: readonly ["1388:9:173"];
                             readonly nodeType: "IdentifierPath";
-                            readonly referencedDeclaration: 72167;
+                            readonly referencedDeclaration: 72215;
                             readonly src: "1388:9:173";
                         };
-                        readonly referencedDeclaration: 72167;
+                        readonly referencedDeclaration: 72215;
                         readonly src: "1388:9:173";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                             readonly typeString: "contract Authority";
                         };
                     };
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72228;
+                readonly id: 72276;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1622:47:173";
                 readonly nodes: readonly [];
@@ -1321,7 +1321,7 @@ export declare const MultiRolesAuthority: {
                 readonly mutability: "mutable";
                 readonly name: "getUserRoles";
                 readonly nameLocation: "1657:12:173";
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1329,11 +1329,11 @@ export declare const MultiRolesAuthority: {
                     readonly typeString: "mapping(address => bytes32)";
                 };
                 readonly typeName: {
-                    readonly id: 72227;
+                    readonly id: 72275;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72225;
+                        readonly id: 72273;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1630:7:173";
@@ -1351,7 +1351,7 @@ export declare const MultiRolesAuthority: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72226;
+                        readonly id: 72274;
                         readonly name: "bytes32";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1641:7:173";
@@ -1363,7 +1363,7 @@ export declare const MultiRolesAuthority: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72232;
+                readonly id: 72280;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1676:49:173";
                 readonly nodes: readonly [];
@@ -1372,7 +1372,7 @@ export declare const MultiRolesAuthority: {
                 readonly mutability: "mutable";
                 readonly name: "isCapabilityPublic";
                 readonly nameLocation: "1707:18:173";
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1380,11 +1380,11 @@ export declare const MultiRolesAuthority: {
                     readonly typeString: "mapping(bytes4 => bool)";
                 };
                 readonly typeName: {
-                    readonly id: 72231;
+                    readonly id: 72279;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72229;
+                        readonly id: 72277;
                         readonly name: "bytes4";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1684:6:173";
@@ -1402,7 +1402,7 @@ export declare const MultiRolesAuthority: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72230;
+                        readonly id: 72278;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1694:4:173";
@@ -1414,7 +1414,7 @@ export declare const MultiRolesAuthority: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72236;
+                readonly id: 72284;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1732:56:173";
                 readonly nodes: readonly [];
@@ -1423,7 +1423,7 @@ export declare const MultiRolesAuthority: {
                 readonly mutability: "mutable";
                 readonly name: "getRolesWithCapability";
                 readonly nameLocation: "1766:22:173";
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1431,11 +1431,11 @@ export declare const MultiRolesAuthority: {
                     readonly typeString: "mapping(bytes4 => bytes32)";
                 };
                 readonly typeName: {
-                    readonly id: 72235;
+                    readonly id: 72283;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72233;
+                        readonly id: 72281;
                         readonly name: "bytes4";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1740:6:173";
@@ -1453,7 +1453,7 @@ export declare const MultiRolesAuthority: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72234;
+                        readonly id: 72282;
                         readonly name: "bytes32";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1750:7:173";
@@ -1465,12 +1465,12 @@ export declare const MultiRolesAuthority: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72260;
+                readonly id: 72308;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1795:157:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72259;
+                    readonly id: 72307;
                     readonly nodeType: "Block";
                     readonly src: "1882:70:173";
                     readonly nodes: readonly [];
@@ -1480,7 +1480,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 72257;
+                            readonly id: 72305;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1490,7 +1490,7 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 72255;
+                                readonly id: 72303;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1501,7 +1501,7 @@ export declare const MultiRolesAuthority: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 72252;
+                                        readonly id: 72300;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1509,24 +1509,24 @@ export declare const MultiRolesAuthority: {
                                         readonly leftExpression: {
                                             readonly arguments: readonly [{
                                                 readonly baseExpression: {
-                                                    readonly id: 72247;
+                                                    readonly id: 72295;
                                                     readonly name: "getUserRoles";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72228;
+                                                    readonly referencedDeclaration: 72276;
                                                     readonly src: "1908:12:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_bytes32_$";
                                                         readonly typeString: "mapping(address => bytes32)";
                                                     };
                                                 };
-                                                readonly id: 72249;
+                                                readonly id: 72297;
                                                 readonly indexExpression: {
-                                                    readonly id: 72248;
+                                                    readonly id: 72296;
                                                     readonly name: "user";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72238;
+                                                    readonly referencedDeclaration: 72286;
                                                     readonly src: "1921:4:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -1549,7 +1549,7 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_bytes32";
                                                     readonly typeString: "bytes32";
                                                 }];
-                                                readonly id: 72246;
+                                                readonly id: 72294;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1561,14 +1561,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeString: "type(uint256)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 72245;
+                                                    readonly id: 72293;
                                                     readonly name: "uint256";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "1900:7:173";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 72250;
+                                            readonly id: 72298;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1587,11 +1587,11 @@ export declare const MultiRolesAuthority: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: ">>";
                                         readonly rightExpression: {
-                                            readonly id: 72251;
+                                            readonly id: 72299;
                                             readonly name: "role";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72240;
+                                            readonly referencedDeclaration: 72288;
                                             readonly src: "1931:4:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint8";
@@ -1604,7 +1604,7 @@ export declare const MultiRolesAuthority: {
                                             readonly typeString: "uint256";
                                         };
                                     }];
-                                    readonly id: 72253;
+                                    readonly id: 72301;
                                     readonly isConstant: false;
                                     readonly isInlineArray: false;
                                     readonly isLValue: false;
@@ -1621,7 +1621,7 @@ export declare const MultiRolesAuthority: {
                                 readonly operator: "&";
                                 readonly rightExpression: {
                                     readonly hexValue: "31";
-                                    readonly id: 72254;
+                                    readonly id: 72302;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1645,7 +1645,7 @@ export declare const MultiRolesAuthority: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 72256;
+                                readonly id: 72304;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1665,8 +1665,8 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly functionReturnParameters: 72244;
-                        readonly id: 72258;
+                        readonly functionReturnParameters: 72292;
+                        readonly id: 72306;
                         readonly nodeType: "Return";
                         readonly src: "1892:53:173";
                     }];
@@ -1678,16 +1678,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "doesUserHaveRole";
                 readonly nameLocation: "1804:16:173";
                 readonly parameters: {
-                    readonly id: 72241;
+                    readonly id: 72289;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72238;
+                        readonly id: 72286;
                         readonly mutability: "mutable";
                         readonly name: "user";
                         readonly nameLocation: "1829:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72260;
+                        readonly scope: 72308;
                         readonly src: "1821:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1696,7 +1696,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72237;
+                            readonly id: 72285;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1821:7:173";
@@ -1709,12 +1709,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72240;
+                        readonly id: 72288;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "1841:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72260;
+                        readonly scope: 72308;
                         readonly src: "1835:10:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1723,7 +1723,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72239;
+                            readonly id: 72287;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1835:5:173";
@@ -1737,16 +1737,16 @@ export declare const MultiRolesAuthority: {
                     readonly src: "1820:26:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72244;
+                    readonly id: 72292;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72243;
+                        readonly id: 72291;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72260;
+                        readonly scope: 72308;
                         readonly src: "1876:4:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1755,7 +1755,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72242;
+                            readonly id: 72290;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1876:4:173";
@@ -1768,17 +1768,17 @@ export declare const MultiRolesAuthority: {
                     }];
                     readonly src: "1875:6:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72284;
+                readonly id: 72332;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1958:186:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72283;
+                    readonly id: 72331;
                     readonly nodeType: "Block";
                     readonly src: "2057:87:173";
                     readonly nodes: readonly [];
@@ -1788,7 +1788,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 72281;
+                            readonly id: 72329;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1798,7 +1798,7 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 72279;
+                                readonly id: 72327;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1809,7 +1809,7 @@ export declare const MultiRolesAuthority: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 72276;
+                                        readonly id: 72324;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1817,24 +1817,24 @@ export declare const MultiRolesAuthority: {
                                         readonly leftExpression: {
                                             readonly arguments: readonly [{
                                                 readonly baseExpression: {
-                                                    readonly id: 72271;
+                                                    readonly id: 72319;
                                                     readonly name: "getRolesWithCapability";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72236;
+                                                    readonly referencedDeclaration: 72284;
                                                     readonly src: "2083:22:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bytes32_$";
                                                         readonly typeString: "mapping(bytes4 => bytes32)";
                                                     };
                                                 };
-                                                readonly id: 72273;
+                                                readonly id: 72321;
                                                 readonly indexExpression: {
-                                                    readonly id: 72272;
+                                                    readonly id: 72320;
                                                     readonly name: "functionSig";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72264;
+                                                    readonly referencedDeclaration: 72312;
                                                     readonly src: "2106:11:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bytes4";
@@ -1857,7 +1857,7 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_bytes32";
                                                     readonly typeString: "bytes32";
                                                 }];
-                                                readonly id: 72270;
+                                                readonly id: 72318;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1869,14 +1869,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeString: "type(uint256)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 72269;
+                                                    readonly id: 72317;
                                                     readonly name: "uint256";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "2075:7:173";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 72274;
+                                            readonly id: 72322;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1895,11 +1895,11 @@ export declare const MultiRolesAuthority: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: ">>";
                                         readonly rightExpression: {
-                                            readonly id: 72275;
+                                            readonly id: 72323;
                                             readonly name: "role";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72262;
+                                            readonly referencedDeclaration: 72310;
                                             readonly src: "2123:4:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint8";
@@ -1912,7 +1912,7 @@ export declare const MultiRolesAuthority: {
                                             readonly typeString: "uint256";
                                         };
                                     }];
-                                    readonly id: 72277;
+                                    readonly id: 72325;
                                     readonly isConstant: false;
                                     readonly isInlineArray: false;
                                     readonly isLValue: false;
@@ -1929,7 +1929,7 @@ export declare const MultiRolesAuthority: {
                                 readonly operator: "&";
                                 readonly rightExpression: {
                                     readonly hexValue: "31";
-                                    readonly id: 72278;
+                                    readonly id: 72326;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1953,7 +1953,7 @@ export declare const MultiRolesAuthority: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 72280;
+                                readonly id: 72328;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1973,8 +1973,8 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly functionReturnParameters: 72268;
-                        readonly id: 72282;
+                        readonly functionReturnParameters: 72316;
+                        readonly id: 72330;
                         readonly nodeType: "Return";
                         readonly src: "2067:70:173";
                     }];
@@ -1986,16 +1986,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "doesRoleHaveCapability";
                 readonly nameLocation: "1967:22:173";
                 readonly parameters: {
-                    readonly id: 72265;
+                    readonly id: 72313;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72262;
+                        readonly id: 72310;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "1996:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72284;
+                        readonly scope: 72332;
                         readonly src: "1990:10:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2004,7 +2004,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72261;
+                            readonly id: 72309;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1990:5:173";
@@ -2016,12 +2016,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72264;
+                        readonly id: 72312;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "2009:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72284;
+                        readonly scope: 72332;
                         readonly src: "2002:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2030,7 +2030,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72263;
+                            readonly id: 72311;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2002:6:173";
@@ -2044,16 +2044,16 @@ export declare const MultiRolesAuthority: {
                     readonly src: "1989:32:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72268;
+                    readonly id: 72316;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72267;
+                        readonly id: 72315;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72284;
+                        readonly scope: 72332;
                         readonly src: "2051:4:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2062,7 +2062,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72266;
+                            readonly id: 72314;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2051:4:173";
@@ -2075,78 +2075,78 @@ export declare const MultiRolesAuthority: {
                     }];
                     readonly src: "2050:6:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72338;
+                readonly id: 72386;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2336:465:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72337;
+                    readonly id: 72385;
                     readonly nodeType: "Block";
                     readonly src: "2477:324:173";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [72298];
+                        readonly assignments: readonly [72346];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 72298;
+                            readonly id: 72346;
                             readonly mutability: "mutable";
                             readonly name: "customAuthority";
                             readonly nameLocation: "2497:15:173";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 72337;
+                            readonly scope: 72385;
                             readonly src: "2487:25:173";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                             readonly typeName: {
-                                readonly id: 72297;
+                                readonly id: 72345;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 72296;
+                                    readonly id: 72344;
                                     readonly name: "Authority";
                                     readonly nameLocations: readonly ["2487:9:173"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 72167;
+                                    readonly referencedDeclaration: 72215;
                                     readonly src: "2487:9:173";
                                 };
-                                readonly referencedDeclaration: 72167;
+                                readonly referencedDeclaration: 72215;
                                 readonly src: "2487:9:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                    readonly typeIdentifier: "t_contract$_Authority_$72215";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 72302;
+                        readonly id: 72350;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 72299;
+                                readonly id: 72347;
                                 readonly name: "getTargetCustomAuthority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72224;
+                                readonly referencedDeclaration: 72272;
                                 readonly src: "2515:24:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72167_$";
+                                    readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72215_$";
                                     readonly typeString: "mapping(address => contract Authority)";
                                 };
                             };
-                            readonly id: 72301;
+                            readonly id: 72349;
                             readonly indexExpression: {
-                                readonly id: 72300;
+                                readonly id: 72348;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72288;
+                                readonly referencedDeclaration: 72336;
                                 readonly src: "2540:6:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -2160,7 +2160,7 @@ export declare const MultiRolesAuthority: {
                             readonly nodeType: "IndexAccess";
                             readonly src: "2515:32:173";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                         };
@@ -2172,30 +2172,30 @@ export declare const MultiRolesAuthority: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 72311;
+                            readonly id: 72359;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 72305;
+                                    readonly id: 72353;
                                     readonly name: "customAuthority";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72298;
+                                    readonly referencedDeclaration: 72346;
                                     readonly src: "2570:15:173";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                        readonly typeIdentifier: "t_contract$_Authority_$72215";
                                         readonly typeString: "contract Authority";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                        readonly typeIdentifier: "t_contract$_Authority_$72215";
                                         readonly typeString: "contract Authority";
                                     }];
-                                    readonly id: 72304;
+                                    readonly id: 72352;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2207,14 +2207,14 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 72303;
+                                        readonly id: 72351;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2562:7:173";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 72306;
+                                readonly id: 72354;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2235,7 +2235,7 @@ export declare const MultiRolesAuthority: {
                             readonly rightExpression: {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "30";
-                                    readonly id: 72309;
+                                    readonly id: 72357;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2254,7 +2254,7 @@ export declare const MultiRolesAuthority: {
                                         readonly typeIdentifier: "t_rational_0_by_1";
                                         readonly typeString: "int_const 0";
                                     }];
-                                    readonly id: 72308;
+                                    readonly id: 72356;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2266,14 +2266,14 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 72307;
+                                        readonly id: 72355;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2590:7:173";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 72310;
+                                readonly id: 72358;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2295,39 +2295,39 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 72319;
+                        readonly id: 72367;
                         readonly nodeType: "IfStatement";
                         readonly src: "2558:101:173";
                         readonly trueBody: {
                             readonly expression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 72314;
+                                    readonly id: 72362;
                                     readonly name: "user";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72286;
+                                    readonly referencedDeclaration: 72334;
                                     readonly src: "2633:4:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 }, {
-                                    readonly id: 72315;
+                                    readonly id: 72363;
                                     readonly name: "target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72288;
+                                    readonly referencedDeclaration: 72336;
                                     readonly src: "2639:6:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 }, {
-                                    readonly id: 72316;
+                                    readonly id: 72364;
                                     readonly name: "functionSig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72290;
+                                    readonly referencedDeclaration: 72338;
                                     readonly src: "2647:11:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
@@ -2346,18 +2346,18 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "bytes4";
                                     }];
                                     readonly expression: {
-                                        readonly id: 72312;
+                                        readonly id: 72360;
                                         readonly name: "customAuthority";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72298;
+                                        readonly referencedDeclaration: 72346;
                                         readonly src: "2609:15:173";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                                             readonly typeString: "contract Authority";
                                         };
                                     };
-                                    readonly id: 72313;
+                                    readonly id: 72361;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2365,14 +2365,14 @@ export declare const MultiRolesAuthority: {
                                     readonly memberLocation: "2625:7:173";
                                     readonly memberName: "canCall";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 72166;
+                                    readonly referencedDeclaration: 72214;
                                     readonly src: "2609:23:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$";
                                         readonly typeString: "function (address,address,bytes4) view external returns (bool)";
                                     };
                                 };
-                                readonly id: 72317;
+                                readonly id: 72365;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2388,8 +2388,8 @@ export declare const MultiRolesAuthority: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly functionReturnParameters: 72295;
-                            readonly id: 72318;
+                            readonly functionReturnParameters: 72343;
+                            readonly id: 72366;
                             readonly nodeType: "Return";
                             readonly src: "2602:57:173";
                         };
@@ -2399,31 +2399,31 @@ export declare const MultiRolesAuthority: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 72335;
+                            readonly id: 72383;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly baseExpression: {
-                                    readonly id: 72320;
+                                    readonly id: 72368;
                                     readonly name: "isCapabilityPublic";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72232;
+                                    readonly referencedDeclaration: 72280;
                                     readonly src: "2689:18:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bool_$";
                                         readonly typeString: "mapping(bytes4 => bool)";
                                     };
                                 };
-                                readonly id: 72322;
+                                readonly id: 72370;
                                 readonly indexExpression: {
-                                    readonly id: 72321;
+                                    readonly id: 72369;
                                     readonly name: "functionSig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72290;
+                                    readonly referencedDeclaration: 72338;
                                     readonly src: "2708:11:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
@@ -2448,7 +2448,7 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 };
-                                readonly id: 72334;
+                                readonly id: 72382;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2456,7 +2456,7 @@ export declare const MultiRolesAuthority: {
                                 readonly leftExpression: {
                                     readonly arguments: readonly [{
                                         readonly hexValue: "30";
-                                        readonly id: 72325;
+                                        readonly id: 72373;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2475,7 +2475,7 @@ export declare const MultiRolesAuthority: {
                                             readonly typeIdentifier: "t_rational_0_by_1";
                                             readonly typeString: "int_const 0";
                                         }];
-                                        readonly id: 72324;
+                                        readonly id: 72372;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2487,14 +2487,14 @@ export declare const MultiRolesAuthority: {
                                             readonly typeString: "type(bytes32)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 72323;
+                                            readonly id: 72371;
                                             readonly name: "bytes32";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "2724:7:173";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 72326;
+                                    readonly id: 72374;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2517,31 +2517,31 @@ export declare const MultiRolesAuthority: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
-                                    readonly id: 72333;
+                                    readonly id: 72381;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 72327;
+                                            readonly id: 72375;
                                             readonly name: "getUserRoles";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72228;
+                                            readonly referencedDeclaration: 72276;
                                             readonly src: "2738:12:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_bytes32_$";
                                                 readonly typeString: "mapping(address => bytes32)";
                                             };
                                         };
-                                        readonly id: 72329;
+                                        readonly id: 72377;
                                         readonly indexExpression: {
-                                            readonly id: 72328;
+                                            readonly id: 72376;
                                             readonly name: "user";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72286;
+                                            readonly referencedDeclaration: 72334;
                                             readonly src: "2751:4:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -2563,24 +2563,24 @@ export declare const MultiRolesAuthority: {
                                     readonly operator: "&";
                                     readonly rightExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 72330;
+                                            readonly id: 72378;
                                             readonly name: "getRolesWithCapability";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72236;
+                                            readonly referencedDeclaration: 72284;
                                             readonly src: "2759:22:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bytes32_$";
                                                 readonly typeString: "mapping(bytes4 => bytes32)";
                                             };
                                         };
-                                        readonly id: 72332;
+                                        readonly id: 72380;
                                         readonly indexExpression: {
-                                            readonly id: 72331;
+                                            readonly id: 72379;
                                             readonly name: "functionSig";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72290;
+                                            readonly referencedDeclaration: 72338;
                                             readonly src: "2782:11:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes4";
@@ -2616,13 +2616,13 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly functionReturnParameters: 72295;
-                        readonly id: 72336;
+                        readonly functionReturnParameters: 72343;
+                        readonly id: 72384;
                         readonly nodeType: "Return";
                         readonly src: "2670:124:173";
                     }];
                 };
-                readonly baseFunctions: readonly [72166];
+                readonly baseFunctions: readonly [72214];
                 readonly functionSelector: "b7009613";
                 readonly implemented: true;
                 readonly kind: "function";
@@ -2630,22 +2630,22 @@ export declare const MultiRolesAuthority: {
                 readonly name: "canCall";
                 readonly nameLocation: "2345:7:173";
                 readonly overrides: {
-                    readonly id: 72292;
+                    readonly id: 72340;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2453:8:173";
                 };
                 readonly parameters: {
-                    readonly id: 72291;
+                    readonly id: 72339;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72286;
+                        readonly id: 72334;
                         readonly mutability: "mutable";
                         readonly name: "user";
                         readonly nameLocation: "2370:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72338;
+                        readonly scope: 72386;
                         readonly src: "2362:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2654,7 +2654,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72285;
+                            readonly id: 72333;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2362:7:173";
@@ -2667,12 +2667,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72288;
+                        readonly id: 72336;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "2392:6:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72338;
+                        readonly scope: 72386;
                         readonly src: "2384:14:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2681,7 +2681,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72287;
+                            readonly id: 72335;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2384:7:173";
@@ -2694,12 +2694,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72290;
+                        readonly id: 72338;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "2415:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72338;
+                        readonly scope: 72386;
                         readonly src: "2408:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2708,7 +2708,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72289;
+                            readonly id: 72337;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2408:6:173";
@@ -2722,16 +2722,16 @@ export declare const MultiRolesAuthority: {
                     readonly src: "2352:80:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72295;
+                    readonly id: 72343;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72294;
+                        readonly id: 72342;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72338;
+                        readonly scope: 72386;
                         readonly src: "2471:4:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2740,7 +2740,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72293;
+                            readonly id: 72341;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2471:4:173";
@@ -2753,47 +2753,47 @@ export declare const MultiRolesAuthority: {
                     }];
                     readonly src: "2470:6:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72360;
+                readonly id: 72408;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3006:241:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72359;
+                    readonly id: 72407;
                     readonly nodeType: "Block";
                     readonly src: "3111:136:173";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72352;
+                            readonly id: 72400;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 72348;
+                                    readonly id: 72396;
                                     readonly name: "getTargetCustomAuthority";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72224;
+                                    readonly referencedDeclaration: 72272;
                                     readonly src: "3121:24:173";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72167_$";
+                                        readonly typeIdentifier: "t_mapping$_t_address_$_t_contract$_Authority_$72215_$";
                                         readonly typeString: "mapping(address => contract Authority)";
                                     };
                                 };
-                                readonly id: 72350;
+                                readonly id: 72398;
                                 readonly indexExpression: {
-                                    readonly id: 72349;
+                                    readonly id: 72397;
                                     readonly name: "target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72340;
+                                    readonly referencedDeclaration: 72388;
                                     readonly src: "3146:6:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -2807,55 +2807,55 @@ export declare const MultiRolesAuthority: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "3121:32:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                    readonly typeIdentifier: "t_contract$_Authority_$72215";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72351;
+                                readonly id: 72399;
                                 readonly name: "customAuthority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72343;
+                                readonly referencedDeclaration: 72391;
                                 readonly src: "3156:15:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                    readonly typeIdentifier: "t_contract$_Authority_$72215";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly src: "3121:50:173";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                         };
-                        readonly id: 72353;
+                        readonly id: 72401;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3121:50:173";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72355;
+                                readonly id: 72403;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72340;
+                                readonly referencedDeclaration: 72388;
                                 readonly src: "3216:6:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72356;
+                                readonly id: 72404;
                                 readonly name: "customAuthority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72343;
+                                readonly referencedDeclaration: 72391;
                                 readonly src: "3224:15:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                    readonly typeIdentifier: "t_contract$_Authority_$72215";
                                     readonly typeString: "contract Authority";
                                 };
                             }];
@@ -2864,21 +2864,21 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }, {
-                                    readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                    readonly typeIdentifier: "t_contract$_Authority_$72215";
                                     readonly typeString: "contract Authority";
                                 }];
-                                readonly id: 72354;
+                                readonly id: 72402;
                                 readonly name: "TargetCustomAuthorityUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72206;
+                                readonly referencedDeclaration: 72254;
                                 readonly src: "3187:28:173";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$72167_$returns$__$";
+                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$72215_$returns$__$";
                                     readonly typeString: "function (address,contract Authority)";
                                 };
                             };
-                            readonly id: 72357;
+                            readonly id: 72405;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2894,7 +2894,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72358;
+                        readonly id: 72406;
                         readonly nodeType: "EmitStatement";
                         readonly src: "3182:58:173";
                     }];
@@ -2903,14 +2903,14 @@ export declare const MultiRolesAuthority: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 72346;
+                    readonly id: 72394;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 72345;
+                        readonly id: 72393;
                         readonly name: "requiresAuth";
                         readonly nameLocations: readonly ["3098:12:173"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72059;
+                        readonly referencedDeclaration: 72107;
                         readonly src: "3098:12:173";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2919,16 +2919,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "setTargetCustomAuthority";
                 readonly nameLocation: "3015:24:173";
                 readonly parameters: {
-                    readonly id: 72344;
+                    readonly id: 72392;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72340;
+                        readonly id: 72388;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "3048:6:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72360;
+                        readonly scope: 72408;
                         readonly src: "3040:14:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2937,7 +2937,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72339;
+                            readonly id: 72387;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3040:7:173";
@@ -2950,34 +2950,34 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72343;
+                        readonly id: 72391;
                         readonly mutability: "mutable";
                         readonly name: "customAuthority";
                         readonly nameLocation: "3066:15:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72360;
+                        readonly scope: 72408;
                         readonly src: "3056:25:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$72167";
+                            readonly typeIdentifier: "t_contract$_Authority_$72215";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 72342;
+                            readonly id: 72390;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 72341;
+                                readonly id: 72389;
                                 readonly name: "Authority";
                                 readonly nameLocations: readonly ["3056:9:173"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72167;
+                                readonly referencedDeclaration: 72215;
                                 readonly src: "3056:9:173";
                             };
-                            readonly referencedDeclaration: 72167;
+                            readonly referencedDeclaration: 72215;
                             readonly src: "3056:9:173";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$72167";
+                                readonly typeIdentifier: "t_contract$_Authority_$72215";
                                 readonly typeString: "contract Authority";
                             };
                         };
@@ -2986,52 +2986,52 @@ export declare const MultiRolesAuthority: {
                     readonly src: "3039:43:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72347;
+                    readonly id: 72395;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3111:0:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72381;
+                readonly id: 72429;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3448:210:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72380;
+                    readonly id: 72428;
                     readonly nodeType: "Block";
                     readonly src: "3539:119:173";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72373;
+                            readonly id: 72421;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 72369;
+                                    readonly id: 72417;
                                     readonly name: "isCapabilityPublic";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72232;
+                                    readonly referencedDeclaration: 72280;
                                     readonly src: "3549:18:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bool_$";
                                         readonly typeString: "mapping(bytes4 => bool)";
                                     };
                                 };
-                                readonly id: 72371;
+                                readonly id: 72419;
                                 readonly indexExpression: {
-                                    readonly id: 72370;
+                                    readonly id: 72418;
                                     readonly name: "functionSig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72362;
+                                    readonly referencedDeclaration: 72410;
                                     readonly src: "3568:11:173";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
@@ -3052,11 +3052,11 @@ export declare const MultiRolesAuthority: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72372;
+                                readonly id: 72420;
                                 readonly name: "enabled";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72364;
+                                readonly referencedDeclaration: 72412;
                                 readonly src: "3583:7:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -3069,28 +3069,28 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 72374;
+                        readonly id: 72422;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3549:41:173";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72376;
+                                readonly id: 72424;
                                 readonly name: "functionSig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72362;
+                                readonly referencedDeclaration: 72410;
                                 readonly src: "3630:11:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
                                     readonly typeString: "bytes4";
                                 };
                             }, {
-                                readonly id: 72377;
+                                readonly id: 72425;
                                 readonly name: "enabled";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72364;
+                                readonly referencedDeclaration: 72412;
                                 readonly src: "3643:7:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -3105,18 +3105,18 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 72375;
+                                readonly id: 72423;
                                 readonly name: "PublicCapabilityUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72191;
+                                readonly referencedDeclaration: 72239;
                                 readonly src: "3606:23:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_bytes4_$_t_bool_$returns$__$";
                                     readonly typeString: "function (bytes4,bool)";
                                 };
                             };
-                            readonly id: 72378;
+                            readonly id: 72426;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3132,7 +3132,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72379;
+                        readonly id: 72427;
                         readonly nodeType: "EmitStatement";
                         readonly src: "3601:50:173";
                     }];
@@ -3141,14 +3141,14 @@ export declare const MultiRolesAuthority: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 72367;
+                    readonly id: 72415;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 72366;
+                        readonly id: 72414;
                         readonly name: "requiresAuth";
                         readonly nameLocations: readonly ["3526:12:173"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72059;
+                        readonly referencedDeclaration: 72107;
                         readonly src: "3526:12:173";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -3157,16 +3157,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "setPublicCapability";
                 readonly nameLocation: "3457:19:173";
                 readonly parameters: {
-                    readonly id: 72365;
+                    readonly id: 72413;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72362;
+                        readonly id: 72410;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "3484:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72381;
+                        readonly scope: 72429;
                         readonly src: "3477:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3175,7 +3175,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72361;
+                            readonly id: 72409;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3477:6:173";
@@ -3187,12 +3187,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72364;
+                        readonly id: 72412;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "3502:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72381;
+                        readonly scope: 72429;
                         readonly src: "3497:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3201,7 +3201,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72363;
+                            readonly id: 72411;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3497:4:173";
@@ -3215,32 +3215,32 @@ export declare const MultiRolesAuthority: {
                     readonly src: "3476:34:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72368;
+                    readonly id: 72416;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3539:0:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72426;
+                readonly id: 72474;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3853:337:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72425;
+                    readonly id: 72473;
                     readonly nodeType: "Block";
                     readonly src: "3972:218:173";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 72392;
+                            readonly id: 72440;
                             readonly name: "enabled";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 72387;
+                            readonly referencedDeclaration: 72435;
                             readonly src: "3986:7:173";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
@@ -3248,36 +3248,36 @@ export declare const MultiRolesAuthority: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 72417;
+                            readonly id: 72465;
                             readonly nodeType: "Block";
                             readonly src: "4066:66:173";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 72415;
+                                    readonly id: 72463;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly baseExpression: {
-                                            readonly id: 72405;
+                                            readonly id: 72453;
                                             readonly name: "getUserRoles";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72228;
+                                            readonly referencedDeclaration: 72276;
                                             readonly src: "4080:12:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_bytes32_$";
                                                 readonly typeString: "mapping(address => bytes32)";
                                             };
                                         };
-                                        readonly id: 72407;
+                                        readonly id: 72455;
                                         readonly indexExpression: {
-                                            readonly id: 72406;
+                                            readonly id: 72454;
                                             readonly name: "user";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72383;
+                                            readonly referencedDeclaration: 72431;
                                             readonly src: "4093:4:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3298,7 +3298,7 @@ export declare const MultiRolesAuthority: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "&=";
                                     readonly rightHandSide: {
-                                        readonly id: 72414;
+                                        readonly id: 72462;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3313,14 +3313,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 72412;
+                                                readonly id: 72460;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
                                                     readonly hexValue: "31";
-                                                    readonly id: 72410;
+                                                    readonly id: 72458;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3337,11 +3337,11 @@ export declare const MultiRolesAuthority: {
                                                 readonly nodeType: "BinaryOperation";
                                                 readonly operator: "<<";
                                                 readonly rightExpression: {
-                                                    readonly id: 72411;
+                                                    readonly id: 72459;
                                                     readonly name: "role";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72385;
+                                                    readonly referencedDeclaration: 72433;
                                                     readonly src: "4116:4:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint8";
@@ -3359,7 +3359,7 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 }];
-                                                readonly id: 72409;
+                                                readonly id: 72457;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3371,14 +3371,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeString: "type(bytes32)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 72408;
+                                                    readonly id: 72456;
                                                     readonly name: "bytes32";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4103:7:173";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 72413;
+                                            readonly id: 72461;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3405,45 +3405,45 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 72416;
+                                readonly id: 72464;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4080:41:173";
                             }];
                         };
-                        readonly id: 72418;
+                        readonly id: 72466;
                         readonly nodeType: "IfStatement";
                         readonly src: "3982:150:173";
                         readonly trueBody: {
-                            readonly id: 72404;
+                            readonly id: 72452;
                             readonly nodeType: "Block";
                             readonly src: "3995:65:173";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 72402;
+                                    readonly id: 72450;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly baseExpression: {
-                                            readonly id: 72393;
+                                            readonly id: 72441;
                                             readonly name: "getUserRoles";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72228;
+                                            readonly referencedDeclaration: 72276;
                                             readonly src: "4009:12:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_bytes32_$";
                                                 readonly typeString: "mapping(address => bytes32)";
                                             };
                                         };
-                                        readonly id: 72395;
+                                        readonly id: 72443;
                                         readonly indexExpression: {
-                                            readonly id: 72394;
+                                            readonly id: 72442;
                                             readonly name: "user";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72383;
+                                            readonly referencedDeclaration: 72431;
                                             readonly src: "4022:4:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3469,14 +3469,14 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 72400;
+                                            readonly id: 72448;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
                                                 readonly hexValue: "31";
-                                                readonly id: 72398;
+                                                readonly id: 72446;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3493,11 +3493,11 @@ export declare const MultiRolesAuthority: {
                                             readonly nodeType: "BinaryOperation";
                                             readonly operator: "<<";
                                             readonly rightExpression: {
-                                                readonly id: 72399;
+                                                readonly id: 72447;
                                                 readonly name: "role";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 72385;
+                                                readonly referencedDeclaration: 72433;
                                                 readonly src: "4044:4:173";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint8";
@@ -3515,7 +3515,7 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             }];
-                                            readonly id: 72397;
+                                            readonly id: 72445;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3527,14 +3527,14 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeString: "type(bytes32)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 72396;
+                                                readonly id: 72444;
                                                 readonly name: "bytes32";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "4031:7:173";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 72401;
+                                        readonly id: 72449;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3556,7 +3556,7 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 72403;
+                                readonly id: 72451;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4009:40:173";
                             }];
@@ -3564,33 +3564,33 @@ export declare const MultiRolesAuthority: {
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72420;
+                                readonly id: 72468;
                                 readonly name: "user";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72383;
+                                readonly referencedDeclaration: 72431;
                                 readonly src: "4163:4:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72421;
+                                readonly id: 72469;
                                 readonly name: "role";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72385;
+                                readonly referencedDeclaration: 72433;
                                 readonly src: "4169:4:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint8";
                                     readonly typeString: "uint8";
                                 };
                             }, {
-                                readonly id: 72422;
+                                readonly id: 72470;
                                 readonly name: "enabled";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72387;
+                                readonly referencedDeclaration: 72435;
                                 readonly src: "4175:7:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -3608,18 +3608,18 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 72419;
+                                readonly id: 72467;
                                 readonly name: "UserRoleUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72185;
+                                readonly referencedDeclaration: 72233;
                                 readonly src: "4147:15:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_uint8_$_t_bool_$returns$__$";
                                     readonly typeString: "function (address,uint8,bool)";
                                 };
                             };
-                            readonly id: 72423;
+                            readonly id: 72471;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3635,7 +3635,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72424;
+                        readonly id: 72472;
                         readonly nodeType: "EmitStatement";
                         readonly src: "4142:41:173";
                     }];
@@ -3644,14 +3644,14 @@ export declare const MultiRolesAuthority: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 72390;
+                    readonly id: 72438;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 72389;
+                        readonly id: 72437;
                         readonly name: "requiresAuth";
                         readonly nameLocations: readonly ["3959:12:173"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72059;
+                        readonly referencedDeclaration: 72107;
                         readonly src: "3959:12:173";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -3660,16 +3660,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "setUserRole";
                 readonly nameLocation: "3862:11:173";
                 readonly parameters: {
-                    readonly id: 72388;
+                    readonly id: 72436;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72383;
+                        readonly id: 72431;
                         readonly mutability: "mutable";
                         readonly name: "user";
                         readonly nameLocation: "3891:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72426;
+                        readonly scope: 72474;
                         readonly src: "3883:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3678,7 +3678,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72382;
+                            readonly id: 72430;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3883:7:173";
@@ -3691,12 +3691,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72385;
+                        readonly id: 72433;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "3911:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72426;
+                        readonly scope: 72474;
                         readonly src: "3905:10:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3705,7 +3705,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72384;
+                            readonly id: 72432;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3905:5:173";
@@ -3717,12 +3717,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72387;
+                        readonly id: 72435;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "3930:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72426;
+                        readonly scope: 72474;
                         readonly src: "3925:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3731,7 +3731,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72386;
+                            readonly id: 72434;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3925:4:173";
@@ -3745,32 +3745,32 @@ export declare const MultiRolesAuthority: {
                     readonly src: "3873:70:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72391;
+                    readonly id: 72439;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3972:0:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72471;
+                readonly id: 72519;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4390:396:173";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72470;
+                    readonly id: 72518;
                     readonly nodeType: "Block";
                     readonly src: "4521:265:173";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 72437;
+                            readonly id: 72485;
                             readonly name: "enabled";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 72432;
+                            readonly referencedDeclaration: 72480;
                             readonly src: "4535:7:173";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
@@ -3778,36 +3778,36 @@ export declare const MultiRolesAuthority: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 72462;
+                            readonly id: 72510;
                             readonly nodeType: "Block";
                             readonly src: "4632:83:173";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 72460;
+                                    readonly id: 72508;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly baseExpression: {
-                                            readonly id: 72450;
+                                            readonly id: 72498;
                                             readonly name: "getRolesWithCapability";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72236;
+                                            readonly referencedDeclaration: 72284;
                                             readonly src: "4646:22:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bytes32_$";
                                                 readonly typeString: "mapping(bytes4 => bytes32)";
                                             };
                                         };
-                                        readonly id: 72452;
+                                        readonly id: 72500;
                                         readonly indexExpression: {
-                                            readonly id: 72451;
+                                            readonly id: 72499;
                                             readonly name: "functionSig";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72430;
+                                            readonly referencedDeclaration: 72478;
                                             readonly src: "4669:11:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes4";
@@ -3828,7 +3828,7 @@ export declare const MultiRolesAuthority: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "&=";
                                     readonly rightHandSide: {
-                                        readonly id: 72459;
+                                        readonly id: 72507;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3843,14 +3843,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 72457;
+                                                readonly id: 72505;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
                                                     readonly hexValue: "31";
-                                                    readonly id: 72455;
+                                                    readonly id: 72503;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3867,11 +3867,11 @@ export declare const MultiRolesAuthority: {
                                                 readonly nodeType: "BinaryOperation";
                                                 readonly operator: "<<";
                                                 readonly rightExpression: {
-                                                    readonly id: 72456;
+                                                    readonly id: 72504;
                                                     readonly name: "role";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72428;
+                                                    readonly referencedDeclaration: 72476;
                                                     readonly src: "4699:4:173";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint8";
@@ -3889,7 +3889,7 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 }];
-                                                readonly id: 72454;
+                                                readonly id: 72502;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3901,14 +3901,14 @@ export declare const MultiRolesAuthority: {
                                                     readonly typeString: "type(bytes32)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 72453;
+                                                    readonly id: 72501;
                                                     readonly name: "bytes32";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4686:7:173";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 72458;
+                                            readonly id: 72506;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3935,45 +3935,45 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 72461;
+                                readonly id: 72509;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4646:58:173";
                             }];
                         };
-                        readonly id: 72463;
+                        readonly id: 72511;
                         readonly nodeType: "IfStatement";
                         readonly src: "4531:184:173";
                         readonly trueBody: {
-                            readonly id: 72449;
+                            readonly id: 72497;
                             readonly nodeType: "Block";
                             readonly src: "4544:82:173";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 72447;
+                                    readonly id: 72495;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly baseExpression: {
-                                            readonly id: 72438;
+                                            readonly id: 72486;
                                             readonly name: "getRolesWithCapability";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72236;
+                                            readonly referencedDeclaration: 72284;
                                             readonly src: "4558:22:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_bytes4_$_t_bytes32_$";
                                                 readonly typeString: "mapping(bytes4 => bytes32)";
                                             };
                                         };
-                                        readonly id: 72440;
+                                        readonly id: 72488;
                                         readonly indexExpression: {
-                                            readonly id: 72439;
+                                            readonly id: 72487;
                                             readonly name: "functionSig";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72430;
+                                            readonly referencedDeclaration: 72478;
                                             readonly src: "4581:11:173";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes4";
@@ -3999,14 +3999,14 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 72445;
+                                            readonly id: 72493;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
                                                 readonly hexValue: "31";
-                                                readonly id: 72443;
+                                                readonly id: 72491;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -4023,11 +4023,11 @@ export declare const MultiRolesAuthority: {
                                             readonly nodeType: "BinaryOperation";
                                             readonly operator: "<<";
                                             readonly rightExpression: {
-                                                readonly id: 72444;
+                                                readonly id: 72492;
                                                 readonly name: "role";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 72428;
+                                                readonly referencedDeclaration: 72476;
                                                 readonly src: "4610:4:173";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint8";
@@ -4045,7 +4045,7 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             }];
-                                            readonly id: 72442;
+                                            readonly id: 72490;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4057,14 +4057,14 @@ export declare const MultiRolesAuthority: {
                                                 readonly typeString: "type(bytes32)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 72441;
+                                                readonly id: 72489;
                                                 readonly name: "bytes32";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "4597:7:173";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 72446;
+                                        readonly id: 72494;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4086,7 +4086,7 @@ export declare const MultiRolesAuthority: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 72448;
+                                readonly id: 72496;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4558:57:173";
                             }];
@@ -4094,33 +4094,33 @@ export declare const MultiRolesAuthority: {
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72465;
+                                readonly id: 72513;
                                 readonly name: "role";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72428;
+                                readonly referencedDeclaration: 72476;
                                 readonly src: "4752:4:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint8";
                                     readonly typeString: "uint8";
                                 };
                             }, {
-                                readonly id: 72466;
+                                readonly id: 72514;
                                 readonly name: "functionSig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72430;
+                                readonly referencedDeclaration: 72478;
                                 readonly src: "4758:11:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
                                     readonly typeString: "bytes4";
                                 };
                             }, {
-                                readonly id: 72467;
+                                readonly id: 72515;
                                 readonly name: "enabled";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72432;
+                                readonly referencedDeclaration: 72480;
                                 readonly src: "4771:7:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -4138,18 +4138,18 @@ export declare const MultiRolesAuthority: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 72464;
+                                readonly id: 72512;
                                 readonly name: "RoleCapabilityUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72199;
+                                readonly referencedDeclaration: 72247;
                                 readonly src: "4730:21:173";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_uint8_$_t_bytes4_$_t_bool_$returns$__$";
                                     readonly typeString: "function (uint8,bytes4,bool)";
                                 };
                             };
-                            readonly id: 72468;
+                            readonly id: 72516;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4165,7 +4165,7 @@ export declare const MultiRolesAuthority: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72469;
+                        readonly id: 72517;
                         readonly nodeType: "EmitStatement";
                         readonly src: "4725:54:173";
                     }];
@@ -4174,14 +4174,14 @@ export declare const MultiRolesAuthority: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 72435;
+                    readonly id: 72483;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 72434;
+                        readonly id: 72482;
                         readonly name: "requiresAuth";
                         readonly nameLocations: readonly ["4508:12:173"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72059;
+                        readonly referencedDeclaration: 72107;
                         readonly src: "4508:12:173";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -4190,16 +4190,16 @@ export declare const MultiRolesAuthority: {
                 readonly name: "setRoleCapability";
                 readonly nameLocation: "4399:17:173";
                 readonly parameters: {
-                    readonly id: 72433;
+                    readonly id: 72481;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72428;
+                        readonly id: 72476;
                         readonly mutability: "mutable";
                         readonly name: "role";
                         readonly nameLocation: "4432:4:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72471;
+                        readonly scope: 72519;
                         readonly src: "4426:10:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4208,7 +4208,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72427;
+                            readonly id: 72475;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4426:5:173";
@@ -4220,12 +4220,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72430;
+                        readonly id: 72478;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
                         readonly nameLocation: "4453:11:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72471;
+                        readonly scope: 72519;
                         readonly src: "4446:18:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4234,7 +4234,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 72429;
+                            readonly id: 72477;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4446:6:173";
@@ -4246,12 +4246,12 @@ export declare const MultiRolesAuthority: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72432;
+                        readonly id: 72480;
                         readonly mutability: "mutable";
                         readonly name: "enabled";
                         readonly nameLocation: "4479:7:173";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72471;
+                        readonly scope: 72519;
                         readonly src: "4474:12:173";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4260,7 +4260,7 @@ export declare const MultiRolesAuthority: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72431;
+                            readonly id: 72479;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4474:4:173";
@@ -4274,12 +4274,12 @@ export declare const MultiRolesAuthority: {
                     readonly src: "4416:76:173";
                 };
                 readonly returnParameters: {
-                    readonly id: 72436;
+                    readonly id: 72484;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4521:0:173";
                 };
-                readonly scope: 72472;
+                readonly scope: 72520;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
@@ -4287,26 +4287,26 @@ export declare const MultiRolesAuthority: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 72174;
+                    readonly id: 72222;
                     readonly name: "Auth";
                     readonly nameLocations: readonly ["359:4:173"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 72154;
+                    readonly referencedDeclaration: 72202;
                     readonly src: "359:4:173";
                 };
-                readonly id: 72175;
+                readonly id: 72223;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "359:4:173";
             }, {
                 readonly baseName: {
-                    readonly id: 72176;
+                    readonly id: 72224;
                     readonly name: "Authority";
                     readonly nameLocations: readonly ["365:9:173"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 72167;
+                    readonly referencedDeclaration: 72215;
                     readonly src: "365:9:173";
                 };
-                readonly id: 72177;
+                readonly id: 72225;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "365:9:173";
             }];
@@ -4314,18 +4314,18 @@ export declare const MultiRolesAuthority: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 72173;
+                readonly id: 72221;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "114:213:173";
                 readonly text: "@notice Flexible and target agnostic role based Authority that supports up to 256 roles.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/authorities/MultiRolesAuthority.sol)";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [72472, 72167, 72154];
+            readonly linearizedBaseContracts: readonly [72520, 72215, 72202];
             readonly name: "MultiRolesAuthority";
             readonly nameLocation: "336:19:173";
-            readonly scope: 72473;
+            readonly scope: 72521;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [72004, 72011, 72185, 72191, 72199, 72206];
+            readonly usedEvents: readonly [72052, 72059, 72233, 72239, 72247, 72254];
         }];
         readonly license: "AGPL-3.0-only";
     };

@@ -1,68 +1,68 @@
 export declare const ERC20ForwarderFactory: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "InvalidForwarderAddress";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "ERC20LINK_HASH";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "create";
         readonly inputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "__token";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "__tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "create";
         readonly outputs: readonly [{
-            readonly internalType: "contract IERC20Forwarder";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IERC20Forwarder";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getDeployDetails";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getForwarder";
         readonly inputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "__token";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "__tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "getForwarder";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidForwarderAddress";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x6080604052600080546001600160a01b0319166001908117909155805534801561002857600080fd5b50611441806100386000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80630710fd58146100515780630ecaea7314610081578063600eb4ba14610094578063d13053bb146100ca575b600080fd5b61006461005f3660046102cc565b6100e0565b6040516001600160a01b0390911681526020015b60405180910390f35b61006461008f3660046102cc565b6101b5565b6100ab6000546001546001600160a01b0390911691565b604080516001600160a01b039093168352602083019190915201610078565b6100d2610292565b604051908152602001610078565b604080516001600160a01b03841660208201529081018290526000908190606001604051602081830303815290604052805190602001209050600060ff60f81b308360405180602001610132906102bf565b6020820181038252601f19601f820116604052508051906020012060405160200161019494939291906001600160f81b031994909416845260609290921b6bffffffffffffffffffffffff191660018401526015830152603582015260550190565b60408051808303601f19018152919052805160209091012095945050505050565b6001819055600080546001600160a01b0319166001600160a01b038416908117825560408051602081019290925281018390528190606001604051602081830303815290604052805190602001209050600081604051610214906102bf565b8190604051809103906000f5905080158015610234573d6000803e3d6000fd5b50905061024185856100e0565b6001600160a01b0316816001600160a01b0316146102715760405162e0775560e61b815260040160405180910390fd5b600080546001600160a01b0319166001908117909155805591505092915050565b6040516102a1602082016102bf565b6020820181038252601f19601f820116604052508051906020012081565b6111078061030583390190565b600080604083850312156102df57600080fd5b82356001600160a01b03811681146102f657600080fd5b94602093909301359350505056fe60c060405234801561001057600080fd5b50604080516330075a5d60e11b815281513392839263600eb4ba92600480830193928290030181865afa15801561004b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061006f9190610084565b60a0526001600160a01b0316608052506100be565b6000806040838503121561009757600080fd5b82516001600160a01b03811681146100ae57600080fd5b6020939093015192949293505050565b60805160a051610f9f610168600039600081816101400152818161028c015281816103400152818161043e015281816104e9015281816105fb015281816106b00152818161071f015281816109e40152610b8c015260008181610244015281816102b501528181610386015281816104670152818161053701528181610634015281816106d90152818161076f01528181610a2101528181610b020152610bca0152610f9f6000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806370a0823111610097578063d505accf11610066578063d505accf1461020f578063dd62ed3e14610224578063f698da2514610237578063fc0c546a1461023f57600080fd5b806370a08231146101c15780637ecebe00146101d457806395d89b41146101f4578063a9059cbb146101fc57600080fd5b806318160ddd116100d357806318160ddd1461017057806323b872dd1461017857806330adf81f1461018b578063313ce567146101b257600080fd5b806306fdde03146100fa578063095ea7b31461011857806317d70f7c1461013b575b600080fd5b61010261027e565b60405161010f9190610cee565b60405180910390f35b61012b610126366004610d3d565b610331565b604051901515815260200161010f565b6101627f000000000000000000000000000000000000000000000000000000000000000081565b60405190815260200161010f565b61016261042f565b61012b610186366004610d67565b6104da565b6101627f6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c981565b6040516012815260200161010f565b6101626101cf366004610da3565b6105ec565b6101626101e2366004610da3565b60006020819052908152604090205481565b6101026106a1565b61012b61020a366004610d3d565b610710565b61022261021d366004610dc5565b61080a565b005b610162610232366004610e38565b610ad8565b610162610c3c565b6102667f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200161010f565b604051622b600360e21b81527f000000000000000000000000000000000000000000000000000000000000000060048201526060907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169062ad800c906024015b600060405180830381865afa158015610304573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261032c9190810190610e81565b905090565b6040516313b4b5ab60e21b81527f000000000000000000000000000000000000000000000000000000000000000060048201526001600160a01b038381166024830152604482018390523360648301526000917f000000000000000000000000000000000000000000000000000000000000000090911690634ed2d6ac90608401600060405180830381600087803b1580156103cc57600080fd5b505af11580156103e0573d6000803e3d6000fd5b50506040518481526001600160a01b03861692503391507f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925906020015b60405180910390a35060015b92915050565b60405163bd85b03960e01b81527f000000000000000000000000000000000000000000000000000000000000000060048201526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169063bd85b03990602401602060405180830381865afa1580156104b6573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061032c9190610f2e565b604051633912022f60e21b81527f000000000000000000000000000000000000000000000000000000000000000060048201526001600160a01b0384811660248301528381166044830152606482018390523360848301526000917f00000000000000000000000000000000000000000000000000000000000000009091169063e44808bc9060a401600060405180830381600087803b15801561057d57600080fd5b505af1158015610591573d6000803e3d6000fd5b50505050826001600160a01b0316846001600160a01b03167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040516105da91815260200190565b60405180910390a35060019392505050565b604051631b2b776160e11b81527f000000000000000000000000000000000000000000000000000000000000000060048201526001600160a01b0382811660248301526000917f000000000000000000000000000000000000000000000000000000000000000090911690633656eec290604401602060405180830381865afa15801561067d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610f2e565b604051634e41a1fb60e01b81527f000000000000000000000000000000000000000000000000000000000000000060048201526060907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031690634e41a1fb906024016102e7565b604051633912022f60e21b81527f0000000000000000000000000000000000000000000000000000000000000000600482015233602482018190526001600160a01b0384811660448401526064830184905260848301919091526000917f00000000000000000000000000000000000000000000000000000000000000009091169063e44808bc9060a401600060405180830381600087803b1580156107b557600080fd5b505af11580156107c9573d6000803e3d6000fd5b50506040518481526001600160a01b03861692503391507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9060200161041d565b8342111561082b5760405163f87d927160e01b815260040160405180910390fd5b6001600160a01b0387166108525760405163f0dd15fd60e01b815260040160405180910390fd5b6001600160a01b03871660009081526020819052604081205490610874610c3c565b604080517f6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c960208201526001600160a01b03808d1692820192909252908a1660608201526080810189905260a0810184905260c0810188905260e0016040516020818303038152906040528051906020012060405160200161090d92919061190160f01b81526002810192909252602282015260420190565b60408051601f198184030181528282528051602091820120600080855291840180845281905260ff89169284019290925260608301879052608083018690529092509060019060a0016020604051602081039080840390855afa158015610978573d6000803e3d6000fd5b505050602060405103519050896001600160a01b0316816001600160a01b0316146109b657604051638baa579f60e01b815260040160405180910390fd5b6001600160a01b03808b1660008181526020819052604090819020600187019055516313b4b5ab60e21b81527f000000000000000000000000000000000000000000000000000000000000000060048201528b83166024820152604481018b905260648101919091527f000000000000000000000000000000000000000000000000000000000000000090911690634ed2d6ac90608401600060405180830381600087803b158015610a6757600080fd5b505af1158015610a7b573d6000803e3d6000fd5b50505050886001600160a01b03168a6001600160a01b03167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9258a604051610ac491815260200190565b60405180910390a350505050505050505050565b60405163e985e9c560e01b81526001600160a01b03838116600483015282811660248301526000917f00000000000000000000000000000000000000000000000000000000000000009091169063e985e9c590604401602060405180830381865afa158015610b4b573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b6f9190610f47565b15610b7d5750600019610429565b6040516321ff32a960e01b81527f000000000000000000000000000000000000000000000000000000000000000060048201526001600160a01b03848116602483015283811660448301527f000000000000000000000000000000000000000000000000000000000000000016906321ff32a990606401602060405180830381865afa158015610c11573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c359190610f2e565b9050610429565b60408051808201825260018152603160f81b60209182015281517f2aef22f9d7df5f9d21c56d14029233f3fdaa91917727e1eb68e504d27072d6cd818301527fc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc681840152466060820152306080808301919091528351808303909101815260a0909101909252815191012090565b60005b83811015610ce5578181015183820152602001610ccd565b50506000910152565b6020815260008251806020840152610d0d816040850160208701610cca565b601f01601f19169190910160400192915050565b80356001600160a01b0381168114610d3857600080fd5b919050565b60008060408385031215610d5057600080fd5b610d5983610d21565b946020939093013593505050565b600080600060608486031215610d7c57600080fd5b610d8584610d21565b9250610d9360208501610d21565b9150604084013590509250925092565b600060208284031215610db557600080fd5b610dbe82610d21565b9392505050565b600080600080600080600060e0888a031215610de057600080fd5b610de988610d21565b9650610df760208901610d21565b95506040880135945060608801359350608088013560ff81168114610e1b57600080fd5b9699959850939692959460a0840135945060c09093013592915050565b60008060408385031215610e4b57600080fd5b610e5483610d21565b9150610e6260208401610d21565b90509250929050565b634e487b7160e01b600052604160045260246000fd5b600060208284031215610e9357600080fd5b815167ffffffffffffffff80821115610eab57600080fd5b818401915084601f830112610ebf57600080fd5b815181811115610ed157610ed1610e6b565b604051601f8201601f19908116603f01168101908382118183101715610ef957610ef9610e6b565b81604052828152876020848701011115610f1257600080fd5b610f23836020830160208801610cca565b979650505050505050565b600060208284031215610f4057600080fd5b5051919050565b600060208284031215610f5957600080fd5b81518015158114610dbe57600080fdfea26469706673582212207258039ff824d28f4da7cc32f9d3373484e3d58ab2672cc25f41326b384ac05c64736f6c63430008140033a2646970667358221220cd312764165d237ba8e4a3b9e656c15ee231868a85df1f0251af4e8df57cdb4d64736f6c63430008140033";
@@ -292,39 +292,39 @@ export declare const ERC20ForwarderFactory: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/token/ERC20ForwarderFactory.sol";
-        readonly id: 23807;
+        readonly id: 23855;
         readonly exportedSymbols: {
-            readonly ERC20Forwarder: readonly [23630];
-            readonly ERC20ForwarderFactory: readonly [23806];
-            readonly IERC20Forwarder: readonly [10388];
-            readonly IERC20ForwarderFactory: readonly [10436];
-            readonly IMultiToken: readonly [11992];
+            readonly ERC20Forwarder: readonly [23678];
+            readonly ERC20ForwarderFactory: readonly [23854];
+            readonly IERC20Forwarder: readonly [10427];
+            readonly IERC20ForwarderFactory: readonly [10475];
+            readonly IMultiToken: readonly [12040];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:3841:130";
         readonly nodes: readonly [{
-            readonly id: 23632;
+            readonly id: 23680;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:130";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 23634;
+            readonly id: 23682;
             readonly nodeType: "ImportDirective";
             readonly src: "64:68:130";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20Forwarder.sol";
             readonly file: "../interfaces/IERC20Forwarder.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23807;
-            readonly sourceUnit: 10389;
+            readonly scope: 23855;
+            readonly sourceUnit: 10428;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23633;
+                    readonly id: 23681;
                     readonly name: "IERC20Forwarder";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10388;
+                    readonly referencedDeclaration: 10427;
                     readonly src: "73:15:130";
                     readonly typeDescriptions: {};
                 };
@@ -332,22 +332,22 @@ export declare const ERC20ForwarderFactory: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23636;
+            readonly id: 23684;
             readonly nodeType: "ImportDirective";
             readonly src: "133:82:130";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20ForwarderFactory.sol";
             readonly file: "../interfaces/IERC20ForwarderFactory.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23807;
-            readonly sourceUnit: 10437;
+            readonly scope: 23855;
+            readonly sourceUnit: 10476;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23635;
+                    readonly id: 23683;
                     readonly name: "IERC20ForwarderFactory";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10436;
+                    readonly referencedDeclaration: 10475;
                     readonly src: "142:22:130";
                     readonly typeDescriptions: {};
                 };
@@ -355,22 +355,22 @@ export declare const ERC20ForwarderFactory: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23638;
+            readonly id: 23686;
             readonly nodeType: "ImportDirective";
             readonly src: "216:60:130";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiToken.sol";
             readonly file: "../interfaces/IMultiToken.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23807;
-            readonly sourceUnit: 11993;
+            readonly scope: 23855;
+            readonly sourceUnit: 12041;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23637;
+                    readonly id: 23685;
                     readonly name: "IMultiToken";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11992;
+                    readonly referencedDeclaration: 12040;
                     readonly src: "225:11:130";
                     readonly typeDescriptions: {};
                 };
@@ -378,22 +378,22 @@ export declare const ERC20ForwarderFactory: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23640;
+            readonly id: 23688;
             readonly nodeType: "ImportDirective";
             readonly src: "277:54:130";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/token/ERC20Forwarder.sol";
             readonly file: "./ERC20Forwarder.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23807;
-            readonly sourceUnit: 23631;
+            readonly scope: 23855;
+            readonly sourceUnit: 23679;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23639;
+                    readonly id: 23687;
                     readonly name: "ERC20Forwarder";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 23630;
+                    readonly referencedDeclaration: 23678;
                     readonly src: "286:14:130";
                     readonly typeDescriptions: {};
                 };
@@ -401,17 +401,17 @@ export declare const ERC20ForwarderFactory: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23806;
+            readonly id: 23854;
             readonly nodeType: "ContractDefinition";
             readonly src: "991:2888:130";
             readonly nodes: readonly [{
-                readonly id: 23653;
+                readonly id: 23701;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1125:52:130";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 23644;
+                    readonly id: 23692;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1054:66:130";
                     readonly text: "@notice The transient MultiToken addressed used in deployment.";
@@ -419,28 +419,28 @@ export declare const ERC20ForwarderFactory: {
                 readonly mutability: "mutable";
                 readonly name: "_token";
                 readonly nameLocation: "1145:6:130";
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                     readonly typeString: "contract IMultiToken";
                 };
                 readonly typeName: {
-                    readonly id: 23646;
+                    readonly id: 23694;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 23645;
+                        readonly id: 23693;
                         readonly name: "IMultiToken";
                         readonly nameLocations: readonly ["1125:11:130"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 11992;
+                        readonly referencedDeclaration: 12040;
                         readonly src: "1125:11:130";
                     };
-                    readonly referencedDeclaration: 11992;
+                    readonly referencedDeclaration: 12040;
                     readonly src: "1125:11:130";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                         readonly typeString: "contract IMultiToken";
                     };
                 };
@@ -448,7 +448,7 @@ export declare const ERC20ForwarderFactory: {
                     readonly arguments: readonly [{
                         readonly arguments: readonly [{
                             readonly hexValue: "31";
-                            readonly id: 23650;
+                            readonly id: 23698;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -467,7 +467,7 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeIdentifier: "t_rational_1_by_1";
                                 readonly typeString: "int_const 1";
                             }];
-                            readonly id: 23649;
+                            readonly id: 23697;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -479,14 +479,14 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "type(address)";
                             };
                             readonly typeName: {
-                                readonly id: 23648;
+                                readonly id: 23696;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1166:7:130";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 23651;
+                        readonly id: 23699;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -507,18 +507,18 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 23647;
+                        readonly id: 23695;
                         readonly name: "IMultiToken";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 11992;
+                        readonly referencedDeclaration: 12040;
                         readonly src: "1154:11:130";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_IMultiToken_$11992_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_IMultiToken_$12040_$";
                             readonly typeString: "type(contract IMultiToken)";
                         };
                     };
-                    readonly id: 23652;
+                    readonly id: 23700;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -530,19 +530,19 @@ export declare const ERC20ForwarderFactory: {
                     readonly src: "1154:23:130";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                         readonly typeString: "contract IMultiToken";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 23657;
+                readonly id: 23705;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1253:28:130";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 23654;
+                    readonly id: 23702;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1184:64:130";
                     readonly text: "@notice The transient token ID addressed used in deployment.";
@@ -550,7 +550,7 @@ export declare const ERC20ForwarderFactory: {
                 readonly mutability: "mutable";
                 readonly name: "_tokenId";
                 readonly nameLocation: "1269:8:130";
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -558,7 +558,7 @@ export declare const ERC20ForwarderFactory: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 23655;
+                    readonly id: 23703;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1253:7:130";
@@ -569,7 +569,7 @@ export declare const ERC20ForwarderFactory: {
                 };
                 readonly value: {
                     readonly hexValue: "31";
-                    readonly id: 23656;
+                    readonly id: 23704;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -585,14 +585,14 @@ export declare const ERC20ForwarderFactory: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 23666;
+                readonly id: 23714;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1362:93:130";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10435];
+                readonly baseFunctions: readonly [10474];
                 readonly constant: true;
                 readonly documentation: {
-                    readonly id: 23658;
+                    readonly id: 23706;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1288:69:130";
                     readonly text: "@notice The hash of the bytecode of the ERC20 forwarder contract.";
@@ -601,7 +601,7 @@ export declare const ERC20ForwarderFactory: {
                 readonly mutability: "constant";
                 readonly name: "ERC20LINK_HASH";
                 readonly nameLocation: "1386:14:130";
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -609,7 +609,7 @@ export declare const ERC20ForwarderFactory: {
                     readonly typeString: "bytes32";
                 };
                 readonly typeName: {
-                    readonly id: 23659;
+                    readonly id: 23707;
                     readonly name: "bytes32";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1362:7:130";
@@ -622,23 +622,23 @@ export declare const ERC20ForwarderFactory: {
                     readonly arguments: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 23662;
+                                readonly id: 23710;
                                 readonly name: "ERC20Forwarder";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23630;
+                                readonly referencedDeclaration: 23678;
                                 readonly src: "1426:14:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20Forwarder_$23630_$";
+                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20Forwarder_$23678_$";
                                     readonly typeString: "type(contract ERC20Forwarder)";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20Forwarder_$23630_$";
+                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20Forwarder_$23678_$";
                                     readonly typeString: "type(contract ERC20Forwarder)";
                                 }];
-                                readonly id: 23661;
+                                readonly id: 23709;
                                 readonly name: "type";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
@@ -649,7 +649,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 23663;
+                            readonly id: 23711;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -661,11 +661,11 @@ export declare const ERC20ForwarderFactory: {
                             readonly src: "1421:20:130";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_magic_meta_type_t_contract$_ERC20Forwarder_$23630";
+                                readonly typeIdentifier: "t_magic_meta_type_t_contract$_ERC20Forwarder_$23678";
                                 readonly typeString: "type(contract ERC20Forwarder)";
                             };
                         };
-                        readonly id: 23664;
+                        readonly id: 23712;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -684,7 +684,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeIdentifier: "t_bytes_memory_ptr";
                             readonly typeString: "bytes memory";
                         }];
-                        readonly id: 23660;
+                        readonly id: 23708;
                         readonly name: "keccak256";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
@@ -695,7 +695,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                         };
                     };
-                    readonly id: 23665;
+                    readonly id: 23713;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -713,28 +713,28 @@ export declare const ERC20ForwarderFactory: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 23740;
+                readonly id: 23788;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1797:888:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23739;
+                    readonly id: 23787;
                     readonly nodeType: "Block";
                     readonly src: "1910:775:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 23680;
+                            readonly id: 23728;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23678;
+                                readonly id: 23726;
                                 readonly name: "_tokenId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23657;
+                                readonly referencedDeclaration: 23705;
                                 readonly src: "1980:8:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -744,11 +744,11 @@ export declare const ERC20ForwarderFactory: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 23679;
+                                readonly id: 23727;
                                 readonly name: "__tokenId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23672;
+                                readonly referencedDeclaration: 23720;
                                 readonly src: "1991:9:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -761,61 +761,61 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 23681;
+                        readonly id: 23729;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1980:20:130";
                     }, {
                         readonly expression: {
-                            readonly id: 23684;
+                            readonly id: 23732;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23682;
+                                readonly id: 23730;
                                 readonly name: "_token";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23653;
+                                readonly referencedDeclaration: 23701;
                                 readonly src: "2010:6:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                     readonly typeString: "contract IMultiToken";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 23683;
+                                readonly id: 23731;
                                 readonly name: "__token";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23670;
+                                readonly referencedDeclaration: 23718;
                                 readonly src: "2019:7:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                     readonly typeString: "contract IMultiToken";
                                 };
                             };
                             readonly src: "2010:16:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                 readonly typeString: "contract IMultiToken";
                             };
                         };
-                        readonly id: 23685;
+                        readonly id: 23733;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2010:16:130";
                     }, {
-                        readonly assignments: readonly [23687];
+                        readonly assignments: readonly [23735];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 23687;
+                            readonly id: 23735;
                             readonly mutability: "mutable";
                             readonly name: "salt";
                             readonly nameLocation: "2110:4:130";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 23739;
+                            readonly scope: 23787;
                             readonly src: "2102:12:130";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -824,7 +824,7 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 23686;
+                                readonly id: 23734;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2102:7:130";
@@ -835,26 +835,26 @@ export declare const ERC20ForwarderFactory: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 23695;
+                        readonly id: 23743;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 23691;
+                                    readonly id: 23739;
                                     readonly name: "__token";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23670;
+                                    readonly referencedDeclaration: 23718;
                                     readonly src: "2138:7:130";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                         readonly typeString: "contract IMultiToken";
                                     };
                                 }, {
-                                    readonly id: 23692;
+                                    readonly id: 23740;
                                     readonly name: "__tokenId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23672;
+                                    readonly referencedDeclaration: 23720;
                                     readonly src: "2147:9:130";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -863,14 +863,14 @@ export declare const ERC20ForwarderFactory: {
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                         readonly typeString: "contract IMultiToken";
                                     }, {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 23689;
+                                        readonly id: 23737;
                                         readonly name: "abi";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -881,7 +881,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "abi";
                                         };
                                     };
-                                    readonly id: 23690;
+                                    readonly id: 23738;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -895,7 +895,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "function () pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 23693;
+                                readonly id: 23741;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -916,7 +916,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 23688;
+                                readonly id: 23736;
                                 readonly name: "keccak256";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
@@ -927,7 +927,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                 };
                             };
-                            readonly id: 23694;
+                            readonly id: 23742;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -946,50 +946,50 @@ export declare const ERC20ForwarderFactory: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "2102:56:130";
                     }, {
-                        readonly assignments: readonly [23698];
+                        readonly assignments: readonly [23746];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 23698;
+                            readonly id: 23746;
                             readonly mutability: "mutable";
                             readonly name: "deployed";
                             readonly nameLocation: "2232:8:130";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 23739;
+                            readonly scope: 23787;
                             readonly src: "2217:23:130";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                 readonly typeString: "contract ERC20Forwarder";
                             };
                             readonly typeName: {
-                                readonly id: 23697;
+                                readonly id: 23745;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 23696;
+                                    readonly id: 23744;
                                     readonly name: "ERC20Forwarder";
                                     readonly nameLocations: readonly ["2217:14:130"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 23630;
+                                    readonly referencedDeclaration: 23678;
                                     readonly src: "2217:14:130";
                                 };
-                                readonly referencedDeclaration: 23630;
+                                readonly referencedDeclaration: 23678;
                                 readonly src: "2217:14:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                    readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                     readonly typeString: "contract ERC20Forwarder";
                                 };
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 23705;
+                        readonly id: 23753;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [];
-                                    readonly id: 23701;
+                                    readonly id: 23749;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -997,29 +997,29 @@ export declare const ERC20ForwarderFactory: {
                                     readonly nodeType: "NewExpression";
                                     readonly src: "2243:18:130";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_creation_nonpayable$__$returns$_t_contract$_ERC20Forwarder_$23630_$";
+                                        readonly typeIdentifier: "t_function_creation_nonpayable$__$returns$_t_contract$_ERC20Forwarder_$23678_$";
                                         readonly typeString: "function () returns (contract ERC20Forwarder)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 23700;
+                                        readonly id: 23748;
                                         readonly nodeType: "UserDefinedTypeName";
                                         readonly pathNode: {
-                                            readonly id: 23699;
+                                            readonly id: 23747;
                                             readonly name: "ERC20Forwarder";
                                             readonly nameLocations: readonly ["2247:14:130"];
                                             readonly nodeType: "IdentifierPath";
-                                            readonly referencedDeclaration: 23630;
+                                            readonly referencedDeclaration: 23678;
                                             readonly src: "2247:14:130";
                                         };
-                                        readonly referencedDeclaration: 23630;
+                                        readonly referencedDeclaration: 23678;
                                         readonly src: "2247:14:130";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                            readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                             readonly typeString: "contract ERC20Forwarder";
                                         };
                                     };
                                 };
-                                readonly id: 23703;
+                                readonly id: 23751;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1027,11 +1027,11 @@ export declare const ERC20ForwarderFactory: {
                                 readonly names: readonly ["salt"];
                                 readonly nodeType: "FunctionCallOptions";
                                 readonly options: readonly [{
-                                    readonly id: 23702;
+                                    readonly id: 23750;
                                     readonly name: "salt";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23687;
+                                    readonly referencedDeclaration: 23735;
                                     readonly src: "2269:4:130";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
@@ -1040,11 +1040,11 @@ export declare const ERC20ForwarderFactory: {
                                 }];
                                 readonly src: "2243:32:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_creation_nonpayable$__$returns$_t_contract$_ERC20Forwarder_$23630_$salt";
+                                    readonly typeIdentifier: "t_function_creation_nonpayable$__$returns$_t_contract$_ERC20Forwarder_$23678_$salt";
                                     readonly typeString: "function () returns (contract ERC20Forwarder)";
                                 };
                             };
-                            readonly id: 23704;
+                            readonly id: 23752;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1056,7 +1056,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly src: "2243:34:130";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                 readonly typeString: "contract ERC20Forwarder";
                             };
                         };
@@ -1064,7 +1064,7 @@ export declare const ERC20ForwarderFactory: {
                         readonly src: "2217:60:130";
                     }, {
                         readonly condition: {
-                            readonly id: 23716;
+                            readonly id: 23764;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1079,30 +1079,30 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
-                                    readonly id: 23714;
+                                    readonly id: 23762;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 23708;
+                                            readonly id: 23756;
                                             readonly name: "deployed";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 23698;
+                                            readonly referencedDeclaration: 23746;
                                             readonly src: "2380:8:130";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                                 readonly typeString: "contract ERC20Forwarder";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                                 readonly typeString: "contract ERC20Forwarder";
                                             }];
-                                            readonly id: 23707;
+                                            readonly id: 23755;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -1114,14 +1114,14 @@ export declare const ERC20ForwarderFactory: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 23706;
+                                                readonly id: 23754;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2372:7:130";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 23709;
+                                        readonly id: 23757;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1141,22 +1141,22 @@ export declare const ERC20ForwarderFactory: {
                                     readonly operator: "==";
                                     readonly rightExpression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 23711;
+                                            readonly id: 23759;
                                             readonly name: "__token";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 23670;
+                                            readonly referencedDeclaration: 23718;
                                             readonly src: "2406:7:130";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                                 readonly typeString: "contract IMultiToken";
                                             };
                                         }, {
-                                            readonly id: 23712;
+                                            readonly id: 23760;
                                             readonly name: "__tokenId";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 23672;
+                                            readonly referencedDeclaration: 23720;
                                             readonly src: "2415:9:130";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -1165,24 +1165,24 @@ export declare const ERC20ForwarderFactory: {
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                                 readonly typeString: "contract IMultiToken";
                                             }, {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             }];
-                                            readonly id: 23710;
+                                            readonly id: 23758;
                                             readonly name: "getForwarder";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 23805;
+                                            readonly referencedDeclaration: 23853;
                                             readonly src: "2393:12:130";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_function_internal_view$_t_contract$_IMultiToken_$11992_$_t_uint256_$returns$_t_address_$";
+                                                readonly typeIdentifier: "t_function_internal_view$_t_contract$_IMultiToken_$12040_$_t_uint256_$returns$_t_address_$";
                                                 readonly typeString: "function (contract IMultiToken,uint256) view returns (address)";
                                             };
                                         };
-                                        readonly id: 23713;
+                                        readonly id: 23761;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1204,7 +1204,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 23715;
+                                readonly id: 23763;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -1222,11 +1222,11 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 23723;
+                        readonly id: 23771;
                         readonly nodeType: "IfStatement";
                         readonly src: "2366:142:130";
                         readonly trueBody: {
-                            readonly id: 23722;
+                            readonly id: 23770;
                             readonly nodeType: "Block";
                             readonly src: "2428:80:130";
                             readonly statements: readonly [{
@@ -1235,18 +1235,18 @@ export declare const ERC20ForwarderFactory: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 23717;
+                                            readonly id: 23765;
                                             readonly name: "IERC20ForwarderFactory";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 10436;
+                                            readonly referencedDeclaration: 10475;
                                             readonly src: "2449:22:130";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IERC20ForwarderFactory_$10436_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IERC20ForwarderFactory_$10475_$";
                                                 readonly typeString: "type(contract IERC20ForwarderFactory)";
                                             };
                                         };
-                                        readonly id: 23719;
+                                        readonly id: 23767;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1254,14 +1254,14 @@ export declare const ERC20ForwarderFactory: {
                                         readonly memberLocation: "2472:23:130";
                                         readonly memberName: "InvalidForwarderAddress";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10397;
+                                        readonly referencedDeclaration: 10436;
                                         readonly src: "2449:46:130";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 23720;
+                                    readonly id: 23768;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1277,27 +1277,27 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 23721;
+                                readonly id: 23769;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "2442:55:130";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 23731;
+                            readonly id: 23779;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23724;
+                                readonly id: 23772;
                                 readonly name: "_token";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23653;
+                                readonly referencedDeclaration: 23701;
                                 readonly src: "2556:6:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                     readonly typeString: "contract IMultiToken";
                                 };
                             };
@@ -1307,7 +1307,7 @@ export declare const ERC20ForwarderFactory: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "31";
-                                        readonly id: 23728;
+                                        readonly id: 23776;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1326,7 +1326,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeIdentifier: "t_rational_1_by_1";
                                             readonly typeString: "int_const 1";
                                         }];
-                                        readonly id: 23727;
+                                        readonly id: 23775;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1338,14 +1338,14 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 23726;
+                                            readonly id: 23774;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "2577:7:130";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 23729;
+                                    readonly id: 23777;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1366,18 +1366,18 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     }];
-                                    readonly id: 23725;
+                                    readonly id: 23773;
                                     readonly name: "IMultiToken";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11992;
+                                    readonly referencedDeclaration: 12040;
                                     readonly src: "2565:11:130";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IMultiToken_$11992_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IMultiToken_$12040_$";
                                         readonly typeString: "type(contract IMultiToken)";
                                     };
                                 };
-                                readonly id: 23730;
+                                readonly id: 23778;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1389,32 +1389,32 @@ export declare const ERC20ForwarderFactory: {
                                 readonly src: "2565:23:130";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                     readonly typeString: "contract IMultiToken";
                                 };
                             };
                             readonly src: "2556:32:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                 readonly typeString: "contract IMultiToken";
                             };
                         };
-                        readonly id: 23732;
+                        readonly id: 23780;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2556:32:130";
                     }, {
                         readonly expression: {
-                            readonly id: 23735;
+                            readonly id: 23783;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23733;
+                                readonly id: 23781;
                                 readonly name: "_tokenId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23657;
+                                readonly referencedDeclaration: 23705;
                                 readonly src: "2598:8:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1425,7 +1425,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly hexValue: "31";
-                                readonly id: 23734;
+                                readonly id: 23782;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1445,31 +1445,31 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 23736;
+                        readonly id: 23784;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2598:12:130";
                     }, {
                         readonly expression: {
-                            readonly id: 23737;
+                            readonly id: 23785;
                             readonly name: "deployed";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 23698;
+                            readonly referencedDeclaration: 23746;
                             readonly src: "2670:8:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23630";
+                                readonly typeIdentifier: "t_contract$_ERC20Forwarder_$23678";
                                 readonly typeString: "contract ERC20Forwarder";
                             };
                         };
-                        readonly functionReturnParameters: 23677;
-                        readonly id: 23738;
+                        readonly functionReturnParameters: 23725;
+                        readonly id: 23786;
                         readonly nodeType: "Return";
                         readonly src: "2663:15:130";
                     }];
                 };
-                readonly baseFunctions: readonly [10409];
+                readonly baseFunctions: readonly [10448];
                 readonly documentation: {
-                    readonly id: 23667;
+                    readonly id: 23715;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1462:330:130";
                     readonly text: "@notice Uses create2 to deploy a forwarder at a predictable address as\n         part of our ERC20 multitoken implementation.\n @param __token The MultiToken targeted by this factory.\n @param __tokenId The sub-token ID targeted by this factory.\n @return Returns the address of the deployed forwarder.";
@@ -1481,50 +1481,50 @@ export declare const ERC20ForwarderFactory: {
                 readonly name: "create";
                 readonly nameLocation: "1806:6:130";
                 readonly parameters: {
-                    readonly id: 23673;
+                    readonly id: 23721;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23670;
+                        readonly id: 23718;
                         readonly mutability: "mutable";
                         readonly name: "__token";
                         readonly nameLocation: "1834:7:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23740;
+                        readonly scope: 23788;
                         readonly src: "1822:19:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                            readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                             readonly typeString: "contract IMultiToken";
                         };
                         readonly typeName: {
-                            readonly id: 23669;
+                            readonly id: 23717;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 23668;
+                                readonly id: 23716;
                                 readonly name: "IMultiToken";
                                 readonly nameLocations: readonly ["1822:11:130"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 11992;
+                                readonly referencedDeclaration: 12040;
                                 readonly src: "1822:11:130";
                             };
-                            readonly referencedDeclaration: 11992;
+                            readonly referencedDeclaration: 12040;
                             readonly src: "1822:11:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                 readonly typeString: "contract IMultiToken";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23672;
+                        readonly id: 23720;
                         readonly mutability: "mutable";
                         readonly name: "__tokenId";
                         readonly nameLocation: "1859:9:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23740;
+                        readonly scope: 23788;
                         readonly src: "1851:17:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1533,7 +1533,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23671;
+                            readonly id: 23719;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1851:7:130";
@@ -1547,38 +1547,38 @@ export declare const ERC20ForwarderFactory: {
                     readonly src: "1812:62:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23677;
+                    readonly id: 23725;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23676;
+                        readonly id: 23724;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23740;
+                        readonly scope: 23788;
                         readonly src: "1893:15:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20Forwarder_$10388";
+                            readonly typeIdentifier: "t_contract$_IERC20Forwarder_$10427";
                             readonly typeString: "contract IERC20Forwarder";
                         };
                         readonly typeName: {
-                            readonly id: 23675;
+                            readonly id: 23723;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 23674;
+                                readonly id: 23722;
                                 readonly name: "IERC20Forwarder";
                                 readonly nameLocations: readonly ["1893:15:130"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10388;
+                                readonly referencedDeclaration: 10427;
                                 readonly src: "1893:15:130";
                             };
-                            readonly referencedDeclaration: 10388;
+                            readonly referencedDeclaration: 10427;
                             readonly src: "1893:15:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20Forwarder_$10388";
+                                readonly typeIdentifier: "t_contract$_IERC20Forwarder_$10427";
                                 readonly typeString: "contract IERC20Forwarder";
                             };
                         };
@@ -1586,46 +1586,46 @@ export declare const ERC20ForwarderFactory: {
                     }];
                     readonly src: "1892:17:130";
                 };
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23754;
+                readonly id: 23802;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3005:115:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23753;
+                    readonly id: 23801;
                     readonly nodeType: "Block";
                     readonly src: "3078:42:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 23749;
+                                readonly id: 23797;
                                 readonly name: "_token";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23653;
+                                readonly referencedDeclaration: 23701;
                                 readonly src: "3096:6:130";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                    readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                     readonly typeString: "contract IMultiToken";
                                 };
                             }, {
-                                readonly id: 23750;
+                                readonly id: 23798;
                                 readonly name: "_tokenId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23657;
+                                readonly referencedDeclaration: 23705;
                                 readonly src: "3104:8:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 23751;
+                            readonly id: 23799;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -1634,19 +1634,19 @@ export declare const ERC20ForwarderFactory: {
                             readonly nodeType: "TupleExpression";
                             readonly src: "3095:18:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_tuple$_t_contract$_IMultiToken_$11992_$_t_uint256_$";
+                                readonly typeIdentifier: "t_tuple$_t_contract$_IMultiToken_$12040_$_t_uint256_$";
                                 readonly typeString: "tuple(contract IMultiToken,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 23748;
-                        readonly id: 23752;
+                        readonly functionReturnParameters: 23796;
+                        readonly id: 23800;
                         readonly nodeType: "Return";
                         readonly src: "3088:25:130";
                     }];
                 };
-                readonly baseFunctions: readonly [10418];
+                readonly baseFunctions: readonly [10457];
                 readonly documentation: {
-                    readonly id: 23741;
+                    readonly id: 23789;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2691:309:130";
                     readonly text: "@notice Gets the MultiToken and token ID that should be targeted by the\n         calling forwarder.\n @dev The target MultiToken and token ID are transient state variables\n      that are set during deployment.\n @return The target MultiToken.\n @return The target token ID.";
@@ -1658,56 +1658,56 @@ export declare const ERC20ForwarderFactory: {
                 readonly name: "getDeployDetails";
                 readonly nameLocation: "3014:16:130";
                 readonly parameters: {
-                    readonly id: 23742;
+                    readonly id: 23790;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3030:2:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23748;
+                    readonly id: 23796;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23745;
+                        readonly id: 23793;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23754;
+                        readonly scope: 23802;
                         readonly src: "3056:11:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                            readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                             readonly typeString: "contract IMultiToken";
                         };
                         readonly typeName: {
-                            readonly id: 23744;
+                            readonly id: 23792;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 23743;
+                                readonly id: 23791;
                                 readonly name: "IMultiToken";
                                 readonly nameLocations: readonly ["3056:11:130"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 11992;
+                                readonly referencedDeclaration: 12040;
                                 readonly src: "3056:11:130";
                             };
-                            readonly referencedDeclaration: 11992;
+                            readonly referencedDeclaration: 12040;
                             readonly src: "3056:11:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                 readonly typeString: "contract IMultiToken";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23747;
+                        readonly id: 23795;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23754;
+                        readonly scope: 23802;
                         readonly src: "3069:7:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1716,7 +1716,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23746;
+                            readonly id: 23794;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3069:7:130";
@@ -1729,30 +1729,30 @@ export declare const ERC20ForwarderFactory: {
                     }];
                     readonly src: "3055:22:130";
                 };
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23805;
+                readonly id: 23853;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3382:495:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23804;
+                    readonly id: 23852;
                     readonly nodeType: "Block";
                     readonly src: "3496:381:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [23766];
+                        readonly assignments: readonly [23814];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 23766;
+                            readonly id: 23814;
                             readonly mutability: "mutable";
                             readonly name: "salt";
                             readonly nameLocation: "3571:4:130";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 23804;
+                            readonly scope: 23852;
                             readonly src: "3563:12:130";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1761,7 +1761,7 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 23765;
+                                readonly id: 23813;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3563:7:130";
@@ -1772,26 +1772,26 @@ export declare const ERC20ForwarderFactory: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 23774;
+                        readonly id: 23822;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 23770;
+                                    readonly id: 23818;
                                     readonly name: "__token";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23758;
+                                    readonly referencedDeclaration: 23806;
                                     readonly src: "3599:7:130";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                         readonly typeString: "contract IMultiToken";
                                     };
                                 }, {
-                                    readonly id: 23771;
+                                    readonly id: 23819;
                                     readonly name: "__tokenId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23760;
+                                    readonly referencedDeclaration: 23808;
                                     readonly src: "3608:9:130";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1800,14 +1800,14 @@ export declare const ERC20ForwarderFactory: {
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                        readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                         readonly typeString: "contract IMultiToken";
                                     }, {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 23768;
+                                        readonly id: 23816;
                                         readonly name: "abi";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -1818,7 +1818,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "abi";
                                         };
                                     };
-                                    readonly id: 23769;
+                                    readonly id: 23817;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1832,7 +1832,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "function () pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 23772;
+                                readonly id: 23820;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1853,7 +1853,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 23767;
+                                readonly id: 23815;
                                 readonly name: "keccak256";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
@@ -1864,7 +1864,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                 };
                             };
-                            readonly id: 23773;
+                            readonly id: 23821;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1883,15 +1883,15 @@ export declare const ERC20ForwarderFactory: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "3563:56:130";
                     }, {
-                        readonly assignments: readonly [23776];
+                        readonly assignments: readonly [23824];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 23776;
+                            readonly id: 23824;
                             readonly mutability: "mutable";
                             readonly name: "addressBytes";
                             readonly nameLocation: "3637:12:130";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 23804;
+                            readonly scope: 23852;
                             readonly src: "3629:20:130";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1900,7 +1900,7 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 23775;
+                                readonly id: 23823;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3629:7:130";
@@ -1911,13 +1911,13 @@ export declare const ERC20ForwarderFactory: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 23792;
+                        readonly id: 23840;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "30786666";
-                                        readonly id: 23782;
+                                        readonly id: 23830;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1936,7 +1936,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeIdentifier: "t_rational_255_by_1";
                                             readonly typeString: "int_const 255";
                                         }];
-                                        readonly id: 23781;
+                                        readonly id: 23829;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1948,14 +1948,14 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "type(bytes1)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 23780;
+                                            readonly id: 23828;
                                             readonly name: "bytes1";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3692:6:130";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 23783;
+                                    readonly id: 23831;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1972,23 +1972,23 @@ export declare const ERC20ForwarderFactory: {
                                     };
                                 }, {
                                     readonly arguments: readonly [{
-                                        readonly id: 23786;
+                                        readonly id: 23834;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "3714:4:130";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23806";
+                                            readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23854";
                                             readonly typeString: "contract ERC20ForwarderFactory";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23806";
+                                            readonly typeIdentifier: "t_contract$_ERC20ForwarderFactory_$23854";
                                             readonly typeString: "contract ERC20ForwarderFactory";
                                         }];
-                                        readonly id: 23785;
+                                        readonly id: 23833;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2000,14 +2000,14 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 23784;
+                                            readonly id: 23832;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3706:7:130";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 23787;
+                                    readonly id: 23835;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2023,22 +2023,22 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "address";
                                     };
                                 }, {
-                                    readonly id: 23788;
+                                    readonly id: 23836;
                                     readonly name: "salt";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23766;
+                                    readonly referencedDeclaration: 23814;
                                     readonly src: "3721:4:130";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
                                 }, {
-                                    readonly id: 23789;
+                                    readonly id: 23837;
                                     readonly name: "ERC20LINK_HASH";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23666;
+                                    readonly referencedDeclaration: 23714;
                                     readonly src: "3727:14:130";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
@@ -2060,7 +2060,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "bytes32";
                                     }];
                                     readonly expression: {
-                                        readonly id: 23778;
+                                        readonly id: 23826;
                                         readonly name: "abi";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -2071,7 +2071,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "abi";
                                         };
                                     };
-                                    readonly id: 23779;
+                                    readonly id: 23827;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2085,7 +2085,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "function () pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 23790;
+                                readonly id: 23838;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2106,7 +2106,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 23777;
+                                readonly id: 23825;
                                 readonly name: "keccak256";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
@@ -2117,7 +2117,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                 };
                             };
-                            readonly id: 23791;
+                            readonly id: 23839;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2140,11 +2140,11 @@ export declare const ERC20ForwarderFactory: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 23799;
+                                        readonly id: 23847;
                                         readonly name: "addressBytes";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 23776;
+                                        readonly referencedDeclaration: 23824;
                                         readonly src: "3855:12:130";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -2156,7 +2156,7 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeIdentifier: "t_bytes32";
                                             readonly typeString: "bytes32";
                                         }];
-                                        readonly id: 23798;
+                                        readonly id: 23846;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2168,14 +2168,14 @@ export declare const ERC20ForwarderFactory: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 23797;
+                                            readonly id: 23845;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3847:7:130";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 23800;
+                                    readonly id: 23848;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2196,7 +2196,7 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 23796;
+                                    readonly id: 23844;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2208,14 +2208,14 @@ export declare const ERC20ForwarderFactory: {
                                         readonly typeString: "type(uint160)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 23795;
+                                        readonly id: 23843;
                                         readonly name: "uint160";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "3839:7:130";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 23801;
+                                readonly id: 23849;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2236,7 +2236,7 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeIdentifier: "t_uint160";
                                     readonly typeString: "uint160";
                                 }];
-                                readonly id: 23794;
+                                readonly id: 23842;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2248,14 +2248,14 @@ export declare const ERC20ForwarderFactory: {
                                     readonly typeString: "type(address)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 23793;
+                                    readonly id: 23841;
                                     readonly name: "address";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "3831:7:130";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 23802;
+                            readonly id: 23850;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2271,15 +2271,15 @@ export declare const ERC20ForwarderFactory: {
                                 readonly typeString: "address";
                             };
                         };
-                        readonly functionReturnParameters: 23764;
-                        readonly id: 23803;
+                        readonly functionReturnParameters: 23812;
+                        readonly id: 23851;
                         readonly nodeType: "Return";
                         readonly src: "3824:46:130";
                     }];
                 };
-                readonly baseFunctions: readonly [10429];
+                readonly baseFunctions: readonly [10468];
                 readonly documentation: {
-                    readonly id: 23755;
+                    readonly id: 23803;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3126:251:130";
                     readonly text: "@notice Helper to calculate expected forwarder contract addresses.\n @param __token The target MultiToken of the forwarder.\n @param __tokenId The target token ID of the forwarder.\n @return The expected address of the forwarder.";
@@ -2291,50 +2291,50 @@ export declare const ERC20ForwarderFactory: {
                 readonly name: "getForwarder";
                 readonly nameLocation: "3391:12:130";
                 readonly parameters: {
-                    readonly id: 23761;
+                    readonly id: 23809;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23758;
+                        readonly id: 23806;
                         readonly mutability: "mutable";
                         readonly name: "__token";
                         readonly nameLocation: "3425:7:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23805;
+                        readonly scope: 23853;
                         readonly src: "3413:19:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                            readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                             readonly typeString: "contract IMultiToken";
                         };
                         readonly typeName: {
-                            readonly id: 23757;
+                            readonly id: 23805;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 23756;
+                                readonly id: 23804;
                                 readonly name: "IMultiToken";
                                 readonly nameLocations: readonly ["3413:11:130"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 11992;
+                                readonly referencedDeclaration: 12040;
                                 readonly src: "3413:11:130";
                             };
-                            readonly referencedDeclaration: 11992;
+                            readonly referencedDeclaration: 12040;
                             readonly src: "3413:11:130";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IMultiToken_$11992";
+                                readonly typeIdentifier: "t_contract$_IMultiToken_$12040";
                                 readonly typeString: "contract IMultiToken";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23760;
+                        readonly id: 23808;
                         readonly mutability: "mutable";
                         readonly name: "__tokenId";
                         readonly nameLocation: "3450:9:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23805;
+                        readonly scope: 23853;
                         readonly src: "3442:17:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2343,7 +2343,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23759;
+                            readonly id: 23807;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3442:7:130";
@@ -2357,16 +2357,16 @@ export declare const ERC20ForwarderFactory: {
                     readonly src: "3403:62:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23764;
+                    readonly id: 23812;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23763;
+                        readonly id: 23811;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23805;
+                        readonly scope: 23853;
                         readonly src: "3487:7:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2375,7 +2375,7 @@ export declare const ERC20ForwarderFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23762;
+                            readonly id: 23810;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3487:7:130";
@@ -2389,7 +2389,7 @@ export declare const ERC20ForwarderFactory: {
                     }];
                     readonly src: "3486:9:130";
                 };
-                readonly scope: 23806;
+                readonly scope: 23854;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "public";
@@ -2397,32 +2397,32 @@ export declare const ERC20ForwarderFactory: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 23642;
+                    readonly id: 23690;
                     readonly name: "IERC20ForwarderFactory";
                     readonly nameLocations: readonly ["1025:22:130"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 10436;
+                    readonly referencedDeclaration: 10475;
                     readonly src: "1025:22:130";
                 };
-                readonly id: 23643;
+                readonly id: 23691;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1025:22:130";
             }];
             readonly canonicalName: "ERC20ForwarderFactory";
-            readonly contractDependencies: readonly [23630];
+            readonly contractDependencies: readonly [23678];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 23641;
+                readonly id: 23689;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "333:658:130";
                 readonly text: "@author DELV\n @title ERC20ForwarderFactory\n @notice Our MultiToken contract consists of fungible sub-tokens that\n         are similar to ERC20 tokens. In order to support ERC20 compatibility\n         we can deploy interfaces which are ERC20s.\n @dev This factory deploys them using create2 so that the multi token can do\n      cheap verification of the interfaces before they access sensitive\n      functions.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [23806, 10436];
+            readonly linearizedBaseContracts: readonly [23854, 10475];
             readonly name: "ERC20ForwarderFactory";
             readonly nameLocation: "1000:21:130";
-            readonly scope: 23807;
-            readonly usedErrors: readonly [10397];
+            readonly scope: 23855;
+            readonly usedErrors: readonly [10436];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

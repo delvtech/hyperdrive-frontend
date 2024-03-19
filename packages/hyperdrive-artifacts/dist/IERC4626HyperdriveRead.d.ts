@@ -1,448 +1,448 @@
 export declare const IERC4626HyperdriveRead: {
     readonly abi: readonly [{
+        readonly type: "function";
+        readonly name: "balanceOf";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "balanceOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "baseToken";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "decimals";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getCheckpoint";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_checkpointTime";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "getCheckpoint";
         readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint128";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint128";
-            }];
-            readonly internalType: "struct IHyperdrive.Checkpoint";
             readonly name: "";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Checkpoint";
+            readonly components: readonly [{
+                readonly name: "vaultSharePrice";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }];
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getCheckpointExposure";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_checkpointTime";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "getCheckpointExposure";
         readonly outputs: readonly [{
-            readonly internalType: "int256";
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getMarketState";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.MarketState";
             readonly components: readonly [{
-                readonly internalType: "uint128";
                 readonly name: "shareReserves";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "bondReserves";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "longExposure";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "longsOutstanding";
                 readonly type: "uint128";
+                readonly internalType: "uint128";
             }, {
-                readonly internalType: "int128";
                 readonly name: "shareAdjustment";
                 readonly type: "int128";
+                readonly internalType: "int128";
             }, {
-                readonly internalType: "uint128";
                 readonly name: "shortsOutstanding";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "longAverageMaturityTime";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "shortAverageMaturityTime";
                 readonly type: "uint128";
+                readonly internalType: "uint128";
             }, {
-                readonly internalType: "bool";
                 readonly name: "isInitialized";
                 readonly type: "bool";
-            }, {
                 readonly internalType: "bool";
+            }, {
                 readonly name: "isPaused";
                 readonly type: "bool";
+                readonly internalType: "bool";
             }, {
-                readonly internalType: "uint112";
                 readonly name: "zombieBaseProceeds";
                 readonly type: "uint112";
+                readonly internalType: "uint112";
             }, {
-                readonly internalType: "uint128";
                 readonly name: "zombieShareReserves";
                 readonly type: "uint128";
+                readonly internalType: "uint128";
             }];
-            readonly internalType: "struct IHyperdrive.MarketState";
-            readonly name: "";
-            readonly type: "tuple";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getPoolConfig";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.PoolConfig";
             readonly components: readonly [{
-                readonly internalType: "contract IERC20";
                 readonly name: "baseToken";
                 readonly type: "address";
+                readonly internalType: "contract IERC20";
             }, {
-                readonly internalType: "address";
                 readonly name: "linkerFactory";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly internalType: "bytes32";
                 readonly name: "linkerCodeHash";
                 readonly type: "bytes32";
+                readonly internalType: "bytes32";
             }, {
-                readonly internalType: "uint256";
                 readonly name: "initialVaultSharePrice";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "minimumShareReserves";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "minimumTransactionAmount";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "checkpointDuration";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "timeStretch";
                 readonly type: "uint256";
+                readonly internalType: "uint256";
             }, {
-                readonly internalType: "address";
                 readonly name: "governance";
                 readonly type: "address";
-            }, {
                 readonly internalType: "address";
+            }, {
                 readonly name: "feeCollector";
                 readonly type: "address";
-            }, {
                 readonly internalType: "address";
+            }, {
                 readonly name: "sweepCollector";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly components: readonly [{
-                    readonly internalType: "uint256";
-                    readonly name: "curve";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "flat";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceLP";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceZombie";
-                    readonly type: "uint256";
-                }];
-                readonly internalType: "struct IHyperdrive.Fees";
                 readonly name: "fees";
                 readonly type: "tuple";
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly components: readonly [{
+                    readonly name: "curve";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "flat";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceLP";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceZombie";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
             }];
-            readonly internalType: "struct IHyperdrive.PoolConfig";
-            readonly name: "";
-            readonly type: "tuple";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getPoolInfo";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.PoolInfo";
             readonly components: readonly [{
-                readonly internalType: "uint256";
                 readonly name: "shareReserves";
                 readonly type: "uint256";
+                readonly internalType: "uint256";
             }, {
-                readonly internalType: "int256";
                 readonly name: "shareAdjustment";
                 readonly type: "int256";
+                readonly internalType: "int256";
             }, {
-                readonly internalType: "uint256";
                 readonly name: "zombieBaseProceeds";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "zombieShareReserves";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "bondReserves";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "lpTotalSupply";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "vaultSharePrice";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "longsOutstanding";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "longAverageMaturityTime";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "shortsOutstanding";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "shortAverageMaturityTime";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "withdrawalSharesReadyToWithdraw";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "withdrawalSharesProceeds";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "lpSharePrice";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "longExposure";
                 readonly type: "uint256";
+                readonly internalType: "uint256";
             }];
-            readonly internalType: "struct IHyperdrive.PoolInfo";
-            readonly name: "";
-            readonly type: "tuple";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getUncollectedGovernanceFees";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getWithdrawPool";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.WithdrawPool";
             readonly components: readonly [{
-                readonly internalType: "uint128";
                 readonly name: "readyToWithdraw";
                 readonly type: "uint128";
-            }, {
                 readonly internalType: "uint128";
+            }, {
                 readonly name: "proceeds";
                 readonly type: "uint128";
+                readonly internalType: "uint128";
             }];
-            readonly internalType: "struct IHyperdrive.WithdrawPool";
-            readonly name: "";
-            readonly type: "tuple";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "isApprovedForAll";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "isApprovedForAll";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "isPauser";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_account";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "isPauser";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "load";
         readonly inputs: readonly [{
-            readonly internalType: "uint256[]";
             readonly name: "_slots";
             readonly type: "uint256[]";
+            readonly internalType: "uint256[]";
         }];
-        readonly name: "load";
         readonly outputs: readonly [{
-            readonly internalType: "bytes32[]";
             readonly name: "";
             readonly type: "bytes32[]";
+            readonly internalType: "bytes32[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "name";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "name";
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "nonces";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "nonces";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "perTokenApprovals";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "perTokenApprovals";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "symbol";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "symbol";
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "totalSupply";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
-        }];
-        readonly name: "totalSupply";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "vault";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "contract IERC4626";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IERC4626";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -1210,37 +1210,37 @@ export declare const IERC4626HyperdriveRead: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IERC4626HyperdriveRead.sol";
-        readonly id: 10630;
+        readonly id: 10669;
         readonly exportedSymbols: {
-            readonly IERC4626: readonly [10602];
-            readonly IERC4626HyperdriveRead: readonly [10629];
-            readonly IHyperdriveRead: readonly [11865];
+            readonly IERC4626: readonly [10641];
+            readonly IERC4626HyperdriveRead: readonly [10668];
+            readonly IHyperdriveRead: readonly [11913];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:390:84";
         readonly nodes: readonly [{
-            readonly id: 10615;
+            readonly id: 10654;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:84";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 10617;
+            readonly id: 10656;
             readonly nodeType: "ImportDirective";
             readonly src: "64:42:84";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC4626.sol";
             readonly file: "./IERC4626.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 10630;
-            readonly sourceUnit: 10603;
+            readonly scope: 10669;
+            readonly sourceUnit: 10642;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 10616;
+                    readonly id: 10655;
                     readonly name: "IERC4626";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10602;
+                    readonly referencedDeclaration: 10641;
                     readonly src: "73:8:84";
                     readonly typeDescriptions: {};
                 };
@@ -1248,22 +1248,22 @@ export declare const IERC4626HyperdriveRead: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 10619;
+            readonly id: 10658;
             readonly nodeType: "ImportDirective";
             readonly src: "107:56:84";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdriveRead.sol";
             readonly file: "./IHyperdriveRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 10630;
-            readonly sourceUnit: 11866;
+            readonly scope: 10669;
+            readonly sourceUnit: 11914;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 10618;
+                    readonly id: 10657;
                     readonly name: "IHyperdriveRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11865;
+                    readonly referencedDeclaration: 11913;
                     readonly src: "116:15:84";
                     readonly typeDescriptions: {};
                 };
@@ -1271,16 +1271,16 @@ export declare const IERC4626HyperdriveRead: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 10629;
+            readonly id: 10668;
             readonly nodeType: "ContractDefinition";
             readonly src: "165:263:84";
             readonly nodes: readonly [{
-                readonly id: 10628;
+                readonly id: 10667;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "376:50:84";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 10622;
+                    readonly id: 10661;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "223:148:84";
                     readonly text: "@notice Gets the ERC4626 compatible vault used as this pool's yield\n         source.\n @return The ERC4626 compatible yield source.";
@@ -1292,44 +1292,44 @@ export declare const IERC4626HyperdriveRead: {
                 readonly name: "vault";
                 readonly nameLocation: "385:5:84";
                 readonly parameters: {
-                    readonly id: 10623;
+                    readonly id: 10662;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "390:2:84";
                 };
                 readonly returnParameters: {
-                    readonly id: 10627;
+                    readonly id: 10666;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 10626;
+                        readonly id: 10665;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 10628;
+                        readonly scope: 10667;
                         readonly src: "416:8:84";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                            readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                             readonly typeString: "contract IERC4626";
                         };
                         readonly typeName: {
-                            readonly id: 10625;
+                            readonly id: 10664;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 10624;
+                                readonly id: 10663;
                                 readonly name: "IERC4626";
                                 readonly nameLocations: readonly ["416:8:84"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10602;
+                                readonly referencedDeclaration: 10641;
                                 readonly src: "416:8:84";
                             };
-                            readonly referencedDeclaration: 10602;
+                            readonly referencedDeclaration: 10641;
                             readonly src: "416:8:84";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
@@ -1337,7 +1337,7 @@ export declare const IERC4626HyperdriveRead: {
                     }];
                     readonly src: "415:10:84";
                 };
-                readonly scope: 10629;
+                readonly scope: 10668;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1345,14 +1345,14 @@ export declare const IERC4626HyperdriveRead: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 10620;
+                    readonly id: 10659;
                     readonly name: "IHyperdriveRead";
                     readonly nameLocations: readonly ["201:15:84"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11865;
+                    readonly referencedDeclaration: 11913;
                     readonly src: "201:15:84";
                 };
-                readonly id: 10621;
+                readonly id: 10660;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "201:15:84";
             }];
@@ -1360,10 +1360,10 @@ export declare const IERC4626HyperdriveRead: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [10629, 11865, 12205];
+            readonly linearizedBaseContracts: readonly [10668, 11913, 12253];
             readonly name: "IERC4626HyperdriveRead";
             readonly nameLocation: "175:22:84";
-            readonly scope: 10630;
+            readonly scope: 10669;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

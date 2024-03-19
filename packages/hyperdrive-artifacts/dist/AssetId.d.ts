@@ -105,36 +105,36 @@ export declare const AssetId: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/libraries/AssetId.sol";
-        readonly id: 18595;
+        readonly id: 18643;
         readonly exportedSymbols: {
-            readonly AssetId: readonly [18594];
-            readonly IHyperdrive: readonly [11028];
+            readonly AssetId: readonly [18642];
+            readonly IHyperdrive: readonly [11076];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:5236:121";
         readonly nodes: readonly [{
-            readonly id: 18321;
+            readonly id: 18369;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:121";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 18323;
+            readonly id: 18371;
             readonly nodeType: "ImportDirective";
             readonly src: "64:60:121";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 18595;
-            readonly sourceUnit: 11029;
+            readonly scope: 18643;
+            readonly sourceUnit: 11077;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 18322;
+                    readonly id: 18370;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11028;
+                    readonly referencedDeclaration: 11076;
                     readonly src: "73:11:121";
                     readonly typeDescriptions: {};
                 };
@@ -142,11 +142,11 @@ export declare const AssetId: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 18594;
+            readonly id: 18642;
             readonly nodeType: "ContractDefinition";
             readonly src: "491:4783:121";
             readonly nodes: readonly [{
-                readonly id: 18327;
+                readonly id: 18375;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "513:42:121";
                 readonly nodes: readonly [];
@@ -154,7 +154,7 @@ export declare const AssetId: {
                 readonly mutability: "constant";
                 readonly name: "_LP_ASSET_ID";
                 readonly nameLocation: "539:12:121";
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -162,7 +162,7 @@ export declare const AssetId: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 18325;
+                    readonly id: 18373;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "513:7:121";
@@ -173,7 +173,7 @@ export declare const AssetId: {
                 };
                 readonly value: {
                     readonly hexValue: "30";
-                    readonly id: 18326;
+                    readonly id: 18374;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -189,7 +189,7 @@ export declare const AssetId: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 18336;
+                readonly id: 18384;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "561:108:121";
                 readonly nodes: readonly [];
@@ -197,7 +197,7 @@ export declare const AssetId: {
                 readonly mutability: "constant";
                 readonly name: "_WITHDRAWAL_SHARE_ASSET_ID";
                 readonly nameLocation: "587:26:121";
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -205,7 +205,7 @@ export declare const AssetId: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 18328;
+                    readonly id: 18376;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "561:7:121";
@@ -219,7 +219,7 @@ export declare const AssetId: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
                     };
-                    readonly id: 18335;
+                    readonly id: 18383;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -227,18 +227,18 @@ export declare const AssetId: {
                     readonly leftExpression: {
                         readonly arguments: readonly [{
                             readonly expression: {
-                                readonly id: 18331;
+                                readonly id: 18379;
                                 readonly name: "AssetIdPrefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "632:13:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                     readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                 };
                             };
-                            readonly id: 18332;
+                            readonly id: 18380;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -246,19 +246,19 @@ export declare const AssetId: {
                             readonly memberLocation: "646:15:121";
                             readonly memberName: "WithdrawalShare";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 18340;
+                            readonly referencedDeclaration: 18388;
                             readonly src: "632:29:121";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                         }];
                         readonly expression: {
                             readonly argumentTypes: readonly [{
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             }];
-                            readonly id: 18330;
+                            readonly id: 18378;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -270,14 +270,14 @@ export declare const AssetId: {
                                 readonly typeString: "type(uint256)";
                             };
                             readonly typeName: {
-                                readonly id: 18329;
+                                readonly id: 18377;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "624:7:121";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 18333;
+                        readonly id: 18381;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -297,7 +297,7 @@ export declare const AssetId: {
                     readonly operator: "<<";
                     readonly rightExpression: {
                         readonly hexValue: "323438";
-                        readonly id: 18334;
+                        readonly id: 18382;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -319,31 +319,31 @@ export declare const AssetId: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 18341;
+                readonly id: 18389;
                 readonly nodeType: "EnumDefinition";
                 readonly src: "676:91:121";
                 readonly nodes: readonly [];
                 readonly canonicalName: "AssetId.AssetIdPrefix";
                 readonly members: readonly [{
-                    readonly id: 18337;
+                    readonly id: 18385;
                     readonly name: "LP";
                     readonly nameLocation: "705:2:121";
                     readonly nodeType: "EnumValue";
                     readonly src: "705:2:121";
                 }, {
-                    readonly id: 18338;
+                    readonly id: 18386;
                     readonly name: "Long";
                     readonly nameLocation: "717:4:121";
                     readonly nodeType: "EnumValue";
                     readonly src: "717:4:121";
                 }, {
-                    readonly id: 18339;
+                    readonly id: 18387;
                     readonly name: "Short";
                     readonly nameLocation: "731:5:121";
                     readonly nodeType: "EnumValue";
                     readonly src: "731:5:121";
                 }, {
-                    readonly id: 18340;
+                    readonly id: 18388;
                     readonly name: "WithdrawalShare";
                     readonly nameLocation: "746:15:121";
                     readonly nodeType: "EnumValue";
@@ -352,12 +352,12 @@ export declare const AssetId: {
                 readonly name: "AssetIdPrefix";
                 readonly nameLocation: "681:13:121";
             }, {
-                readonly id: 18364;
+                readonly id: 18412;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1198:469:121";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18363;
+                    readonly id: 18411;
                     readonly nodeType: "Block";
                     readonly src: "1321:346:121";
                     readonly nodes: readonly [];
@@ -367,17 +367,17 @@ export declare const AssetId: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 18354;
+                            readonly id: 18402;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18352;
+                                readonly id: 18400;
                                 readonly name: "_timestamp";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18347;
+                                readonly referencedDeclaration: 18395;
                                 readonly src: "1401:10:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -388,7 +388,7 @@ export declare const AssetId: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30786666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666";
-                                readonly id: 18353;
+                                readonly id: 18401;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -408,11 +408,11 @@ export declare const AssetId: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 18361;
+                        readonly id: 18409;
                         readonly nodeType: "IfStatement";
                         readonly src: "1384:179:121";
                         readonly trueBody: {
-                            readonly id: 18360;
+                            readonly id: 18408;
                             readonly nodeType: "Block";
                             readonly src: "1501:62:121";
                             readonly statements: readonly [{
@@ -421,18 +421,18 @@ export declare const AssetId: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 18355;
+                                            readonly id: 18403;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11028;
+                                            readonly referencedDeclaration: 11076;
                                             readonly src: "1522:11:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 18357;
+                                        readonly id: 18405;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -440,14 +440,14 @@ export declare const AssetId: {
                                         readonly memberLocation: "1534:16:121";
                                         readonly memberName: "InvalidTimestamp";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10932;
+                                        readonly referencedDeclaration: 10980;
                                         readonly src: "1522:28:121";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 18358;
+                                    readonly id: 18406;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -463,7 +463,7 @@ export declare const AssetId: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 18359;
+                                readonly id: 18407;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "1515:37:121";
                             }];
@@ -517,32 +517,32 @@ export declare const AssetId: {
                         };
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18345;
+                            readonly declaration: 18393;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1630:7:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18347;
+                            readonly declaration: 18395;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1640:10:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18350;
+                            readonly declaration: 18398;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1611:2:121";
                             readonly valueSize: 1;
                         }];
                         readonly flags: readonly ["memory-safe"];
-                        readonly id: 18362;
+                        readonly id: 18410;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "1572:89:121";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18342;
+                    readonly id: 18390;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "773:420:121";
                     readonly text: "@dev Encodes a prefix and a timestamp into an asset ID. Asset IDs are\n      used so that LP, long, and short tokens can all be represented in a\n      single MultiToken instance. The zero asset ID indicates the LP\n      token.\n @param _prefix A one byte prefix that specifies the asset type.\n @param _timestamp A timestamp associated with the asset.\n @return id The asset ID.";
@@ -553,50 +553,50 @@ export declare const AssetId: {
                 readonly name: "encodeAssetId";
                 readonly nameLocation: "1207:13:121";
                 readonly parameters: {
-                    readonly id: 18348;
+                    readonly id: 18396;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18345;
+                        readonly id: 18393;
                         readonly mutability: "mutable";
                         readonly name: "_prefix";
                         readonly nameLocation: "1244:7:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18364;
+                        readonly scope: 18412;
                         readonly src: "1230:21:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                             readonly typeString: "enum AssetId.AssetIdPrefix";
                         };
                         readonly typeName: {
-                            readonly id: 18344;
+                            readonly id: 18392;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 18343;
+                                readonly id: 18391;
                                 readonly name: "AssetIdPrefix";
                                 readonly nameLocations: readonly ["1230:13:121"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "1230:13:121";
                             };
-                            readonly referencedDeclaration: 18341;
+                            readonly referencedDeclaration: 18389;
                             readonly src: "1230:13:121";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18347;
+                        readonly id: 18395;
                         readonly mutability: "mutable";
                         readonly name: "_timestamp";
                         readonly nameLocation: "1269:10:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18364;
+                        readonly scope: 18412;
                         readonly src: "1261:18:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -605,7 +605,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18346;
+                            readonly id: 18394;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1261:7:121";
@@ -619,16 +619,16 @@ export declare const AssetId: {
                     readonly src: "1220:65:121";
                 };
                 readonly returnParameters: {
-                    readonly id: 18351;
+                    readonly id: 18399;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18350;
+                        readonly id: 18398;
                         readonly mutability: "mutable";
                         readonly name: "id";
                         readonly nameLocation: "1317:2:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18364;
+                        readonly scope: 18412;
                         readonly src: "1309:10:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -637,7 +637,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18349;
+                            readonly id: 18397;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1309:7:121";
@@ -650,17 +650,17 @@ export declare const AssetId: {
                     }];
                     readonly src: "1308:12:121";
                 };
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18377;
+                readonly id: 18425;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1967:438:121";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18376;
+                    readonly id: 18424;
                     readonly nodeType: "Block";
                     readonly src: "2083:322:121";
                     readonly nodes: readonly [];
@@ -728,38 +728,38 @@ export declare const AssetId: {
                         };
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18367;
+                            readonly declaration: 18415;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2206:3:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18367;
+                            readonly declaration: 18415;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2356:3:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18371;
+                            readonly declaration: 18419;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2185:7:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18373;
+                            readonly declaration: 18421;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2239:10:121";
                             readonly valueSize: 1;
                         }];
                         readonly flags: readonly ["memory-safe"];
-                        readonly id: 18375;
+                        readonly id: 18423;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "2146:253:121";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18365;
+                    readonly id: 18413;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1673:289:121";
                     readonly text: "@dev Decodes an encoded asset ID into it's constituent parts of an\n      identifier, data and a timestamp.\n @param _id The asset ID.\n @return _prefix A one byte prefix that specifies the asset type.\n @return _timestamp A timestamp associated with the asset.";
@@ -770,16 +770,16 @@ export declare const AssetId: {
                 readonly name: "decodeAssetId";
                 readonly nameLocation: "1976:13:121";
                 readonly parameters: {
-                    readonly id: 18368;
+                    readonly id: 18416;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18367;
+                        readonly id: 18415;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "2007:3:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18377;
+                        readonly scope: 18425;
                         readonly src: "1999:11:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -788,7 +788,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18366;
+                            readonly id: 18414;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1999:7:121";
@@ -802,50 +802,50 @@ export declare const AssetId: {
                     readonly src: "1989:27:121";
                 };
                 readonly returnParameters: {
-                    readonly id: 18374;
+                    readonly id: 18422;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18371;
+                        readonly id: 18419;
                         readonly mutability: "mutable";
                         readonly name: "_prefix";
                         readonly nameLocation: "2054:7:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18377;
+                        readonly scope: 18425;
                         readonly src: "2040:21:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                             readonly typeString: "enum AssetId.AssetIdPrefix";
                         };
                         readonly typeName: {
-                            readonly id: 18370;
+                            readonly id: 18418;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 18369;
+                                readonly id: 18417;
                                 readonly name: "AssetIdPrefix";
                                 readonly nameLocations: readonly ["2040:13:121"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "2040:13:121";
                             };
-                            readonly referencedDeclaration: 18341;
+                            readonly referencedDeclaration: 18389;
                             readonly src: "2040:13:121";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18373;
+                        readonly id: 18421;
                         readonly mutability: "mutable";
                         readonly name: "_timestamp";
                         readonly nameLocation: "2071:10:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18377;
+                        readonly scope: 18425;
                         readonly src: "2063:18:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -854,7 +854,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18372;
+                            readonly id: 18420;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2063:7:121";
@@ -867,64 +867,64 @@ export declare const AssetId: {
                     }];
                     readonly src: "2039:43:121";
                 };
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18455;
+                readonly id: 18503;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2533:693:121";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18454;
+                    readonly id: 18502;
                     readonly nodeType: "Block";
                     readonly src: "2627:599:121";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [18387, 18389];
+                        readonly assignments: readonly [18435, 18437];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18387;
+                            readonly id: 18435;
                             readonly mutability: "mutable";
                             readonly name: "prefix";
                             readonly nameLocation: "2652:6:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18454;
+                            readonly scope: 18502;
                             readonly src: "2638:20:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                             readonly typeName: {
-                                readonly id: 18386;
+                                readonly id: 18434;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 18385;
+                                    readonly id: 18433;
                                     readonly name: "AssetIdPrefix";
                                     readonly nameLocations: readonly ["2638:13:121"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "2638:13:121";
                                 };
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "2638:13:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 18389;
+                            readonly id: 18437;
                             readonly mutability: "mutable";
                             readonly name: "timestamp";
                             readonly nameLocation: "2668:9:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18454;
+                            readonly scope: 18502;
                             readonly src: "2660:17:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -933,7 +933,7 @@ export declare const AssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 18388;
+                                readonly id: 18436;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2660:7:121";
@@ -944,14 +944,14 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18393;
+                        readonly id: 18441;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 18391;
+                                readonly id: 18439;
                                 readonly name: "_id";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18380;
+                                readonly referencedDeclaration: 18428;
                                 readonly src: "2695:3:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -963,18 +963,18 @@ export declare const AssetId: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 18390;
+                                readonly id: 18438;
                                 readonly name: "decodeAssetId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18377;
+                                readonly referencedDeclaration: 18425;
                                 readonly src: "2681:13:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                     readonly typeString: "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)";
                                 };
                             };
-                            readonly id: 18392;
+                            readonly id: 18440;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -986,22 +986,22 @@ export declare const AssetId: {
                             readonly src: "2681:18:121";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                 readonly typeString: "tuple(enum AssetId.AssetIdPrefix,uint256)";
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "2637:62:121";
                     }, {
-                        readonly assignments: readonly [18395];
+                        readonly assignments: readonly [18443];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18395;
+                            readonly id: 18443;
                             readonly mutability: "mutable";
                             readonly name: "_timestamp";
                             readonly nameLocation: "2723:10:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18454;
+                            readonly scope: 18502;
                             readonly src: "2709:24:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1010,7 +1010,7 @@ export declare const AssetId: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 18394;
+                                readonly id: 18442;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2709:6:121";
@@ -1021,14 +1021,14 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18399;
+                        readonly id: 18447;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 18397;
+                                readonly id: 18445;
                                 readonly name: "timestamp";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18389;
+                                readonly referencedDeclaration: 18437;
                                 readonly src: "2745:9:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1040,18 +1040,18 @@ export declare const AssetId: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 18396;
+                                readonly id: 18444;
                                 readonly name: "toString";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18593;
+                                readonly referencedDeclaration: 18641;
                                 readonly src: "2736:8:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                     readonly typeString: "function (uint256) pure returns (string memory)";
                                 };
                             };
-                            readonly id: 18398;
+                            readonly id: 18446;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1072,23 +1072,23 @@ export declare const AssetId: {
                     }, {
                         readonly condition: {
                             readonly commonType: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
-                            readonly id: 18403;
+                            readonly id: 18451;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18400;
+                                readonly id: 18448;
                                 readonly name: "prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18387;
+                                readonly referencedDeclaration: 18435;
                                 readonly src: "2769:6:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
@@ -1096,18 +1096,18 @@ export declare const AssetId: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly expression: {
-                                    readonly id: 18401;
+                                    readonly id: 18449;
                                     readonly name: "AssetIdPrefix";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "2779:13:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                         readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                     };
                                 };
-                                readonly id: 18402;
+                                readonly id: 18450;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1115,10 +1115,10 @@ export declare const AssetId: {
                                 readonly memberLocation: "2793:2:121";
                                 readonly memberName: "LP";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18337;
+                                readonly referencedDeclaration: 18385;
                                 readonly src: "2779:16:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
@@ -1131,23 +1131,23 @@ export declare const AssetId: {
                         readonly falseBody: {
                             readonly condition: {
                                 readonly commonType: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
-                                readonly id: 18412;
+                                readonly id: 18460;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18409;
+                                    readonly id: 18457;
                                     readonly name: "prefix";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18387;
+                                    readonly referencedDeclaration: 18435;
                                     readonly src: "2855:6:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
                                 };
@@ -1155,18 +1155,18 @@ export declare const AssetId: {
                                 readonly operator: "==";
                                 readonly rightExpression: {
                                     readonly expression: {
-                                        readonly id: 18410;
+                                        readonly id: 18458;
                                         readonly name: "AssetIdPrefix";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18341;
+                                        readonly referencedDeclaration: 18389;
                                         readonly src: "2865:13:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                            readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                             readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                         };
                                     };
-                                    readonly id: 18411;
+                                    readonly id: 18459;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1174,10 +1174,10 @@ export declare const AssetId: {
                                     readonly memberLocation: "2879:4:121";
                                     readonly memberName: "Long";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18338;
+                                    readonly referencedDeclaration: 18386;
                                     readonly src: "2865:18:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
                                 };
@@ -1190,23 +1190,23 @@ export declare const AssetId: {
                             readonly falseBody: {
                                 readonly condition: {
                                     readonly commonType: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
-                                    readonly id: 18428;
+                                    readonly id: 18476;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 18425;
+                                        readonly id: 18473;
                                         readonly name: "prefix";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18387;
+                                        readonly referencedDeclaration: 18435;
                                         readonly src: "2985:6:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
                                     };
@@ -1214,18 +1214,18 @@ export declare const AssetId: {
                                     readonly operator: "==";
                                     readonly rightExpression: {
                                         readonly expression: {
-                                            readonly id: 18426;
+                                            readonly id: 18474;
                                             readonly name: "AssetIdPrefix";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18341;
+                                            readonly referencedDeclaration: 18389;
                                             readonly src: "2995:13:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                                readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                                 readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                             };
                                         };
-                                        readonly id: 18427;
+                                        readonly id: 18475;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1233,10 +1233,10 @@ export declare const AssetId: {
                                         readonly memberLocation: "3009:5:121";
                                         readonly memberName: "Short";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 18339;
+                                        readonly referencedDeclaration: 18387;
                                         readonly src: "2995:19:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
                                     };
@@ -1249,23 +1249,23 @@ export declare const AssetId: {
                                 readonly falseBody: {
                                     readonly condition: {
                                         readonly commonType: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
-                                        readonly id: 18444;
+                                        readonly id: 18492;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 18441;
+                                            readonly id: 18489;
                                             readonly name: "prefix";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18387;
+                                            readonly referencedDeclaration: 18435;
                                             readonly src: "3117:6:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                                             };
                                         };
@@ -1273,18 +1273,18 @@ export declare const AssetId: {
                                         readonly operator: "==";
                                         readonly rightExpression: {
                                             readonly expression: {
-                                                readonly id: 18442;
+                                                readonly id: 18490;
                                                 readonly name: "AssetIdPrefix";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 18341;
+                                                readonly referencedDeclaration: 18389;
                                                 readonly src: "3127:13:121";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                                     readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                                 };
                                             };
-                                            readonly id: 18443;
+                                            readonly id: 18491;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -1292,10 +1292,10 @@ export declare const AssetId: {
                                             readonly memberLocation: "3141:15:121";
                                             readonly memberName: "WithdrawalShare";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18340;
+                                            readonly referencedDeclaration: 18388;
                                             readonly src: "3127:29:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                                             };
                                         };
@@ -1305,26 +1305,26 @@ export declare const AssetId: {
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly id: 18450;
+                                    readonly id: 18498;
                                     readonly nodeType: "IfStatement";
                                     readonly src: "3113:107:121";
                                     readonly trueBody: {
-                                        readonly id: 18449;
+                                        readonly id: 18497;
                                         readonly nodeType: "Block";
                                         readonly src: "3158:62:121";
                                         readonly statements: readonly [{
                                             readonly expression: {
-                                                readonly id: 18447;
+                                                readonly id: 18495;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftHandSide: {
-                                                    readonly id: 18445;
+                                                    readonly id: 18493;
                                                     readonly name: "_name";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18383;
+                                                    readonly referencedDeclaration: 18431;
                                                     readonly src: "3172:5:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -1335,7 +1335,7 @@ export declare const AssetId: {
                                                 readonly operator: "=";
                                                 readonly rightHandSide: {
                                                     readonly hexValue: "48797065726472697665205769746864726177616c205368617265";
-                                                    readonly id: 18446;
+                                                    readonly id: 18494;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -1355,32 +1355,32 @@ export declare const AssetId: {
                                                     readonly typeString: "string memory";
                                                 };
                                             };
-                                            readonly id: 18448;
+                                            readonly id: 18496;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "3172:37:121";
                                         }];
                                     };
                                 };
-                                readonly id: 18451;
+                                readonly id: 18499;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "2981:239:121";
                                 readonly trueBody: {
-                                    readonly id: 18440;
+                                    readonly id: 18488;
                                     readonly nodeType: "Block";
                                     readonly src: "3016:91:121";
                                     readonly statements: readonly [{
                                         readonly expression: {
-                                            readonly id: 18438;
+                                            readonly id: 18486;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftHandSide: {
-                                                readonly id: 18429;
+                                                readonly id: 18477;
                                                 readonly name: "_name";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 18383;
+                                                readonly referencedDeclaration: 18431;
                                                 readonly src: "3030:5:121";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -1393,7 +1393,7 @@ export declare const AssetId: {
                                                 readonly arguments: readonly [{
                                                     readonly arguments: readonly [{
                                                         readonly hexValue: "487970657264726976652053686f72743a20";
-                                                        readonly id: 18434;
+                                                        readonly id: 18482;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -1407,11 +1407,11 @@ export declare const AssetId: {
                                                         };
                                                         readonly value: "Hyperdrive Short: ";
                                                     }, {
-                                                        readonly id: 18435;
+                                                        readonly id: 18483;
                                                         readonly name: "_timestamp";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18395;
+                                                        readonly referencedDeclaration: 18443;
                                                         readonly src: "3084:10:121";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -1427,7 +1427,7 @@ export declare const AssetId: {
                                                             readonly typeString: "string memory";
                                                         }];
                                                         readonly expression: {
-                                                            readonly id: 18432;
+                                                            readonly id: 18480;
                                                             readonly name: "abi";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
@@ -1438,7 +1438,7 @@ export declare const AssetId: {
                                                                 readonly typeString: "abi";
                                                             };
                                                         };
-                                                        readonly id: 18433;
+                                                        readonly id: 18481;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -1452,7 +1452,7 @@ export declare const AssetId: {
                                                             readonly typeString: "function () pure returns (bytes memory)";
                                                         };
                                                     };
-                                                    readonly id: 18436;
+                                                    readonly id: 18484;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -1473,7 +1473,7 @@ export declare const AssetId: {
                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                         readonly typeString: "bytes memory";
                                                     }];
-                                                    readonly id: 18431;
+                                                    readonly id: 18479;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -1485,14 +1485,14 @@ export declare const AssetId: {
                                                         readonly typeString: "type(string storage pointer)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 18430;
+                                                        readonly id: 18478;
                                                         readonly name: "string";
                                                         readonly nodeType: "ElementaryTypeName";
                                                         readonly src: "3038:6:121";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 };
-                                                readonly id: 18437;
+                                                readonly id: 18485;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -1514,32 +1514,32 @@ export declare const AssetId: {
                                                 readonly typeString: "string memory";
                                             };
                                         };
-                                        readonly id: 18439;
+                                        readonly id: 18487;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "3030:66:121";
                                     }];
                                 };
                             };
-                            readonly id: 18452;
+                            readonly id: 18500;
                             readonly nodeType: "IfStatement";
                             readonly src: "2851:369:121";
                             readonly trueBody: {
-                                readonly id: 18424;
+                                readonly id: 18472;
                                 readonly nodeType: "Block";
                                 readonly src: "2885:90:121";
                                 readonly statements: readonly [{
                                     readonly expression: {
-                                        readonly id: 18422;
+                                        readonly id: 18470;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftHandSide: {
-                                            readonly id: 18413;
+                                            readonly id: 18461;
                                             readonly name: "_name";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18383;
+                                            readonly referencedDeclaration: 18431;
                                             readonly src: "2899:5:121";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -1552,7 +1552,7 @@ export declare const AssetId: {
                                             readonly arguments: readonly [{
                                                 readonly arguments: readonly [{
                                                     readonly hexValue: "48797065726472697665204c6f6e673a20";
-                                                    readonly id: 18418;
+                                                    readonly id: 18466;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -1566,11 +1566,11 @@ export declare const AssetId: {
                                                     };
                                                     readonly value: "Hyperdrive Long: ";
                                                 }, {
-                                                    readonly id: 18419;
+                                                    readonly id: 18467;
                                                     readonly name: "_timestamp";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18395;
+                                                    readonly referencedDeclaration: 18443;
                                                     readonly src: "2952:10:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -1586,7 +1586,7 @@ export declare const AssetId: {
                                                         readonly typeString: "string memory";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 18416;
+                                                        readonly id: 18464;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -1597,7 +1597,7 @@ export declare const AssetId: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 18417;
+                                                    readonly id: 18465;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -1611,7 +1611,7 @@ export declare const AssetId: {
                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 18420;
+                                                readonly id: 18468;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -1632,7 +1632,7 @@ export declare const AssetId: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 }];
-                                                readonly id: 18415;
+                                                readonly id: 18463;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1644,14 +1644,14 @@ export declare const AssetId: {
                                                     readonly typeString: "type(string storage pointer)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 18414;
+                                                    readonly id: 18462;
                                                     readonly name: "string";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "2907:6:121";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 18421;
+                                            readonly id: 18469;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1673,32 +1673,32 @@ export declare const AssetId: {
                                             readonly typeString: "string memory";
                                         };
                                     };
-                                    readonly id: 18423;
+                                    readonly id: 18471;
                                     readonly nodeType: "ExpressionStatement";
                                     readonly src: "2899:65:121";
                                 }];
                             };
                         };
-                        readonly id: 18453;
+                        readonly id: 18501;
                         readonly nodeType: "IfStatement";
                         readonly src: "2765:455:121";
                         readonly trueBody: {
-                            readonly id: 18408;
+                            readonly id: 18456;
                             readonly nodeType: "Block";
                             readonly src: "2797:48:121";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 18406;
+                                    readonly id: 18454;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 18404;
+                                        readonly id: 18452;
                                         readonly name: "_name";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18383;
+                                        readonly referencedDeclaration: 18431;
                                         readonly src: "2811:5:121";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -1709,7 +1709,7 @@ export declare const AssetId: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly hexValue: "48797065726472697665204c50";
-                                        readonly id: 18405;
+                                        readonly id: 18453;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1729,7 +1729,7 @@ export declare const AssetId: {
                                         readonly typeString: "string memory";
                                     };
                                 };
-                                readonly id: 18407;
+                                readonly id: 18455;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "2811:23:121";
                             }];
@@ -1737,7 +1737,7 @@ export declare const AssetId: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18378;
+                    readonly id: 18426;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2411:117:121";
                     readonly text: "@dev Converts an asset ID to a token name.\n @param _id The asset ID.\n @return _name The token name.";
@@ -1748,16 +1748,16 @@ export declare const AssetId: {
                 readonly name: "assetIdToName";
                 readonly nameLocation: "2542:13:121";
                 readonly parameters: {
-                    readonly id: 18381;
+                    readonly id: 18429;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18380;
+                        readonly id: 18428;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "2573:3:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18455;
+                        readonly scope: 18503;
                         readonly src: "2565:11:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1766,7 +1766,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18379;
+                            readonly id: 18427;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2565:7:121";
@@ -1780,16 +1780,16 @@ export declare const AssetId: {
                     readonly src: "2555:27:121";
                 };
                 readonly returnParameters: {
-                    readonly id: 18384;
+                    readonly id: 18432;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18383;
+                        readonly id: 18431;
                         readonly mutability: "mutable";
                         readonly name: "_name";
                         readonly nameLocation: "2620:5:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18455;
+                        readonly scope: 18503;
                         readonly src: "2606:19:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1798,7 +1798,7 @@ export declare const AssetId: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 18382;
+                            readonly id: 18430;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2606:6:121";
@@ -1811,64 +1811,64 @@ export declare const AssetId: {
                     }];
                     readonly src: "2605:21:121";
                 };
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18533;
+                readonly id: 18581;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3360:689:121";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18532;
+                    readonly id: 18580;
                     readonly nodeType: "Block";
                     readonly src: "3458:591:121";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [18465, 18467];
+                        readonly assignments: readonly [18513, 18515];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18465;
+                            readonly id: 18513;
                             readonly mutability: "mutable";
                             readonly name: "prefix";
                             readonly nameLocation: "3483:6:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18532;
+                            readonly scope: 18580;
                             readonly src: "3469:20:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                             readonly typeName: {
-                                readonly id: 18464;
+                                readonly id: 18512;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 18463;
+                                    readonly id: 18511;
                                     readonly name: "AssetIdPrefix";
                                     readonly nameLocations: readonly ["3469:13:121"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "3469:13:121";
                                 };
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "3469:13:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 18467;
+                            readonly id: 18515;
                             readonly mutability: "mutable";
                             readonly name: "timestamp";
                             readonly nameLocation: "3499:9:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18532;
+                            readonly scope: 18580;
                             readonly src: "3491:17:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1877,7 +1877,7 @@ export declare const AssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 18466;
+                                readonly id: 18514;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3491:7:121";
@@ -1888,14 +1888,14 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18471;
+                        readonly id: 18519;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 18469;
+                                readonly id: 18517;
                                 readonly name: "_id";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18458;
+                                readonly referencedDeclaration: 18506;
                                 readonly src: "3526:3:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1907,18 +1907,18 @@ export declare const AssetId: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 18468;
+                                readonly id: 18516;
                                 readonly name: "decodeAssetId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18377;
+                                readonly referencedDeclaration: 18425;
                                 readonly src: "3512:13:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                     readonly typeString: "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)";
                                 };
                             };
-                            readonly id: 18470;
+                            readonly id: 18518;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1930,22 +1930,22 @@ export declare const AssetId: {
                             readonly src: "3512:18:121";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                 readonly typeString: "tuple(enum AssetId.AssetIdPrefix,uint256)";
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "3468:62:121";
                     }, {
-                        readonly assignments: readonly [18473];
+                        readonly assignments: readonly [18521];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18473;
+                            readonly id: 18521;
                             readonly mutability: "mutable";
                             readonly name: "_timestamp";
                             readonly nameLocation: "3554:10:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18532;
+                            readonly scope: 18580;
                             readonly src: "3540:24:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1954,7 +1954,7 @@ export declare const AssetId: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 18472;
+                                readonly id: 18520;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3540:6:121";
@@ -1965,14 +1965,14 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18477;
+                        readonly id: 18525;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 18475;
+                                readonly id: 18523;
                                 readonly name: "timestamp";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18467;
+                                readonly referencedDeclaration: 18515;
                                 readonly src: "3576:9:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1984,18 +1984,18 @@ export declare const AssetId: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 18474;
+                                readonly id: 18522;
                                 readonly name: "toString";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18593;
+                                readonly referencedDeclaration: 18641;
                                 readonly src: "3567:8:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                     readonly typeString: "function (uint256) pure returns (string memory)";
                                 };
                             };
-                            readonly id: 18476;
+                            readonly id: 18524;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2016,23 +2016,23 @@ export declare const AssetId: {
                     }, {
                         readonly condition: {
                             readonly commonType: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
-                            readonly id: 18481;
+                            readonly id: 18529;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18478;
+                                readonly id: 18526;
                                 readonly name: "prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18465;
+                                readonly referencedDeclaration: 18513;
                                 readonly src: "3600:6:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
@@ -2040,18 +2040,18 @@ export declare const AssetId: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly expression: {
-                                    readonly id: 18479;
+                                    readonly id: 18527;
                                     readonly name: "AssetIdPrefix";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "3610:13:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                         readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                     };
                                 };
-                                readonly id: 18480;
+                                readonly id: 18528;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2059,10 +2059,10 @@ export declare const AssetId: {
                                 readonly memberLocation: "3624:2:121";
                                 readonly memberName: "LP";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18337;
+                                readonly referencedDeclaration: 18385;
                                 readonly src: "3610:16:121";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
@@ -2075,23 +2075,23 @@ export declare const AssetId: {
                         readonly falseBody: {
                             readonly condition: {
                                 readonly commonType: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
-                                readonly id: 18490;
+                                readonly id: 18538;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18487;
+                                    readonly id: 18535;
                                     readonly name: "prefix";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18465;
+                                    readonly referencedDeclaration: 18513;
                                     readonly src: "3688:6:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
                                 };
@@ -2099,18 +2099,18 @@ export declare const AssetId: {
                                 readonly operator: "==";
                                 readonly rightExpression: {
                                     readonly expression: {
-                                        readonly id: 18488;
+                                        readonly id: 18536;
                                         readonly name: "AssetIdPrefix";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18341;
+                                        readonly referencedDeclaration: 18389;
                                         readonly src: "3698:13:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                            readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                             readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                         };
                                     };
-                                    readonly id: 18489;
+                                    readonly id: 18537;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2118,10 +2118,10 @@ export declare const AssetId: {
                                     readonly memberLocation: "3712:4:121";
                                     readonly memberName: "Long";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18338;
+                                    readonly referencedDeclaration: 18386;
                                     readonly src: "3698:18:121";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
                                 };
@@ -2134,23 +2134,23 @@ export declare const AssetId: {
                             readonly falseBody: {
                                 readonly condition: {
                                     readonly commonType: {
-                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                        readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                         readonly typeString: "enum AssetId.AssetIdPrefix";
                                     };
-                                    readonly id: 18506;
+                                    readonly id: 18554;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 18503;
+                                        readonly id: 18551;
                                         readonly name: "prefix";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18465;
+                                        readonly referencedDeclaration: 18513;
                                         readonly src: "3819:6:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
                                     };
@@ -2158,18 +2158,18 @@ export declare const AssetId: {
                                     readonly operator: "==";
                                     readonly rightExpression: {
                                         readonly expression: {
-                                            readonly id: 18504;
+                                            readonly id: 18552;
                                             readonly name: "AssetIdPrefix";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18341;
+                                            readonly referencedDeclaration: 18389;
                                             readonly src: "3829:13:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                                readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                                 readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                             };
                                         };
-                                        readonly id: 18505;
+                                        readonly id: 18553;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2177,10 +2177,10 @@ export declare const AssetId: {
                                         readonly memberLocation: "3843:5:121";
                                         readonly memberName: "Short";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 18339;
+                                        readonly referencedDeclaration: 18387;
                                         readonly src: "3829:19:121";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
                                     };
@@ -2193,23 +2193,23 @@ export declare const AssetId: {
                                 readonly falseBody: {
                                     readonly condition: {
                                         readonly commonType: {
-                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                             readonly typeString: "enum AssetId.AssetIdPrefix";
                                         };
-                                        readonly id: 18522;
+                                        readonly id: 18570;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 18519;
+                                            readonly id: 18567;
                                             readonly name: "prefix";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18465;
+                                            readonly referencedDeclaration: 18513;
                                             readonly src: "3952:6:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                                             };
                                         };
@@ -2217,18 +2217,18 @@ export declare const AssetId: {
                                         readonly operator: "==";
                                         readonly rightExpression: {
                                             readonly expression: {
-                                                readonly id: 18520;
+                                                readonly id: 18568;
                                                 readonly name: "AssetIdPrefix";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 18341;
+                                                readonly referencedDeclaration: 18389;
                                                 readonly src: "3962:13:121";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                                    readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                                     readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                                 };
                                             };
-                                            readonly id: 18521;
+                                            readonly id: 18569;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2236,10 +2236,10 @@ export declare const AssetId: {
                                             readonly memberLocation: "3976:15:121";
                                             readonly memberName: "WithdrawalShare";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18340;
+                                            readonly referencedDeclaration: 18388;
                                             readonly src: "3962:29:121";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                                             };
                                         };
@@ -2249,26 +2249,26 @@ export declare const AssetId: {
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly id: 18528;
+                                    readonly id: 18576;
                                     readonly nodeType: "IfStatement";
                                     readonly src: "3948:95:121";
                                     readonly trueBody: {
-                                        readonly id: 18527;
+                                        readonly id: 18575;
                                         readonly nodeType: "Block";
                                         readonly src: "3993:50:121";
                                         readonly statements: readonly [{
                                             readonly expression: {
-                                                readonly id: 18525;
+                                                readonly id: 18573;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftHandSide: {
-                                                    readonly id: 18523;
+                                                    readonly id: 18571;
                                                     readonly name: "_symbol";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18461;
+                                                    readonly referencedDeclaration: 18509;
                                                     readonly src: "4007:7:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -2279,7 +2279,7 @@ export declare const AssetId: {
                                                 readonly operator: "=";
                                                 readonly rightHandSide: {
                                                     readonly hexValue: "485950455244524956452d5753";
-                                                    readonly id: 18524;
+                                                    readonly id: 18572;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2299,32 +2299,32 @@ export declare const AssetId: {
                                                     readonly typeString: "string memory";
                                                 };
                                             };
-                                            readonly id: 18526;
+                                            readonly id: 18574;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "4007:25:121";
                                         }];
                                     };
                                 };
-                                readonly id: 18529;
+                                readonly id: 18577;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "3815:228:121";
                                 readonly trueBody: {
-                                    readonly id: 18518;
+                                    readonly id: 18566;
                                     readonly nodeType: "Block";
                                     readonly src: "3850:92:121";
                                     readonly statements: readonly [{
                                         readonly expression: {
-                                            readonly id: 18516;
+                                            readonly id: 18564;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftHandSide: {
-                                                readonly id: 18507;
+                                                readonly id: 18555;
                                                 readonly name: "_symbol";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 18461;
+                                                readonly referencedDeclaration: 18509;
                                                 readonly src: "3864:7:121";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -2337,7 +2337,7 @@ export declare const AssetId: {
                                                 readonly arguments: readonly [{
                                                     readonly arguments: readonly [{
                                                         readonly hexValue: "485950455244524956452d53484f52543a";
-                                                        readonly id: 18512;
+                                                        readonly id: 18560;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2351,11 +2351,11 @@ export declare const AssetId: {
                                                         };
                                                         readonly value: "HYPERDRIVE-SHORT:";
                                                     }, {
-                                                        readonly id: 18513;
+                                                        readonly id: 18561;
                                                         readonly name: "_timestamp";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18473;
+                                                        readonly referencedDeclaration: 18521;
                                                         readonly src: "3919:10:121";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -2371,7 +2371,7 @@ export declare const AssetId: {
                                                             readonly typeString: "string memory";
                                                         }];
                                                         readonly expression: {
-                                                            readonly id: 18510;
+                                                            readonly id: 18558;
                                                             readonly name: "abi";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
@@ -2382,7 +2382,7 @@ export declare const AssetId: {
                                                                 readonly typeString: "abi";
                                                             };
                                                         };
-                                                        readonly id: 18511;
+                                                        readonly id: 18559;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2396,7 +2396,7 @@ export declare const AssetId: {
                                                             readonly typeString: "function () pure returns (bytes memory)";
                                                         };
                                                     };
-                                                    readonly id: 18514;
+                                                    readonly id: 18562;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -2417,7 +2417,7 @@ export declare const AssetId: {
                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                         readonly typeString: "bytes memory";
                                                     }];
-                                                    readonly id: 18509;
+                                                    readonly id: 18557;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2429,14 +2429,14 @@ export declare const AssetId: {
                                                         readonly typeString: "type(string storage pointer)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 18508;
+                                                        readonly id: 18556;
                                                         readonly name: "string";
                                                         readonly nodeType: "ElementaryTypeName";
                                                         readonly src: "3874:6:121";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 };
-                                                readonly id: 18515;
+                                                readonly id: 18563;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -2458,32 +2458,32 @@ export declare const AssetId: {
                                                 readonly typeString: "string memory";
                                             };
                                         };
-                                        readonly id: 18517;
+                                        readonly id: 18565;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "3864:67:121";
                                     }];
                                 };
                             };
-                            readonly id: 18530;
+                            readonly id: 18578;
                             readonly nodeType: "IfStatement";
                             readonly src: "3684:359:121";
                             readonly trueBody: {
-                                readonly id: 18502;
+                                readonly id: 18550;
                                 readonly nodeType: "Block";
                                 readonly src: "3718:91:121";
                                 readonly statements: readonly [{
                                     readonly expression: {
-                                        readonly id: 18500;
+                                        readonly id: 18548;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftHandSide: {
-                                            readonly id: 18491;
+                                            readonly id: 18539;
                                             readonly name: "_symbol";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18461;
+                                            readonly referencedDeclaration: 18509;
                                             readonly src: "3732:7:121";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -2496,7 +2496,7 @@ export declare const AssetId: {
                                             readonly arguments: readonly [{
                                                 readonly arguments: readonly [{
                                                     readonly hexValue: "485950455244524956452d4c4f4e473a";
-                                                    readonly id: 18496;
+                                                    readonly id: 18544;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2510,11 +2510,11 @@ export declare const AssetId: {
                                                     };
                                                     readonly value: "HYPERDRIVE-LONG:";
                                                 }, {
-                                                    readonly id: 18497;
+                                                    readonly id: 18545;
                                                     readonly name: "_timestamp";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18473;
+                                                    readonly referencedDeclaration: 18521;
                                                     readonly src: "3786:10:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -2530,7 +2530,7 @@ export declare const AssetId: {
                                                         readonly typeString: "string memory";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 18494;
+                                                        readonly id: 18542;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -2541,7 +2541,7 @@ export declare const AssetId: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 18495;
+                                                    readonly id: 18543;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2555,7 +2555,7 @@ export declare const AssetId: {
                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 18498;
+                                                readonly id: 18546;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -2576,7 +2576,7 @@ export declare const AssetId: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 }];
-                                                readonly id: 18493;
+                                                readonly id: 18541;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2588,14 +2588,14 @@ export declare const AssetId: {
                                                     readonly typeString: "type(string storage pointer)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 18492;
+                                                    readonly id: 18540;
                                                     readonly name: "string";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "3742:6:121";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 18499;
+                                            readonly id: 18547;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2617,32 +2617,32 @@ export declare const AssetId: {
                                             readonly typeString: "string memory";
                                         };
                                     };
-                                    readonly id: 18501;
+                                    readonly id: 18549;
                                     readonly nodeType: "ExpressionStatement";
                                     readonly src: "3732:66:121";
                                 }];
                             };
                         };
-                        readonly id: 18531;
+                        readonly id: 18579;
                         readonly nodeType: "IfStatement";
                         readonly src: "3596:447:121";
                         readonly trueBody: {
-                            readonly id: 18486;
+                            readonly id: 18534;
                             readonly nodeType: "Block";
                             readonly src: "3628:50:121";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 18484;
+                                    readonly id: 18532;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 18482;
+                                        readonly id: 18530;
                                         readonly name: "_symbol";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18461;
+                                        readonly referencedDeclaration: 18509;
                                         readonly src: "3642:7:121";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -2653,7 +2653,7 @@ export declare const AssetId: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly hexValue: "485950455244524956452d4c50";
-                                        readonly id: 18483;
+                                        readonly id: 18531;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2673,7 +2673,7 @@ export declare const AssetId: {
                                         readonly typeString: "string memory";
                                     };
                                 };
-                                readonly id: 18485;
+                                readonly id: 18533;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "3642:25:121";
                             }];
@@ -2681,7 +2681,7 @@ export declare const AssetId: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18456;
+                    readonly id: 18504;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3232:123:121";
                     readonly text: "@dev Converts an asset ID to a token symbol.\n @param _id The asset ID.\n @return _symbol The token symbol.";
@@ -2692,16 +2692,16 @@ export declare const AssetId: {
                 readonly name: "assetIdToSymbol";
                 readonly nameLocation: "3369:15:121";
                 readonly parameters: {
-                    readonly id: 18459;
+                    readonly id: 18507;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18458;
+                        readonly id: 18506;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "3402:3:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18533;
+                        readonly scope: 18581;
                         readonly src: "3394:11:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2710,7 +2710,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18457;
+                            readonly id: 18505;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3394:7:121";
@@ -2724,16 +2724,16 @@ export declare const AssetId: {
                     readonly src: "3384:27:121";
                 };
                 readonly returnParameters: {
-                    readonly id: 18462;
+                    readonly id: 18510;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18461;
+                        readonly id: 18509;
                         readonly mutability: "mutable";
                         readonly name: "_symbol";
                         readonly nameLocation: "3449:7:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18533;
+                        readonly scope: 18581;
                         readonly src: "3435:21:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2742,7 +2742,7 @@ export declare const AssetId: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 18460;
+                            readonly id: 18508;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3435:6:121";
@@ -2755,30 +2755,30 @@ export declare const AssetId: {
                     }];
                     readonly src: "3434:23:121";
                 };
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18593;
+                readonly id: 18641;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4207:1065:121";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18592;
+                    readonly id: 18640;
                     readonly nodeType: "Block";
                     readonly src: "4298:974:121";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [18542];
+                        readonly assignments: readonly [18590];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18542;
+                            readonly id: 18590;
                             readonly mutability: "mutable";
                             readonly name: "maxStringLength";
                             readonly nameLocation: "4544:15:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18592;
+                            readonly scope: 18640;
                             readonly src: "4536:23:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2787,7 +2787,7 @@ export declare const AssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 18541;
+                                readonly id: 18589;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4536:7:121";
@@ -2798,10 +2798,10 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18544;
+                        readonly id: 18592;
                         readonly initialValue: {
                             readonly hexValue: "3738";
-                            readonly id: 18543;
+                            readonly id: 18591;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -2818,15 +2818,15 @@ export declare const AssetId: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4536:28:121";
                     }, {
-                        readonly assignments: readonly [18546];
+                        readonly assignments: readonly [18594];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18546;
+                            readonly id: 18594;
                             readonly mutability: "mutable";
                             readonly name: "rawResult";
                             readonly nameLocation: "4587:9:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18592;
+                            readonly scope: 18640;
                             readonly src: "4574:22:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -2835,7 +2835,7 @@ export declare const AssetId: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 18545;
+                                readonly id: 18593;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4574:5:121";
@@ -2846,14 +2846,14 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18551;
+                        readonly id: 18599;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 18549;
+                                readonly id: 18597;
                                 readonly name: "maxStringLength";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18542;
+                                readonly referencedDeclaration: 18590;
                                 readonly src: "4609:15:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2865,7 +2865,7 @@ export declare const AssetId: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 18548;
+                                readonly id: 18596;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2877,7 +2877,7 @@ export declare const AssetId: {
                                     readonly typeString: "function (uint256) pure returns (bytes memory)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18547;
+                                    readonly id: 18595;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "4603:5:121";
@@ -2887,7 +2887,7 @@ export declare const AssetId: {
                                     };
                                 };
                             };
-                            readonly id: 18550;
+                            readonly id: 18598;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2906,15 +2906,15 @@ export declare const AssetId: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4574:51:121";
                     }, {
-                        readonly assignments: readonly [18553];
+                        readonly assignments: readonly [18601];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18553;
+                            readonly id: 18601;
                             readonly mutability: "mutable";
                             readonly name: "digits";
                             readonly nameLocation: "4798:6:121";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18592;
+                            readonly scope: 18640;
                             readonly src: "4790:14:121";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2923,7 +2923,7 @@ export declare const AssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 18552;
+                                readonly id: 18600;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4790:7:121";
@@ -2934,10 +2934,10 @@ export declare const AssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18555;
+                        readonly id: 18603;
                         readonly initialValue: {
                             readonly hexValue: "30";
-                            readonly id: 18554;
+                            readonly id: 18602;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -2955,36 +2955,36 @@ export declare const AssetId: {
                         readonly src: "4790:18:121";
                     }, {
                         readonly body: {
-                            readonly id: 18587;
+                            readonly id: 18635;
                             readonly nodeType: "Block";
                             readonly src: "4848:150:121";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 18582;
+                                    readonly id: 18630;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly baseExpression: {
-                                            readonly id: 18563;
+                                            readonly id: 18611;
                                             readonly name: "rawResult";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18546;
+                                            readonly referencedDeclaration: 18594;
                                             readonly src: "4862:9:121";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                 readonly typeString: "bytes memory";
                                             };
                                         };
-                                        readonly id: 18569;
+                                        readonly id: 18617;
                                         readonly indexExpression: {
                                             readonly commonType: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 18568;
+                                            readonly id: 18616;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2994,17 +2994,17 @@ export declare const AssetId: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 18566;
+                                                readonly id: 18614;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 18564;
+                                                    readonly id: 18612;
                                                     readonly name: "maxStringLength";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18542;
+                                                    readonly referencedDeclaration: 18590;
                                                     readonly src: "4872:15:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -3014,11 +3014,11 @@ export declare const AssetId: {
                                                 readonly nodeType: "BinaryOperation";
                                                 readonly operator: "-";
                                                 readonly rightExpression: {
-                                                    readonly id: 18565;
+                                                    readonly id: 18613;
                                                     readonly name: "digits";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18553;
+                                                    readonly referencedDeclaration: 18601;
                                                     readonly src: "4890:6:121";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -3035,7 +3035,7 @@ export declare const AssetId: {
                                             readonly operator: "-";
                                             readonly rightExpression: {
                                                 readonly hexValue: "31";
-                                                readonly id: 18567;
+                                                readonly id: 18615;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3075,7 +3075,7 @@ export declare const AssetId: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 18579;
+                                                readonly id: 18627;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -3086,17 +3086,17 @@ export declare const AssetId: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
-                                                        readonly id: 18576;
+                                                        readonly id: 18624;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftExpression: {
-                                                            readonly id: 18574;
+                                                            readonly id: 18622;
                                                             readonly name: "_num";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 18536;
+                                                            readonly referencedDeclaration: 18584;
                                                             readonly src: "4935:4:121";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -3107,7 +3107,7 @@ export declare const AssetId: {
                                                         readonly operator: "%";
                                                         readonly rightExpression: {
                                                             readonly hexValue: "3130";
-                                                            readonly id: 18575;
+                                                            readonly id: 18623;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -3127,7 +3127,7 @@ export declare const AssetId: {
                                                             readonly typeString: "uint256";
                                                         };
                                                     }];
-                                                    readonly id: 18577;
+                                                    readonly id: 18625;
                                                     readonly isConstant: false;
                                                     readonly isInlineArray: false;
                                                     readonly isLValue: false;
@@ -3144,7 +3144,7 @@ export declare const AssetId: {
                                                 readonly operator: "+";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "3438";
-                                                    readonly id: 18578;
+                                                    readonly id: 18626;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3169,7 +3169,7 @@ export declare const AssetId: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 }];
-                                                readonly id: 18573;
+                                                readonly id: 18621;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3181,14 +3181,14 @@ export declare const AssetId: {
                                                     readonly typeString: "type(uint8)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 18572;
+                                                    readonly id: 18620;
                                                     readonly name: "uint8";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4928:5:121";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 18580;
+                                            readonly id: 18628;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3209,7 +3209,7 @@ export declare const AssetId: {
                                                 readonly typeIdentifier: "t_uint8";
                                                 readonly typeString: "uint8";
                                             }];
-                                            readonly id: 18571;
+                                            readonly id: 18619;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3221,14 +3221,14 @@ export declare const AssetId: {
                                                 readonly typeString: "type(bytes1)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 18570;
+                                                readonly id: 18618;
                                                 readonly name: "bytes1";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "4904:6:121";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 18581;
+                                        readonly id: 18629;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3250,12 +3250,12 @@ export declare const AssetId: {
                                         readonly typeString: "bytes1";
                                     };
                                 };
-                                readonly id: 18583;
+                                readonly id: 18631;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4862:103:121";
                             }, {
                                 readonly expression: {
-                                    readonly id: 18585;
+                                    readonly id: 18633;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3265,11 +3265,11 @@ export declare const AssetId: {
                                     readonly prefix: false;
                                     readonly src: "4979:8:121";
                                     readonly subExpression: {
-                                        readonly id: 18584;
+                                        readonly id: 18632;
                                         readonly name: "digits";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18553;
+                                        readonly referencedDeclaration: 18601;
                                         readonly src: "4979:6:121";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3281,7 +3281,7 @@ export declare const AssetId: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 18586;
+                                readonly id: 18634;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4979:8:121";
                             }];
@@ -3291,17 +3291,17 @@ export declare const AssetId: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 18558;
+                            readonly id: 18606;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18556;
+                                readonly id: 18604;
                                 readonly name: "_num";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18536;
+                                readonly referencedDeclaration: 18584;
                                 readonly src: "4825:4:121";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3312,7 +3312,7 @@ export declare const AssetId: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 18557;
+                                readonly id: 18605;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -3332,20 +3332,20 @@ export declare const AssetId: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 18588;
+                        readonly id: 18636;
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 18561;
+                                readonly id: 18609;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18559;
+                                    readonly id: 18607;
                                     readonly name: "_num";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18536;
+                                    readonly referencedDeclaration: 18584;
                                     readonly src: "4836:4:121";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -3356,7 +3356,7 @@ export declare const AssetId: {
                                 readonly operator: "/=";
                                 readonly rightHandSide: {
                                     readonly hexValue: "3130";
-                                    readonly id: 18560;
+                                    readonly id: 18608;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3376,7 +3376,7 @@ export declare const AssetId: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 18562;
+                            readonly id: 18610;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "4836:10:121";
                         };
@@ -3450,66 +3450,66 @@ export declare const AssetId: {
                         };
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18553;
+                            readonly declaration: 18601;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5190:6:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18553;
+                            readonly declaration: 18601;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5226:6:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18542;
+                            readonly declaration: 18590;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5173:15:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18546;
+                            readonly declaration: 18594;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5158:9:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18539;
+                            readonly declaration: 18587;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5144:6:121";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18539;
+                            readonly declaration: 18587;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5218:6:121";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 18589;
+                        readonly id: 18637;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "5121:122:121";
                     }, {
                         readonly expression: {
-                            readonly id: 18590;
+                            readonly id: 18638;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 18539;
+                            readonly referencedDeclaration: 18587;
                             readonly src: "5259:6:121";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_memory_ptr";
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly functionReturnParameters: 18540;
-                        readonly id: 18591;
+                        readonly functionReturnParameters: 18588;
+                        readonly id: 18639;
                         readonly nodeType: "Return";
                         readonly src: "5252:13:121";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18534;
+                    readonly id: 18582;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4055:147:121";
                     readonly text: "@dev Converts an unsigned integer to a string.\n @param _num The integer to be converted.\n @return result The stringified integer.";
@@ -3520,16 +3520,16 @@ export declare const AssetId: {
                 readonly name: "toString";
                 readonly nameLocation: "4216:8:121";
                 readonly parameters: {
-                    readonly id: 18537;
+                    readonly id: 18585;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18536;
+                        readonly id: 18584;
                         readonly mutability: "mutable";
                         readonly name: "_num";
                         readonly nameLocation: "4242:4:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18593;
+                        readonly scope: 18641;
                         readonly src: "4234:12:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3538,7 +3538,7 @@ export declare const AssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18535;
+                            readonly id: 18583;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4234:7:121";
@@ -3552,16 +3552,16 @@ export declare const AssetId: {
                     readonly src: "4224:28:121";
                 };
                 readonly returnParameters: {
-                    readonly id: 18540;
+                    readonly id: 18588;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18539;
+                        readonly id: 18587;
                         readonly mutability: "mutable";
                         readonly name: "result";
                         readonly nameLocation: "4290:6:121";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18593;
+                        readonly scope: 18641;
                         readonly src: "4276:20:121";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3570,7 +3570,7 @@ export declare const AssetId: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 18538;
+                            readonly id: 18586;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4276:6:121";
@@ -3583,7 +3583,7 @@ export declare const AssetId: {
                     }];
                     readonly src: "4275:22:121";
                 };
-                readonly scope: 18594;
+                readonly scope: 18642;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -3594,16 +3594,16 @@ export declare const AssetId: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly documentation: {
-                readonly id: 18324;
+                readonly id: 18372;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "126:365:121";
                 readonly text: "@author DELV\n @title Hyperdrive\n @notice A library that handles the encoding and decoding of asset IDs for\n         Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [18594];
+            readonly linearizedBaseContracts: readonly [18642];
             readonly name: "AssetId";
             readonly nameLocation: "499:7:121";
-            readonly scope: 18595;
+            readonly scope: 18643;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

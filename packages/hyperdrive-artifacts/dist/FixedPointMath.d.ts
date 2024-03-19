@@ -110,38 +110,38 @@ export declare const FixedPointMath: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
-        readonly id: 19395;
+        readonly id: 19443;
         readonly exportedSymbols: {
-            readonly FixedPointMath: readonly [19394];
-            readonly IHyperdrive: readonly [11028];
-            readonly ONE: readonly [18628];
-            readonly SafeCast: readonly [22265];
+            readonly FixedPointMath: readonly [19442];
+            readonly IHyperdrive: readonly [11076];
+            readonly ONE: readonly [18676];
+            readonly SafeCast: readonly [22313];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "40:15879:124";
         readonly nodes: readonly [{
-            readonly id: 18621;
+            readonly id: 18669;
             readonly nodeType: "PragmaDirective";
             readonly src: "40:23:124";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 18623;
+            readonly id: 18671;
             readonly nodeType: "ImportDirective";
             readonly src: "65:60:124";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 19395;
-            readonly sourceUnit: 11029;
+            readonly scope: 19443;
+            readonly sourceUnit: 11077;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 18622;
+                    readonly id: 18670;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11028;
+                    readonly referencedDeclaration: 11076;
                     readonly src: "74:11:124";
                     readonly typeDescriptions: {};
                 };
@@ -149,22 +149,22 @@ export declare const FixedPointMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 18625;
+            readonly id: 18673;
             readonly nodeType: "ImportDirective";
             readonly src: "126:42:124";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/SafeCast.sol";
             readonly file: "./SafeCast.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 19395;
-            readonly sourceUnit: 22266;
+            readonly scope: 19443;
+            readonly sourceUnit: 22314;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 18624;
+                    readonly id: 18672;
                     readonly name: "SafeCast";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 22265;
+                    readonly referencedDeclaration: 22313;
                     readonly src: "135:8:124";
                     readonly typeDescriptions: {};
                 };
@@ -172,7 +172,7 @@ export declare const FixedPointMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 18628;
+            readonly id: 18676;
             readonly nodeType: "VariableDeclaration";
             readonly src: "170:27:124";
             readonly nodes: readonly [];
@@ -180,7 +180,7 @@ export declare const FixedPointMath: {
             readonly mutability: "constant";
             readonly name: "ONE";
             readonly nameLocation: "187:3:124";
-            readonly scope: 19395;
+            readonly scope: 19443;
             readonly stateVariable: false;
             readonly storageLocation: "default";
             readonly typeDescriptions: {
@@ -188,7 +188,7 @@ export declare const FixedPointMath: {
                 readonly typeString: "uint256";
             };
             readonly typeName: {
-                readonly id: 18626;
+                readonly id: 18674;
                 readonly name: "uint256";
                 readonly nodeType: "ElementaryTypeName";
                 readonly src: "170:7:124";
@@ -199,7 +199,7 @@ export declare const FixedPointMath: {
             };
             readonly value: {
                 readonly hexValue: "31653138";
-                readonly id: 18627;
+                readonly id: 18675;
                 readonly isConstant: false;
                 readonly isLValue: false;
                 readonly isPure: true;
@@ -215,25 +215,25 @@ export declare const FixedPointMath: {
             };
             readonly visibility: "internal";
         }, {
-            readonly id: 19394;
+            readonly id: 19442;
             readonly nodeType: "ContractDefinition";
             readonly src: "507:15411:124";
             readonly nodes: readonly [{
-                readonly id: 18632;
+                readonly id: 18680;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "536:33:124";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 18630;
+                    readonly id: 18678;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["542:14:124"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "542:14:124";
                 };
                 readonly typeName: {
-                    readonly id: 18631;
+                    readonly id: 18679;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "561:7:124";
@@ -243,21 +243,21 @@ export declare const FixedPointMath: {
                     };
                 };
             }, {
-                readonly id: 18635;
+                readonly id: 18683;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "574:27:124";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 18633;
+                    readonly id: 18681;
                     readonly name: "SafeCast";
                     readonly nameLocations: readonly ["580:8:124"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 22265;
+                    readonly referencedDeclaration: 22313;
                     readonly src: "580:8:124";
                 };
                 readonly typeName: {
-                    readonly id: 18634;
+                    readonly id: 18682;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "593:7:124";
@@ -267,7 +267,7 @@ export declare const FixedPointMath: {
                     };
                 };
             }, {
-                readonly id: 18642;
+                readonly id: 18690;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "607:52:124";
                 readonly nodes: readonly [];
@@ -275,7 +275,7 @@ export declare const FixedPointMath: {
                 readonly mutability: "constant";
                 readonly name: "MAX_UINT256";
                 readonly nameLocation: "633:11:124";
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -283,7 +283,7 @@ export declare const FixedPointMath: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 18636;
+                    readonly id: 18684;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "607:7:124";
@@ -297,7 +297,7 @@ export declare const FixedPointMath: {
                         readonly typeIdentifier: "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639935_by_1";
                         readonly typeString: "int_const 1157...(70 digits omitted)...9935";
                     };
-                    readonly id: 18641;
+                    readonly id: 18689;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -307,14 +307,14 @@ export declare const FixedPointMath: {
                             readonly typeIdentifier: "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639936_by_1";
                             readonly typeString: "int_const 1157...(70 digits omitted)...9936";
                         };
-                        readonly id: 18639;
+                        readonly id: 18687;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
                         readonly lValueRequested: false;
                         readonly leftExpression: {
                             readonly hexValue: "32";
-                            readonly id: 18637;
+                            readonly id: 18685;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -332,7 +332,7 @@ export declare const FixedPointMath: {
                         readonly operator: "**";
                         readonly rightExpression: {
                             readonly hexValue: "323536";
-                            readonly id: 18638;
+                            readonly id: 18686;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -356,7 +356,7 @@ export declare const FixedPointMath: {
                     readonly operator: "-";
                     readonly rightExpression: {
                         readonly hexValue: "31";
-                        readonly id: 18640;
+                        readonly id: 18688;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -378,12 +378,12 @@ export declare const FixedPointMath: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 18656;
+                readonly id: 18704;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "898:556:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18655;
+                    readonly id: 18703;
                     readonly nodeType: "Block";
                     readonly src: "1025:429:124";
                     readonly nodes: readonly [];
@@ -543,67 +543,67 @@ export declare const FixedPointMath: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18642;
+                            readonly declaration: 18690;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1266:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18649;
+                            readonly declaration: 18697;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1229:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18649;
+                            readonly declaration: 18697;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1426:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18645;
+                            readonly declaration: 18693;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1259:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18645;
+                            readonly declaration: 18693;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1419:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18647;
+                            readonly declaration: 18695;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1253:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18647;
+                            readonly declaration: 18695;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1279:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18647;
+                            readonly declaration: 18695;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1422:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18652;
+                            readonly declaration: 18700;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1406:1:124";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 18654;
+                        readonly id: 18702;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "1078:370:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18643;
+                    readonly id: 18691;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "666:227:124";
                     readonly text: "@param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @param denominator Fixed point number in 1e18 format.\n @return z The result of x * y / denominator rounded down.";
@@ -614,16 +614,16 @@ export declare const FixedPointMath: {
                 readonly name: "mulDivDown";
                 readonly nameLocation: "907:10:124";
                 readonly parameters: {
-                    readonly id: 18650;
+                    readonly id: 18698;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18645;
+                        readonly id: 18693;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "935:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18656;
+                        readonly scope: 18704;
                         readonly src: "927:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -632,7 +632,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18644;
+                            readonly id: 18692;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "927:7:124";
@@ -644,12 +644,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18647;
+                        readonly id: 18695;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "954:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18656;
+                        readonly scope: 18704;
                         readonly src: "946:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -658,7 +658,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18646;
+                            readonly id: 18694;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "946:7:124";
@@ -670,12 +670,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18649;
+                        readonly id: 18697;
                         readonly mutability: "mutable";
                         readonly name: "denominator";
                         readonly nameLocation: "973:11:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18656;
+                        readonly scope: 18704;
                         readonly src: "965:19:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -684,7 +684,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18648;
+                            readonly id: 18696;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "965:7:124";
@@ -698,16 +698,16 @@ export declare const FixedPointMath: {
                     readonly src: "917:73:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18653;
+                    readonly id: 18701;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18652;
+                        readonly id: 18700;
                         readonly mutability: "mutable";
                         readonly name: "z";
                         readonly nameLocation: "1022:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18656;
+                        readonly scope: 18704;
                         readonly src: "1014:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -716,7 +716,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18651;
+                            readonly id: 18699;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1014:7:124";
@@ -729,17 +729,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "1013:11:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18674;
+                readonly id: 18722;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1610:118:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18673;
+                    readonly id: 18721;
                     readonly nodeType: "Block";
                     readonly src: "1681:47:124";
                     readonly nodes: readonly [];
@@ -747,33 +747,33 @@ export declare const FixedPointMath: {
                         readonly expression: {
                             readonly components: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 18667;
+                                    readonly id: 18715;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18659;
+                                    readonly referencedDeclaration: 18707;
                                     readonly src: "1710:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18668;
+                                    readonly id: 18716;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18661;
+                                    readonly referencedDeclaration: 18709;
                                     readonly src: "1713:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18669;
+                                    readonly id: 18717;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "1716:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -791,18 +791,18 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 18666;
+                                    readonly id: 18714;
                                     readonly name: "mulDivDown";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18656;
+                                    readonly referencedDeclaration: 18704;
                                     readonly src: "1699:10:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 18670;
+                                readonly id: 18718;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -818,7 +818,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 18671;
+                            readonly id: 18719;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -831,14 +831,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 18665;
-                        readonly id: 18672;
+                        readonly functionReturnParameters: 18713;
+                        readonly id: 18720;
                         readonly nodeType: "Return";
                         readonly src: "1691:30:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18657;
+                    readonly id: 18705;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1460:145:124";
                     readonly text: "@param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return Result of a * b rounded down.";
@@ -849,16 +849,16 @@ export declare const FixedPointMath: {
                 readonly name: "mulDown";
                 readonly nameLocation: "1619:7:124";
                 readonly parameters: {
-                    readonly id: 18662;
+                    readonly id: 18710;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18659;
+                        readonly id: 18707;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "1635:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18674;
+                        readonly scope: 18722;
                         readonly src: "1627:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -867,7 +867,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18658;
+                            readonly id: 18706;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1627:7:124";
@@ -879,12 +879,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18661;
+                        readonly id: 18709;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "1646:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18674;
+                        readonly scope: 18722;
                         readonly src: "1638:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -893,7 +893,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18660;
+                            readonly id: 18708;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1638:7:124";
@@ -907,16 +907,16 @@ export declare const FixedPointMath: {
                     readonly src: "1626:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18665;
+                    readonly id: 18713;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18664;
+                        readonly id: 18712;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18674;
+                        readonly scope: 18722;
                         readonly src: "1672:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -925,7 +925,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18663;
+                            readonly id: 18711;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1672:7:124";
@@ -938,17 +938,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "1671:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18692;
+                readonly id: 18740;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1884:164:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18691;
+                    readonly id: 18739;
                     readonly nodeType: "Block";
                     readonly src: "1955:93:124";
                     readonly nodes: readonly [];
@@ -956,33 +956,33 @@ export declare const FixedPointMath: {
                         readonly expression: {
                             readonly components: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 18685;
+                                    readonly id: 18733;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18677;
+                                    readonly referencedDeclaration: 18725;
                                     readonly src: "1984:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18686;
+                                    readonly id: 18734;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "1987:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18687;
+                                    readonly id: 18735;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18679;
+                                    readonly referencedDeclaration: 18727;
                                     readonly src: "1992:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1000,18 +1000,18 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 18684;
+                                    readonly id: 18732;
                                     readonly name: "mulDivDown";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18656;
+                                    readonly referencedDeclaration: 18704;
                                     readonly src: "1973:10:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 18688;
+                                readonly id: 18736;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1027,7 +1027,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 18689;
+                            readonly id: 18737;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -1040,14 +1040,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 18683;
-                        readonly id: 18690;
+                        readonly functionReturnParameters: 18731;
+                        readonly id: 18738;
                         readonly nodeType: "Return";
                         readonly src: "1965:30:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18675;
+                    readonly id: 18723;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1734:145:124";
                     readonly text: "@param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return Result of a / b rounded down.";
@@ -1058,16 +1058,16 @@ export declare const FixedPointMath: {
                 readonly name: "divDown";
                 readonly nameLocation: "1893:7:124";
                 readonly parameters: {
-                    readonly id: 18680;
+                    readonly id: 18728;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18677;
+                        readonly id: 18725;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "1909:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18692;
+                        readonly scope: 18740;
                         readonly src: "1901:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1076,7 +1076,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18676;
+                            readonly id: 18724;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1901:7:124";
@@ -1088,12 +1088,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18679;
+                        readonly id: 18727;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "1920:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18692;
+                        readonly scope: 18740;
                         readonly src: "1912:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1102,7 +1102,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18678;
+                            readonly id: 18726;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1912:7:124";
@@ -1116,16 +1116,16 @@ export declare const FixedPointMath: {
                     readonly src: "1900:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18683;
+                    readonly id: 18731;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18682;
+                        readonly id: 18730;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18692;
+                        readonly scope: 18740;
                         readonly src: "1946:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1134,7 +1134,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18681;
+                            readonly id: 18729;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1946:7:124";
@@ -1147,17 +1147,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "1945:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18706;
+                readonly id: 18754;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2284:748:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18705;
+                    readonly id: 18753;
                     readonly nodeType: "Block";
                     readonly src: "2409:623:124";
                     readonly nodes: readonly [];
@@ -1371,85 +1371,85 @@ export declare const FixedPointMath: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18642;
+                            readonly declaration: 18690;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2650:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18699;
+                            readonly declaration: 18747;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2613:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18699;
+                            readonly declaration: 18747;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2941:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18699;
+                            readonly declaration: 18747;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2990:11:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18695;
+                            readonly declaration: 18743;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2643:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18695;
+                            readonly declaration: 18743;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2934:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18695;
+                            readonly declaration: 18743;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2983:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18697;
+                            readonly declaration: 18745;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2637:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18697;
+                            readonly declaration: 18745;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2663:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18697;
+                            readonly declaration: 18745;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2937:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18697;
+                            readonly declaration: 18745;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2986:1:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18702;
+                            readonly declaration: 18750;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2897:1:124";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 18704;
+                        readonly id: 18752;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "2462:564:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18693;
+                    readonly id: 18741;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2054:225:124";
                     readonly text: "@param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @param denominator Fixed point number in 1e18 format.\n @return z The result of x * y / denominator rounded up.";
@@ -1460,16 +1460,16 @@ export declare const FixedPointMath: {
                 readonly name: "mulDivUp";
                 readonly nameLocation: "2293:8:124";
                 readonly parameters: {
-                    readonly id: 18700;
+                    readonly id: 18748;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18695;
+                        readonly id: 18743;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "2319:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18706;
+                        readonly scope: 18754;
                         readonly src: "2311:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1478,7 +1478,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18694;
+                            readonly id: 18742;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2311:7:124";
@@ -1490,12 +1490,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18697;
+                        readonly id: 18745;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "2338:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18706;
+                        readonly scope: 18754;
                         readonly src: "2330:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1504,7 +1504,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18696;
+                            readonly id: 18744;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2330:7:124";
@@ -1516,12 +1516,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18699;
+                        readonly id: 18747;
                         readonly mutability: "mutable";
                         readonly name: "denominator";
                         readonly nameLocation: "2357:11:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18706;
+                        readonly scope: 18754;
                         readonly src: "2349:19:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1530,7 +1530,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18698;
+                            readonly id: 18746;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2349:7:124";
@@ -1544,16 +1544,16 @@ export declare const FixedPointMath: {
                     readonly src: "2301:73:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18703;
+                    readonly id: 18751;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18702;
+                        readonly id: 18750;
                         readonly mutability: "mutable";
                         readonly name: "z";
                         readonly nameLocation: "2406:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18706;
+                        readonly scope: 18754;
                         readonly src: "2398:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1562,7 +1562,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18701;
+                            readonly id: 18749;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2398:7:124";
@@ -1575,17 +1575,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "2397:11:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18724;
+                readonly id: 18772;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3190:114:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18723;
+                    readonly id: 18771;
                     readonly nodeType: "Block";
                     readonly src: "3259:45:124";
                     readonly nodes: readonly [];
@@ -1593,33 +1593,33 @@ export declare const FixedPointMath: {
                         readonly expression: {
                             readonly components: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 18717;
+                                    readonly id: 18765;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18709;
+                                    readonly referencedDeclaration: 18757;
                                     readonly src: "3286:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18718;
+                                    readonly id: 18766;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18711;
+                                    readonly referencedDeclaration: 18759;
                                     readonly src: "3289:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18719;
+                                    readonly id: 18767;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "3292:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1637,18 +1637,18 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 18716;
+                                    readonly id: 18764;
                                     readonly name: "mulDivUp";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18706;
+                                    readonly referencedDeclaration: 18754;
                                     readonly src: "3277:8:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 18720;
+                                readonly id: 18768;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1664,7 +1664,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 18721;
+                            readonly id: 18769;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -1677,14 +1677,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 18715;
-                        readonly id: 18722;
+                        readonly functionReturnParameters: 18763;
+                        readonly id: 18770;
                         readonly nodeType: "Return";
                         readonly src: "3269:28:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18707;
+                    readonly id: 18755;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3038:147:124";
                     readonly text: "@param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return The result of a * b rounded up.";
@@ -1695,16 +1695,16 @@ export declare const FixedPointMath: {
                 readonly name: "mulUp";
                 readonly nameLocation: "3199:5:124";
                 readonly parameters: {
-                    readonly id: 18712;
+                    readonly id: 18760;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18709;
+                        readonly id: 18757;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "3213:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18724;
+                        readonly scope: 18772;
                         readonly src: "3205:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1713,7 +1713,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18708;
+                            readonly id: 18756;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3205:7:124";
@@ -1725,12 +1725,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18711;
+                        readonly id: 18759;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "3224:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18724;
+                        readonly scope: 18772;
                         readonly src: "3216:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1739,7 +1739,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18710;
+                            readonly id: 18758;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3216:7:124";
@@ -1753,16 +1753,16 @@ export declare const FixedPointMath: {
                     readonly src: "3204:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18715;
+                    readonly id: 18763;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18714;
+                        readonly id: 18762;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18724;
+                        readonly scope: 18772;
                         readonly src: "3250:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1771,7 +1771,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18713;
+                            readonly id: 18761;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3250:7:124";
@@ -1784,17 +1784,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "3249:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18742;
+                readonly id: 18790;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3462:114:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18741;
+                    readonly id: 18789;
                     readonly nodeType: "Block";
                     readonly src: "3531:45:124";
                     readonly nodes: readonly [];
@@ -1802,33 +1802,33 @@ export declare const FixedPointMath: {
                         readonly expression: {
                             readonly components: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 18735;
+                                    readonly id: 18783;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18727;
+                                    readonly referencedDeclaration: 18775;
                                     readonly src: "3558:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18736;
+                                    readonly id: 18784;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "3561:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 18737;
+                                    readonly id: 18785;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18729;
+                                    readonly referencedDeclaration: 18777;
                                     readonly src: "3566:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1846,18 +1846,18 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 18734;
+                                    readonly id: 18782;
                                     readonly name: "mulDivUp";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18706;
+                                    readonly referencedDeclaration: 18754;
                                     readonly src: "3549:8:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 18738;
+                                readonly id: 18786;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1873,7 +1873,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 18739;
+                            readonly id: 18787;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -1886,14 +1886,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 18733;
-                        readonly id: 18740;
+                        readonly functionReturnParameters: 18781;
+                        readonly id: 18788;
                         readonly nodeType: "Return";
                         readonly src: "3541:28:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18725;
+                    readonly id: 18773;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3310:147:124";
                     readonly text: "@param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return The result of a / b rounded up.";
@@ -1904,16 +1904,16 @@ export declare const FixedPointMath: {
                 readonly name: "divUp";
                 readonly nameLocation: "3471:5:124";
                 readonly parameters: {
-                    readonly id: 18730;
+                    readonly id: 18778;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18727;
+                        readonly id: 18775;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "3485:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18742;
+                        readonly scope: 18790;
                         readonly src: "3477:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1922,7 +1922,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18726;
+                            readonly id: 18774;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3477:7:124";
@@ -1934,12 +1934,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18729;
+                        readonly id: 18777;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "3496:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18742;
+                        readonly scope: 18790;
                         readonly src: "3488:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1948,7 +1948,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18728;
+                            readonly id: 18776;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3488:7:124";
@@ -1962,16 +1962,16 @@ export declare const FixedPointMath: {
                     readonly src: "3476:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18733;
+                    readonly id: 18781;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18732;
+                        readonly id: 18780;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18742;
+                        readonly scope: 18790;
                         readonly src: "3522:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1980,7 +1980,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18731;
+                            readonly id: 18779;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3522:7:124";
@@ -1993,17 +1993,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "3521:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18799;
+                readonly id: 18847;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3811:844:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18798;
+                    readonly id: 18846;
                     readonly nodeType: "Block";
                     readonly src: "3878:777:124";
                     readonly nodes: readonly [];
@@ -2013,17 +2013,17 @@ export declare const FixedPointMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 18754;
+                            readonly id: 18802;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18752;
+                                readonly id: 18800;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18747;
+                                readonly referencedDeclaration: 18795;
                                 readonly src: "3935:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2034,7 +2034,7 @@ export declare const FixedPointMath: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 18753;
+                                readonly id: 18801;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2054,28 +2054,28 @@ export declare const FixedPointMath: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 18758;
+                        readonly id: 18806;
                         readonly nodeType: "IfStatement";
                         readonly src: "3931:47:124";
                         readonly trueBody: {
-                            readonly id: 18757;
+                            readonly id: 18805;
                             readonly nodeType: "Block";
                             readonly src: "3943:35:124";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 18755;
+                                    readonly id: 18803;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "3964:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly functionReturnParameters: 18751;
-                                readonly id: 18756;
+                                readonly functionReturnParameters: 18799;
+                                readonly id: 18804;
                                 readonly nodeType: "Return";
                                 readonly src: "3957:10:124";
                             }];
@@ -2086,17 +2086,17 @@ export declare const FixedPointMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 18761;
+                            readonly id: 18809;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 18759;
+                                readonly id: 18807;
                                 readonly name: "x";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18745;
+                                readonly referencedDeclaration: 18793;
                                 readonly src: "4031:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2107,7 +2107,7 @@ export declare const FixedPointMath: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 18760;
+                                readonly id: 18808;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2127,17 +2127,17 @@ export declare const FixedPointMath: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 18765;
+                        readonly id: 18813;
                         readonly nodeType: "IfStatement";
                         readonly src: "4027:45:124";
                         readonly trueBody: {
-                            readonly id: 18764;
+                            readonly id: 18812;
                             readonly nodeType: "Block";
                             readonly src: "4039:33:124";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly hexValue: "30";
-                                    readonly id: 18762;
+                                    readonly id: 18810;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2151,22 +2151,22 @@ export declare const FixedPointMath: {
                                     };
                                     readonly value: "0";
                                 };
-                                readonly functionReturnParameters: 18751;
-                                readonly id: 18763;
+                                readonly functionReturnParameters: 18799;
+                                readonly id: 18811;
                                 readonly nodeType: "Return";
                                 readonly src: "4053:8:124";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [18767];
+                        readonly assignments: readonly [18815];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18767;
+                            readonly id: 18815;
                             readonly mutability: "mutable";
                             readonly name: "y_int256";
                             readonly nameLocation: "4217:8:124";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18798;
+                            readonly scope: 18846;
                             readonly src: "4210:15:124";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2175,7 +2175,7 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 18766;
+                                readonly id: 18814;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4210:6:124";
@@ -2186,24 +2186,24 @@ export declare const FixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18771;
+                        readonly id: 18819;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 18768;
+                                    readonly id: 18816;
                                     readonly name: "y";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18747;
+                                    readonly referencedDeclaration: 18795;
                                     readonly src: "4228:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 18769;
+                                readonly id: 18817;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2211,14 +2211,14 @@ export declare const FixedPointMath: {
                                 readonly memberLocation: "4230:8:124";
                                 readonly memberName: "toInt256";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 22264;
+                                readonly referencedDeclaration: 22312;
                                 readonly src: "4228:10:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                     readonly typeString: "function (uint256) pure returns (int256)";
                                 };
                             };
-                            readonly id: 18770;
+                            readonly id: 18818;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2237,15 +2237,15 @@ export declare const FixedPointMath: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4210:30:124";
                     }, {
-                        readonly assignments: readonly [18773];
+                        readonly assignments: readonly [18821];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18773;
+                            readonly id: 18821;
                             readonly mutability: "mutable";
                             readonly name: "lnx";
                             readonly nameLocation: "4409:3:124";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18798;
+                            readonly scope: 18846;
                             readonly src: "4402:10:124";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2254,7 +2254,7 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 18772;
+                                readonly id: 18820;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4402:6:124";
@@ -2265,25 +2265,25 @@ export declare const FixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18779;
+                        readonly id: 18827;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [];
                                     readonly expression: {
-                                        readonly id: 18775;
+                                        readonly id: 18823;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18745;
+                                        readonly referencedDeclaration: 18793;
                                         readonly src: "4418:1:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly id: 18776;
+                                    readonly id: 18824;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2291,14 +2291,14 @@ export declare const FixedPointMath: {
                                     readonly memberLocation: "4420:8:124";
                                     readonly memberName: "toInt256";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 22264;
+                                    readonly referencedDeclaration: 22312;
                                     readonly src: "4418:10:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                         readonly typeString: "function (uint256) pure returns (int256)";
                                     };
                                 };
-                                readonly id: 18777;
+                                readonly id: 18825;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2319,18 +2319,18 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 }];
-                                readonly id: 18774;
+                                readonly id: 18822;
                                 readonly name: "ln";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19218;
+                                readonly referencedDeclaration: 19266;
                                 readonly src: "4415:2:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_int256_$";
                                     readonly typeString: "function (int256) pure returns (int256)";
                                 };
                             };
-                            readonly id: 18778;
+                            readonly id: 18826;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2349,15 +2349,15 @@ export declare const FixedPointMath: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4402:29:124";
                     }, {
-                        readonly assignments: readonly [18781];
+                        readonly assignments: readonly [18829];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 18781;
+                            readonly id: 18829;
                             readonly mutability: "mutable";
                             readonly name: "ylnx";
                             readonly nameLocation: "4448:4:124";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 18798;
+                            readonly scope: 18846;
                             readonly src: "4441:11:124";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2366,7 +2366,7 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 18780;
+                                readonly id: 18828;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4441:6:124";
@@ -2377,7 +2377,7 @@ export declare const FixedPointMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 18782;
+                        readonly id: 18830;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4441:11:124";
                     }, {
@@ -2414,41 +2414,41 @@ export declare const FixedPointMath: {
                         };
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 18773;
+                            readonly declaration: 18821;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "4523:3:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18767;
+                            readonly declaration: 18815;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "4513:8:124";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 18781;
+                            readonly declaration: 18829;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "4501:4:124";
                             readonly valueSize: 1;
                         }];
                         readonly flags: readonly ["memory-safe"];
-                        readonly id: 18783;
+                        readonly id: 18831;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "4462:75:124";
                     }, {
                         readonly expression: {
-                            readonly id: 18789;
+                            readonly id: 18837;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 18784;
+                                readonly id: 18832;
                                 readonly name: "ylnx";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18781;
+                                readonly referencedDeclaration: 18829;
                                 readonly src: "4546:4:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -2459,11 +2459,11 @@ export declare const FixedPointMath: {
                             readonly operator: "/=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 18787;
+                                    readonly id: 18835;
                                     readonly name: "ONE";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18628;
+                                    readonly referencedDeclaration: 18676;
                                     readonly src: "4561:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2475,7 +2475,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 18786;
+                                    readonly id: 18834;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2487,14 +2487,14 @@ export declare const FixedPointMath: {
                                         readonly typeString: "type(int256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 18785;
+                                        readonly id: 18833;
                                         readonly name: "int256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "4554:6:124";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 18788;
+                                readonly id: 18836;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2516,18 +2516,18 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly id: 18790;
+                        readonly id: 18838;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4546:19:124";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 18794;
+                                    readonly id: 18842;
                                     readonly name: "ylnx";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18781;
+                                    readonly referencedDeclaration: 18829;
                                     readonly src: "4642:4:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -2539,18 +2539,18 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     }];
-                                    readonly id: 18793;
+                                    readonly id: 18841;
                                     readonly name: "exp";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18996;
+                                    readonly referencedDeclaration: 19044;
                                     readonly src: "4638:3:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_int256_$";
                                         readonly typeString: "function (int256) pure returns (int256)";
                                     };
                                 };
-                                readonly id: 18795;
+                                readonly id: 18843;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2571,7 +2571,7 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 }];
-                                readonly id: 18792;
+                                readonly id: 18840;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2583,14 +2583,14 @@ export declare const FixedPointMath: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18791;
+                                    readonly id: 18839;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "4630:7:124";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 18796;
+                            readonly id: 18844;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2606,14 +2606,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 18751;
-                        readonly id: 18797;
+                        readonly functionReturnParameters: 18799;
+                        readonly id: 18845;
                         readonly nodeType: "Return";
                         readonly src: "4623:25:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18743;
+                    readonly id: 18791;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3582:224:124";
                     readonly text: "@dev Exponentiation (x^y) with unsigned 18 decimal fixed point base and exponent.\n @param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @return The result of x^y.";
@@ -2624,16 +2624,16 @@ export declare const FixedPointMath: {
                 readonly name: "pow";
                 readonly nameLocation: "3820:3:124";
                 readonly parameters: {
-                    readonly id: 18748;
+                    readonly id: 18796;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18745;
+                        readonly id: 18793;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "3832:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18799;
+                        readonly scope: 18847;
                         readonly src: "3824:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2642,7 +2642,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18744;
+                            readonly id: 18792;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3824:7:124";
@@ -2654,12 +2654,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 18747;
+                        readonly id: 18795;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "3843:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18799;
+                        readonly scope: 18847;
                         readonly src: "3835:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2668,7 +2668,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18746;
+                            readonly id: 18794;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3835:7:124";
@@ -2682,16 +2682,16 @@ export declare const FixedPointMath: {
                     readonly src: "3823:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18751;
+                    readonly id: 18799;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18750;
+                        readonly id: 18798;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18799;
+                        readonly scope: 18847;
                         readonly src: "3869:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2700,7 +2700,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 18749;
+                            readonly id: 18797;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3869:7:124";
@@ -2713,22 +2713,22 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "3868:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 18996;
+                readonly id: 19044;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4907:3302:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18995;
+                    readonly id: 19043;
                     readonly nodeType: "Block";
                     readonly src: "4963:3246:124";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly id: 18994;
+                        readonly id: 19042;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "4973:3230:124";
                         readonly statements: readonly [{
@@ -2737,17 +2737,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18810;
+                                readonly id: 18858;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18807;
+                                    readonly id: 18855;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "5130:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -2757,7 +2757,7 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "<=";
                                 readonly rightExpression: {
-                                    readonly id: 18809;
+                                    readonly id: 18857;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2768,7 +2768,7 @@ export declare const FixedPointMath: {
                                     readonly src: "5135:21:124";
                                     readonly subExpression: {
                                         readonly hexValue: "3432313339363738383534343532373637353531";
-                                        readonly id: 18808;
+                                        readonly id: 18856;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2793,13 +2793,13 @@ export declare const FixedPointMath: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 18813;
+                            readonly id: 18861;
                             readonly nodeType: "IfStatement";
                             readonly src: "5126:40:124";
                             readonly trueBody: {
                                 readonly expression: {
                                     readonly hexValue: "30";
-                                    readonly id: 18811;
+                                    readonly id: 18859;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2813,8 +2813,8 @@ export declare const FixedPointMath: {
                                     };
                                     readonly value: "0";
                                 };
-                                readonly functionReturnParameters: 18806;
-                                readonly id: 18812;
+                                readonly functionReturnParameters: 18854;
+                                readonly id: 18860;
                                 readonly nodeType: "Return";
                                 readonly src: "5158:8:124";
                             };
@@ -2824,17 +2824,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18816;
+                                readonly id: 18864;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18814;
+                                    readonly id: 18862;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "5360:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -2845,7 +2845,7 @@ export declare const FixedPointMath: {
                                 readonly operator: ">=";
                                 readonly rightExpression: {
                                     readonly hexValue: "313335333035393939333638383933323331353839";
-                                    readonly id: 18815;
+                                    readonly id: 18863;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2865,7 +2865,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 18822;
+                            readonly id: 18870;
                             readonly nodeType: "IfStatement";
                             readonly src: "5356:87:124";
                             readonly trueBody: {
@@ -2874,18 +2874,18 @@ export declare const FixedPointMath: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 18817;
+                                            readonly id: 18865;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11028;
+                                            readonly referencedDeclaration: 11076;
                                             readonly src: "5411:11:124";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 18819;
+                                        readonly id: 18867;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2893,14 +2893,14 @@ export declare const FixedPointMath: {
                                         readonly memberLocation: "5423:18:124";
                                         readonly memberName: "ExpInvalidExponent";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10890;
+                                        readonly referencedDeclaration: 10938;
                                         readonly src: "5411:30:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 18820;
+                                    readonly id: 18868;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2916,23 +2916,23 @@ export declare const FixedPointMath: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 18821;
+                                readonly id: 18869;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "5404:39:124";
                             };
                         }, {
                             readonly expression: {
-                                readonly id: 18832;
+                                readonly id: 18880;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18823;
+                                    readonly id: 18871;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "5700:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -2946,7 +2946,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18831;
+                                    readonly id: 18879;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2957,17 +2957,17 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             };
-                                            readonly id: 18826;
+                                            readonly id: 18874;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
-                                                readonly id: 18824;
+                                                readonly id: 18872;
                                                 readonly name: "x";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 18802;
+                                                readonly referencedDeclaration: 18850;
                                                 readonly src: "5705:1:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_int256";
@@ -2978,7 +2978,7 @@ export declare const FixedPointMath: {
                                             readonly operator: "<<";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3738";
-                                                readonly id: 18825;
+                                                readonly id: 18873;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2998,7 +2998,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 18827;
+                                        readonly id: 18875;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -3018,14 +3018,14 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_rational_3814697265625_by_1";
                                             readonly typeString: "int_const 3814697265625";
                                         };
-                                        readonly id: 18830;
+                                        readonly id: 18878;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "35";
-                                            readonly id: 18828;
+                                            readonly id: 18876;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3043,7 +3043,7 @@ export declare const FixedPointMath: {
                                         readonly operator: "**";
                                         readonly rightExpression: {
                                             readonly hexValue: "3138";
-                                            readonly id: 18829;
+                                            readonly id: 18877;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3075,19 +3075,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18833;
+                            readonly id: 18881;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "5700:23:124";
                         }, {
-                            readonly assignments: readonly [18835];
+                            readonly assignments: readonly [18883];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 18835;
+                                readonly id: 18883;
                                 readonly mutability: "mutable";
                                 readonly name: "k";
                                 readonly nameLocation: "6059:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 18994;
+                                readonly scope: 19042;
                                 readonly src: "6052:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -3096,7 +3096,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18834;
+                                    readonly id: 18882;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6052:6:124";
@@ -3107,13 +3107,13 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 18849;
+                            readonly id: 18897;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18848;
+                                readonly id: 18896;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3124,7 +3124,7 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 18845;
+                                        readonly id: 18893;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3134,7 +3134,7 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             };
-                                            readonly id: 18841;
+                                            readonly id: 18889;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3145,17 +3145,17 @@ export declare const FixedPointMath: {
                                                         readonly typeIdentifier: "t_int256";
                                                         readonly typeString: "int256";
                                                     };
-                                                    readonly id: 18838;
+                                                    readonly id: 18886;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
-                                                        readonly id: 18836;
+                                                        readonly id: 18884;
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
+                                                        readonly referencedDeclaration: 18850;
                                                         readonly src: "6065:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -3166,7 +3166,7 @@ export declare const FixedPointMath: {
                                                     readonly operator: "<<";
                                                     readonly rightExpression: {
                                                         readonly hexValue: "3936";
-                                                        readonly id: 18837;
+                                                        readonly id: 18885;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -3186,7 +3186,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 18839;
+                                                readonly id: 18887;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -3203,7 +3203,7 @@ export declare const FixedPointMath: {
                                             readonly operator: "/";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3534393136373737343637373037343733333531313431343731313238";
-                                                readonly id: 18840;
+                                                readonly id: 18888;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3230,14 +3230,14 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_rational_39614081257132168796771975168_by_1";
                                                 readonly typeString: "int_const 39614081257132168796771975168";
                                             };
-                                            readonly id: 18844;
+                                            readonly id: 18892;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
                                                 readonly hexValue: "32";
-                                                readonly id: 18842;
+                                                readonly id: 18890;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3255,7 +3255,7 @@ export declare const FixedPointMath: {
                                             readonly operator: "**";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3935";
-                                                readonly id: 18843;
+                                                readonly id: 18891;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3281,7 +3281,7 @@ export declare const FixedPointMath: {
                                             readonly typeString: "int256";
                                         };
                                     }];
-                                    readonly id: 18846;
+                                    readonly id: 18894;
                                     readonly isConstant: false;
                                     readonly isInlineArray: false;
                                     readonly isLValue: false;
@@ -3298,7 +3298,7 @@ export declare const FixedPointMath: {
                                 readonly operator: ">>";
                                 readonly rightExpression: {
                                     readonly hexValue: "3936";
-                                    readonly id: 18847;
+                                    readonly id: 18895;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3322,17 +3322,17 @@ export declare const FixedPointMath: {
                             readonly src: "6052:86:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18856;
+                                readonly id: 18904;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18850;
+                                    readonly id: 18898;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "6152:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -3346,17 +3346,17 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18855;
+                                    readonly id: 18903;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 18851;
+                                        readonly id: 18899;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18802;
+                                        readonly referencedDeclaration: 18850;
                                         readonly src: "6156:1:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -3370,17 +3370,17 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 18854;
+                                        readonly id: 18902;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 18852;
+                                            readonly id: 18900;
                                             readonly name: "k";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18835;
+                                            readonly referencedDeclaration: 18883;
                                             readonly src: "6160:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -3391,7 +3391,7 @@ export declare const FixedPointMath: {
                                         readonly operator: "*";
                                         readonly rightExpression: {
                                             readonly hexValue: "3534393136373737343637373037343733333531313431343731313238";
-                                            readonly id: 18853;
+                                            readonly id: 18901;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3423,19 +3423,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18857;
+                            readonly id: 18905;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6152:41:124";
                         }, {
-                            readonly assignments: readonly [18859];
+                            readonly assignments: readonly [18907];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 18859;
+                                readonly id: 18907;
                                 readonly mutability: "mutable";
                                 readonly name: "y";
                                 readonly nameLocation: "6401:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 18994;
+                                readonly scope: 19042;
                                 readonly src: "6394:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -3444,7 +3444,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18858;
+                                    readonly id: 18906;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6394:6:124";
@@ -3455,23 +3455,23 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 18863;
+                            readonly id: 18911;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18862;
+                                readonly id: 18910;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18860;
+                                    readonly id: 18908;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "6405:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -3482,7 +3482,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "+";
                                 readonly rightExpression: {
                                     readonly hexValue: "31333436333836363136353435373936343738393230393530373733333238";
-                                    readonly id: 18861;
+                                    readonly id: 18909;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3506,17 +3506,17 @@ export declare const FixedPointMath: {
                             readonly src: "6394:46:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18874;
+                                readonly id: 18922;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18864;
+                                    readonly id: 18912;
                                     readonly name: "y";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18859;
+                                    readonly referencedDeclaration: 18907;
                                     readonly src: "6454:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -3530,7 +3530,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18873;
+                                    readonly id: 18921;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3541,7 +3541,7 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             };
-                                            readonly id: 18870;
+                                            readonly id: 18918;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3552,17 +3552,17 @@ export declare const FixedPointMath: {
                                                         readonly typeIdentifier: "t_int256";
                                                         readonly typeString: "int256";
                                                     };
-                                                    readonly id: 18867;
+                                                    readonly id: 18915;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
-                                                        readonly id: 18865;
+                                                        readonly id: 18913;
                                                         readonly name: "y";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18859;
+                                                        readonly referencedDeclaration: 18907;
                                                         readonly src: "6460:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -3572,11 +3572,11 @@ export declare const FixedPointMath: {
                                                     readonly nodeType: "BinaryOperation";
                                                     readonly operator: "*";
                                                     readonly rightExpression: {
-                                                        readonly id: 18866;
+                                                        readonly id: 18914;
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
+                                                        readonly referencedDeclaration: 18850;
                                                         readonly src: "6464:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -3589,7 +3589,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 18868;
+                                                readonly id: 18916;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -3606,7 +3606,7 @@ export declare const FixedPointMath: {
                                             readonly operator: ">>";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 18869;
+                                                readonly id: 18917;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3626,7 +3626,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 18871;
+                                        readonly id: 18919;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -3643,7 +3643,7 @@ export declare const FixedPointMath: {
                                     readonly operator: "+";
                                     readonly rightExpression: {
                                         readonly hexValue: "3537313535343231323237353532333531303832323234333039373538343432";
-                                        readonly id: 18872;
+                                        readonly id: 18920;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3669,19 +3669,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18875;
+                            readonly id: 18923;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6454:54:124";
                         }, {
-                            readonly assignments: readonly [18877];
+                            readonly assignments: readonly [18925];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 18877;
+                                readonly id: 18925;
                                 readonly mutability: "mutable";
                                 readonly name: "p";
                                 readonly nameLocation: "6529:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 18994;
+                                readonly scope: 19042;
                                 readonly src: "6522:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -3690,7 +3690,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18876;
+                                    readonly id: 18924;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6522:6:124";
@@ -3701,13 +3701,13 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 18883;
+                            readonly id: 18931;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18882;
+                                readonly id: 18930;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3717,17 +3717,17 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18880;
+                                    readonly id: 18928;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 18878;
+                                        readonly id: 18926;
                                         readonly name: "y";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18859;
+                                        readonly referencedDeclaration: 18907;
                                         readonly src: "6533:1:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -3737,11 +3737,11 @@ export declare const FixedPointMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "+";
                                     readonly rightExpression: {
-                                        readonly id: 18879;
+                                        readonly id: 18927;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18802;
+                                        readonly referencedDeclaration: 18850;
                                         readonly src: "6537:1:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -3758,7 +3758,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "-";
                                 readonly rightExpression: {
                                     readonly hexValue: "3934323031353439313934353530343932323534333536303432353034383132";
-                                    readonly id: 18881;
+                                    readonly id: 18929;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3782,17 +3782,17 @@ export declare const FixedPointMath: {
                             readonly src: "6522:51:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18894;
+                                readonly id: 18942;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18884;
+                                    readonly id: 18932;
                                     readonly name: "p";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18877;
+                                    readonly referencedDeclaration: 18925;
                                     readonly src: "6587:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -3806,7 +3806,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18893;
+                                    readonly id: 18941;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3817,7 +3817,7 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             };
-                                            readonly id: 18890;
+                                            readonly id: 18938;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3828,17 +3828,17 @@ export declare const FixedPointMath: {
                                                         readonly typeIdentifier: "t_int256";
                                                         readonly typeString: "int256";
                                                     };
-                                                    readonly id: 18887;
+                                                    readonly id: 18935;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
-                                                        readonly id: 18885;
+                                                        readonly id: 18933;
                                                         readonly name: "p";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18877;
+                                                        readonly referencedDeclaration: 18925;
                                                         readonly src: "6593:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -3848,11 +3848,11 @@ export declare const FixedPointMath: {
                                                     readonly nodeType: "BinaryOperation";
                                                     readonly operator: "*";
                                                     readonly rightExpression: {
-                                                        readonly id: 18886;
+                                                        readonly id: 18934;
                                                         readonly name: "y";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18859;
+                                                        readonly referencedDeclaration: 18907;
                                                         readonly src: "6597:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -3865,7 +3865,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 18888;
+                                                readonly id: 18936;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -3882,7 +3882,7 @@ export declare const FixedPointMath: {
                                             readonly operator: ">>";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 18889;
+                                                readonly id: 18937;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3902,7 +3902,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 18891;
+                                        readonly id: 18939;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -3919,7 +3919,7 @@ export declare const FixedPointMath: {
                                     readonly operator: "+";
                                     readonly rightExpression: {
                                         readonly hexValue: "3238373139303231363434303239373236313533393536393434363830343132323430";
-                                        readonly id: 18892;
+                                        readonly id: 18940;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3945,22 +3945,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18895;
+                            readonly id: 18943;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6587:57:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18905;
+                                readonly id: 18953;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18896;
+                                    readonly id: 18944;
                                     readonly name: "p";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18877;
+                                    readonly referencedDeclaration: 18925;
                                     readonly src: "6658:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -3974,7 +3974,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 18904;
+                                    readonly id: 18952;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3984,17 +3984,17 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 18899;
+                                        readonly id: 18947;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 18897;
+                                            readonly id: 18945;
                                             readonly name: "p";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18877;
+                                            readonly referencedDeclaration: 18925;
                                             readonly src: "6662:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -4004,11 +4004,11 @@ export declare const FixedPointMath: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "*";
                                         readonly rightExpression: {
-                                            readonly id: 18898;
+                                            readonly id: 18946;
                                             readonly name: "x";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18802;
+                                            readonly referencedDeclaration: 18850;
                                             readonly src: "6666:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -4029,14 +4029,14 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_rational_347437083999162433888837515002539729507623920905942392673140736_by_1";
                                                 readonly typeString: "int_const 3474...(55 digits omitted)...0736";
                                             };
-                                            readonly id: 18902;
+                                            readonly id: 18950;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
                                                 readonly hexValue: "34333835323732353231343534383437393034363539303736393835363933323736";
-                                                readonly id: 18900;
+                                                readonly id: 18948;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -4054,7 +4054,7 @@ export declare const FixedPointMath: {
                                             readonly operator: "<<";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 18901;
+                                                readonly id: 18949;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -4074,7 +4074,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int_const 3474...(55 digits omitted)...0736";
                                             };
                                         }];
-                                        readonly id: 18903;
+                                        readonly id: 18951;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -4099,19 +4099,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18906;
+                            readonly id: 18954;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6658:54:124";
                         }, {
-                            readonly assignments: readonly [18908];
+                            readonly assignments: readonly [18956];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 18908;
+                                readonly id: 18956;
                                 readonly mutability: "mutable";
                                 readonly name: "q";
                                 readonly nameLocation: "6831:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 18994;
+                                readonly scope: 19042;
                                 readonly src: "6824:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -4120,7 +4120,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 18907;
+                                    readonly id: 18955;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6824:6:124";
@@ -4131,23 +4131,23 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 18912;
+                            readonly id: 18960;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 18911;
+                                readonly id: 18959;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 18909;
+                                    readonly id: 18957;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18802;
+                                    readonly referencedDeclaration: 18850;
                                     readonly src: "6835:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -4158,7 +4158,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "-";
                                 readonly rightExpression: {
                                     readonly hexValue: "32383535393839333934393037323233323633393336343834303539393030";
-                                    readonly id: 18910;
+                                    readonly id: 18958;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4182,678 +4182,6 @@ export declare const FixedPointMath: {
                             readonly src: "6824:46:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18923;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 18913;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18908;
-                                    readonly src: "6884:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 18922;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 18919;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 18916;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 18914;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18908;
-                                                        readonly src: "6890:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 18915;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
-                                                        readonly src: "6894:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "6890:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 18917;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "6889:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 18918;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "6900:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "6889:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 18920;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "6888:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3530303230363033363532353335373833303139393631383331383831393435";
-                                        readonly id: 18921;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "6906:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_50020603652535783019961831881945_by_1";
-                                            readonly typeString: "int_const 50020603652535783019961831881945";
-                                        };
-                                        readonly value: "50020603652535783019961831881945";
-                                    };
-                                    readonly src: "6888:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "6884:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 18924;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "6884:54:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 18935;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 18925;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18908;
-                                    readonly src: "6952:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 18934;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 18931;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 18928;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 18926;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18908;
-                                                        readonly src: "6958:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 18927;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
-                                                        readonly src: "6962:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "6958:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 18929;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "6957:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 18930;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "6968:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "6957:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 18932;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "6956:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "-";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "353333383435303333353833343236373033323833363333343333373235333830";
-                                        readonly id: 18933;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "6974:33:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_533845033583426703283633433725380_by_1";
-                                            readonly typeString: "int_const 5338...(25 digits omitted)...5380";
-                                        };
-                                        readonly value: "533845033583426703283633433725380";
-                                    };
-                                    readonly src: "6956:51:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "6952:55:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 18936;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "6952:55:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 18947;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 18937;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18908;
-                                    readonly src: "7021:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 18946;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 18943;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 18940;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 18938;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18908;
-                                                        readonly src: "7027:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 18939;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
-                                                        readonly src: "7031:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "7027:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 18941;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "7026:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 18942;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "7037:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "7026:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 18944;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "7025:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "33363034383537323536393330363935343237303733363531393138303931343239";
-                                        readonly id: 18945;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "7043:34:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_3604857256930695427073651918091429_by_1";
-                                            readonly typeString: "int_const 3604...(26 digits omitted)...1429";
-                                        };
-                                        readonly value: "3604857256930695427073651918091429";
-                                    };
-                                    readonly src: "7025:52:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "7021:56:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 18948;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "7021:56:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 18959;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 18949;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18908;
-                                    readonly src: "7091:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 18958;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 18955;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 18952;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 18950;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18908;
-                                                        readonly src: "7097:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 18951;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
-                                                        readonly src: "7101:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "7097:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 18953;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "7096:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 18954;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "7107:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "7096:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 18956;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "7095:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "-";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3134343233363038353637333530343633313830383837333732393632383037353733";
-                                        readonly id: 18957;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "7113:35:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_14423608567350463180887372962807573_by_1";
-                                            readonly typeString: "int_const 1442...(27 digits omitted)...7573";
-                                        };
-                                        readonly value: "14423608567350463180887372962807573";
-                                    };
-                                    readonly src: "7095:53:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "7091:57:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 18960;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "7091:57:124";
-                        }, {
-                            readonly expression: {
                                 readonly id: 18971;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
@@ -4864,8 +4192,8 @@ export declare const FixedPointMath: {
                                     readonly name: "q";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18908;
-                                    readonly src: "7162:1:124";
+                                    readonly referencedDeclaration: 18956;
+                                    readonly src: "6884:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
@@ -4910,8 +4238,8 @@ export declare const FixedPointMath: {
                                                         readonly name: "q";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18908;
-                                                        readonly src: "7168:1:124";
+                                                        readonly referencedDeclaration: 18956;
+                                                        readonly src: "6890:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
@@ -4924,7 +4252,679 @@ export declare const FixedPointMath: {
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18802;
+                                                        readonly referencedDeclaration: 18850;
+                                                        readonly src: "6894:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "6890:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 18965;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "6889:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 18966;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "6900:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "6889:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 18968;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "6888:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3530303230363033363532353335373833303139393631383331383831393435";
+                                        readonly id: 18969;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "6906:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_50020603652535783019961831881945_by_1";
+                                            readonly typeString: "int_const 50020603652535783019961831881945";
+                                        };
+                                        readonly value: "50020603652535783019961831881945";
+                                    };
+                                    readonly src: "6888:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "6884:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 18972;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "6884:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 18983;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 18973;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 18956;
+                                    readonly src: "6952:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 18982;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 18979;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 18976;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 18974;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18956;
+                                                        readonly src: "6958:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 18975;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18850;
+                                                        readonly src: "6962:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "6958:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 18977;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "6957:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 18978;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "6968:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "6957:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 18980;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "6956:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "-";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "353333383435303333353833343236373033323833363333343333373235333830";
+                                        readonly id: 18981;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "6974:33:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_533845033583426703283633433725380_by_1";
+                                            readonly typeString: "int_const 5338...(25 digits omitted)...5380";
+                                        };
+                                        readonly value: "533845033583426703283633433725380";
+                                    };
+                                    readonly src: "6956:51:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "6952:55:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 18984;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "6952:55:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 18995;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 18985;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 18956;
+                                    readonly src: "7021:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 18994;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 18991;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 18988;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 18986;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18956;
+                                                        readonly src: "7027:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 18987;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18850;
+                                                        readonly src: "7031:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "7027:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 18989;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "7026:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 18990;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "7037:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "7026:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 18992;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "7025:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "33363034383537323536393330363935343237303733363531393138303931343239";
+                                        readonly id: 18993;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "7043:34:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_3604857256930695427073651918091429_by_1";
+                                            readonly typeString: "int_const 3604...(26 digits omitted)...1429";
+                                        };
+                                        readonly value: "3604857256930695427073651918091429";
+                                    };
+                                    readonly src: "7025:52:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "7021:56:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 18996;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "7021:56:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19007;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 18997;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 18956;
+                                    readonly src: "7091:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19006;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19003;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19000;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 18998;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18956;
+                                                        readonly src: "7097:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 18999;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18850;
+                                                        readonly src: "7101:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "7097:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19001;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "7096:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19002;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "7107:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "7096:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19004;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "7095:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "-";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3134343233363038353637333530343633313830383837333732393632383037353733";
+                                        readonly id: 19005;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "7113:35:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_14423608567350463180887372962807573_by_1";
+                                            readonly typeString: "int_const 1442...(27 digits omitted)...7573";
+                                        };
+                                        readonly value: "14423608567350463180887372962807573";
+                                    };
+                                    readonly src: "7095:53:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "7091:57:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19008;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "7091:57:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19019;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19009;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 18956;
+                                    readonly src: "7162:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19018;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19015;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19012;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19010;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18956;
+                                                        readonly src: "7168:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19011;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 18850;
                                                         readonly src: "7172:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -4937,7 +4937,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 18965;
+                                                readonly id: 19013;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -4954,7 +4954,7 @@ export declare const FixedPointMath: {
                                             readonly operator: ">>";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 18966;
+                                                readonly id: 19014;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -4974,7 +4974,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 18968;
+                                        readonly id: 19016;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -4991,7 +4991,7 @@ export declare const FixedPointMath: {
                                     readonly operator: "+";
                                     readonly rightExpression: {
                                         readonly hexValue: "3236343439313838343938333535353838333339393334383033373233393736303233";
-                                        readonly id: 18969;
+                                        readonly id: 19017;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -5017,7 +5017,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18972;
+                            readonly id: 19020;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "7162:57:124";
                         }, {
@@ -5055,40 +5055,40 @@ export declare const FixedPointMath: {
                             readonly documentation: "@solidity memory-safe-assembly";
                             readonly evmVersion: "paris";
                             readonly externalReferences: readonly [{
-                                readonly declaration: 18877;
+                                readonly declaration: 18925;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "7589:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18908;
+                                readonly declaration: 18956;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "7592:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18805;
+                                readonly declaration: 18853;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "7579:1:124";
                                 readonly valueSize: 1;
                             }];
-                            readonly id: 18973;
+                            readonly id: 19021;
                             readonly nodeType: "InlineAssembly";
                             readonly src: "7281:327:124";
                         }, {
                             readonly expression: {
-                                readonly id: 18992;
+                                readonly id: 19040;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 18974;
+                                    readonly id: 19022;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18805;
+                                    readonly referencedDeclaration: 18853;
                                     readonly src: "8059:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -5107,7 +5107,7 @@ export declare const FixedPointMath: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 18988;
+                                                readonly id: 19036;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5118,18 +5118,18 @@ export declare const FixedPointMath: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
-                                                        readonly id: 18980;
+                                                        readonly id: 19028;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftExpression: {
                                                             readonly arguments: readonly [{
-                                                                readonly id: 18977;
+                                                                readonly id: 19025;
                                                                 readonly name: "r";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 18805;
+                                                                readonly referencedDeclaration: 18853;
                                                                 readonly src: "8073:1:124";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_int256";
@@ -5141,7 +5141,7 @@ export declare const FixedPointMath: {
                                                                     readonly typeIdentifier: "t_int256";
                                                                     readonly typeString: "int256";
                                                                 }];
-                                                                readonly id: 18976;
+                                                                readonly id: 19024;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -5153,14 +5153,14 @@ export declare const FixedPointMath: {
                                                                     readonly typeString: "type(uint256)";
                                                                 };
                                                                 readonly typeName: {
-                                                                    readonly id: 18975;
+                                                                    readonly id: 19023;
                                                                     readonly name: "uint256";
                                                                     readonly nodeType: "ElementaryTypeName";
                                                                     readonly src: "8065:7:124";
                                                                     readonly typeDescriptions: {};
                                                                 };
                                                             };
-                                                            readonly id: 18978;
+                                                            readonly id: 19026;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -5180,7 +5180,7 @@ export declare const FixedPointMath: {
                                                         readonly operator: "*";
                                                         readonly rightExpression: {
                                                             readonly hexValue: "33383232383333303734393633323336343533303432373338323538393032313538303033313535343136363135363637";
-                                                            readonly id: 18979;
+                                                            readonly id: 19027;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -5200,7 +5200,7 @@ export declare const FixedPointMath: {
                                                             readonly typeString: "uint256";
                                                         };
                                                     }];
-                                                    readonly id: 18981;
+                                                    readonly id: 19029;
                                                     readonly isConstant: false;
                                                     readonly isInlineArray: false;
                                                     readonly isLValue: false;
@@ -5221,14 +5221,14 @@ export declare const FixedPointMath: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
                                                         };
-                                                        readonly id: 18986;
+                                                        readonly id: 19034;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftExpression: {
                                                             readonly hexValue: "313935";
-                                                            readonly id: 18984;
+                                                            readonly id: 19032;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -5245,11 +5245,11 @@ export declare const FixedPointMath: {
                                                         readonly nodeType: "BinaryOperation";
                                                         readonly operator: "-";
                                                         readonly rightExpression: {
-                                                            readonly id: 18985;
+                                                            readonly id: 19033;
                                                             readonly name: "k";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 18835;
+                                                            readonly referencedDeclaration: 18883;
                                                             readonly src: "8178:1:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_int256";
@@ -5267,7 +5267,7 @@ export declare const FixedPointMath: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
                                                         }];
-                                                        readonly id: 18983;
+                                                        readonly id: 19031;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -5279,14 +5279,14 @@ export declare const FixedPointMath: {
                                                             readonly typeString: "type(uint256)";
                                                         };
                                                         readonly typeName: {
-                                                            readonly id: 18982;
+                                                            readonly id: 19030;
                                                             readonly name: "uint256";
                                                             readonly nodeType: "ElementaryTypeName";
                                                             readonly src: "8164:7:124";
                                                             readonly typeDescriptions: {};
                                                         };
                                                     };
-                                                    readonly id: 18987;
+                                                    readonly id: 19035;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -5308,7 +5308,7 @@ export declare const FixedPointMath: {
                                                     readonly typeString: "uint256";
                                                 };
                                             }];
-                                            readonly id: 18989;
+                                            readonly id: 19037;
                                             readonly isConstant: false;
                                             readonly isInlineArray: false;
                                             readonly isLValue: false;
@@ -5321,7 +5321,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 18990;
+                                        readonly id: 19038;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5329,14 +5329,14 @@ export declare const FixedPointMath: {
                                         readonly memberLocation: "8182:8:124";
                                         readonly memberName: "toInt256";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 22264;
+                                        readonly referencedDeclaration: 22312;
                                         readonly src: "8063:127:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                             readonly typeString: "function (uint256) pure returns (int256)";
                                         };
                                     };
-                                    readonly id: 18991;
+                                    readonly id: 19039;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5358,14 +5358,14 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 18993;
+                            readonly id: 19041;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "8059:133:124";
                         }];
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18800;
+                    readonly id: 18848;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4661:241:124";
                     readonly text: "@dev Computes e^x in 1e18 fixed point.\n @dev Credit to Remco (https://github.com/recmo/experiment-solexp/blob/main/src/FixedPointMathLib.sol)\n @param x Fixed point number in 1e18 format.\n @return r The result of e^x.";
@@ -5376,16 +5376,16 @@ export declare const FixedPointMath: {
                 readonly name: "exp";
                 readonly nameLocation: "4916:3:124";
                 readonly parameters: {
-                    readonly id: 18803;
+                    readonly id: 18851;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18802;
+                        readonly id: 18850;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "4927:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18996;
+                        readonly scope: 19044;
                         readonly src: "4920:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5394,7 +5394,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 18801;
+                            readonly id: 18849;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4920:6:124";
@@ -5408,16 +5408,16 @@ export declare const FixedPointMath: {
                     readonly src: "4919:10:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 18806;
+                    readonly id: 18854;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18805;
+                        readonly id: 18853;
                         readonly mutability: "mutable";
                         readonly name: "r";
                         readonly nameLocation: "4960:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18996;
+                        readonly scope: 19044;
                         readonly src: "4953:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5426,7 +5426,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 18804;
+                            readonly id: 18852;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4953:6:124";
@@ -5439,22 +5439,22 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "4952:10:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19218;
+                readonly id: 19266;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8508:3846:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19217;
+                    readonly id: 19265;
                     readonly nodeType: "Block";
                     readonly src: "8563:3791:124";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly id: 19216;
+                        readonly id: 19264;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "8573:3775:124";
                         readonly statements: readonly [{
@@ -5463,17 +5463,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19006;
+                                readonly id: 19054;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19004;
+                                    readonly id: 19052;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18999;
+                                    readonly referencedDeclaration: 19047;
                                     readonly src: "8601:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -5484,7 +5484,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "<=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 19005;
+                                    readonly id: 19053;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -5504,11 +5504,11 @@ export declare const FixedPointMath: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 19013;
+                            readonly id: 19061;
                             readonly nodeType: "IfStatement";
                             readonly src: "8597:80:124";
                             readonly trueBody: {
-                                readonly id: 19012;
+                                readonly id: 19060;
                                 readonly nodeType: "Block";
                                 readonly src: "8609:68:124";
                                 readonly statements: readonly [{
@@ -5517,18 +5517,18 @@ export declare const FixedPointMath: {
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
-                                                readonly id: 19007;
+                                                readonly id: 19055;
                                                 readonly name: "IHyperdrive";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 11028;
+                                                readonly referencedDeclaration: 11076;
                                                 readonly src: "8634:11:124";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                    readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                     readonly typeString: "type(contract IHyperdrive)";
                                                 };
                                             };
-                                            readonly id: 19009;
+                                            readonly id: 19057;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5536,14 +5536,14 @@ export declare const FixedPointMath: {
                                             readonly memberLocation: "8646:14:124";
                                             readonly memberName: "LnInvalidInput";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 10935;
+                                            readonly referencedDeclaration: 10983;
                                             readonly src: "8634:26:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                                 readonly typeString: "function () pure";
                                             };
                                         };
-                                        readonly id: 19010;
+                                        readonly id: 19058;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5559,7 +5559,7 @@ export declare const FixedPointMath: {
                                             readonly typeString: "tuple()";
                                         };
                                     };
-                                    readonly id: 19011;
+                                    readonly id: 19059;
                                     readonly nodeType: "RevertStatement";
                                     readonly src: "8627:35:124";
                                 }];
@@ -6084,199 +6084,199 @@ export declare const FixedPointMath: {
                             readonly documentation: "@solidity memory-safe-assembly";
                             readonly evmVersion: "paris";
                             readonly externalReferences: readonly [{
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9274:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9345:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9353:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9390:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9415:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9423:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9452:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9477:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9485:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9510:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9535:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9543:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9566:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9591:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9599:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9621:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9646:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9654:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9676:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9701:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9709:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9724:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9325:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9393:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9455:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9513:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9569:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9624:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9679:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 18999;
+                                readonly declaration: 19047;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "9727:1:124";
                                 readonly valueSize: 1;
                             }];
-                            readonly id: 19014;
+                            readonly id: 19062;
                             readonly nodeType: "InlineAssembly";
                             readonly src: "9247:498:124";
                         }, {
-                            readonly assignments: readonly [19016];
+                            readonly assignments: readonly [19064];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 19016;
+                                readonly id: 19064;
                                 readonly mutability: "mutable";
                                 readonly name: "k";
                                 readonly nameLocation: "9864:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 19216;
+                                readonly scope: 19264;
                                 readonly src: "9857:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -6285,7 +6285,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 19015;
+                                    readonly id: 19063;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "9857:6:124";
@@ -6296,23 +6296,23 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 19020;
+                            readonly id: 19068;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19019;
+                                readonly id: 19067;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19017;
+                                    readonly id: 19065;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19002;
+                                    readonly referencedDeclaration: 19050;
                                     readonly src: "9868:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -6323,7 +6323,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "-";
                                 readonly rightExpression: {
                                     readonly hexValue: "3936";
-                                    readonly id: 19018;
+                                    readonly id: 19066;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6347,17 +6347,17 @@ export declare const FixedPointMath: {
                             readonly src: "9857:17:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19028;
+                                readonly id: 19076;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19021;
+                                    readonly id: 19069;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18999;
+                                    readonly referencedDeclaration: 19047;
                                     readonly src: "9888:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -6372,14 +6372,14 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 19026;
+                                        readonly id: 19074;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "313539";
-                                            readonly id: 19024;
+                                            readonly id: 19072;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -6396,11 +6396,11 @@ export declare const FixedPointMath: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "-";
                                         readonly rightExpression: {
-                                            readonly id: 19025;
+                                            readonly id: 19073;
                                             readonly name: "k";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19016;
+                                            readonly referencedDeclaration: 19064;
                                             readonly src: "9908:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -6418,7 +6418,7 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         }];
-                                        readonly id: 19023;
+                                        readonly id: 19071;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -6430,14 +6430,14 @@ export declare const FixedPointMath: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 19022;
+                                            readonly id: 19070;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "9894:7:124";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 19027;
+                                    readonly id: 19075;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6459,22 +6459,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19029;
+                            readonly id: 19077;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "9888:22:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19040;
+                                readonly id: 19088;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19030;
+                                    readonly id: 19078;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18999;
+                                    readonly referencedDeclaration: 19047;
                                     readonly src: "9924:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -6493,18 +6493,18 @@ export declare const FixedPointMath: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 19036;
+                                                readonly id: 19084;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
                                                     readonly arguments: readonly [{
-                                                        readonly id: 19033;
+                                                        readonly id: 19081;
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
+                                                        readonly referencedDeclaration: 19047;
                                                         readonly src: "9937:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -6516,7 +6516,7 @@ export declare const FixedPointMath: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
                                                         }];
-                                                        readonly id: 19032;
+                                                        readonly id: 19080;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -6528,14 +6528,14 @@ export declare const FixedPointMath: {
                                                             readonly typeString: "type(uint256)";
                                                         };
                                                         readonly typeName: {
-                                                            readonly id: 19031;
+                                                            readonly id: 19079;
                                                             readonly name: "uint256";
                                                             readonly nodeType: "ElementaryTypeName";
                                                             readonly src: "9929:7:124";
                                                             readonly typeDescriptions: {};
                                                         };
                                                     };
-                                                    readonly id: 19034;
+                                                    readonly id: 19082;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -6555,7 +6555,7 @@ export declare const FixedPointMath: {
                                                 readonly operator: ">>";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "313539";
-                                                    readonly id: 19035;
+                                                    readonly id: 19083;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -6575,7 +6575,7 @@ export declare const FixedPointMath: {
                                                     readonly typeString: "uint256";
                                                 };
                                             }];
-                                            readonly id: 19037;
+                                            readonly id: 19085;
                                             readonly isConstant: false;
                                             readonly isInlineArray: false;
                                             readonly isLValue: false;
@@ -6588,7 +6588,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 19038;
+                                        readonly id: 19086;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -6596,14 +6596,14 @@ export declare const FixedPointMath: {
                                         readonly memberLocation: "9948:8:124";
                                         readonly memberName: "toInt256";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 22264;
+                                        readonly referencedDeclaration: 22312;
                                         readonly src: "9928:28:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                             readonly typeString: "function (uint256) pure returns (int256)";
                                         };
                                     };
-                                    readonly id: 19039;
+                                    readonly id: 19087;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6625,19 +6625,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19041;
+                            readonly id: 19089;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "9924:34:124";
                         }, {
-                            readonly assignments: readonly [19043];
+                            readonly assignments: readonly [19091];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 19043;
+                                readonly id: 19091;
                                 readonly mutability: "mutable";
                                 readonly name: "p";
                                 readonly nameLocation: "10122:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 19216;
+                                readonly scope: 19264;
                                 readonly src: "10115:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -6646,7 +6646,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 19042;
+                                    readonly id: 19090;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "10115:6:124";
@@ -6657,23 +6657,23 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 19047;
+                            readonly id: 19095;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19046;
+                                readonly id: 19094;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19044;
+                                    readonly id: 19092;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18999;
+                                    readonly referencedDeclaration: 19047;
                                     readonly src: "10126:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -6684,7 +6684,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "+";
                                 readonly rightExpression: {
                                     readonly hexValue: "33323733323835343539363338353233383438363332323534303636323936";
-                                    readonly id: 19045;
+                                    readonly id: 19093;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6708,678 +6708,6 @@ export declare const FixedPointMath: {
                             readonly src: "10115:46:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19058;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19048;
-                                    readonly name: "p";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
-                                    readonly src: "10175:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19057;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19054;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19051;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19049;
-                                                        readonly name: "p";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19043;
-                                                        readonly src: "10181:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19050;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10185:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10181:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19052;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10180:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19053;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10191:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10180:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19055;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10179:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3234383238313537303831383333313633383932363538303839343435353234";
-                                        readonly id: 19056;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10197:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_24828157081833163892658089445524_by_1";
-                                            readonly typeString: "int_const 24828157081833163892658089445524";
-                                        };
-                                        readonly value: "24828157081833163892658089445524";
-                                    };
-                                    readonly src: "10179:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10175:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19059;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10175:54:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19070;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19060;
-                                    readonly name: "p";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
-                                    readonly src: "10243:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19069;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19066;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19063;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19061;
-                                                        readonly name: "p";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19043;
-                                                        readonly src: "10249:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19062;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10253:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10249:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19064;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10248:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19065;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10259:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10248:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19067;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10247:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3433343536343835373235373339303337393538373430333735373433333933";
-                                        readonly id: 19068;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10265:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_43456485725739037958740375743393_by_1";
-                                            readonly typeString: "int_const 43456485725739037958740375743393";
-                                        };
-                                        readonly value: "43456485725739037958740375743393";
-                                    };
-                                    readonly src: "10247:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10243:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19071;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10243:54:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19082;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19072;
-                                    readonly name: "p";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
-                                    readonly src: "10311:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19081;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19078;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19075;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19073;
-                                                        readonly name: "p";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19043;
-                                                        readonly src: "10317:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19074;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10321:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10317:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19076;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10316:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19077;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10327:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10316:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19079;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10315:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "-";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3131313131353039313039343430393637303532303233383535353236393637";
-                                        readonly id: 19080;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10333:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_11111509109440967052023855526967_by_1";
-                                            readonly typeString: "int_const 11111509109440967052023855526967";
-                                        };
-                                        readonly value: "11111509109440967052023855526967";
-                                    };
-                                    readonly src: "10315:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10311:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19083;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10311:54:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19094;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19084;
-                                    readonly name: "p";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
-                                    readonly src: "10379:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19093;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19090;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19087;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19085;
-                                                        readonly name: "p";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19043;
-                                                        readonly src: "10385:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19086;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10389:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10385:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19088;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10384:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19089;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10395:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10384:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19091;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10383:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "-";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3435303233373039363637323534303633373633333336353334353135383537";
-                                        readonly id: 19092;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10401:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_45023709667254063763336534515857_by_1";
-                                            readonly typeString: "int_const 45023709667254063763336534515857";
-                                        };
-                                        readonly value: "45023709667254063763336534515857";
-                                    };
-                                    readonly src: "10383:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10379:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19095;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10379:54:124";
-                        }, {
-                            readonly expression: {
                                 readonly id: 19106;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
@@ -7390,8 +6718,8 @@ export declare const FixedPointMath: {
                                     readonly name: "p";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
-                                    readonly src: "10447:1:124";
+                                    readonly referencedDeclaration: 19091;
+                                    readonly src: "10175:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
@@ -7436,8 +6764,8 @@ export declare const FixedPointMath: {
                                                         readonly name: "p";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19043;
-                                                        readonly src: "10453:1:124";
+                                                        readonly referencedDeclaration: 19091;
+                                                        readonly src: "10181:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
@@ -7450,7 +6778,679 @@ export declare const FixedPointMath: {
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10185:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10181:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19100;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10180:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19101;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10191:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10180:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19103;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10179:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3234383238313537303831383333313633383932363538303839343435353234";
+                                        readonly id: 19104;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10197:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_24828157081833163892658089445524_by_1";
+                                            readonly typeString: "int_const 24828157081833163892658089445524";
+                                        };
+                                        readonly value: "24828157081833163892658089445524";
+                                    };
+                                    readonly src: "10179:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10175:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19107;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10175:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19118;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19108;
+                                    readonly name: "p";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19091;
+                                    readonly src: "10243:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19117;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19114;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19111;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19109;
+                                                        readonly name: "p";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19091;
+                                                        readonly src: "10249:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19110;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10253:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10249:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19112;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10248:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19113;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10259:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10248:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19115;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10247:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3433343536343835373235373339303337393538373430333735373433333933";
+                                        readonly id: 19116;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10265:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_43456485725739037958740375743393_by_1";
+                                            readonly typeString: "int_const 43456485725739037958740375743393";
+                                        };
+                                        readonly value: "43456485725739037958740375743393";
+                                    };
+                                    readonly src: "10247:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10243:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19119;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10243:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19130;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19120;
+                                    readonly name: "p";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19091;
+                                    readonly src: "10311:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19129;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19126;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19123;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19121;
+                                                        readonly name: "p";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19091;
+                                                        readonly src: "10317:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19122;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10321:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10317:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19124;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10316:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19125;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10327:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10316:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19127;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10315:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "-";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3131313131353039313039343430393637303532303233383535353236393637";
+                                        readonly id: 19128;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10333:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_11111509109440967052023855526967_by_1";
+                                            readonly typeString: "int_const 11111509109440967052023855526967";
+                                        };
+                                        readonly value: "11111509109440967052023855526967";
+                                    };
+                                    readonly src: "10315:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10311:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19131;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10311:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19142;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19132;
+                                    readonly name: "p";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19091;
+                                    readonly src: "10379:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19141;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19138;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19135;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19133;
+                                                        readonly name: "p";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19091;
+                                                        readonly src: "10385:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19134;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10389:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10385:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19136;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10384:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19137;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10395:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10384:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19139;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10383:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "-";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3435303233373039363637323534303633373633333336353334353135383537";
+                                        readonly id: 19140;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10401:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_45023709667254063763336534515857_by_1";
+                                            readonly typeString: "int_const 45023709667254063763336534515857";
+                                        };
+                                        readonly value: "45023709667254063763336534515857";
+                                    };
+                                    readonly src: "10383:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10379:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19143;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10379:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19154;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19144;
+                                    readonly name: "p";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19091;
+                                    readonly src: "10447:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19153;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19150;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19147;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19145;
+                                                        readonly name: "p";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19091;
+                                                        readonly src: "10453:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19146;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
                                                         readonly src: "10457:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -7463,7 +7463,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 19100;
+                                                readonly id: 19148;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -7480,7 +7480,7 @@ export declare const FixedPointMath: {
                                             readonly operator: ">>";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 19101;
+                                                readonly id: 19149;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -7500,7 +7500,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 19103;
+                                        readonly id: 19151;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -7517,7 +7517,7 @@ export declare const FixedPointMath: {
                                     readonly operator: "-";
                                     readonly rightExpression: {
                                         readonly hexValue: "3134373036373733343137333738363038373836373034363336313834353236";
-                                        readonly id: 19104;
+                                        readonly id: 19152;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -7543,22 +7543,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19107;
+                            readonly id: 19155;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "10447:54:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19117;
+                                readonly id: 19165;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19108;
+                                    readonly id: 19156;
                                     readonly name: "p";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19043;
+                                    readonly referencedDeclaration: 19091;
                                     readonly src: "10515:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -7572,7 +7572,7 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 19116;
+                                    readonly id: 19164;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -7582,17 +7582,17 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 19111;
+                                        readonly id: 19159;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 19109;
+                                            readonly id: 19157;
                                             readonly name: "p";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19043;
+                                            readonly referencedDeclaration: 19091;
                                             readonly src: "10519:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -7602,11 +7602,11 @@ export declare const FixedPointMath: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "*";
                                         readonly rightExpression: {
-                                            readonly id: 19110;
+                                            readonly id: 19158;
                                             readonly name: "x";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18999;
+                                            readonly referencedDeclaration: 19047;
                                             readonly src: "10523:1:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -7627,14 +7627,14 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_rational_62999401287715976015676079709131874438408901006995465699328_by_1";
                                                 readonly typeString: "int_const 6299...(51 digits omitted)...9328";
                                             };
-                                            readonly id: 19114;
+                                            readonly id: 19162;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
                                                 readonly hexValue: "373935313634323335363531333530343236323538323439373837343938";
-                                                readonly id: 19112;
+                                                readonly id: 19160;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -7652,7 +7652,7 @@ export declare const FixedPointMath: {
                                             readonly operator: "<<";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 19113;
+                                                readonly id: 19161;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -7672,7 +7672,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int_const 6299...(51 digits omitted)...9328";
                                             };
                                         }];
-                                        readonly id: 19115;
+                                        readonly id: 19163;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -7697,19 +7697,19 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19118;
+                            readonly id: 19166;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "10515:50:124";
                         }, {
-                            readonly assignments: readonly [19120];
+                            readonly assignments: readonly [19168];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 19120;
+                                readonly id: 19168;
                                 readonly mutability: "mutable";
                                 readonly name: "q";
                                 readonly nameLocation: "10725:1:124";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 19216;
+                                readonly scope: 19264;
                                 readonly src: "10718:8:124";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -7718,7 +7718,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 19119;
+                                    readonly id: 19167;
                                     readonly name: "int256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "10718:6:124";
@@ -7729,23 +7729,23 @@ export declare const FixedPointMath: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 19124;
+                            readonly id: 19172;
                             readonly initialValue: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19123;
+                                readonly id: 19171;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19121;
+                                    readonly id: 19169;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18999;
+                                    readonly referencedDeclaration: 19047;
                                     readonly src: "10729:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -7756,7 +7756,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "+";
                                 readonly rightExpression: {
                                     readonly hexValue: "35353733303335323333343430363733343636333030343531383133393336";
-                                    readonly id: 19122;
+                                    readonly id: 19170;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7780,678 +7780,6 @@ export declare const FixedPointMath: {
                             readonly src: "10718:46:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19135;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19125;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "10778:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19134;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19131;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19128;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19126;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "10784:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19127;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10788:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10784:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19129;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10783:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19130;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10794:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10783:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19132;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10782:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "3731363934383734373939333137383833373634303930353631343534393538";
-                                        readonly id: 19133;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10800:32:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_71694874799317883764090561454958_by_1";
-                                            readonly typeString: "int_const 71694874799317883764090561454958";
-                                        };
-                                        readonly value: "71694874799317883764090561454958";
-                                    };
-                                    readonly src: "10782:50:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10778:54:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19136;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10778:54:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19147;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19137;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "10846:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19146;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19143;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19140;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19138;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "10852:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19139;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10856:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10852:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19141;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10851:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19142;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10862:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10851:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19144;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10850:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "323833343437303336313732393234353735373237313936343531333036393536";
-                                        readonly id: 19145;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10868:33:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_283447036172924575727196451306956_by_1";
-                                            readonly typeString: "int_const 2834...(25 digits omitted)...6956";
-                                        };
-                                        readonly value: "283447036172924575727196451306956";
-                                    };
-                                    readonly src: "10850:51:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10846:55:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19148;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10846:55:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19159;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19149;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "10915:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19158;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19155;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19152;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19150;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "10921:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19151;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10925:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10921:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19153;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10920:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19154;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "10931:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10920:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19156;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10919:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "343031363836363930333934303237363633363531363234323038373639353533";
-                                        readonly id: 19157;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "10937:33:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_401686690394027663651624208769553_by_1";
-                                            readonly typeString: "int_const 4016...(25 digits omitted)...9553";
-                                        };
-                                        readonly value: "401686690394027663651624208769553";
-                                    };
-                                    readonly src: "10919:51:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10915:55:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19160;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10915:55:124";
-                        }, {
-                            readonly expression: {
-                                readonly id: 19171;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly leftHandSide: {
-                                    readonly id: 19161;
-                                    readonly name: "q";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "10984:1:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly nodeType: "Assignment";
-                                readonly operator: "=";
-                                readonly rightHandSide: {
-                                    readonly commonType: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                    readonly id: 19170;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftExpression: {
-                                        readonly components: readonly [{
-                                            readonly commonType: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                            readonly id: 19167;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly leftExpression: {
-                                                readonly components: readonly [{
-                                                    readonly commonType: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                    readonly id: 19164;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: false;
-                                                    readonly lValueRequested: false;
-                                                    readonly leftExpression: {
-                                                        readonly id: 19162;
-                                                        readonly name: "q";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "10990:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly nodeType: "BinaryOperation";
-                                                    readonly operator: "*";
-                                                    readonly rightExpression: {
-                                                        readonly id: 19163;
-                                                        readonly name: "x";
-                                                        readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "10994:1:124";
-                                                        readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_int256";
-                                                            readonly typeString: "int256";
-                                                        };
-                                                    };
-                                                    readonly src: "10990:5:124";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_int256";
-                                                        readonly typeString: "int256";
-                                                    };
-                                                }];
-                                                readonly id: 19165;
-                                                readonly isConstant: false;
-                                                readonly isInlineArray: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "TupleExpression";
-                                                readonly src: "10989:7:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_int256";
-                                                    readonly typeString: "int256";
-                                                };
-                                            };
-                                            readonly nodeType: "BinaryOperation";
-                                            readonly operator: ">>";
-                                            readonly rightExpression: {
-                                                readonly hexValue: "3936";
-                                                readonly id: 19166;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly kind: "number";
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "Literal";
-                                                readonly src: "11000:2:124";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_rational_96_by_1";
-                                                    readonly typeString: "int_const 96";
-                                                };
-                                                readonly value: "96";
-                                            };
-                                            readonly src: "10989:13:124";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_int256";
-                                                readonly typeString: "int256";
-                                            };
-                                        }];
-                                        readonly id: 19168;
-                                        readonly isConstant: false;
-                                        readonly isInlineArray: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "TupleExpression";
-                                        readonly src: "10988:15:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_int256";
-                                            readonly typeString: "int256";
-                                        };
-                                    };
-                                    readonly nodeType: "BinaryOperation";
-                                    readonly operator: "+";
-                                    readonly rightExpression: {
-                                        readonly hexValue: "323034303438343537353930333932303132333632343835303631383136363232";
-                                        readonly id: 19169;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: true;
-                                        readonly kind: "number";
-                                        readonly lValueRequested: false;
-                                        readonly nodeType: "Literal";
-                                        readonly src: "11006:33:124";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_204048457590392012362485061816622_by_1";
-                                            readonly typeString: "int_const 2040...(25 digits omitted)...6622";
-                                        };
-                                        readonly value: "204048457590392012362485061816622";
-                                    };
-                                    readonly src: "10988:51:124";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_int256";
-                                        readonly typeString: "int256";
-                                    };
-                                };
-                                readonly src: "10984:55:124";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_int256";
-                                    readonly typeString: "int256";
-                                };
-                            };
-                            readonly id: 19172;
-                            readonly nodeType: "ExpressionStatement";
-                            readonly src: "10984:55:124";
-                        }, {
-                            readonly expression: {
                                 readonly id: 19183;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
@@ -8462,8 +7790,8 @@ export declare const FixedPointMath: {
                                     readonly name: "q";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "11053:1:124";
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "10778:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
@@ -8508,8 +7836,8 @@ export declare const FixedPointMath: {
                                                         readonly name: "q";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "11059:1:124";
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "10784:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
@@ -8522,14 +7850,14 @@ export declare const FixedPointMath: {
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
-                                                        readonly src: "11063:1:124";
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10788:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
                                                         };
                                                     };
-                                                    readonly src: "11059:5:124";
+                                                    readonly src: "10784:5:124";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_int256";
                                                         readonly typeString: "int256";
@@ -8542,7 +7870,7 @@ export declare const FixedPointMath: {
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "TupleExpression";
-                                                readonly src: "11058:7:124";
+                                                readonly src: "10783:7:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_int256";
                                                     readonly typeString: "int256";
@@ -8559,14 +7887,14 @@ export declare const FixedPointMath: {
                                                 readonly kind: "number";
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "Literal";
-                                                readonly src: "11069:2:124";
+                                                readonly src: "10794:2:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_rational_96_by_1";
                                                     readonly typeString: "int_const 96";
                                                 };
                                                 readonly value: "96";
                                             };
-                                            readonly src: "11058:13:124";
+                                            readonly src: "10783:13:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
@@ -8579,7 +7907,7 @@ export declare const FixedPointMath: {
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly nodeType: "TupleExpression";
-                                        readonly src: "11057:15:124";
+                                        readonly src: "10782:15:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
@@ -8588,7 +7916,7 @@ export declare const FixedPointMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "+";
                                     readonly rightExpression: {
-                                        readonly hexValue: "3331383533383939363938353031353731343032363533333539343237313338";
+                                        readonly hexValue: "3731363934383734373939333137383833373634303930353631343534393538";
                                         readonly id: 19181;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
@@ -8596,20 +7924,20 @@ export declare const FixedPointMath: {
                                         readonly kind: "number";
                                         readonly lValueRequested: false;
                                         readonly nodeType: "Literal";
-                                        readonly src: "11075:32:124";
+                                        readonly src: "10800:32:124";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_rational_31853899698501571402653359427138_by_1";
-                                            readonly typeString: "int_const 31853899698501571402653359427138";
+                                            readonly typeIdentifier: "t_rational_71694874799317883764090561454958_by_1";
+                                            readonly typeString: "int_const 71694874799317883764090561454958";
                                         };
-                                        readonly value: "31853899698501571402653359427138";
+                                        readonly value: "71694874799317883764090561454958";
                                     };
-                                    readonly src: "11057:50:124";
+                                    readonly src: "10782:50:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
                                 };
-                                readonly src: "11053:54:124";
+                                readonly src: "10778:54:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
@@ -8617,7 +7945,7 @@ export declare const FixedPointMath: {
                             };
                             readonly id: 19184;
                             readonly nodeType: "ExpressionStatement";
-                            readonly src: "11053:54:124";
+                            readonly src: "10778:54:124";
                         }, {
                             readonly expression: {
                                 readonly id: 19195;
@@ -8630,8 +7958,8 @@ export declare const FixedPointMath: {
                                     readonly name: "q";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19120;
-                                    readonly src: "11121:1:124";
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "10846:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
@@ -8676,8 +8004,8 @@ export declare const FixedPointMath: {
                                                         readonly name: "q";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 19120;
-                                                        readonly src: "11127:1:124";
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "10852:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
                                                             readonly typeString: "int256";
@@ -8690,7 +8018,679 @@ export declare const FixedPointMath: {
                                                         readonly name: "x";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 18999;
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10856:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10852:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19189;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10851:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19190;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10862:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10851:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19192;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10850:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "323833343437303336313732393234353735373237313936343531333036393536";
+                                        readonly id: 19193;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10868:33:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_283447036172924575727196451306956_by_1";
+                                            readonly typeString: "int_const 2834...(25 digits omitted)...6956";
+                                        };
+                                        readonly value: "283447036172924575727196451306956";
+                                    };
+                                    readonly src: "10850:51:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10846:55:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19196;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10846:55:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19207;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19197;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "10915:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19206;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19203;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19200;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19198;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "10921:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19199;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10925:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10921:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19201;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10920:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19202;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "10931:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10920:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19204;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10919:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "343031363836363930333934303237363633363531363234323038373639353533";
+                                        readonly id: 19205;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "10937:33:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_401686690394027663651624208769553_by_1";
+                                            readonly typeString: "int_const 4016...(25 digits omitted)...9553";
+                                        };
+                                        readonly value: "401686690394027663651624208769553";
+                                    };
+                                    readonly src: "10919:51:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10915:55:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19208;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10915:55:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19219;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19209;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "10984:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19218;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19215;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19212;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19210;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "10990:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19211;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "10994:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "10990:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19213;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "10989:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19214;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "11000:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "10989:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19216;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "10988:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "323034303438343537353930333932303132333632343835303631383136363232";
+                                        readonly id: 19217;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "11006:33:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_204048457590392012362485061816622_by_1";
+                                            readonly typeString: "int_const 2040...(25 digits omitted)...6622";
+                                        };
+                                        readonly value: "204048457590392012362485061816622";
+                                    };
+                                    readonly src: "10988:51:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "10984:55:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19220;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "10984:55:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19231;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19221;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "11053:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19230;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19227;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19224;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19222;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "11059:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19223;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
+                                                        readonly src: "11063:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly src: "11059:5:124";
+                                                    readonly typeDescriptions: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                }];
+                                                readonly id: 19225;
+                                                readonly isConstant: false;
+                                                readonly isInlineArray: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: false;
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "TupleExpression";
+                                                readonly src: "11058:7:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_int256";
+                                                    readonly typeString: "int256";
+                                                };
+                                            };
+                                            readonly nodeType: "BinaryOperation";
+                                            readonly operator: ">>";
+                                            readonly rightExpression: {
+                                                readonly hexValue: "3936";
+                                                readonly id: 19226;
+                                                readonly isConstant: false;
+                                                readonly isLValue: false;
+                                                readonly isPure: true;
+                                                readonly kind: "number";
+                                                readonly lValueRequested: false;
+                                                readonly nodeType: "Literal";
+                                                readonly src: "11069:2:124";
+                                                readonly typeDescriptions: {
+                                                    readonly typeIdentifier: "t_rational_96_by_1";
+                                                    readonly typeString: "int_const 96";
+                                                };
+                                                readonly value: "96";
+                                            };
+                                            readonly src: "11058:13:124";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                        }];
+                                        readonly id: 19228;
+                                        readonly isConstant: false;
+                                        readonly isInlineArray: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "TupleExpression";
+                                        readonly src: "11057:15:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_int256";
+                                            readonly typeString: "int256";
+                                        };
+                                    };
+                                    readonly nodeType: "BinaryOperation";
+                                    readonly operator: "+";
+                                    readonly rightExpression: {
+                                        readonly hexValue: "3331383533383939363938353031353731343032363533333539343237313338";
+                                        readonly id: 19229;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly kind: "number";
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "Literal";
+                                        readonly src: "11075:32:124";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_rational_31853899698501571402653359427138_by_1";
+                                            readonly typeString: "int_const 31853899698501571402653359427138";
+                                        };
+                                        readonly value: "31853899698501571402653359427138";
+                                    };
+                                    readonly src: "11057:50:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly src: "11053:54:124";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_int256";
+                                    readonly typeString: "int256";
+                                };
+                            };
+                            readonly id: 19232;
+                            readonly nodeType: "ExpressionStatement";
+                            readonly src: "11053:54:124";
+                        }, {
+                            readonly expression: {
+                                readonly id: 19243;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftHandSide: {
+                                    readonly id: 19233;
+                                    readonly name: "q";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 19168;
+                                    readonly src: "11121:1:124";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                };
+                                readonly nodeType: "Assignment";
+                                readonly operator: "=";
+                                readonly rightHandSide: {
+                                    readonly commonType: {
+                                        readonly typeIdentifier: "t_int256";
+                                        readonly typeString: "int256";
+                                    };
+                                    readonly id: 19242;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly lValueRequested: false;
+                                    readonly leftExpression: {
+                                        readonly components: readonly [{
+                                            readonly commonType: {
+                                                readonly typeIdentifier: "t_int256";
+                                                readonly typeString: "int256";
+                                            };
+                                            readonly id: 19239;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: false;
+                                            readonly lValueRequested: false;
+                                            readonly leftExpression: {
+                                                readonly components: readonly [{
+                                                    readonly commonType: {
+                                                        readonly typeIdentifier: "t_int256";
+                                                        readonly typeString: "int256";
+                                                    };
+                                                    readonly id: 19236;
+                                                    readonly isConstant: false;
+                                                    readonly isLValue: false;
+                                                    readonly isPure: false;
+                                                    readonly lValueRequested: false;
+                                                    readonly leftExpression: {
+                                                        readonly id: 19234;
+                                                        readonly name: "q";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19168;
+                                                        readonly src: "11127:1:124";
+                                                        readonly typeDescriptions: {
+                                                            readonly typeIdentifier: "t_int256";
+                                                            readonly typeString: "int256";
+                                                        };
+                                                    };
+                                                    readonly nodeType: "BinaryOperation";
+                                                    readonly operator: "*";
+                                                    readonly rightExpression: {
+                                                        readonly id: 19235;
+                                                        readonly name: "x";
+                                                        readonly nodeType: "Identifier";
+                                                        readonly overloadedDeclarations: readonly [];
+                                                        readonly referencedDeclaration: 19047;
                                                         readonly src: "11131:1:124";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_int256";
@@ -8703,7 +8703,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "int256";
                                                     };
                                                 }];
-                                                readonly id: 19189;
+                                                readonly id: 19237;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -8720,7 +8720,7 @@ export declare const FixedPointMath: {
                                             readonly operator: ">>";
                                             readonly rightExpression: {
                                                 readonly hexValue: "3936";
-                                                readonly id: 19190;
+                                                readonly id: 19238;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -8740,7 +8740,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "int256";
                                             };
                                         }];
-                                        readonly id: 19192;
+                                        readonly id: 19240;
                                         readonly isConstant: false;
                                         readonly isInlineArray: false;
                                         readonly isLValue: false;
@@ -8757,7 +8757,7 @@ export declare const FixedPointMath: {
                                     readonly operator: "+";
                                     readonly rightExpression: {
                                         readonly hexValue: "393039343239393731323434333837333030323737333736353538333735";
-                                        readonly id: 19193;
+                                        readonly id: 19241;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -8783,7 +8783,7 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19196;
+                            readonly id: 19244;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "11121:52:124";
                         }, {
@@ -8821,40 +8821,40 @@ export declare const FixedPointMath: {
                             readonly documentation: "@solidity memory-safe-assembly";
                             readonly evmVersion: "paris";
                             readonly externalReferences: readonly [{
-                                readonly declaration: 19043;
+                                readonly declaration: 19091;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "11519:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19120;
+                                readonly declaration: 19168;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "11522:1:124";
                                 readonly valueSize: 1;
                             }, {
-                                readonly declaration: 19002;
+                                readonly declaration: 19050;
                                 readonly isOffset: false;
                                 readonly isSlot: false;
                                 readonly src: "11509:1:124";
                                 readonly valueSize: 1;
                             }];
-                            readonly id: 19197;
+                            readonly id: 19245;
                             readonly nodeType: "InlineAssembly";
                             readonly src: "11234:304:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19200;
+                                readonly id: 19248;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19198;
+                                    readonly id: 19246;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19002;
+                                    readonly referencedDeclaration: 19050;
                                     readonly src: "11899:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -8865,7 +8865,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "*=";
                                 readonly rightHandSide: {
                                     readonly hexValue: "31363737323032313130393936373138353838333432383230393637303637343433393633353136313636";
-                                    readonly id: 19199;
+                                    readonly id: 19247;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8885,22 +8885,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19201;
+                            readonly id: 19249;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "11899:48:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19206;
+                                readonly id: 19254;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19202;
+                                    readonly id: 19250;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19002;
+                                    readonly referencedDeclaration: 19050;
                                     readonly src: "12006:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -8914,14 +8914,14 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 19205;
+                                    readonly id: 19253;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly hexValue: "3136353937353737353532363835363134323231343837323835393538313933393437343639313933383230353539323139383738313737393038303933343939323038333731";
-                                        readonly id: 19203;
+                                        readonly id: 19251;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -8938,11 +8938,11 @@ export declare const FixedPointMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "*";
                                     readonly rightExpression: {
-                                        readonly id: 19204;
+                                        readonly id: 19252;
                                         readonly name: "k";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19016;
+                                        readonly referencedDeclaration: 19064;
                                         readonly src: "12117:1:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -8961,22 +8961,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19207;
+                            readonly id: 19255;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "12006:112:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19210;
+                                readonly id: 19258;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19208;
+                                    readonly id: 19256;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19002;
+                                    readonly referencedDeclaration: 19050;
                                     readonly src: "12186:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -8987,7 +8987,7 @@ export declare const FixedPointMath: {
                                 readonly operator: "+=";
                                 readonly rightHandSide: {
                                     readonly hexValue: "363030393230313739383239373331383631373336373032373739333231363231343539353935343732323538303439303734313031353637333737383833303230303138333038";
-                                    readonly id: 19209;
+                                    readonly id: 19257;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9007,22 +9007,22 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19211;
+                            readonly id: 19259;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "12186:77:124";
                         }, {
                             readonly expression: {
-                                readonly id: 19214;
+                                readonly id: 19262;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 19212;
+                                    readonly id: 19260;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19002;
+                                    readonly referencedDeclaration: 19050;
                                     readonly src: "12328:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -9033,7 +9033,7 @@ export declare const FixedPointMath: {
                                 readonly operator: ">>=";
                                 readonly rightHandSide: {
                                     readonly hexValue: "313734";
-                                    readonly id: 19213;
+                                    readonly id: 19261;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9053,14 +9053,14 @@ export declare const FixedPointMath: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19215;
+                            readonly id: 19263;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "12328:9:124";
                         }];
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18997;
+                    readonly id: 19045;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8215:288:124";
                     readonly text: "@dev Computes ln(x) in 1e18 fixed point.\n @dev Credit to Remco (https://github.com/recmo/experiment-solexp/blob/main/src/FixedPointMathLib.sol)\n @dev Reverts if x is negative or zero.\n @param x Fixed point number in 1e18 format.\n @return r Result of ln(x).";
@@ -9071,16 +9071,16 @@ export declare const FixedPointMath: {
                 readonly name: "ln";
                 readonly nameLocation: "8517:2:124";
                 readonly parameters: {
-                    readonly id: 19000;
+                    readonly id: 19048;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18999;
+                        readonly id: 19047;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "8527:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19218;
+                        readonly scope: 19266;
                         readonly src: "8520:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9089,7 +9089,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 18998;
+                            readonly id: 19046;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8520:6:124";
@@ -9103,16 +9103,16 @@ export declare const FixedPointMath: {
                     readonly src: "8519:10:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19003;
+                    readonly id: 19051;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19002;
+                        readonly id: 19050;
                         readonly mutability: "mutable";
                         readonly name: "r";
                         readonly nameLocation: "8560:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19218;
+                        readonly scope: 19266;
                         readonly src: "8553:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9121,7 +9121,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19001;
+                            readonly id: 19049;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8553:6:124";
@@ -9134,17 +9134,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "8552:10:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19321;
+                readonly id: 19369;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12712:2102:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19320;
+                    readonly id: 19368;
                     readonly nodeType: "Block";
                     readonly src: "12923:1891:124";
                     readonly nodes: readonly [];
@@ -9154,17 +9154,17 @@ export declare const FixedPointMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 19236;
+                            readonly id: 19284;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 19234;
+                                readonly id: 19282;
                                 readonly name: "_deltaWeight";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19227;
+                                readonly referencedDeclaration: 19275;
                                 readonly src: "13006:12:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -9175,7 +9175,7 @@ export declare const FixedPointMath: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 19235;
+                                readonly id: 19283;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9195,39 +9195,39 @@ export declare const FixedPointMath: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 19240;
+                        readonly id: 19288;
                         readonly nodeType: "IfStatement";
                         readonly src: "13002:63:124";
                         readonly trueBody: {
-                            readonly id: 19239;
+                            readonly id: 19287;
                             readonly nodeType: "Block";
                             readonly src: "13025:40:124";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 19237;
+                                    readonly id: 19285;
                                     readonly name: "_average";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19221;
+                                    readonly referencedDeclaration: 19269;
                                     readonly src: "13046:8:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly functionReturnParameters: 19233;
-                                readonly id: 19238;
+                                readonly functionReturnParameters: 19281;
+                                readonly id: 19286;
                                 readonly nodeType: "Return";
                                 readonly src: "13039:15:124";
                             }];
                         };
                     }, {
                         readonly condition: {
-                            readonly id: 19241;
+                            readonly id: 19289;
                             readonly name: "_isAdding";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 19229;
+                            readonly referencedDeclaration: 19277;
                             readonly src: "13323:9:124";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
@@ -9235,7 +9235,7 @@ export declare const FixedPointMath: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 19318;
+                            readonly id: 19366;
                             readonly nodeType: "Block";
                             readonly src: "14470:338:124";
                             readonly statements: readonly [{
@@ -9244,17 +9244,17 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 19295;
+                                    readonly id: 19343;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 19293;
+                                        readonly id: 19341;
                                         readonly name: "_totalWeight";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19223;
+                                        readonly referencedDeclaration: 19271;
                                         readonly src: "14488:12:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9264,11 +9264,11 @@ export declare const FixedPointMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "==";
                                     readonly rightExpression: {
-                                        readonly id: 19294;
+                                        readonly id: 19342;
                                         readonly name: "_deltaWeight";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19227;
+                                        readonly referencedDeclaration: 19275;
                                         readonly src: "14504:12:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9281,17 +9281,17 @@ export declare const FixedPointMath: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 19299;
+                                readonly id: 19347;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "14484:75:124";
                                 readonly trueBody: {
-                                    readonly id: 19298;
+                                    readonly id: 19346;
                                     readonly nodeType: "Block";
                                     readonly src: "14518:41:124";
                                     readonly statements: readonly [{
                                         readonly expression: {
                                             readonly hexValue: "30";
-                                            readonly id: 19296;
+                                            readonly id: 19344;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -9305,25 +9305,25 @@ export declare const FixedPointMath: {
                                             };
                                             readonly value: "0";
                                         };
-                                        readonly functionReturnParameters: 19233;
-                                        readonly id: 19297;
+                                        readonly functionReturnParameters: 19281;
+                                        readonly id: 19345;
                                         readonly nodeType: "Return";
                                         readonly src: "14536:8:124";
                                     }];
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 19316;
+                                    readonly id: 19364;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 19300;
+                                        readonly id: 19348;
                                         readonly name: "average";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19232;
+                                        readonly referencedDeclaration: 19280;
                                         readonly src: "14635:7:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9338,17 +9338,17 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 19314;
+                                            readonly id: 19362;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
-                                                readonly id: 19312;
+                                                readonly id: 19360;
                                                 readonly name: "_totalWeight";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19223;
+                                                readonly referencedDeclaration: 19271;
                                                 readonly src: "14752:12:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -9358,11 +9358,11 @@ export declare const FixedPointMath: {
                                             readonly nodeType: "BinaryOperation";
                                             readonly operator: "-";
                                             readonly rightExpression: {
-                                                readonly id: 19313;
+                                                readonly id: 19361;
                                                 readonly name: "_deltaWeight";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19227;
+                                                readonly referencedDeclaration: 19275;
                                                 readonly src: "14767:12:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -9386,18 +9386,18 @@ export declare const FixedPointMath: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
-                                                    readonly id: 19309;
+                                                    readonly id: 19357;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 19303;
+                                                            readonly id: 19351;
                                                             readonly name: "_average";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 19221;
+                                                            readonly referencedDeclaration: 19269;
                                                             readonly src: "14667:8:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -9410,18 +9410,18 @@ export declare const FixedPointMath: {
                                                                 readonly typeString: "uint256";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 19301;
+                                                                readonly id: 19349;
                                                                 readonly name: "_totalWeight";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 19223;
+                                                                readonly referencedDeclaration: 19271;
                                                                 readonly src: "14646:12:124";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
                                                                     readonly typeString: "uint256";
                                                                 };
                                                             };
-                                                            readonly id: 19302;
+                                                            readonly id: 19350;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -9429,14 +9429,14 @@ export declare const FixedPointMath: {
                                                             readonly memberLocation: "14659:7:124";
                                                             readonly memberName: "mulDown";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 18674;
+                                                            readonly referencedDeclaration: 18722;
                                                             readonly src: "14646:20:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                             };
                                                         };
-                                                        readonly id: 19304;
+                                                        readonly id: 19352;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -9456,11 +9456,11 @@ export declare const FixedPointMath: {
                                                     readonly operator: "-";
                                                     readonly rightExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 19307;
+                                                            readonly id: 19355;
                                                             readonly name: "_delta";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 19225;
+                                                            readonly referencedDeclaration: 19273;
                                                             readonly src: "14714:6:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -9473,18 +9473,18 @@ export declare const FixedPointMath: {
                                                                 readonly typeString: "uint256";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 19305;
+                                                                readonly id: 19353;
                                                                 readonly name: "_deltaWeight";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 19227;
+                                                                readonly referencedDeclaration: 19275;
                                                                 readonly src: "14695:12:124";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
                                                                     readonly typeString: "uint256";
                                                                 };
                                                             };
-                                                            readonly id: 19306;
+                                                            readonly id: 19354;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -9492,14 +9492,14 @@ export declare const FixedPointMath: {
                                                             readonly memberLocation: "14708:5:124";
                                                             readonly memberName: "mulUp";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 18724;
+                                                            readonly referencedDeclaration: 18772;
                                                             readonly src: "14695:18:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                             };
                                                         };
-                                                        readonly id: 19308;
+                                                        readonly id: 19356;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -9521,7 +9521,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "uint256";
                                                     };
                                                 }];
-                                                readonly id: 19310;
+                                                readonly id: 19358;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -9534,7 +9534,7 @@ export declare const FixedPointMath: {
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 19311;
+                                            readonly id: 19359;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -9542,14 +9542,14 @@ export declare const FixedPointMath: {
                                             readonly memberLocation: "14723:7:124";
                                             readonly memberName: "divDown";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18692;
+                                            readonly referencedDeclaration: 18740;
                                             readonly src: "14645:85:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 19315;
+                                        readonly id: 19363;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -9571,31 +9571,31 @@ export declare const FixedPointMath: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 19317;
+                                readonly id: 19365;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "14635:162:124";
                             }];
                         };
-                        readonly id: 19319;
+                        readonly id: 19367;
                         readonly nodeType: "IfStatement";
                         readonly src: "13319:1489:124";
                         readonly trueBody: {
-                            readonly id: 19292;
+                            readonly id: 19340;
                             readonly nodeType: "Block";
                             readonly src: "13334:871:124";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 19258;
+                                    readonly id: 19306;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 19242;
+                                        readonly id: 19290;
                                         readonly name: "average";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19232;
+                                        readonly referencedDeclaration: 19280;
                                         readonly src: "13410:7:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9610,17 +9610,17 @@ export declare const FixedPointMath: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 19256;
+                                            readonly id: 19304;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
-                                                readonly id: 19254;
+                                                readonly id: 19302;
                                                 readonly name: "_totalWeight";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19223;
+                                                readonly referencedDeclaration: 19271;
                                                 readonly src: "13529:12:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -9630,11 +9630,11 @@ export declare const FixedPointMath: {
                                             readonly nodeType: "BinaryOperation";
                                             readonly operator: "+";
                                             readonly rightExpression: {
-                                                readonly id: 19255;
+                                                readonly id: 19303;
                                                 readonly name: "_deltaWeight";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19227;
+                                                readonly referencedDeclaration: 19275;
                                                 readonly src: "13544:12:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -9658,18 +9658,18 @@ export declare const FixedPointMath: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
-                                                    readonly id: 19251;
+                                                    readonly id: 19299;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 19245;
+                                                            readonly id: 19293;
                                                             readonly name: "_average";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 19221;
+                                                            readonly referencedDeclaration: 19269;
                                                             readonly src: "13442:8:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -9682,18 +9682,18 @@ export declare const FixedPointMath: {
                                                                 readonly typeString: "uint256";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 19243;
+                                                                readonly id: 19291;
                                                                 readonly name: "_totalWeight";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 19223;
+                                                                readonly referencedDeclaration: 19271;
                                                                 readonly src: "13421:12:124";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
                                                                     readonly typeString: "uint256";
                                                                 };
                                                             };
-                                                            readonly id: 19244;
+                                                            readonly id: 19292;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -9701,14 +9701,14 @@ export declare const FixedPointMath: {
                                                             readonly memberLocation: "13434:7:124";
                                                             readonly memberName: "mulDown";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 18674;
+                                                            readonly referencedDeclaration: 18722;
                                                             readonly src: "13421:20:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                             };
                                                         };
-                                                        readonly id: 19246;
+                                                        readonly id: 19294;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -9728,11 +9728,11 @@ export declare const FixedPointMath: {
                                                     readonly operator: "+";
                                                     readonly rightExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 19249;
+                                                            readonly id: 19297;
                                                             readonly name: "_delta";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 19225;
+                                                            readonly referencedDeclaration: 19273;
                                                             readonly src: "13491:6:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -9745,18 +9745,18 @@ export declare const FixedPointMath: {
                                                                 readonly typeString: "uint256";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 19247;
+                                                                readonly id: 19295;
                                                                 readonly name: "_deltaWeight";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 19227;
+                                                                readonly referencedDeclaration: 19275;
                                                                 readonly src: "13470:12:124";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
                                                                     readonly typeString: "uint256";
                                                                 };
                                                             };
-                                                            readonly id: 19248;
+                                                            readonly id: 19296;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -9764,14 +9764,14 @@ export declare const FixedPointMath: {
                                                             readonly memberLocation: "13483:7:124";
                                                             readonly memberName: "mulDown";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 18674;
+                                                            readonly referencedDeclaration: 18722;
                                                             readonly src: "13470:20:124";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                             };
                                                         };
-                                                        readonly id: 19250;
+                                                        readonly id: 19298;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -9793,7 +9793,7 @@ export declare const FixedPointMath: {
                                                         readonly typeString: "uint256";
                                                     };
                                                 }];
-                                                readonly id: 19252;
+                                                readonly id: 19300;
                                                 readonly isConstant: false;
                                                 readonly isInlineArray: false;
                                                 readonly isLValue: false;
@@ -9806,7 +9806,7 @@ export declare const FixedPointMath: {
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 19253;
+                                            readonly id: 19301;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -9814,14 +9814,14 @@ export declare const FixedPointMath: {
                                             readonly memberLocation: "13500:7:124";
                                             readonly memberName: "divDown";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18692;
+                                            readonly referencedDeclaration: 18740;
                                             readonly src: "13420:87:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 19257;
+                                        readonly id: 19305;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -9843,19 +9843,19 @@ export declare const FixedPointMath: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 19259;
+                                readonly id: 19307;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "13410:164:124";
                             }, {
-                                readonly assignments: readonly [19261];
+                                readonly assignments: readonly [19309];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 19261;
+                                    readonly id: 19309;
                                     readonly mutability: "mutable";
                                     readonly name: "minAverage";
                                     readonly nameLocation: "13929:10:124";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 19292;
+                                    readonly scope: 19340;
                                     readonly src: "13921:18:124";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -9864,7 +9864,7 @@ export declare const FixedPointMath: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 19260;
+                                        readonly id: 19308;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "13921:7:124";
@@ -9875,14 +9875,14 @@ export declare const FixedPointMath: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 19266;
+                                readonly id: 19314;
                                 readonly initialValue: {
                                     readonly arguments: readonly [{
-                                        readonly id: 19264;
+                                        readonly id: 19312;
                                         readonly name: "_average";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19221;
+                                        readonly referencedDeclaration: 19269;
                                         readonly src: "13953:8:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9895,18 +9895,18 @@ export declare const FixedPointMath: {
                                             readonly typeString: "uint256";
                                         }];
                                         readonly expression: {
-                                            readonly id: 19262;
+                                            readonly id: 19310;
                                             readonly name: "_delta";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19225;
+                                            readonly referencedDeclaration: 19273;
                                             readonly src: "13942:6:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 19263;
+                                        readonly id: 19311;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -9914,14 +9914,14 @@ export declare const FixedPointMath: {
                                         readonly memberLocation: "13949:3:124";
                                         readonly memberName: "min";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 19339;
+                                        readonly referencedDeclaration: 19387;
                                         readonly src: "13942:10:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                         };
                                     };
-                                    readonly id: 19265;
+                                    readonly id: 19313;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -9940,15 +9940,15 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "VariableDeclarationStatement";
                                 readonly src: "13921:41:124";
                             }, {
-                                readonly assignments: readonly [19268];
+                                readonly assignments: readonly [19316];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 19268;
+                                    readonly id: 19316;
                                     readonly mutability: "mutable";
                                     readonly name: "maxAverage";
                                     readonly nameLocation: "13984:10:124";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 19292;
+                                    readonly scope: 19340;
                                     readonly src: "13976:18:124";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -9957,7 +9957,7 @@ export declare const FixedPointMath: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 19267;
+                                        readonly id: 19315;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "13976:7:124";
@@ -9968,14 +9968,14 @@ export declare const FixedPointMath: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 19273;
+                                readonly id: 19321;
                                 readonly initialValue: {
                                     readonly arguments: readonly [{
-                                        readonly id: 19271;
+                                        readonly id: 19319;
                                         readonly name: "_average";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19221;
+                                        readonly referencedDeclaration: 19269;
                                         readonly src: "14008:8:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -9988,18 +9988,18 @@ export declare const FixedPointMath: {
                                             readonly typeString: "uint256";
                                         }];
                                         readonly expression: {
-                                            readonly id: 19269;
+                                            readonly id: 19317;
                                             readonly name: "_delta";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19225;
+                                            readonly referencedDeclaration: 19273;
                                             readonly src: "13997:6:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 19270;
+                                        readonly id: 19318;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -10007,14 +10007,14 @@ export declare const FixedPointMath: {
                                         readonly memberLocation: "14004:3:124";
                                         readonly memberName: "max";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 19357;
+                                        readonly referencedDeclaration: 19405;
                                         readonly src: "13997:10:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                         };
                                     };
-                                    readonly id: 19272;
+                                    readonly id: 19320;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -10038,17 +10038,17 @@ export declare const FixedPointMath: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 19276;
+                                    readonly id: 19324;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 19274;
+                                        readonly id: 19322;
                                         readonly name: "average";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19232;
+                                        readonly referencedDeclaration: 19280;
                                         readonly src: "14035:7:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -10058,11 +10058,11 @@ export declare const FixedPointMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "<";
                                     readonly rightExpression: {
-                                        readonly id: 19275;
+                                        readonly id: 19323;
                                         readonly name: "minAverage";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 19261;
+                                        readonly referencedDeclaration: 19309;
                                         readonly src: "14045:10:124";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -10081,17 +10081,17 @@ export declare const FixedPointMath: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 19284;
+                                        readonly id: 19332;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 19282;
+                                            readonly id: 19330;
                                             readonly name: "average";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19232;
+                                            readonly referencedDeclaration: 19280;
                                             readonly src: "14120:7:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -10101,11 +10101,11 @@ export declare const FixedPointMath: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: ">";
                                         readonly rightExpression: {
-                                            readonly id: 19283;
+                                            readonly id: 19331;
                                             readonly name: "maxAverage";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 19268;
+                                            readonly referencedDeclaration: 19316;
                                             readonly src: "14130:10:124";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -10118,26 +10118,26 @@ export declare const FixedPointMath: {
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly id: 19290;
+                                    readonly id: 19338;
                                     readonly nodeType: "IfStatement";
                                     readonly src: "14116:79:124";
                                     readonly trueBody: {
-                                        readonly id: 19289;
+                                        readonly id: 19337;
                                         readonly nodeType: "Block";
                                         readonly src: "14142:53:124";
                                         readonly statements: readonly [{
                                             readonly expression: {
-                                                readonly id: 19287;
+                                                readonly id: 19335;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftHandSide: {
-                                                    readonly id: 19285;
+                                                    readonly id: 19333;
                                                     readonly name: "average";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 19232;
+                                                    readonly referencedDeclaration: 19280;
                                                     readonly src: "14160:7:124";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -10147,11 +10147,11 @@ export declare const FixedPointMath: {
                                                 readonly nodeType: "Assignment";
                                                 readonly operator: "=";
                                                 readonly rightHandSide: {
-                                                    readonly id: 19286;
+                                                    readonly id: 19334;
                                                     readonly name: "maxAverage";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 19268;
+                                                    readonly referencedDeclaration: 19316;
                                                     readonly src: "14170:10:124";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -10164,32 +10164,32 @@ export declare const FixedPointMath: {
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 19288;
+                                            readonly id: 19336;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "14160:20:124";
                                         }];
                                     };
                                 };
-                                readonly id: 19291;
+                                readonly id: 19339;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "14031:164:124";
                                 readonly trueBody: {
-                                    readonly id: 19281;
+                                    readonly id: 19329;
                                     readonly nodeType: "Block";
                                     readonly src: "14057:53:124";
                                     readonly statements: readonly [{
                                         readonly expression: {
-                                            readonly id: 19279;
+                                            readonly id: 19327;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftHandSide: {
-                                                readonly id: 19277;
+                                                readonly id: 19325;
                                                 readonly name: "average";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19232;
+                                                readonly referencedDeclaration: 19280;
                                                 readonly src: "14075:7:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -10199,11 +10199,11 @@ export declare const FixedPointMath: {
                                             readonly nodeType: "Assignment";
                                             readonly operator: "=";
                                             readonly rightHandSide: {
-                                                readonly id: 19278;
+                                                readonly id: 19326;
                                                 readonly name: "minAverage";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 19261;
+                                                readonly referencedDeclaration: 19309;
                                                 readonly src: "14085:10:124";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -10216,7 +10216,7 @@ export declare const FixedPointMath: {
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 19280;
+                                        readonly id: 19328;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "14075:20:124";
                                     }];
@@ -10226,7 +10226,7 @@ export declare const FixedPointMath: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 19219;
+                    readonly id: 19267;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "12360:347:124";
                     readonly text: "@dev Updates a weighted average by adding or removing a weighted delta.\n @param _totalWeight The total weight before the update.\n @param _deltaWeight The weight of the new value.\n @param _average The weighted average before the update.\n @param _delta The new value.\n @return average The new weighted average.";
@@ -10237,16 +10237,16 @@ export declare const FixedPointMath: {
                 readonly name: "updateWeightedAverage";
                 readonly nameLocation: "12721:21:124";
                 readonly parameters: {
-                    readonly id: 19230;
+                    readonly id: 19278;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19221;
+                        readonly id: 19269;
                         readonly mutability: "mutable";
                         readonly name: "_average";
                         readonly nameLocation: "12760:8:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12752:16:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10255,7 +10255,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19220;
+                            readonly id: 19268;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12752:7:124";
@@ -10267,12 +10267,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19223;
+                        readonly id: 19271;
                         readonly mutability: "mutable";
                         readonly name: "_totalWeight";
                         readonly nameLocation: "12786:12:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12778:20:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10281,7 +10281,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19222;
+                            readonly id: 19270;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12778:7:124";
@@ -10293,12 +10293,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19225;
+                        readonly id: 19273;
                         readonly mutability: "mutable";
                         readonly name: "_delta";
                         readonly nameLocation: "12816:6:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12808:14:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10307,7 +10307,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19224;
+                            readonly id: 19272;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12808:7:124";
@@ -10319,12 +10319,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19227;
+                        readonly id: 19275;
                         readonly mutability: "mutable";
                         readonly name: "_deltaWeight";
                         readonly nameLocation: "12840:12:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12832:20:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10333,7 +10333,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19226;
+                            readonly id: 19274;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12832:7:124";
@@ -10345,12 +10345,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19229;
+                        readonly id: 19277;
                         readonly mutability: "mutable";
                         readonly name: "_isAdding";
                         readonly nameLocation: "12867:9:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12862:14:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10359,7 +10359,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 19228;
+                            readonly id: 19276;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12862:4:124";
@@ -10373,16 +10373,16 @@ export declare const FixedPointMath: {
                     readonly src: "12742:140:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19233;
+                    readonly id: 19281;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19232;
+                        readonly id: 19280;
                         readonly mutability: "mutable";
                         readonly name: "average";
                         readonly nameLocation: "12914:7:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19321;
+                        readonly scope: 19369;
                         readonly src: "12906:15:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10391,7 +10391,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19231;
+                            readonly id: 19279;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12906:7:124";
@@ -10404,17 +10404,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "12905:17:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19339;
+                readonly id: 19387;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "14987:104:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19338;
+                    readonly id: 19386;
                     readonly nodeType: "Block";
                     readonly src: "15054:37:124";
                     readonly nodes: readonly [];
@@ -10425,17 +10425,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 19333;
+                                readonly id: 19381;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19331;
+                                    readonly id: 19379;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19324;
+                                    readonly referencedDeclaration: 19372;
                                     readonly src: "15071:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -10445,11 +10445,11 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: ">";
                                 readonly rightExpression: {
-                                    readonly id: 19332;
+                                    readonly id: 19380;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19326;
+                                    readonly referencedDeclaration: 19374;
                                     readonly src: "15075:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -10463,18 +10463,18 @@ export declare const FixedPointMath: {
                                 };
                             };
                             readonly falseExpression: {
-                                readonly id: 19335;
+                                readonly id: 19383;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19324;
+                                readonly referencedDeclaration: 19372;
                                 readonly src: "15083:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 19336;
+                            readonly id: 19384;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -10482,11 +10482,11 @@ export declare const FixedPointMath: {
                             readonly nodeType: "Conditional";
                             readonly src: "15071:13:124";
                             readonly trueExpression: {
-                                readonly id: 19334;
+                                readonly id: 19382;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19326;
+                                readonly referencedDeclaration: 19374;
                                 readonly src: "15079:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -10498,14 +10498,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 19330;
-                        readonly id: 19337;
+                        readonly functionReturnParameters: 19378;
+                        readonly id: 19385;
                         readonly nodeType: "Return";
                         readonly src: "15064:20:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 19322;
+                    readonly id: 19370;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "14820:162:124";
                     readonly text: "@dev Calculates the minimum of two values.\n @param a The first value.\n @param b The second value.\n @return The minimum of the two values.";
@@ -10516,16 +10516,16 @@ export declare const FixedPointMath: {
                 readonly name: "min";
                 readonly nameLocation: "14996:3:124";
                 readonly parameters: {
-                    readonly id: 19327;
+                    readonly id: 19375;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19324;
+                        readonly id: 19372;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "15008:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19339;
+                        readonly scope: 19387;
                         readonly src: "15000:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10534,7 +10534,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19323;
+                            readonly id: 19371;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15000:7:124";
@@ -10546,12 +10546,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19326;
+                        readonly id: 19374;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "15019:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19339;
+                        readonly scope: 19387;
                         readonly src: "15011:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10560,7 +10560,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19325;
+                            readonly id: 19373;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15011:7:124";
@@ -10574,16 +10574,16 @@ export declare const FixedPointMath: {
                     readonly src: "14999:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19330;
+                    readonly id: 19378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19329;
+                        readonly id: 19377;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19339;
+                        readonly scope: 19387;
                         readonly src: "15045:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10592,7 +10592,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19328;
+                            readonly id: 19376;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15045:7:124";
@@ -10605,17 +10605,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "15044:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19357;
+                readonly id: 19405;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15264:104:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19356;
+                    readonly id: 19404;
                     readonly nodeType: "Block";
                     readonly src: "15331:37:124";
                     readonly nodes: readonly [];
@@ -10626,17 +10626,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 19351;
+                                readonly id: 19399;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19349;
+                                    readonly id: 19397;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19342;
+                                    readonly referencedDeclaration: 19390;
                                     readonly src: "15348:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -10646,11 +10646,11 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: ">";
                                 readonly rightExpression: {
-                                    readonly id: 19350;
+                                    readonly id: 19398;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19344;
+                                    readonly referencedDeclaration: 19392;
                                     readonly src: "15352:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -10664,18 +10664,18 @@ export declare const FixedPointMath: {
                                 };
                             };
                             readonly falseExpression: {
-                                readonly id: 19353;
+                                readonly id: 19401;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19344;
+                                readonly referencedDeclaration: 19392;
                                 readonly src: "15360:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 19354;
+                            readonly id: 19402;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -10683,11 +10683,11 @@ export declare const FixedPointMath: {
                             readonly nodeType: "Conditional";
                             readonly src: "15348:13:124";
                             readonly trueExpression: {
-                                readonly id: 19352;
+                                readonly id: 19400;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19342;
+                                readonly referencedDeclaration: 19390;
                                 readonly src: "15356:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -10699,14 +10699,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 19348;
-                        readonly id: 19355;
+                        readonly functionReturnParameters: 19396;
+                        readonly id: 19403;
                         readonly nodeType: "Return";
                         readonly src: "15341:20:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 19340;
+                    readonly id: 19388;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "15097:162:124";
                     readonly text: "@dev Calculates the maximum of two values.\n @param a The first value.\n @param b The second value.\n @return The maximum of the two values.";
@@ -10717,16 +10717,16 @@ export declare const FixedPointMath: {
                 readonly name: "max";
                 readonly nameLocation: "15273:3:124";
                 readonly parameters: {
-                    readonly id: 19345;
+                    readonly id: 19393;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19342;
+                        readonly id: 19390;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "15285:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19357;
+                        readonly scope: 19405;
                         readonly src: "15277:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10735,7 +10735,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19341;
+                            readonly id: 19389;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15277:7:124";
@@ -10747,12 +10747,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19344;
+                        readonly id: 19392;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "15296:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19357;
+                        readonly scope: 19405;
                         readonly src: "15288:9:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10761,7 +10761,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19343;
+                            readonly id: 19391;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15288:7:124";
@@ -10775,16 +10775,16 @@ export declare const FixedPointMath: {
                     readonly src: "15276:22:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19348;
+                    readonly id: 19396;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19347;
+                        readonly id: 19395;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19357;
+                        readonly scope: 19405;
                         readonly src: "15322:7:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10793,7 +10793,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 19346;
+                            readonly id: 19394;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15322:7:124";
@@ -10806,17 +10806,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "15321:9:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19375;
+                readonly id: 19423;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15541:101:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19374;
+                    readonly id: 19422;
                     readonly nodeType: "Block";
                     readonly src: "15605:37:124";
                     readonly nodes: readonly [];
@@ -10827,17 +10827,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19369;
+                                readonly id: 19417;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19367;
+                                    readonly id: 19415;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19360;
+                                    readonly referencedDeclaration: 19408;
                                     readonly src: "15622:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -10847,11 +10847,11 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: ">";
                                 readonly rightExpression: {
-                                    readonly id: 19368;
+                                    readonly id: 19416;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19362;
+                                    readonly referencedDeclaration: 19410;
                                     readonly src: "15626:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -10865,18 +10865,18 @@ export declare const FixedPointMath: {
                                 };
                             };
                             readonly falseExpression: {
-                                readonly id: 19371;
+                                readonly id: 19419;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19360;
+                                readonly referencedDeclaration: 19408;
                                 readonly src: "15634:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19372;
+                            readonly id: 19420;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -10884,11 +10884,11 @@ export declare const FixedPointMath: {
                             readonly nodeType: "Conditional";
                             readonly src: "15622:13:124";
                             readonly trueExpression: {
-                                readonly id: 19370;
+                                readonly id: 19418;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19362;
+                                readonly referencedDeclaration: 19410;
                                 readonly src: "15630:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -10900,14 +10900,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 19366;
-                        readonly id: 19373;
+                        readonly functionReturnParameters: 19414;
+                        readonly id: 19421;
                         readonly nodeType: "Return";
                         readonly src: "15615:20:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 19358;
+                    readonly id: 19406;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "15374:162:124";
                     readonly text: "@dev Calculates the minimum of two values.\n @param a The first value.\n @param b The second value.\n @return The minimum of the two values.";
@@ -10918,16 +10918,16 @@ export declare const FixedPointMath: {
                 readonly name: "min";
                 readonly nameLocation: "15550:3:124";
                 readonly parameters: {
-                    readonly id: 19363;
+                    readonly id: 19411;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19360;
+                        readonly id: 19408;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "15561:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19375;
+                        readonly scope: 19423;
                         readonly src: "15554:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10936,7 +10936,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19359;
+                            readonly id: 19407;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15554:6:124";
@@ -10948,12 +10948,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19362;
+                        readonly id: 19410;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "15571:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19375;
+                        readonly scope: 19423;
                         readonly src: "15564:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10962,7 +10962,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19361;
+                            readonly id: 19409;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15564:6:124";
@@ -10976,16 +10976,16 @@ export declare const FixedPointMath: {
                     readonly src: "15553:20:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19366;
+                    readonly id: 19414;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19365;
+                        readonly id: 19413;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19375;
+                        readonly scope: 19423;
                         readonly src: "15597:6:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10994,7 +10994,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19364;
+                            readonly id: 19412;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15597:6:124";
@@ -11007,17 +11007,17 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "15596:8:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 19393;
+                readonly id: 19441;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15815:101:124";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 19392;
+                    readonly id: 19440;
                     readonly nodeType: "Block";
                     readonly src: "15879:37:124";
                     readonly nodes: readonly [];
@@ -11028,17 +11028,17 @@ export declare const FixedPointMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
-                                readonly id: 19387;
+                                readonly id: 19435;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 19385;
+                                    readonly id: 19433;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19378;
+                                    readonly referencedDeclaration: 19426;
                                     readonly src: "15896:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -11048,11 +11048,11 @@ export declare const FixedPointMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: ">";
                                 readonly rightExpression: {
-                                    readonly id: 19386;
+                                    readonly id: 19434;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 19380;
+                                    readonly referencedDeclaration: 19428;
                                     readonly src: "15900:1:124";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -11066,18 +11066,18 @@ export declare const FixedPointMath: {
                                 };
                             };
                             readonly falseExpression: {
-                                readonly id: 19389;
+                                readonly id: 19437;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19380;
+                                readonly referencedDeclaration: 19428;
                                 readonly src: "15908:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 19390;
+                            readonly id: 19438;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -11085,11 +11085,11 @@ export declare const FixedPointMath: {
                             readonly nodeType: "Conditional";
                             readonly src: "15896:13:124";
                             readonly trueExpression: {
-                                readonly id: 19388;
+                                readonly id: 19436;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 19378;
+                                readonly referencedDeclaration: 19426;
                                 readonly src: "15904:1:124";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -11101,14 +11101,14 @@ export declare const FixedPointMath: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 19384;
-                        readonly id: 19391;
+                        readonly functionReturnParameters: 19432;
+                        readonly id: 19439;
                         readonly nodeType: "Return";
                         readonly src: "15889:20:124";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 19376;
+                    readonly id: 19424;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "15648:162:124";
                     readonly text: "@dev Calculates the maximum of two values.\n @param a The first value.\n @param b The second value.\n @return The maximum of the two values.";
@@ -11119,16 +11119,16 @@ export declare const FixedPointMath: {
                 readonly name: "max";
                 readonly nameLocation: "15824:3:124";
                 readonly parameters: {
-                    readonly id: 19381;
+                    readonly id: 19429;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19378;
+                        readonly id: 19426;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "15835:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19393;
+                        readonly scope: 19441;
                         readonly src: "15828:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11137,7 +11137,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19377;
+                            readonly id: 19425;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15828:6:124";
@@ -11149,12 +11149,12 @@ export declare const FixedPointMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 19380;
+                        readonly id: 19428;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "15845:1:124";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19393;
+                        readonly scope: 19441;
                         readonly src: "15838:8:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11163,7 +11163,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19379;
+                            readonly id: 19427;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15838:6:124";
@@ -11177,16 +11177,16 @@ export declare const FixedPointMath: {
                     readonly src: "15827:20:124";
                 };
                 readonly returnParameters: {
-                    readonly id: 19384;
+                    readonly id: 19432;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 19383;
+                        readonly id: 19431;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 19393;
+                        readonly scope: 19441;
                         readonly src: "15871:6:124";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11195,7 +11195,7 @@ export declare const FixedPointMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 19382;
+                            readonly id: 19430;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15871:6:124";
@@ -11208,7 +11208,7 @@ export declare const FixedPointMath: {
                     }];
                     readonly src: "15870:8:124";
                 };
-                readonly scope: 19394;
+                readonly scope: 19442;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -11219,16 +11219,16 @@ export declare const FixedPointMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly documentation: {
-                readonly id: 18629;
+                readonly id: 18677;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "200:307:124";
                 readonly text: "@author DELV\n @title FixedPointMath\n @notice A fixed-point math library.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [19394];
+            readonly linearizedBaseContracts: readonly [19442];
             readonly name: "FixedPointMath";
             readonly nameLocation: "515:14:124";
-            readonly scope: 19395;
+            readonly scope: 19443;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

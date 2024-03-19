@@ -1,22 +1,22 @@
 export declare const MockSafeCast: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToUint128";
-        readonly type: "error";
-    }, {
+        readonly type: "function";
+        readonly name: "toUint128";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "toUint128";
         readonly outputs: readonly [{
-            readonly internalType: "uint128";
             readonly name: "y";
             readonly type: "uint128";
+            readonly internalType: "uint128";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToUint128";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b5060e78061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063809fdd3314602d575b600080fd5b603c60383660046099565b6061565b6040516fffffffffffffffffffffffffffffffff909116815260200160405180910390f35b6000606a826070565b92915050565b6000600160801b8210609557604051630f0af95160e11b815260040160405180910390fd5b5090565b60006020828403121560aa57600080fd5b503591905056fea26469706673582212207dc0b2fb9eeb2d37cf13814761a2c84276770fb769d9d562ae2614283e3afc8064736f6c63430008140033";
@@ -148,59 +148,59 @@ export declare const MockSafeCast: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockSafeCast.sol";
-        readonly id: 27332;
+        readonly id: 27380;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11028];
-            readonly MockSafeCast: readonly [27331];
-            readonly SafeCast: readonly [22265];
+            readonly IHyperdrive: readonly [11076];
+            readonly MockSafeCast: readonly [27379];
+            readonly SafeCast: readonly [22313];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:204:143";
         readonly nodes: readonly [{
-            readonly id: 27314;
+            readonly id: 27362;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:24:143";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".18"];
         }, {
-            readonly id: 27315;
+            readonly id: 27363;
             readonly nodeType: "ImportDirective";
             readonly src: "65:39:143";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/SafeCast.sol";
             readonly file: "../src/libraries/SafeCast.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 27332;
-            readonly sourceUnit: 22266;
+            readonly scope: 27380;
+            readonly sourceUnit: 22314;
             readonly symbolAliases: readonly [];
             readonly unitAlias: "";
         }, {
-            readonly id: 27331;
+            readonly id: 27379;
             readonly nodeType: "ContractDefinition";
             readonly src: "106:136:143";
             readonly nodes: readonly [{
-                readonly id: 27330;
+                readonly id: 27378;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "134:106:143";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27329;
+                    readonly id: 27377;
                     readonly nodeType: "Block";
                     readonly src: "198:42:143";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 27327;
+                            readonly id: 27375;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 27322;
+                                readonly id: 27370;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27320;
+                                readonly referencedDeclaration: 27368;
                                 readonly src: "208:1:143";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
@@ -211,11 +211,11 @@ export declare const MockSafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 27325;
+                                    readonly id: 27373;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 27317;
+                                    readonly referencedDeclaration: 27365;
                                     readonly src: "231:1:143";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -228,18 +228,18 @@ export declare const MockSafeCast: {
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 27323;
+                                        readonly id: 27371;
                                         readonly name: "SafeCast";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22265;
+                                        readonly referencedDeclaration: 22313;
                                         readonly src: "212:8:143";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_SafeCast_$22265_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_SafeCast_$22313_$";
                                             readonly typeString: "type(library SafeCast)";
                                         };
                                     };
-                                    readonly id: 27324;
+                                    readonly id: 27372;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -247,14 +247,14 @@ export declare const MockSafeCast: {
                                     readonly memberLocation: "221:9:143";
                                     readonly memberName: "toUint128";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 22151;
+                                    readonly referencedDeclaration: 22199;
                                     readonly src: "212:18:143";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$";
                                         readonly typeString: "function (uint256) pure returns (uint128)";
                                     };
                                 };
-                                readonly id: 27326;
+                                readonly id: 27374;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -276,7 +276,7 @@ export declare const MockSafeCast: {
                                 readonly typeString: "uint128";
                             };
                         };
-                        readonly id: 27328;
+                        readonly id: 27376;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "208:25:143";
                     }];
@@ -288,16 +288,16 @@ export declare const MockSafeCast: {
                 readonly name: "toUint128";
                 readonly nameLocation: "143:9:143";
                 readonly parameters: {
-                    readonly id: 27318;
+                    readonly id: 27366;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27317;
+                        readonly id: 27365;
                         readonly mutability: "mutable";
                         readonly name: "x";
                         readonly nameLocation: "161:1:143";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27330;
+                        readonly scope: 27378;
                         readonly src: "153:9:143";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -306,7 +306,7 @@ export declare const MockSafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27316;
+                            readonly id: 27364;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "153:7:143";
@@ -320,16 +320,16 @@ export declare const MockSafeCast: {
                     readonly src: "152:11:143";
                 };
                 readonly returnParameters: {
-                    readonly id: 27321;
+                    readonly id: 27369;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27320;
+                        readonly id: 27368;
                         readonly mutability: "mutable";
                         readonly name: "y";
                         readonly nameLocation: "195:1:143";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27330;
+                        readonly scope: 27378;
                         readonly src: "187:9:143";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -338,7 +338,7 @@ export declare const MockSafeCast: {
                             readonly typeString: "uint128";
                         };
                         readonly typeName: {
-                            readonly id: 27319;
+                            readonly id: 27367;
                             readonly name: "uint128";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "187:7:143";
@@ -351,7 +351,7 @@ export declare const MockSafeCast: {
                     }];
                     readonly src: "186:11:143";
                 };
-                readonly scope: 27331;
+                readonly scope: 27379;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -362,11 +362,11 @@ export declare const MockSafeCast: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [27331];
+            readonly linearizedBaseContracts: readonly [27379];
             readonly name: "MockSafeCast";
             readonly nameLocation: "115:12:143";
-            readonly scope: 27332;
-            readonly usedErrors: readonly [10985];
+            readonly scope: 27380;
+            readonly usedErrors: readonly [11033];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

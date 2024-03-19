@@ -1,40 +1,40 @@
 export declare const Lib: {
     readonly abi: readonly [{
-        readonly inputs: readonly [{
-            readonly internalType: "bytes";
-            readonly name: "b1";
-            readonly type: "bytes";
-        }, {
-            readonly internalType: "bytes";
-            readonly name: "b2";
-            readonly type: "bytes";
-        }];
+        readonly type: "function";
         readonly name: "eq";
-        readonly outputs: readonly [{
-            readonly internalType: "bool";
-            readonly name: "";
-            readonly type: "bool";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "b1";
             readonly type: "bytes";
-        }, {
             readonly internalType: "bytes";
+        }, {
             readonly name: "b2";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
-        readonly name: "neq";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "pure";
+    }, {
         readonly type: "function";
+        readonly name: "neq";
+        readonly inputs: readonly [{
+            readonly name: "b1";
+            readonly type: "bytes";
+            readonly internalType: "bytes";
+        }, {
+            readonly name: "b2";
+            readonly type: "bytes";
+            readonly internalType: "bytes";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "pure";
     }];
     readonly bytecode: {
         readonly object: "0x61029e61003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100405760003560e01c8063cdb1684014610045578063d37a20ba1461006c575b600080fd5b6100586100533660046101d5565b61007f565b604051901515815260200160405180910390f35b61005861007a3660046101d5565b6100d8565b6000816040516020016100929190610239565b60405160208183030381529060405280519060200120836040516020016100b99190610239565b6040516020818303038152906040528051906020012014905092915050565b6000816040516020016100eb9190610239565b60405160208183030381529060405280519060200120836040516020016101129190610239565b604051602081830303815290604052805190602001201415905092915050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261015957600080fd5b813567ffffffffffffffff8082111561017457610174610132565b604051601f8301601f19908116603f0116810190828211818310171561019c5761019c610132565b816040528381528660208588010111156101b557600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080604083850312156101e857600080fd5b823567ffffffffffffffff8082111561020057600080fd5b61020c86838701610148565b9350602085013591508082111561022257600080fd5b5061022f85828601610148565b9150509250929050565b6000825160005b8181101561025a5760208186018101518583015201610240565b50600092019182525091905056fea2646970667358221220d333ef02d5eecddba074fc17f5144964088c0d18c8f6c7c51de77771642d720b64736f6c63430008140033";
@@ -148,10 +148,10 @@ export declare const Lib: {
         readonly id: 161928;
         readonly exportedSymbols: {
             readonly Lib: readonly [161927];
-            readonly Vm: readonly [41134];
-            readonly VmSafe: readonly [40662];
-            readonly console2: readonly [57323];
-            readonly stdMath: readonly [36002];
+            readonly Vm: readonly [41182];
+            readonly VmSafe: readonly [40710];
+            readonly console2: readonly [57371];
+            readonly stdMath: readonly [36050];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:7753:234";
@@ -170,14 +170,14 @@ export declare const Lib: {
             readonly file: "forge-std/console2.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 161928;
-            readonly sourceUnit: 57324;
+            readonly sourceUnit: 57372;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 161328;
                     readonly name: "console2";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 57323;
+                    readonly referencedDeclaration: 57371;
                     readonly src: "73:8:234";
                     readonly typeDescriptions: {};
                 };
@@ -193,14 +193,14 @@ export declare const Lib: {
             readonly file: "forge-std/StdMath.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 161928;
-            readonly sourceUnit: 36003;
+            readonly sourceUnit: 36051;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 161330;
                     readonly name: "stdMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 36002;
+                    readonly referencedDeclaration: 36050;
                     readonly src: "124:7:234";
                     readonly typeDescriptions: {};
                 };
@@ -216,14 +216,14 @@ export declare const Lib: {
             readonly file: "forge-std/Vm.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 161928;
-            readonly sourceUnit: 41135;
+            readonly sourceUnit: 41183;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 161332;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 41134;
+                    readonly referencedDeclaration: 41182;
                     readonly src: "173:2:234";
                     readonly typeDescriptions: {};
                 };
@@ -234,7 +234,7 @@ export declare const Lib: {
                     readonly name: "VmSafe";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40662;
+                    readonly referencedDeclaration: 40710;
                     readonly src: "177:6:234";
                     readonly typeDescriptions: {};
                 };
@@ -318,7 +318,7 @@ export declare const Lib: {
                                 readonly referencedDeclaration: 161346;
                                 readonly src: "695:12:234";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                    readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                     readonly typeString: "struct VmSafe.Log memory[] memory";
                                 };
                             };
@@ -334,7 +334,7 @@ export declare const Lib: {
                                         readonly referencedDeclaration: 161339;
                                         readonly src: "727:4:234";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                             readonly typeString: "struct VmSafe.Log memory[] memory";
                                         };
                                     };
@@ -365,7 +365,7 @@ export declare const Lib: {
                                     readonly nodeType: "NewExpression";
                                     readonly src: "710:16:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr_$";
                                         readonly typeString: "function (uint256) pure returns (struct VmSafe.Log memory[] memory)";
                                     };
                                     readonly typeName: {
@@ -377,13 +377,13 @@ export declare const Lib: {
                                                 readonly name: "VmSafe.Log";
                                                 readonly nameLocations: readonly ["714:6:234", "721:3:234"];
                                                 readonly nodeType: "IdentifierPath";
-                                                readonly referencedDeclaration: 39614;
+                                                readonly referencedDeclaration: 39662;
                                                 readonly src: "714:10:234";
                                             };
-                                            readonly referencedDeclaration: 39614;
+                                            readonly referencedDeclaration: 39662;
                                             readonly src: "714:10:234";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_Log_$39614_storage_ptr";
+                                                readonly typeIdentifier: "t_struct$_Log_$39662_storage_ptr";
                                                 readonly typeString: "struct VmSafe.Log";
                                             };
                                         };
@@ -391,7 +391,7 @@ export declare const Lib: {
                                         readonly nodeType: "ArrayTypeName";
                                         readonly src: "714:12:234";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_storage_$dyn_storage_ptr";
+                                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_storage_$dyn_storage_ptr";
                                             readonly typeString: "struct VmSafe.Log[]";
                                         };
                                     };
@@ -408,13 +408,13 @@ export declare const Lib: {
                                 readonly src: "710:29:234";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                    readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                     readonly typeString: "struct VmSafe.Log memory[] memory";
                                 };
                             };
                             readonly src: "695:44:234";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                 readonly typeString: "struct VmSafe.Log memory[] memory";
                             };
                         };
@@ -448,7 +448,7 @@ export declare const Lib: {
                                                     readonly referencedDeclaration: 161339;
                                                     readonly src: "809:4:234";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                                         readonly typeString: "struct VmSafe.Log memory[] memory";
                                                     };
                                                 };
@@ -472,7 +472,7 @@ export declare const Lib: {
                                                 readonly nodeType: "IndexAccess";
                                                 readonly src: "809:7:234";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_Log_$39614_memory_ptr";
+                                                    readonly typeIdentifier: "t_struct$_Log_$39662_memory_ptr";
                                                     readonly typeString: "struct VmSafe.Log memory";
                                                 };
                                             };
@@ -484,7 +484,7 @@ export declare const Lib: {
                                             readonly memberLocation: "817:6:234";
                                             readonly memberName: "topics";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 39609;
+                                            readonly referencedDeclaration: 39657;
                                             readonly src: "809:14:234";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
@@ -562,7 +562,7 @@ export declare const Lib: {
                                                     readonly referencedDeclaration: 161346;
                                                     readonly src: "858:12:234";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                                         readonly typeString: "struct VmSafe.Log memory[] memory";
                                                     };
                                                 };
@@ -601,7 +601,7 @@ export declare const Lib: {
                                                 readonly nodeType: "IndexAccess";
                                                 readonly src: "858:23:234";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_Log_$39614_memory_ptr";
+                                                    readonly typeIdentifier: "t_struct$_Log_$39662_memory_ptr";
                                                     readonly typeString: "struct VmSafe.Log memory";
                                                 };
                                             };
@@ -616,7 +616,7 @@ export declare const Lib: {
                                                     readonly referencedDeclaration: 161339;
                                                     readonly src: "884:4:234";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                                         readonly typeString: "struct VmSafe.Log memory[] memory";
                                                     };
                                                 };
@@ -640,13 +640,13 @@ export declare const Lib: {
                                                 readonly nodeType: "IndexAccess";
                                                 readonly src: "884:7:234";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_Log_$39614_memory_ptr";
+                                                    readonly typeIdentifier: "t_struct$_Log_$39662_memory_ptr";
                                                     readonly typeString: "struct VmSafe.Log memory";
                                                 };
                                             };
                                             readonly src: "858:33:234";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_Log_$39614_memory_ptr";
+                                                readonly typeIdentifier: "t_struct$_Log_$39662_memory_ptr";
                                                 readonly typeString: "struct VmSafe.Log memory";
                                             };
                                         };
@@ -690,7 +690,7 @@ export declare const Lib: {
                                     readonly referencedDeclaration: 161339;
                                     readonly src: "773:4:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                        readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                         readonly typeString: "struct VmSafe.Log memory[] memory";
                                     };
                                 };
@@ -851,7 +851,7 @@ export declare const Lib: {
                             readonly referencedDeclaration: 161346;
                             readonly src: "1045:12:234";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                                 readonly typeString: "struct VmSafe.Log memory[] memory";
                             };
                         };
@@ -887,7 +887,7 @@ export declare const Lib: {
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.Log[]";
                         };
                         readonly typeName: {
@@ -899,13 +899,13 @@ export declare const Lib: {
                                     readonly name: "VmSafe.Log";
                                     readonly nameLocations: readonly ["514:6:234", "521:3:234"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39614;
+                                    readonly referencedDeclaration: 39662;
                                     readonly src: "514:10:234";
                                 };
-                                readonly referencedDeclaration: 39614;
+                                readonly referencedDeclaration: 39662;
                                 readonly src: "514:10:234";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Log_$39614_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Log_$39662_storage_ptr";
                                     readonly typeString: "struct VmSafe.Log";
                                 };
                             };
@@ -913,7 +913,7 @@ export declare const Lib: {
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "514:12:234";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.Log[]";
                             };
                         };
@@ -962,7 +962,7 @@ export declare const Lib: {
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.Log[]";
                         };
                         readonly typeName: {
@@ -974,13 +974,13 @@ export declare const Lib: {
                                     readonly name: "VmSafe.Log";
                                     readonly nameLocations: readonly ["594:6:234", "601:3:234"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39614;
+                                    readonly referencedDeclaration: 39662;
                                     readonly src: "594:10:234";
                                 };
-                                readonly referencedDeclaration: 39614;
+                                readonly referencedDeclaration: 39662;
                                 readonly src: "594:10:234";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Log_$39614_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Log_$39662_storage_ptr";
                                     readonly typeString: "struct VmSafe.Log";
                                 };
                             };
@@ -988,7 +988,7 @@ export declare const Lib: {
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "594:12:234";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39614_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39662_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.Log[]";
                             };
                         };
@@ -4866,10 +4866,10 @@ export declare const Lib: {
                                     readonly name: "console2";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 57323;
+                                    readonly referencedDeclaration: 57371;
                                     readonly src: "5923:8:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                         readonly typeString: "type(library console2)";
                                     };
                                 };
@@ -4881,7 +4881,7 @@ export declare const Lib: {
                                 readonly memberLocation: "5932:3:234";
                                 readonly memberName: "log";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 49984;
+                                readonly referencedDeclaration: 50032;
                                 readonly src: "5923:12:234";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$";
@@ -5075,10 +5075,10 @@ export declare const Lib: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "6138:8:234";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -5090,7 +5090,7 @@ export declare const Lib: {
                                                 readonly memberLocation: "6147:3:234";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 49950;
+                                                readonly referencedDeclaration: 49998;
                                                 readonly src: "6138:12:234";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$";
@@ -5210,10 +5210,10 @@ export declare const Lib: {
                                                     readonly name: "console2";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 57323;
+                                                    readonly referencedDeclaration: 57371;
                                                     readonly src: "6060:8:234";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                                         readonly typeString: "type(library console2)";
                                                     };
                                                 };
@@ -5225,7 +5225,7 @@ export declare const Lib: {
                                                 readonly memberLocation: "6069:3:234";
                                                 readonly memberName: "log";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 50514;
+                                                readonly referencedDeclaration: 50562;
                                                 readonly src: "6060:12:234";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$_t_string_memory_ptr_$returns$__$";
@@ -5424,10 +5424,10 @@ export declare const Lib: {
                                     readonly name: "console2";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 57323;
+                                    readonly referencedDeclaration: 57371;
                                     readonly src: "6206:8:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                         readonly typeString: "type(library console2)";
                                     };
                                 };
@@ -5439,7 +5439,7 @@ export declare const Lib: {
                                 readonly memberLocation: "6215:3:234";
                                 readonly memberName: "log";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 49837;
+                                readonly referencedDeclaration: 49885;
                                 readonly src: "6206:12:234";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$returns$__$";
@@ -5493,10 +5493,10 @@ export declare const Lib: {
                                     readonly name: "console2";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 57323;
+                                    readonly referencedDeclaration: 57371;
                                     readonly src: "6237:8:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57323_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_console2_$57371_$";
                                         readonly typeString: "type(library console2)";
                                     };
                                 };
@@ -5508,7 +5508,7 @@ export declare const Lib: {
                                 readonly memberLocation: "6246:3:234";
                                 readonly memberName: "log";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 49837;
+                                readonly referencedDeclaration: 49885;
                                 readonly src: "6237:12:234";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$returns$__$";
@@ -6719,10 +6719,10 @@ export declare const Lib: {
                                     readonly name: "stdMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36002;
+                                    readonly referencedDeclaration: 36050;
                                     readonly src: "7156:7:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdMath_$36002_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdMath_$36050_$";
                                         readonly typeString: "type(library stdMath)";
                                     };
                                 };
@@ -6734,7 +6734,7 @@ export declare const Lib: {
                                 readonly memberLocation: "7164:5:234";
                                 readonly memberName: "delta";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35913;
+                                readonly referencedDeclaration: 35961;
                                 readonly src: "7156:13:234";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
@@ -7010,10 +7010,10 @@ export declare const Lib: {
                                     readonly name: "stdMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36002;
+                                    readonly referencedDeclaration: 36050;
                                     readonly src: "7365:7:234";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdMath_$36002_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdMath_$36050_$";
                                         readonly typeString: "type(library stdMath)";
                                     };
                                 };
@@ -7025,7 +7025,7 @@ export declare const Lib: {
                                 readonly memberLocation: "7373:5:234";
                                 readonly memberName: "delta";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35949;
+                                readonly referencedDeclaration: 35997;
                                 readonly src: "7365:13:234";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$_t_int256_$returns$_t_uint256_$";

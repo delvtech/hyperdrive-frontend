@@ -1,521 +1,521 @@
 export declare const CombinatorialTest: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ExpectedFail";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "ExpectedSuccess";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "TestFail";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnassignedCatch";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnassignedFail";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "WhaleBalanceExceeded";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "WhaleIsContract";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly name: "log_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "";
-            readonly type: "int256";
-        }];
-        readonly name: "log_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "val";
-            readonly type: "address";
-        }];
-        readonly name: "log_named_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "val";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_named_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "val";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_named_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }];
-        readonly name: "log_named_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "val";
-            readonly type: "string";
-        }];
-        readonly name: "log_named_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "logs";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "IS_TEST";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "assertWithDelta";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_value";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "int256";
             readonly name: "_delta";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_targetValue";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "assertWithDelta";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "createUser";
         readonly inputs: readonly [{
-            readonly internalType: "string";
             readonly name: "name";
             readonly type: "string";
+            readonly internalType: "string";
         }];
-        readonly name: "createUser";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_user";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeArtifacts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string[]";
             readonly name: "excludedArtifacts_";
             readonly type: "string[]";
+            readonly internalType: "string[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeContracts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedContracts_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "failed";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "setUp";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetArtifactSelectors";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "address";
-                readonly name: "addr";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes4[]";
-                readonly name: "selectors";
-                readonly type: "bytes4[]";
-            }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly name: "targetedArtifactSelectors_";
             readonly type: "tuple[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetArtifacts";
-        readonly outputs: readonly [{
-            readonly internalType: "string[]";
-            readonly name: "targetedArtifacts_";
-            readonly type: "string[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetContracts";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "targetedContracts_";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetSelectors";
-        readonly outputs: readonly [{
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly components: readonly [{
-                readonly internalType: "address";
                 readonly name: "addr";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly internalType: "bytes4[]";
                 readonly name: "selectors";
                 readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
             }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetArtifacts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedArtifacts_";
+            readonly type: "string[]";
+            readonly internalType: "string[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetContracts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedContracts_";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetSelectors";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
             readonly name: "targetedSelectors_";
             readonly type: "tuple[]";
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+            readonly components: readonly [{
+                readonly name: "addr";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "selectors";
+                readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
+            }];
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "targetedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "whaleTransfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "whale";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract IERC20";
             readonly name: "token";
             readonly type: "address";
+            readonly internalType: "contract IERC20";
         }, {
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "whaleTransfer";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "whaleTransfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "whale";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract IERC20";
             readonly name: "token";
             readonly type: "address";
+            readonly internalType: "contract IERC20";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "whaleTransfer";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "log";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_address";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_int";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_address";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_string";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_string";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_uint";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "logs";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "ExpectedFail";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "ExpectedSuccess";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "TestFail";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnassignedCatch";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnassignedFail";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "WhaleBalanceExceeded";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "WhaleIsContract";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x6080604081905260078054600160ff199182168117909255600b8054909116909117905563f877cb1960e01b90526020608452600f60a4526e1350525393915517d49410d7d55493608a1b60c452737109709ecfa91a80626ff3989d68f67f5b1dd12d63f877cb1960e4600060405180830381865afa15801562000087573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052620000b1919081019062000215565b602a90620000c0908262000379565b5060405163f877cb1960e01b815260206004820152600e60248201526d11d3d154931257d49410d7d5549360921b6044820152737109709ecfa91a80626ff3989d68f67f5b1dd12d9063f877cb1990606401600060405180830381865afa15801562000130573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526200015a919081019062000215565b602b9062000169908262000379565b50602c805461ff0019166101001790556040805160048152602481019091526020810180516001600160e01b031663761b17af60e11b179052602d90620001b1908262000379565b506040805160048152602481019091526020810180516001600160e01b0316631212173760e01b179052602e90620001ea908262000379565b50348015620001f857600080fd5b5062000445565b634e487b7160e01b600052604160045260246000fd5b600060208083850312156200022957600080fd5b82516001600160401b03808211156200024157600080fd5b818501915085601f8301126200025657600080fd5b8151818111156200026b576200026b620001ff565b604051601f8201601f19908116603f01168101908382118183101715620002965762000296620001ff565b816040528281528886848701011115620002af57600080fd5b600093505b82841015620002d35784840186015181850187015292850192620002b4565b600086848301015280965050505050505092915050565b600181811c90821680620002ff57607f821691505b6020821081036200032057634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156200037457600081815260208120601f850160051c810160208610156200034f5750805b601f850160051c820191505b8181101562000370578281556001016200035b565b5050505b505050565b81516001600160401b03811115620003955762000395620001ff565b620003ad81620003a68454620002ea565b8462000326565b602080601f831160018114620003e55760008415620003cc5750858301515b600019600386901b1c1916600185901b17855562000370565b600085815260208120601f198616915b828110156200041657888601518255948401946001909101908401620003f5565b5085821015620004355787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b611dee80620004556000396000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806366d9a9a011610097578063b5508aa911610066578063b5508aa9146101d2578063ba414fa6146101da578063e20c9f71146101f2578063fa7626d4146101fa57600080fd5b806366d9a9a01461018d57806385226c81146101a2578063916a17c6146101b7578063ab75e7c3146101bf57600080fd5b80633e5e0d26116100d35780633e5e0d261461013f5780633e5e3c23146101525780633f7286f41461015a578063507ffba51461016257600080fd5b80630a9254e4146100fa57806310716760146101045780631ed7831c1461012a575b600080fd5b610102610207565b005b6101176101123660046117b7565b610211565b6040519081526020015b60405180910390f35b610132610294565b6040516101219190611802565b61011761014d36600461184f565b6102f6565b610132610564565b6101326105c4565b6101756101703660046118b8565b610624565b6040516001600160a01b039091168152602001610121565b61019561073c565b6040516101219190611969565b6101aa61082b565b6040516101219190611a6c565b6101956108fb565b6101026101cd366004611ace565b6109e1565b6101aa610ce7565b6101e2610db7565b6040519015158152602001610121565b610132610ee4565b6007546101e29060ff1681565b61020f610f44565b565b6040516370a0823160e01b81526001600160a01b03808516600483015260009161028c91869186918216906370a0823190602401602060405180830381865afa158015610262573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102869190611afa565b856102f6565b949350505050565b606060148054806020026020016040519081016040528092919081815260200182805480156102ec57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116102ce575b5050505050905090565b6040516370a0823160e01b81526001600160a01b03858116600483015260009182918616906370a0823190602401602060405180830381865afa158015610341573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103659190611afa565b9050808411156103885760405163188c93a560e31b815260040160405180910390fd5b7f885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d60001c6001600160a01b03166390c5013b6040518163ffffffff1660e01b8152600401600060405180830381600087803b1580156103e657600080fd5b505af11580156103fa573d6000803e3d6000fd5b50506040516303223eab60e11b81526001600160a01b0389166004820152737109709ecfa91a80626ff3989d68f67f5b1dd12d92506306447d569150602401600060405180830381600087803b15801561045357600080fd5b505af1158015610467573d6000803e3d6000fd5b505060405163c88a5e6d60e01b81526001600160a01b0389166004820152670de0b6b3a76400006024820152737109709ecfa91a80626ff3989d68f67f5b1dd12d925063c88a5e6d9150604401600060405180830381600087803b1580156104ce57600080fd5b505af11580156104e2573d6000803e3d6000fd5b505060405163a9059cbb60e01b81526001600160a01b038681166004830152602482018890528816925063a9059cbb91506044016020604051808303816000875af1158015610535573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105599190611b13565b509295945050505050565b606060168054806020026020016040519081016040528092919081815260200182805480156102ec576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116102ce575050505050905090565b606060158054806020026020016040519081016040528092919081815260200182805480156102ec576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116102ce575050505050905090565b6000816040516020016106379190611b3c565b60408051601f198184030181529082905280516020909101206318caf8e360e31b82529150737109709ecfa91a80626ff3989d68f67f5b1dd12d9063c657c718906106889084908690600401611b4f565b600060405180830381600087803b1580156106a257600080fd5b505af11580156106b6573d6000803e3d6000fd5b505060405163c88a5e6d60e01b81526001600160a01b038416600482015269021e19e0c9bab24000006024820152737109709ecfa91a80626ff3989d68f67f5b1dd12d925063c88a5e6d9150604401600060405180830381600087803b15801561071f57600080fd5b505af1158015610733573d6000803e3d6000fd5b50505050919050565b60606019805480602002602001604051908101604052809291908181526020016000905b828210156108225760008481526020908190206040805180820182526002860290920180546001600160a01b0316835260018101805483518187028101870190945280845293949193858301939283018282801561080a57602002820191906000526020600020906000905b82829054906101000a900460e01b6001600160e01b031916815260200190600401906020826003010492830192600103820291508084116107cc5790505b50505050508152505081526020019060010190610760565b50505050905090565b60606018805480602002602001604051908101604052809291908181526020016000905b8282101561082257838290600052602060002001805461086e90611b73565b80601f016020809104026020016040519081016040528092919081815260200182805461089a90611b73565b80156108e75780601f106108bc576101008083540402835291602001916108e7565b820191906000526020600020905b8154815290600101906020018083116108ca57829003601f168201915b50505050508152602001906001019061084f565b6060601a805480602002602001604051908101604052809291908181526020016000905b828210156108225760008481526020908190206040805180820182526002860290920180546001600160a01b031683526001810180548351818702810187019094528084529394919385830193928301828280156109c957602002820191906000526020600020906000905b82829054906101000a900460e01b6001600160e01b0319168152602001906004019060208260030104928301926001038202915080841161098b5790505b5050505050815250508152602001906001019061091f565b60008212801590610a1657610a1184831015604051806060016040528060368152602001611d836036913961125e565b610a3a565b610a3a828511604051806060016040528060278152602001611cea6027913961125e565b600081610a475784610a51565b610a518486611bc3565b905060008215610a615785610a74565b610a6a85611bdc565b610a749087611bf8565b905080841080610a8357508184115b15610afc57610abe848260405180604001604052806013815260200172195e18d959591cc81b1bddd95c88189bdd5b99606a1b815250611295565b610af4848360405180604001604052806013815260200172195e18d959591cc81d5c1c195c88189bdd5b99606a1b8152506112d1565b505050505050565b8215610beb576000610b0e8786611bf8565b905085811015610bc25760408051808201909152601a81527f507265636973696f6e20696e637265617365642062793a2025730000000000006020820152610b5f90610b5a8389611bf8565b611308565b610b8e6040518060400160405280600d81526020016c4f6c642044656c74613a20257360981b8152508761134d565b610bbd6040518060400160405280600d81526020016c4e65772044656c74613a20257360981b81525082611308565b610be5565b610be58386604051806060016040528060298152602001611d1160299139611392565b50610af4565b6000610bf78588611bf8565b9050610c0286611bdc565b811015610cbb57610c576040518060400160405280601a81526020017f507265636973696f6e20696e637265617365642062793a2025730000000000008152508288610c4d90611bdc565b610b5a9190611bf8565b610c866040518060400160405280600d81526020016c4f6c642044656c74613a20257360981b8152508761134d565b610cb66040518060400160405280600e81526020016d4e65772044656c74613a202d257360901b81525082611308565b610cde565b610cde8286604051806060016040528060298152602001611d3a60299139611392565b50505050505050565b60606017805480602002602001604051908101604052809291908181526020016000905b82821015610822578382906000526020600020018054610d2a90611b73565b80601f0160208091040260200160405190810160405280929190818152602001828054610d5690611b73565b8015610da35780601f10610d7857610100808354040283529160200191610da3565b820191906000526020600020905b815481529060010190602001808311610d8657829003601f168201915b505050505081526020019060010190610d0b565b600754600090610100900460ff1615610dd95750600754610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b15610edf5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091610e67917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc491608001611c0b565b60408051601f1981840301815290829052610e8191611c3c565b6000604051808303816000865af19150503d8060008114610ebe576040519150601f19603f3d011682016040523d82523d6000602084013e610ec3565b606091505b5091505080806020019051810190610edb9190611b13565b9150505b919050565b606060138054806020026020016040519081016040528092919081815260200182805480156102ec576020028201919060005260206000209081546001600160a01b031681526001909101906020018083116102ce575050505050905090565b610f6a60405180604001604052806005815260200164616c69636560d81b815250610624565b601c80546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260038152623137b160e91b6020820152610fad90610624565b601d80546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600681526563656c696e6560d01b6020820152610ff390610624565b601e80546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260038152623230b760e91b602082015261103690610624565b601f80546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600381526265766560e81b602082015261107990610624565b602060006101000a8154816001600160a01b0302191690836001600160a01b031602179055506110c8604051806040016040528060088152602001673232b83637bcb2b960c11b815250610624565b602280546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600681526536b4b73a32b960d11b602082015261110e90610624565b602180546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600c81526b3332b2a1b7b63632b1ba37b960a11b602082015261115a90610624565b602380546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600e81526d39bbb2b2b821b7b63632b1ba37b960911b60208201526111a890610624565b602480546001600160a01b0319166001600160a01b039290921691909117905560408051808201909152600a815269676f7665726e616e636560b01b60208201526111f290610624565b602580546001600160a01b0319166001600160a01b03929092169190911790556040805180820190915260068152653830bab9b2b960d11b602082015261123890610624565b602680546001600160a01b0319166001600160a01b039290921691909117905542602955565b8161129157600080516020611cca833981519152816040516112809190611c58565b60405180910390a1611291826113c8565b5050565b818310156112cc57600080516020611cca833981519152816040516112ba9190611c58565b60405180910390a16112cc838361142d565b505050565b818311156112cc57600080516020611cca833981519152816040516112f69190611c58565b60405180910390a16112cc8383611522565b611291828260405160240161131e929190611c87565b60408051601f198184030181529190526020810180516001600160e01b0316632d839cb360e21b179052611582565b6112918282604051602401611363929190611c87565b60408051601f198184030181529190526020810180516001600160e01b0316631e53134760e11b179052611582565b8183146112cc57600080516020611cca833981519152816040516113b69190611c58565b60405180910390a16112cc838361158b565b8061142a57600080516020611caa83398151915260405161141a9060208082526017908201527f4572726f723a20417373657274696f6e204661696c6564000000000000000000604082015260600190565b60405180910390a161142a611675565b50565b8082101561129157600080516020611caa83398151915260405161148d9060208082526022908201527f4572726f723a2061203e3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b60405180910390a16040805181815260098183015268202056616c7565206160b81b6060820152602081018490529051600080516020611d638339815191529181900360800190a1604080518181526009918101919091526810102b30b63ab2903160b91b606082015260208101829052600080516020611d63833981519152906080015b60405180910390a1611291611675565b8082111561129157600080516020611caa83398151915260405161148d9060208082526022908201527f4572726f723a2061203c3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b61142a81611781565b80821461129157600080516020611caa8339815191526040516115ea9060208082526022908201527f4572726f723a2061203d3d2062206e6f7420736174697366696564205b75696e604082015261745d60f01b606082015260800190565b60405180910390a160408051818152600a81830152690808080808081319599d60b21b6060820152602081018490529051600080516020611d638339815191529181900360800190a160408051818152600a91810191909152690808080808149a59da1d60b21b606082015260208101829052600080516020611d6383398151915290608001611512565b737109709ecfa91a80626ff3989d68f67f5b1dd12d3b156117705760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b9282019290925260016060820152600091907f70ca10bbd0dbfd9020a9f4b13402c16cb120705e0d1c0aeab10fa353ae586fc49060800160408051601f198184030181529082905261170f9291602001611c0b565b60408051601f198184030181529082905261172991611c3c565b6000604051808303816000865af19150503d8060008114611766576040519150601f19603f3d011682016040523d82523d6000602084013e61176b565b606091505b505050505b6007805461ff001916610100179055565b80516a636f6e736f6c652e6c6f67602083016000808483855afa5050505050565b6001600160a01b038116811461142a57600080fd5b6000806000606084860312156117cc57600080fd5b83356117d7816117a2565b925060208401356117e7816117a2565b915060408401356117f7816117a2565b809150509250925092565b6020808252825182820181905260009190848201906040850190845b818110156118435783516001600160a01b03168352928401929184019160010161181e565b50909695505050505050565b6000806000806080858703121561186557600080fd5b8435611870816117a2565b93506020850135611880816117a2565b9250604085013591506060850135611897816117a2565b939692955090935050565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156118ca57600080fd5b813567ffffffffffffffff808211156118e257600080fd5b818401915084601f8301126118f657600080fd5b813581811115611908576119086118a2565b604051601f8201601f19908116603f01168101908382118183101715611930576119306118a2565b8160405282815287602084870101111561194957600080fd5b826020860160208301376000928101602001929092525095945050505050565b60006020808301818452808551808352604092508286019150828160051b8701018488016000805b84811015611a0d57898403603f19018652825180516001600160a01b03168552880151888501889052805188860181905290890190839060608701905b808310156119f85783516001600160e01b0319168252928b019260019290920191908b01906119ce565b50978a01979550505091870191600101611991565b50919998505050505050505050565b60005b83811015611a37578181015183820152602001611a1f565b50506000910152565b60008151808452611a58816020860160208601611a1c565b601f01601f19169290920160200192915050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b82811015611ac157603f19888603018452611aaf858351611a40565b94509285019290850190600101611a93565b5092979650505050505050565b600080600060608486031215611ae357600080fd5b505081359360208301359350604090920135919050565b600060208284031215611b0c57600080fd5b5051919050565b600060208284031215611b2557600080fd5b81518015158114611b3557600080fd5b9392505050565b602081526000611b356020830184611a40565b6001600160a01b038316815260406020820181905260009061028c90830184611a40565b600181811c90821680611b8757607f821691505b602082108103611ba757634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b80820180821115611bd657611bd6611bad565b92915050565b6000600160ff1b8201611bf157611bf1611bad565b5060000390565b81810381811115611bd657611bd6611bad565b6001600160e01b0319831681528151600090611c2e816004850160208701611a1c565b919091016004019392505050565b60008251611c4e818460208701611a1c565b9190910192915050565b60408152600560408201526422b93937b960d91b6060820152608060208201526000611b356080830184611a40565b604081526000611c9a6040830185611a40565b9050826020830152939250505056fe41304facd9323d75b11bcdd609cb38effffdb05710f7caf0e9b16c6d9d709f50280f4446b28a1372417dda658d30b95b2992b12ac9c7f378535f29a97acf35835f74617267657456616c75652073686f756c64206265206c657373207468616e205f76616c75656578706563746564207570706572426f756e6420746f206d61746368205f74617267657456616c75656578706563746564206c6f776572426f756e6420746f206d61746368205f74617267657456616c7565b2de2fbe801a0df6c0cbddfd448ba3c41d48a040ca35c56c8196ef0fcae721a85f74617267657456616c75652073686f756c642062652067726561746572207468616e206f7220657175616c20746f205f76616c7565a26469706673582212203164ec39c47f34c809dff97049391606e6a0c40627efcc3e6316d3680265786b64736f6c63430008140033";
@@ -2362,8 +2362,8 @@ export declare const CombinatorialTest: {
                                         readonly id: 155037;
                                         readonly name: "assertEq";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [30157, 30182, 30195, 30211, 30253, 30295, 30337, 30374, 30411, 30448, 27992, 28017, 28047, 28072, 28131, 28156, 28186, 28211, 29684, 29719];
-                                        readonly referencedDeclaration: 30211;
+                                        readonly overloadedDeclarations: readonly [30205, 30230, 30243, 30259, 30301, 30343, 30385, 30422, 30459, 30496, 28040, 28065, 28095, 28120, 28179, 28204, 28234, 28259, 29732, 29767];
+                                        readonly referencedDeclaration: 30259;
                                         readonly src: "2096:8:231";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_string_memory_ptr_$returns$__$";
@@ -2506,8 +2506,8 @@ export declare const CombinatorialTest: {
                                         readonly id: 155047;
                                         readonly name: "assertEq";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [30157, 30182, 30195, 30211, 30253, 30295, 30337, 30374, 30411, 30448, 27992, 28017, 28047, 28072, 28131, 28156, 28186, 28211, 29684, 29719];
-                                        readonly referencedDeclaration: 30211;
+                                        readonly overloadedDeclarations: readonly [30205, 30230, 30243, 30259, 30301, 30343, 30385, 30422, 30459, 30496, 28040, 28065, 28095, 28120, 28179, 28204, 28234, 28259, 29732, 29767];
+                                        readonly referencedDeclaration: 30259;
                                         readonly src: "2282:8:231";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_string_memory_ptr_$returns$__$";
@@ -2653,7 +2653,7 @@ export declare const CombinatorialTest: {
                                                 readonly name: "checkEq0";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 29846;
+                                                readonly referencedDeclaration: 29894;
                                                 readonly src: "1470:8:231";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_bool_$";
@@ -2707,8 +2707,8 @@ export declare const CombinatorialTest: {
                                         readonly id: 155005;
                                         readonly name: "assertTrue";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [27941, 27962];
-                                        readonly referencedDeclaration: 27962;
+                                        readonly overloadedDeclarations: readonly [27989, 28010];
+                                        readonly referencedDeclaration: 28010;
                                         readonly src: "1441:10:231";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_bool_$_t_string_memory_ptr_$returns$__$";
@@ -2871,8 +2871,8 @@ export declare const CombinatorialTest: {
                                                 readonly id: 155023;
                                                 readonly name: "assertEq";
                                                 readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [30157, 30182, 30195, 30211, 30253, 30295, 30337, 30374, 30411, 30448, 27992, 28017, 28047, 28072, 28131, 28156, 28186, 28211, 29684, 29719];
-                                                readonly referencedDeclaration: 30211;
+                                                readonly overloadedDeclarations: readonly [30205, 30230, 30243, 30259, 30301, 30343, 30385, 30422, 30459, 30496, 28040, 28065, 28095, 28120, 28179, 28204, 28234, 28259, 29732, 29767];
+                                                readonly referencedDeclaration: 30259;
                                                 readonly src: "1843:8:231";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_string_memory_ptr_$returns$__$";
@@ -18693,14 +18693,14 @@ export declare const CombinatorialTest: {
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
             readonly internalFunctionIDs: {
-                readonly "49252": 1;
+                readonly "49300": 1;
             };
-            readonly linearizedBaseContracts: readonly [156405, 154917, 39597, 39546, 35284, 34994, 34230, 32176, 31456, 29963, 30029, 30026];
+            readonly linearizedBaseContracts: readonly [156405, 154917, 39645, 39594, 35332, 35042, 34278, 32224, 31504, 30011, 30077, 30074];
             readonly name: "CombinatorialTest";
             readonly nameLocation: "157:17:231";
             readonly scope: 156406;
             readonly usedErrors: readonly [154395, 154397, 154935, 154937, 154939, 154941, 154943];
-            readonly usedEvents: readonly [27677, 27681, 27685, 27689, 27693, 27697, 27701, 27705, 27711, 27717, 27725, 27733, 27739, 27745, 27751, 27757, 30051, 30056, 30061, 30068, 30075, 30082];
+            readonly usedEvents: readonly [27725, 27729, 27733, 27737, 27741, 27745, 27749, 27753, 27759, 27765, 27773, 27781, 27787, 27793, 27799, 27805, 30099, 30104, 30109, 30116, 30123, 30130];
         }];
         readonly license: "Apache-2.0";
     };
