@@ -77,7 +77,7 @@ export function LpTab({
                   return (
                     <NonIdealState
                       heading="You have no open LP positions"
-                      text="Add liquidity, switch wallets, or view your closed LP positions."
+                      text="Add liquidity, switch wallets, or view your closed LP positions"
                     />
                   );
                 }
