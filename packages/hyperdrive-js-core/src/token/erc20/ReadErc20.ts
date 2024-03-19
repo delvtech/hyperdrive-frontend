@@ -65,4 +65,11 @@ export class ReadErc20 extends ReadModel implements ReadToken {
   }): Promise<bigint> {
     return this.contract.read("balanceOf", { account }, options);
   }
+
+  /**
+   * Get the total supply of the token.
+   */
+  getTotalSupply(options?: ContractReadOptions): Promise<bigint> {
+    return this.contract.read("totalSupply", {}, options);
+  }
 }
