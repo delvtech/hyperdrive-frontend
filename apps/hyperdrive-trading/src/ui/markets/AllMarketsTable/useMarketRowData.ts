@@ -1,4 +1,4 @@
-import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
   HyperdriveConfig,
@@ -40,7 +40,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
           Promise.all(
             appConfig.hyperdrives.map(
               async (hyperdrive): Promise<MarketTableRowData> => {
-                const readHyperdrive = createReadHyperdrive({
+                const readHyperdrive = new ReadHyperdrive({
                   address: hyperdrive.address,
                   publicClient,
                   cache: sdkCache,
