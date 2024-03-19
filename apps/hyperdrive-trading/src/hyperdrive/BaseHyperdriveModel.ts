@@ -3,7 +3,6 @@ import {
   ContractReadOptions,
   ContractWriteOptions,
   ReadWriteHyperdrive,
-  createReadWriteHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import {
   AppConfig,
@@ -282,7 +281,7 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     });
     this.publicClient = publicClient;
     this.walletClient = walletClient;
-    this.readWriteHyperdrive = createReadWriteHyperdrive({
+    this.readWriteHyperdrive = new ReadWriteHyperdrive({
       address: hyperdriveAddress,
       publicClient: this.publicClient,
       walletClient: this.walletClient,

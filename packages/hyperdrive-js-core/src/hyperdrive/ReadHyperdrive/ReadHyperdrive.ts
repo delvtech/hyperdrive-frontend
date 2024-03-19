@@ -3,13 +3,12 @@ import {
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
-  Network,
   BlockTag,
+  CachedReadContract,
 } from "@delvtech/evm-client";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
-import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { ReturnType } from "src/base/ReturnType";
@@ -25,26 +24,30 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import * as dnum from "dnum";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
-import { getBlockOrThrow } from "src/network/getBlockOrThrow";
+import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
+import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
+import { ReadToken } from "src/token/ReadToken";
+import { ReadEth } from "src/token/eth/ReadEth";
+import { ReadErc20 } from "src/token/erc20/ReadErc20";
 
-const HyperdriveABI = IHyperdrive.abi;
+export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
-export interface ReadHyperdriveOptions {
-  contract: IReadHyperdriveContract;
-  network: Network;
-}
+export interface IReadHyperdrive extends ReadModel {
+  /**
+   * Returns the base token of the pool.
+   */
+  getBaseToken(options?: ContractReadOptions): Promise<ReadToken>;
 
-export interface IReadHyperdrive {
   /**
    * Gets the pool's configuration parameters
    */
@@ -282,8 +285,11 @@ export interface IReadHyperdrive {
   previewOpenLong(args: {
     amountIn: bigint;
     asBase: boolean;
+    /**
+     * @deprecated
+     */
     // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals: number;
+    decimals?: number;
     options?: ContractReadOptions;
   }): Promise<{
     maturityTime: bigint;
@@ -356,8 +362,8 @@ export interface IReadHyperdrive {
 
   getLongEvents(
     options?:
-      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
-      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+      | ContractGetEventsOptions<HyperdriveAbi, "OpenLong">
+      | ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -370,8 +376,8 @@ export interface IReadHyperdrive {
   >;
   getShortEvents(
     options?:
-      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
-      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+      | ContractGetEventsOptions<HyperdriveAbi, "OpenShort">
+      | ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -393,17 +399,51 @@ export interface IReadHyperdrive {
   >;
 }
 
-export class ReadHyperdrive implements IReadHyperdrive {
-  protected readonly contract: IReadHyperdriveContract;
-  protected readonly network: Network;
+export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
+  readonly contract: CachedReadContract<HyperdriveAbi>;
 
   /**
    * @hidden
    */
-  constructor({ contract, network }: ReadHyperdriveOptions) {
-    this.contract = contract;
-    this.network = network;
+  constructor({
+    name = "Hyperdrive",
+    address,
+    contractFactory,
+    network,
+    cache,
+    namespace,
+  }: ReadHyperdriveOptions) {
+    super({ contractFactory, name, network });
+    this.contract = contractFactory({
+      abi: hyperdriveAbi,
+      address,
+      cache,
+      namespace,
+    });
   }
+
+  /**
+   * @remarks The base Hyperdrive class supports ERC20 and ETH base
+   * tokens. If the address returned by the contract is not the ETH address, it
+   * is assumed to be an ERC20 token.
+   */
+  async getBaseToken(
+    options?: ContractReadOptions,
+  ): Promise<ReadErc20 | ReadEth> {
+    const address = await this.contract.read("baseToken", {}, options);
+    return address === ReadEth.address
+      ? new ReadEth({
+          contractFactory: this.contractFactory,
+          network: this.network,
+        })
+      : new ReadErc20({
+          address,
+          contractFactory: this.contractFactory,
+          namespace: this.contract.namespace,
+          network: this.network,
+        });
+  }
+
   getDecimals(options?: ContractReadOptions | undefined): Promise<number> {
     return this.contract.read("decimals", {}, options);
   }
@@ -590,21 +630,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   private async getOpenLongEvents(
-    options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
-  ): Promise<Event<typeof HyperdriveABI, "OpenLong">[]> {
+    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenLong">,
+  ): Promise<Event<HyperdriveAbi, "OpenLong">[]> {
     return this.contract.getEvents("OpenLong", options);
   }
 
   private async getOpenShortEvents(
-    options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
-  ): Promise<Event<typeof HyperdriveABI, "OpenShort">[]> {
+    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenShort">,
+  ): Promise<Event<HyperdriveAbi, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
   }
 
   async getLongEvents(
     options?:
-      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
-      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+      | ContractGetEventsOptions<HyperdriveAbi, "OpenLong">
+      | ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
   ): ReturnType<IReadHyperdrive, "getLongEvents"> {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
@@ -624,8 +664,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   async getShortEvents(
     options?:
-      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
-      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+      | ContractGetEventsOptions<HyperdriveAbi, "OpenShort">
+      | ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
   ): ReturnType<IReadHyperdrive, "getShortEvents"> {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
     const closeShortEvents = await this.contract.getEvents(
@@ -696,7 +736,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     filter,
     fromBlock,
     toBlock,
-  }: ContractGetEventsOptions<typeof HyperdriveABI, "TransferSingle">) {
+  }: ContractGetEventsOptions<HyperdriveAbi, "TransferSingle">) {
     return this.contract.getEvents("TransferSingle", {
       filter,
       fromBlock,
@@ -1359,8 +1399,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenLong({
     amountIn,
     asBase,
-    // TODO: Remove in favor of this.getDecimals();
-    decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
     IReadHyperdrive,
@@ -1377,6 +1415,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
+
+    const decimals = await this.getDecimals();
 
     // calcOpenLong only accepts base, so if the user is depositing shares we
     // need to convert that value to base before we can preview the trade for them

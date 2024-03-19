@@ -1,7 +1,4 @@
-import {
-  ReadWriteHyperdrive,
-  createReadWriteHyperdrive,
-} from "@delvtech/hyperdrive-viem";
+import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
 import { useMemo } from "react";
 import { sdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
@@ -19,7 +16,7 @@ export function useReadWriteHyperdrive(
       return undefined;
     }
 
-    return createReadWriteHyperdrive({
+    return new ReadWriteHyperdrive({
       address,
       publicClient,
       walletClient,
