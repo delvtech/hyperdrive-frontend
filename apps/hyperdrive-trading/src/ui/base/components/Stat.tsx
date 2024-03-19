@@ -5,17 +5,23 @@ interface StatProps {
   label: string;
   value: ReactNode;
   description?: string;
+  tooltipPosition?: "top" | "bottom" | "left" | "right";
 }
 
-export function Stat({ label, value, description }: StatProps): ReactElement {
+export function Stat({
+  label,
+  value,
+  description,
+  tooltipPosition = "bottom",
+}: StatProps): ReactElement {
   return (
-    <div
-      data-tip={description}
-      className="group daisy-tooltip flex cursor-help flex-col items-start whitespace-pre-wrap transition duration-150 ease-in-out before:text-start"
-    >
+    <div className="flex flex-col items-start whitespace-pre-wrap ease-in-out">
       <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
       {description ? (
-        <p className="text-sm text-neutral-content">
+        <p
+          data-tip={description}
+          className={`group daisy-tooltip cursor-help text-sm text-neutral-content before:text-start daisy-tooltip-${tooltipPosition}`}
+        >
           {label}
           <InformationCircleIcon className="group-hover:text-gray-500 ml-1 inline-block w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100" />
         </p>
