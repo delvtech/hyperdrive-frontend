@@ -46,7 +46,8 @@ export function MarketStats({
         value={
           <div className="flex flex-row">{vaultRate?.formatted || 0}%</div>
         }
-        description={`The yield source backing the hy${baseToken.symbol} in this pool`}
+        description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
+        tooltipPosition="right"
       />
       <Stat
         label="Fixed APR"
@@ -59,7 +60,7 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description="Fixed rate earned from opening longs, before fees and slippage are applied"
+        description="Fixed rate earned from opening longs, before fees and slippage are applied."
       />
       <Stat
         label="LP APY (12 Hour)"
@@ -77,7 +78,7 @@ export function MarketStats({
       <Stat
         description={`The amount of hy${
           baseToken.symbol
-        } (either longs or shorts) that have been traded in the last 24 hours \n\nLong volume: ${formatBalance(
+        } (either longs or shorts) that have been traded in the last 24 hours.\n\nLong volume: ${formatBalance(
           {
             balance: longVolume || 0n,
             decimals: baseToken.decimals,
@@ -112,6 +113,7 @@ export function MarketStats({
             })}
           />
         }
+        tooltipPosition="left"
       />
     </div>
   );
