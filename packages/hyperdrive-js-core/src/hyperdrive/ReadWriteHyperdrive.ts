@@ -17,7 +17,7 @@ import { Constructor } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { HyperdriveAbi } from "src/hyperdrive/abi";
 import { isReadWriteContract } from "src/evm-client/utils/isReadWriteContract";
-import { ExpectedWriteContractError } from "src/errors/ExpectedReadWriteContractError";
+import { ExpectedWriteContractError } from "src/evm-client/errors/ExpectedReadWriteContractError";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 

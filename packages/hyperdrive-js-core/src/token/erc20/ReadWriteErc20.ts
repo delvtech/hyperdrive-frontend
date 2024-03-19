@@ -8,7 +8,7 @@ import { Erc20Abi } from "src/token/erc20/abi";
 import { Constructor } from "src/base/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
-import { ExpectedWriteContractError } from "src/errors/ExpectedReadWriteContractError";
+import { ExpectedWriteContractError } from "src/evm-client/errors/ExpectedReadWriteContractError";
 import { isReadWriteContract } from "src/evm-client/utils/isReadWriteContract";
 
 export interface IReadWriteErc20 extends ReadErc20 {
