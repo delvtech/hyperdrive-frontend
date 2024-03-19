@@ -25,7 +25,7 @@ export function useLiquidity({
     queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const liquidity = await readHyperdrive.getLiquidity({ decimals });
+          const liquidity = await readHyperdrive.getLiquidity();
           return {
             liquidity: liquidity,
             formatted: dnum.format([liquidity, decimals], { digits: 0 }),
