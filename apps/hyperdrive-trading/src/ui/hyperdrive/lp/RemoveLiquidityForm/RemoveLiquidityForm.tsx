@@ -5,7 +5,7 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useState } from "react";
 import toast from "react-hot-toast";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
@@ -101,7 +101,9 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
   });
-
+  const [transactionStatus, setTransactionStatus] = useState<
+    "loading" | "success" | ""
+  >("");
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn: lpSharesIn,
@@ -113,6 +115,8 @@ export function RemoveLiquidityForm({
       activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
+      // (window as any)["withdrawalLpModal"].close();
+      setTransactionStatus("success");
       toast.success(
         <CustomToastMessage
           message="Liquidity removed"
@@ -176,6 +180,7 @@ export function RemoveLiquidityForm({
               }}
             />
           }
+          disabled={transactionStatus === "loading"}
           value={amount ?? ""}
           maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
           stat={
@@ -224,26 +229,38 @@ export function RemoveLiquidityForm({
           </p>
         </>
       }
-      actionButton={
-        account ? (
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectButton />;
+        }
+
+        if (transactionStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              Removing liquidity
+              <div className="daisy-loading daisy-loading-spinner" />
+            </button>
+          );
+        }
+
+        return (
           <button
-            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={
-              !hasEnoughBalance ||
-              !removeLiquidity ||
-              removeLiquidityStatus === "loading"
-            }
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
+            disabled={!hasEnoughBalance || !removeLiquidity}
             onClick={(e) => {
+              e.preventDefault();
+              setTransactionStatus("loading");
               removeLiquidity?.();
               onRemoveLiquidity?.(e);
             }}
           >
-            Remove liquidity
+            Remove Liquidity
           </button>
-        ) : (
-          <ConnectButton />
-        )
-      }
+        );
+      })()}
     />
   );
 }
