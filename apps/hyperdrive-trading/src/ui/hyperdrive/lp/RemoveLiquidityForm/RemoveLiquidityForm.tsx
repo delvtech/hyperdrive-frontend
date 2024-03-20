@@ -2,6 +2,7 @@ import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
@@ -47,11 +48,16 @@ export function RemoveLiquidityForm({
     tokens: appConfig.tokens,
   });
 
+  const tokens: TokenConfig<any>[] = [sharesToken];
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    // base token should be listed first if it's enabled
+    tokens.unshift(baseToken);
+  }
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: [baseToken, sharesToken],
+    items: tokens,
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? baseToken.address

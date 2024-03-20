@@ -30,12 +30,13 @@ import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import {
   TransactionData,
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
-import { Address } from "viem";
+import { Address, parseUnits } from "viem";
 import { useBlock, useChainId } from "wagmi";
 
 export interface Transaction {
@@ -123,10 +124,23 @@ function formatTransactionTableMobileData(
     { digits: 2 },
   );
 
-  const isLpRow =
-    row.eventName === "AddLiquidity" ||
-    row.eventName === "RemoveLiquidity" ||
-    row.eventName === "RedeemWithdrawalShares";
+  let baseQueuedForWithdrawalLabel;
+  if (
+    row.eventName === "RemoveLiquidity" &&
+    row.withdrawalShares &&
+    row.lpSharePrice
+  ) {
+    const baseQueuedForWithdrawal = dnum.divide(
+      [row.withdrawalShares, hyperdrive.decimals],
+      [row.lpSharePrice, hyperdrive.decimals],
+    )[0];
+
+    baseQueuedForWithdrawalLabel = formatBaseQueuedForWithdrawalLabel(
+      baseQueuedForWithdrawal,
+      hyperdrive.decimals,
+      baseToken.symbol,
+    );
+  }
   return [
     {
       name: "Event",
@@ -140,9 +154,14 @@ function formatTransactionTableMobileData(
     {
       name: "Size",
       value: (
-        <span>
-          {size} {isLpRow ? baseToken.symbol : `hy${baseToken.symbol}`}
-        </span>
+        <div className="flex flex-col items-end gap-1">
+          <span className="flex">
+            {size} {baseToken.symbol}
+          </span>
+          <span className="daisy-label-text text-neutral-content ">
+            {baseQueuedForWithdrawalLabel}
+          </span>
+        </div>
       ),
     },
     {
@@ -172,7 +191,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           appConfig,
         );
         return (
-          <ul className="flex flex-col items-start gap-1 text-neutral-content">
+          <ul className="flex flex-col items-start gap-4 text-neutral-content">
             {data.map((column) => (
               <li key={column.name}>{column.name}</li>
             ))}
@@ -203,7 +222,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           appConfig,
         );
         return (
-          <ul className="flex flex-col items-end gap-1">
+          <ul className="flex flex-col items-end gap-4">
             {data.map((column) => (
               <li key={column.name}>{column.value}</li>
             ))}
@@ -267,6 +286,37 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           row.getValue("eventName") === "AddLiquidity" ||
           row.getValue("eventName") === "RemoveLiquidity" ||
           row.getValue("eventName") === "RedeemWithdrawalShares";
+
+        // show withdrawal shares for remove liquidity
+        if (
+          row.getValue("eventName") === "RemoveLiquidity" &&
+          row.original.withdrawalShares &&
+          row.original.lpSharePrice
+        ) {
+          const baseQueuedForWithdrawal = dnum.divide(
+            [row.original.withdrawalShares, hyperdrive.decimals],
+            [row.original.lpSharePrice, hyperdrive.decimals],
+          )[0];
+
+          const baseQueuedForWithdrawalLabel =
+            formatBaseQueuedForWithdrawalLabel(
+              baseQueuedForWithdrawal,
+              hyperdrive.decimals,
+              baseToken.symbol,
+            );
+
+          return (
+            <div className="flex flex-col gap-1">
+              <span>
+                {size} {baseToken.symbol}
+              </span>
+              <span className="daisy-label-text text-neutral-content ">
+                {baseQueuedForWithdrawalLabel}
+              </span>
+            </div>
+          );
+        }
+
         return (
           <span>
             {size} {isLpRow ? baseToken.symbol : `hy${baseToken.symbol}`}
@@ -288,6 +338,24 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: (blockNumber) => <BlockInfo blockNumber={blockNumber.getValue()} />,
     }),
   ];
+}
+
+function formatBaseQueuedForWithdrawalLabel(
+  baseQueuedForWithdrawal: bigint,
+  decimals: number,
+  baseSymbol: string,
+) {
+  const baseQueuedForWithdrawalLabel = formatBalance({
+    balance: baseQueuedForWithdrawal,
+    places: 2,
+    decimals,
+  });
+  const floorOrAmount =
+    baseQueuedForWithdrawal < parseUnits("0.001", decimals)
+      ? "<0.001"
+      : baseQueuedForWithdrawalLabel;
+
+  return `+${floorOrAmount} ${baseSymbol} queued for withdrawal`;
 }
 
 export function TransactionTable({
