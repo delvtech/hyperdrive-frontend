@@ -37,8 +37,8 @@ export function useAddLiquidity({
   maxAPR,
   asBase = true,
   enabled,
-  onExecuted,
   onSubmitted,
+  onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);

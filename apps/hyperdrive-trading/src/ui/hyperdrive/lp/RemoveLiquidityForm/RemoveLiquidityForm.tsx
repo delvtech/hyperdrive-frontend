@@ -111,13 +111,13 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: (hash) => {
+      (window as any)["withdrawalLpModal"].close();
       toast.success(
         <CustomToastMessage
           message="Liquidity pending removal"
           link={makeTransactionURL(hash, chainId)}
         />,
       );
-      (window as any)["withdrawalLpModal"].close();
     },
     onExecuted: (hash) => {
       setAmount("");
@@ -254,6 +254,7 @@ export function RemoveLiquidityForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
             disabled={!hasEnoughBalance || !removeLiquidity}
             onClick={(e) => {
+              // prevent closing the modal until the user approves the transaction
               e.preventDefault();
               removeLiquidity?.();
               onRemoveLiquidity?.(e);
