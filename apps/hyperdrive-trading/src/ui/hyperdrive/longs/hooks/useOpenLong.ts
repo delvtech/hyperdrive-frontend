@@ -15,6 +15,7 @@ interface UseOpenLongOptions {
   ethValue?: bigint;
   asBase?: boolean;
   enabled?: boolean;
+  onSubmitted?: (hash: string | undefined) => void;
   onExecuted?: (hash: string | undefined) => void;
 }
 
@@ -31,6 +32,7 @@ export function useOpenLong({
   minSharePrice,
   asBase = true,
   enabled,
+  onSubmitted,
   onExecuted,
   ethValue,
 }: UseOpenLongOptions): UseOpenLongResult {
@@ -63,7 +65,7 @@ export function useOpenLong({
         onExecuted?.(hash);
       }
 
-      const txHash = asBase
+      const hash = asBase
         ? await hyperdriveModel.openLongWithBase({
             args: {
               baseAmount: amount,
@@ -84,9 +86,9 @@ export function useOpenLong({
             options,
             onTransactionMined,
           });
-
+      onSubmitted?.(hash);
       addTransaction({
-        hash: txHash,
+        hash,
         description: "Open Long",
       });
     },

@@ -86,7 +86,7 @@ export function CloseLongForm({
       direction: "down",
     });
 
-  const { closeLong, isPendingWalletAction } = useCloseLong({
+  const { closeLong, closeLongStatus } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
@@ -94,6 +94,15 @@ export function CloseLongForm({
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
     enabled: previewCloseLongStatus === "success",
+    onSubmitted: (hash) => {
+      (window as any)[`${long.assetId}`].close();
+      toast.success(
+        <CustomToastMessage
+          message="Close Long pending"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -174,22 +183,34 @@ export function CloseLongForm({
           }
         />
       }
-      actionButton={
-        account ? (
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectButton />;
+        }
+        if (closeLongStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              Closing Long
+              <div className="daisy-loading daisy-loading-spinner" />
+            </button>
+          );
+        }
+        return (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!closeLong || isPendingWalletAction}
+            disabled={!closeLong}
             onClick={(e) => {
               closeLong?.();
               onCloseLong?.(e);
             }}
           >
-            <span>Close position</span>
+            <span>Close Long</span>
           </button>
-        ) : (
-          <ConnectButton />
-        )
-      }
+        );
+      })()}
     />
   );
 }

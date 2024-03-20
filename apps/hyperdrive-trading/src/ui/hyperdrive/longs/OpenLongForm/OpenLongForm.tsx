@@ -123,6 +123,15 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
+    onSubmitted(hash) {
+      (window as any)["open-long"].close();
+      toast.success(
+        <CustomToastMessage
+          message="Open Long pending"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -227,9 +236,21 @@ export function OpenLongForm({
           );
         }
 
+        if (openLongStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              Opening Long
+              <div className="daisy-loading daisy-loading-spinner" />
+            </button>
+          );
+        }
+
         return (
           <button
-            disabled={!openLong || openLongStatus === "loading"}
+            disabled={!openLong}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               openLong?.();

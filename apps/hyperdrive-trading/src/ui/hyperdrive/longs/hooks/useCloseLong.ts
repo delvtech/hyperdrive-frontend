@@ -1,5 +1,9 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -12,12 +16,13 @@ interface UseCloseLongOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onSubmitted?: (hash: string) => void;
   onExecuted: (hash: string | undefined) => void;
 }
 
 interface UseCloseLongResult {
   closeLong: (() => void) | undefined;
-  isPendingWalletAction: boolean;
+  closeLongStatus: MutationStatus;
 }
 
 export function useCloseLong({
@@ -28,6 +33,7 @@ export function useCloseLong({
   destination,
   asBase = true,
   enabled = true,
+  onSubmitted,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
   const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
@@ -70,7 +76,7 @@ export function useCloseLong({
               },
               onTransactionMined,
             });
-
+        onSubmitted?.(hash);
         addTransaction({
           hash,
           description: "Close Long",
@@ -83,6 +89,6 @@ export function useCloseLong({
     // Don't return the `closeLong` callback if mutation isn't enabled, this
     // makes the hook feel more like useContractWrite from wagmi
     closeLong: mutationEnabled ? closeLong : undefined,
-    isPendingWalletAction: status === "loading",
+    closeLongStatus: status,
   };
 }
