@@ -15,6 +15,7 @@ interface UseRemoveLiquidityOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onSubmitted: (hash: string | undefined) => void;
   onExecuted: (hash: string | undefined) => void;
 }
 
@@ -30,6 +31,7 @@ export function useRemoveLiquidity({
   destination,
   asBase = true,
   enabled,
+  onSubmitted,
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
@@ -69,6 +71,7 @@ export function useRemoveLiquidity({
               },
               onTransactionMined,
             });
+        onSubmitted?.(hash);
         addTransaction({
           hash,
           description: "Remove Liquidity",
