@@ -83,7 +83,15 @@ export function TokenInput({
           )}
           value={value}
           placeholder="0"
-          onChange={(event) => onChange(event.target.value)}
+          onKeyDown={(event) => {
+            // Prevent typing '-' and 'e'
+            if (["-", "e", "E"].includes(event.key)) {
+              event.preventDefault();
+            }
+          }}
+          onChange={(event) => {
+            onChange(event.target.value);
+          }}
         />
         {maxValue !== undefined && !disabled ? (
           <button
