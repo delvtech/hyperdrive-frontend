@@ -40,10 +40,13 @@ export function LpTab({
           <div className="flex w-full items-center justify-between px-4 py-8">
             <h5 className="font-medium">LP Position</h5>
             <div className="flex items-center gap-4">
-              <AddLiquidityModalButton
-                modalId="add-lp"
-                hyperdrive={hyperdrive}
-              />
+              {(lpShares && lpSharesStatus === "success") ||
+              (withdrawalShares && withdrawalSharesStatus === "success") ? (
+                <AddLiquidityModalButton
+                  modalId="add-lp"
+                  hyperdrive={hyperdrive}
+                />
+              ) : null}
               <OpenClosedFilter />
             </div>
           </div>
