@@ -5,7 +5,7 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
-import { MouseEvent, ReactElement, useState } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
@@ -101,9 +101,6 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
   });
-  const [transactionStatus, setTransactionStatus] = useState<
-    "loading" | "success" | ""
-  >("");
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn: lpSharesIn,
@@ -113,10 +110,17 @@ export function RemoveLiquidityForm({
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
+    onSubmitted: (hash) => {
+      toast.success(
+        <CustomToastMessage
+          message="Liquidity pending removal"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+      (window as any)["withdrawalLpModal"].close();
+    },
     onExecuted: (hash) => {
       setAmount("");
-      // (window as any)["withdrawalLpModal"].close();
-      setTransactionStatus("success");
       toast.success(
         <CustomToastMessage
           message="Liquidity removed"
@@ -180,7 +184,6 @@ export function RemoveLiquidityForm({
               }}
             />
           }
-          disabled={transactionStatus === "loading"}
           value={amount ?? ""}
           maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
           stat={
@@ -234,7 +237,7 @@ export function RemoveLiquidityForm({
           return <ConnectButton />;
         }
 
-        if (transactionStatus === "loading") {
+        if (removeLiquidityStatus === "loading") {
           return (
             <button
               disabled
@@ -252,7 +255,6 @@ export function RemoveLiquidityForm({
             disabled={!hasEnoughBalance || !removeLiquidity}
             onClick={(e) => {
               e.preventDefault();
-              setTransactionStatus("loading");
               removeLiquidity?.();
               onRemoveLiquidity?.(e);
             }}
