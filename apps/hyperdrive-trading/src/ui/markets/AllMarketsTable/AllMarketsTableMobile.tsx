@@ -83,14 +83,9 @@ function getMobileColumns() {
         return (
           <div className="flex flex-col gap-2">
             {data.map((column, i) => (
-              <div
-                key={i}
-                className="flex w-full justify-between gap-4 text-left md:justify-evenly"
-              >
-                <p className="text-neutral-content md:w-40">{column.name}</p>
-                <p className="md:w-40" key={column.name}>
-                  {column.value}
-                </p>
+              <div key={i} className="flex w-full justify-between gap-4">
+                <p className="text-neutral-content">{column.name}</p>
+                <p key={column.name}>{column.value}</p>
               </div>
             ))}
           </div>
