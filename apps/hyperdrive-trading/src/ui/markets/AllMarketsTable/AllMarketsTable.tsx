@@ -8,7 +8,7 @@ export function AllMarketsTable(): ReactElement {
   return (
     <div className="flex w-full flex-col items-center">
       <h3 className="gradient-text mb-8 text-center">Available Markets</h3>
-      <div className="daisy-card daisy-card-bordered flex w-full md:p-6">
+      <div className="daisy-card daisy-card-bordered flex w-full md:w-3/4 md:p-6">
         {isTailwindSmallScreen ? (
           <AllMarketsTableMobile />
         ) : (
