@@ -22,7 +22,7 @@ export function ShortsTab({
             <h5 className="font-medium">Short Positions</h5>
             <div className="flex items-center gap-4">
               <OpenShortModalButton
-                modalId="open-long"
+                modalId="open-short"
                 hyperdrive={hyperdrive}
               />
               <OpenClosedFilter />

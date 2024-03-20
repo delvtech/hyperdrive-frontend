@@ -18,13 +18,14 @@ interface UseOpenShortOptions {
   asBase?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
+  onSubmitted?: (hash: string | undefined) => void;
   onExecuted?: (hash: string | undefined) => void;
   ethValue?: bigint;
 }
 
 interface UseOpenShortResult {
   openShort: (() => void) | undefined;
-  openShortSubmittedStatus: MutationStatus;
+  openShortStatus: MutationStatus;
 }
 
 export function useOpenShort({
@@ -36,6 +37,7 @@ export function useOpenShort({
   asBase = true,
   enabled,
   ethValue,
+  onSubmitted,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
   const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
@@ -94,7 +96,7 @@ export function useOpenShort({
                 onExecuted?.(txHash);
               },
             });
-
+        onSubmitted?.(hash);
         addTransaction({
           hash,
           description: "Open Short",
@@ -107,6 +109,6 @@ export function useOpenShort({
     // Don't return the `openShort` callback if mutation isn't enabled, this
     // makes the hook feel more like useContractWrite from wagmi
     openShort: mutationEnabled ? openShort : undefined,
-    openShortSubmittedStatus: status,
+    openShortStatus: status,
   };
 }

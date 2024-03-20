@@ -120,7 +120,7 @@ export function OpenShortForm({
     maxTradeSize: maxBondsOut,
   });
 
-  const { openShort, openShortSubmittedStatus } = useOpenShort({
+  const { openShort, openShortStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
@@ -132,7 +132,15 @@ export function OpenShortForm({
     // Some hyperdrives allow native eth deposits, so we must include the
     // traderDeposit as msg.value
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
-
+    onSubmitted: (hash) => {
+      (window as any)["open-short"].close();
+      toast.success(
+        <CustomToastMessage
+          message="Opening Short"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -243,17 +251,6 @@ export function OpenShortForm({
           return <ConnectWalletButton />;
         }
 
-        if (!hasEnoughBalance) {
-          return (
-            <button
-              disabled
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            >
-              Open Short
-            </button>
-          );
-        }
-
         if (!hasEnoughAllowance) {
           return (
             <ApproveTokenButton
@@ -265,9 +262,20 @@ export function OpenShortForm({
             />
           );
         }
+        if (openShortStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              <div className="daisy-loading daisy-loading-spinner" />
+              Opening Short
+            </button>
+          );
+        }
         return (
           <button
-            disabled={!openShort || openShortSubmittedStatus === "loading"}
+            disabled={!openShort || !hasEnoughBalance}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               openShort?.();

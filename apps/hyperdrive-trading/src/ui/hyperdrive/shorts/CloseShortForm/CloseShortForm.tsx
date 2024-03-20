@@ -83,7 +83,7 @@ export function CloseShortForm({
       direction: "down",
     });
 
-  const { closeShort, isPendingWalletAction } = useCloseShort({
+  const { closeShort, closeShortStatus } = useCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     bondAmountIn: amountAsBigInt,
@@ -94,6 +94,16 @@ export function CloseShortForm({
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
+    onSubmitted: (hash) => {
+      (window as any)[`${short.assetId}`].close();
+      toast.success(
+        <CustomToastMessage
+          message="Close Short pending"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
+
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -167,25 +177,35 @@ export function CloseShortForm({
           <p className="text-center text-error">Insufficient balance</p>
         ) : undefined
       }
-      actionButton={
-        account ? (
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectButton />;
+        }
+        if (closeShortStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              <div className="daisy-loading daisy-loading-spinner" />
+              Closing Short
+            </button>
+          );
+        }
+        return (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={
-              !closeShort ||
-              isPendingWalletAction ||
-              isAmountLargerThanPositionSize
-            }
-            onClick={() => {
+            disabled={!closeShort || isAmountLargerThanPositionSize}
+            onClick={(e) => {
+              // prevent closing the modal until the user approves the transaction
+              e.preventDefault();
               closeShort?.();
             }}
           >
             Close Short
           </button>
-        ) : (
-          <ConnectButton />
-        )
-      }
+        );
+      })()}
     />
   );
 }

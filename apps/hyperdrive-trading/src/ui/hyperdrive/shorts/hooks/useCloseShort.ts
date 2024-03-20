@@ -1,5 +1,9 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -12,12 +16,13 @@ interface UseCloseShortOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onSubmitted?: (hash: string | undefined) => void;
   onExecuted: (hash: string | undefined) => void;
 }
 
 interface UseCloseShortResult {
   closeShort: (() => void) | undefined;
-  isPendingWalletAction: boolean;
+  closeShortStatus: MutationStatus;
 }
 
 export function useCloseShort({
@@ -28,6 +33,7 @@ export function useCloseShort({
   destination,
   asBase = true,
   enabled = true,
+  onSubmitted,
   onExecuted,
 }: UseCloseShortOptions): UseCloseShortResult {
   const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
@@ -69,7 +75,7 @@ export function useCloseShort({
               },
               onTransactionMined,
             });
-
+        onSubmitted?.(hash);
         addTransaction({
           hash,
           description: "Close Short",
@@ -80,6 +86,6 @@ export function useCloseShort({
 
   return {
     closeShort,
-    isPendingWalletAction: status === "loading",
+    closeShortStatus: status,
   };
 }
