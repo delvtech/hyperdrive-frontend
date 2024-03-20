@@ -85,11 +85,7 @@ export function TokenInput({
           placeholder="0"
           onKeyDown={(event) => {
             // Prevent typing '-' and 'e'
-            if (
-              event.code === "Minus" ||
-              event.code === "NumpadSubtract" ||
-              event.code === "KeyE"
-            ) {
+            if (["-", "e", "E"].includes(event.key)) {
               event.preventDefault();
             }
           }}
