@@ -385,7 +385,7 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         destination,
         lpSharesIn,
         minOutputPerShare,
-        asBase: true,
+        asBase: false,
       },
       onTransactionMined,
       options,
