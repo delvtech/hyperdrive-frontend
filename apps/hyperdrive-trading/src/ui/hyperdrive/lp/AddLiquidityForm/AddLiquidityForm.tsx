@@ -6,7 +6,7 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import * as dnum from "dnum";
-import { MouseEvent, ReactElement, useState } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateRatio } from "src/base/calculateRatio";
 import { parseUnits } from "src/base/parseUnits";
@@ -125,17 +125,22 @@ export function AddLiquidityForm({
     hyperdrive,
     baseToken,
   );
-  const [transactionStatus, setTransactionStatus] = useState<
-    "loading" | "success" | ""
-  >("");
+
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
     enabled:
       addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
+    onSubmitted: (hash) => {
+      (window as any)["add-lp"].close();
+      toast.success(
+        <CustomToastMessage
+          message="Add liquidity pending"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
-      // (window as any)["add-lp"].close();
-      setTransactionStatus("success");
       toast.success(
         <CustomToastMessage
           message="Liquidity added"
@@ -218,7 +223,7 @@ export function AddLiquidityForm({
           );
         }
 
-        if (transactionStatus === "loading") {
+        if (addLiquidityStatus === "loading") {
           return (
             <button
               disabled
@@ -236,7 +241,6 @@ export function AddLiquidityForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               addLiquidity?.();
-              setTransactionStatus("loading");
               onAddLiquidity?.(e);
             }}
           >
