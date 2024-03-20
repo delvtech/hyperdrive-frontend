@@ -243,8 +243,8 @@ export function RemoveLiquidityForm({
               disabled
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             >
-              Removing liquidity
               <div className="daisy-loading daisy-loading-spinner" />
+              Removing liquidity
             </button>
           );
         }
