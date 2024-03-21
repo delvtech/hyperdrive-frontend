@@ -193,8 +193,8 @@ export function CloseLongForm({
               disabled
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             >
-              Closing Long
               <div className="daisy-loading daisy-loading-spinner" />
+              Closing Long
             </button>
           );
         }

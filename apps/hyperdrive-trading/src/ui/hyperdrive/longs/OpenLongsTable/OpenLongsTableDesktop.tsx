@@ -23,6 +23,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
@@ -66,6 +67,9 @@ export function OpenLongsTableDesktop({
         <NonIdealState
           heading="You have no open Long positions"
           text="Open a Long, switch wallets, or view your closed Long positions"
+          action={
+            <OpenLongModalButton modalId="open-long" hyperdrive={hyperdrive} />
+          }
         />
       </div>
     );

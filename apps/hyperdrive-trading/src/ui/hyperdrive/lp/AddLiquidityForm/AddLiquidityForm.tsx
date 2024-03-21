@@ -130,6 +130,15 @@ export function AddLiquidityForm({
     ...addLiquidityParams,
     enabled:
       addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
+    onSubmitted: (hash) => {
+      (window as any)["add-lp"].close();
+      toast.success(
+        <CustomToastMessage
+          message="Add liquidity pending"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -214,9 +223,21 @@ export function AddLiquidityForm({
           );
         }
 
+        if (addLiquidityStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              <div className="daisy-loading daisy-loading-spinner" />
+              Adding liquidity
+            </button>
+          );
+        }
+
         return (
           <button
-            disabled={!addLiquidity || addLiquidityStatus === "loading"}
+            disabled={!addLiquidity}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               addLiquidity?.();

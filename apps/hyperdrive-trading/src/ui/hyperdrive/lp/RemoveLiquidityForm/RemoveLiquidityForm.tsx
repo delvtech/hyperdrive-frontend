@@ -101,7 +101,6 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
   });
-
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn: lpSharesIn,
@@ -111,6 +110,15 @@ export function RemoveLiquidityForm({
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
+    onSubmitted: (hash) => {
+      (window as any)["withdrawalLpModal"].close();
+      toast.success(
+        <CustomToastMessage
+          message="Liquidity pending removal"
+          link={makeTransactionURL(hash, chainId)}
+        />,
+      );
+    },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -224,26 +232,38 @@ export function RemoveLiquidityForm({
           </p>
         </>
       }
-      actionButton={
-        account ? (
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectButton />;
+        }
+
+        if (removeLiquidityStatus === "loading") {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              <div className="daisy-loading daisy-loading-spinner" />
+              Removing liquidity
+            </button>
+          );
+        }
+
+        return (
           <button
-            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={
-              !hasEnoughBalance ||
-              !removeLiquidity ||
-              removeLiquidityStatus === "loading"
-            }
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
+            disabled={!hasEnoughBalance || !removeLiquidity}
             onClick={(e) => {
+              // prevent closing the modal until the user approves the transaction
+              e.preventDefault();
               removeLiquidity?.();
               onRemoveLiquidity?.(e);
             }}
           >
-            Remove liquidity
+            Remove Liquidity
           </button>
-        ) : (
-          <ConnectButton />
-        )
-      }
+        );
+      })()}
     />
   );
 }
