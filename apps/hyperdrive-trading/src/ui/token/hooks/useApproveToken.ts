@@ -4,12 +4,14 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
+import { useState } from "react";
 import { Address, erc20Abi } from "viem";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
   amount: bigint;
   enabled?: boolean;
+  onTokenApproval?: (hash: string) => Promise<void>;
 }
 
 export function useApproveToken({
@@ -17,11 +19,17 @@ export function useApproveToken({
   spender,
   amount,
   enabled = true,
-}: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
-  const { writeContract } = useWriteContract();
+  onTokenApproval,
+}: UseTokenApprovalOptions): {
+  approve: (() => void) | undefined;
+  approveTokenStatus: "error" | "idle" | "loading" | "success";
+  isSuccess: boolean;
+  isProcessing: boolean;
+} {
+  const { writeContract, status, isSuccess } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
-
+  const [isProcessing, setIsProcessing] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
 
   const approve = queryEnabled
@@ -39,16 +47,20 @@ export function useApproveToken({
                 hash,
                 description: "Token Approved",
               });
+              setIsProcessing(true);
               await waitForTransactionAndInvalidateCache({
                 publicClient,
                 hash,
                 queryClient,
+              }).then(() => {
+                setIsProcessing(false);
+                onTokenApproval?.(hash);
+                toast.success("Token approved", { position: "top-center" });
               });
-              toast.success("Token approved", { position: "top-center" });
             },
           },
         )
     : undefined;
 
-  return { approve };
+  return { approve, approveTokenStatus: status, isSuccess, isProcessing };
 }
