@@ -29,7 +29,7 @@ export function ShortsTab({
             <div className="flex items-center gap-4">
               {account && openShorts?.length ? (
                 <OpenShortModalButton
-                  modalId="open-long"
+                  modalId="open-short"
                   hyperdrive={hyperdrive}
                 />
               ) : null}
