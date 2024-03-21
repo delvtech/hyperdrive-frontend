@@ -23,7 +23,7 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
+import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
@@ -256,10 +256,9 @@ export function OpenShortForm({
 
         if (!hasEnoughAllowance) {
           return (
-            <ApproveTokenButton
+            <ApproveTokenChoices
               spender={hyperdrive.address}
               token={activeToken}
-              tokenBalance={activeTokenBalance}
               amountAsBigInt={traderDeposit}
               amount={formatUnits(traderDeposit || 0n, activeToken.decimals)}
             />
