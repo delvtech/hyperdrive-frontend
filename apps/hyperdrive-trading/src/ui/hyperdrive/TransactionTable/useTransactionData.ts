@@ -7,8 +7,10 @@ export type TransactionData = {
   assetId?: bigint;
   baseAmount: bigint;
   bondAmount?: bigint;
+  withdrawalShares?: bigint;
   eventName: string;
   trader: Address;
+  lpSharePrice?: bigint;
   blockNumber: bigint | undefined;
 };
 
@@ -37,6 +39,7 @@ export function useTransactionData({
 
   // It's important to memoize this table data because creating new arrays of
   // the same data will cause infinite renders in the TransactionTable.
+  // Note: Sorting isn't necessary here as that is handled by react-table
   const data = useMemo(() => {
     const data = [];
     if (longs) {
@@ -46,7 +49,39 @@ export function useTransactionData({
       data.push(...shorts.slice(0, 100));
     }
     if (lpEvents) {
-      data.push(...lpEvents.slice(0, 100));
+      data.push(
+        ...lpEvents.addLiquidity
+          .slice(0, 100)
+          .map(({ args, blockNumber, eventName }) => ({
+            trader: args.provider,
+            baseAmount: args.baseAmount,
+            lpSharePrice: args.lpSharePrice,
+            eventName,
+            blockNumber,
+          })),
+      );
+      data.push(
+        ...lpEvents.removeLiquidity
+          .slice(0, 100)
+          .map(({ args, blockNumber, eventName }) => ({
+            trader: args.provider,
+            baseAmount: args.baseAmount,
+            withdrawalShares: args.withdrawalShareAmount,
+            lpSharePrice: args.lpSharePrice,
+            eventName,
+            blockNumber,
+          })),
+      );
+      data.push(
+        ...lpEvents.redeemWithdrawalShares
+          .slice(0, 100)
+          .map(({ args, blockNumber, eventName }) => ({
+            trader: args.provider,
+            baseAmount: args.baseAmount,
+            eventName,
+            blockNumber,
+          })),
+      );
     }
     return data;
   }, [longs, lpEvents, shorts]);

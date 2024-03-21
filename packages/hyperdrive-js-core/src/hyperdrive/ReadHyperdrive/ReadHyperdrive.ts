@@ -1,10 +1,10 @@
 import {
-  Event,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
   BlockTag,
   CachedReadContract,
+  Event,
 } from "@delvtech/evm-client";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -381,14 +381,16 @@ export interface IReadHyperdrive extends ReadModel {
     }[]
   >;
 
-  getLpEvents(): Promise<
-    {
-      trader: `0x${string}`;
-      baseAmount: bigint;
-      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
-      blockNumber: bigint | undefined;
-    }[]
-  >;
+  getLpEvents(): Promise<{
+    addLiquidity: Event<HyperdriveAbi, "AddLiquidity">[];
+    removeLiquidity: Event<HyperdriveAbi, "RemoveLiquidity">[];
+    redeemWithdrawalShares: Event<HyperdriveAbi, "RedeemWithdrawalShares">[];
+    // trader: `0x${string}`;
+    // baseAmount: bigint;
+    // eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
+    // withdrawalShares?: bigint;
+    // blockNumber: bigint | undefined;
+  }>;
 }
 
 export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
@@ -666,25 +668,19 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
   async getLpEvents(): ReturnType<IReadHyperdrive, "getLpEvents"> {
-    const addLiquidtyEvents = await this.contract.getEvents("AddLiquidity");
+    const addLiquidityEvents = await this.contract.getEvents("AddLiquidity");
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
     );
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
     );
-    return Promise.all(
-      [
-        ...addLiquidtyEvents,
-        ...removeLiquidityEvents,
-        ...redeemWithdrawalSharesEvents,
-      ].map(async ({ args, eventName, blockNumber }) => ({
-        trader: args.provider,
-        baseAmount: args.baseAmount,
-        eventName,
-        blockNumber,
-      })),
-    );
+
+    return {
+      addLiquidity: addLiquidityEvents,
+      removeLiquidity: removeLiquidityEvents,
+      redeemWithdrawalShares: redeemWithdrawalSharesEvents,
+    };
   }
 
   async getLpApy({
