@@ -42,9 +42,11 @@ export function useApproveToken({
           },
           {
             onSuccess: async (hash) => {
+              const description =
+                amount === 0n ? "Allowance revoked" : "Token Approved";
               addRecentTransaction({
                 hash,
-                description: "Token Approved",
+                description,
               });
               setIsTransactionMined(false);
               await waitForTransactionAndInvalidateCache({
