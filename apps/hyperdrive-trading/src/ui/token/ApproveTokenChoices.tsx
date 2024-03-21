@@ -5,7 +5,7 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { Address } from "viem";
-export default function ApproveTokenChoices({
+export function ApproveTokenChoices({
   spender,
   amountAsBigInt,
   amount,
