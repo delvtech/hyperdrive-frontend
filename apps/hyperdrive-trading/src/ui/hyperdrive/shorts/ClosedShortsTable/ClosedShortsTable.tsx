@@ -16,6 +16,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
 import { useAccount } from "wagmi";
@@ -36,9 +37,7 @@ function formatClosedShortMobileColumnData(
   return [
     {
       name: "Matures On",
-      value: new Date(
-        Number(closedShort.maturity * 1000n),
-      ).toLocaleDateString(),
+      value: formatDate(Number(closedShort.maturity * 1000n)),
     },
     {
       name: `Size (${baseToken.symbol})`,
@@ -58,9 +57,7 @@ function formatClosedShortMobileColumnData(
     },
     {
       name: "Closed On",
-      value: new Date(
-        Number(closedShort.closedTimestamp * 1000n),
-      ).toLocaleDateString(),
+      value: formatDate(Number(closedShort.closedTimestamp * 1000n)),
     },
   ];
 }
@@ -118,8 +115,8 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.display({
       header: `Matures On`,
       cell: ({ row }) => {
-        const maturity = new Date(Number(row.original.maturity * 1000n));
-        return <span>{maturity.toLocaleDateString()}</span>;
+        const maturity = formatDate(Number(row.original.maturity * 1000n));
+        return <span>{maturity}</span>;
       },
     }),
     columnHelper.accessor("bondAmount", {
@@ -151,11 +148,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       header: `Closed On`,
       cell: (closedTimestamp) => {
         return (
-          <span>
-            {new Date(
-              Number(closedTimestamp.getValue() * 1000n),
-            ).toLocaleDateString()}
-          </span>
+          <span>{formatDate(Number(closedTimestamp.getValue() * 1000n))}</span>
         );
       },
     }),
