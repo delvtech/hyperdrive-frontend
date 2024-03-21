@@ -118,9 +118,9 @@ export function RemoveLiquidityForm({
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: (hash) => {
       (window as any)["withdrawalLpModal"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Liquidity pending removal"
+          message="Removing liquidity..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );

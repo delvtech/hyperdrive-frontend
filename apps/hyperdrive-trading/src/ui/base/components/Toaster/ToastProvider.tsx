@@ -3,21 +3,26 @@ import toast, { ToastBar, Toaster } from "react-hot-toast";
 
 export default function ToastProvider(): JSX.Element {
   return (
-    <Toaster toastOptions={{ duration: 5000 }} position="top-right">
+    <Toaster
+      toastOptions={{
+        duration: Infinity,
+        className: "!p-0 !bg-base-200 !rounded-box",
+      }}
+      position="top-right"
+    >
       {(t) => (
         <ToastBar toast={t}>
           {({ icon, message }) => (
-            <div className="mx-4 flex flex-row">
+            <div className="daisy-alert !bg-gray-700 shadow-2xl">
               {icon}
-              {message}
-              {t.type !== "loading" && (
-                <div className="flex items-center justify-center">
-                  <XMarkIcon
-                    className="h-6 cursor-pointer rounded-full p-1"
-                    onClick={() => toast.dismiss(t.id)}
-                  />
-                </div>
-              )}
+              <span>{message}</span>
+
+              <button
+                onClick={() => toast.dismiss(t.id)}
+                className="daisy-btn daisy-btn-xs"
+              >
+                <XMarkIcon className="h-6 cursor-pointer rounded-full p-1" />
+              </button>
             </div>
           )}
         </ToastBar>

@@ -96,7 +96,7 @@ export function CloseShortForm({
       activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
-      toast.success(
+      toast.loading(
         <CustomToastMessage
           message="Short closed"
           link={makeTransactionURL(hash, chainId)}
