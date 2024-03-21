@@ -174,7 +174,6 @@ export function RemoveLiquidityForm({
 
   return (
     <TransactionView
-      heading="Remove Liquidity"
       tokenInput={
         <TokenInput
           name={baseToken.name}
