@@ -130,7 +130,7 @@ function formatTransactionTableMobileData(
     row.withdrawalShares &&
     row.lpSharePrice
   ) {
-    const baseQueuedForWithdrawal = dnum.divide(
+    const baseQueuedForWithdrawal = dnum.multiply(
       [row.withdrawalShares, hyperdrive.decimals],
       [row.lpSharePrice, hyperdrive.decimals],
     )[0];
@@ -293,7 +293,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           row.original.withdrawalShares &&
           row.original.lpSharePrice
         ) {
-          const baseQueuedForWithdrawal = dnum.divide(
+          const baseQueuedForWithdrawal = dnum.multiply(
             [row.original.withdrawalShares, hyperdrive.decimals],
             [row.original.lpSharePrice, hyperdrive.decimals],
           )[0];
