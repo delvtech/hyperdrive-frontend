@@ -4,7 +4,7 @@ import {
   ReadStEthHyperdriveOptions,
 } from "./ReadStEthHyperdrive";
 import { Overwrite } from "src/base/types";
-import { readWriteHyperdriveMixin } from "src/hyperdrive/ReadWriteHyperdrive";
+import { writeHyperdriveMixin } from "src/hyperdrive/ReadWriteHyperdrive";
 import {
   CachedReadWriteContract,
   ContractReadOptions,
@@ -19,7 +19,7 @@ export interface ReadWriteStEthHyperdriveOptions
     ReadWriteContractModelOptions
   > {}
 
-export class ReadWriteStEthHyperdrive extends readWriteHyperdriveMixin(
+export class ReadWriteStEthHyperdrive extends writeHyperdriveMixin(
   ReadStEthHyperdrive,
 ) {
   declare stEthHyperdriveContract: CachedReadWriteContract<StEthHyperdriveAbi>;
