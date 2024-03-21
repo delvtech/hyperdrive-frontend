@@ -37,7 +37,7 @@ export function TokenPicker({
       </button>
       <ul
         tabIndex={0}
-        className="daisy-menu daisy-dropdown-content z-[1] w-40 rounded-box bg-base-100 p-4 shadow"
+        className="daisy-menu daisy-dropdown-content z-[1] w-40 gap-0.5 rounded-lg bg-base-100 p-2 shadow"
       >
         {[
           tokens.map((token) => (
