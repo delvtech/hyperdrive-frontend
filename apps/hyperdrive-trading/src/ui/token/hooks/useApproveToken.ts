@@ -35,16 +35,18 @@ export function useApproveToken({
           },
           {
             onSuccess: async (hash) => {
+              const description =
+                amount === 0n ? "Allowance revoked" : "Token Approved";
               addRecentTransaction({
                 hash,
-                description: "Token Approved",
+                description,
               });
               await waitForTransactionAndInvalidateCache({
                 publicClient,
                 hash,
                 queryClient,
               });
-              toast.success("Token approved", { position: "top-center" });
+              toast.success(description, { position: "top-center" });
             },
           },
         )

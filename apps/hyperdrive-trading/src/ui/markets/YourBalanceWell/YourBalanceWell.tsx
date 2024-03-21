@@ -113,7 +113,7 @@ function AvailableAsset({
           </div>
           <ul
             tabIndex={0}
-            className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-box bg-base-100 p-4 shadow"
+            className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-lg bg-base-100 p-4 shadow"
           >
             <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
               <span>Allowance</span>
