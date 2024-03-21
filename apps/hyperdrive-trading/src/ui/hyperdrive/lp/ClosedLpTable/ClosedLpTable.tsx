@@ -19,6 +19,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
 import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
@@ -48,9 +49,7 @@ function formatClosedLpMobileColumnData(
   return [
     {
       name: "Closed On",
-      value: new Date(
-        Number(closedLpShares.closedTimestamp * 1000n),
-      ).toLocaleDateString(),
+      value: formatDate(Number(closedLpShares.closedTimestamp * 1000n)),
     },
     {
       name: "Shares Closed",
@@ -196,11 +195,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: ({ row }) => {
         const closedTimestamp =
           row.original.closedTimestamp || row.original.redeemedTimestamp;
-        return (
-          <span>
-            {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
-          </span>
-        );
+        return <span>{formatDate(Number(closedTimestamp * 1000n))}</span>;
       },
     }),
   ];

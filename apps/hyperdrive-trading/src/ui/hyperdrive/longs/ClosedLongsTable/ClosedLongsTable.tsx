@@ -18,6 +18,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useAccount } from "wagmi";
@@ -35,11 +36,7 @@ function formatClosedLongMobileColumnData(
   return [
     {
       name: "Matures On",
-      value: (
-        <span>
-          {new Date(Number(closedLong.maturity * 1000n)).toLocaleDateString()}
-        </span>
-      ),
+      value: <span>{formatDate(Number(closedLong.maturity * 1000n))}</span>,
     },
     {
       name: `Size (hy${baseToken.symbol})`,
@@ -65,11 +62,7 @@ function formatClosedLongMobileColumnData(
     {
       name: "Closed On",
       value: (
-        <span>
-          {new Date(
-            Number(closedLong.closedTimestamp * 1000n),
-          ).toLocaleDateString()}
-        </span>
+        <span>{formatDate(Number(closedLong.closedTimestamp * 1000n))}</span>
       ),
     },
   ];
@@ -129,8 +122,8 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.display({
       header: `Matures On`,
       cell: ({ row }) => {
-        const maturity = new Date(Number(row.original.maturity * 1000n));
-        return <span>{maturity.toLocaleDateString()}</span>;
+        const maturity = formatDate(Number(row.original.maturity * 1000n));
+        return <span>{maturity}</span>;
       },
     }),
     columnHelper.display({
@@ -163,9 +156,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.accessor("closedTimestamp", {
       header: `Closed On`,
       cell: ({ row }) => {
-        return new Date(
-          Number(row.original.closedTimestamp * 1000n),
-        ).toLocaleDateString();
+        return formatDate(Number(row.original.closedTimestamp * 1000n));
       },
     }),
   ];
