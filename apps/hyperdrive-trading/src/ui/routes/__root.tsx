@@ -9,8 +9,10 @@ export const Route = new RootRoute({
 function RootComponent() {
   return (
     <div className="flex h-full flex-col items-center">
-      <Navbar />
-      <Outlet />
+      <div className="flex flex-col gap-9">
+        <Navbar />
+        <Outlet />
+      </div>
       <Footer />
       {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
     </div>
