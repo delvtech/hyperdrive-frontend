@@ -11,6 +11,7 @@ import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -124,9 +125,9 @@ export function OpenShortPreview({
 
       <LabelValue
         label="Matures in"
-        value={`${convertMillisecondsToDays(termLengthMS)} days, ${new Date(
+        value={`${convertMillisecondsToDays(termLengthMS)} days, ${formatDate(
           Date.now() + termLengthMS,
-        ).toLocaleDateString()}`}
+        )}`}
       />
     </div>
   );
