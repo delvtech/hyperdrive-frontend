@@ -6,6 +6,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { OpenShortsTableDesktop } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktop";
 import { OpenShortsTableMobile } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableMobile";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
@@ -45,6 +46,9 @@ export function OpenShortsTable({
         <NonIdealState
           heading="You have no open Short positions"
           text="Open a Short, switch wallets, or view your closed Short positions"
+          action={
+            <OpenShortModalButton modalId="open-long" hyperdrive={hyperdrive} />
+          }
         />
       </div>
     );

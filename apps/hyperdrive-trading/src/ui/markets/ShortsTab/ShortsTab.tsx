@@ -3,9 +3,11 @@ import { ReactElement } from "react";
 import { ClosedShortsTable } from "src/ui/hyperdrive/shorts/ClosedShortsTable/ClosedShortsTable";
 import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { OpenShortsTable } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTable";
+import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
+import { useAccount } from "wagmi";
 
 export function ShortsTab({
   hyperdrive,
@@ -13,7 +15,11 @@ export function ShortsTab({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
-
+  const { address: account } = useAccount();
+  const { openShorts } = useOpenShorts({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
   return (
     <MarketDetailsTab
       positions={
@@ -21,10 +27,12 @@ export function ShortsTab({
           <div className="flex items-center justify-between px-4 py-8">
             <h5 className="font-medium">Short Positions</h5>
             <div className="flex items-center gap-4">
-              <OpenShortModalButton
-                modalId="open-long"
-                hyperdrive={hyperdrive}
-              />
+              {account && openShorts?.length ? (
+                <OpenShortModalButton
+                  modalId="open-long"
+                  hyperdrive={hyperdrive}
+                />
+              ) : null}
               <OpenClosedFilter />
             </div>
           </div>

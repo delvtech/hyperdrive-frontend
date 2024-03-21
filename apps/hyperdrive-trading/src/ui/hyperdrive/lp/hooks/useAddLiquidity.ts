@@ -19,6 +19,7 @@ interface UseAddLiquidityOptions {
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
+  onSubmitted: (hash: string | undefined) => void;
   onExecuted: (hash: string | undefined) => void;
 }
 
@@ -36,6 +37,7 @@ export function useAddLiquidity({
   maxAPR,
   asBase = true,
   enabled,
+  onSubmitted,
   onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
@@ -85,7 +87,7 @@ export function useAddLiquidity({
               options: { value: ethValue },
               onTransactionMined,
             });
-
+        onSubmitted(hash);
         addTransaction({
           hash,
           description: "Add Liquidity",
