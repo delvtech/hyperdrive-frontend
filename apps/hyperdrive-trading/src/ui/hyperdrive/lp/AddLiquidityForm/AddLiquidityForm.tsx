@@ -132,9 +132,9 @@ export function AddLiquidityForm({
       addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
     onSubmitted: (hash) => {
       (window as any)["add-lp"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Add liquidity pending"
+          message="Adding liquidity..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );

@@ -125,9 +125,9 @@ export function OpenLongForm({
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onSubmitted(hash) {
       (window as any)["open-long"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Open Long pending"
+          message="Opening a Long..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );
