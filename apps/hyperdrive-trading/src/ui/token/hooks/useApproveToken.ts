@@ -55,7 +55,7 @@ export function useApproveToken({
                 queryClient,
               });
               setIsTransactionMined(true);
-              toast.success("Token approved", { position: "top-center" });
+              toast.success(description, { position: "top-center" });
             },
           },
         )
