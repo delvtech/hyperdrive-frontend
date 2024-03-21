@@ -19,17 +19,16 @@ export function useApproveToken({
   spender,
   amount,
   enabled = true,
-  onTokenApproval,
 }: UseTokenApprovalOptions): {
   approve: (() => void) | undefined;
-  approveTokenStatus: "error" | "idle" | "loading" | "success";
-  isSuccess: boolean;
-  isProcessing: boolean;
+  pendingWalletSignatureStatus: "error" | "idle" | "loading" | "success";
+
+  isTransactionMined: boolean;
 } {
-  const { writeContract, status, isSuccess } = useWriteContract();
+  const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
 
   const approve = queryEnabled
@@ -47,20 +46,22 @@ export function useApproveToken({
                 hash,
                 description: "Token Approved",
               });
-              setIsProcessing(true);
+              setIsTransactionMined(false);
               await waitForTransactionAndInvalidateCache({
                 publicClient,
                 hash,
                 queryClient,
-              }).then(() => {
-                setIsProcessing(false);
-                onTokenApproval?.(hash);
-                toast.success("Token approved", { position: "top-center" });
               });
+              setIsTransactionMined(true);
+              toast.success("Token approved", { position: "top-center" });
             },
           },
         )
     : undefined;
 
-  return { approve, approveTokenStatus: status, isSuccess, isProcessing };
+  return {
+    approve,
+    pendingWalletSignatureStatus: status,
+    isTransactionMined,
+  };
 }

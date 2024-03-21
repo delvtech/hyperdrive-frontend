@@ -29,16 +29,13 @@ export default function ApproveTokenChoices({
       approvedAmount = amountAsBigInt ?? 0n;
       break;
   }
-  const [tokenApproved, setTokenApproved] = useState(false);
-  const { approve, approveTokenStatus, isProcessing } = useApproveToken({
-    tokenAddress: token.address,
-    spender: spender,
-    amount: approvedAmount,
-    enabled: token.address !== ETH_MAGIC_NUMBER,
-    onTokenApproval: async (hash) => {
-      setTokenApproved(true);
-    },
-  });
+  const { approve, pendingWalletSignatureStatus, isTransactionMined } =
+    useApproveToken({
+      tokenAddress: token.address,
+      spender: spender,
+      amount: approvedAmount,
+      enabled: token.address !== ETH_MAGIC_NUMBER,
+    });
 
   return (
     <div className="flex flex-col gap-4">
@@ -86,7 +83,16 @@ export default function ApproveTokenChoices({
           </div>
         </div>
       </Well>
-      {approveTokenStatus !== "loading" && !tokenApproved && !isProcessing ? (
+      {pendingWalletSignatureStatus === "loading" ||
+      (pendingWalletSignatureStatus === "success" && !isTransactionMined) ? (
+        <button
+          disabled
+          className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
+        >
+          <div className="daisy-loading daisy-loading-spinner" />
+          Approving
+        </button>
+      ) : (
         <button
           onClick={(e) => {
             // Do this so we don't close the modal
@@ -96,14 +102,6 @@ export default function ApproveTokenChoices({
           className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full"
         >
           <h5>Approve {token.symbol}</h5>
-        </button>
-      ) : (
-        <button
-          disabled
-          className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
-        >
-          <div className="daisy-loading daisy-loading-spinner" />
-          Approving
         </button>
       )}
     </div>
