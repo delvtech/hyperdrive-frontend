@@ -25,7 +25,11 @@ export function TokenPicker({
     ({ address }) => address === activeTokenAddress,
   ) as TokenConfig<any>;
   return (
-    <div className={"daisy-dropdown daisy-dropdown-bottom shrink-0"}>
+    <div
+      className={
+        "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
+      }
+    >
       <button
         className="daisy-btn flex h-12 items-center rounded-r-none border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30"
         onClick={(e) => {
@@ -35,10 +39,7 @@ export function TokenPicker({
         <img src={activeToken.iconUrl} className="h-5 " /> {activeToken.symbol}
         <ChevronDownIcon className="ml-2 h-3" />
       </button>
-      <ul
-        tabIndex={0}
-        className="daisy-menu daisy-dropdown-content z-[1] w-40 gap-0.5 rounded-lg bg-base-100 p-2 shadow"
-      >
+      <ul className="daisy-menu daisy-dropdown-content z-[1] w-40 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
         {[
           tokens.map((token) => (
             <li key={token.address}>

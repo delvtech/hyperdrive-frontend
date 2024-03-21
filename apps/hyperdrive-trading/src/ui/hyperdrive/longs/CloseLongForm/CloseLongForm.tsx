@@ -137,7 +137,6 @@ export function CloseLongForm({
           ) : undefined}
         </>
       }
-      heading="Close long"
       tokenInput={
         <TokenInput
           name={baseToken.symbol}
