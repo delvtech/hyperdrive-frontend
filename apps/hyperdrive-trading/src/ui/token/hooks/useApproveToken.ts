@@ -11,7 +11,6 @@ interface UseTokenApprovalOptions {
   spender: Address | undefined;
   amount: bigint;
   enabled?: boolean;
-  onTokenApproval?: (hash: string) => Promise<void>;
 }
 
 export function useApproveToken({
@@ -22,7 +21,6 @@ export function useApproveToken({
 }: UseTokenApprovalOptions): {
   approve: (() => void) | undefined;
   pendingWalletSignatureStatus: "error" | "idle" | "loading" | "success";
-
   isTransactionMined: boolean;
 } {
   const { writeContract, status } = useWriteContract();
