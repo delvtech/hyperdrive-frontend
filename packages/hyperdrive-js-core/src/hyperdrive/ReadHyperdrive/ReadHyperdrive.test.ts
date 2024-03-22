@@ -98,6 +98,31 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
   );
 
   contract.stubEvents(
+    "CloseLong",
+    {
+      fromBlock: "earliest",
+      toBlock: "latest",
+    },
+    [
+      {
+        eventName: "CloseLong",
+        args: {
+          assetId: 1n,
+          maturityTime: 123456789n,
+          trader: BOB,
+          destination: BOB,
+          // received back 1 base
+          asBase: true,
+          baseAmount: dnum.from("1", 18)[0],
+          vaultShareAmount: dnum.from("0.8", 18)[0],
+          // closed out 0.9 bonds
+          bondAmount: dnum.from("0.9", 18)[0],
+        },
+      },
+    ],
+  );
+
+  contract.stubEvents(
     "OpenShort",
     {
       fromBlock: "earliest",
@@ -133,6 +158,15 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     ],
   );
 
+  contract.stubEvents(
+    "CloseShort",
+    {
+      fromBlock: "earliest",
+      toBlock: "latest",
+    },
+    [],
+  );
+
   const value = await readHyperdrive.getTradingVolume({
     fromBlock: "earliest",
     toBlock: "latest",
@@ -140,8 +174,8 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
 
   expect(value).toEqual({
     shortVolume: dnum.from("290", 18)[0], // sum of bondAmount in short events
-    longVolume: dnum.from("2.7", 18)[0], // sum of bondAmount in long events
-    totalVolume: dnum.from("292.7", 18)[0],
+    longVolume: dnum.from("3.6", 18)[0], // sum of bondAmount in long events
+    totalVolume: dnum.from("293.6", 18)[0],
   });
 });
 
