@@ -44,7 +44,7 @@ export class ReadErc4626 extends ReadErc20 {
   }
 
   /**
-   * Convert a a shares amount to an assets amount.
+   * Convert a shares amount to an assets amount.
    */
   convertToAssets({
     sharesAmount,
