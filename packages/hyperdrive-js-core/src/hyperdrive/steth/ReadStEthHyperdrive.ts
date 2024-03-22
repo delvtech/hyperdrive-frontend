@@ -30,7 +30,7 @@ export class ReadStEthHyperdrive extends ReadHyperdrive {
   private _useSharesAccounting: boolean;
 
   constructor({
-    name = "StethHyperdrive",
+    name = "stETH Hyperdrive",
     address,
     contractFactory,
     network,
