@@ -1,4 +1,4 @@
-import { Converted, convertType } from "./convertType";
+import { Converted, convertType } from "src/base/convertType";
 
 export function convertBigIntsToStrings<T>(
   value: T,

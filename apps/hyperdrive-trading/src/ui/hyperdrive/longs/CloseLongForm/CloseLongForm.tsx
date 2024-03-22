@@ -96,9 +96,9 @@ export function CloseLongForm({
     enabled: previewCloseLongStatus === "success",
     onSubmitted: (hash) => {
       (window as any)[`${long.assetId}`].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Close Long pending"
+          message="Closing Long..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );
@@ -137,7 +137,6 @@ export function CloseLongForm({
           ) : undefined}
         </>
       }
-      heading="Close long"
       tokenInput={
         <TokenInput
           name={baseToken.symbol}

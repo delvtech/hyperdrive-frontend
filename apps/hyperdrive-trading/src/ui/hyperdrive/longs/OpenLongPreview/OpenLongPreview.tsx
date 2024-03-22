@@ -11,6 +11,7 @@ import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 
 interface OpenLongPreviewProps {
@@ -153,9 +154,7 @@ export function OpenLongPreview({
       />
       <LabelValue
         label="Matures in"
-        value={`${numDays} days, ${new Date(
-          Date.now() + termLengthMS,
-        ).toLocaleDateString()}`}
+        value={`${numDays} days, ${formatDate(Date.now() + termLengthMS)}`}
       />
     </div>
   );

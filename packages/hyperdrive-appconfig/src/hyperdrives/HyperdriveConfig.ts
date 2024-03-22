@@ -1,4 +1,4 @@
-import { PoolConfig } from "@delvtech/hyperdrive-js-core";
+import { PoolConfig } from "@delvtech/hyperdrive-viem";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {

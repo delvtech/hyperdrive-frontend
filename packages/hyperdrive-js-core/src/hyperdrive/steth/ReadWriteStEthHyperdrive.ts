@@ -4,12 +4,12 @@ import {
   ReadStEthHyperdriveOptions,
 } from "./ReadStEthHyperdrive";
 import { Overwrite } from "src/base/types";
-import { readWriteHyperdriveMixin } from "src/hyperdrive/ReadWriteHyperdrive";
+import { writeHyperdriveMixin } from "src/hyperdrive/ReadWriteHyperdrive";
 import {
   CachedReadWriteContract,
   ContractReadOptions,
 } from "@delvtech/evm-client";
-import { StEthHyperdriveAbi } from "./abi";
+import { StEthHyperdriveAbi } from "src/hyperdrive/steth/abi";
 import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
@@ -19,7 +19,7 @@ export interface ReadWriteStEthHyperdriveOptions
     ReadWriteContractModelOptions
   > {}
 
-export class ReadWriteStEthHyperdrive extends readWriteHyperdriveMixin(
+export class ReadWriteStEthHyperdrive extends writeHyperdriveMixin(
   ReadStEthHyperdrive,
 ) {
   declare stEthHyperdriveContract: CachedReadWriteContract<StEthHyperdriveAbi>;

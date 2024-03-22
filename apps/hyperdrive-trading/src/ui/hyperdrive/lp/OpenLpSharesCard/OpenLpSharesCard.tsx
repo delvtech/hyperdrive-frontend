@@ -1,3 +1,4 @@
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -180,18 +181,31 @@ export function OpenLpSharesCard({
 
             <div className="daisy-card-actions mt-4 w-full">
               <Modal
-                modalId={"withdrawalLpModal"}
+                modalId="withdrawalLpModal"
                 modalContent={
-                  <RemoveLiquidityForm
-                    hyperdrive={hyperdrive}
-                    lpShares={lpShares || 0n}
-                  />
+                  <div>
+                    <h5 className="mb-4">Remove Liquidity</h5>
+                    <button
+                      className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
+                      onClick={() =>
+                        (window as any)["withdrawalLpModal"].close()
+                      }
+                    >
+                      <XMarkIcon className="w-6 " title="Close" />
+                    </button>
+                    <RemoveLiquidityForm
+                      hyperdrive={hyperdrive}
+                      lpShares={lpShares || 0n}
+                    />
+                  </div>
                 }
               >
                 {({ showModal }) => (
                   <button
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-                    onClick={showModal}
+                    onClick={() => {
+                      return showModal();
+                    }}
                   >
                     Remove liquidity
                   </button>

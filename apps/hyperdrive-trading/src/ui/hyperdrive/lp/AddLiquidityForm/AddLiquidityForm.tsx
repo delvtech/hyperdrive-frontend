@@ -25,7 +25,7 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
+import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -132,9 +132,9 @@ export function AddLiquidityForm({
       addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
     onSubmitted: (hash) => {
       (window as any)["add-lp"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Add liquidity pending"
+          message="Adding liquidity..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );
@@ -213,10 +213,9 @@ export function AddLiquidityForm({
 
         if (!hasEnoughAllowance) {
           return (
-            <ApproveTokenButton
+            <ApproveTokenChoices
               spender={hyperdrive.address}
               token={activeToken}
-              tokenBalance={activeTokenBalance}
               amountAsBigInt={depositAmountAsBigInt}
               amount={depositAmount}
             />

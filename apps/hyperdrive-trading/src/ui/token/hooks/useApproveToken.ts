@@ -4,6 +4,7 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
+import { useState } from "react";
 import { Address, erc20Abi } from "viem";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
@@ -17,11 +18,15 @@ export function useApproveToken({
   spender,
   amount,
   enabled = true,
-}: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
-  const { writeContract } = useWriteContract();
+}: UseTokenApprovalOptions): {
+  approve: (() => void) | undefined;
+  pendingWalletSignatureStatus: "error" | "idle" | "loading" | "success";
+  isTransactionMined: boolean;
+} {
+  const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
-
+  const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
 
   const approve = queryEnabled
@@ -35,20 +40,28 @@ export function useApproveToken({
           },
           {
             onSuccess: async (hash) => {
+              const description =
+                amount === 0n ? "Allowance revoked" : "Token Approved";
               addRecentTransaction({
                 hash,
-                description: "Token Approved",
+                description,
               });
+              setIsTransactionMined(false);
               await waitForTransactionAndInvalidateCache({
                 publicClient,
                 hash,
                 queryClient,
               });
-              toast.success("Token approved", { position: "top-center" });
+              setIsTransactionMined(true);
+              toast.success(description, { position: "top-center" });
             },
           },
         )
     : undefined;
 
-  return { approve };
+  return {
+    approve,
+    pendingWalletSignatureStatus: status,
+    isTransactionMined,
+  };
 }

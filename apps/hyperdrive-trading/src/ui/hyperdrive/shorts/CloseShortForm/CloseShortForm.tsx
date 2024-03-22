@@ -106,7 +106,7 @@ export function CloseShortForm({
 
     onExecuted: (hash) => {
       setAmount("");
-      toast.success(
+      toast.loading(
         <CustomToastMessage
           message="Short closed"
           link={makeTransactionURL(hash, chainId)}

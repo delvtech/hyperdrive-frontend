@@ -22,7 +22,7 @@ import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
+import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -125,9 +125,9 @@ export function OpenLongForm({
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onSubmitted(hash) {
       (window as any)["open-long"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
-          message="Open Long pending"
+          message="Opening a Long..."
           link={makeTransactionURL(hash, chainId)}
         />,
       );
@@ -226,10 +226,9 @@ export function OpenLongForm({
 
         if (!hasEnoughAllowance) {
           return (
-            <ApproveTokenButton
+            <ApproveTokenChoices
               spender={hyperdrive.address}
               token={activeToken}
-              tokenBalance={activeTokenBalance}
               amountAsBigInt={depositAmountAsBigInt}
               amount={depositAmount}
             />
