@@ -8,7 +8,7 @@ export interface ReadWriteErc4626Options
   extends ReadWriteContractModelOptions {}
 
 export class ReadWriteErc4626 extends writeErc20Mixin(ReadErc4626) {
-  declare stEthContract: CachedReadWriteContract<Erc4626Abi>;
+  declare erc4626Contract: CachedReadWriteContract<Erc4626Abi>;
 
   constructor(options: ReadWriteErc4626Options) {
     super(options);
