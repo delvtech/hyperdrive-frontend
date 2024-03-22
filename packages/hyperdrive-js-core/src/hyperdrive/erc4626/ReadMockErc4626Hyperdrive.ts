@@ -36,6 +36,6 @@ export class ReadMockErc4626Hyperdrive extends ReadErc4626Hyperdrive {
     options?: ContractReadOptions;
   }): Promise<bigint> {
     const vault = await this.getSharesToken();
-    return await vault.getRate({ options });
+    return vault.getRate({ options });
   }
 }
