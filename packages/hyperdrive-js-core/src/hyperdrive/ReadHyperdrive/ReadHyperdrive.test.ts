@@ -4,7 +4,7 @@ import { simplePoolConfig } from "src/pool/testing/PoolConfig";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/pool/Checkpoint";
-import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
+import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { ZERO_ADDRESS } from "src/base/numbers";
 

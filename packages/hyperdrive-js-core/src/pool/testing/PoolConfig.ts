@@ -1,5 +1,5 @@
 import { PoolConfig } from "src/pool/PoolConfig";
-import { ZERO_ADDRESS } from "./constants";
+import { ZERO_ADDRESS } from "src/pool/testing/constants";
 
 export const simplePoolConfig: PoolConfig = {
   baseToken: ZERO_ADDRESS,

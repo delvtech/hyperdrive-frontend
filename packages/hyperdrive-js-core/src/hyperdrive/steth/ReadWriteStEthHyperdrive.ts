@@ -9,7 +9,7 @@ import {
   CachedReadWriteContract,
   ContractReadOptions,
 } from "@delvtech/evm-client";
-import { StEthHyperdriveAbi } from "./abi";
+import { StEthHyperdriveAbi } from "src/hyperdrive/steth/abi";
 import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
