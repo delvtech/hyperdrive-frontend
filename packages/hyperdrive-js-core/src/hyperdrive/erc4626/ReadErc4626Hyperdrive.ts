@@ -14,7 +14,7 @@ export class ReadErc4626Hyperdrive extends ReadHyperdrive {
   erc4626HyperdriveContract: CachedReadContract<Erc4626HyperdriveAbi>;
 
   constructor({
-    name = "StEthHyperdrive",
+    name = "ERC-4626 Hyperdrive",
     address,
     contractFactory,
     network,
