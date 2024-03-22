@@ -47,9 +47,6 @@ export class ReadMockErc4626Hyperdrive extends ReadErc4626Hyperdrive {
     });
   }
 
-  /**
-   * Get a model of the tokenized vault for this Hyperdrive instance.
-   */
   async getYieldSourceRate({
     options,
   }: {
