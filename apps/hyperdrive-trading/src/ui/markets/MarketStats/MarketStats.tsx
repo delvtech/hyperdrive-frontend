@@ -67,7 +67,7 @@ export function MarketStats({
         value={
           lpApyStatus !== "loading" ? (
             <span className="flex items-center gap-1.5">
-              {lpApy === undefined ? "no data" : `${lpApy?.toFixed(2)}%`}
+              {lpApy === undefined ? "no data" : `${(lpApy * 100).toFixed(2)}%`}
             </span>
           ) : (
             <Skeleton className="w-20" />
