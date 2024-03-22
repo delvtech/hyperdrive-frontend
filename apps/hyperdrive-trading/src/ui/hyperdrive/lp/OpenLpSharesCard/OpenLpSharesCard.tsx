@@ -220,7 +220,7 @@ export function OpenLpSharesCard({
         ) : (
           <NonIdealState
             heading="You have no LP positions"
-            text="Add liquidity, switch wallets, or view your closed LP positions."
+            text="Add liquidity, switch wallets, or view your closed LP positions"
           />
         )}
       </div>

@@ -15,5 +15,5 @@ export function LpApyCell({
   if (!lpApy) {
     return <span>no data</span>;
   }
-  return <span>{lpApy?.toFixed(2)}%</span>;
+  return <span>{(lpApy * 100).toFixed(2)}%</span>;
 }

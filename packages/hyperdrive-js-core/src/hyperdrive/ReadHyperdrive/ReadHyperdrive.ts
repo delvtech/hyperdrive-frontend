@@ -690,23 +690,43 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     fromBlock: bigint;
     toBlock: bigint;
   }): ReturnType<IReadHyperdrive, "getLpApy"> {
-    const { positionDuration } = await this.getPoolConfig();
+    const { positionDuration, checkpointDuration } = await this.getPoolConfig();
 
     const checkpointEvents = await this.getCheckpointEvents({
       fromBlock,
       toBlock,
     });
-    const startingCheckpoint = checkpointEvents[0];
-    const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
-    const days = positionDuration / (24n * 60n * 60n);
-    const yearFraction = dnum.div([days, 18], [365n, 18]);
-    const toOverFromSharePrice = dnum.div(
-      [endingCheckpoint.args.lpSharePrice, 18],
-      [startingCheckpoint.args.lpSharePrice, 18],
-    );
 
-    const valueToLog = dnum.div(toOverFromSharePrice, yearFraction);
-    const lpApy = Math.log(Number(valueToLog[0]));
+    // The starting lp share price comes from the first checkpoint in our events
+    const {
+      args: { lpSharePrice: startingCheckpointLpSharePrice },
+    } = checkpointEvents[0];
+
+    // The ending lp share price is either the current checkpoint's lp share
+    // price, or the last checkpoint in our events if looking at historical
+    // apys.
+    const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
+    const block = await this.network.getBlock();
+    const currentCheckpointId = getCheckpointId(
+      block?.timestamp as bigint,
+      checkpointDuration,
+    );
+    const endingCheckpointId = getCheckpointId(
+      endingCheckpoint.args.checkpointTime,
+      checkpointDuration,
+    );
+    const { lpSharePrice: currentLpSharePrice } = await this.getPoolInfo();
+    const endingCheckpointLpSharePrice =
+      currentCheckpointId === endingCheckpointId
+        ? currentLpSharePrice
+        : endingCheckpoint.args.lpSharePrice;
+
+    const lpApy = calculateLpApy({
+      startingCheckpointLpSharePrice,
+      endingCheckpointLpSharePrice,
+      positionDuration,
+    });
+
     return { lpApy };
   }
 
@@ -1754,4 +1774,42 @@ function calculateBaseAmount({
   // so we can convert your shares paid into their base value
   const vaultSharePrice = dnum.div([baseAmount, 18], [vaultShareAmount, 18])[0];
   return dnum.multiply([vaultSharePrice, 18], [vaultShareAmount, 18])[0];
+}
+
+/*
+ * This  returns the LP APY using the following formula for continuous compounding:
+
+ * r = rate of return
+ * p_0 = from lpSharePrice
+ * p_1 = to lpSharePrice
+ * t = term length in fractions of a year
+ * 
+ * Original calc:
+ * r = ln(p_1 / p_0) / t
+ */
+function calculateLpApy({
+  startingCheckpointLpSharePrice,
+  endingCheckpointLpSharePrice,
+  positionDuration,
+}: {
+  startingCheckpointLpSharePrice: bigint;
+  endingCheckpointLpSharePrice: bigint;
+  positionDuration: bigint;
+}): number {
+  const priceRatio = dnum.toNumber(
+    dnum.div(
+      [endingCheckpointLpSharePrice, 18],
+      [startingCheckpointLpSharePrice, 18],
+    ),
+    18,
+  );
+  const logOfPriceRatio = dnum.from(Math.log(priceRatio), 18);
+
+  const positionDurationInDays = positionDuration / (24n * 60n * 60n);
+  const yearFraction = dnum.div([positionDurationInDays, 18], [365n, 18]);
+  const lpApy = Number(
+    dnum.format(dnum.div(logOfPriceRatio, yearFraction, 18)),
+  );
+
+  return lpApy;
 }
