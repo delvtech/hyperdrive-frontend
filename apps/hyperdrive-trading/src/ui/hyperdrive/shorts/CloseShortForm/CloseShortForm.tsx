@@ -11,6 +11,7 @@ import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
+import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
@@ -181,15 +182,7 @@ export function CloseShortForm({
           return <ConnectButton />;
         }
         if (closeShortStatus === "loading") {
-          return (
-            <button
-              disabled
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            >
-              <div className="daisy-loading daisy-loading-spinner" />
-              Closing Short
-            </button>
-          );
+          return <LoadingButton label="Closing Short" variant="primary" />;
         }
         return (
           <button

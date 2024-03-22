@@ -14,6 +14,7 @@ import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
+import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
@@ -243,15 +244,7 @@ export function RemoveLiquidityForm({
         }
 
         if (removeLiquidityStatus === "loading") {
-          return (
-            <button
-              disabled
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            >
-              <div className="daisy-loading daisy-loading-spinner" />
-              Removing liquidity
-            </button>
-          );
+          return <LoadingButton label="Removing liquidity" variant="primary" />;
         }
 
         return (
