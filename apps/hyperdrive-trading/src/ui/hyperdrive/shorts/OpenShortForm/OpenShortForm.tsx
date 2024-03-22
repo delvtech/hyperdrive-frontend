@@ -134,7 +134,7 @@ export function OpenShortForm({
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
     onSubmitted: (hash) => {
       (window as any)["open-short"].close();
-      toast.success(
+      toast.loading(
         <CustomToastMessage
           message="Opening Short"
           link={makeTransactionURL(hash, chainId)}
