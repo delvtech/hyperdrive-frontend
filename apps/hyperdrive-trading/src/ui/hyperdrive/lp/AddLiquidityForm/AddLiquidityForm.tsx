@@ -16,6 +16,7 @@ import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
+import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -223,15 +224,7 @@ export function AddLiquidityForm({
         }
 
         if (addLiquidityStatus === "loading") {
-          return (
-            <button
-              disabled
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            >
-              <div className="daisy-loading daisy-loading-spinner" />
-              Adding liquidity
-            </button>
-          );
+          return <LoadingButton label="Adding liquidity" type="primary" />;
         }
 
         return (
