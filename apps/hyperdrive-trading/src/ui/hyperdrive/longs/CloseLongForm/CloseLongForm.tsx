@@ -188,7 +188,7 @@ export function CloseLongForm({
           return <ConnectButton />;
         }
         if (closeLongStatus === "loading") {
-          return <LoadingButton label="Closing Long" type="primary" />;
+          return <LoadingButton label="Closing Long" variant="primary" />;
         }
         return (
           <button

@@ -224,7 +224,7 @@ export function AddLiquidityForm({
         }
 
         if (addLiquidityStatus === "loading") {
-          return <LoadingButton label="Adding liquidity" type="primary" />;
+          return <LoadingButton label="Adding liquidity" variant="primary" />;
         }
 
         return (

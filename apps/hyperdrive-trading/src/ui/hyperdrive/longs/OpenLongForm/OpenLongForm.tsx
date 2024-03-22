@@ -237,7 +237,7 @@ export function OpenLongForm({
         }
 
         if (openLongStatus === "loading") {
-          return <LoadingButton label="Opening Long" type="primary" />;
+          return <LoadingButton label="Opening Long" variant="primary" />;
         }
 
         return (

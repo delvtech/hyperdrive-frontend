@@ -263,7 +263,7 @@ export function OpenShortForm({
           );
         }
         if (openShortStatus === "loading") {
-          return <LoadingButton label="Opening Short" type="primary" />;
+          return <LoadingButton label="Opening Short" variant="primary" />;
         }
         return (
           <button

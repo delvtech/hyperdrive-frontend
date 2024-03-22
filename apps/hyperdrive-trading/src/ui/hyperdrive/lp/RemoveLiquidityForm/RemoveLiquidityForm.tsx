@@ -244,7 +244,7 @@ export function RemoveLiquidityForm({
         }
 
         if (removeLiquidityStatus === "loading") {
-          return <LoadingButton label="Removing liquidity" type="primary" />;
+          return <LoadingButton label="Removing liquidity" variant="primary" />;
         }
 
         return (

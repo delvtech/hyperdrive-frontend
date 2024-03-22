@@ -182,7 +182,7 @@ export function CloseShortForm({
           return <ConnectButton />;
         }
         if (closeShortStatus === "loading") {
-          return <LoadingButton label="Closing Short" type="primary" />;
+          return <LoadingButton label="Closing Short" variant="primary" />;
         }
         return (
           <button
