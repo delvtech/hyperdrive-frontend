@@ -47,7 +47,10 @@ export function OpenShortsTable({
           heading="You have no open Short positions"
           text="Open a Short, switch wallets, or view your closed Short positions"
           action={
-            <OpenShortModalButton modalId="open-long" hyperdrive={hyperdrive} />
+            <OpenShortModalButton
+              modalId="open-short"
+              hyperdrive={hyperdrive}
+            />
           }
         />
       </div>
