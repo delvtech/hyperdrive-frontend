@@ -570,22 +570,37 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
+    const closeLongEvents = await this.getClosedLongEvents({
+      fromBlock,
+      toBlock,
+    });
     const openShortEvents = await this.getOpenShortEvents({
       fromBlock,
       toBlock,
     });
+    const closeShortEvents = await this.getClosedShortEvents({
+      fromBlock,
+      toBlock,
+    });
 
-    const longVolume = sumBigInt(
+    const openLongVolume = sumBigInt(
       openLongEvents.map((event) => event.args.bondAmount),
     );
+    const closeLongVolume = sumBigInt(
+      closeLongEvents.map((event) => event.args.bondAmount),
+    );
 
-    const shortVolume = sumBigInt(
+    const openShortVolume = sumBigInt(
       openShortEvents.map((event) => event.args.bondAmount),
     );
+    const closeShortVolume = sumBigInt(
+      closeShortEvents.map((event) => event.args.bondAmount),
+    );
     return {
-      totalVolume: longVolume + shortVolume,
-      longVolume,
-      shortVolume: shortVolume,
+      totalVolume:
+        openLongVolume + closeLongVolume + openShortVolume + closeShortVolume,
+      longVolume: openLongVolume + closeLongVolume,
+      shortVolume: openShortVolume + closeShortVolume,
     };
   }
 
@@ -619,10 +634,22 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return this.contract.getEvents("OpenLong", options);
   }
 
+  private async getClosedLongEvents(
+    options?: ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
+  ): Promise<Event<HyperdriveAbi, "CloseLong">[]> {
+    return this.contract.getEvents("CloseLong", options);
+  }
+
   private async getOpenShortEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "OpenShort">,
   ): Promise<Event<HyperdriveAbi, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
+  }
+
+  private async getClosedShortEvents(
+    options?: ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
+  ): Promise<Event<HyperdriveAbi, "CloseShort">[]> {
+    return this.contract.getEvents("CloseShort", options);
   }
 
   async getLongEvents(
@@ -1783,7 +1810,7 @@ function calculateBaseAmount({
  * p_0 = from lpSharePrice
  * p_1 = to lpSharePrice
  * t = term length in fractions of a year
- * 
+ *
  * r = ln(p_1 / p_0) / t
  */
 function calculateLpApy({
