@@ -1784,7 +1784,6 @@ function calculateBaseAmount({
  * p_1 = to lpSharePrice
  * t = term length in fractions of a year
  * 
- * Original calc:
  * r = ln(p_1 / p_0) / t
  */
 function calculateLpApy({
