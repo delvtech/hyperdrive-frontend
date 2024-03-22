@@ -9,7 +9,7 @@ export class ReadErc20 extends ReadModel implements ReadToken {
   contract: CachedReadContract<Erc20Abi>;
 
   constructor({
-    name = "ERC20 Token",
+    name = "ERC-20 Token",
     address,
     contractFactory,
     network,

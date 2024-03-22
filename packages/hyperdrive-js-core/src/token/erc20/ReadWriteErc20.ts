@@ -31,7 +31,7 @@ export interface ReadWriteErc20Options extends ReadWriteContractModelOptions {}
  * @throws An {@linkcode ExpectedWriteContractError} If the contract is not a
  * {@linkcode CachedReadWriteContract}.
  */
-export function readWriteErc20Mixin<TReadErc20 extends Constructor<ReadErc20>>(
+export function writeErc20Mixin<TReadErc20 extends Constructor<ReadErc20>>(
   ReadErc20: TReadErc20,
 ): Constructor<IReadWriteErc20> & TReadErc20 {
   return class extends ReadErc20 implements ReadWriteToken {
@@ -70,7 +70,7 @@ export function readWriteErc20Mixin<TReadErc20 extends Constructor<ReadErc20>>(
   };
 }
 
-export class ReadWriteErc20 extends readWriteErc20Mixin(ReadErc20) {
+export class ReadWriteErc20 extends writeErc20Mixin(ReadErc20) {
   constructor(options: ReadWriteErc20Options) {
     super(options);
   }

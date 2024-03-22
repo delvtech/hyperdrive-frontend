@@ -226,7 +226,7 @@ export interface ReadWriteHyperdriveOptions
  * @throws An {@linkcode ExpectedWriteContractError} If `this.contract` is not a
  * {@linkcode CachedReadWriteContract}.
  */
-export function readWriteHyperdriveMixin<
+export function writeHyperdriveMixin<
   TReadHyperdrive extends Constructor<ReadHyperdrive>,
 >(
   ReadHyperdrive: TReadHyperdrive,
@@ -549,9 +549,7 @@ export function readWriteHyperdriveMixin<
   };
 }
 
-export class ReadWriteHyperdrive extends readWriteHyperdriveMixin(
-  ReadHyperdrive,
-) {
+export class ReadWriteHyperdrive extends writeHyperdriveMixin(ReadHyperdrive) {
   declare contract: CachedReadWriteContract<HyperdriveAbi>;
 
   constructor(options: ReadWriteHyperdriveOptions) {
