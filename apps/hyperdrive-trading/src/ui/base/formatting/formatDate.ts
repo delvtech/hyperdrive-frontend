@@ -1,7 +1,8 @@
 export function formatDate(dateInMs: number): string {
-  return new Date(dateInMs).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  const date = new Date(dateInMs);
+  const month = date.toLocaleString("default", { month: "short" });
+  const day = String(date.getDate()).padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
 }
