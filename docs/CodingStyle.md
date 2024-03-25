@@ -31,8 +31,8 @@ additional thought from developers.
   the codebase easier to read and search.
 - Always treat acronyms and abbreviations as words when considering
   capitalization. For example:
-  - Instead of `LongAPRStat`, use `LongAprStat`
-  - Instead of `baseAPIURL`, use `baseApiUrl`
+    - Instead of `LongAPRStat`, use `LongAprStat`
+    - Instead of `baseAPIURL`, use `baseApiUrl`
 - If code review introduces confusion over a piece of code, add clarifying
   comments.
 - Rebase to avoid merge commits in branches and PRs.
@@ -74,7 +74,7 @@ const buttonClass = classNames("daisy-btn", {
 });
 
 // Render the element
-<button className={buttonClass}>Click Me</button>;
+<button className={buttonClass}>Click Me</button>
 ```
 
 ### **3. Avoid use of `line-height`**
@@ -112,7 +112,7 @@ the first word, for instance, 'View all' instead of 'View All'.
 
 Note: Proper nouns should still be capitalized, e.g.: "Dai Savings Rate"
 
-### **5. Functions should have verbs**
+### **4. Functions should have verbs**
 
 Function names should begin with verbs to enhance readability and express the
 action they perform. This convention aids in conveying the function's purpose,
