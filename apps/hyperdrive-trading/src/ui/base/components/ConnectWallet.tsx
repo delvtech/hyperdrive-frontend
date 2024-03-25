@@ -40,12 +40,22 @@ export function ConnectWalletButton(): JSX.Element {
                 );
               }
               return (
-                <button
-                  className="daisy-btn daisy-btn-circle daisy-btn-primary mx-0 w-32"
-                  onClick={openAccountModal}
-                >
-                  {account.displayName}
-                </button>
+                <div className="flex items-center gap-4">
+                  <div
+                    onClick={openChainModal}
+                    className="daisy-avatar cursor-pointer"
+                  >
+                    <div className="w-8 rounded-full">
+                      <img src={chain.iconUrl} />
+                    </div>
+                  </div>
+                  <button
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary mx-0 w-32"
+                    onClick={openAccountModal}
+                  >
+                    {account.displayName}
+                  </button>
+                </div>
               );
             })()}
           </div>
