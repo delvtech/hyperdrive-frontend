@@ -1219,13 +1219,13 @@ export declare const EzETHBase: {
         readonly id: 8521;
         readonly exportedSymbols: {
             readonly EzETHBase: readonly [8520];
-            readonly FixedPointMath: readonly [19442];
-            readonly HyperdriveBase: readonly [14381];
-            readonly IERC20: readonly [10358];
-            readonly IHyperdrive: readonly [11076];
-            readonly IRenzoOracle: readonly [12342];
-            readonly IRestakeManager: readonly [12287];
-            readonly ONE: readonly [18676];
+            readonly FixedPointMath: readonly [19572];
+            readonly HyperdriveBase: readonly [14511];
+            readonly IERC20: readonly [10417];
+            readonly IHyperdrive: readonly [11143];
+            readonly IRenzoOracle: readonly [12445];
+            readonly IRestakeManager: readonly [12390];
+            readonly ONE: readonly [18806];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:5677:51";
@@ -1244,14 +1244,14 @@ export declare const EzETHBase: {
             readonly file: "../../interfaces/IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8521;
-            readonly sourceUnit: 10359;
+            readonly sourceUnit: 10418;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8279;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10358;
+                    readonly referencedDeclaration: 10417;
                     readonly src: "73:6:51";
                     readonly typeDescriptions: {};
                 };
@@ -1267,14 +1267,14 @@ export declare const EzETHBase: {
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8521;
-            readonly sourceUnit: 11077;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8281;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "127:11:51";
                     readonly typeDescriptions: {};
                 };
@@ -1290,14 +1290,14 @@ export declare const EzETHBase: {
             readonly file: "../../interfaces/IRenzo.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8521;
-            readonly sourceUnit: 12354;
+            readonly sourceUnit: 12457;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8283;
                     readonly name: "IRestakeManager";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12287;
+                    readonly referencedDeclaration: 12390;
                     readonly src: "191:15:51";
                     readonly typeDescriptions: {};
                 };
@@ -1308,7 +1308,7 @@ export declare const EzETHBase: {
                     readonly name: "IRenzoOracle";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12342;
+                    readonly referencedDeclaration: 12445;
                     readonly src: "208:12:51";
                     readonly typeDescriptions: {};
                 };
@@ -1324,14 +1324,14 @@ export declare const EzETHBase: {
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8521;
-            readonly sourceUnit: 14382;
+            readonly sourceUnit: 14512;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8286;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "268:14:51";
                     readonly typeDescriptions: {};
                 };
@@ -1347,14 +1347,14 @@ export declare const EzETHBase: {
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8521;
-            readonly sourceUnit: 19443;
+            readonly sourceUnit: 19573;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8288;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "336:14:51";
                     readonly typeDescriptions: {};
                 };
@@ -1365,7 +1365,7 @@ export declare const EzETHBase: {
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18676;
+                    readonly referencedDeclaration: 18806;
                     readonly src: "352:3:51";
                     readonly typeDescriptions: {};
                 };
@@ -1387,7 +1387,7 @@ export declare const EzETHBase: {
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["1067:14:51"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "1067:14:51";
                 };
                 readonly typeName: {
@@ -1419,7 +1419,7 @@ export declare const EzETHBase: {
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                     readonly typeString: "contract IRestakeManager";
                 };
                 readonly typeName: {
@@ -1430,13 +1430,13 @@ export declare const EzETHBase: {
                         readonly name: "IRestakeManager";
                         readonly nameLocations: readonly ["1144:15:51"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 12287;
+                        readonly referencedDeclaration: 12390;
                         readonly src: "1144:15:51";
                     };
-                    readonly referencedDeclaration: 12287;
+                    readonly referencedDeclaration: 12390;
                     readonly src: "1144:15:51";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                         readonly typeString: "contract IRestakeManager";
                     };
                 };
@@ -1460,7 +1460,7 @@ export declare const EzETHBase: {
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                    readonly typeIdentifier: "t_contract$_IERC20_$10417";
                     readonly typeString: "contract IERC20";
                 };
                 readonly typeName: {
@@ -1471,13 +1471,13 @@ export declare const EzETHBase: {
                         readonly name: "IERC20";
                         readonly nameLocations: readonly ["1240:6:51"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 10358;
+                        readonly referencedDeclaration: 10417;
                         readonly src: "1240:6:51";
                     };
-                    readonly referencedDeclaration: 10358;
+                    readonly referencedDeclaration: 10417;
                     readonly src: "1240:6:51";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                         readonly typeString: "contract IERC20";
                     };
                 };
@@ -1501,7 +1501,7 @@ export declare const EzETHBase: {
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                     readonly typeString: "contract IRenzoOracle";
                 };
                 readonly typeName: {
@@ -1512,13 +1512,13 @@ export declare const EzETHBase: {
                         readonly name: "IRenzoOracle";
                         readonly nameLocations: readonly ["1319:12:51"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 12342;
+                        readonly referencedDeclaration: 12445;
                         readonly src: "1319:12:51";
                     };
-                    readonly referencedDeclaration: 12342;
+                    readonly referencedDeclaration: 12445;
                     readonly src: "1319:12:51";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                         readonly typeString: "contract IRenzoOracle";
                     };
                 };
@@ -1568,7 +1568,7 @@ export declare const EzETHBase: {
                                 readonly referencedDeclaration: 8300;
                                 readonly src: "1653:15:51";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                     readonly typeString: "contract IRestakeManager";
                                 };
                             };
@@ -1582,13 +1582,13 @@ export declare const EzETHBase: {
                                 readonly referencedDeclaration: 8315;
                                 readonly src: "1671:16:51";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                    readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                     readonly typeString: "contract IRestakeManager";
                                 };
                             };
                             readonly src: "1653:34:51";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                 readonly typeString: "contract IRestakeManager";
                             };
                         };
@@ -1610,7 +1610,7 @@ export declare const EzETHBase: {
                                 readonly referencedDeclaration: 8304;
                                 readonly src: "1697:6:51";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                    readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                     readonly typeString: "contract IERC20";
                                 };
                             };
@@ -1629,7 +1629,7 @@ export declare const EzETHBase: {
                                             readonly referencedDeclaration: 8315;
                                             readonly src: "1713:16:51";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                                 readonly typeString: "contract IRestakeManager";
                                             };
                                         };
@@ -1641,7 +1641,7 @@ export declare const EzETHBase: {
                                         readonly memberLocation: "1730:5:51";
                                         readonly memberName: "ezETH";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 12263;
+                                        readonly referencedDeclaration: 12366;
                                         readonly src: "1713:22:51";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_view$__$returns$_t_address_$";
@@ -1673,10 +1673,10 @@ export declare const EzETHBase: {
                                     readonly name: "IERC20";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 10358;
+                                    readonly referencedDeclaration: 10417;
                                     readonly src: "1706:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IERC20_$10358_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IERC20_$10417_$";
                                         readonly typeString: "type(contract IERC20)";
                                     };
                                 };
@@ -1692,13 +1692,13 @@ export declare const EzETHBase: {
                                 readonly src: "1706:32:51";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                    readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                     readonly typeString: "contract IERC20";
                                 };
                             };
                             readonly src: "1697:41:51";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                 readonly typeString: "contract IERC20";
                             };
                         };
@@ -1720,7 +1720,7 @@ export declare const EzETHBase: {
                                 readonly referencedDeclaration: 8308;
                                 readonly src: "1748:12:51";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                                     readonly typeString: "contract IRenzoOracle";
                                 };
                             };
@@ -1739,7 +1739,7 @@ export declare const EzETHBase: {
                                             readonly referencedDeclaration: 8315;
                                             readonly src: "1776:16:51";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                                 readonly typeString: "contract IRestakeManager";
                                             };
                                         };
@@ -1751,7 +1751,7 @@ export declare const EzETHBase: {
                                         readonly memberLocation: "1793:11:51";
                                         readonly memberName: "renzoOracle";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 12269;
+                                        readonly referencedDeclaration: 12372;
                                         readonly src: "1776:28:51";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_view$__$returns$_t_address_$";
@@ -1783,10 +1783,10 @@ export declare const EzETHBase: {
                                     readonly name: "IRenzoOracle";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12342;
+                                    readonly referencedDeclaration: 12445;
                                     readonly src: "1763:12:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IRenzoOracle_$12342_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IRenzoOracle_$12445_$";
                                         readonly typeString: "type(contract IRenzoOracle)";
                                     };
                                 };
@@ -1802,13 +1802,13 @@ export declare const EzETHBase: {
                                 readonly src: "1763:44:51";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                                    readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                                     readonly typeString: "contract IRenzoOracle";
                                 };
                             };
                             readonly src: "1748:59:51";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                                readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                                 readonly typeString: "contract IRenzoOracle";
                             };
                         };
@@ -1843,7 +1843,7 @@ export declare const EzETHBase: {
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                            readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                             readonly typeString: "contract IRestakeManager";
                         };
                         readonly typeName: {
@@ -1854,13 +1854,13 @@ export declare const EzETHBase: {
                                 readonly name: "IRestakeManager";
                                 readonly nameLocations: readonly ["1609:15:51"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 12287;
+                                readonly referencedDeclaration: 12390;
                                 readonly src: "1609:15:51";
                             };
-                            readonly referencedDeclaration: 12287;
+                            readonly referencedDeclaration: 12390;
                             readonly src: "1609:15:51";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                 readonly typeString: "contract IRestakeManager";
                             };
                         };
@@ -1898,10 +1898,10 @@ export declare const EzETHBase: {
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
+                                    readonly referencedDeclaration: 11143;
                                     readonly src: "2112:11:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
@@ -1913,7 +1913,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "2124:16:51";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11042;
+                                readonly referencedDeclaration: 11109;
                                 readonly src: "2112:28:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
@@ -1941,7 +1941,7 @@ export declare const EzETHBase: {
                         readonly src: "2105:37:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13412];
+                readonly baseFunctions: readonly [13542];
                 readonly documentation: {
                     readonly id: 8340;
                     readonly nodeType: "StructuredDocumentation";
@@ -2200,7 +2200,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8304;
                                     readonly src: "2445:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -2212,7 +2212,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "2452:12:51";
                                 readonly memberName: "transferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10315;
+                                readonly referencedDeclaration: 10374;
                                 readonly src: "2445:19:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$";
@@ -2240,7 +2240,7 @@ export declare const EzETHBase: {
                         readonly src: "2445:60:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13420];
+                readonly baseFunctions: readonly [13550];
                 readonly documentation: {
                     readonly id: 8359;
                     readonly nodeType: "StructuredDocumentation";
@@ -2346,10 +2346,10 @@ export declare const EzETHBase: {
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
+                                    readonly referencedDeclaration: 11143;
                                     readonly src: "2936:11:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
@@ -2361,7 +2361,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "2948:16:51";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11042;
+                                readonly referencedDeclaration: 11109;
                                 readonly src: "2936:28:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
@@ -2389,7 +2389,7 @@ export declare const EzETHBase: {
                         readonly src: "2929:37:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13432];
+                readonly baseFunctions: readonly [13562];
                 readonly documentation: {
                     readonly id: 8381;
                     readonly nodeType: "StructuredDocumentation";
@@ -2579,7 +2579,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8304;
                                     readonly src: "3429:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -2591,7 +2591,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "3436:8:51";
                                 readonly memberName: "transfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10303;
+                                readonly referencedDeclaration: 10362;
                                 readonly src: "3429:15:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$";
@@ -2619,7 +2619,7 @@ export declare const EzETHBase: {
                         readonly src: "3429:43:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13442];
+                readonly baseFunctions: readonly [13572];
                 readonly documentation: {
                     readonly id: 8400;
                     readonly nodeType: "StructuredDocumentation";
@@ -2784,7 +2784,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8300;
                                     readonly src: "3850:15:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                         readonly typeString: "contract IRestakeManager";
                                     };
                                 };
@@ -2796,7 +2796,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "3866:13:51";
                                 readonly memberName: "calculateTVLs";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12286;
+                                readonly referencedDeclaration: 12389;
                                 readonly src: "3850:29:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$__$returns$_t_array$_t_array$_t_uint256_$dyn_memory_ptr_$dyn_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$_t_uint256_$";
@@ -2863,7 +2863,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8304;
                                     readonly src: "3965:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -2875,7 +2875,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "3972:11:51";
                                 readonly memberName: "totalSupply";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10339;
+                                readonly referencedDeclaration: 10398;
                                 readonly src: "3965:18:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$__$returns$_t_uint256_$";
@@ -2955,7 +2955,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8308;
                                     readonly src: "4015:12:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                                         readonly typeString: "contract IRenzoOracle";
                                     };
                                 };
@@ -2967,7 +2967,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "4028:21:51";
                                 readonly memberName: "calculateRedeemAmount";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12341;
+                                readonly referencedDeclaration: 12444;
                                 readonly src: "4015:34:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
@@ -2996,7 +2996,7 @@ export declare const EzETHBase: {
                         readonly src: "3996:152:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13476];
+                readonly baseFunctions: readonly [13606];
                 readonly documentation: {
                     readonly id: 8419;
                     readonly nodeType: "StructuredDocumentation";
@@ -3134,7 +3134,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8300;
                                     readonly src: "4527:15:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12287";
+                                        readonly typeIdentifier: "t_contract$_IRestakeManager_$12390";
                                         readonly typeString: "contract IRestakeManager";
                                     };
                                 };
@@ -3146,7 +3146,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "4543:13:51";
                                 readonly memberName: "calculateTVLs";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12286;
+                                readonly referencedDeclaration: 12389;
                                 readonly src: "4527:29:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$__$returns$_t_array$_t_array$_t_uint256_$dyn_memory_ptr_$dyn_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$_t_uint256_$";
@@ -3213,7 +3213,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8304;
                                     readonly src: "4642:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -3225,7 +3225,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "4649:11:51";
                                 readonly memberName: "totalSupply";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10339;
+                                readonly referencedDeclaration: 10398;
                                 readonly src: "4642:18:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$__$returns$_t_uint256_$";
@@ -3305,7 +3305,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8308;
                                     readonly src: "4692:12:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12342";
+                                        readonly typeIdentifier: "t_contract$_IRenzoOracle_$12445";
                                         readonly typeString: "contract IRenzoOracle";
                                     };
                                 };
@@ -3317,7 +3317,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "4705:19:51";
                                 readonly memberName: "calculateMintAmount";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12330;
+                                readonly referencedDeclaration: 12433;
                                 readonly src: "4692:32:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
@@ -3346,7 +3346,7 @@ export declare const EzETHBase: {
                         readonly src: "4673:149:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13484];
+                readonly baseFunctions: readonly [13614];
                 readonly documentation: {
                     readonly id: 8448;
                     readonly nodeType: "StructuredDocumentation";
@@ -3465,7 +3465,7 @@ export declare const EzETHBase: {
                         readonly src: "5125:8:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13490];
+                readonly baseFunctions: readonly [13620];
                 readonly documentation: {
                     readonly id: 8477;
                     readonly nodeType: "StructuredDocumentation";
@@ -3603,7 +3603,7 @@ export declare const EzETHBase: {
                                     readonly referencedDeclaration: 8304;
                                     readonly src: "5428:6:51";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
@@ -3615,7 +3615,7 @@ export declare const EzETHBase: {
                                 readonly memberLocation: "5435:9:51";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10357;
+                                readonly referencedDeclaration: 10416;
                                 readonly src: "5428:16:51";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
@@ -3644,7 +3644,7 @@ export declare const EzETHBase: {
                         readonly src: "5421:38:51";
                     }];
                 };
-                readonly baseFunctions: readonly [13496];
+                readonly baseFunctions: readonly [13626];
                 readonly documentation: {
                     readonly id: 8487;
                     readonly nodeType: "StructuredDocumentation";
@@ -3793,10 +3793,10 @@ export declare const EzETHBase: {
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "5672:11:51";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
@@ -3808,7 +3808,7 @@ export declare const EzETHBase: {
                                         readonly memberLocation: "5684:10:51";
                                         readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10995;
+                                        readonly referencedDeclaration: 11062;
                                         readonly src: "5672:22:51";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
@@ -3838,7 +3838,7 @@ export declare const EzETHBase: {
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [13446];
+                readonly baseFunctions: readonly [13576];
                 readonly documentation: {
                     readonly id: 8503;
                     readonly nodeType: "StructuredDocumentation";
@@ -3880,7 +3880,7 @@ export declare const EzETHBase: {
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["1040:14:51"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "1040:14:51";
                 };
                 readonly id: 8293;
@@ -3897,12 +3897,12 @@ export declare const EzETHBase: {
                 readonly text: "@author DELV\n @title ezETH Base Contract\n @notice The base contract for the ezETH Hyperdrive implementation.\n @dev ezETH shares are held separately in the ezETH token contract.  The\n      value of those tokens w.r.t. ETH are found by calling the\n      RestakeManager's calculateTVL for the total pooled ETH value and\n      dividing by the totalSupply of ezETH.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [8520, 14381, 18367, 72043, 11599, 12165];
+            readonly linearizedBaseContracts: readonly [8520, 14511, 18497, 72173, 11666, 12232];
             readonly name: "EzETHBase";
             readonly nameLocation: "1027:9:51";
             readonly scope: 8521;
-            readonly usedErrors: readonly [8311, 71988];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly usedErrors: readonly [8311, 72118];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };

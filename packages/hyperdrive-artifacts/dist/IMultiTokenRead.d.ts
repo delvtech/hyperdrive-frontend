@@ -403,29 +403,29 @@ export declare const IMultiTokenRead: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiTokenRead.sol";
-        readonly id: 12254;
+        readonly id: 12321;
         readonly exportedSymbols: {
-            readonly IMultiTokenRead: readonly [12253];
+            readonly IMultiTokenRead: readonly [12320];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:2172:102";
         readonly nodes: readonly [{
-            readonly id: 12182;
+            readonly id: 12249;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:102";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12253;
+            readonly id: 12320;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:2146:102";
             readonly nodes: readonly [{
-                readonly id: 12188;
+                readonly id: 12255;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "197:50:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12183;
+                    readonly id: 12250;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "96:96:102";
                     readonly text: "@notice Gets the decimals of the MultiToken.\n @return The decimals of the MultiToken.";
@@ -437,22 +437,22 @@ export declare const IMultiTokenRead: {
                 readonly name: "decimals";
                 readonly nameLocation: "206:8:102";
                 readonly parameters: {
-                    readonly id: 12184;
+                    readonly id: 12251;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "214:2:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12187;
+                    readonly id: 12254;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12186;
+                        readonly id: 12253;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12188;
+                        readonly scope: 12255;
                         readonly src: "240:5:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -461,7 +461,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 12185;
+                            readonly id: 12252;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "240:5:102";
@@ -474,17 +474,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "239:7:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12196;
+                readonly id: 12263;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "387:69:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12189;
+                    readonly id: 12256;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "253:129:102";
                     readonly text: "@notice Gets the name of the MultiToken.\n @param tokenId The sub-token ID.\n @return The name of the MultiToken.";
@@ -496,16 +496,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "name";
                 readonly nameLocation: "396:4:102";
                 readonly parameters: {
-                    readonly id: 12192;
+                    readonly id: 12259;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12191;
+                        readonly id: 12258;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
                         readonly nameLocation: "409:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12196;
+                        readonly scope: 12263;
                         readonly src: "401:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -514,7 +514,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12190;
+                            readonly id: 12257;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "401:7:102";
@@ -528,16 +528,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "400:17:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12195;
+                    readonly id: 12262;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12194;
+                        readonly id: 12261;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12196;
+                        readonly scope: 12263;
                         readonly src: "441:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -546,7 +546,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 12193;
+                            readonly id: 12260;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "441:6:102";
@@ -559,17 +559,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "440:15:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12204;
+                readonly id: 12271;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "600:71:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12197;
+                    readonly id: 12264;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "462:133:102";
                     readonly text: "@notice Gets the symbol of the MultiToken.\n @param tokenId The sub-token ID.\n @return The symbol of the MultiToken.";
@@ -581,16 +581,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "symbol";
                 readonly nameLocation: "609:6:102";
                 readonly parameters: {
-                    readonly id: 12200;
+                    readonly id: 12267;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12199;
+                        readonly id: 12266;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
                         readonly nameLocation: "624:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12204;
+                        readonly scope: 12271;
                         readonly src: "616:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -599,7 +599,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12198;
+                            readonly id: 12265;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "616:7:102";
@@ -613,16 +613,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "615:17:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12203;
+                    readonly id: 12270;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12202;
+                        readonly id: 12269;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12204;
+                        readonly scope: 12271;
                         readonly src: "656:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -631,7 +631,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 12201;
+                            readonly id: 12268;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "656:6:102";
@@ -644,17 +644,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "655:15:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12212;
+                readonly id: 12279;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "827:70:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12205;
+                    readonly id: 12272;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "677:145:102";
                     readonly text: "@notice Gets the total supply of the MultiToken.\n @param tokenId The sub-token ID.\n @return The total supply of the MultiToken.";
@@ -666,16 +666,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "totalSupply";
                 readonly nameLocation: "836:11:102";
                 readonly parameters: {
-                    readonly id: 12208;
+                    readonly id: 12275;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12207;
+                        readonly id: 12274;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
                         readonly nameLocation: "856:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12212;
+                        readonly scope: 12279;
                         readonly src: "848:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -684,7 +684,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12206;
+                            readonly id: 12273;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "848:7:102";
@@ -698,16 +698,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "847:17:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12211;
+                    readonly id: 12278;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12210;
+                        readonly id: 12277;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12212;
+                        readonly scope: 12279;
                         readonly src: "888:7:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -716,7 +716,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12209;
+                            readonly id: 12276;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "888:7:102";
@@ -729,17 +729,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "887:9:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12222;
+                readonly id: 12289;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1174:109:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12213;
+                    readonly id: 12280;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "903:266:102";
                     readonly text: "@notice Gets the approval-for-all status of a spender on behalf of an\n         owner.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The approval-for-all status of the spender for the owner.";
@@ -751,16 +751,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "isApprovedForAll";
                 readonly nameLocation: "1183:16:102";
                 readonly parameters: {
-                    readonly id: 12218;
+                    readonly id: 12285;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12215;
+                        readonly id: 12282;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "1217:5:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12222;
+                        readonly scope: 12289;
                         readonly src: "1209:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -769,7 +769,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12214;
+                            readonly id: 12281;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1209:7:102";
@@ -782,12 +782,12 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12217;
+                        readonly id: 12284;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "1240:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12222;
+                        readonly scope: 12289;
                         readonly src: "1232:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -796,7 +796,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12216;
+                            readonly id: 12283;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1232:7:102";
@@ -811,16 +811,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "1199:54:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12221;
+                    readonly id: 12288;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12220;
+                        readonly id: 12287;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12222;
+                        readonly scope: 12289;
                         readonly src: "1277:4:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -829,7 +829,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12219;
+                            readonly id: 12286;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1277:4:102";
@@ -842,17 +842,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "1276:6:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12234;
+                readonly id: 12301;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1551:138:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12223;
+                    readonly id: 12290;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1289:257:102";
                     readonly text: "@notice Gets the allowance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The allowance of the spender for the owner.";
@@ -864,16 +864,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "perTokenApprovals";
                 readonly nameLocation: "1560:17:102";
                 readonly parameters: {
-                    readonly id: 12230;
+                    readonly id: 12297;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12225;
+                        readonly id: 12292;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
                         readonly nameLocation: "1595:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12234;
+                        readonly scope: 12301;
                         readonly src: "1587:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -882,7 +882,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12224;
+                            readonly id: 12291;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1587:7:102";
@@ -894,12 +894,12 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12227;
+                        readonly id: 12294;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "1620:5:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12234;
+                        readonly scope: 12301;
                         readonly src: "1612:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -908,7 +908,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12226;
+                            readonly id: 12293;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1612:7:102";
@@ -921,12 +921,12 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12229;
+                        readonly id: 12296;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "1643:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12234;
+                        readonly scope: 12301;
                         readonly src: "1635:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -935,7 +935,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12228;
+                            readonly id: 12295;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1635:7:102";
@@ -950,16 +950,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "1577:79:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12233;
+                    readonly id: 12300;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12232;
+                        readonly id: 12299;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12234;
+                        readonly scope: 12301;
                         readonly src: "1680:7:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -968,7 +968,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12231;
+                            readonly id: 12298;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1680:7:102";
@@ -981,17 +981,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "1679:9:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12244;
+                readonly id: 12311;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1887:105:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12235;
+                    readonly id: 12302;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1695:187:102";
                     readonly text: "@notice Gets the balance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @return The balance of the owner.";
@@ -1003,16 +1003,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "balanceOf";
                 readonly nameLocation: "1896:9:102";
                 readonly parameters: {
-                    readonly id: 12240;
+                    readonly id: 12307;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12237;
+                        readonly id: 12304;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
                         readonly nameLocation: "1923:7:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12244;
+                        readonly scope: 12311;
                         readonly src: "1915:15:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1021,7 +1021,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12236;
+                            readonly id: 12303;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1915:7:102";
@@ -1033,12 +1033,12 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12239;
+                        readonly id: 12306;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "1948:5:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12244;
+                        readonly scope: 12311;
                         readonly src: "1940:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1047,7 +1047,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12238;
+                            readonly id: 12305;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1940:7:102";
@@ -1062,16 +1062,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "1905:54:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12243;
+                    readonly id: 12310;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12242;
+                        readonly id: 12309;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12244;
+                        readonly scope: 12311;
                         readonly src: "1983:7:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1080,7 +1080,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12241;
+                            readonly id: 12308;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1983:7:102";
@@ -1093,17 +1093,17 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "1982:9:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12252;
+                readonly id: 12319;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2145:63:102";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12245;
+                    readonly id: 12312;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1998:142:102";
                     readonly text: "@notice Gets the permit nonce for an account.\n @param owner The owner of the tokens.\n @return The permit nonce of the owner.";
@@ -1115,16 +1115,16 @@ export declare const IMultiTokenRead: {
                 readonly name: "nonces";
                 readonly nameLocation: "2154:6:102";
                 readonly parameters: {
-                    readonly id: 12248;
+                    readonly id: 12315;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12247;
+                        readonly id: 12314;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "2169:5:102";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12252;
+                        readonly scope: 12319;
                         readonly src: "2161:13:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1133,7 +1133,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12246;
+                            readonly id: 12313;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2161:7:102";
@@ -1148,16 +1148,16 @@ export declare const IMultiTokenRead: {
                     readonly src: "2160:15:102";
                 };
                 readonly returnParameters: {
-                    readonly id: 12251;
+                    readonly id: 12318;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12250;
+                        readonly id: 12317;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12252;
+                        readonly scope: 12319;
                         readonly src: "2199:7:102";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1166,7 +1166,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12249;
+                            readonly id: 12316;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2199:7:102";
@@ -1179,7 +1179,7 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "2198:9:102";
                 };
-                readonly scope: 12253;
+                readonly scope: 12320;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1190,10 +1190,10 @@ export declare const IMultiTokenRead: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12253];
+            readonly linearizedBaseContracts: readonly [12320];
             readonly name: "IMultiTokenRead";
             readonly nameLocation: "74:15:102";
-            readonly scope: 12254;
+            readonly scope: 12321;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

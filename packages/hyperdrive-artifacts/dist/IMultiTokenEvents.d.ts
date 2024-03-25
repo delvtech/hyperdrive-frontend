@@ -195,30 +195,30 @@ export declare const IMultiTokenEvents: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiTokenEvents.sol";
-        readonly id: 12166;
+        readonly id: 12233;
         readonly exportedSymbols: {
-            readonly IMultiTokenEvents: readonly [12165];
+            readonly IMultiTokenEvents: readonly [12232];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:741:100";
         readonly nodes: readonly [{
-            readonly id: 12133;
+            readonly id: 12200;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:100";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12165;
+            readonly id: 12232;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:715:100";
             readonly nodes: readonly [{
-                readonly id: 12146;
+                readonly id: 12213;
                 readonly nodeType: "EventDefinition";
                 readonly src: "179:162:100";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 12134;
+                    readonly id: 12201;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "98:76:100";
                     readonly text: "@notice Emitted when tokens are transferred from one account to another.";
@@ -227,17 +227,17 @@ export declare const IMultiTokenEvents: {
                 readonly name: "TransferSingle";
                 readonly nameLocation: "185:14:100";
                 readonly parameters: {
-                    readonly id: 12145;
+                    readonly id: 12212;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12136;
+                        readonly id: 12203;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "operator";
                         readonly nameLocation: "225:8:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12146;
+                        readonly scope: 12213;
                         readonly src: "209:24:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -246,7 +246,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12135;
+                            readonly id: 12202;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "209:7:100";
@@ -259,13 +259,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12138;
+                        readonly id: 12205;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "from";
                         readonly nameLocation: "259:4:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12146;
+                        readonly scope: 12213;
                         readonly src: "243:20:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -274,7 +274,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12137;
+                            readonly id: 12204;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "243:7:100";
@@ -287,13 +287,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12140;
+                        readonly id: 12207;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "289:2:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12146;
+                        readonly scope: 12213;
                         readonly src: "273:18:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -302,7 +302,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12139;
+                            readonly id: 12206;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "273:7:100";
@@ -315,13 +315,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12142;
+                        readonly id: 12209;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "id";
                         readonly nameLocation: "309:2:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12146;
+                        readonly scope: 12213;
                         readonly src: "301:10:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -330,7 +330,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12141;
+                            readonly id: 12208;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "301:7:100";
@@ -342,13 +342,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12144;
+                        readonly id: 12211;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "329:5:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12146;
+                        readonly scope: 12213;
                         readonly src: "321:13:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -357,7 +357,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12143;
+                            readonly id: 12210;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "321:7:100";
@@ -371,13 +371,13 @@ export declare const IMultiTokenEvents: {
                     readonly src: "199:141:100";
                 };
             }, {
-                readonly id: 12155;
+                readonly id: 12222;
                 readonly nodeType: "EventDefinition";
                 readonly src: "446:108:100";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 12147;
+                    readonly id: 12214;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "347:94:100";
                     readonly text: "@notice Emitted when an account changes the allowance for another\n         account.";
@@ -386,17 +386,17 @@ export declare const IMultiTokenEvents: {
                 readonly name: "Approval";
                 readonly nameLocation: "452:8:100";
                 readonly parameters: {
-                    readonly id: 12154;
+                    readonly id: 12221;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12149;
+                        readonly id: 12216;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "486:5:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12155;
+                        readonly scope: 12222;
                         readonly src: "470:21:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -405,7 +405,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12148;
+                            readonly id: 12215;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "470:7:100";
@@ -418,13 +418,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12151;
+                        readonly id: 12218;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "517:7:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12155;
+                        readonly scope: 12222;
                         readonly src: "501:23:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -433,7 +433,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12150;
+                            readonly id: 12217;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "501:7:100";
@@ -446,13 +446,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12153;
+                        readonly id: 12220;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "542:5:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12155;
+                        readonly scope: 12222;
                         readonly src: "534:13:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -461,7 +461,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12152;
+                            readonly id: 12219;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "534:7:100";
@@ -475,13 +475,13 @@ export declare const IMultiTokenEvents: {
                     readonly src: "460:93:100";
                 };
             }, {
-                readonly id: 12164;
+                readonly id: 12231;
                 readonly nodeType: "EventDefinition";
                 readonly src: "660:117:100";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 12156;
+                    readonly id: 12223;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "560:95:100";
                     readonly text: "@notice Emitted when an account changes the approval for all of its\n         tokens.";
@@ -490,17 +490,17 @@ export declare const IMultiTokenEvents: {
                 readonly name: "ApprovalForAll";
                 readonly nameLocation: "666:14:100";
                 readonly parameters: {
-                    readonly id: 12163;
+                    readonly id: 12230;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12158;
+                        readonly id: 12225;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "706:7:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12164;
+                        readonly scope: 12231;
                         readonly src: "690:23:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -509,7 +509,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12157;
+                            readonly id: 12224;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "690:7:100";
@@ -522,13 +522,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12160;
+                        readonly id: 12227;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "operator";
                         readonly nameLocation: "739:8:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12164;
+                        readonly scope: 12231;
                         readonly src: "723:24:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -537,7 +537,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12159;
+                            readonly id: 12226;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "723:7:100";
@@ -550,13 +550,13 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12162;
+                        readonly id: 12229;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "approved";
                         readonly nameLocation: "762:8:100";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12164;
+                        readonly scope: 12231;
                         readonly src: "757:13:100";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -565,7 +565,7 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12161;
+                            readonly id: 12228;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "757:4:100";
@@ -585,12 +585,12 @@ export declare const IMultiTokenEvents: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [12165];
+            readonly linearizedBaseContracts: readonly [12232];
             readonly name: "IMultiTokenEvents";
             readonly nameLocation: "74:17:100";
-            readonly scope: 12166;
+            readonly scope: 12233;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [12146, 12155, 12164];
+            readonly usedEvents: readonly [12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };

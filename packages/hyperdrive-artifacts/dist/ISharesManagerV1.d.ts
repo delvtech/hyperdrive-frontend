@@ -654,56 +654,56 @@ export declare const ISharesManagerV1: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/lseth/ISharesManagerV1.sol";
-        readonly id: 12879;
+        readonly id: 13009;
         readonly exportedSymbols: {
-            readonly IERC20: readonly [10358];
-            readonly ISharesManagerV1: readonly [12878];
+            readonly IERC20: readonly [10417];
+            readonly ISharesManagerV1: readonly [13008];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:2809:112";
+        readonly src: "39:2809:116";
         readonly nodes: readonly [{
-            readonly id: 12796;
+            readonly id: 12926;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:112";
+            readonly src: "39:23:116";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12798;
+            readonly id: 12928;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:39:112";
+            readonly src: "64:39:116";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20.sol";
             readonly file: "../IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12879;
-            readonly sourceUnit: 10359;
+            readonly scope: 13009;
+            readonly sourceUnit: 10418;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12797;
+                    readonly id: 12927;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10358;
-                    readonly src: "73:6:112";
+                    readonly referencedDeclaration: 10417;
+                    readonly src: "73:6:116";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12878;
+            readonly id: 13008;
             readonly nodeType: "ContractDefinition";
-            readonly src: "268:2579:112";
+            readonly src: "268:2579:116";
             readonly nodes: readonly [{
-                readonly id: 12807;
+                readonly id: 12937;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "402:55:112";
+                readonly src: "402:55:116";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10339];
+                readonly baseFunctions: readonly [10398];
                 readonly documentation: {
-                    readonly id: 12802;
+                    readonly id: 12932;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "311:86:112";
+                    readonly src: "311:86:116";
                     readonly text: "@notice Retrieve the total token supply\n @return The total supply in shares";
                 };
                 readonly functionSelector: "18160ddd";
@@ -711,25 +711,25 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "totalSupply";
-                readonly nameLocation: "411:11:112";
+                readonly nameLocation: "411:11:116";
                 readonly parameters: {
-                    readonly id: 12803;
+                    readonly id: 12933;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "422:2:112";
+                    readonly src: "422:2:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12806;
+                    readonly id: 12936;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12805;
+                        readonly id: 12935;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12807;
-                        readonly src: "448:7:112";
+                        readonly scope: 12937;
+                        readonly src: "448:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -737,10 +737,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12804;
+                            readonly id: 12934;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "448:7:112";
+                            readonly src: "448:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -748,21 +748,21 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "447:9:112";
+                    readonly src: "447:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12813;
+                readonly id: 12943;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "572:65:112";
+                readonly src: "572:65:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12808;
+                    readonly id: 12938;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "463:104:112";
+                    readonly src: "463:104:116";
                     readonly text: "@notice Retrieve the total underlying asset supply\n @return The total underlying asset supply";
                 };
                 readonly functionSelector: "143a08d4";
@@ -770,25 +770,25 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "totalUnderlyingSupply";
-                readonly nameLocation: "581:21:112";
+                readonly nameLocation: "581:21:116";
                 readonly parameters: {
-                    readonly id: 12809;
+                    readonly id: 12939;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "602:2:112";
+                    readonly src: "602:2:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12812;
+                    readonly id: 12942;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12811;
+                        readonly id: 12941;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12813;
-                        readonly src: "628:7:112";
+                        readonly scope: 12943;
+                        readonly src: "628:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -796,10 +796,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12810;
+                            readonly id: 12940;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "628:7:112";
+                            readonly src: "628:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -807,22 +807,22 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "627:9:112";
+                    readonly src: "627:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12821;
+                readonly id: 12951;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "791:67:112";
+                readonly src: "791:67:116";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10357];
+                readonly baseFunctions: readonly [10416];
                 readonly documentation: {
-                    readonly id: 12814;
+                    readonly id: 12944;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "643:143:112";
+                    readonly src: "643:143:116";
                     readonly text: "@notice Retrieve the balance of an account\n @param _owner Address to be checked\n @return The balance of the account in shares";
                 };
                 readonly functionSelector: "70a08231";
@@ -830,19 +830,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "balanceOf";
-                readonly nameLocation: "800:9:112";
+                readonly nameLocation: "800:9:116";
                 readonly parameters: {
-                    readonly id: 12817;
+                    readonly id: 12947;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12816;
+                        readonly id: 12946;
                         readonly mutability: "mutable";
                         readonly name: "_owner";
-                        readonly nameLocation: "818:6:112";
+                        readonly nameLocation: "818:6:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12821;
-                        readonly src: "810:14:112";
+                        readonly scope: 12951;
+                        readonly src: "810:14:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -850,10 +850,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12815;
+                            readonly id: 12945;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "810:7:112";
+                            readonly src: "810:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -862,20 +862,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "809:16:112";
+                    readonly src: "809:16:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12820;
+                    readonly id: 12950;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12819;
+                        readonly id: 12949;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12821;
-                        readonly src: "849:7:112";
+                        readonly scope: 12951;
+                        readonly src: "849:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -883,10 +883,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12818;
+                            readonly id: 12948;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "849:7:112";
+                            readonly src: "849:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -894,21 +894,21 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "848:9:112";
+                    readonly src: "848:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12829;
+                readonly id: 12959;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1030:91:112";
+                readonly src: "1030:91:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12822;
+                    readonly id: 12952;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "864:161:112";
+                    readonly src: "864:161:116";
                     readonly text: "@notice Retrieve the underlying asset balance of an account\n @param _owner Address to be checked\n @return The underlying balance of the account";
                 };
                 readonly functionSelector: "3af9e669";
@@ -916,19 +916,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "balanceOfUnderlying";
-                readonly nameLocation: "1039:19:112";
+                readonly nameLocation: "1039:19:116";
                 readonly parameters: {
-                    readonly id: 12825;
+                    readonly id: 12955;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12824;
+                        readonly id: 12954;
                         readonly mutability: "mutable";
                         readonly name: "_owner";
-                        readonly nameLocation: "1076:6:112";
+                        readonly nameLocation: "1076:6:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12829;
-                        readonly src: "1068:14:112";
+                        readonly scope: 12959;
+                        readonly src: "1068:14:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -936,10 +936,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12823;
+                            readonly id: 12953;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1068:7:112";
+                            readonly src: "1068:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -948,20 +948,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1058:30:112";
+                    readonly src: "1058:30:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12828;
+                    readonly id: 12958;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12827;
+                        readonly id: 12957;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12829;
-                        readonly src: "1112:7:112";
+                        readonly scope: 12959;
+                        readonly src: "1112:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -969,10 +969,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12826;
+                            readonly id: 12956;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1112:7:112";
+                            readonly src: "1112:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -980,21 +980,21 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1111:9:112";
+                    readonly src: "1111:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12837;
+                readonly id: 12967;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1328:100:112";
+                readonly src: "1328:100:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12830;
+                    readonly id: 12960;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1127:196:112";
+                    readonly src: "1127:196:116";
                     readonly text: "@notice Retrieve the underlying asset balance from an amount of shares\n @param _shares Amount of shares to convert\n @return The underlying asset balance represented by the shares";
                 };
                 readonly functionSelector: "f79c3f02";
@@ -1002,19 +1002,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "underlyingBalanceFromShares";
-                readonly nameLocation: "1337:27:112";
+                readonly nameLocation: "1337:27:116";
                 readonly parameters: {
-                    readonly id: 12833;
+                    readonly id: 12963;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12832;
+                        readonly id: 12962;
                         readonly mutability: "mutable";
                         readonly name: "_shares";
-                        readonly nameLocation: "1382:7:112";
+                        readonly nameLocation: "1382:7:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12837;
-                        readonly src: "1374:15:112";
+                        readonly scope: 12967;
+                        readonly src: "1374:15:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1022,10 +1022,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12831;
+                            readonly id: 12961;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1374:7:112";
+                            readonly src: "1374:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1033,20 +1033,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1364:31:112";
+                    readonly src: "1364:31:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12836;
+                    readonly id: 12966;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12835;
+                        readonly id: 12965;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12837;
-                        readonly src: "1419:7:112";
+                        readonly scope: 12967;
+                        readonly src: "1419:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1054,10 +1054,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12834;
+                            readonly id: 12964;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1419:7:112";
+                            readonly src: "1419:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1065,21 +1065,21 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1418:9:112";
+                    readonly src: "1418:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12845;
+                readonly id: 12975;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1656:115:112";
+                readonly src: "1656:115:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12838;
+                    readonly id: 12968;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1434:217:112";
+                    readonly src: "1434:217:116";
                     readonly text: "@notice Retrieve the shares count from an underlying asset amount\n @param _underlyingAssetAmount Amount of underlying asset to convert\n @return The amount of shares worth the underlying asset amopunt";
                 };
                 readonly functionSelector: "799a1954";
@@ -1087,19 +1087,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "sharesFromUnderlyingBalance";
-                readonly nameLocation: "1665:27:112";
+                readonly nameLocation: "1665:27:116";
                 readonly parameters: {
-                    readonly id: 12841;
+                    readonly id: 12971;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12840;
+                        readonly id: 12970;
                         readonly mutability: "mutable";
                         readonly name: "_underlyingAssetAmount";
-                        readonly nameLocation: "1710:22:112";
+                        readonly nameLocation: "1710:22:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12845;
-                        readonly src: "1702:30:112";
+                        readonly scope: 12975;
+                        readonly src: "1702:30:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1107,10 +1107,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12839;
+                            readonly id: 12969;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1702:7:112";
+                            readonly src: "1702:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1118,20 +1118,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1692:46:112";
+                    readonly src: "1692:46:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12844;
+                    readonly id: 12974;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12843;
+                        readonly id: 12973;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12845;
-                        readonly src: "1762:7:112";
+                        readonly scope: 12975;
+                        readonly src: "1762:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1139,10 +1139,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12842;
+                            readonly id: 12972;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1762:7:112";
+                            readonly src: "1762:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1150,22 +1150,22 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1761:9:112";
+                    readonly src: "1761:9:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12855;
+                readonly id: 12985;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1991:71:112";
+                readonly src: "1991:71:116";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10303];
+                readonly baseFunctions: readonly [10362];
                 readonly documentation: {
-                    readonly id: 12846;
+                    readonly id: 12976;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1777:209:112";
+                    readonly src: "1777:209:116";
                     readonly text: "@notice Performs a transfer from the message sender to the provided account\n @param _to Address receiving the tokens\n @param _value Amount of shares to be sent\n @return True if success";
                 };
                 readonly functionSelector: "a9059cbb";
@@ -1173,19 +1173,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "transfer";
-                readonly nameLocation: "2000:8:112";
+                readonly nameLocation: "2000:8:116";
                 readonly parameters: {
-                    readonly id: 12851;
+                    readonly id: 12981;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12848;
+                        readonly id: 12978;
                         readonly mutability: "mutable";
                         readonly name: "_to";
-                        readonly nameLocation: "2017:3:112";
+                        readonly nameLocation: "2017:3:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12855;
-                        readonly src: "2009:11:112";
+                        readonly scope: 12985;
+                        readonly src: "2009:11:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1193,10 +1193,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12847;
+                            readonly id: 12977;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2009:7:112";
+                            readonly src: "2009:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1206,13 +1206,13 @@ export declare const ISharesManagerV1: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12850;
+                        readonly id: 12980;
                         readonly mutability: "mutable";
                         readonly name: "_value";
-                        readonly nameLocation: "2030:6:112";
+                        readonly nameLocation: "2030:6:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12855;
-                        readonly src: "2022:14:112";
+                        readonly scope: 12985;
+                        readonly src: "2022:14:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1220,10 +1220,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12849;
+                            readonly id: 12979;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2022:7:112";
+                            readonly src: "2022:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1231,20 +1231,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2008:29:112";
+                    readonly src: "2008:29:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12854;
+                    readonly id: 12984;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12853;
+                        readonly id: 12983;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12855;
-                        readonly src: "2056:4:112";
+                        readonly scope: 12985;
+                        readonly src: "2056:4:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1252,10 +1252,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12852;
+                            readonly id: 12982;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2056:4:112";
+                            readonly src: "2056:4:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -1263,22 +1263,22 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2055:6:112";
+                    readonly src: "2055:6:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12867;
+                readonly id: 12997;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2305:120:112";
+                readonly src: "2305:120:116";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10315];
+                readonly baseFunctions: readonly [10374];
                 readonly documentation: {
-                    readonly id: 12856;
+                    readonly id: 12986;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "2068:232:112";
+                    readonly src: "2068:232:116";
                     readonly text: "@notice Performs a transfer between two recipients\n @param _from Address sending the tokens\n @param _to Address receiving the tokens\n @param _value Amount of shares to be sent\n @return True if success";
                 };
                 readonly functionSelector: "23b872dd";
@@ -1286,19 +1286,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "transferFrom";
-                readonly nameLocation: "2314:12:112";
+                readonly nameLocation: "2314:12:116";
                 readonly parameters: {
-                    readonly id: 12863;
+                    readonly id: 12993;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12858;
+                        readonly id: 12988;
                         readonly mutability: "mutable";
                         readonly name: "_from";
-                        readonly nameLocation: "2344:5:112";
+                        readonly nameLocation: "2344:5:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12867;
-                        readonly src: "2336:13:112";
+                        readonly scope: 12997;
+                        readonly src: "2336:13:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1306,10 +1306,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12857;
+                            readonly id: 12987;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2336:7:112";
+                            readonly src: "2336:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1319,13 +1319,13 @@ export declare const ISharesManagerV1: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12860;
+                        readonly id: 12990;
                         readonly mutability: "mutable";
                         readonly name: "_to";
-                        readonly nameLocation: "2367:3:112";
+                        readonly nameLocation: "2367:3:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12867;
-                        readonly src: "2359:11:112";
+                        readonly scope: 12997;
+                        readonly src: "2359:11:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1333,10 +1333,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12859;
+                            readonly id: 12989;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2359:7:112";
+                            readonly src: "2359:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1346,13 +1346,13 @@ export declare const ISharesManagerV1: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12862;
+                        readonly id: 12992;
                         readonly mutability: "mutable";
                         readonly name: "_value";
-                        readonly nameLocation: "2388:6:112";
+                        readonly nameLocation: "2388:6:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12867;
-                        readonly src: "2380:14:112";
+                        readonly scope: 12997;
+                        readonly src: "2380:14:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1360,10 +1360,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12861;
+                            readonly id: 12991;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2380:7:112";
+                            readonly src: "2380:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1371,20 +1371,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2326:74:112";
+                    readonly src: "2326:74:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12866;
+                    readonly id: 12996;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12865;
+                        readonly id: 12995;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12867;
-                        readonly src: "2419:4:112";
+                        readonly scope: 12997;
+                        readonly src: "2419:4:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1392,10 +1392,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12864;
+                            readonly id: 12994;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2419:4:112";
+                            readonly src: "2419:4:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -1403,22 +1403,22 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2418:6:112";
+                    readonly src: "2418:6:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12877;
+                readonly id: 13007;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2770:75:112";
+                readonly src: "2770:75:116";
                 readonly nodes: readonly [];
-                readonly baseFunctions: readonly [10293];
+                readonly baseFunctions: readonly [10352];
                 readonly documentation: {
-                    readonly id: 12868;
+                    readonly id: 12998;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "2431:334:112";
+                    readonly src: "2431:334:116";
                     readonly text: "@notice Approves an account for future spendings\n @dev An approved account can use transferFrom to transfer funds on behalf of the token owner\n @param _spender Address that is allowed to spend the tokens\n @param _value The allowed amount in shares, will override previous value\n @return True if success";
                 };
                 readonly functionSelector: "095ea7b3";
@@ -1426,19 +1426,19 @@ export declare const ISharesManagerV1: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "approve";
-                readonly nameLocation: "2779:7:112";
+                readonly nameLocation: "2779:7:116";
                 readonly parameters: {
-                    readonly id: 12873;
+                    readonly id: 13003;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12870;
+                        readonly id: 13000;
                         readonly mutability: "mutable";
                         readonly name: "_spender";
-                        readonly nameLocation: "2795:8:112";
+                        readonly nameLocation: "2795:8:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12877;
-                        readonly src: "2787:16:112";
+                        readonly scope: 13007;
+                        readonly src: "2787:16:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1446,10 +1446,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 12869;
+                            readonly id: 12999;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2787:7:112";
+                            readonly src: "2787:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1459,13 +1459,13 @@ export declare const ISharesManagerV1: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 12872;
+                        readonly id: 13002;
                         readonly mutability: "mutable";
                         readonly name: "_value";
-                        readonly nameLocation: "2813:6:112";
+                        readonly nameLocation: "2813:6:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12877;
-                        readonly src: "2805:14:112";
+                        readonly scope: 13007;
+                        readonly src: "2805:14:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1473,10 +1473,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12871;
+                            readonly id: 13001;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2805:7:112";
+                            readonly src: "2805:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1484,20 +1484,20 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2786:34:112";
+                    readonly src: "2786:34:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 12876;
+                    readonly id: 13006;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12875;
+                        readonly id: 13005;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12877;
-                        readonly src: "2839:4:112";
+                        readonly scope: 13007;
+                        readonly src: "2839:4:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1505,10 +1505,10 @@ export declare const ISharesManagerV1: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12874;
+                            readonly id: 13004;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2839:4:112";
+                            readonly src: "2839:4:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -1516,9 +1516,9 @@ export declare const ISharesManagerV1: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2838:6:112";
+                    readonly src: "2838:6:116";
                 };
-                readonly scope: 12878;
+                readonly scope: 13008;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1526,36 +1526,36 @@ export declare const ISharesManagerV1: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 12800;
+                    readonly id: 12930;
                     readonly name: "IERC20";
-                    readonly nameLocations: readonly ["298:6:112"];
+                    readonly nameLocations: readonly ["298:6:116"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 10358;
-                    readonly src: "298:6:112";
+                    readonly referencedDeclaration: 10417;
+                    readonly src: "298:6:116";
                 };
-                readonly id: 12801;
+                readonly id: 12931;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "298:6:112";
+                readonly src: "298:6:116";
             }];
             readonly canonicalName: "ISharesManagerV1";
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly documentation: {
-                readonly id: 12799;
+                readonly id: 12929;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "105:163:112";
+                readonly src: "105:163:116";
                 readonly text: "@title Shares Manager Interface (v1)\n @author Kiln\n @notice This interface exposes methods to handle the shares of the depositor and the ERC20 interface";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12878, 10358];
+            readonly linearizedBaseContracts: readonly [13008, 10417];
             readonly name: "ISharesManagerV1";
-            readonly nameLocation: "278:16:112";
-            readonly scope: 12879;
+            readonly nameLocation: "278:16:116";
+            readonly scope: 13009;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [10274, 10283];
+            readonly usedEvents: readonly [10333, 10342];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 112;
+    readonly id: 116;
 };
 //# sourceMappingURL=ISharesManagerV1.d.ts.map

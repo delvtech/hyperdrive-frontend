@@ -88,7 +88,7 @@ export declare const HyperdriveRegistry: {
     };
     readonly deployedBytecode: {
         readonly object: "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806332ddcb88146100515780635aa6e6751461008d578063b2561263146100b8578063be44e71a146100cd575b600080fd5b61007a61005f3660046101f1565b6001600160a01b031660009081526001602052604090205490565b6040519081526020015b60405180910390f35b6000546100a0906001600160a01b031681565b6040516001600160a01b039091168152602001610084565b6100cb6100c63660046101f1565b6100e0565b005b6100cb6100db366004610213565b610152565b6000546001600160a01b0316331461010a576040516282b42960e81b815260040160405180910390fd5b600080546001600160a01b0319166001600160a01b038316908117825560405190917f9d3e522e1e47a2f6009739342b9cc7b252a1888154e843ab55ee1c81745795ab91a250565b6000546001600160a01b0316331461017c576040516282b42960e81b815260040160405180910390fd5b6001600160a01b03821660008181526001602052604090819020839055517ff0ddd07f037f75a9ab309993d576264e5074e0d60be48db5629946f0fec5d356906101c99084815260200190565b60405180910390a25050565b80356001600160a01b03811681146101ec57600080fd5b919050565b60006020828403121561020357600080fd5b61020c826101d5565b9392505050565b6000806040838503121561022657600080fd5b61022f836101d5565b94602093909301359350505056fea2646970667358221220987ec2846c66a3d272e84185f258a3cbe6630b6cc03e2bea8ed4739eade187a264736f6c63430008140033";
-        readonly sourceMap: "296:1176:43:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1299:171;;;;;;:::i;:::-;-1:-1:-1;;;;;1427:36:43;1401:7;1427:36;;;:15;:36;;;;;;;1299:171;;;;529:25:235;;;517:2;502:18;1299:171:43;;;;;;;;390:25;;;;;-1:-1:-1;;;;;390:25:43;;;;;;-1:-1:-1;;;;;729:32:235;;;711:51;;699:2;684:18;390:25:43;565:203:235;768:180:43;;;;;;:::i;:::-;;:::i;:::-;;1002:251;;;;;;:::i;:::-;;:::i;768:180::-;611:10;;-1:-1:-1;;;;;611:10:43;597;:24;593:104;;644:42;;-1:-1:-1;;;644:42:43;;;;;;;;;;;593:104;872:10:::1;:24:::0;;-1:-1:-1;;;;;;872:24:43::1;-1:-1:-1::0;;;;;872:24:43;::::1;::::0;;::::1;::::0;;911:30:::1;::::0;872:24;;911:30:::1;::::0;::::1;768:180:::0;:::o;1002:251::-;611:10;;-1:-1:-1;;;;;611:10:43;597;:24;593:104;;644:42;;-1:-1:-1;;;644:42:43;;;;;;;;;;;593:104;-1:-1:-1;;;;;1138:36:43;::::1;;::::0;;;:15:::1;:36;::::0;;;;;;:44;;;1197:49;::::1;::::0;::::1;::::0;1177:5;529:25:235;;517:2;502:18;;383:177;1197:49:43::1;;;;;;;;1002:251:::0;;:::o;14:173:235:-;82:20;;-1:-1:-1;;;;;131:31:235;;121:42;;111:70;;177:1;174;167:12;111:70;14:173;;;:::o;192:186::-;251:6;304:2;292:9;283:7;279:23;275:32;272:52;;;320:1;317;310:12;272:52;343:29;362:9;343:29;:::i;:::-;333:39;192:186;-1:-1:-1;;;192:186:235:o;773:254::-;841:6;849;902:2;890:9;881:7;877:23;873:32;870:52;;;918:1;915;908:12;870:52;941:29;960:9;941:29;:::i;:::-;931:39;1017:2;1002:18;;;;989:32;;-1:-1:-1;;;773:254:235:o";
+        readonly sourceMap: "296:1176:43:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1299:171;;;;;;:::i;:::-;-1:-1:-1;;;;;1427:36:43;1401:7;1427:36;;;:15;:36;;;;;;;1299:171;;;;529:25:239;;;517:2;502:18;1299:171:43;;;;;;;;390:25;;;;;-1:-1:-1;;;;;390:25:43;;;;;;-1:-1:-1;;;;;729:32:239;;;711:51;;699:2;684:18;390:25:43;565:203:239;768:180:43;;;;;;:::i;:::-;;:::i;:::-;;1002:251;;;;;;:::i;:::-;;:::i;768:180::-;611:10;;-1:-1:-1;;;;;611:10:43;597;:24;593:104;;644:42;;-1:-1:-1;;;644:42:43;;;;;;;;;;;593:104;872:10:::1;:24:::0;;-1:-1:-1;;;;;;872:24:43::1;-1:-1:-1::0;;;;;872:24:43;::::1;::::0;;::::1;::::0;;911:30:::1;::::0;872:24;;911:30:::1;::::0;::::1;768:180:::0;:::o;1002:251::-;611:10;;-1:-1:-1;;;;;611:10:43;597;:24;593:104;;644:42;;-1:-1:-1;;;644:42:43;;;;;;;;;;;593:104;-1:-1:-1;;;;;1138:36:43;::::1;;::::0;;;:15:::1;:36;::::0;;;;;;:44;;;1197:49;::::1;::::0;::::1;::::0;1177:5;529:25:239;;517:2;502:18;;383:177;1197:49:43::1;;;;;;;;1002:251:::0;;:::o;14:173:239:-;82:20;;-1:-1:-1;;;;;131:31:239;;121:42;;111:70;;177:1;174;167:12;111:70;14:173;;;:::o;192:186::-;251:6;304:2;292:9;283:7;279:23;275:32;272:52;;;320:1;317;310:12;272:52;343:29;362:9;343:29;:::i;:::-;333:39;192:186;-1:-1:-1;;;192:186:239:o;773:254::-;841:6;849;902:2;890:9;881:7;877:23;873:32;870:52;;;918:1;915;908:12;870:52;941:29;960:9;941:29;:::i;:::-;931:39;1017:2;1002:18;;;;989:32;;-1:-1:-1;;;773:254:239:o";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {
@@ -313,9 +313,9 @@ export declare const HyperdriveRegistry: {
         readonly id: 7730;
         readonly exportedSymbols: {
             readonly HyperdriveRegistry: readonly [7729];
-            readonly IHyperdrive: readonly [11076];
-            readonly IHyperdriveGovernedRegistry: readonly [11829];
-            readonly IHyperdriveRegistry: readonly [11924];
+            readonly IHyperdrive: readonly [11143];
+            readonly IHyperdriveGovernedRegistry: readonly [11896];
+            readonly IHyperdriveRegistry: readonly [11991];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:1434:43";
@@ -334,14 +334,14 @@ export declare const HyperdriveRegistry: {
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 7730;
-            readonly sourceUnit: 11077;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 7634;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "73:11:43";
                     readonly typeDescriptions: {};
                 };
@@ -357,14 +357,14 @@ export declare const HyperdriveRegistry: {
             readonly file: "../interfaces/IHyperdriveGovernedRegistry.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 7730;
-            readonly sourceUnit: 11830;
+            readonly sourceUnit: 11897;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 7636;
                     readonly name: "IHyperdriveGovernedRegistry";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11829;
+                    readonly referencedDeclaration: 11896;
                     readonly src: "134:27:43";
                     readonly typeDescriptions: {};
                 };
@@ -380,14 +380,14 @@ export declare const HyperdriveRegistry: {
             readonly file: "../interfaces/IHyperdriveRegistry.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 7730;
-            readonly sourceUnit: 11925;
+            readonly sourceUnit: 11992;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 7638;
                     readonly name: "IHyperdriveRegistry";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11924;
+                    readonly referencedDeclaration: 11991;
                     readonly src: "227:19:43";
                     readonly typeDescriptions: {};
                 };
@@ -652,10 +652,10 @@ export declare const HyperdriveRegistry: {
                                             readonly name: "IHyperdriveGovernedRegistry";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11829;
+                                            readonly referencedDeclaration: 11896;
                                             readonly src: "644:27:43";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdriveGovernedRegistry_$11829_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdriveGovernedRegistry_$11896_$";
                                                 readonly typeString: "type(contract IHyperdriveGovernedRegistry)";
                                             };
                                         };
@@ -667,7 +667,7 @@ export declare const HyperdriveRegistry: {
                                         readonly memberLocation: "672:12:43";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11814;
+                                        readonly referencedDeclaration: 11881;
                                         readonly src: "644:40:43";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
@@ -786,7 +786,7 @@ export declare const HyperdriveRegistry: {
                                 readonly name: "GovernanceUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11804;
+                                readonly referencedDeclaration: 11871;
                                 readonly src: "911:17:43";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$returns$__$";
@@ -814,7 +814,7 @@ export declare const HyperdriveRegistry: {
                         readonly src: "906:35:43";
                     }];
                 };
-                readonly baseFunctions: readonly [11820];
+                readonly baseFunctions: readonly [11887];
                 readonly documentation: {
                     readonly id: 7674;
                     readonly nodeType: "StructuredDocumentation";
@@ -1003,7 +1003,7 @@ export declare const HyperdriveRegistry: {
                                 readonly name: "HyperdriveInfoUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11811;
+                                readonly referencedDeclaration: 11878;
                                 readonly src: "1197:21:43";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$";
@@ -1031,7 +1031,7 @@ export declare const HyperdriveRegistry: {
                         readonly src: "1192:54:43";
                     }];
                 };
-                readonly baseFunctions: readonly [11828];
+                readonly baseFunctions: readonly [11895];
                 readonly documentation: {
                     readonly id: 7692;
                     readonly nodeType: "StructuredDocumentation";
@@ -1186,7 +1186,7 @@ export declare const HyperdriveRegistry: {
                         readonly src: "1420:43:43";
                     }];
                 };
-                readonly baseFunctions: readonly [11923];
+                readonly baseFunctions: readonly [11990];
                 readonly documentation: {
                     readonly id: 7715;
                     readonly nodeType: "StructuredDocumentation";
@@ -1282,7 +1282,7 @@ export declare const HyperdriveRegistry: {
                     readonly name: "IHyperdriveRegistry";
                     readonly nameLocations: readonly ["331:19:43"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11924;
+                    readonly referencedDeclaration: 11991;
                     readonly src: "331:19:43";
                 };
                 readonly id: 7641;
@@ -1294,7 +1294,7 @@ export declare const HyperdriveRegistry: {
                     readonly name: "IHyperdriveGovernedRegistry";
                     readonly nameLocations: readonly ["356:27:43"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11829;
+                    readonly referencedDeclaration: 11896;
                     readonly src: "356:27:43";
                 };
                 readonly id: 7643;
@@ -1305,12 +1305,12 @@ export declare const HyperdriveRegistry: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [7729, 11829, 11924];
+            readonly linearizedBaseContracts: readonly [7729, 11896, 11991];
             readonly name: "HyperdriveRegistry";
             readonly nameLocation: "305:18:43";
             readonly scope: 7730;
-            readonly usedErrors: readonly [11814];
-            readonly usedEvents: readonly [11804, 11811];
+            readonly usedErrors: readonly [11881];
+            readonly usedEvents: readonly [11871, 11878];
         }];
         readonly license: "Apache-2.0";
     };

@@ -1210,37 +1210,37 @@ export declare const IERC4626HyperdriveRead: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IERC4626HyperdriveRead.sol";
-        readonly id: 10669;
+        readonly id: 10728;
         readonly exportedSymbols: {
-            readonly IERC4626: readonly [10641];
-            readonly IERC4626HyperdriveRead: readonly [10668];
-            readonly IHyperdriveRead: readonly [11913];
+            readonly IERC4626: readonly [10700];
+            readonly IERC4626HyperdriveRead: readonly [10727];
+            readonly IHyperdriveRead: readonly [11980];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:390:84";
         readonly nodes: readonly [{
-            readonly id: 10654;
+            readonly id: 10713;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:84";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 10656;
+            readonly id: 10715;
             readonly nodeType: "ImportDirective";
             readonly src: "64:42:84";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC4626.sol";
             readonly file: "./IERC4626.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 10669;
-            readonly sourceUnit: 10642;
+            readonly scope: 10728;
+            readonly sourceUnit: 10701;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 10655;
+                    readonly id: 10714;
                     readonly name: "IERC4626";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10641;
+                    readonly referencedDeclaration: 10700;
                     readonly src: "73:8:84";
                     readonly typeDescriptions: {};
                 };
@@ -1248,22 +1248,22 @@ export declare const IERC4626HyperdriveRead: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 10658;
+            readonly id: 10717;
             readonly nodeType: "ImportDirective";
             readonly src: "107:56:84";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdriveRead.sol";
             readonly file: "./IHyperdriveRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 10669;
-            readonly sourceUnit: 11914;
+            readonly scope: 10728;
+            readonly sourceUnit: 11981;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 10657;
+                    readonly id: 10716;
                     readonly name: "IHyperdriveRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11913;
+                    readonly referencedDeclaration: 11980;
                     readonly src: "116:15:84";
                     readonly typeDescriptions: {};
                 };
@@ -1271,16 +1271,16 @@ export declare const IERC4626HyperdriveRead: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 10668;
+            readonly id: 10727;
             readonly nodeType: "ContractDefinition";
             readonly src: "165:263:84";
             readonly nodes: readonly [{
-                readonly id: 10667;
+                readonly id: 10726;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "376:50:84";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 10661;
+                    readonly id: 10720;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "223:148:84";
                     readonly text: "@notice Gets the ERC4626 compatible vault used as this pool's yield\n         source.\n @return The ERC4626 compatible yield source.";
@@ -1292,44 +1292,44 @@ export declare const IERC4626HyperdriveRead: {
                 readonly name: "vault";
                 readonly nameLocation: "385:5:84";
                 readonly parameters: {
-                    readonly id: 10662;
+                    readonly id: 10721;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "390:2:84";
                 };
                 readonly returnParameters: {
-                    readonly id: 10666;
+                    readonly id: 10725;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 10665;
+                        readonly id: 10724;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 10667;
+                        readonly scope: 10726;
                         readonly src: "416:8:84";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC4626_$10641";
+                            readonly typeIdentifier: "t_contract$_IERC4626_$10700";
                             readonly typeString: "contract IERC4626";
                         };
                         readonly typeName: {
-                            readonly id: 10664;
+                            readonly id: 10723;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 10663;
+                                readonly id: 10722;
                                 readonly name: "IERC4626";
                                 readonly nameLocations: readonly ["416:8:84"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10641;
+                                readonly referencedDeclaration: 10700;
                                 readonly src: "416:8:84";
                             };
-                            readonly referencedDeclaration: 10641;
+                            readonly referencedDeclaration: 10700;
                             readonly src: "416:8:84";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10700";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
@@ -1337,7 +1337,7 @@ export declare const IERC4626HyperdriveRead: {
                     }];
                     readonly src: "415:10:84";
                 };
-                readonly scope: 10668;
+                readonly scope: 10727;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1345,14 +1345,14 @@ export declare const IERC4626HyperdriveRead: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 10659;
+                    readonly id: 10718;
                     readonly name: "IHyperdriveRead";
                     readonly nameLocations: readonly ["201:15:84"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11913;
+                    readonly referencedDeclaration: 11980;
                     readonly src: "201:15:84";
                 };
-                readonly id: 10660;
+                readonly id: 10719;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "201:15:84";
             }];
@@ -1360,10 +1360,10 @@ export declare const IERC4626HyperdriveRead: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [10668, 11913, 12253];
+            readonly linearizedBaseContracts: readonly [10727, 11980, 12320];
             readonly name: "IERC4626HyperdriveRead";
             readonly nameLocation: "175:22:84";
-            readonly scope: 10669;
+            readonly scope: 10728;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

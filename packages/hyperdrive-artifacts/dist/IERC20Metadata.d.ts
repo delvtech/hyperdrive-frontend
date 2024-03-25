@@ -438,55 +438,55 @@ export declare const IERC20Metadata: {
     };
     readonly ast: {
         readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol";
-        readonly id: 71366;
+        readonly id: 71496;
         readonly exportedSymbols: {
-            readonly IERC20: readonly [71339];
-            readonly IERC20Metadata: readonly [71365];
+            readonly IERC20: readonly [71469];
+            readonly IERC20Metadata: readonly [71495];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "125:558:166";
+        readonly src: "125:558:170";
         readonly nodes: readonly [{
-            readonly id: 71341;
+            readonly id: 71471;
             readonly nodeType: "PragmaDirective";
-            readonly src: "125:24:166";
+            readonly src: "125:24:170";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".20"];
         }, {
-            readonly id: 71343;
+            readonly id: 71473;
             readonly nodeType: "ImportDirective";
-            readonly src: "151:37:166";
+            readonly src: "151:37:170";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
             readonly file: "../IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 71366;
-            readonly sourceUnit: 71340;
+            readonly scope: 71496;
+            readonly sourceUnit: 71470;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 71342;
+                    readonly id: 71472;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71339;
-                    readonly src: "159:6:166";
+                    readonly referencedDeclaration: 71469;
+                    readonly src: "159:6:170";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 71365;
+            readonly id: 71495;
             readonly nodeType: "ContractDefinition";
-            readonly src: "277:405:166";
+            readonly src: "277:405:170";
             readonly nodes: readonly [{
-                readonly id: 71352;
+                readonly id: 71482;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "377:54:166";
+                readonly src: "377:54:170";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71347;
+                    readonly id: 71477;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "318:54:166";
+                    readonly src: "318:54:170";
                     readonly text: " @dev Returns the name of the token.";
                 };
                 readonly functionSelector: "06fdde03";
@@ -494,25 +494,25 @@ export declare const IERC20Metadata: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "name";
-                readonly nameLocation: "386:4:166";
+                readonly nameLocation: "386:4:170";
                 readonly parameters: {
-                    readonly id: 71348;
+                    readonly id: 71478;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "390:2:166";
+                    readonly src: "390:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 71351;
+                    readonly id: 71481;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71350;
+                        readonly id: 71480;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71352;
-                        readonly src: "416:13:166";
+                        readonly scope: 71482;
+                        readonly src: "416:13:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
@@ -520,10 +520,10 @@ export declare const IERC20Metadata: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 71349;
+                            readonly id: 71479;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "416:6:166";
+                            readonly src: "416:6:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_storage_ptr";
                                 readonly typeString: "string";
@@ -531,21 +531,21 @@ export declare const IERC20Metadata: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "415:15:166";
+                    readonly src: "415:15:170";
                 };
-                readonly scope: 71365;
+                readonly scope: 71495;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 71358;
+                readonly id: 71488;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "498:56:166";
+                readonly src: "498:56:170";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71353;
+                    readonly id: 71483;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "437:56:166";
+                    readonly src: "437:56:170";
                     readonly text: " @dev Returns the symbol of the token.";
                 };
                 readonly functionSelector: "95d89b41";
@@ -553,25 +553,25 @@ export declare const IERC20Metadata: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "symbol";
-                readonly nameLocation: "507:6:166";
+                readonly nameLocation: "507:6:170";
                 readonly parameters: {
-                    readonly id: 71354;
+                    readonly id: 71484;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "513:2:166";
+                    readonly src: "513:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 71357;
+                    readonly id: 71487;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71356;
+                        readonly id: 71486;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71358;
-                        readonly src: "539:13:166";
+                        readonly scope: 71488;
+                        readonly src: "539:13:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
@@ -579,10 +579,10 @@ export declare const IERC20Metadata: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 71355;
+                            readonly id: 71485;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "539:6:166";
+                            readonly src: "539:6:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_storage_ptr";
                                 readonly typeString: "string";
@@ -590,21 +590,21 @@ export declare const IERC20Metadata: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "538:15:166";
+                    readonly src: "538:15:170";
                 };
-                readonly scope: 71365;
+                readonly scope: 71495;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 71364;
+                readonly id: 71494;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "630:50:166";
+                readonly src: "630:50:170";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71359;
+                    readonly id: 71489;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "560:65:166";
+                    readonly src: "560:65:170";
                     readonly text: " @dev Returns the decimals places of the token.";
                 };
                 readonly functionSelector: "313ce567";
@@ -612,25 +612,25 @@ export declare const IERC20Metadata: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "decimals";
-                readonly nameLocation: "639:8:166";
+                readonly nameLocation: "639:8:170";
                 readonly parameters: {
-                    readonly id: 71360;
+                    readonly id: 71490;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "647:2:166";
+                    readonly src: "647:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 71363;
+                    readonly id: 71493;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71362;
+                        readonly id: 71492;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71364;
-                        readonly src: "673:5:166";
+                        readonly scope: 71494;
+                        readonly src: "673:5:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -638,10 +638,10 @@ export declare const IERC20Metadata: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 71361;
+                            readonly id: 71491;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "673:5:166";
+                            readonly src: "673:5:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint8";
                                 readonly typeString: "uint8";
@@ -649,9 +649,9 @@ export declare const IERC20Metadata: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "672:7:166";
+                    readonly src: "672:7:170";
                 };
-                readonly scope: 71365;
+                readonly scope: 71495;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -659,36 +659,36 @@ export declare const IERC20Metadata: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 71345;
+                    readonly id: 71475;
                     readonly name: "IERC20";
-                    readonly nameLocations: readonly ["305:6:166"];
+                    readonly nameLocations: readonly ["305:6:170"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71339;
-                    readonly src: "305:6:166";
+                    readonly referencedDeclaration: 71469;
+                    readonly src: "305:6:170";
                 };
-                readonly id: 71346;
+                readonly id: 71476;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "305:6:166";
+                readonly src: "305:6:170";
             }];
             readonly canonicalName: "IERC20Metadata";
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly documentation: {
-                readonly id: 71344;
+                readonly id: 71474;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "190:86:166";
+                readonly src: "190:86:170";
                 readonly text: " @dev Interface for the optional metadata functions from the ERC20 standard.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [71365, 71339];
+            readonly linearizedBaseContracts: readonly [71495, 71469];
             readonly name: "IERC20Metadata";
-            readonly nameLocation: "287:14:166";
-            readonly scope: 71366;
+            readonly nameLocation: "287:14:170";
+            readonly scope: 71496;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [71273, 71282];
+            readonly usedEvents: readonly [71403, 71412];
         }];
         readonly license: "MIT";
     };
-    readonly id: 166;
+    readonly id: 170;
 };
 //# sourceMappingURL=IERC20Metadata.d.ts.map

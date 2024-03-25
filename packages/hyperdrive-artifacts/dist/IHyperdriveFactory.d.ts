@@ -963,36 +963,36 @@ export declare const IHyperdriveFactory: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IHyperdriveFactory.sol";
-        readonly id: 11798;
+        readonly id: 11865;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11076];
-            readonly IHyperdriveFactory: readonly [11797];
+            readonly IHyperdrive: readonly [11143];
+            readonly IHyperdriveFactory: readonly [11864];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:8900:92";
         readonly nodes: readonly [{
-            readonly id: 11601;
+            readonly id: 11668;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:92";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11603;
+            readonly id: 11670;
             readonly nodeType: "ImportDirective";
             readonly src: "64:48:92";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "./IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11798;
-            readonly sourceUnit: 11077;
+            readonly scope: 11865;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11602;
+                    readonly id: 11669;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "73:11:92";
                     readonly typeDescriptions: {};
                 };
@@ -1000,17 +1000,17 @@ export declare const IHyperdriveFactory: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11797;
+            readonly id: 11864;
             readonly nodeType: "ContractDefinition";
             readonly src: "114:8824:92";
             readonly nodes: readonly [{
-                readonly id: 11615;
+                readonly id: 11682;
                 readonly nodeType: "EventDefinition";
                 readonly src: "229:164:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11604;
+                    readonly id: 11671;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "169:55:92";
                     readonly text: "@notice Emitted when a Hyperdrive pool is deployed.";
@@ -1019,17 +1019,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "Deployed";
                 readonly nameLocation: "235:8:92";
                 readonly parameters: {
-                    readonly id: 11614;
+                    readonly id: 11681;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11606;
+                        readonly id: 11673;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "deployerCoordinator";
                         readonly nameLocation: "269:19:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11615;
+                        readonly scope: 11682;
                         readonly src: "253:35:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1038,7 +1038,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11605;
+                            readonly id: 11672;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "253:7:92";
@@ -1051,13 +1051,13 @@ export declare const IHyperdriveFactory: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11608;
+                        readonly id: 11675;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "hyperdrive";
                         readonly nameLocation: "306:10:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11615;
+                        readonly scope: 11682;
                         readonly src: "298:18:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1066,7 +1066,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11607;
+                            readonly id: 11674;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "298:7:92";
@@ -1079,48 +1079,48 @@ export declare const IHyperdriveFactory: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11611;
+                        readonly id: 11678;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "config";
                         readonly nameLocation: "355:6:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11615;
+                        readonly scope: 11682;
                         readonly src: "326:35:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_PoolDeployConfig_$10825_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_PoolDeployConfig_$10892_memory_ptr";
                             readonly typeString: "struct IHyperdrive.PoolDeployConfig";
                         };
                         readonly typeName: {
-                            readonly id: 11610;
+                            readonly id: 11677;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11609;
+                                readonly id: 11676;
                                 readonly name: "IHyperdrive.PoolDeployConfig";
                                 readonly nameLocations: readonly ["326:11:92", "338:16:92"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10825;
+                                readonly referencedDeclaration: 10892;
                                 readonly src: "326:28:92";
                             };
-                            readonly referencedDeclaration: 10825;
+                            readonly referencedDeclaration: 10892;
                             readonly src: "326:28:92";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_PoolDeployConfig_$10825_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_PoolDeployConfig_$10892_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.PoolDeployConfig";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11613;
+                        readonly id: 11680;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "extraData";
                         readonly nameLocation: "377:9:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11615;
+                        readonly scope: 11682;
                         readonly src: "371:15:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1129,7 +1129,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 11612;
+                            readonly id: 11679;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "371:5:92";
@@ -1143,13 +1143,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "243:149:92";
                 };
             }, {
-                readonly id: 11620;
+                readonly id: 11687;
                 readonly nodeType: "EventDefinition";
                 readonly src: "461:68:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11616;
+                    readonly id: 11683;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "399:57:92";
                     readonly text: "@notice Emitted when a deployer coordinator is added.";
@@ -1158,17 +1158,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DeployerCoordinatorAdded";
                 readonly nameLocation: "467:24:92";
                 readonly parameters: {
-                    readonly id: 11619;
+                    readonly id: 11686;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11618;
+                        readonly id: 11685;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "deployerCoordinator";
                         readonly nameLocation: "508:19:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11620;
+                        readonly scope: 11687;
                         readonly src: "492:35:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1177,7 +1177,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11617;
+                            readonly id: 11684;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "492:7:92";
@@ -1192,13 +1192,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "491:37:92";
                 };
             }, {
-                readonly id: 11625;
+                readonly id: 11692;
                 readonly nodeType: "EventDefinition";
                 readonly src: "599:70:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11621;
+                    readonly id: 11688;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "535:59:92";
                     readonly text: "@notice Emitted when a deployer coordinator is removed.";
@@ -1207,17 +1207,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DeployerCoordinatorRemoved";
                 readonly nameLocation: "605:26:92";
                 readonly parameters: {
-                    readonly id: 11624;
+                    readonly id: 11691;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11623;
+                        readonly id: 11690;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "deployerCoordinator";
                         readonly nameLocation: "648:19:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11625;
+                        readonly scope: 11692;
                         readonly src: "632:35:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1226,7 +1226,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11622;
+                            readonly id: 11689;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "632:7:92";
@@ -1241,13 +1241,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "631:37:92";
                 };
             }, {
-                readonly id: 11631;
+                readonly id: 11698;
                 readonly nodeType: "EventDefinition";
                 readonly src: "744:57:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11626;
+                    readonly id: 11693;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "675:64:92";
                     readonly text: "@notice Emitted when the list of default pausers is updated.";
@@ -1256,17 +1256,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DefaultPausersUpdated";
                 readonly nameLocation: "750:21:92";
                 readonly parameters: {
-                    readonly id: 11630;
+                    readonly id: 11697;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11629;
+                        readonly id: 11696;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newDefaultPausers";
                         readonly nameLocation: "782:17:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11631;
+                        readonly scope: 11698;
                         readonly src: "772:27:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1276,7 +1276,7 @@ export declare const IHyperdriveFactory: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 11627;
+                                readonly id: 11694;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "772:7:92";
@@ -1286,7 +1286,7 @@ export declare const IHyperdriveFactory: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 11628;
+                            readonly id: 11695;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "772:9:92";
                             readonly typeDescriptions: {
@@ -1299,13 +1299,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "771:29:92";
                 };
             }, {
-                readonly id: 11636;
+                readonly id: 11703;
                 readonly nodeType: "EventDefinition";
                 readonly src: "890:59:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11632;
+                    readonly id: 11699;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "807:78:92";
                     readonly text: "@notice Emitted when the fee collector used in new deployments is updated.";
@@ -1314,17 +1314,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "FeeCollectorUpdated";
                 readonly nameLocation: "896:19:92";
                 readonly parameters: {
-                    readonly id: 11635;
+                    readonly id: 11702;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11634;
+                        readonly id: 11701;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newFeeCollector";
                         readonly nameLocation: "932:15:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11636;
+                        readonly scope: 11703;
                         readonly src: "916:31:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1333,7 +1333,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11633;
+                            readonly id: 11700;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "916:7:92";
@@ -1348,13 +1348,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "915:33:92";
                 };
             }, {
-                readonly id: 11641;
+                readonly id: 11708;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1056:63:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11637;
+                    readonly id: 11704;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "955:96:92";
                     readonly text: "@notice Emitted when the sweep collector used in new deployments is\n         updated.";
@@ -1363,17 +1363,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "SweepCollectorUpdated";
                 readonly nameLocation: "1062:21:92";
                 readonly parameters: {
-                    readonly id: 11640;
+                    readonly id: 11707;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11639;
+                        readonly id: 11706;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newSweepCollector";
                         readonly nameLocation: "1100:17:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11641;
+                        readonly scope: 11708;
                         readonly src: "1084:33:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1382,7 +1382,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11638;
+                            readonly id: 11705;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1084:7:92";
@@ -1397,13 +1397,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1083:35:92";
                 };
             }, {
-                readonly id: 11646;
+                readonly id: 11713;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1191:52:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11642;
+                    readonly id: 11709;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1125:61:92";
                     readonly text: "@notice Emitted when the factory's governance is updated.";
@@ -1412,17 +1412,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "GovernanceUpdated";
                 readonly nameLocation: "1197:17:92";
                 readonly parameters: {
-                    readonly id: 11645;
+                    readonly id: 11712;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11644;
+                        readonly id: 11711;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "governance";
                         readonly nameLocation: "1231:10:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11646;
+                        readonly scope: 11713;
                         readonly src: "1215:26:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1431,7 +1431,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11643;
+                            readonly id: 11710;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1215:7:92";
@@ -1446,13 +1446,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1214:28:92";
                 };
             }, {
-                readonly id: 11651;
+                readonly id: 11718;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1353:72:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11647;
+                    readonly id: 11714;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1249:99:92";
                     readonly text: "@notice Emitted when the governance address used in new deployments is\n         updated.";
@@ -1461,17 +1461,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "HyperdriveGovernanceUpdated";
                 readonly nameLocation: "1359:27:92";
                 readonly parameters: {
-                    readonly id: 11650;
+                    readonly id: 11717;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11649;
+                        readonly id: 11716;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "hyperdriveGovernance";
                         readonly nameLocation: "1403:20:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11651;
+                        readonly scope: 11718;
                         readonly src: "1387:36:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1480,7 +1480,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11648;
+                            readonly id: 11715;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1387:7:92";
@@ -1495,13 +1495,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1386:38:92";
                 };
             }, {
-                readonly id: 11656;
+                readonly id: 11723;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1531:61:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11652;
+                    readonly id: 11719;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1431:95:92";
                     readonly text: "@notice Emitted when the linker factory used in new deployments is\n         updated.";
@@ -1510,17 +1510,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "LinkerFactoryUpdated";
                 readonly nameLocation: "1537:20:92";
                 readonly parameters: {
-                    readonly id: 11655;
+                    readonly id: 11722;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11654;
+                        readonly id: 11721;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newLinkerFactory";
                         readonly nameLocation: "1574:16:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11656;
+                        readonly scope: 11723;
                         readonly src: "1558:32:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1529,7 +1529,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11653;
+                            readonly id: 11720;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1558:7:92";
@@ -1544,13 +1544,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1557:34:92";
                 };
             }, {
-                readonly id: 11661;
+                readonly id: 11728;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1700:63:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11657;
+                    readonly id: 11724;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1598:97:92";
                     readonly text: "@notice Emitted when the linker code hash used in new deployments is\n         updated.";
@@ -1559,17 +1559,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "LinkerCodeHashUpdated";
                 readonly nameLocation: "1706:21:92";
                 readonly parameters: {
-                    readonly id: 11660;
+                    readonly id: 11727;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11659;
+                        readonly id: 11726;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newLinkerCodeHash";
                         readonly nameLocation: "1744:17:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11661;
+                        readonly scope: 11728;
                         readonly src: "1728:33:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1578,7 +1578,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 11658;
+                            readonly id: 11725;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1728:7:92";
@@ -1592,13 +1592,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1727:35:92";
                 };
             }, {
-                readonly id: 11666;
+                readonly id: 11733;
                 readonly nodeType: "EventDefinition";
                 readonly src: "1845:97:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11662;
+                    readonly id: 11729;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1769:71:92";
                     readonly text: "@notice Emitted when the checkpoint duration resolution is updated.";
@@ -1607,17 +1607,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "CheckpointDurationResolutionUpdated";
                 readonly nameLocation: "1851:35:92";
                 readonly parameters: {
-                    readonly id: 11665;
+                    readonly id: 11732;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11664;
+                        readonly id: 11731;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newCheckpointDurationResolution";
                         readonly nameLocation: "1904:31:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11666;
+                        readonly scope: 11733;
                         readonly src: "1896:39:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1626,7 +1626,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11663;
+                            readonly id: 11730;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1896:7:92";
@@ -1640,13 +1640,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "1886:55:92";
                 };
             }, {
-                readonly id: 11671;
+                readonly id: 11738;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2021:69:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11667;
+                    readonly id: 11734;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1948:68:92";
                     readonly text: "@notice Emitted when the maximum checkpoint duration is updated.";
@@ -1655,17 +1655,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MaxCheckpointDurationUpdated";
                 readonly nameLocation: "2027:28:92";
                 readonly parameters: {
-                    readonly id: 11670;
+                    readonly id: 11737;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11669;
+                        readonly id: 11736;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMaxCheckpointDuration";
                         readonly nameLocation: "2064:24:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11671;
+                        readonly scope: 11738;
                         readonly src: "2056:32:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1674,7 +1674,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11668;
+                            readonly id: 11735;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2056:7:92";
@@ -1688,13 +1688,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2055:34:92";
                 };
             }, {
-                readonly id: 11676;
+                readonly id: 11743;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2169:69:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11672;
+                    readonly id: 11739;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2096:68:92";
                     readonly text: "@notice Emitted when the minimum checkpoint duration is updated.";
@@ -1703,17 +1703,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MinCheckpointDurationUpdated";
                 readonly nameLocation: "2175:28:92";
                 readonly parameters: {
-                    readonly id: 11675;
+                    readonly id: 11742;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11674;
+                        readonly id: 11741;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMinCheckpointDuration";
                         readonly nameLocation: "2212:24:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11676;
+                        readonly scope: 11743;
                         readonly src: "2204:32:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1722,7 +1722,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11673;
+                            readonly id: 11740;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2204:7:92";
@@ -1736,13 +1736,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2203:34:92";
                 };
             }, {
-                readonly id: 11681;
+                readonly id: 11748;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2315:65:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11677;
+                    readonly id: 11744;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2244:66:92";
                     readonly text: "@notice Emitted when the maximum position duration is updated.";
@@ -1751,17 +1751,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MaxPositionDurationUpdated";
                 readonly nameLocation: "2321:26:92";
                 readonly parameters: {
-                    readonly id: 11680;
+                    readonly id: 11747;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11679;
+                        readonly id: 11746;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMaxPositionDuration";
                         readonly nameLocation: "2356:22:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11681;
+                        readonly scope: 11748;
                         readonly src: "2348:30:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1770,7 +1770,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11678;
+                            readonly id: 11745;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2348:7:92";
@@ -1784,13 +1784,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2347:32:92";
                 };
             }, {
-                readonly id: 11686;
+                readonly id: 11753;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2457:65:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11682;
+                    readonly id: 11749;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2386:66:92";
                     readonly text: "@notice Emitted when the minimum position duration is updated.";
@@ -1799,17 +1799,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MinPositionDurationUpdated";
                 readonly nameLocation: "2463:26:92";
                 readonly parameters: {
-                    readonly id: 11685;
+                    readonly id: 11752;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11684;
+                        readonly id: 11751;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMinPositionDuration";
                         readonly nameLocation: "2498:22:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11686;
+                        readonly scope: 11753;
                         readonly src: "2490:30:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1818,7 +1818,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11683;
+                            readonly id: 11750;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2490:7:92";
@@ -1832,13 +1832,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2489:32:92";
                 };
             }, {
-                readonly id: 11691;
+                readonly id: 11758;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2591:49:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11687;
+                    readonly id: 11754;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2528:58:92";
                     readonly text: "@notice Emitted when the maximum fixed APR is updated.";
@@ -1847,17 +1847,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MaxFixedAPRUpdated";
                 readonly nameLocation: "2597:18:92";
                 readonly parameters: {
-                    readonly id: 11690;
+                    readonly id: 11757;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11689;
+                        readonly id: 11756;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMaxFixedAPR";
                         readonly nameLocation: "2624:14:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11691;
+                        readonly scope: 11758;
                         readonly src: "2616:22:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1866,7 +1866,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11688;
+                            readonly id: 11755;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2616:7:92";
@@ -1880,13 +1880,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2615:24:92";
                 };
             }, {
-                readonly id: 11696;
+                readonly id: 11763;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2709:49:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11692;
+                    readonly id: 11759;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2646:58:92";
                     readonly text: "@notice Emitted when the minimum fixed APR is updated.";
@@ -1895,17 +1895,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MinFixedAPRUpdated";
                 readonly nameLocation: "2715:18:92";
                 readonly parameters: {
-                    readonly id: 11695;
+                    readonly id: 11762;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11694;
+                        readonly id: 11761;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMinFixedAPR";
                         readonly nameLocation: "2742:14:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11696;
+                        readonly scope: 11763;
                         readonly src: "2734:22:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1914,7 +1914,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11693;
+                            readonly id: 11760;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2734:7:92";
@@ -1928,13 +1928,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2733:24:92";
                 };
             }, {
-                readonly id: 11701;
+                readonly id: 11768;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2834:61:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11697;
+                    readonly id: 11764;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2764:65:92";
                     readonly text: "@notice Emitted when the maximum time stretch APR is updated.";
@@ -1943,17 +1943,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MaxTimeStretchAPRUpdated";
                 readonly nameLocation: "2840:24:92";
                 readonly parameters: {
-                    readonly id: 11700;
+                    readonly id: 11767;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11699;
+                        readonly id: 11766;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMaxTimeStretchAPR";
                         readonly nameLocation: "2873:20:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11701;
+                        readonly scope: 11768;
                         readonly src: "2865:28:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1962,7 +1962,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11698;
+                            readonly id: 11765;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2865:7:92";
@@ -1976,13 +1976,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "2864:30:92";
                 };
             }, {
-                readonly id: 11706;
+                readonly id: 11773;
                 readonly nodeType: "EventDefinition";
                 readonly src: "2971:61:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11702;
+                    readonly id: 11769;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2901:65:92";
                     readonly text: "@notice Emitted when the minimum time stretch APR is updated.";
@@ -1991,17 +1991,17 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MinTimeStretchAPRUpdated";
                 readonly nameLocation: "2977:24:92";
                 readonly parameters: {
-                    readonly id: 11705;
+                    readonly id: 11772;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11704;
+                        readonly id: 11771;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMinTimeStretchAPR";
                         readonly nameLocation: "3010:20:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11706;
+                        readonly scope: 11773;
                         readonly src: "3002:28:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2010,7 +2010,7 @@ export declare const IHyperdriveFactory: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11703;
+                            readonly id: 11770;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3002:7:92";
@@ -2024,13 +2024,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "3001:30:92";
                 };
             }, {
-                readonly id: 11712;
+                readonly id: 11779;
                 readonly nodeType: "EventDefinition";
                 readonly src: "3097:50:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11707;
+                    readonly id: 11774;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3038:54:92";
                     readonly text: "@notice Emitted when the maximum fees are updated.";
@@ -2039,39 +2039,39 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MaxFeesUpdated";
                 readonly nameLocation: "3103:14:92";
                 readonly parameters: {
-                    readonly id: 11711;
+                    readonly id: 11778;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11710;
+                        readonly id: 11777;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMaxFees";
                         readonly nameLocation: "3135:10:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11712;
+                        readonly scope: 11779;
                         readonly src: "3118:27:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Fees_$10786_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Fees_$10853_memory_ptr";
                             readonly typeString: "struct IHyperdrive.Fees";
                         };
                         readonly typeName: {
-                            readonly id: 11709;
+                            readonly id: 11776;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11708;
+                                readonly id: 11775;
                                 readonly name: "IHyperdrive.Fees";
                                 readonly nameLocations: readonly ["3118:11:92", "3130:4:92"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10786;
+                                readonly referencedDeclaration: 10853;
                                 readonly src: "3118:16:92";
                             };
-                            readonly referencedDeclaration: 10786;
+                            readonly referencedDeclaration: 10853;
                             readonly src: "3118:16:92";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Fees_$10786_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Fees_$10853_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Fees";
                             };
                         };
@@ -2080,13 +2080,13 @@ export declare const IHyperdriveFactory: {
                     readonly src: "3117:29:92";
                 };
             }, {
-                readonly id: 11718;
+                readonly id: 11785;
                 readonly nodeType: "EventDefinition";
                 readonly src: "3212:50:92";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 11713;
+                    readonly id: 11780;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3153:54:92";
                     readonly text: "@notice Emitted when the minimum fees are updated.";
@@ -2095,39 +2095,39 @@ export declare const IHyperdriveFactory: {
                 readonly name: "MinFeesUpdated";
                 readonly nameLocation: "3218:14:92";
                 readonly parameters: {
-                    readonly id: 11717;
+                    readonly id: 11784;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11716;
+                        readonly id: 11783;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "newMinFees";
                         readonly nameLocation: "3250:10:92";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11718;
+                        readonly scope: 11785;
                         readonly src: "3233:27:92";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Fees_$10786_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Fees_$10853_memory_ptr";
                             readonly typeString: "struct IHyperdrive.Fees";
                         };
                         readonly typeName: {
-                            readonly id: 11715;
+                            readonly id: 11782;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11714;
+                                readonly id: 11781;
                                 readonly name: "IHyperdrive.Fees";
                                 readonly nameLocations: readonly ["3233:11:92", "3245:4:92"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10786;
+                                readonly referencedDeclaration: 10853;
                                 readonly src: "3233:16:92";
                             };
-                            readonly referencedDeclaration: 10786;
+                            readonly referencedDeclaration: 10853;
                             readonly src: "3233:16:92";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Fees_$10786_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Fees_$10853_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Fees";
                             };
                         };
@@ -2136,12 +2136,12 @@ export declare const IHyperdriveFactory: {
                     readonly src: "3232:29:92";
                 };
             }, {
-                readonly id: 11721;
+                readonly id: 11788;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "3411:40:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11719;
+                    readonly id: 11786;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3288:118:92";
                     readonly text: "@notice Thrown when governance attempts to add a deployer coordinator\n         that has already been added.";
@@ -2150,18 +2150,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DeployerCoordinatorAlreadyAdded";
                 readonly nameLocation: "3417:31:92";
                 readonly parameters: {
-                    readonly id: 11720;
+                    readonly id: 11787;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3448:2:92";
                 };
             }, {
-                readonly id: 11724;
+                readonly id: 11791;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "3576:36:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11722;
+                    readonly id: 11789;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3457:114:92";
                     readonly text: "@notice Thrown when governance attempts to remove a deployer coordinator\n         that was never added.";
@@ -2170,18 +2170,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DeployerCoordinatorNotAdded";
                 readonly nameLocation: "3582:27:92";
                 readonly parameters: {
-                    readonly id: 11723;
+                    readonly id: 11790;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3609:2:92";
                 };
             }, {
-                readonly id: 11727;
+                readonly id: 11794;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "3803:41:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11725;
+                    readonly id: 11792;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3618:180:92";
                     readonly text: "@notice Thrown when governance attempts to remove a deployer coordinator\n         but specifies the wrong index within the list of deployer\n         coordinators.";
@@ -2190,18 +2190,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "DeployerCoordinatorIndexMismatch";
                 readonly nameLocation: "3809:32:92";
                 readonly parameters: {
-                    readonly id: 11726;
+                    readonly id: 11793;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3841:2:92";
                 };
             }, {
-                readonly id: 11730;
+                readonly id: 11797;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "3958:25:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11728;
+                    readonly id: 11795;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3850:103:92";
                     readonly text: "@notice Thrown when the ending index of a range is larger than the\n         underlying list.";
@@ -2210,18 +2210,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "EndIndexTooLarge";
                 readonly nameLocation: "3964:16:92";
                 readonly parameters: {
-                    readonly id: 11729;
+                    readonly id: 11796;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3980:2:92";
                 };
             }, {
-                readonly id: 11733;
+                readonly id: 11800;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "4281:34:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11731;
+                    readonly id: 11798;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3989:287:92";
                     readonly text: "@notice Thrown when the checkpoint duration supplied to `deployTarget`\n         or `deployAndInitialize` isn't a multiple of the checkpoint\n         duration resolution or isn't within the range specified by the\n         minimum and maximum checkpoint durations.";
@@ -2230,18 +2230,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidCheckpointDuration";
                 readonly nameLocation: "4287:25:92";
                 readonly parameters: {
-                    readonly id: 11732;
+                    readonly id: 11799;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4312:2:92";
                 };
             }, {
-                readonly id: 11736;
+                readonly id: 11803;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "4616:44:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11734;
+                    readonly id: 11801;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4321:290:92";
                     readonly text: "@notice Thrown when governance attempts to set the checkpoint duration\n         resolution to a value that doesn't evenly divide the minimum\n         checkpoint duration, maximum checkpoint duration, minimum\n         position duration, or maximum position duration.";
@@ -2250,18 +2250,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidCheckpointDurationResolution";
                 readonly nameLocation: "4622:35:92";
                 readonly parameters: {
-                    readonly id: 11735;
+                    readonly id: 11802;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4657:2:92";
                 };
             }, {
-                readonly id: 11739;
+                readonly id: 11806;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "4837:28:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11737;
+                    readonly id: 11804;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4666:166:92";
                     readonly text: "@notice Thrown when the deploy configuration passed to\n         `deployAndInitialize` has fields set that will be overridden by\n         governance.";
@@ -2270,18 +2270,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidDeployConfig";
                 readonly nameLocation: "4843:19:92";
                 readonly parameters: {
-                    readonly id: 11738;
+                    readonly id: 11805;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4862:2:92";
                 };
             }, {
-                readonly id: 11742;
+                readonly id: 11809;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "5006:35:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11740;
+                    readonly id: 11807;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4871:130:92";
                     readonly text: "@notice Thrown when the deployer coordinator passed to\n         `deployAndInitialize` hasn't been added to the factory.";
@@ -2290,18 +2290,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidDeployerCoordinator";
                 readonly nameLocation: "5012:26:92";
                 readonly parameters: {
-                    readonly id: 11741;
+                    readonly id: 11808;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5038:2:92";
                 };
             }, {
-                readonly id: 11745;
+                readonly id: 11812;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "5225:20:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11743;
+                    readonly id: 11810;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5047:173:92";
                     readonly text: "@notice Thrown when the fee parameters passed to `deployAndInitialize`\n         aren't within the range specified by the minimum and maximum\n         fees.";
@@ -2310,18 +2310,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidFees";
                 readonly nameLocation: "5231:11:92";
                 readonly parameters: {
-                    readonly id: 11744;
+                    readonly id: 11811;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5242:2:92";
                 };
             }, {
-                readonly id: 11748;
+                readonly id: 11815;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "5358:23:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11746;
+                    readonly id: 11813;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5251:102:92";
                     readonly text: "@notice Thrown when the starting index of a range is larger than the\n         ending index.";
@@ -2330,18 +2330,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidIndexes";
                 readonly nameLocation: "5364:14:92";
                 readonly parameters: {
-                    readonly id: 11747;
+                    readonly id: 11814;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5378:2:92";
                 };
             }, {
-                readonly id: 11751;
+                readonly id: 11818;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "5573:23:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11749;
+                    readonly id: 11816;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5387:181:92";
                     readonly text: "@notice Thrown when governance attempts to set one of the maximum fee\n         parameters to a smaller value than the corresponding minimum fee\n         parameter.";
@@ -2350,18 +2350,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMaxFees";
                 readonly nameLocation: "5579:14:92";
                 readonly parameters: {
-                    readonly id: 11750;
+                    readonly id: 11817;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5593:2:92";
                 };
             }, {
-                readonly id: 11754;
+                readonly id: 11821;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "5787:23:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11752;
+                    readonly id: 11819;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5602:180:92";
                     readonly text: "@notice Thrown when governance attempts to set one of the minimum fee\n         parameters to a larger value than the corresponding maximum fee\n         parameter.";
@@ -2370,18 +2370,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMinFees";
                 readonly nameLocation: "5793:14:92";
                 readonly parameters: {
-                    readonly id: 11753;
+                    readonly id: 11820;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5807:2:92";
                 };
             }, {
-                readonly id: 11757;
+                readonly id: 11824;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "6074:37:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11755;
+                    readonly id: 11822;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5816:253:92";
                     readonly text: "@notice Thrown when governance attempts to set the maximum checkpoint\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is smaller than the minimum checkpoint\n         duration.";
@@ -2390,18 +2390,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMaxCheckpointDuration";
                 readonly nameLocation: "6080:28:92";
                 readonly parameters: {
-                    readonly id: 11756;
+                    readonly id: 11823;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6108:2:92";
                 };
             }, {
-                readonly id: 11760;
+                readonly id: 11827;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "6374:37:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11758;
+                    readonly id: 11825;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "6117:252:92";
                     readonly text: "@notice Thrown when governance attempts to set the minimum checkpoint\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is larger than the maximum checkpoint\n         duration.";
@@ -2410,18 +2410,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMinCheckpointDuration";
                 readonly nameLocation: "6380:28:92";
                 readonly parameters: {
-                    readonly id: 11759;
+                    readonly id: 11826;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6408:2:92";
                 };
             }, {
-                readonly id: 11763;
+                readonly id: 11830;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "6671:35:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11761;
+                    readonly id: 11828;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "6417:249:92";
                     readonly text: "@notice Thrown when governance attempts to set the maximum position\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is smaller than the minimum position\n         duration.";
@@ -2430,18 +2430,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMaxPositionDuration";
                 readonly nameLocation: "6677:26:92";
                 readonly parameters: {
-                    readonly id: 11762;
+                    readonly id: 11829;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6703:2:92";
                 };
             }, {
-                readonly id: 11766;
+                readonly id: 11833;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "6965:35:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11764;
+                    readonly id: 11831;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "6712:248:92";
                     readonly text: "@notice Thrown when governance attempts to set the minimum position\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is larger than the maximum position\n         duration.";
@@ -2450,18 +2450,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMinPositionDuration";
                 readonly nameLocation: "6971:26:92";
                 readonly parameters: {
-                    readonly id: 11765;
+                    readonly id: 11832;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6997:2:92";
                 };
             }, {
-                readonly id: 11769;
+                readonly id: 11836;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "7207:32:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11767;
+                    readonly id: 11834;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "7006:196:92";
                     readonly text: "@notice Thrown when the position duration passed to `deployAndInitialize`\n         doesn't fall within the range specified by the minimum and\n         maximum position durations.";
@@ -2470,18 +2470,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidPositionDuration";
                 readonly nameLocation: "7213:23:92";
                 readonly parameters: {
-                    readonly id: 11768;
+                    readonly id: 11835;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7236:2:92";
                 };
             }, {
-                readonly id: 11772;
+                readonly id: 11839;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "7393:27:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11770;
+                    readonly id: 11837;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "7245:143:92";
                     readonly text: "@notice Thrown when governance attempts to set the maximum fixed APR to\n         a value that is smaller than the minimum fixed APR.";
@@ -2490,18 +2490,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMaxFixedAPR";
                 readonly nameLocation: "7399:18:92";
                 readonly parameters: {
-                    readonly id: 11771;
+                    readonly id: 11838;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7417:2:92";
                 };
             }, {
-                readonly id: 11775;
+                readonly id: 11842;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "7573:27:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11773;
+                    readonly id: 11840;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "7426:142:92";
                     readonly text: "@notice Thrown when governance attempts to set the minimum fixed APR to\n         a value that is larger than the maximum fixed APR.";
@@ -2510,18 +2510,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMinFixedAPR";
                 readonly nameLocation: "7579:18:92";
                 readonly parameters: {
-                    readonly id: 11774;
+                    readonly id: 11841;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7597:2:92";
                 };
             }, {
-                readonly id: 11778;
+                readonly id: 11845;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "7784:24:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11776;
+                    readonly id: 11843;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "7606:173:92";
                     readonly text: "@notice Thrown when the fixed APR passed to `deployAndInitialize` isn't\n         within the range specified by the minimum and maximum fixed\n         APRs.";
@@ -2530,18 +2530,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidFixedAPR";
                 readonly nameLocation: "7790:15:92";
                 readonly parameters: {
-                    readonly id: 11777;
+                    readonly id: 11844;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7805:2:92";
                 };
             }, {
-                readonly id: 11781;
+                readonly id: 11848;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "7992:33:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11779;
+                    readonly id: 11846;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "7814:173:92";
                     readonly text: "@notice Thrown when governance attempts to set the maximum time stretch\n         APR to a value that is smaller than the minimum time stretch\n         APR.";
@@ -2550,18 +2550,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMaxTimeStretchAPR";
                 readonly nameLocation: "7998:24:92";
                 readonly parameters: {
-                    readonly id: 11780;
+                    readonly id: 11847;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8022:2:92";
                 };
             }, {
-                readonly id: 11784;
+                readonly id: 11851;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "8208:33:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11782;
+                    readonly id: 11849;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8031:172:92";
                     readonly text: "@notice Thrown when governance attempts to set the minimum time stretch\n         APR to a value that is larger than the maximum time stretch\n         APR.";
@@ -2570,18 +2570,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidMinTimeStretchAPR";
                 readonly nameLocation: "8214:24:92";
                 readonly parameters: {
-                    readonly id: 11783;
+                    readonly id: 11850;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8238:2:92";
                 };
             }, {
-                readonly id: 11787;
+                readonly id: 11854;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "8537:30:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11785;
+                    readonly id: 11852;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8247:285:92";
                     readonly text: "@notice Thrown when a time stretch APR is passed to `deployAndInitialize`\n         that isn't within the range specified by the minimum and maximum\n         time stretch APRs or doesn't satisfy the lower and upper safe\n         bounds implied by the fixed APR.";
@@ -2590,18 +2590,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "InvalidTimeStretchAPR";
                 readonly nameLocation: "8543:21:92";
                 readonly parameters: {
-                    readonly id: 11786;
+                    readonly id: 11853;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8564:2:92";
                 };
             }, {
-                readonly id: 11790;
+                readonly id: 11857;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "8672:22:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11788;
+                    readonly id: 11855;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8573:94:92";
                     readonly text: "@notice Thrown when ether is sent to the factory when `receive` is\n         locked.";
@@ -2610,18 +2610,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "ReceiveLocked";
                 readonly nameLocation: "8678:13:92";
                 readonly parameters: {
-                    readonly id: 11789;
+                    readonly id: 11856;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8691:2:92";
                 };
             }, {
-                readonly id: 11793;
+                readonly id: 11860;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "8753:23:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11791;
+                    readonly id: 11858;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8700:48:92";
                     readonly text: "@notice Thrown when an ether transfer fails.";
@@ -2630,18 +2630,18 @@ export declare const IHyperdriveFactory: {
                 readonly name: "TransferFailed";
                 readonly nameLocation: "8759:14:92";
                 readonly parameters: {
-                    readonly id: 11792;
+                    readonly id: 11859;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8773:2:92";
                 };
             }, {
-                readonly id: 11796;
+                readonly id: 11863;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "8915:21:92";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11794;
+                    readonly id: 11861;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "8782:128:92";
                     readonly text: "@notice Thrown when an unauthorized caller attempts to update one of the\n         governance administered parameters.";
@@ -2650,7 +2650,7 @@ export declare const IHyperdriveFactory: {
                 readonly name: "Unauthorized";
                 readonly nameLocation: "8921:12:92";
                 readonly parameters: {
-                    readonly id: 11795;
+                    readonly id: 11862;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8933:2:92";
@@ -2662,12 +2662,12 @@ export declare const IHyperdriveFactory: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [11797];
+            readonly linearizedBaseContracts: readonly [11864];
             readonly name: "IHyperdriveFactory";
             readonly nameLocation: "124:18:92";
-            readonly scope: 11798;
-            readonly usedErrors: readonly [11721, 11724, 11727, 11730, 11733, 11736, 11739, 11742, 11745, 11748, 11751, 11754, 11757, 11760, 11763, 11766, 11769, 11772, 11775, 11778, 11781, 11784, 11787, 11790, 11793, 11796];
-            readonly usedEvents: readonly [11615, 11620, 11625, 11631, 11636, 11641, 11646, 11651, 11656, 11661, 11666, 11671, 11676, 11681, 11686, 11691, 11696, 11701, 11706, 11712, 11718];
+            readonly scope: 11865;
+            readonly usedErrors: readonly [11788, 11791, 11794, 11797, 11800, 11803, 11806, 11809, 11812, 11815, 11818, 11821, 11824, 11827, 11830, 11833, 11836, 11839, 11842, 11845, 11848, 11851, 11854, 11857, 11860, 11863];
+            readonly usedEvents: readonly [11682, 11687, 11692, 11698, 11703, 11708, 11713, 11718, 11723, 11728, 11733, 11738, 11743, 11748, 11753, 11758, 11763, 11768, 11773, 11779, 11785];
         }];
         readonly license: "Apache-2.0";
     };

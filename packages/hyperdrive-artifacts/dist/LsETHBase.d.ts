@@ -1213,40 +1213,40 @@ export declare const LsETHBase: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/lseth/LsETHBase.sol";
-        readonly id: 9006;
+        readonly id: 9020;
         readonly exportedSymbols: {
-            readonly FixedPointMath: readonly [19442];
-            readonly HyperdriveBase: readonly [14381];
-            readonly IHyperdrive: readonly [11076];
-            readonly IRiverV1: readonly [12794];
-            readonly LsETHBase: readonly [9005];
-            readonly ONE: readonly [18676];
+            readonly FixedPointMath: readonly [19572];
+            readonly HyperdriveBase: readonly [14511];
+            readonly IHyperdrive: readonly [11143];
+            readonly IRiverV1: readonly [12924];
+            readonly LsETHBase: readonly [9019];
+            readonly ONE: readonly [18806];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:4416:58";
         readonly nodes: readonly [{
-            readonly id: 8821;
+            readonly id: 8835;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:58";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 8823;
+            readonly id: 8837;
             readonly nodeType: "ImportDirective";
             readonly src: "64:63:58";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9006;
-            readonly sourceUnit: 11077;
+            readonly scope: 9020;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8822;
+                    readonly id: 8836;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "73:11:58";
                     readonly typeDescriptions: {};
                 };
@@ -1254,22 +1254,22 @@ export declare const LsETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8825;
+            readonly id: 8839;
             readonly nodeType: "ImportDirective";
             readonly src: "128:63:58";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/lseth/IRiverV1.sol";
             readonly file: "../../interfaces/lseth/IRiverV1.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9006;
-            readonly sourceUnit: 12795;
+            readonly scope: 9020;
+            readonly sourceUnit: 12925;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8824;
+                    readonly id: 8838;
                     readonly name: "IRiverV1";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12794;
+                    readonly referencedDeclaration: 12924;
                     readonly src: "137:8:58";
                     readonly typeDescriptions: {};
                 };
@@ -1277,22 +1277,22 @@ export declare const LsETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8827;
+            readonly id: 8841;
             readonly nodeType: "ImportDirective";
             readonly src: "192:67:58";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9006;
-            readonly sourceUnit: 14382;
+            readonly scope: 9020;
+            readonly sourceUnit: 14512;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8826;
+                    readonly id: 8840;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "201:14:58";
                     readonly typeDescriptions: {};
                 };
@@ -1300,33 +1300,33 @@ export declare const LsETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8830;
+            readonly id: 8844;
             readonly nodeType: "ImportDirective";
             readonly src: "260:73:58";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9006;
-            readonly sourceUnit: 19443;
+            readonly scope: 9020;
+            readonly sourceUnit: 19573;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8828;
+                    readonly id: 8842;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "269:14:58";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 8829;
+                    readonly id: 8843;
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18676;
+                    readonly referencedDeclaration: 18806;
                     readonly src: "285:3:58";
                     readonly typeDescriptions: {};
                 };
@@ -1334,25 +1334,25 @@ export declare const LsETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9005;
+            readonly id: 9019;
             readonly nodeType: "ContractDefinition";
             readonly src: "929:3525:58";
             readonly nodes: readonly [{
-                readonly id: 8836;
+                readonly id: 8850;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "981:33:58";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 8834;
+                    readonly id: 8848;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["987:14:58"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "987:14:58";
                 };
                 readonly typeName: {
-                    readonly id: 8835;
+                    readonly id: 8849;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1006:7:58";
@@ -1362,13 +1362,13 @@ export declare const LsETHBase: {
                     };
                 };
             }, {
-                readonly id: 8840;
+                readonly id: 8854;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1053:34:58";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 8837;
+                    readonly id: 8851;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1020:28:58";
                     readonly text: "@dev The LsETH contract.";
@@ -1376,88 +1376,88 @@ export declare const LsETHBase: {
                 readonly mutability: "immutable";
                 readonly name: "_river";
                 readonly nameLocation: "1081:6:58";
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                    readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                     readonly typeString: "contract IRiverV1";
                 };
                 readonly typeName: {
-                    readonly id: 8839;
+                    readonly id: 8853;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 8838;
+                        readonly id: 8852;
                         readonly name: "IRiverV1";
                         readonly nameLocations: readonly ["1053:8:58"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 12794;
+                        readonly referencedDeclaration: 12924;
                         readonly src: "1053:8:58";
                     };
-                    readonly referencedDeclaration: 12794;
+                    readonly referencedDeclaration: 12924;
                     readonly src: "1053:8:58";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                         readonly typeString: "contract IRiverV1";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 8852;
+                readonly id: 8866;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1202:63:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8851;
+                    readonly id: 8865;
                     readonly nodeType: "Block";
                     readonly src: "1232:33:58";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 8849;
+                            readonly id: 8863;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 8847;
+                                readonly id: 8861;
                                 readonly name: "_river";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8840;
+                                readonly referencedDeclaration: 8854;
                                 readonly src: "1242:6:58";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                    readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                     readonly typeString: "contract IRiverV1";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 8848;
+                                readonly id: 8862;
                                 readonly name: "__river";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8844;
+                                readonly referencedDeclaration: 8858;
                                 readonly src: "1251:7:58";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                    readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                     readonly typeString: "contract IRiverV1";
                                 };
                             };
                             readonly src: "1242:16:58";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                 readonly typeString: "contract IRiverV1";
                             };
                         };
-                        readonly id: 8850;
+                        readonly id: 8864;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1242:16:58";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 8841;
+                    readonly id: 8855;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1094:103:58";
                     readonly text: "@notice Instantiates the LsETH Hyperdrive base contract.\n @param __river The LsETH contract.";
@@ -1468,38 +1468,38 @@ export declare const LsETHBase: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 8845;
+                    readonly id: 8859;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8844;
+                        readonly id: 8858;
                         readonly mutability: "mutable";
                         readonly name: "__river";
                         readonly nameLocation: "1223:7:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8852;
+                        readonly scope: 8866;
                         readonly src: "1214:16:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                            readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                             readonly typeString: "contract IRiverV1";
                         };
                         readonly typeName: {
-                            readonly id: 8843;
+                            readonly id: 8857;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 8842;
+                                readonly id: 8856;
                                 readonly name: "IRiverV1";
                                 readonly nameLocations: readonly ["1214:8:58"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 12794;
+                                readonly referencedDeclaration: 12924;
                                 readonly src: "1214:8:58";
                             };
-                            readonly referencedDeclaration: 12794;
+                            readonly referencedDeclaration: 12924;
                             readonly src: "1214:8:58";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                 readonly typeString: "contract IRiverV1";
                             };
                         };
@@ -1508,22 +1508,22 @@ export declare const LsETHBase: {
                     readonly src: "1213:18:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8846;
+                    readonly id: 8860;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1232:0:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8871;
+                readonly id: 8885;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1369:197:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8870;
+                    readonly id: 8884;
                     readonly nodeType: "Block";
                     readonly src: "1512:54:58";
                     readonly nodes: readonly [];
@@ -1533,18 +1533,18 @@ export declare const LsETHBase: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 8865;
+                                    readonly id: 8879;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
+                                    readonly referencedDeclaration: 11143;
                                     readonly src: "1529:11:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 8867;
+                                readonly id: 8881;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1552,14 +1552,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "1541:16:58";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11042;
+                                readonly referencedDeclaration: 11109;
                                 readonly src: "1529:28:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 8868;
+                            readonly id: 8882;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1575,14 +1575,14 @@ export declare const LsETHBase: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 8869;
+                        readonly id: 8883;
                         readonly nodeType: "RevertStatement";
                         readonly src: "1522:37:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13412];
+                readonly baseFunctions: readonly [13542];
                 readonly documentation: {
-                    readonly id: 8853;
+                    readonly id: 8867;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1297:67:58";
                     readonly text: "@dev Deposits as base asset not supported for this integration.";
@@ -1593,22 +1593,22 @@ export declare const LsETHBase: {
                 readonly name: "_depositWithBase";
                 readonly nameLocation: "1378:16:58";
                 readonly overrides: {
-                    readonly id: 8859;
+                    readonly id: 8873;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "1476:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8858;
+                    readonly id: 8872;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8855;
+                        readonly id: 8869;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8871;
+                        readonly scope: 8885;
                         readonly src: "1404:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1617,7 +1617,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8854;
+                            readonly id: 8868;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1404:7:58";
@@ -1629,12 +1629,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8857;
+                        readonly id: 8871;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8871;
+                        readonly scope: 8885;
                         readonly src: "1431:14:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -1643,7 +1643,7 @@ export declare const LsETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8856;
+                            readonly id: 8870;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1431:5:58";
@@ -1657,16 +1657,16 @@ export declare const LsETHBase: {
                     readonly src: "1394:67:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8864;
+                    readonly id: 8878;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8861;
+                        readonly id: 8875;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8871;
+                        readonly scope: 8885;
                         readonly src: "1494:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1675,7 +1675,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8860;
+                            readonly id: 8874;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1494:7:58";
@@ -1687,12 +1687,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8863;
+                        readonly id: 8877;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8871;
+                        readonly scope: 8885;
                         readonly src: "1503:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1701,7 +1701,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8862;
+                            readonly id: 8876;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1503:7:58";
@@ -1714,17 +1714,17 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "1493:18:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8893;
+                readonly id: 8907;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1684:245:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8892;
+                    readonly id: 8906;
                     readonly nodeType: "Block";
                     readonly src: "1800:129:58";
                     readonly nodes: readonly [];
@@ -1732,7 +1732,7 @@ export declare const LsETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 8883;
+                                    readonly id: 8897;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1743,7 +1743,7 @@ export declare const LsETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 8884;
+                                readonly id: 8898;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1758,23 +1758,23 @@ export declare const LsETHBase: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 8887;
+                                    readonly id: 8901;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "1902:4:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9005";
+                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9019";
                                         readonly typeString: "contract LsETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9005";
+                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9019";
                                         readonly typeString: "contract LsETHBase";
                                     }];
-                                    readonly id: 8886;
+                                    readonly id: 8900;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1786,14 +1786,14 @@ export declare const LsETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 8885;
+                                        readonly id: 8899;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "1894:7:58";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 8888;
+                                readonly id: 8902;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1809,11 +1809,11 @@ export declare const LsETHBase: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 8889;
+                                readonly id: 8903;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8874;
+                                readonly referencedDeclaration: 8888;
                                 readonly src: "1909:12:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1832,18 +1832,18 @@ export declare const LsETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 8880;
+                                    readonly id: 8894;
                                     readonly name: "_river";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8840;
+                                    readonly referencedDeclaration: 8854;
                                     readonly src: "1862:6:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                         readonly typeString: "contract IRiverV1";
                                     };
                                 };
-                                readonly id: 8882;
+                                readonly id: 8896;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1851,14 +1851,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "1869:12:58";
                                 readonly memberName: "transferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12867;
+                                readonly referencedDeclaration: 12997;
                                 readonly src: "1862:19:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$";
                                     readonly typeString: "function (address,address,uint256) external returns (bool)";
                                 };
                             };
-                            readonly id: 8890;
+                            readonly id: 8904;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1874,14 +1874,14 @@ export declare const LsETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 8891;
+                        readonly id: 8905;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1862:60:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13420];
+                readonly baseFunctions: readonly [13550];
                 readonly documentation: {
-                    readonly id: 8872;
+                    readonly id: 8886;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1572:107:58";
                     readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
@@ -1892,22 +1892,22 @@ export declare const LsETHBase: {
                 readonly name: "_depositWithShares";
                 readonly nameLocation: "1693:18:58";
                 readonly overrides: {
-                    readonly id: 8878;
+                    readonly id: 8892;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "1791:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8877;
+                    readonly id: 8891;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8874;
+                        readonly id: 8888;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "1729:12:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8893;
+                        readonly scope: 8907;
                         readonly src: "1721:20:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1916,7 +1916,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8873;
+                            readonly id: 8887;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1721:7:58";
@@ -1928,12 +1928,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8876;
+                        readonly id: 8890;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8893;
+                        readonly scope: 8907;
                         readonly src: "1751:14:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -1942,7 +1942,7 @@ export declare const LsETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8875;
+                            readonly id: 8889;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1751:5:58";
@@ -1956,22 +1956,22 @@ export declare const LsETHBase: {
                     readonly src: "1711:70:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8879;
+                    readonly id: 8893;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1800:0:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8912;
+                readonly id: 8926;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2010:358:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8911;
+                    readonly id: 8925;
                     readonly nodeType: "Block";
                     readonly src: "2172:196:58";
                     readonly nodes: readonly [];
@@ -1981,18 +1981,18 @@ export declare const LsETHBase: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 8906;
+                                    readonly id: 8920;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
+                                    readonly referencedDeclaration: 11143;
                                     readonly src: "2331:11:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 8908;
+                                readonly id: 8922;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2000,14 +2000,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "2343:16:58";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11042;
+                                readonly referencedDeclaration: 11109;
                                 readonly src: "2331:28:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 8909;
+                            readonly id: 8923;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2023,14 +2023,14 @@ export declare const LsETHBase: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 8910;
+                        readonly id: 8924;
                         readonly nodeType: "RevertStatement";
                         readonly src: "2324:37:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13432];
+                readonly baseFunctions: readonly [13562];
                 readonly documentation: {
-                    readonly id: 8894;
+                    readonly id: 8908;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1935:70:58";
                     readonly text: "@dev Withdrawals as base asset not supported for this integration.";
@@ -2041,22 +2041,22 @@ export declare const LsETHBase: {
                 readonly name: "_withdrawWithBase";
                 readonly nameLocation: "2019:17:58";
                 readonly overrides: {
-                    readonly id: 8902;
+                    readonly id: 8916;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2145:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8901;
+                    readonly id: 8915;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8896;
+                        readonly id: 8910;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8912;
+                        readonly scope: 8926;
                         readonly src: "2046:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2065,7 +2065,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8895;
+                            readonly id: 8909;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2046:7:58";
@@ -2077,12 +2077,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8898;
+                        readonly id: 8912;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8912;
+                        readonly scope: 8926;
                         readonly src: "2073:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2091,7 +2091,7 @@ export declare const LsETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8897;
+                            readonly id: 8911;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2073:7:58";
@@ -2104,12 +2104,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8900;
+                        readonly id: 8914;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8912;
+                        readonly scope: 8926;
                         readonly src: "2100:14:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2118,7 +2118,7 @@ export declare const LsETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8899;
+                            readonly id: 8913;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2100:5:58";
@@ -2132,16 +2132,16 @@ export declare const LsETHBase: {
                     readonly src: "2036:94:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8905;
+                    readonly id: 8919;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8904;
+                        readonly id: 8918;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8912;
+                        readonly scope: 8926;
                         readonly src: "2163:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2150,7 +2150,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8903;
+                            readonly id: 8917;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2163:7:58";
@@ -2163,39 +2163,39 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "2162:9:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8931;
+                readonly id: 8945;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2610:264:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8930;
+                    readonly id: 8944;
                     readonly nodeType: "Block";
                     readonly src: "2757:117:58";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 8926;
+                                readonly id: 8940;
                                 readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8917;
+                                readonly referencedDeclaration: 8931;
                                 readonly src: "2840:12:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 8927;
+                                readonly id: 8941;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8915;
+                                readonly referencedDeclaration: 8929;
                                 readonly src: "2854:12:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2211,18 +2211,18 @@ export declare const LsETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 8923;
+                                    readonly id: 8937;
                                     readonly name: "_river";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8840;
+                                    readonly referencedDeclaration: 8854;
                                     readonly src: "2824:6:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                         readonly typeString: "contract IRiverV1";
                                     };
                                 };
-                                readonly id: 8925;
+                                readonly id: 8939;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2230,14 +2230,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "2831:8:58";
                                 readonly memberName: "transfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12855;
+                                readonly referencedDeclaration: 12985;
                                 readonly src: "2824:15:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$";
                                     readonly typeString: "function (address,uint256) external returns (bool)";
                                 };
                             };
-                            readonly id: 8928;
+                            readonly id: 8942;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2253,14 +2253,14 @@ export declare const LsETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 8929;
+                        readonly id: 8943;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2824:43:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13442];
+                readonly baseFunctions: readonly [13572];
                 readonly documentation: {
-                    readonly id: 8913;
+                    readonly id: 8927;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2374:231:58";
                     readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
@@ -2271,22 +2271,22 @@ export declare const LsETHBase: {
                 readonly name: "_withdrawWithShares";
                 readonly nameLocation: "2619:19:58";
                 readonly overrides: {
-                    readonly id: 8921;
+                    readonly id: 8935;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2748:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8920;
+                    readonly id: 8934;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8915;
+                        readonly id: 8929;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "2656:12:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8931;
+                        readonly scope: 8945;
                         readonly src: "2648:20:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2295,7 +2295,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8914;
+                            readonly id: 8928;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2648:7:58";
@@ -2307,12 +2307,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8917;
+                        readonly id: 8931;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "2686:12:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8931;
+                        readonly scope: 8945;
                         readonly src: "2678:20:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2321,7 +2321,7 @@ export declare const LsETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8916;
+                            readonly id: 8930;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2678:7:58";
@@ -2334,12 +2334,12 @@ export declare const LsETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8919;
+                        readonly id: 8933;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8931;
+                        readonly scope: 8945;
                         readonly src: "2708:14:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2348,7 +2348,7 @@ export declare const LsETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8918;
+                            readonly id: 8932;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2708:5:58";
@@ -2362,22 +2362,22 @@ export declare const LsETHBase: {
                     readonly src: "2638:100:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8922;
+                    readonly id: 8936;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2757:0:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8948;
+                readonly id: 8962;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2981:144:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8947;
+                    readonly id: 8961;
                     readonly nodeType: "Block";
                     readonly src: "3034:91:58";
                     readonly nodes: readonly [];
@@ -2387,14 +2387,14 @@ export declare const LsETHBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 8939;
+                            readonly id: 8953;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 8936;
+                                    readonly id: 8950;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2405,7 +2405,7 @@ export declare const LsETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 8937;
+                                readonly id: 8951;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2423,7 +2423,7 @@ export declare const LsETHBase: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 8938;
+                                readonly id: 8952;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2443,11 +2443,11 @@ export declare const LsETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 8946;
+                        readonly id: 8960;
                         readonly nodeType: "IfStatement";
                         readonly src: "3044:75:58";
                         readonly trueBody: {
-                            readonly id: 8945;
+                            readonly id: 8959;
                             readonly nodeType: "Block";
                             readonly src: "3063:56:58";
                             readonly statements: readonly [{
@@ -2456,18 +2456,18 @@ export declare const LsETHBase: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 8940;
+                                            readonly id: 8954;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "3084:11:58";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 8942;
+                                        readonly id: 8956;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2475,14 +2475,14 @@ export declare const LsETHBase: {
                                         readonly memberLocation: "3096:10:58";
                                         readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10995;
+                                        readonly referencedDeclaration: 11062;
                                         readonly src: "3084:22:58";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 8943;
+                                    readonly id: 8957;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2498,16 +2498,16 @@ export declare const LsETHBase: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 8944;
+                                readonly id: 8958;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "3077:31:58";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [13446];
+                readonly baseFunctions: readonly [13576];
                 readonly documentation: {
-                    readonly id: 8932;
+                    readonly id: 8946;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2880:96:58";
                     readonly text: "@dev We override the message value check since this integration is\n      not payable.";
@@ -2518,45 +2518,45 @@ export declare const LsETHBase: {
                 readonly name: "_checkMessageValue";
                 readonly nameLocation: "2990:18:58";
                 readonly overrides: {
-                    readonly id: 8934;
+                    readonly id: 8948;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3025:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8933;
+                    readonly id: 8947;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3008:2:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8935;
+                    readonly id: 8949;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3034:0:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8963;
+                readonly id: 8977;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3297:173:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8962;
+                    readonly id: 8976;
                     readonly nodeType: "Block";
                     readonly src: "3398:72:58";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 8959;
+                                readonly id: 8973;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8951;
+                                readonly referencedDeclaration: 8965;
                                 readonly src: "3450:12:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2569,18 +2569,18 @@ export declare const LsETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 8957;
+                                    readonly id: 8971;
                                     readonly name: "_river";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8840;
+                                    readonly referencedDeclaration: 8854;
                                     readonly src: "3415:6:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                         readonly typeString: "contract IRiverV1";
                                     };
                                 };
-                                readonly id: 8958;
+                                readonly id: 8972;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2588,14 +2588,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "3422:27:58";
                                 readonly memberName: "underlyingBalanceFromShares";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12837;
+                                readonly referencedDeclaration: 12967;
                                 readonly src: "3415:34:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 8960;
+                            readonly id: 8974;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2611,15 +2611,15 @@ export declare const LsETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 8956;
-                        readonly id: 8961;
+                        readonly functionReturnParameters: 8970;
+                        readonly id: 8975;
                         readonly nodeType: "Return";
                         readonly src: "3408:55:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13476];
+                readonly baseFunctions: readonly [13606];
                 readonly documentation: {
-                    readonly id: 8949;
+                    readonly id: 8963;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3131:161:58";
                     readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount.";
@@ -2630,22 +2630,22 @@ export declare const LsETHBase: {
                 readonly name: "_convertToBase";
                 readonly nameLocation: "3306:14:58";
                 readonly overrides: {
-                    readonly id: 8953;
+                    readonly id: 8967;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3371:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8952;
+                    readonly id: 8966;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8951;
+                        readonly id: 8965;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "3338:12:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8963;
+                        readonly scope: 8977;
                         readonly src: "3330:20:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2654,7 +2654,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8950;
+                            readonly id: 8964;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3330:7:58";
@@ -2668,16 +2668,16 @@ export declare const LsETHBase: {
                     readonly src: "3320:36:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8956;
+                    readonly id: 8970;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8955;
+                        readonly id: 8969;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8963;
+                        readonly scope: 8977;
                         readonly src: "3389:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2686,7 +2686,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8954;
+                            readonly id: 8968;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3389:7:58";
@@ -2699,28 +2699,28 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "3388:9:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8978;
+                readonly id: 8992;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3642:173:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8977;
+                    readonly id: 8991;
                     readonly nodeType: "Block";
                     readonly src: "3744:71:58";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 8974;
+                                readonly id: 8988;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8966;
+                                readonly referencedDeclaration: 8980;
                                 readonly src: "3796:11:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2733,18 +2733,18 @@ export declare const LsETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 8972;
+                                    readonly id: 8986;
                                     readonly name: "_river";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8840;
+                                    readonly referencedDeclaration: 8854;
                                     readonly src: "3761:6:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                         readonly typeString: "contract IRiverV1";
                                     };
                                 };
-                                readonly id: 8973;
+                                readonly id: 8987;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2752,14 +2752,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "3768:27:58";
                                 readonly memberName: "sharesFromUnderlyingBalance";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12845;
+                                readonly referencedDeclaration: 12975;
                                 readonly src: "3761:34:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 8975;
+                            readonly id: 8989;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2775,15 +2775,15 @@ export declare const LsETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 8971;
-                        readonly id: 8976;
+                        readonly functionReturnParameters: 8985;
+                        readonly id: 8990;
                         readonly nodeType: "Return";
                         readonly src: "3754:54:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13484];
+                readonly baseFunctions: readonly [13614];
                 readonly documentation: {
-                    readonly id: 8964;
+                    readonly id: 8978;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3476:161:58";
                     readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount.";
@@ -2794,22 +2794,22 @@ export declare const LsETHBase: {
                 readonly name: "_convertToShares";
                 readonly nameLocation: "3651:16:58";
                 readonly overrides: {
-                    readonly id: 8968;
+                    readonly id: 8982;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3717:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8967;
+                    readonly id: 8981;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8966;
+                        readonly id: 8980;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "3685:11:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8978;
+                        readonly scope: 8992;
                         readonly src: "3677:19:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2818,7 +2818,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8965;
+                            readonly id: 8979;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3677:7:58";
@@ -2832,16 +2832,16 @@ export declare const LsETHBase: {
                     readonly src: "3667:35:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8971;
+                    readonly id: 8985;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8970;
+                        readonly id: 8984;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8978;
+                        readonly scope: 8992;
                         readonly src: "3735:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2850,7 +2850,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8969;
+                            readonly id: 8983;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3735:7:58";
@@ -2863,24 +2863,24 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "3734:9:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8988;
+                readonly id: 9002;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3935:191:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8987;
+                    readonly id: 9001;
                     readonly nodeType: "Block";
                     readonly src: "3998:128:58";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly hexValue: "30";
-                            readonly id: 8985;
+                            readonly id: 8999;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -2894,15 +2894,15 @@ export declare const LsETHBase: {
                             };
                             readonly value: "0";
                         };
-                        readonly functionReturnParameters: 8984;
-                        readonly id: 8986;
+                        readonly functionReturnParameters: 8998;
+                        readonly id: 9000;
                         readonly nodeType: "Return";
                         readonly src: "4111:8:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13490];
+                readonly baseFunctions: readonly [13620];
                 readonly documentation: {
-                    readonly id: 8979;
+                    readonly id: 8993;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3821:109:58";
                     readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
@@ -2913,28 +2913,28 @@ export declare const LsETHBase: {
                 readonly name: "_totalBase";
                 readonly nameLocation: "3944:10:58";
                 readonly overrides: {
-                    readonly id: 8981;
+                    readonly id: 8995;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3971:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8980;
+                    readonly id: 8994;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3954:2:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8984;
+                    readonly id: 8998;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8983;
+                        readonly id: 8997;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8988;
+                        readonly scope: 9002;
                         readonly src: "3989:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2943,7 +2943,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8982;
+                            readonly id: 8996;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3989:7:58";
@@ -2956,17 +2956,17 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "3988:9:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9004;
+                readonly id: 9018;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4284:168:58";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9003;
+                    readonly id: 9017;
                     readonly nodeType: "Block";
                     readonly src: "4397:55:58";
                     readonly nodes: readonly [];
@@ -2974,23 +2974,23 @@ export declare const LsETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 8999;
+                                    readonly id: 9013;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "4439:4:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9005";
+                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9019";
                                         readonly typeString: "contract LsETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9005";
+                                        readonly typeIdentifier: "t_contract$_LsETHBase_$9019";
                                         readonly typeString: "contract LsETHBase";
                                     }];
-                                    readonly id: 8998;
+                                    readonly id: 9012;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3002,14 +3002,14 @@ export declare const LsETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 8997;
+                                        readonly id: 9011;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "4431:7:58";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9000;
+                                readonly id: 9014;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3031,18 +3031,18 @@ export declare const LsETHBase: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 8995;
+                                    readonly id: 9009;
                                     readonly name: "_river";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8840;
+                                    readonly referencedDeclaration: 8854;
                                     readonly src: "4414:6:58";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12794";
+                                        readonly typeIdentifier: "t_contract$_IRiverV1_$12924";
                                         readonly typeString: "contract IRiverV1";
                                     };
                                 };
-                                readonly id: 8996;
+                                readonly id: 9010;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3050,14 +3050,14 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "4421:9:58";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12821;
+                                readonly referencedDeclaration: 12951;
                                 readonly src: "4414:16:58";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9001;
+                            readonly id: 9015;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3073,15 +3073,15 @@ export declare const LsETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 8994;
-                        readonly id: 9002;
+                        readonly functionReturnParameters: 9008;
+                        readonly id: 9016;
                         readonly nodeType: "Return";
                         readonly src: "4407:38:58";
                     }];
                 };
-                readonly baseFunctions: readonly [13496];
+                readonly baseFunctions: readonly [13626];
                 readonly documentation: {
-                    readonly id: 8989;
+                    readonly id: 9003;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4132:147:58";
                     readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
@@ -3092,28 +3092,28 @@ export declare const LsETHBase: {
                 readonly name: "_totalShares";
                 readonly nameLocation: "4293:12:58";
                 readonly overrides: {
-                    readonly id: 8991;
+                    readonly id: 9005;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4346:8:58";
                 };
                 readonly parameters: {
-                    readonly id: 8990;
+                    readonly id: 9004;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4305:2:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8994;
+                    readonly id: 9008;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8993;
+                        readonly id: 9007;
                         readonly mutability: "mutable";
                         readonly name: "shareAmount";
                         readonly nameLocation: "4380:11:58";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9004;
+                        readonly scope: 9018;
                         readonly src: "4372:19:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3122,7 +3122,7 @@ export declare const LsETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8992;
+                            readonly id: 9006;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4372:7:58";
@@ -3135,7 +3135,7 @@ export declare const LsETHBase: {
                     }];
                     readonly src: "4371:21:58";
                 };
-                readonly scope: 9005;
+                readonly scope: 9019;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -3143,14 +3143,14 @@ export declare const LsETHBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 8832;
+                    readonly id: 8846;
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["960:14:58"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "960:14:58";
                 };
-                readonly id: 8833;
+                readonly id: 8847;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "960:14:58";
             }];
@@ -3158,18 +3158,18 @@ export declare const LsETHBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 8831;
+                readonly id: 8845;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "335:594:58";
                 readonly text: "@author DELV\n @title LsETHHyperdrive\n @notice The base contract for the LsETH Hyperdrive implementation.\n @dev River has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the River protocol. Instead of\n      maintaining a balance of shares, this integration can simply use River's\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [9005, 14381, 18367, 72043, 11599, 12165];
+            readonly linearizedBaseContracts: readonly [9019, 14511, 18497, 72173, 11666, 12232];
             readonly name: "LsETHBase";
             readonly nameLocation: "947:9:58";
-            readonly scope: 9006;
-            readonly usedErrors: readonly [71988];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly scope: 9020;
+            readonly usedErrors: readonly [72118];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };
