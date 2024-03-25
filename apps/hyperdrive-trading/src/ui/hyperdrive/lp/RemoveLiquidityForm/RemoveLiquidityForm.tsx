@@ -1,10 +1,12 @@
 import {
+  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import classNames from "classnames";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
@@ -197,6 +199,7 @@ export function RemoveLiquidityForm({
           }
           value={amount ?? ""}
           maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
+          strictMax
           stat={
             lpShares && !!poolInfo
               ? `Withdrawable: ${formatBalance({
@@ -224,21 +227,28 @@ export function RemoveLiquidityForm({
             } ${activeWithdrawToken.symbol}`}
           />
           <LabelValue
-            label="Balance mechanism reward"
+            label="Positive slippage"
             value={
-              <span
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-                data-tip="Additional amount you receive as part of the pool's mechanism for maintaining the existing lp share price"
-              >
-                {actualValueOut
-                  ? `${formatBalance({
-                      balance: slippageReceived,
-                      decimals: activeWithdrawToken.decimals,
-                      places: 4,
-                    })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </span>
+              !hasEnoughBalance ? (
+                "-"
+              ) : (
+                <div
+                  data-tip="Additional amount you pay or receive as part of the pool's mechanism for maintaining the existing lp share price"
+                  className={classNames(
+                    "daisy-tooltip daisy-tooltip-left flex cursor-help items-center border-b border-dashed border-current before:border",
+                    {
+                      "text-success": slippageReceived > 0n,
+                      "text-error": slippageReceived < 0n,
+                    },
+                  )}
+                >
+                  {getPositiveSlippageLabel(
+                    slippageReceived,
+                    baseToken,
+                    activeWithdrawToken,
+                  )}
+                </div>
+              )
             }
           />
           <LabelValue
@@ -306,6 +316,37 @@ export function RemoveLiquidityForm({
       })()}
     />
   );
+}
+
+function getPositiveSlippageLabel(
+  slippageReceived: bigint,
+  baseToken: TokenConfig<EmptyExtensions>,
+  activeWithdrawToken: TokenConfig<any>,
+) {
+  const isPositiveSlippage = slippageReceived > 0n;
+  const isNegativeSlippage = slippageReceived < 0n;
+
+  const isPositiveButLessThan0001 =
+    isPositiveSlippage &&
+    slippageReceived < dnum.from("0.0001", baseToken.decimals)[0];
+
+  const isNegativeButGreaterThan0001 =
+    isNegativeSlippage &&
+    slippageReceived > dnum.from("-0.0001", baseToken.decimals)[0];
+
+  if (isPositiveButLessThan0001) {
+    return `+<0.0001 ${activeWithdrawToken.symbol}`;
+  }
+
+  if (isNegativeButGreaterThan0001) {
+    return `-<0.0001 ${activeWithdrawToken.symbol}`;
+  }
+
+  return `${isPositiveSlippage ? "+" : ""}${formatBalance({
+    balance: slippageReceived,
+    decimals: activeWithdrawToken.decimals,
+    places: 4,
+  })} ${activeWithdrawToken.symbol}`;
 }
 
 function calculateRequiredLpSharesIn(
