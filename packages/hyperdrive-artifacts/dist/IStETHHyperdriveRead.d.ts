@@ -1210,79 +1210,79 @@ export declare const IStETHHyperdriveRead: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IStETHHyperdriveRead.sol";
-        readonly id: 12787;
+        readonly id: 12890;
         readonly exportedSymbols: {
-            readonly IHyperdriveRead: readonly [11913];
-            readonly ILido: readonly [12021];
-            readonly IStETHHyperdriveRead: readonly [12786];
+            readonly IHyperdriveRead: readonly [11980];
+            readonly ILido: readonly [12088];
+            readonly IStETHHyperdriveRead: readonly [12889];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:333:110";
+        readonly src: "39:333:112";
         readonly nodes: readonly [{
-            readonly id: 12772;
+            readonly id: 12875;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:110";
+            readonly src: "39:23:112";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12774;
+            readonly id: 12877;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:56:110";
+            readonly src: "64:56:112";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdriveRead.sol";
             readonly file: "./IHyperdriveRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12787;
-            readonly sourceUnit: 11914;
+            readonly scope: 12890;
+            readonly sourceUnit: 11981;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12773;
+                    readonly id: 12876;
                     readonly name: "IHyperdriveRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11913;
-                    readonly src: "73:15:110";
+                    readonly referencedDeclaration: 11980;
+                    readonly src: "73:15:112";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12776;
+            readonly id: 12879;
             readonly nodeType: "ImportDirective";
-            readonly src: "121:36:110";
+            readonly src: "121:36:112";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/ILido.sol";
             readonly file: "./ILido.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12787;
-            readonly sourceUnit: 12022;
+            readonly scope: 12890;
+            readonly sourceUnit: 12089;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12775;
+                    readonly id: 12878;
                     readonly name: "ILido";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12021;
-                    readonly src: "130:5:110";
+                    readonly referencedDeclaration: 12088;
+                    readonly src: "130:5:112";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12786;
+            readonly id: 12889;
             readonly nodeType: "ContractDefinition";
-            readonly src: "159:212:110";
+            readonly src: "159:212:112";
             readonly nodes: readonly [{
-                readonly id: 12785;
+                readonly id: 12888;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "323:46:110";
+                readonly src: "323:46:112";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 12779;
+                    readonly id: 12882;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "215:103:110";
+                    readonly src: "215:103:112";
                     readonly text: "@notice Gets the Lido contract used as this pool's yield source.\n @return The Lido contract.";
                 };
                 readonly functionSelector: "23509a2d";
@@ -1290,54 +1290,54 @@ export declare const IStETHHyperdriveRead: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "lido";
-                readonly nameLocation: "332:4:110";
+                readonly nameLocation: "332:4:112";
                 readonly parameters: {
-                    readonly id: 12780;
+                    readonly id: 12883;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "336:2:110";
+                    readonly src: "336:2:112";
                 };
                 readonly returnParameters: {
-                    readonly id: 12784;
+                    readonly id: 12887;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12783;
+                        readonly id: 12886;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12785;
-                        readonly src: "362:5:110";
+                        readonly scope: 12888;
+                        readonly src: "362:5:112";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_ILido_$12021";
+                            readonly typeIdentifier: "t_contract$_ILido_$12088";
                             readonly typeString: "contract ILido";
                         };
                         readonly typeName: {
-                            readonly id: 12782;
+                            readonly id: 12885;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 12781;
+                                readonly id: 12884;
                                 readonly name: "ILido";
-                                readonly nameLocations: readonly ["362:5:110"];
+                                readonly nameLocations: readonly ["362:5:112"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 12021;
-                                readonly src: "362:5:110";
+                                readonly referencedDeclaration: 12088;
+                                readonly src: "362:5:112";
                             };
-                            readonly referencedDeclaration: 12021;
-                            readonly src: "362:5:110";
+                            readonly referencedDeclaration: 12088;
+                            readonly src: "362:5:112";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ILido_$12021";
+                                readonly typeIdentifier: "t_contract$_ILido_$12088";
                                 readonly typeString: "contract ILido";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "361:7:110";
+                    readonly src: "361:7:112";
                 };
-                readonly scope: 12786;
+                readonly scope: 12889;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1345,30 +1345,30 @@ export declare const IStETHHyperdriveRead: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 12777;
+                    readonly id: 12880;
                     readonly name: "IHyperdriveRead";
-                    readonly nameLocations: readonly ["193:15:110"];
+                    readonly nameLocations: readonly ["193:15:112"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11913;
-                    readonly src: "193:15:110";
+                    readonly referencedDeclaration: 11980;
+                    readonly src: "193:15:112";
                 };
-                readonly id: 12778;
+                readonly id: 12881;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "193:15:110";
+                readonly src: "193:15:112";
             }];
             readonly canonicalName: "IStETHHyperdriveRead";
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12786, 11913, 12253];
+            readonly linearizedBaseContracts: readonly [12889, 11980, 12320];
             readonly name: "IStETHHyperdriveRead";
-            readonly nameLocation: "169:20:110";
-            readonly scope: 12787;
+            readonly nameLocation: "169:20:112";
+            readonly scope: 12890;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 110;
+    readonly id: 112;
 };
 //# sourceMappingURL=IStETHHyperdriveRead.d.ts.map

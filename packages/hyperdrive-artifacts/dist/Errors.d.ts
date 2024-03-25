@@ -2,12 +2,12 @@ export declare const Errors: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203e03f75f61f67ac84102a270b953e9b98df133a38bf86d9e49ae21b5a44b423864736f6c63430008140033";
-        readonly sourceMap: "126:375:123:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;126:375:123;;;;;;;;;;;;;;;;;";
+        readonly sourceMap: "126:375:127:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;126:375:127;;;;;;;;;;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly deployedBytecode: {
         readonly object: "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203e03f75f61f67ac84102a270b953e9b98df133a38bf86d9e49ae21b5a44b423864736f6c63430008140033";
-        readonly sourceMap: "126:375:123:-:0;;;;;;;;";
+        readonly sourceMap: "126:375:127:-:0;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
@@ -105,103 +105,103 @@ export declare const Errors: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/libraries/Errors.sol";
-        readonly id: 18668;
+        readonly id: 18798;
         readonly exportedSymbols: {
-            readonly Errors: readonly [18667];
-            readonly IHyperdrive: readonly [11076];
+            readonly Errors: readonly [18797];
+            readonly IHyperdrive: readonly [11143];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:463:123";
+        readonly src: "39:463:127";
         readonly nodes: readonly [{
-            readonly id: 18650;
+            readonly id: 18780;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:123";
+            readonly src: "39:23:127";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 18652;
+            readonly id: 18782;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:60:123";
+            readonly src: "64:60:127";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 18668;
-            readonly sourceUnit: 11077;
+            readonly scope: 18798;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 18651;
+                    readonly id: 18781;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
-                    readonly src: "73:11:123";
+                    readonly referencedDeclaration: 11143;
+                    readonly src: "73:11:127";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 18667;
+            readonly id: 18797;
             readonly nodeType: "ContractDefinition";
-            readonly src: "126:375:123";
+            readonly src: "126:375:127";
             readonly nodes: readonly [{
-                readonly id: 18666;
+                readonly id: 18796;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "317:182:123";
+                readonly src: "317:182:127";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 18665;
+                    readonly id: 18795;
                     readonly nodeType: "Block";
-                    readonly src: "434:65:123";
+                    readonly src: "434:65:127";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly errorCall: {
                             readonly arguments: readonly [{
-                                readonly id: 18662;
+                                readonly id: 18792;
                                 readonly name: "reason";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18656;
-                                readonly src: "485:6:123";
+                                readonly referencedDeclaration: 18786;
+                                readonly src: "485:6:127";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10929";
+                                    readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10996";
                                     readonly typeString: "enum IHyperdrive.InsufficientLiquidityReason";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10929";
+                                    readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10996";
                                     readonly typeString: "enum IHyperdrive.InsufficientLiquidityReason";
                                 }];
                                 readonly expression: {
-                                    readonly id: 18659;
+                                    readonly id: 18789;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
-                                    readonly src: "451:11:123";
+                                    readonly referencedDeclaration: 11143;
+                                    readonly src: "451:11:127";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 18661;
+                                readonly id: 18791;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "463:21:123";
+                                readonly memberLocation: "463:21:127";
                                 readonly memberName: "InsufficientLiquidity";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10950;
-                                readonly src: "451:33:123";
+                                readonly referencedDeclaration: 11017;
+                                readonly src: "451:33:127";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_error_pure$_t_enum$_InsufficientLiquidityReason_$10929_$returns$__$";
+                                    readonly typeIdentifier: "t_function_error_pure$_t_enum$_InsufficientLiquidityReason_$10996_$returns$__$";
                                     readonly typeString: "function (enum IHyperdrive.InsufficientLiquidityReason) pure";
                                 };
                             };
-                            readonly id: 18663;
+                            readonly id: 18793;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -210,76 +210,76 @@ export declare const Errors: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "451:41:123";
+                            readonly src: "451:41:127";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 18664;
+                        readonly id: 18794;
                         readonly nodeType: "RevertStatement";
-                        readonly src: "444:48:123";
+                        readonly src: "444:48:127";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 18653;
+                    readonly id: 18783;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "147:165:123";
+                    readonly src: "147:165:127";
                     readonly text: "@dev Throws an InsufficientLiquidity error. We do this in a helper\n      function to reduce the code size.\n @param reason The reason for the error.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "throwInsufficientLiquidityError";
-                readonly nameLocation: "326:31:123";
+                readonly nameLocation: "326:31:127";
                 readonly parameters: {
-                    readonly id: 18657;
+                    readonly id: 18787;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 18656;
+                        readonly id: 18786;
                         readonly mutability: "mutable";
                         readonly name: "reason";
-                        readonly nameLocation: "407:6:123";
+                        readonly nameLocation: "407:6:127";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 18666;
-                        readonly src: "367:46:123";
+                        readonly scope: 18796;
+                        readonly src: "367:46:127";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10929";
+                            readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10996";
                             readonly typeString: "enum IHyperdrive.InsufficientLiquidityReason";
                         };
                         readonly typeName: {
-                            readonly id: 18655;
+                            readonly id: 18785;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 18654;
+                                readonly id: 18784;
                                 readonly name: "IHyperdrive.InsufficientLiquidityReason";
-                                readonly nameLocations: readonly ["367:11:123", "379:27:123"];
+                                readonly nameLocations: readonly ["367:11:127", "379:27:127"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10929;
-                                readonly src: "367:39:123";
+                                readonly referencedDeclaration: 10996;
+                                readonly src: "367:39:127";
                             };
-                            readonly referencedDeclaration: 10929;
-                            readonly src: "367:39:123";
+                            readonly referencedDeclaration: 10996;
+                            readonly src: "367:39:127";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10929";
+                                readonly typeIdentifier: "t_enum$_InsufficientLiquidityReason_$10996";
                                 readonly typeString: "enum IHyperdrive.InsufficientLiquidityReason";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "357:62:123";
+                    readonly src: "357:62:127";
                 };
                 readonly returnParameters: {
-                    readonly id: 18658;
+                    readonly id: 18788;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "434:0:123";
+                    readonly src: "434:0:127";
                 };
-                readonly scope: 18667;
+                readonly scope: 18797;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -290,15 +290,15 @@ export declare const Errors: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [18667];
+            readonly linearizedBaseContracts: readonly [18797];
             readonly name: "Errors";
-            readonly nameLocation: "134:6:123";
-            readonly scope: 18668;
+            readonly nameLocation: "134:6:127";
+            readonly scope: 18798;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 123;
+    readonly id: 127;
 };
 //# sourceMappingURL=Errors.d.ts.map

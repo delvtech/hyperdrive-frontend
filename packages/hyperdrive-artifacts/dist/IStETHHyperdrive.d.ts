@@ -4189,110 +4189,110 @@ export declare const IStETHHyperdrive: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IStETHHyperdrive.sol";
-        readonly id: 12771;
+        readonly id: 12874;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11076];
-            readonly IStETHHyperdrive: readonly [12770];
-            readonly IStETHHyperdriveRead: readonly [12786];
+            readonly IHyperdrive: readonly [11143];
+            readonly IStETHHyperdrive: readonly [12873];
+            readonly IStETHHyperdriveRead: readonly [12889];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:236:109";
+        readonly src: "39:236:111";
         readonly nodes: readonly [{
-            readonly id: 12761;
+            readonly id: 12864;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:109";
+            readonly src: "39:23:111";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12763;
+            readonly id: 12866;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:48:109";
+            readonly src: "64:48:111";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "./IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12771;
-            readonly sourceUnit: 11077;
+            readonly scope: 12874;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12762;
+                    readonly id: 12865;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
-                    readonly src: "73:11:109";
+                    readonly referencedDeclaration: 11143;
+                    readonly src: "73:11:111";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12765;
+            readonly id: 12868;
             readonly nodeType: "ImportDirective";
-            readonly src: "113:66:109";
+            readonly src: "113:66:111";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IStETHHyperdriveRead.sol";
             readonly file: "./IStETHHyperdriveRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12771;
-            readonly sourceUnit: 12787;
+            readonly scope: 12874;
+            readonly sourceUnit: 12890;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12764;
+                    readonly id: 12867;
                     readonly name: "IStETHHyperdriveRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12786;
-                    readonly src: "122:20:109";
+                    readonly referencedDeclaration: 12889;
+                    readonly src: "122:20:111";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12770;
+            readonly id: 12873;
             readonly nodeType: "ContractDefinition";
-            readonly src: "200:74:109";
+            readonly src: "200:74:111";
             readonly nodes: readonly [];
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 12766;
+                    readonly id: 12869;
                     readonly name: "IHyperdrive";
-                    readonly nameLocations: readonly ["234:11:109"];
+                    readonly nameLocations: readonly ["234:11:111"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11076;
-                    readonly src: "234:11:109";
+                    readonly referencedDeclaration: 11143;
+                    readonly src: "234:11:111";
                 };
-                readonly id: 12767;
+                readonly id: 12870;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "234:11:109";
+                readonly src: "234:11:111";
             }, {
                 readonly baseName: {
-                    readonly id: 12768;
+                    readonly id: 12871;
                     readonly name: "IStETHHyperdriveRead";
-                    readonly nameLocations: readonly ["251:20:109"];
+                    readonly nameLocations: readonly ["251:20:111"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12786;
-                    readonly src: "251:20:109";
+                    readonly referencedDeclaration: 12889;
+                    readonly src: "251:20:111";
                 };
-                readonly id: 12769;
+                readonly id: 12872;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "251:20:109";
+                readonly src: "251:20:111";
             }];
             readonly canonicalName: "IStETHHyperdrive";
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12770, 12786, 11076, 12040, 12180, 11265, 12131, 11913, 12253, 11599, 12165];
+            readonly linearizedBaseContracts: readonly [12873, 12889, 11143, 12107, 12247, 11332, 12198, 11980, 12320, 11666, 12232];
             readonly name: "IStETHHyperdrive";
-            readonly nameLocation: "210:16:109";
-            readonly scope: 12771;
-            readonly usedErrors: readonly [10932, 10935, 10938, 10941, 10944, 10950, 10953, 10956, 10959, 10962, 10965, 10968, 10971, 10974, 10977, 10980, 10983, 10986, 10989, 10992, 10995, 10998, 11001, 11004, 11007, 11012, 11015, 11018, 11021, 11024, 11027, 11030, 11033, 11036, 11039, 11042, 11045];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly nameLocation: "210:16:111";
+            readonly scope: 12874;
+            readonly usedErrors: readonly [10999, 11002, 11005, 11008, 11011, 11017, 11020, 11023, 11026, 11029, 11032, 11035, 11038, 11041, 11044, 11047, 11050, 11053, 11056, 11059, 11062, 11065, 11068, 11071, 11074, 11079, 11082, 11085, 11088, 11091, 11094, 11097, 11100, 11103, 11106, 11109, 11112];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 109;
+    readonly id: 111;
 };
 //# sourceMappingURL=IStETHHyperdrive.d.ts.map

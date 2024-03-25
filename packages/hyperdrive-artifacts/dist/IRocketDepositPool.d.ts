@@ -302,51 +302,51 @@ export declare const IRocketDepositPool: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRocketDepositPool.sol";
-        readonly id: 12417;
+        readonly id: 12520;
         readonly exportedSymbols: {
-            readonly IRocketDepositPool: readonly [12416];
+            readonly IRocketDepositPool: readonly [12519];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:891:104";
+        readonly src: "39:891:106";
         readonly nodes: readonly [{
-            readonly id: 12355;
+            readonly id: 12458;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:104";
+            readonly src: "39:23:106";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12416;
+            readonly id: 12519;
             readonly nodeType: "ContractDefinition";
-            readonly src: "64:865:104";
+            readonly src: "64:865:106";
             readonly nodes: readonly [{
-                readonly id: 12360;
+                readonly id: 12463;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "99:54:104";
+                readonly src: "99:54:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "12065fe0";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getBalance";
-                readonly nameLocation: "108:10:104";
+                readonly nameLocation: "108:10:106";
                 readonly parameters: {
-                    readonly id: 12356;
+                    readonly id: 12459;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "118:2:104";
+                    readonly src: "118:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12359;
+                    readonly id: 12462;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12358;
+                        readonly id: 12461;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12360;
-                        readonly src: "144:7:104";
+                        readonly scope: 12463;
+                        readonly src: "144:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -354,10 +354,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12357;
+                            readonly id: 12460;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "144:7:104";
+                            readonly src: "144:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -365,41 +365,41 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "143:9:104";
+                    readonly src: "143:9:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12365;
+                readonly id: 12468;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "159:58:104";
+                readonly src: "159:58:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "1e35fed8";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getNodeBalance";
-                readonly nameLocation: "168:14:104";
+                readonly nameLocation: "168:14:106";
                 readonly parameters: {
-                    readonly id: 12361;
+                    readonly id: 12464;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "182:2:104";
+                    readonly src: "182:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12364;
+                    readonly id: 12467;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12363;
+                        readonly id: 12466;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12365;
-                        readonly src: "208:7:104";
+                        readonly scope: 12468;
+                        readonly src: "208:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -407,10 +407,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12362;
+                            readonly id: 12465;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "208:7:104";
+                            readonly src: "208:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -418,41 +418,41 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "207:9:104";
+                    readonly src: "207:9:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12370;
+                readonly id: 12473;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "223:57:104";
+                readonly src: "223:57:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "b7013dc1";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getUserBalance";
-                readonly nameLocation: "232:14:104";
+                readonly nameLocation: "232:14:106";
                 readonly parameters: {
-                    readonly id: 12366;
+                    readonly id: 12469;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "246:2:104";
+                    readonly src: "246:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12369;
+                    readonly id: 12472;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12368;
+                        readonly id: 12471;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12370;
-                        readonly src: "272:6:104";
+                        readonly scope: 12473;
+                        readonly src: "272:6:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -460,10 +460,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 12367;
+                            readonly id: 12470;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "272:6:104";
+                            readonly src: "272:6:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
@@ -471,41 +471,41 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "271:8:104";
+                    readonly src: "271:8:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12375;
+                readonly id: 12478;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "286:60:104";
+                readonly src: "286:60:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "888b042f";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getExcessBalance";
-                readonly nameLocation: "295:16:104";
+                readonly nameLocation: "295:16:106";
                 readonly parameters: {
-                    readonly id: 12371;
+                    readonly id: 12474;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "311:2:104";
+                    readonly src: "311:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12374;
+                    readonly id: 12477;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12373;
+                        readonly id: 12476;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12375;
-                        readonly src: "337:7:104";
+                        readonly scope: 12478;
+                        readonly src: "337:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -513,10 +513,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12372;
+                            readonly id: 12475;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "337:7:104";
+                            readonly src: "337:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -524,68 +524,68 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "336:9:104";
+                    readonly src: "336:9:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12378;
+                readonly id: 12481;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "352:36:104";
+                readonly src: "352:36:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "d0e30db0";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "deposit";
-                readonly nameLocation: "361:7:104";
+                readonly nameLocation: "361:7:106";
                 readonly parameters: {
-                    readonly id: 12376;
+                    readonly id: 12479;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "368:2:104";
+                    readonly src: "368:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12377;
+                    readonly id: 12480;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "387:0:104";
+                    readonly src: "387:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12383;
+                readonly id: 12486;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "394:67:104";
+                readonly src: "394:67:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "1eddb626";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getMaximumDepositAmount";
-                readonly nameLocation: "403:23:104";
+                readonly nameLocation: "403:23:106";
                 readonly parameters: {
-                    readonly id: 12379;
+                    readonly id: 12482;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "426:2:104";
+                    readonly src: "426:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12382;
+                    readonly id: 12485;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12381;
+                        readonly id: 12484;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12383;
-                        readonly src: "452:7:104";
+                        readonly scope: 12486;
+                        readonly src: "452:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -593,10 +593,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12380;
+                            readonly id: 12483;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "452:7:104";
+                            readonly src: "452:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -604,35 +604,35 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "451:9:104";
+                    readonly src: "451:9:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12388;
+                readonly id: 12491;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "467:60:104";
+                readonly src: "467:60:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "22b1751d";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "nodeDeposit";
-                readonly nameLocation: "476:11:104";
+                readonly nameLocation: "476:11:106";
                 readonly parameters: {
-                    readonly id: 12386;
+                    readonly id: 12489;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12385;
+                        readonly id: 12488;
                         readonly mutability: "mutable";
                         readonly name: "_totalAmount";
-                        readonly nameLocation: "496:12:104";
+                        readonly nameLocation: "496:12:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12388;
-                        readonly src: "488:20:104";
+                        readonly scope: 12491;
+                        readonly src: "488:20:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -640,10 +640,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12384;
+                            readonly id: 12487;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "488:7:104";
+                            readonly src: "488:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -651,41 +651,41 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "487:22:104";
+                    readonly src: "487:22:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12387;
+                    readonly id: 12490;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "526:0:104";
+                    readonly src: "526:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12393;
+                readonly id: 12496;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "533:56:104";
+                readonly src: "533:56:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "606b6497";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "nodeCreditWithdrawal";
-                readonly nameLocation: "542:20:104";
+                readonly nameLocation: "542:20:106";
                 readonly parameters: {
-                    readonly id: 12391;
+                    readonly id: 12494;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12390;
+                        readonly id: 12493;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
-                        readonly nameLocation: "571:7:104";
+                        readonly nameLocation: "571:7:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12393;
-                        readonly src: "563:15:104";
+                        readonly scope: 12496;
+                        readonly src: "563:15:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -693,10 +693,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12389;
+                            readonly id: 12492;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "563:7:104";
+                            readonly src: "563:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -704,155 +704,155 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "562:17:104";
+                    readonly src: "562:17:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12392;
+                    readonly id: 12495;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "588:0:104";
+                    readonly src: "588:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12396;
+                readonly id: 12499;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "595:52:104";
+                readonly src: "595:52:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "72f5158d";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "recycleDissolvedDeposit";
-                readonly nameLocation: "604:23:104";
+                readonly nameLocation: "604:23:106";
                 readonly parameters: {
-                    readonly id: 12394;
+                    readonly id: 12497;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "627:2:104";
+                    readonly src: "627:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12395;
+                    readonly id: 12498;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "646:0:104";
+                    readonly src: "646:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12399;
+                readonly id: 12502;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "653:52:104";
+                readonly src: "653:52:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "db82047b";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "recycleExcessCollateral";
-                readonly nameLocation: "662:23:104";
+                readonly nameLocation: "662:23:106";
                 readonly parameters: {
-                    readonly id: 12397;
+                    readonly id: 12500;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "685:2:104";
+                    readonly src: "685:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12398;
+                    readonly id: 12501;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "704:0:104";
+                    readonly src: "704:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12402;
+                readonly id: 12505;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "711:51:104";
+                readonly src: "711:51:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "1b7dd4c0";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "recycleLiquidatedStake";
-                readonly nameLocation: "720:22:104";
+                readonly nameLocation: "720:22:106";
                 readonly parameters: {
-                    readonly id: 12400;
+                    readonly id: 12503;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "742:2:104";
+                    readonly src: "742:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12401;
+                    readonly id: 12504;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "761:0:104";
+                    readonly src: "761:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12405;
+                readonly id: 12508;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "768:35:104";
+                readonly src: "768:35:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "27c8f193";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "assignDeposits";
-                readonly nameLocation: "777:14:104";
+                readonly nameLocation: "777:14:106";
                 readonly parameters: {
-                    readonly id: 12403;
+                    readonly id: 12506;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "791:2:104";
+                    readonly src: "791:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12404;
+                    readonly id: 12507;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "802:0:104";
+                    readonly src: "802:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12410;
+                readonly id: 12513;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "809:55:104";
+                readonly src: "809:55:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "3b36f592";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "maybeAssignDeposits";
-                readonly nameLocation: "818:19:104";
+                readonly nameLocation: "818:19:106";
                 readonly parameters: {
-                    readonly id: 12406;
+                    readonly id: 12509;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "837:2:104";
+                    readonly src: "837:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12409;
+                    readonly id: 12512;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12408;
+                        readonly id: 12511;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12410;
-                        readonly src: "858:4:104";
+                        readonly scope: 12513;
+                        readonly src: "858:4:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -860,10 +860,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12407;
+                            readonly id: 12510;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "858:4:104";
+                            readonly src: "858:4:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -871,35 +871,35 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "857:6:104";
+                    readonly src: "857:6:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12415;
+                readonly id: 12518;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "870:57:104";
+                readonly src: "870:57:106";
                 readonly nodes: readonly [];
                 readonly functionSelector: "63a5db9e";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "withdrawExcessBalance";
-                readonly nameLocation: "879:21:104";
+                readonly nameLocation: "879:21:106";
                 readonly parameters: {
-                    readonly id: 12413;
+                    readonly id: 12516;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12412;
+                        readonly id: 12515;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
-                        readonly nameLocation: "909:7:104";
+                        readonly nameLocation: "909:7:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12415;
-                        readonly src: "901:15:104";
+                        readonly scope: 12518;
+                        readonly src: "901:15:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -907,10 +907,10 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12411;
+                            readonly id: 12514;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "901:7:104";
+                            readonly src: "901:7:106";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -918,15 +918,15 @@ export declare const IRocketDepositPool: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "900:17:104";
+                    readonly src: "900:17:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 12414;
+                    readonly id: 12517;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "926:0:104";
+                    readonly src: "926:0:106";
                 };
-                readonly scope: 12416;
+                readonly scope: 12519;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -937,15 +937,15 @@ export declare const IRocketDepositPool: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12416];
+            readonly linearizedBaseContracts: readonly [12519];
             readonly name: "IRocketDepositPool";
-            readonly nameLocation: "74:18:104";
-            readonly scope: 12417;
+            readonly nameLocation: "74:18:106";
+            readonly scope: 12520;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 104;
+    readonly id: 106;
 };
 //# sourceMappingURL=IRocketDepositPool.d.ts.map

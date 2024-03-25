@@ -1233,53 +1233,53 @@ export declare const RETHBase: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/reth/RETHBase.sol";
-        readonly id: 9527;
+        readonly id: 9556;
         readonly exportedSymbols: {
-            readonly FixedPointMath: readonly [19442];
-            readonly HyperdriveBase: readonly [14381];
-            readonly IHyperdrive: readonly [11076];
-            readonly IRocketDepositPool: readonly [12416];
-            readonly IRocketStorage: readonly [12705];
-            readonly IRocketTokenRETH: readonly [12759];
-            readonly ONE: readonly [18676];
-            readonly RETHBase: readonly [9526];
+            readonly FixedPointMath: readonly [19572];
+            readonly HyperdriveBase: readonly [14511];
+            readonly IHyperdrive: readonly [11143];
+            readonly IRocketDepositPool: readonly [12519];
+            readonly IRocketStorage: readonly [12808];
+            readonly IRocketTokenRETH: readonly [12862];
+            readonly ONE: readonly [18806];
+            readonly RETHBase: readonly [9555];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:6051:65";
         readonly nodes: readonly [{
-            readonly id: 9266;
+            readonly id: 9295;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:65";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 9269;
+            readonly id: 9298;
             readonly nodeType: "ImportDirective";
             readonly src: "64:73:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 19443;
+            readonly scope: 9556;
+            readonly sourceUnit: 19573;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9267;
+                    readonly id: 9296;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "73:14:65";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 9268;
+                    readonly id: 9297;
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18676;
+                    readonly referencedDeclaration: 18806;
                     readonly src: "89:3:65";
                     readonly typeDescriptions: {};
                 };
@@ -1287,22 +1287,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9271;
+            readonly id: 9300;
             readonly nodeType: "ImportDirective";
             readonly src: "138:67:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 14382;
+            readonly scope: 9556;
+            readonly sourceUnit: 14512;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9270;
+                    readonly id: 9299;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "147:14:65";
                     readonly typeDescriptions: {};
                 };
@@ -1310,22 +1310,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9273;
+            readonly id: 9302;
             readonly nodeType: "ImportDirective";
             readonly src: "206:63:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 11077;
+            readonly scope: 9556;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9272;
+                    readonly id: 9301;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "215:11:65";
                     readonly typeDescriptions: {};
                 };
@@ -1333,22 +1333,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9275;
+            readonly id: 9304;
             readonly nodeType: "ImportDirective";
             readonly src: "270:77:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IRocketDepositPool.sol";
             readonly file: "../../interfaces/IRocketDepositPool.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 12417;
+            readonly scope: 9556;
+            readonly sourceUnit: 12520;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9274;
+                    readonly id: 9303;
                     readonly name: "IRocketDepositPool";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12416;
+                    readonly referencedDeclaration: 12519;
                     readonly src: "279:18:65";
                     readonly typeDescriptions: {};
                 };
@@ -1356,22 +1356,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9277;
+            readonly id: 9306;
             readonly nodeType: "ImportDirective";
             readonly src: "348:69:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IRocketStorage.sol";
             readonly file: "../../interfaces/IRocketStorage.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 12706;
+            readonly scope: 9556;
+            readonly sourceUnit: 12809;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9276;
+                    readonly id: 9305;
                     readonly name: "IRocketStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12705;
+                    readonly referencedDeclaration: 12808;
                     readonly src: "357:14:65";
                     readonly typeDescriptions: {};
                 };
@@ -1379,22 +1379,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9279;
+            readonly id: 9308;
             readonly nodeType: "ImportDirective";
             readonly src: "418:73:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IRocketTokenRETH.sol";
             readonly file: "../../interfaces/IRocketTokenRETH.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9527;
-            readonly sourceUnit: 12760;
+            readonly scope: 9556;
+            readonly sourceUnit: 12863;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9278;
+                    readonly id: 9307;
                     readonly name: "IRocketTokenRETH";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12759;
+                    readonly referencedDeclaration: 12862;
                     readonly src: "427:16:65";
                     readonly typeDescriptions: {};
                 };
@@ -1402,25 +1402,25 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9526;
+            readonly id: 9555;
             readonly nodeType: "ContractDefinition";
             readonly src: "1101:4988:65";
             readonly nodes: readonly [{
-                readonly id: 9285;
+                readonly id: 9314;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1152:33:65";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 9283;
+                    readonly id: 9312;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["1158:14:65"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19442;
+                    readonly referencedDeclaration: 19572;
                     readonly src: "1158:14:65";
                 };
                 readonly typeName: {
-                    readonly id: 9284;
+                    readonly id: 9313;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1177:7:65";
@@ -1430,13 +1430,13 @@ export declare const RETHBase: {
                     };
                 };
             }, {
-                readonly id: 9289;
+                readonly id: 9318;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1238:48:65";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 9286;
+                    readonly id: 9315;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1191:42:65";
                     readonly text: "@dev The Rocket Pool storage contract.";
@@ -1444,40 +1444,40 @@ export declare const RETHBase: {
                 readonly mutability: "immutable";
                 readonly name: "_rocketStorage";
                 readonly nameLocation: "1272:14:65";
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                     readonly typeString: "contract IRocketStorage";
                 };
                 readonly typeName: {
-                    readonly id: 9288;
+                    readonly id: 9317;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 9287;
+                        readonly id: 9316;
                         readonly name: "IRocketStorage";
                         readonly nameLocations: readonly ["1238:14:65"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 12705;
+                        readonly referencedDeclaration: 12808;
                         readonly src: "1238:14:65";
                     };
-                    readonly referencedDeclaration: 12705;
+                    readonly referencedDeclaration: 12808;
                     readonly src: "1238:14:65";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                        readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                         readonly typeString: "contract IRocketStorage";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 9293;
+                readonly id: 9322;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1338:52:65";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 9290;
+                    readonly id: 9319;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1293:40:65";
                     readonly text: "@dev The Rocket Token rETH contract.";
@@ -1485,94 +1485,94 @@ export declare const RETHBase: {
                 readonly mutability: "immutable";
                 readonly name: "_rocketTokenReth";
                 readonly nameLocation: "1374:16:65";
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                     readonly typeString: "contract IRocketTokenRETH";
                 };
                 readonly typeName: {
-                    readonly id: 9292;
+                    readonly id: 9321;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 9291;
+                        readonly id: 9320;
                         readonly name: "IRocketTokenRETH";
                         readonly nameLocations: readonly ["1338:16:65"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 12759;
+                        readonly referencedDeclaration: 12862;
                         readonly src: "1338:16:65";
                     };
-                    readonly referencedDeclaration: 12759;
+                    readonly referencedDeclaration: 12862;
                     readonly src: "1338:16:65";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                         readonly typeString: "contract IRocketTokenRETH";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 9324;
+                readonly id: 9353;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1526:391:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9323;
+                    readonly id: 9352;
                     readonly nodeType: "Block";
                     readonly src: "1570:347:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 9302;
+                            readonly id: 9331;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 9300;
+                                readonly id: 9329;
                                 readonly name: "_rocketStorage";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9289;
+                                readonly referencedDeclaration: 9318;
                                 readonly src: "1580:14:65";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                                     readonly typeString: "contract IRocketStorage";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 9301;
+                                readonly id: 9330;
                                 readonly name: "__rocketStorage";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9297;
+                                readonly referencedDeclaration: 9326;
                                 readonly src: "1597:15:65";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                                    readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                                     readonly typeString: "contract IRocketStorage";
                                 };
                             };
                             readonly src: "1580:32:65";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                                readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                                 readonly typeString: "contract IRocketStorage";
                             };
                         };
-                        readonly id: 9303;
+                        readonly id: 9332;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1580:32:65";
                     }, {
-                        readonly assignments: readonly [9305];
+                        readonly assignments: readonly [9334];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 9305;
+                            readonly id: 9334;
                             readonly mutability: "mutable";
                             readonly name: "rocketTokenRethAddress";
                             readonly nameLocation: "1701:22:65";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 9323;
+                            readonly scope: 9352;
                             readonly src: "1693:30:65";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1581,7 +1581,7 @@ export declare const RETHBase: {
                                 readonly typeString: "address";
                             };
                             readonly typeName: {
-                                readonly id: 9304;
+                                readonly id: 9333;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1693:7:65";
@@ -1593,13 +1593,13 @@ export declare const RETHBase: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 9316;
+                        readonly id: 9345;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "636f6e74726163742e61646472657373";
-                                        readonly id: 9311;
+                                        readonly id: 9340;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1614,7 +1614,7 @@ export declare const RETHBase: {
                                         readonly value: "contract.address";
                                     }, {
                                         readonly hexValue: "726f636b6574546f6b656e52455448";
-                                        readonly id: 9312;
+                                        readonly id: 9341;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1637,7 +1637,7 @@ export declare const RETHBase: {
                                             readonly typeString: "literal_string \"rocketTokenRETH\"";
                                         }];
                                         readonly expression: {
-                                            readonly id: 9309;
+                                            readonly id: 9338;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1648,7 +1648,7 @@ export declare const RETHBase: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 9310;
+                                        readonly id: 9339;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1662,7 +1662,7 @@ export declare const RETHBase: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 9313;
+                                    readonly id: 9342;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1683,7 +1683,7 @@ export declare const RETHBase: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 9308;
+                                    readonly id: 9337;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1694,7 +1694,7 @@ export declare const RETHBase: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 9314;
+                                readonly id: 9343;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1716,18 +1716,18 @@ export declare const RETHBase: {
                                     readonly typeString: "bytes32";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9306;
+                                    readonly id: 9335;
                                     readonly name: "_rocketStorage";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9289;
+                                    readonly referencedDeclaration: 9318;
                                     readonly src: "1726:14:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                                        readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                                         readonly typeString: "contract IRocketStorage";
                                     };
                                 };
-                                readonly id: 9307;
+                                readonly id: 9336;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1735,14 +1735,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "1741:10:65";
                                 readonly memberName: "getAddress";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12536;
+                                readonly referencedDeclaration: 12639;
                                 readonly src: "1726:25:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_bytes32_$returns$_t_address_$";
                                     readonly typeString: "function (bytes32) view external returns (address)";
                                 };
                             };
-                            readonly id: 9315;
+                            readonly id: 9344;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1762,20 +1762,20 @@ export declare const RETHBase: {
                         readonly src: "1693:148:65";
                     }, {
                         readonly expression: {
-                            readonly id: 9321;
+                            readonly id: 9350;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 9317;
+                                readonly id: 9346;
                                 readonly name: "_rocketTokenReth";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9293;
+                                readonly referencedDeclaration: 9322;
                                 readonly src: "1851:16:65";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                     readonly typeString: "contract IRocketTokenRETH";
                                 };
                             };
@@ -1783,11 +1783,11 @@ export declare const RETHBase: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 9319;
+                                    readonly id: 9348;
                                     readonly name: "rocketTokenRethAddress";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9305;
+                                    readonly referencedDeclaration: 9334;
                                     readonly src: "1887:22:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -1799,18 +1799,18 @@ export declare const RETHBase: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     }];
-                                    readonly id: 9318;
+                                    readonly id: 9347;
                                     readonly name: "IRocketTokenRETH";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12759;
+                                    readonly referencedDeclaration: 12862;
                                     readonly src: "1870:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12759_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12862_$";
                                         readonly typeString: "type(contract IRocketTokenRETH)";
                                     };
                                 };
-                                readonly id: 9320;
+                                readonly id: 9349;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1822,23 +1822,23 @@ export declare const RETHBase: {
                                 readonly src: "1870:40:65";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                    readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                     readonly typeString: "contract IRocketTokenRETH";
                                 };
                             };
                             readonly src: "1851:59:65";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                 readonly typeString: "contract IRocketTokenRETH";
                             };
                         };
-                        readonly id: 9322;
+                        readonly id: 9351;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1851:59:65";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 9294;
+                    readonly id: 9323;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1397:124:65";
                     readonly text: "@notice Instantiates the rETH Hyperdrive base contract.\n @param __rocketStorage The Rocket Pool storage contract.";
@@ -1849,38 +1849,38 @@ export declare const RETHBase: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 9298;
+                    readonly id: 9327;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9297;
+                        readonly id: 9326;
                         readonly mutability: "mutable";
                         readonly name: "__rocketStorage";
                         readonly nameLocation: "1553:15:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9324;
+                        readonly scope: 9353;
                         readonly src: "1538:30:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                            readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                             readonly typeString: "contract IRocketStorage";
                         };
                         readonly typeName: {
-                            readonly id: 9296;
+                            readonly id: 9325;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 9295;
+                                readonly id: 9324;
                                 readonly name: "IRocketStorage";
                                 readonly nameLocations: readonly ["1538:14:65"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 12705;
+                                readonly referencedDeclaration: 12808;
                                 readonly src: "1538:14:65";
                             };
-                            readonly referencedDeclaration: 12705;
+                            readonly referencedDeclaration: 12808;
                             readonly src: "1538:14:65";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IRocketStorage_$12705";
+                                readonly typeIdentifier: "t_contract$_IRocketStorage_$12808";
                                 readonly typeString: "contract IRocketStorage";
                             };
                         };
@@ -1889,22 +1889,22 @@ export declare const RETHBase: {
                     readonly src: "1537:32:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9299;
+                    readonly id: 9328;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1570:0:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9343;
+                readonly id: 9372;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1949:319:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9342;
+                    readonly id: 9371;
                     readonly nodeType: "Block";
                     readonly src: "2092:176:65";
                     readonly nodes: readonly [];
@@ -1914,18 +1914,18 @@ export declare const RETHBase: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 9337;
+                                    readonly id: 9366;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11076;
+                                    readonly referencedDeclaration: 11143;
                                     readonly src: "2231:11:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 9339;
+                                readonly id: 9368;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1933,14 +1933,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "2243:16:65";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11042;
+                                readonly referencedDeclaration: 11109;
                                 readonly src: "2231:28:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 9340;
+                            readonly id: 9369;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1956,14 +1956,14 @@ export declare const RETHBase: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 9341;
+                        readonly id: 9370;
                         readonly nodeType: "RevertStatement";
                         readonly src: "2224:37:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13412];
+                readonly baseFunctions: readonly [13542];
                 readonly documentation: {
-                    readonly id: 9325;
+                    readonly id: 9354;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1923:21:65";
                     readonly text: "Yield Source ///";
@@ -1974,22 +1974,22 @@ export declare const RETHBase: {
                 readonly name: "_depositWithBase";
                 readonly nameLocation: "1958:16:65";
                 readonly overrides: {
-                    readonly id: 9331;
+                    readonly id: 9360;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2056:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9330;
+                    readonly id: 9359;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9327;
+                        readonly id: 9356;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9343;
+                        readonly scope: 9372;
                         readonly src: "1984:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1998,7 +1998,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9326;
+                            readonly id: 9355;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1984:7:65";
@@ -2010,12 +2010,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9329;
+                        readonly id: 9358;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9343;
+                        readonly scope: 9372;
                         readonly src: "2011:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2024,7 +2024,7 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9328;
+                            readonly id: 9357;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2011:5:65";
@@ -2038,16 +2038,16 @@ export declare const RETHBase: {
                     readonly src: "1974:67:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9336;
+                    readonly id: 9365;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9333;
+                        readonly id: 9362;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9343;
+                        readonly scope: 9372;
                         readonly src: "2074:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2056,7 +2056,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9332;
+                            readonly id: 9361;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2074:7:65";
@@ -2068,12 +2068,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9335;
+                        readonly id: 9364;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9343;
+                        readonly scope: 9372;
                         readonly src: "2083:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2082,7 +2082,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9334;
+                            readonly id: 9363;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2083:7:65";
@@ -2095,17 +2095,17 @@ export declare const RETHBase: {
                     }];
                     readonly src: "2073:18:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9365;
+                readonly id: 9394;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2386:254:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9364;
+                    readonly id: 9393;
                     readonly nodeType: "Block";
                     readonly src: "2502:138:65";
                     readonly nodes: readonly [];
@@ -2113,7 +2113,7 @@ export declare const RETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 9355;
+                                    readonly id: 9384;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2124,7 +2124,7 @@ export declare const RETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9356;
+                                readonly id: 9385;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2139,23 +2139,23 @@ export declare const RETHBase: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 9359;
+                                    readonly id: 9388;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "2613:4:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                         readonly typeString: "contract RETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                         readonly typeString: "contract RETHBase";
                                     }];
-                                    readonly id: 9358;
+                                    readonly id: 9387;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2167,14 +2167,14 @@ export declare const RETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9357;
+                                        readonly id: 9386;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2605:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9360;
+                                readonly id: 9389;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2190,11 +2190,11 @@ export declare const RETHBase: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 9361;
+                                readonly id: 9390;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9346;
+                                readonly referencedDeclaration: 9375;
                                 readonly src: "2620:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2213,18 +2213,18 @@ export declare const RETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9352;
+                                    readonly id: 9381;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "2563:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9354;
+                                readonly id: 9383;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2232,14 +2232,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "2580:12:65";
                                 readonly memberName: "transferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10315;
+                                readonly referencedDeclaration: 10374;
                                 readonly src: "2563:29:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$";
                                     readonly typeString: "function (address,address,uint256) external returns (bool)";
                                 };
                             };
-                            readonly id: 9362;
+                            readonly id: 9391;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2255,14 +2255,14 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9363;
+                        readonly id: 9392;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2563:70:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13420];
+                readonly baseFunctions: readonly [13550];
                 readonly documentation: {
-                    readonly id: 9344;
+                    readonly id: 9373;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2274:107:65";
                     readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
@@ -2273,22 +2273,22 @@ export declare const RETHBase: {
                 readonly name: "_depositWithShares";
                 readonly nameLocation: "2395:18:65";
                 readonly overrides: {
-                    readonly id: 9350;
+                    readonly id: 9379;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2493:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9349;
+                    readonly id: 9378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9346;
+                        readonly id: 9375;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "2431:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9365;
+                        readonly scope: 9394;
                         readonly src: "2423:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2297,7 +2297,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9345;
+                            readonly id: 9374;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2423:7:65";
@@ -2309,12 +2309,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9348;
+                        readonly id: 9377;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9365;
+                        readonly scope: 9394;
                         readonly src: "2453:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2323,7 +2323,7 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9347;
+                            readonly id: 9376;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2453:5:65";
@@ -2337,33 +2337,33 @@ export declare const RETHBase: {
                     readonly src: "2413:70:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9351;
+                    readonly id: 9380;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2502:0:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9414;
+                readonly id: 9443;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2936:759:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9413;
+                    readonly id: 9442;
                     readonly nodeType: "Block";
                     readonly src: "3115:580:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9381;
+                                readonly id: 9410;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9368;
+                                readonly referencedDeclaration: 9397;
                                 readonly src: "3258:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2376,18 +2376,18 @@ export declare const RETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9378;
+                                    readonly id: 9407;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "3236:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9380;
+                                readonly id: 9409;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2395,14 +2395,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "3253:4:65";
                                 readonly memberName: "burn";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12758;
+                                readonly referencedDeclaration: 12861;
                                 readonly src: "3236:21:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
                                     readonly typeString: "function (uint256) external";
                                 };
                             };
-                            readonly id: 9382;
+                            readonly id: 9411;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2418,22 +2418,22 @@ export declare const RETHBase: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 9383;
+                        readonly id: 9412;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3236:35:65";
                     }, {
                         readonly expression: {
-                            readonly id: 9390;
+                            readonly id: 9419;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 9384;
+                                readonly id: 9413;
                                 readonly name: "amountWithdrawn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9376;
+                                readonly referencedDeclaration: 9405;
                                 readonly src: "3404:15:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2445,23 +2445,23 @@ export declare const RETHBase: {
                             readonly rightHandSide: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 9387;
+                                        readonly id: 9416;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "3430:4:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                            readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                             readonly typeString: "contract RETHBase";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                            readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                             readonly typeString: "contract RETHBase";
                                         }];
-                                        readonly id: 9386;
+                                        readonly id: 9415;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2473,14 +2473,14 @@ export declare const RETHBase: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 9385;
+                                            readonly id: 9414;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3422:7:65";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 9388;
+                                    readonly id: 9417;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2496,7 +2496,7 @@ export declare const RETHBase: {
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 9389;
+                                readonly id: 9418;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2516,19 +2516,19 @@ export declare const RETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 9391;
+                        readonly id: 9420;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3404:39:65";
                     }, {
-                        readonly assignments: readonly [9393, null];
+                        readonly assignments: readonly [9422, null];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 9393;
+                            readonly id: 9422;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "3514:7:65";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 9413;
+                            readonly scope: 9442;
                             readonly src: "3509:12:65";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2537,7 +2537,7 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 9392;
+                                readonly id: 9421;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3509:4:65";
@@ -2548,11 +2548,11 @@ export declare const RETHBase: {
                             };
                             readonly visibility: "internal";
                         }, null];
-                        readonly id: 9403;
+                        readonly id: 9432;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "";
-                                readonly id: 9401;
+                                readonly id: 9430;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2578,11 +2578,11 @@ export declare const RETHBase: {
                                     }];
                                     readonly expression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 9396;
+                                            readonly id: 9425;
                                             readonly name: "_destination";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 9370;
+                                            readonly referencedDeclaration: 9399;
                                             readonly src: "3535:12:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -2594,7 +2594,7 @@ export declare const RETHBase: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             }];
-                                            readonly id: 9395;
+                                            readonly id: 9424;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2606,7 +2606,7 @@ export declare const RETHBase: {
                                                 readonly typeString: "type(address payable)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 9394;
+                                                readonly id: 9423;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "3527:8:65";
@@ -2614,7 +2614,7 @@ export declare const RETHBase: {
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 9397;
+                                        readonly id: 9426;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2630,7 +2630,7 @@ export declare const RETHBase: {
                                             readonly typeString: "address payable";
                                         };
                                     };
-                                    readonly id: 9398;
+                                    readonly id: 9427;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2644,7 +2644,7 @@ export declare const RETHBase: {
                                         readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 9400;
+                                readonly id: 9429;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2652,11 +2652,11 @@ export declare const RETHBase: {
                                 readonly names: readonly ["value"];
                                 readonly nodeType: "FunctionCallOptions";
                                 readonly options: readonly [{
-                                    readonly id: 9399;
+                                    readonly id: 9428;
                                     readonly name: "amountWithdrawn";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9376;
+                                    readonly referencedDeclaration: 9405;
                                     readonly src: "3562:15:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2669,7 +2669,7 @@ export declare const RETHBase: {
                                     readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 9402;
+                            readonly id: 9431;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2689,7 +2689,7 @@ export declare const RETHBase: {
                         readonly src: "3508:97:65";
                     }, {
                         readonly condition: {
-                            readonly id: 9405;
+                            readonly id: 9434;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2699,11 +2699,11 @@ export declare const RETHBase: {
                             readonly prefix: true;
                             readonly src: "3619:8:65";
                             readonly subExpression: {
-                                readonly id: 9404;
+                                readonly id: 9433;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9393;
+                                readonly referencedDeclaration: 9422;
                                 readonly src: "3620:7:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -2715,11 +2715,11 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9412;
+                        readonly id: 9441;
                         readonly nodeType: "IfStatement";
                         readonly src: "3615:74:65";
                         readonly trueBody: {
-                            readonly id: 9411;
+                            readonly id: 9440;
                             readonly nodeType: "Block";
                             readonly src: "3629:60:65";
                             readonly statements: readonly [{
@@ -2728,18 +2728,18 @@ export declare const RETHBase: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9406;
+                                            readonly id: 9435;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "3650:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9408;
+                                        readonly id: 9437;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2747,14 +2747,14 @@ export declare const RETHBase: {
                                         readonly memberLocation: "3662:14:65";
                                         readonly memberName: "TransferFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11021;
+                                        readonly referencedDeclaration: 11088;
                                         readonly src: "3650:26:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9409;
+                                    readonly id: 9438;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2770,16 +2770,16 @@ export declare const RETHBase: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9410;
+                                readonly id: 9439;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "3643:35:65";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [13432];
+                readonly baseFunctions: readonly [13562];
                 readonly documentation: {
-                    readonly id: 9366;
+                    readonly id: 9395;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2646:285:65";
                     readonly text: "@dev Process a withdrawal in base and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.\n @return amountWithdrawn The amount of base withdrawn.";
@@ -2790,22 +2790,22 @@ export declare const RETHBase: {
                 readonly name: "_withdrawWithBase";
                 readonly nameLocation: "2945:17:65";
                 readonly overrides: {
-                    readonly id: 9374;
+                    readonly id: 9403;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3072:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9373;
+                    readonly id: 9402;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9368;
+                        readonly id: 9397;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "2980:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9414;
+                        readonly scope: 9443;
                         readonly src: "2972:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2814,7 +2814,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9367;
+                            readonly id: 9396;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2972:7:65";
@@ -2826,12 +2826,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9370;
+                        readonly id: 9399;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "3010:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9414;
+                        readonly scope: 9443;
                         readonly src: "3002:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2840,7 +2840,7 @@ export declare const RETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 9369;
+                            readonly id: 9398;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3002:7:65";
@@ -2853,12 +2853,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9372;
+                        readonly id: 9401;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9414;
+                        readonly scope: 9443;
                         readonly src: "3032:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2867,7 +2867,7 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9371;
+                            readonly id: 9400;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3032:5:65";
@@ -2881,16 +2881,16 @@ export declare const RETHBase: {
                     readonly src: "2962:100:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9377;
+                    readonly id: 9406;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9376;
+                        readonly id: 9405;
                         readonly mutability: "mutable";
                         readonly name: "amountWithdrawn";
                         readonly nameLocation: "3098:15:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9414;
+                        readonly scope: 9443;
                         readonly src: "3090:23:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2899,7 +2899,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9375;
+                            readonly id: 9404;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3090:7:65";
@@ -2912,39 +2912,39 @@ export declare const RETHBase: {
                     }];
                     readonly src: "3089:25:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9433;
+                readonly id: 9462;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3937:273:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9432;
+                    readonly id: 9461;
                     readonly nodeType: "Block";
                     readonly src: "4084:126:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9428;
+                                readonly id: 9457;
                                 readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9419;
+                                readonly referencedDeclaration: 9448;
                                 readonly src: "4176:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 9429;
+                                readonly id: 9458;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9417;
+                                readonly referencedDeclaration: 9446;
                                 readonly src: "4190:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2960,18 +2960,18 @@ export declare const RETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9425;
+                                    readonly id: 9454;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "4150:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9427;
+                                readonly id: 9456;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2979,14 +2979,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "4167:8:65";
                                 readonly memberName: "transfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10303;
+                                readonly referencedDeclaration: 10362;
                                 readonly src: "4150:25:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$";
                                     readonly typeString: "function (address,uint256) external returns (bool)";
                                 };
                             };
-                            readonly id: 9430;
+                            readonly id: 9459;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3002,14 +3002,14 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9431;
+                        readonly id: 9460;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4150:53:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13442];
+                readonly baseFunctions: readonly [13572];
                 readonly documentation: {
-                    readonly id: 9415;
+                    readonly id: 9444;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3701:231:65";
                     readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
@@ -3020,22 +3020,22 @@ export declare const RETHBase: {
                 readonly name: "_withdrawWithShares";
                 readonly nameLocation: "3946:19:65";
                 readonly overrides: {
-                    readonly id: 9423;
+                    readonly id: 9452;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4075:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9422;
+                    readonly id: 9451;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9417;
+                        readonly id: 9446;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "3983:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9433;
+                        readonly scope: 9462;
                         readonly src: "3975:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3044,7 +3044,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9416;
+                            readonly id: 9445;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3975:7:65";
@@ -3056,12 +3056,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9419;
+                        readonly id: 9448;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "4013:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9433;
+                        readonly scope: 9462;
                         readonly src: "4005:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3070,7 +3070,7 @@ export declare const RETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 9418;
+                            readonly id: 9447;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4005:7:65";
@@ -3083,12 +3083,12 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9421;
+                        readonly id: 9450;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9433;
+                        readonly scope: 9462;
                         readonly src: "4035:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -3097,7 +3097,7 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9420;
+                            readonly id: 9449;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4035:5:65";
@@ -3111,33 +3111,33 @@ export declare const RETHBase: {
                     readonly src: "3965:100:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9424;
+                    readonly id: 9453;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4084:0:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9448;
+                readonly id: 9477;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4382:167:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9447;
+                    readonly id: 9476;
                     readonly nodeType: "Block";
                     readonly src: "4483:66:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9444;
+                                readonly id: 9473;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9436;
+                                readonly referencedDeclaration: 9465;
                                 readonly src: "4529:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3150,18 +3150,18 @@ export declare const RETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9442;
+                                    readonly id: 9471;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "4500:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9443;
+                                readonly id: 9472;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3169,14 +3169,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "4517:11:65";
                                 readonly memberName: "getEthValue";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12718;
+                                readonly referencedDeclaration: 12821;
                                 readonly src: "4500:28:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9445;
+                            readonly id: 9474;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3192,15 +3192,15 @@ export declare const RETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9441;
-                        readonly id: 9446;
+                        readonly functionReturnParameters: 9470;
+                        readonly id: 9475;
                         readonly nodeType: "Return";
                         readonly src: "4493:49:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13476];
+                readonly baseFunctions: readonly [13606];
                 readonly documentation: {
-                    readonly id: 9434;
+                    readonly id: 9463;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4216:161:65";
                     readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount.";
@@ -3211,22 +3211,22 @@ export declare const RETHBase: {
                 readonly name: "_convertToBase";
                 readonly nameLocation: "4391:14:65";
                 readonly overrides: {
-                    readonly id: 9438;
+                    readonly id: 9467;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4456:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9437;
+                    readonly id: 9466;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9436;
+                        readonly id: 9465;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "4423:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9448;
+                        readonly scope: 9477;
                         readonly src: "4415:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3235,7 +3235,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9435;
+                            readonly id: 9464;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4415:7:65";
@@ -3249,16 +3249,16 @@ export declare const RETHBase: {
                     readonly src: "4405:36:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9441;
+                    readonly id: 9470;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9440;
+                        readonly id: 9469;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9448;
+                        readonly scope: 9477;
                         readonly src: "4474:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3267,7 +3267,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9439;
+                            readonly id: 9468;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4474:7:65";
@@ -3280,28 +3280,28 @@ export declare const RETHBase: {
                     }];
                     readonly src: "4473:9:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9463;
+                readonly id: 9492;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4721:168:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9462;
+                    readonly id: 9491;
                     readonly nodeType: "Block";
                     readonly src: "4823:66:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9459;
+                                readonly id: 9488;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9451;
+                                readonly referencedDeclaration: 9480;
                                 readonly src: "4870:11:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3314,18 +3314,18 @@ export declare const RETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9457;
+                                    readonly id: 9486;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "4840:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9458;
+                                readonly id: 9487;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3333,14 +3333,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "4857:12:65";
                                 readonly memberName: "getRethValue";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12725;
+                                readonly referencedDeclaration: 12828;
                                 readonly src: "4840:29:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9460;
+                            readonly id: 9489;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3356,15 +3356,15 @@ export declare const RETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9456;
-                        readonly id: 9461;
+                        readonly functionReturnParameters: 9485;
+                        readonly id: 9490;
                         readonly nodeType: "Return";
                         readonly src: "4833:49:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13484];
+                readonly baseFunctions: readonly [13614];
                 readonly documentation: {
-                    readonly id: 9449;
+                    readonly id: 9478;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4555:161:65";
                     readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount.";
@@ -3375,22 +3375,22 @@ export declare const RETHBase: {
                 readonly name: "_convertToShares";
                 readonly nameLocation: "4730:16:65";
                 readonly overrides: {
-                    readonly id: 9453;
+                    readonly id: 9482;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4796:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9452;
+                    readonly id: 9481;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9451;
+                        readonly id: 9480;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "4764:11:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9463;
+                        readonly scope: 9492;
                         readonly src: "4756:19:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3399,7 +3399,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9450;
+                            readonly id: 9479;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4756:7:65";
@@ -3413,16 +3413,16 @@ export declare const RETHBase: {
                     readonly src: "4746:35:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9456;
+                    readonly id: 9485;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9455;
+                        readonly id: 9484;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9463;
+                        readonly scope: 9492;
                         readonly src: "4814:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3431,7 +3431,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9454;
+                            readonly id: 9483;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4814:7:65";
@@ -3444,24 +3444,24 @@ export declare const RETHBase: {
                     }];
                     readonly src: "4813:9:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9473;
+                readonly id: 9502;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5009:191:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9472;
+                    readonly id: 9501;
                     readonly nodeType: "Block";
                     readonly src: "5072:128:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly hexValue: "30";
-                            readonly id: 9470;
+                            readonly id: 9499;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -3475,15 +3475,15 @@ export declare const RETHBase: {
                             };
                             readonly value: "0";
                         };
-                        readonly functionReturnParameters: 9469;
-                        readonly id: 9471;
+                        readonly functionReturnParameters: 9498;
+                        readonly id: 9500;
                         readonly nodeType: "Return";
                         readonly src: "5185:8:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13490];
+                readonly baseFunctions: readonly [13620];
                 readonly documentation: {
-                    readonly id: 9464;
+                    readonly id: 9493;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4895:109:65";
                     readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
@@ -3494,28 +3494,28 @@ export declare const RETHBase: {
                 readonly name: "_totalBase";
                 readonly nameLocation: "5018:10:65";
                 readonly overrides: {
-                    readonly id: 9466;
+                    readonly id: 9495;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5045:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9465;
+                    readonly id: 9494;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5028:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9469;
+                    readonly id: 9498;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9468;
+                        readonly id: 9497;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9473;
+                        readonly scope: 9502;
                         readonly src: "5063:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3524,7 +3524,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9467;
+                            readonly id: 9496;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5063:7:65";
@@ -3537,17 +3537,17 @@ export declare const RETHBase: {
                     }];
                     readonly src: "5062:9:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9489;
+                readonly id: 9518;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5358:178:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9488;
+                    readonly id: 9517;
                     readonly nodeType: "Block";
                     readonly src: "5471:65:65";
                     readonly nodes: readonly [];
@@ -3555,23 +3555,23 @@ export declare const RETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 9484;
+                                    readonly id: 9513;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "5523:4:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                         readonly typeString: "contract RETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9526";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9555";
                                         readonly typeString: "contract RETHBase";
                                     }];
-                                    readonly id: 9483;
+                                    readonly id: 9512;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3583,14 +3583,14 @@ export declare const RETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9482;
+                                        readonly id: 9511;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5515:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9485;
+                                readonly id: 9514;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3612,18 +3612,18 @@ export declare const RETHBase: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9480;
+                                    readonly id: 9509;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "5488:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9481;
+                                readonly id: 9510;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3631,14 +3631,14 @@ export declare const RETHBase: {
                                 readonly memberLocation: "5505:9:65";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10357;
+                                readonly referencedDeclaration: 10416;
                                 readonly src: "5488:26:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9486;
+                            readonly id: 9515;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3654,15 +3654,15 @@ export declare const RETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9479;
-                        readonly id: 9487;
+                        readonly functionReturnParameters: 9508;
+                        readonly id: 9516;
                         readonly nodeType: "Return";
                         readonly src: "5481:48:65";
                     }];
                 };
-                readonly baseFunctions: readonly [13496];
+                readonly baseFunctions: readonly [13626];
                 readonly documentation: {
-                    readonly id: 9474;
+                    readonly id: 9503;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5206:147:65";
                     readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
@@ -3673,28 +3673,28 @@ export declare const RETHBase: {
                 readonly name: "_totalShares";
                 readonly nameLocation: "5367:12:65";
                 readonly overrides: {
-                    readonly id: 9476;
+                    readonly id: 9505;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5420:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9475;
+                    readonly id: 9504;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5379:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9479;
+                    readonly id: 9508;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9478;
+                        readonly id: 9507;
                         readonly mutability: "mutable";
                         readonly name: "shareAmount";
                         readonly nameLocation: "5454:11:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9489;
+                        readonly scope: 9518;
                         readonly src: "5446:19:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3703,7 +3703,7 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9477;
+                            readonly id: 9506;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5446:7:65";
@@ -3716,17 +3716,17 @@ export declare const RETHBase: {
                     }];
                     readonly src: "5445:21:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9506;
+                readonly id: 9535;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5620:144:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9505;
+                    readonly id: 9534;
                     readonly nodeType: "Block";
                     readonly src: "5673:91:65";
                     readonly nodes: readonly [];
@@ -3736,14 +3736,14 @@ export declare const RETHBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 9497;
+                            readonly id: 9526;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 9494;
+                                    readonly id: 9523;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3754,7 +3754,7 @@ export declare const RETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9495;
+                                readonly id: 9524;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3772,7 +3772,7 @@ export declare const RETHBase: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 9496;
+                                readonly id: 9525;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -3792,11 +3792,11 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9504;
+                        readonly id: 9533;
                         readonly nodeType: "IfStatement";
                         readonly src: "5683:75:65";
                         readonly trueBody: {
-                            readonly id: 9503;
+                            readonly id: 9532;
                             readonly nodeType: "Block";
                             readonly src: "5702:56:65";
                             readonly statements: readonly [{
@@ -3805,18 +3805,18 @@ export declare const RETHBase: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9498;
+                                            readonly id: 9527;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "5723:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9500;
+                                        readonly id: 9529;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3824,14 +3824,14 @@ export declare const RETHBase: {
                                         readonly memberLocation: "5735:10:65";
                                         readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10995;
+                                        readonly referencedDeclaration: 11062;
                                         readonly src: "5723:22:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9501;
+                                    readonly id: 9530;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3847,16 +3847,16 @@ export declare const RETHBase: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9502;
+                                readonly id: 9531;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "5716:31:65";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [13446];
+                readonly baseFunctions: readonly [13576];
                 readonly documentation: {
-                    readonly id: 9490;
+                    readonly id: 9519;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5542:73:65";
                     readonly text: "@dev Disallows the contract to receive ether, when opening positions.";
@@ -3867,34 +3867,34 @@ export declare const RETHBase: {
                 readonly name: "_checkMessageValue";
                 readonly nameLocation: "5629:18:65";
                 readonly overrides: {
-                    readonly id: 9492;
+                    readonly id: 9521;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5664:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9491;
+                    readonly id: 9520;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5647:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9493;
+                    readonly id: 9522;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5673:0:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9525;
+                readonly id: 9554;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5939:148:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9524;
+                    readonly id: 9553;
                     readonly nodeType: "Block";
                     readonly src: "5966:121:65";
                     readonly nodes: readonly [];
@@ -3904,14 +3904,14 @@ export declare const RETHBase: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 9516;
+                            readonly id: 9545;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 9510;
+                                    readonly id: 9539;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3922,7 +3922,7 @@ export declare const RETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9511;
+                                readonly id: 9540;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3940,23 +3940,23 @@ export declare const RETHBase: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 9514;
+                                    readonly id: 9543;
                                     readonly name: "_rocketTokenReth";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9293;
+                                    readonly referencedDeclaration: 9322;
                                     readonly src: "6002:16:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12759";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12862";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     }];
-                                    readonly id: 9513;
+                                    readonly id: 9542;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3968,14 +3968,14 @@ export declare const RETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9512;
+                                        readonly id: 9541;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5994:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9515;
+                                readonly id: 9544;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3997,11 +3997,11 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9523;
+                        readonly id: 9552;
                         readonly nodeType: "IfStatement";
                         readonly src: "5976:105:65";
                         readonly trueBody: {
-                            readonly id: 9522;
+                            readonly id: 9551;
                             readonly nodeType: "Block";
                             readonly src: "6021:60:65";
                             readonly statements: readonly [{
@@ -4010,18 +4010,18 @@ export declare const RETHBase: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9517;
+                                            readonly id: 9546;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "6042:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9519;
+                                        readonly id: 9548;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4029,14 +4029,14 @@ export declare const RETHBase: {
                                         readonly memberLocation: "6054:14:65";
                                         readonly memberName: "TransferFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11021;
+                                        readonly referencedDeclaration: 11088;
                                         readonly src: "6042:26:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9520;
+                                    readonly id: 9549;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4052,7 +4052,7 @@ export declare const RETHBase: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9521;
+                                readonly id: 9550;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "6035:35:65";
                             }];
@@ -4060,7 +4060,7 @@ export declare const RETHBase: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 9507;
+                    readonly id: 9536;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5770:164:65";
                     readonly text: "@dev Allows ether to be received only from the Rocket Pool rETH\n      token contract. Supports withdrawing as ethers from this\n      yield source.";
@@ -4071,18 +4071,18 @@ export declare const RETHBase: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 9508;
+                    readonly id: 9537;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5946:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9509;
+                    readonly id: 9538;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5966:0:65";
                 };
-                readonly scope: 9526;
+                readonly scope: 9555;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -4090,14 +4090,14 @@ export declare const RETHBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 9281;
+                    readonly id: 9310;
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["1131:14:65"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "1131:14:65";
                 };
-                readonly id: 9282;
+                readonly id: 9311;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1131:14:65";
             }];
@@ -4105,18 +4105,18 @@ export declare const RETHBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 9280;
+                readonly id: 9309;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "493:608:65";
                 readonly text: "@author DELV\n @title RETHHyperdrive\n @notice The base contract for the rETH Hyperdrive implementation.\n @dev Rocket Pool has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Rocket Pool protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Rocket Pool\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [9526, 14381, 18367, 72043, 11599, 12165];
+            readonly linearizedBaseContracts: readonly [9555, 14511, 18497, 72173, 11666, 12232];
             readonly name: "RETHBase";
             readonly nameLocation: "1119:8:65";
-            readonly scope: 9527;
-            readonly usedErrors: readonly [11021, 71988];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly scope: 9556;
+            readonly usedErrors: readonly [11088, 72118];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };

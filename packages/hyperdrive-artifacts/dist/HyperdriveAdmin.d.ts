@@ -1233,239 +1233,239 @@ export declare const HyperdriveAdmin: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/internal/HyperdriveAdmin.sol";
-        readonly id: 13206;
+        readonly id: 13336;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [71261];
-            readonly HyperdriveAdmin: readonly [13205];
-            readonly HyperdriveBase: readonly [14381];
-            readonly IERC20: readonly [10358];
-            readonly IHyperdrive: readonly [11076];
-            readonly IHyperdriveEvents: readonly [11599];
-            readonly SafeERC20: readonly [71691];
+            readonly ERC20: readonly [71391];
+            readonly HyperdriveAdmin: readonly [13335];
+            readonly HyperdriveBase: readonly [14511];
+            readonly IERC20: readonly [10417];
+            readonly IHyperdrive: readonly [11143];
+            readonly IHyperdriveEvents: readonly [11666];
+            readonly SafeERC20: readonly [71821];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:6197:113";
+        readonly src: "39:6197:117";
         readonly nodes: readonly [{
-            readonly id: 12880;
+            readonly id: 13010;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:113";
+            readonly src: "39:23:117";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12882;
+            readonly id: 13012;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:59:113";
+            readonly src: "64:59:117";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 71262;
+            readonly scope: 13336;
+            readonly sourceUnit: 71392;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12881;
+                    readonly id: 13011;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71261;
-                    readonly src: "73:5:113";
+                    readonly referencedDeclaration: 71391;
+                    readonly src: "73:5:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12884;
+            readonly id: 13014;
             readonly nodeType: "ImportDirective";
-            readonly src: "124:73:113";
+            readonly src: "124:73:117";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 71692;
+            readonly scope: 13336;
+            readonly sourceUnit: 71822;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12883;
+                    readonly id: 13013;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71691;
-                    readonly src: "133:9:113";
+                    readonly referencedDeclaration: 71821;
+                    readonly src: "133:9:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12886;
+            readonly id: 13016;
             readonly nodeType: "ImportDirective";
-            readonly src: "198:50:113";
+            readonly src: "198:50:117";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20.sol";
             readonly file: "../interfaces/IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 10359;
+            readonly scope: 13336;
+            readonly sourceUnit: 10418;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12885;
+                    readonly id: 13015;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10358;
-                    readonly src: "207:6:113";
+                    readonly referencedDeclaration: 10417;
+                    readonly src: "207:6:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12888;
+            readonly id: 13018;
             readonly nodeType: "ImportDirective";
-            readonly src: "249:60:113";
+            readonly src: "249:60:117";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 11077;
+            readonly scope: 13336;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12887;
+                    readonly id: 13017;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
-                    readonly src: "258:11:113";
+                    readonly referencedDeclaration: 11143;
+                    readonly src: "258:11:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12890;
+            readonly id: 13020;
             readonly nodeType: "ImportDirective";
-            readonly src: "310:72:113";
+            readonly src: "310:72:117";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdriveEvents.sol";
             readonly file: "../interfaces/IHyperdriveEvents.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 11600;
+            readonly scope: 13336;
+            readonly sourceUnit: 11667;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12889;
+                    readonly id: 13019;
                     readonly name: "IHyperdriveEvents";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11599;
-                    readonly src: "319:17:113";
+                    readonly referencedDeclaration: 11666;
+                    readonly src: "319:17:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12892;
+            readonly id: 13022;
             readonly nodeType: "ImportDirective";
-            readonly src: "383:54:113";
+            readonly src: "383:54:117";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "./HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 13206;
-            readonly sourceUnit: 14382;
+            readonly scope: 13336;
+            readonly sourceUnit: 14512;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 12891;
+                    readonly id: 13021;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14381;
-                    readonly src: "392:14:113";
+                    readonly referencedDeclaration: 14511;
+                    readonly src: "392:14:117";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 13205;
+            readonly id: 13335;
             readonly nodeType: "ContractDefinition";
-            readonly src: "861:5374:113";
+            readonly src: "861:5374:117";
             readonly nodes: readonly [{
-                readonly id: 12901;
+                readonly id: 13031;
                 readonly nodeType: "UsingForDirective";
-                readonly src: "938:26:113";
+                readonly src: "938:26:117";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 12898;
+                    readonly id: 13028;
                     readonly name: "SafeERC20";
-                    readonly nameLocations: readonly ["944:9:113"];
+                    readonly nameLocations: readonly ["944:9:117"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71691;
-                    readonly src: "944:9:113";
+                    readonly referencedDeclaration: 71821;
+                    readonly src: "944:9:117";
                 };
                 readonly typeName: {
-                    readonly id: 12900;
+                    readonly id: 13030;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 12899;
+                        readonly id: 13029;
                         readonly name: "ERC20";
-                        readonly nameLocations: readonly ["958:5:113"];
+                        readonly nameLocations: readonly ["958:5:117"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71261;
-                        readonly src: "958:5:113";
+                        readonly referencedDeclaration: 71391;
+                        readonly src: "958:5:117";
                     };
-                    readonly referencedDeclaration: 71261;
-                    readonly src: "958:5:113";
+                    readonly referencedDeclaration: 71391;
+                    readonly src: "958:5:117";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
+                        readonly typeIdentifier: "t_contract$_ERC20_$71391";
                         readonly typeString: "contract ERC20";
                     };
                 };
             }, {
-                readonly id: 12979;
+                readonly id: 13109;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1317:1139:113";
+                readonly src: "1317:1139:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 12978;
+                    readonly id: 13108;
                     readonly nodeType: "Block";
-                    readonly src: "1450:1006:113";
+                    readonly src: "1450:1006:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 12913;
+                                readonly id: 13043;
                                 readonly name: "_options";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 12905;
-                                readonly src: "1528:8:113";
+                                readonly referencedDeclaration: 13035;
+                                readonly src: "1528:8:117";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                    readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                     readonly typeString: "struct IHyperdrive.Options calldata";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                    readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                     readonly typeString: "struct IHyperdrive.Options calldata";
                                 }];
-                                readonly id: 12912;
+                                readonly id: 13042;
                                 readonly name: "_checkOptions";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13468;
-                                readonly src: "1514:13:113";
+                                readonly referencedDeclaration: 13598;
+                                readonly src: "1514:13:117";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_struct$_Options_$10923_calldata_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_struct$_Options_$10990_calldata_ptr_$returns$__$";
                                     readonly typeString: "function (struct IHyperdrive.Options calldata) pure";
                                 };
                             };
-                            readonly id: 12914;
+                            readonly id: 13044;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1474,50 +1474,50 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1514:23:113";
+                            readonly src: "1514:23:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 12915;
+                        readonly id: 13045;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1514:23:113";
+                        readonly src: "1514:23:117";
                     }, {
                         readonly condition: {
                             readonly commonType: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 12919;
+                            readonly id: 13049;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 12916;
+                                    readonly id: 13046;
                                     readonly name: "_options";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12905;
-                                    readonly src: "1620:8:113";
+                                    readonly referencedDeclaration: 13035;
+                                    readonly src: "1620:8:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                        readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                         readonly typeString: "struct IHyperdrive.Options calldata";
                                     };
                                 };
-                                readonly id: 12917;
+                                readonly id: 13047;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1629:11:113";
+                                readonly memberLocation: "1629:11:117";
                                 readonly memberName: "destination";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10916;
-                                readonly src: "1620:20:113";
+                                readonly referencedDeclaration: 10983;
+                                readonly src: "1620:20:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -1526,63 +1526,63 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 12918;
+                                readonly id: 13048;
                                 readonly name: "_feeCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18221;
-                                readonly src: "1644:13:113";
+                                readonly referencedDeclaration: 18351;
+                                readonly src: "1644:13:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "1620:37:113";
+                            readonly src: "1620:37:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 12926;
+                        readonly id: 13056;
                         readonly nodeType: "IfStatement";
-                        readonly src: "1616:110:113";
+                        readonly src: "1616:110:117";
                         readonly trueBody: {
-                            readonly id: 12925;
+                            readonly id: 13055;
                             readonly nodeType: "Block";
-                            readonly src: "1659:67:113";
+                            readonly src: "1659:67:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 12920;
+                                            readonly id: 13050;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "1680:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "1680:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 12922;
+                                        readonly id: 13052;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1692:21:113";
+                                        readonly memberLocation: "1692:21:117";
                                         readonly memberName: "InvalidFeeDestination";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10965;
-                                        readonly src: "1680:33:113";
+                                        readonly referencedDeclaration: 11032;
+                                        readonly src: "1680:33:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 12923;
+                                    readonly id: 13053;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1591,16 +1591,16 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1680:35:113";
+                                    readonly src: "1680:35:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 12924;
+                                readonly id: 13054;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "1673:42:113";
+                                readonly src: "1673:42:117";
                             }];
                         };
                     }, {
@@ -1609,7 +1609,7 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 12941;
+                            readonly id: 13071;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1619,13 +1619,13 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
-                                readonly id: 12936;
+                                readonly id: 13066;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 12931;
+                                    readonly id: 13061;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1633,43 +1633,43 @@ export declare const HyperdriveAdmin: {
                                     readonly nodeType: "UnaryOperation";
                                     readonly operator: "!";
                                     readonly prefix: true;
-                                    readonly src: "1818:21:113";
+                                    readonly src: "1818:21:117";
                                     readonly subExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 12927;
+                                            readonly id: 13057;
                                             readonly name: "_pausers";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18235;
-                                            readonly src: "1819:8:113";
+                                            readonly referencedDeclaration: 18365;
+                                            readonly src: "1819:8:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_bool_$";
                                                 readonly typeString: "mapping(address => bool)";
                                             };
                                         };
-                                        readonly id: 12930;
+                                        readonly id: 13060;
                                         readonly indexExpression: {
                                             readonly expression: {
-                                                readonly id: 12928;
+                                                readonly id: 13058;
                                                 readonly name: "msg";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
                                                 readonly referencedDeclaration: -15;
-                                                readonly src: "1828:3:113";
+                                                readonly src: "1828:3:117";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_message";
                                                     readonly typeString: "msg";
                                                 };
                                             };
-                                            readonly id: 12929;
+                                            readonly id: 13059;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "1832:6:113";
+                                            readonly memberLocation: "1832:6:117";
                                             readonly memberName: "sender";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "1828:10:113";
+                                            readonly src: "1828:10:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
@@ -1680,7 +1680,7 @@ export declare const HyperdriveAdmin: {
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly nodeType: "IndexAccess";
-                                        readonly src: "1819:20:113";
+                                        readonly src: "1819:20:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
@@ -1698,33 +1698,33 @@ export declare const HyperdriveAdmin: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
-                                    readonly id: 12935;
+                                    readonly id: 13065;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly expression: {
-                                            readonly id: 12932;
+                                            readonly id: 13062;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -15;
-                                            readonly src: "1855:3:113";
+                                            readonly src: "1855:3:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_magic_message";
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 12933;
+                                        readonly id: 13063;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1859:6:113";
+                                        readonly memberLocation: "1859:6:117";
                                         readonly memberName: "sender";
                                         readonly nodeType: "MemberAccess";
-                                        readonly src: "1855:10:113";
+                                        readonly src: "1855:10:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
@@ -1733,24 +1733,24 @@ export declare const HyperdriveAdmin: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "!=";
                                     readonly rightExpression: {
-                                        readonly id: 12934;
+                                        readonly id: 13064;
                                         readonly name: "_feeCollector";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18221;
-                                        readonly src: "1869:13:113";
+                                        readonly referencedDeclaration: 18351;
+                                        readonly src: "1869:13:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly src: "1855:27:113";
+                                    readonly src: "1855:27:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly src: "1818:64:113";
+                                readonly src: "1818:64:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1763,33 +1763,33 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
-                                readonly id: 12940;
+                                readonly id: 13070;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 12937;
+                                        readonly id: 13067;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -15;
-                                        readonly src: "1898:3:113";
+                                        readonly src: "1898:3:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_magic_message";
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 12938;
+                                    readonly id: 13068;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "1902:6:113";
+                                    readonly memberLocation: "1902:6:117";
                                     readonly memberName: "sender";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "1898:10:113";
+                                    readonly src: "1898:10:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
@@ -1798,69 +1798,69 @@ export declare const HyperdriveAdmin: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "!=";
                                 readonly rightExpression: {
-                                    readonly id: 12939;
+                                    readonly id: 13069;
                                     readonly name: "_governance";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18227;
-                                    readonly src: "1912:11:113";
+                                    readonly referencedDeclaration: 18357;
+                                    readonly src: "1912:11:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly src: "1898:25:113";
+                                readonly src: "1898:25:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "1818:105:113";
+                            readonly src: "1818:105:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 12948;
+                        readonly id: 13078;
                         readonly nodeType: "IfStatement";
-                        readonly src: "1801:191:113";
+                        readonly src: "1801:191:117";
                         readonly trueBody: {
-                            readonly id: 12947;
+                            readonly id: 13077;
                             readonly nodeType: "Block";
-                            readonly src: "1934:58:113";
+                            readonly src: "1934:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 12942;
+                                            readonly id: 13072;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "1955:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "1955:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 12944;
+                                        readonly id: 13074;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1967:12:113";
+                                        readonly memberLocation: "1967:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "1955:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "1955:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 12945;
+                                    readonly id: 13075;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1869,29 +1869,29 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1955:26:113";
+                                    readonly src: "1955:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 12946;
+                                readonly id: 13076;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "1948:33:113";
+                                readonly src: "1948:33:117";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [12950];
+                        readonly assignments: readonly [13080];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 12950;
+                            readonly id: 13080;
                             readonly mutability: "mutable";
                             readonly name: "vaultSharePrice";
-                            readonly nameLocation: "2080:15:113";
+                            readonly nameLocation: "2080:15:117";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 12978;
-                            readonly src: "2072:23:113";
+                            readonly scope: 13108;
+                            readonly src: "2072:23:117";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -1899,10 +1899,10 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 12949;
+                                readonly id: 13079;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2072:7:113";
+                                readonly src: "2072:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1910,23 +1910,23 @@ export declare const HyperdriveAdmin: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 12953;
+                        readonly id: 13083;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 12951;
+                                readonly id: 13081;
                                 readonly name: "_pricePerVaultShare";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13400;
-                                readonly src: "2098:19:113";
+                                readonly referencedDeclaration: 13530;
+                                readonly src: "2098:19:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                     readonly typeString: "function () view returns (uint256)";
                                 };
                             };
-                            readonly id: 12952;
+                            readonly id: 13082;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1935,7 +1935,7 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2098:21:113";
+                            readonly src: "2098:21:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -1943,18 +1943,18 @@ export declare const HyperdriveAdmin: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2072:47:113";
+                        readonly src: "2072:47:117";
                     }, {
-                        readonly assignments: readonly [12955];
+                        readonly assignments: readonly [13085];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 12955;
+                            readonly id: 13085;
                             readonly mutability: "mutable";
                             readonly name: "governanceFeesAccrued";
-                            readonly nameLocation: "2137:21:113";
+                            readonly nameLocation: "2137:21:117";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 12978;
-                            readonly src: "2129:29:113";
+                            readonly scope: 13108;
+                            readonly src: "2129:29:117";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -1962,10 +1962,10 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 12954;
+                                readonly id: 13084;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2129:7:113";
+                                readonly src: "2129:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1973,24 +1973,24 @@ export declare const HyperdriveAdmin: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 12957;
+                        readonly id: 13087;
                         readonly initialValue: {
-                            readonly id: 12956;
+                            readonly id: 13086;
                             readonly name: "_governanceFeesAccrued";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 18230;
-                            readonly src: "2161:22:113";
+                            readonly referencedDeclaration: 18360;
+                            readonly src: "2161:22:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2129:54:113";
+                        readonly src: "2129:54:117";
                     }, {
                         readonly expression: {
-                            readonly id: 12959;
+                            readonly id: 13089;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1998,14 +1998,14 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "delete";
                             readonly prefix: true;
-                            readonly src: "2193:29:113";
+                            readonly src: "2193:29:117";
                             readonly subExpression: {
-                                readonly id: 12958;
+                                readonly id: 13088;
                                 readonly name: "_governanceFeesAccrued";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18230;
-                                readonly src: "2200:22:113";
+                                readonly referencedDeclaration: 18360;
+                                readonly src: "2200:22:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2016,23 +2016,23 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 12960;
+                        readonly id: 13090;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2193:29:113";
+                        readonly src: "2193:29:117";
                     }, {
                         readonly expression: {
-                            readonly id: 12967;
+                            readonly id: 13097;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 12961;
+                                readonly id: 13091;
                                 readonly name: "proceeds";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 12910;
-                                readonly src: "2232:8:113";
+                                readonly referencedDeclaration: 13040;
+                                readonly src: "2232:8:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2042,36 +2042,36 @@ export declare const HyperdriveAdmin: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 12963;
+                                    readonly id: 13093;
                                     readonly name: "governanceFeesAccrued";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12955;
-                                    readonly src: "2253:21:113";
+                                    readonly referencedDeclaration: 13085;
+                                    readonly src: "2253:21:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 12964;
+                                    readonly id: 13094;
                                     readonly name: "vaultSharePrice";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12950;
-                                    readonly src: "2276:15:113";
+                                    readonly referencedDeclaration: 13080;
+                                    readonly src: "2276:15:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 12965;
+                                    readonly id: 13095;
                                     readonly name: "_options";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12905;
-                                    readonly src: "2293:8:113";
+                                    readonly referencedDeclaration: 13035;
+                                    readonly src: "2293:8:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                        readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                         readonly typeString: "struct IHyperdrive.Options calldata";
                                     };
                                 }];
@@ -2083,21 +2083,21 @@ export declare const HyperdriveAdmin: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }, {
-                                        readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                        readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                         readonly typeString: "struct IHyperdrive.Options calldata";
                                     }];
-                                    readonly id: 12962;
+                                    readonly id: 13092;
                                     readonly name: "_withdraw";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13389;
-                                    readonly src: "2243:9:113";
+                                    readonly referencedDeclaration: 13519;
+                                    readonly src: "2243:9:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10923_calldata_ptr_$returns$_t_uint256_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10990_calldata_ptr_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,struct IHyperdrive.Options calldata) returns (uint256)";
                                     };
                                 };
-                                readonly id: 12966;
+                                readonly id: 13096;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2106,67 +2106,67 @@ export declare const HyperdriveAdmin: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "2243:59:113";
+                                readonly src: "2243:59:117";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly src: "2232:70:113";
+                            readonly src: "2232:70:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 12968;
+                        readonly id: 13098;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2232:70:113";
+                        readonly src: "2232:70:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 12970;
+                                readonly id: 13100;
                                 readonly name: "_feeCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18221;
-                                readonly src: "2351:13:113";
+                                readonly referencedDeclaration: 18351;
+                                readonly src: "2351:13:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 12972;
+                                    readonly id: 13102;
                                     readonly name: "proceeds";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12910;
-                                    readonly src: "2403:8:113";
+                                    readonly referencedDeclaration: 13040;
+                                    readonly src: "2403:8:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 12973;
+                                    readonly id: 13103;
                                     readonly name: "vaultSharePrice";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12950;
-                                    readonly src: "2413:15:113";
+                                    readonly referencedDeclaration: 13080;
+                                    readonly src: "2413:15:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 12974;
+                                    readonly id: 13104;
                                     readonly name: "_options";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 12905;
-                                    readonly src: "2430:8:113";
+                                    readonly referencedDeclaration: 13035;
+                                    readonly src: "2430:8:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                        readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                         readonly typeString: "struct IHyperdrive.Options calldata";
                                     };
                                 }];
@@ -2178,21 +2178,21 @@ export declare const HyperdriveAdmin: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }, {
-                                        readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                                        readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                                         readonly typeString: "struct IHyperdrive.Options calldata";
                                     }];
-                                    readonly id: 12971;
+                                    readonly id: 13101;
                                     readonly name: "_convertToBaseFromOption";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14328;
-                                    readonly src: "2378:24:113";
+                                    readonly referencedDeclaration: 14458;
+                                    readonly src: "2378:24:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$10923_calldata_ptr_$returns$_t_uint256_$";
+                                        readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$10990_calldata_ptr_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 12975;
+                                readonly id: 13105;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2201,7 +2201,7 @@ export declare const HyperdriveAdmin: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "2378:61:113";
+                                readonly src: "2378:61:117";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2216,18 +2216,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 12969;
+                                readonly id: 13099;
                                 readonly name: "CollectGovernanceFee";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11564;
-                                readonly src: "2317:20:113";
+                                readonly referencedDeclaration: 11631;
+                                readonly src: "2317:20:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,uint256)";
                                 };
                             };
-                            readonly id: 12976;
+                            readonly id: 13106;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2236,94 +2236,94 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2317:132:113";
+                            readonly src: "2317:132:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 12977;
+                        readonly id: 13107;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "2312:137:113";
+                        readonly src: "2312:137:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 12902;
+                    readonly id: 13032;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "970:342:113";
+                    readonly src: "970:342:117";
                     readonly text: "@dev This function collects the governance fees accrued by the pool.\n @param _options The options that configure how the fees are settled.\n @return proceeds The governance fees collected. The units of this\n         quantity are either base or vault shares, depending on the value\n         of `_options.asBase`.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 12908;
+                    readonly id: 13038;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 12907;
+                        readonly id: 13037;
                         readonly name: "nonReentrant";
-                        readonly nameLocations: readonly ["1410:12:113"];
+                        readonly nameLocations: readonly ["1410:12:117"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72007;
-                        readonly src: "1410:12:113";
+                        readonly referencedDeclaration: 72137;
+                        readonly src: "1410:12:117";
                     };
                     readonly nodeType: "ModifierInvocation";
-                    readonly src: "1410:12:113";
+                    readonly src: "1410:12:117";
                 }];
                 readonly name: "_collectGovernanceFee";
-                readonly nameLocation: "1326:21:113";
+                readonly nameLocation: "1326:21:117";
                 readonly parameters: {
-                    readonly id: 12906;
+                    readonly id: 13036;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12905;
+                        readonly id: 13035;
                         readonly mutability: "mutable";
                         readonly name: "_options";
-                        readonly nameLocation: "1386:8:113";
+                        readonly nameLocation: "1386:8:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12979;
-                        readonly src: "1357:37:113";
+                        readonly scope: 13109;
+                        readonly src: "1357:37:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
-                            readonly id: 12904;
+                            readonly id: 13034;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 12903;
+                                readonly id: 13033;
                                 readonly name: "IHyperdrive.Options";
-                                readonly nameLocations: readonly ["1357:11:113", "1369:7:113"];
+                                readonly nameLocations: readonly ["1357:11:117", "1369:7:117"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
-                                readonly src: "1357:19:113";
+                                readonly referencedDeclaration: 10990;
+                                readonly src: "1357:19:117";
                             };
-                            readonly referencedDeclaration: 10923;
-                            readonly src: "1357:19:113";
+                            readonly referencedDeclaration: 10990;
+                            readonly src: "1357:19:117";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1347:53:113";
+                    readonly src: "1347:53:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 12911;
+                    readonly id: 13041;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12910;
+                        readonly id: 13040;
                         readonly mutability: "mutable";
                         readonly name: "proceeds";
-                        readonly nameLocation: "1440:8:113";
+                        readonly nameLocation: "1440:8:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12979;
-                        readonly src: "1432:16:113";
+                        readonly scope: 13109;
+                        readonly src: "1432:16:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2331,10 +2331,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12909;
+                            readonly id: 13039;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1432:7:113";
+                            readonly src: "1432:7:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2342,25 +2342,25 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1431:18:113";
+                    readonly src: "1431:18:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13008;
+                readonly id: 13138;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2605:350:113";
+                readonly src: "2605:350:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13007;
+                    readonly id: 13137;
                     readonly nodeType: "Block";
-                    readonly src: "2644:311:113";
+                    readonly src: "2644:311:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 12989;
+                            readonly id: 13119;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2368,43 +2368,43 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "2729:21:113";
+                            readonly src: "2729:21:117";
                             readonly subExpression: {
                                 readonly baseExpression: {
-                                    readonly id: 12985;
+                                    readonly id: 13115;
                                     readonly name: "_pausers";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18235;
-                                    readonly src: "2730:8:113";
+                                    readonly referencedDeclaration: 18365;
+                                    readonly src: "2730:8:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_bool_$";
                                         readonly typeString: "mapping(address => bool)";
                                     };
                                 };
-                                readonly id: 12988;
+                                readonly id: 13118;
                                 readonly indexExpression: {
                                     readonly expression: {
-                                        readonly id: 12986;
+                                        readonly id: 13116;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -15;
-                                        readonly src: "2739:3:113";
+                                        readonly src: "2739:3:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_magic_message";
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 12987;
+                                    readonly id: 13117;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "2743:6:113";
+                                    readonly memberLocation: "2743:6:117";
                                     readonly memberName: "sender";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "2739:10:113";
+                                    readonly src: "2739:10:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
@@ -2415,7 +2415,7 @@ export declare const HyperdriveAdmin: {
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "IndexAccess";
-                                readonly src: "2730:20:113";
+                                readonly src: "2730:20:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2426,46 +2426,46 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 12996;
+                        readonly id: 13126;
                         readonly nodeType: "IfStatement";
-                        readonly src: "2725:85:113";
+                        readonly src: "2725:85:117";
                         readonly trueBody: {
-                            readonly id: 12995;
+                            readonly id: 13125;
                             readonly nodeType: "Block";
-                            readonly src: "2752:58:113";
+                            readonly src: "2752:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 12990;
+                                            readonly id: 13120;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "2773:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "2773:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 12992;
+                                        readonly id: 13122;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "2785:12:113";
+                                        readonly memberLocation: "2785:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "2773:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "2773:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 12993;
+                                    readonly id: 13123;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2474,48 +2474,48 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "2773:26:113";
+                                    readonly src: "2773:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 12994;
+                                readonly id: 13124;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "2766:33:113";
+                                readonly src: "2766:33:117";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 13001;
+                            readonly id: 13131;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 12997;
+                                    readonly id: 13127;
                                     readonly name: "_marketState";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18208;
-                                    readonly src: "2875:12:113";
+                                    readonly referencedDeclaration: 18338;
+                                    readonly src: "2875:12:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_MarketState_$10762_storage";
+                                        readonly typeIdentifier: "t_struct$_MarketState_$10829_storage";
                                         readonly typeString: "struct IHyperdrive.MarketState storage ref";
                                     };
                                 };
-                                readonly id: 12999;
+                                readonly id: 13129;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
                                 readonly lValueRequested: true;
-                                readonly memberLocation: "2888:8:113";
+                                readonly memberLocation: "2888:8:117";
                                 readonly memberName: "isPaused";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10755;
-                                readonly src: "2875:21:113";
+                                readonly referencedDeclaration: 10822;
+                                readonly src: "2875:21:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2524,35 +2524,35 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 13000;
+                                readonly id: 13130;
                                 readonly name: "_status";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 12982;
-                                readonly src: "2899:7:113";
+                                readonly referencedDeclaration: 13112;
+                                readonly src: "2899:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "2875:31:113";
+                            readonly src: "2875:31:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13002;
+                        readonly id: 13132;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2875:31:113";
+                        readonly src: "2875:31:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13004;
+                                readonly id: 13134;
                                 readonly name: "_status";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 12982;
-                                readonly src: "2940:7:113";
+                                readonly referencedDeclaration: 13112;
+                                readonly src: "2940:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2563,18 +2563,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 13003;
+                                readonly id: 13133;
                                 readonly name: "PauseStatusUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11591;
-                                readonly src: "2921:18:113";
+                                readonly referencedDeclaration: 11658;
+                                readonly src: "2921:18:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_bool_$returns$__$";
                                     readonly typeString: "function (bool)";
                                 };
                             };
-                            readonly id: 13005;
+                            readonly id: 13135;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2583,41 +2583,41 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2921:27:113";
+                            readonly src: "2921:27:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13006;
+                        readonly id: 13136;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "2916:32:113";
+                        readonly src: "2916:32:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 12980;
+                    readonly id: 13110;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "2462:138:113";
+                    readonly src: "2462:138:117";
                     readonly text: "@dev Allows an authorized address to pause this contract.\n @param _status True to pause all deposits and false to unpause them.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_pause";
-                readonly nameLocation: "2614:6:113";
+                readonly nameLocation: "2614:6:117";
                 readonly parameters: {
-                    readonly id: 12983;
+                    readonly id: 13113;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12982;
+                        readonly id: 13112;
                         readonly mutability: "mutable";
                         readonly name: "_status";
-                        readonly nameLocation: "2626:7:113";
+                        readonly nameLocation: "2626:7:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13008;
-                        readonly src: "2621:12:113";
+                        readonly scope: 13138;
+                        readonly src: "2621:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2625,10 +2625,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12981;
+                            readonly id: 13111;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2621:4:113";
+                            readonly src: "2621:4:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -2636,27 +2636,27 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2620:14:113";
+                    readonly src: "2620:14:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 12984;
+                    readonly id: 13114;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "2644:0:113";
+                    readonly src: "2644:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13034;
+                readonly id: 13164;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3071:334:113";
+                readonly src: "3071:334:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13033;
+                    readonly id: 13163;
                     readonly nodeType: "Block";
-                    readonly src: "3120:285:113";
+                    readonly src: "3120:285:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -2664,33 +2664,33 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 13017;
+                            readonly id: 13147;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 13014;
+                                    readonly id: 13144;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "3183:3:113";
+                                    readonly src: "3183:3:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 13015;
+                                readonly id: 13145;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3187:6:113";
+                                readonly memberLocation: "3187:6:117";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "3183:10:113";
+                                readonly src: "3183:10:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -2699,63 +2699,63 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 13016;
+                                readonly id: 13146;
                                 readonly name: "_governance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18227;
-                                readonly src: "3197:11:113";
+                                readonly referencedDeclaration: 18357;
+                                readonly src: "3197:11:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "3183:25:113";
+                            readonly src: "3183:25:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13024;
+                        readonly id: 13154;
                         readonly nodeType: "IfStatement";
-                        readonly src: "3179:89:113";
+                        readonly src: "3179:89:117";
                         readonly trueBody: {
-                            readonly id: 13023;
+                            readonly id: 13153;
                             readonly nodeType: "Block";
-                            readonly src: "3210:58:113";
+                            readonly src: "3210:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13018;
+                                            readonly id: 13148;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "3231:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "3231:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13020;
+                                        readonly id: 13150;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "3243:12:113";
+                                        readonly memberLocation: "3243:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "3231:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "3231:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13021;
+                                    readonly id: 13151;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2764,32 +2764,32 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "3231:26:113";
+                                    readonly src: "3231:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13022;
+                                readonly id: 13152;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "3224:33:113";
+                                readonly src: "3224:33:117";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 13027;
+                            readonly id: 13157;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 13025;
+                                readonly id: 13155;
                                 readonly name: "_feeCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18221;
-                                readonly src: "3338:13:113";
+                                readonly referencedDeclaration: 18351;
+                                readonly src: "3338:13:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -2798,35 +2798,35 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 13026;
+                                readonly id: 13156;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13011;
-                                readonly src: "3354:4:113";
+                                readonly referencedDeclaration: 13141;
+                                readonly src: "3354:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "3338:20:113";
+                            readonly src: "3338:20:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 13028;
+                        readonly id: 13158;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "3338:20:113";
+                        readonly src: "3338:20:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13030;
+                                readonly id: 13160;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13011;
-                                readonly src: "3393:4:113";
+                                readonly referencedDeclaration: 13141;
+                                readonly src: "3393:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -2837,18 +2837,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 13029;
+                                readonly id: 13159;
                                 readonly name: "FeeCollectorUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11569;
-                                readonly src: "3373:19:113";
+                                readonly referencedDeclaration: 11636;
+                                readonly src: "3373:19:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$returns$__$";
                                     readonly typeString: "function (address)";
                                 };
                             };
-                            readonly id: 13031;
+                            readonly id: 13161;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2857,41 +2857,41 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3373:25:113";
+                            readonly src: "3373:25:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13032;
+                        readonly id: 13162;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "3368:30:113";
+                        readonly src: "3368:30:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 13009;
+                    readonly id: 13139;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "2961:105:113";
+                    readonly src: "2961:105:117";
                     readonly text: "@dev Allows governance to transfer the fee collector role.\n @param _who The new fee collector.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_setFeeCollector";
-                readonly nameLocation: "3080:16:113";
+                readonly nameLocation: "3080:16:117";
                 readonly parameters: {
-                    readonly id: 13012;
+                    readonly id: 13142;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 13011;
+                        readonly id: 13141;
                         readonly mutability: "mutable";
                         readonly name: "_who";
-                        readonly nameLocation: "3105:4:113";
+                        readonly nameLocation: "3105:4:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13034;
-                        readonly src: "3097:12:113";
+                        readonly scope: 13164;
+                        readonly src: "3097:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2899,10 +2899,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 13010;
+                            readonly id: 13140;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3097:7:113";
+                            readonly src: "3097:7:117";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2911,27 +2911,27 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3096:14:113";
+                    readonly src: "3096:14:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 13013;
+                    readonly id: 13143;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "3120:0:113";
+                    readonly src: "3120:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13060;
+                readonly id: 13190;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3523:345:113";
+                readonly src: "3523:345:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13059;
+                    readonly id: 13189;
                     readonly nodeType: "Block";
-                    readonly src: "3574:294:113";
+                    readonly src: "3574:294:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -2939,33 +2939,33 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 13043;
+                            readonly id: 13173;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 13040;
+                                    readonly id: 13170;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "3637:3:113";
+                                    readonly src: "3637:3:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 13041;
+                                readonly id: 13171;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3641:6:113";
+                                readonly memberLocation: "3641:6:117";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "3637:10:113";
+                                readonly src: "3637:10:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -2974,63 +2974,63 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 13042;
+                                readonly id: 13172;
                                 readonly name: "_governance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18227;
-                                readonly src: "3651:11:113";
+                                readonly referencedDeclaration: 18357;
+                                readonly src: "3651:11:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "3637:25:113";
+                            readonly src: "3637:25:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13050;
+                        readonly id: 13180;
                         readonly nodeType: "IfStatement";
-                        readonly src: "3633:89:113";
+                        readonly src: "3633:89:117";
                         readonly trueBody: {
-                            readonly id: 13049;
+                            readonly id: 13179;
                             readonly nodeType: "Block";
-                            readonly src: "3664:58:113";
+                            readonly src: "3664:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13044;
+                                            readonly id: 13174;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "3685:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "3685:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13046;
+                                        readonly id: 13176;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "3697:12:113";
+                                        readonly memberLocation: "3697:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "3685:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "3685:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13047;
+                                    readonly id: 13177;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3039,32 +3039,32 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "3685:26:113";
+                                    readonly src: "3685:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13048;
+                                readonly id: 13178;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "3678:33:113";
+                                readonly src: "3678:33:117";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 13053;
+                            readonly id: 13183;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 13051;
+                                readonly id: 13181;
                                 readonly name: "_sweepCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18224;
-                                readonly src: "3797:15:113";
+                                readonly referencedDeclaration: 18354;
+                                readonly src: "3797:15:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3073,35 +3073,35 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 13052;
+                                readonly id: 13182;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13037;
-                                readonly src: "3815:4:113";
+                                readonly referencedDeclaration: 13167;
+                                readonly src: "3815:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "3797:22:113";
+                            readonly src: "3797:22:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 13054;
+                        readonly id: 13184;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "3797:22:113";
+                        readonly src: "3797:22:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13056;
+                                readonly id: 13186;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13037;
-                                readonly src: "3856:4:113";
+                                readonly referencedDeclaration: 13167;
+                                readonly src: "3856:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3112,18 +3112,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 13055;
+                                readonly id: 13185;
                                 readonly name: "SweepCollectorUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11574;
-                                readonly src: "3834:21:113";
+                                readonly referencedDeclaration: 11641;
+                                readonly src: "3834:21:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$returns$__$";
                                     readonly typeString: "function (address)";
                                 };
                             };
-                            readonly id: 13057;
+                            readonly id: 13187;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3132,41 +3132,41 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3834:27:113";
+                            readonly src: "3834:27:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13058;
+                        readonly id: 13188;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "3829:32:113";
+                        readonly src: "3829:32:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 13035;
+                    readonly id: 13165;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3411:107:113";
+                    readonly src: "3411:107:117";
                     readonly text: "@dev Allows governance to transfer the sweep collector role.\n @param _who The new fee collector.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_setSweepCollector";
-                readonly nameLocation: "3532:18:113";
+                readonly nameLocation: "3532:18:117";
                 readonly parameters: {
-                    readonly id: 13038;
+                    readonly id: 13168;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 13037;
+                        readonly id: 13167;
                         readonly mutability: "mutable";
                         readonly name: "_who";
-                        readonly nameLocation: "3559:4:113";
+                        readonly nameLocation: "3559:4:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13060;
-                        readonly src: "3551:12:113";
+                        readonly scope: 13190;
+                        readonly src: "3551:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3174,10 +3174,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 13036;
+                            readonly id: 13166;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3551:7:113";
+                            readonly src: "3551:7:117";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -3186,27 +3186,27 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3550:14:113";
+                    readonly src: "3550:14:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 13039;
+                    readonly id: 13169;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "3574:0:113";
+                    readonly src: "3574:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13086;
+                readonly id: 13216;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3986:328:113";
+                readonly src: "3986:328:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13085;
+                    readonly id: 13215;
                     readonly nodeType: "Block";
-                    readonly src: "4033:281:113";
+                    readonly src: "4033:281:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -3214,33 +3214,33 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 13069;
+                            readonly id: 13199;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 13066;
+                                    readonly id: 13196;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "4096:3:113";
+                                    readonly src: "4096:3:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 13067;
+                                readonly id: 13197;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "4100:6:113";
+                                readonly memberLocation: "4100:6:117";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "4096:10:113";
+                                readonly src: "4096:10:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3249,63 +3249,63 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 13068;
+                                readonly id: 13198;
                                 readonly name: "_governance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18227;
-                                readonly src: "4110:11:113";
+                                readonly referencedDeclaration: 18357;
+                                readonly src: "4110:11:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "4096:25:113";
+                            readonly src: "4096:25:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13076;
+                        readonly id: 13206;
                         readonly nodeType: "IfStatement";
-                        readonly src: "4092:89:113";
+                        readonly src: "4092:89:117";
                         readonly trueBody: {
-                            readonly id: 13075;
+                            readonly id: 13205;
                             readonly nodeType: "Block";
-                            readonly src: "4123:58:113";
+                            readonly src: "4123:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13070;
+                                            readonly id: 13200;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "4144:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "4144:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13072;
+                                        readonly id: 13202;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "4156:12:113";
+                                        readonly memberLocation: "4156:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "4144:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "4144:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13073;
+                                    readonly id: 13203;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3314,32 +3314,32 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "4144:26:113";
+                                    readonly src: "4144:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13074;
+                                readonly id: 13204;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "4137:33:113";
+                                readonly src: "4137:33:117";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 13079;
+                            readonly id: 13209;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 13077;
+                                readonly id: 13207;
                                 readonly name: "_governance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18227;
-                                readonly src: "4251:11:113";
+                                readonly referencedDeclaration: 18357;
+                                readonly src: "4251:11:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3348,35 +3348,35 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 13078;
+                                readonly id: 13208;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13063;
-                                readonly src: "4265:4:113";
+                                readonly referencedDeclaration: 13193;
+                                readonly src: "4265:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "4251:18:113";
+                            readonly src: "4251:18:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 13080;
+                        readonly id: 13210;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "4251:18:113";
+                        readonly src: "4251:18:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13082;
+                                readonly id: 13212;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13063;
-                                readonly src: "4302:4:113";
+                                readonly referencedDeclaration: 13193;
+                                readonly src: "4302:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3387,18 +3387,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 13081;
+                                readonly id: 13211;
                                 readonly name: "GovernanceUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11579;
-                                readonly src: "4284:17:113";
+                                readonly referencedDeclaration: 11646;
+                                readonly src: "4284:17:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$returns$__$";
                                     readonly typeString: "function (address)";
                                 };
                             };
-                            readonly id: 13083;
+                            readonly id: 13213;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3407,41 +3407,41 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "4284:23:113";
+                            readonly src: "4284:23:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13084;
+                        readonly id: 13214;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "4279:28:113";
+                        readonly src: "4279:28:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 13061;
+                    readonly id: 13191;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3874:107:113";
+                    readonly src: "3874:107:117";
                     readonly text: "@dev Allows governance to transfer the governance role.\n @param _who The new governance address.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_setGovernance";
-                readonly nameLocation: "3995:14:113";
+                readonly nameLocation: "3995:14:117";
                 readonly parameters: {
-                    readonly id: 13064;
+                    readonly id: 13194;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 13063;
+                        readonly id: 13193;
                         readonly mutability: "mutable";
                         readonly name: "_who";
-                        readonly nameLocation: "4018:4:113";
+                        readonly nameLocation: "4018:4:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13086;
-                        readonly src: "4010:12:113";
+                        readonly scope: 13216;
+                        readonly src: "4010:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3449,10 +3449,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 13062;
+                            readonly id: 13192;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4010:7:113";
+                            readonly src: "4010:7:117";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -3461,27 +3461,27 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "4009:14:113";
+                    readonly src: "4009:14:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 13065;
+                    readonly id: 13195;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "4033:0:113";
+                    readonly src: "4033:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13117;
+                readonly id: 13247;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "4483:344:113";
+                readonly src: "4483:344:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13116;
+                    readonly id: 13246;
                     readonly nodeType: "Block";
-                    readonly src: "4540:287:113";
+                    readonly src: "4540:287:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -3489,33 +3489,33 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 13097;
+                            readonly id: 13227;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 13094;
+                                    readonly id: 13224;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "4603:3:113";
+                                    readonly src: "4603:3:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 13095;
+                                readonly id: 13225;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "4607:6:113";
+                                readonly memberLocation: "4607:6:117";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "4603:10:113";
+                                readonly src: "4603:10:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3524,63 +3524,63 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 13096;
+                                readonly id: 13226;
                                 readonly name: "_governance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18227;
-                                readonly src: "4617:11:113";
+                                readonly referencedDeclaration: 18357;
+                                readonly src: "4617:11:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "4603:25:113";
+                            readonly src: "4603:25:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13104;
+                        readonly id: 13234;
                         readonly nodeType: "IfStatement";
-                        readonly src: "4599:89:113";
+                        readonly src: "4599:89:117";
                         readonly trueBody: {
-                            readonly id: 13103;
+                            readonly id: 13233;
                             readonly nodeType: "Block";
-                            readonly src: "4630:58:113";
+                            readonly src: "4630:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13098;
+                                            readonly id: 13228;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "4651:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "4651:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13100;
+                                        readonly id: 13230;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "4663:12:113";
+                                        readonly memberLocation: "4663:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "4651:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "4651:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13101;
+                                    readonly id: 13231;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3589,46 +3589,46 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "4651:26:113";
+                                    readonly src: "4651:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13102;
+                                readonly id: 13232;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "4644:33:113";
+                                readonly src: "4644:33:117";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 13109;
+                            readonly id: 13239;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 13105;
+                                    readonly id: 13235;
                                     readonly name: "_pausers";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18235;
-                                    readonly src: "4753:8:113";
+                                    readonly referencedDeclaration: 18365;
+                                    readonly src: "4753:8:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_bool_$";
                                         readonly typeString: "mapping(address => bool)";
                                     };
                                 };
-                                readonly id: 13107;
+                                readonly id: 13237;
                                 readonly indexExpression: {
-                                    readonly id: 13106;
+                                    readonly id: 13236;
                                     readonly name: "_who";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13089;
-                                    readonly src: "4762:4:113";
+                                    readonly referencedDeclaration: 13219;
+                                    readonly src: "4762:4:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
@@ -3639,7 +3639,7 @@ export declare const HyperdriveAdmin: {
                                 readonly isPure: false;
                                 readonly lValueRequested: true;
                                 readonly nodeType: "IndexAccess";
-                                readonly src: "4753:14:113";
+                                readonly src: "4753:14:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3648,46 +3648,46 @@ export declare const HyperdriveAdmin: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 13108;
+                                readonly id: 13238;
                                 readonly name: "_status";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13091;
-                                readonly src: "4770:7:113";
+                                readonly referencedDeclaration: 13221;
+                                readonly src: "4770:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "4753:24:113";
+                            readonly src: "4753:24:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13110;
+                        readonly id: 13240;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "4753:24:113";
+                        readonly src: "4753:24:117";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13112;
+                                readonly id: 13242;
                                 readonly name: "_who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13089;
-                                readonly src: "4806:4:113";
+                                readonly referencedDeclaration: 13219;
+                                readonly src: "4806:4:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 13113;
+                                readonly id: 13243;
                                 readonly name: "_status";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13091;
-                                readonly src: "4812:7:113";
+                                readonly referencedDeclaration: 13221;
+                                readonly src: "4812:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3701,18 +3701,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 13111;
+                                readonly id: 13241;
                                 readonly name: "PauserUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11586;
-                                readonly src: "4792:13:113";
+                                readonly referencedDeclaration: 11653;
+                                readonly src: "4792:13:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_bool_$returns$__$";
                                     readonly typeString: "function (address,bool)";
                                 };
                             };
-                            readonly id: 13114;
+                            readonly id: 13244;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3721,41 +3721,41 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "4792:28:113";
+                            readonly src: "4792:28:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13115;
+                        readonly id: 13245;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "4787:33:113";
+                        readonly src: "4787:33:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 13087;
+                    readonly id: 13217;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "4320:158:113";
+                    readonly src: "4320:158:117";
                     readonly text: "@dev Allows governance to change the pauser status of an address.\n @param _who The address to change.\n @param _status The new pauser status.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_setPauser";
-                readonly nameLocation: "4492:10:113";
+                readonly nameLocation: "4492:10:117";
                 readonly parameters: {
-                    readonly id: 13092;
+                    readonly id: 13222;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 13089;
+                        readonly id: 13219;
                         readonly mutability: "mutable";
                         readonly name: "_who";
-                        readonly nameLocation: "4511:4:113";
+                        readonly nameLocation: "4511:4:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13117;
-                        readonly src: "4503:12:113";
+                        readonly scope: 13247;
+                        readonly src: "4503:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3763,10 +3763,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 13088;
+                            readonly id: 13218;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4503:7:113";
+                            readonly src: "4503:7:117";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -3776,13 +3776,13 @@ export declare const HyperdriveAdmin: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 13091;
+                        readonly id: 13221;
                         readonly mutability: "mutable";
                         readonly name: "_status";
-                        readonly nameLocation: "4522:7:113";
+                        readonly nameLocation: "4522:7:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13117;
-                        readonly src: "4517:12:113";
+                        readonly scope: 13247;
+                        readonly src: "4517:12:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3790,10 +3790,10 @@ export declare const HyperdriveAdmin: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 13090;
+                            readonly id: 13220;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4517:4:113";
+                            readonly src: "4517:4:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -3801,27 +3801,27 @@ export declare const HyperdriveAdmin: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "4502:28:113";
+                    readonly src: "4502:28:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 13093;
+                    readonly id: 13223;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "4540:0:113";
+                    readonly src: "4540:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 13204;
+                readonly id: 13334;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "5227:1006:113";
+                readonly src: "5227:1006:117";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 13203;
+                    readonly id: 13333;
                     readonly nodeType: "Block";
-                    readonly src: "5281:952:113";
+                    readonly src: "5281:952:117";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -3829,7 +3829,7 @@ export declare const HyperdriveAdmin: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 13140;
+                            readonly id: 13270;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3839,13 +3839,13 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
-                                readonly id: 13135;
+                                readonly id: 13265;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 13130;
+                                    readonly id: 13260;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3853,43 +3853,43 @@ export declare const HyperdriveAdmin: {
                                     readonly nodeType: "UnaryOperation";
                                     readonly operator: "!";
                                     readonly prefix: true;
-                                    readonly src: "5373:21:113";
+                                    readonly src: "5373:21:117";
                                     readonly subExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 13126;
+                                            readonly id: 13256;
                                             readonly name: "_pausers";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18235;
-                                            readonly src: "5374:8:113";
+                                            readonly referencedDeclaration: 18365;
+                                            readonly src: "5374:8:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_bool_$";
                                                 readonly typeString: "mapping(address => bool)";
                                             };
                                         };
-                                        readonly id: 13129;
+                                        readonly id: 13259;
                                         readonly indexExpression: {
                                             readonly expression: {
-                                                readonly id: 13127;
+                                                readonly id: 13257;
                                                 readonly name: "msg";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
                                                 readonly referencedDeclaration: -15;
-                                                readonly src: "5383:3:113";
+                                                readonly src: "5383:3:117";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_message";
                                                     readonly typeString: "msg";
                                                 };
                                             };
-                                            readonly id: 13128;
+                                            readonly id: 13258;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "5387:6:113";
+                                            readonly memberLocation: "5387:6:117";
                                             readonly memberName: "sender";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "5383:10:113";
+                                            readonly src: "5383:10:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
@@ -3900,7 +3900,7 @@ export declare const HyperdriveAdmin: {
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly nodeType: "IndexAccess";
-                                        readonly src: "5374:20:113";
+                                        readonly src: "5374:20:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
@@ -3918,33 +3918,33 @@ export declare const HyperdriveAdmin: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
-                                    readonly id: 13134;
+                                    readonly id: 13264;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly expression: {
-                                            readonly id: 13131;
+                                            readonly id: 13261;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -15;
-                                            readonly src: "5410:3:113";
+                                            readonly src: "5410:3:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_magic_message";
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 13132;
+                                        readonly id: 13262;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "5414:6:113";
+                                        readonly memberLocation: "5414:6:117";
                                         readonly memberName: "sender";
                                         readonly nodeType: "MemberAccess";
-                                        readonly src: "5410:10:113";
+                                        readonly src: "5410:10:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
@@ -3953,24 +3953,24 @@ export declare const HyperdriveAdmin: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "!=";
                                     readonly rightExpression: {
-                                        readonly id: 13133;
+                                        readonly id: 13263;
                                         readonly name: "_sweepCollector";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18224;
-                                        readonly src: "5424:15:113";
+                                        readonly referencedDeclaration: 18354;
+                                        readonly src: "5424:15:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly src: "5410:29:113";
+                                    readonly src: "5410:29:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly src: "5373:66:113";
+                                readonly src: "5373:66:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3983,33 +3983,33 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
-                                readonly id: 13139;
+                                readonly id: 13269;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 13136;
+                                        readonly id: 13266;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -15;
-                                        readonly src: "5455:3:113";
+                                        readonly src: "5455:3:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_magic_message";
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 13137;
+                                    readonly id: 13267;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "5459:6:113";
+                                    readonly memberLocation: "5459:6:117";
                                     readonly memberName: "sender";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "5455:10:113";
+                                    readonly src: "5455:10:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
@@ -4018,69 +4018,69 @@ export declare const HyperdriveAdmin: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "!=";
                                 readonly rightExpression: {
-                                    readonly id: 13138;
+                                    readonly id: 13268;
                                     readonly name: "_governance";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18227;
-                                    readonly src: "5469:11:113";
+                                    readonly referencedDeclaration: 18357;
+                                    readonly src: "5469:11:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly src: "5455:25:113";
+                                readonly src: "5455:25:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "5373:107:113";
+                            readonly src: "5373:107:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13147;
+                        readonly id: 13277;
                         readonly nodeType: "IfStatement";
-                        readonly src: "5356:193:113";
+                        readonly src: "5356:193:117";
                         readonly trueBody: {
-                            readonly id: 13146;
+                            readonly id: 13276;
                             readonly nodeType: "Block";
-                            readonly src: "5491:58:113";
+                            readonly src: "5491:58:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13141;
+                                            readonly id: 13271;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "5512:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "5512:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13143;
+                                        readonly id: 13273;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "5524:12:113";
+                                        readonly memberLocation: "5524:12:117";
                                         readonly memberName: "Unauthorized";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11024;
-                                        readonly src: "5512:24:113";
+                                        readonly referencedDeclaration: 11091;
+                                        readonly src: "5512:24:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13144;
+                                    readonly id: 13274;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4089,29 +4089,29 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "5512:26:113";
+                                    readonly src: "5512:26:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13145;
+                                readonly id: 13275;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "5505:33:113";
+                                readonly src: "5505:33:117";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [13149];
+                        readonly assignments: readonly [13279];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 13149;
+                            readonly id: 13279;
                             readonly mutability: "mutable";
                             readonly name: "baseBalance";
-                            readonly nameLocation: "5663:11:113";
+                            readonly nameLocation: "5663:11:117";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 13203;
-                            readonly src: "5655:19:113";
+                            readonly scope: 13333;
+                            readonly src: "5655:19:117";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -4119,10 +4119,10 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 13148;
+                                readonly id: 13278;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "5655:7:113";
+                                readonly src: "5655:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4130,23 +4130,23 @@ export declare const HyperdriveAdmin: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 13152;
+                        readonly id: 13282;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 13150;
+                                readonly id: 13280;
                                 readonly name: "_totalBase";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13490;
-                                readonly src: "5677:10:113";
+                                readonly referencedDeclaration: 13620;
+                                readonly src: "5677:10:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                     readonly typeString: "function () view returns (uint256)";
                                 };
                             };
-                            readonly id: 13151;
+                            readonly id: 13281;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4155,7 +4155,7 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5677:12:113";
+                            readonly src: "5677:12:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -4163,18 +4163,18 @@ export declare const HyperdriveAdmin: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "5655:34:113";
+                        readonly src: "5655:34:117";
                     }, {
-                        readonly assignments: readonly [13154];
+                        readonly assignments: readonly [13284];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 13154;
+                            readonly id: 13284;
                             readonly mutability: "mutable";
                             readonly name: "shareBalance";
-                            readonly nameLocation: "5707:12:113";
+                            readonly nameLocation: "5707:12:117";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 13203;
-                            readonly src: "5699:20:113";
+                            readonly scope: 13333;
+                            readonly src: "5699:20:117";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -4182,10 +4182,10 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 13153;
+                                readonly id: 13283;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "5699:7:113";
+                                readonly src: "5699:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4193,23 +4193,23 @@ export declare const HyperdriveAdmin: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 13157;
+                        readonly id: 13287;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 13155;
+                                readonly id: 13285;
                                 readonly name: "_totalShares";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13496;
-                                readonly src: "5722:12:113";
+                                readonly referencedDeclaration: 13626;
+                                readonly src: "5722:12:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                     readonly typeString: "function () view returns (uint256)";
                                 };
                             };
-                            readonly id: 13156;
+                            readonly id: 13286;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4218,7 +4218,7 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5722:14:113";
+                            readonly src: "5722:14:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -4226,18 +4226,18 @@ export declare const HyperdriveAdmin: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "5699:37:113";
+                        readonly src: "5699:37:117";
                     }, {
-                        readonly assignments: readonly [13159];
+                        readonly assignments: readonly [13289];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 13159;
+                            readonly id: 13289;
                             readonly mutability: "mutable";
                             readonly name: "balance";
-                            readonly nameLocation: "5849:7:113";
+                            readonly nameLocation: "5849:7:117";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 13203;
-                            readonly src: "5841:15:113";
+                            readonly scope: 13333;
+                            readonly src: "5841:15:117";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -4245,10 +4245,10 @@ export declare const HyperdriveAdmin: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 13158;
+                                readonly id: 13288;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "5841:7:113";
+                                readonly src: "5841:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4256,46 +4256,46 @@ export declare const HyperdriveAdmin: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 13167;
+                        readonly id: 13297;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 13164;
+                                    readonly id: 13294;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
-                                    readonly src: "5885:4:113";
+                                    readonly src: "5885:4:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_HyperdriveAdmin_$13205";
+                                        readonly typeIdentifier: "t_contract$_HyperdriveAdmin_$13335";
                                         readonly typeString: "contract HyperdriveAdmin";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_HyperdriveAdmin_$13205";
+                                        readonly typeIdentifier: "t_contract$_HyperdriveAdmin_$13335";
                                         readonly typeString: "contract HyperdriveAdmin";
                                     }];
-                                    readonly id: 13163;
+                                    readonly id: 13293;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "5877:7:113";
+                                    readonly src: "5877:7:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_address_$";
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 13162;
+                                        readonly id: 13292;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "5877:7:113";
+                                        readonly src: "5877:7:117";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 13165;
+                                readonly id: 13295;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4304,7 +4304,7 @@ export declare const HyperdriveAdmin: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "5877:13:113";
+                                readonly src: "5877:13:117";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -4317,33 +4317,33 @@ export declare const HyperdriveAdmin: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 13160;
+                                    readonly id: 13290;
                                     readonly name: "_target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13121;
-                                    readonly src: "5859:7:113";
+                                    readonly referencedDeclaration: 13251;
+                                    readonly src: "5859:7:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
-                                readonly id: 13161;
+                                readonly id: 13291;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5867:9:113";
+                                readonly memberLocation: "5867:9:117";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10357;
-                                readonly src: "5859:17:113";
+                                readonly referencedDeclaration: 10416;
+                                readonly src: "5859:17:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 13166;
+                            readonly id: 13296;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4352,7 +4352,7 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5859:32:113";
+                            readonly src: "5859:32:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -4360,27 +4360,27 @@ export declare const HyperdriveAdmin: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "5841:50:113";
+                        readonly src: "5841:50:117";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 13175;
+                                readonly id: 13305;
                                 readonly name: "_sweepCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18224;
-                                readonly src: "5938:15:113";
+                                readonly referencedDeclaration: 18354;
+                                readonly src: "5938:15:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 13176;
+                                readonly id: 13306;
                                 readonly name: "balance";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13159;
-                                readonly src: "5955:7:113";
+                                readonly referencedDeclaration: 13289;
+                                readonly src: "5955:7:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4397,42 +4397,42 @@ export declare const HyperdriveAdmin: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 13171;
+                                            readonly id: 13301;
                                             readonly name: "_target";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 13121;
-                                            readonly src: "5915:7:113";
+                                            readonly referencedDeclaration: 13251;
+                                            readonly src: "5915:7:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 13170;
+                                            readonly id: 13300;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "5907:7:113";
+                                            readonly src: "5907:7:117";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 13169;
+                                                readonly id: 13299;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "5907:7:113";
+                                                readonly src: "5907:7:117";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 13172;
+                                        readonly id: 13302;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4441,7 +4441,7 @@ export declare const HyperdriveAdmin: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "5907:16:113";
+                                        readonly src: "5907:16:117";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -4453,18 +4453,18 @@ export declare const HyperdriveAdmin: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 13168;
+                                        readonly id: 13298;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71261;
-                                        readonly src: "5901:5:113";
+                                        readonly referencedDeclaration: 71391;
+                                        readonly src: "5901:5:117";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71261_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71391_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 13173;
+                                    readonly id: 13303;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4473,29 +4473,29 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "5901:23:113";
+                                    readonly src: "5901:23:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71391";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 13174;
+                                readonly id: 13304;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5925:12:113";
+                                readonly memberLocation: "5925:12:117";
                                 readonly memberName: "safeTransfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71451;
-                                readonly src: "5901:36:113";
+                                readonly referencedDeclaration: 71581;
+                                readonly src: "5901:36:117";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71339_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71339_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71469_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71469_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
-                            readonly id: 13177;
+                            readonly id: 13307;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4504,23 +4504,23 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5901:62:113";
+                            readonly src: "5901:62:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13178;
+                        readonly id: 13308;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "5901:62:113";
+                        readonly src: "5901:62:117";
                     }, {
                         readonly condition: {
                             readonly commonType: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 13187;
+                            readonly id: 13317;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4530,7 +4530,7 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 13182;
+                                readonly id: 13312;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4539,18 +4539,18 @@ export declare const HyperdriveAdmin: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
-                                        readonly id: 13179;
+                                        readonly id: 13309;
                                         readonly name: "_totalBase";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 13490;
-                                        readonly src: "6051:10:113";
+                                        readonly referencedDeclaration: 13620;
+                                        readonly src: "6051:10:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                             readonly typeString: "function () view returns (uint256)";
                                         };
                                     };
-                                    readonly id: 13180;
+                                    readonly id: 13310;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4559,7 +4559,7 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "6051:12:113";
+                                    readonly src: "6051:12:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4569,18 +4569,18 @@ export declare const HyperdriveAdmin: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "!=";
                                 readonly rightExpression: {
-                                    readonly id: 13181;
+                                    readonly id: 13311;
                                     readonly name: "baseBalance";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13149;
-                                    readonly src: "6067:11:113";
+                                    readonly referencedDeclaration: 13279;
+                                    readonly src: "6067:11:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly src: "6051:27:113";
+                                readonly src: "6051:27:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -4593,7 +4593,7 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 13186;
+                                readonly id: 13316;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4602,18 +4602,18 @@ export declare const HyperdriveAdmin: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
-                                        readonly id: 13183;
+                                        readonly id: 13313;
                                         readonly name: "_totalShares";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 13496;
-                                        readonly src: "6082:12:113";
+                                        readonly referencedDeclaration: 13626;
+                                        readonly src: "6082:12:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                             readonly typeString: "function () view returns (uint256)";
                                         };
                                     };
-                                    readonly id: 13184;
+                                    readonly id: 13314;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4622,7 +4622,7 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "6082:14:113";
+                                    readonly src: "6082:14:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4632,69 +4632,69 @@ export declare const HyperdriveAdmin: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "!=";
                                 readonly rightExpression: {
-                                    readonly id: 13185;
+                                    readonly id: 13315;
                                     readonly name: "shareBalance";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13154;
-                                    readonly src: "6100:12:113";
+                                    readonly referencedDeclaration: 13284;
+                                    readonly src: "6100:12:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly src: "6082:30:113";
+                                readonly src: "6082:30:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "6051:61:113";
+                            readonly src: "6051:61:117";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 13194;
+                        readonly id: 13324;
                         readonly nodeType: "IfStatement";
-                        readonly src: "6047:124:113";
+                        readonly src: "6047:124:117";
                         readonly trueBody: {
-                            readonly id: 13193;
+                            readonly id: 13323;
                             readonly nodeType: "Block";
-                            readonly src: "6114:57:113";
+                            readonly src: "6114:57:117";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 13188;
+                                            readonly id: 13318;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "6135:11:113";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "6135:11:117";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 13190;
+                                        readonly id: 13320;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "6147:11:113";
+                                        readonly memberLocation: "6147:11:117";
                                         readonly memberName: "SweepFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11015;
-                                        readonly src: "6135:23:113";
+                                        readonly referencedDeclaration: 11082;
+                                        readonly src: "6135:23:117";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 13191;
+                                    readonly id: 13321;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4703,69 +4703,69 @@ export declare const HyperdriveAdmin: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "6135:25:113";
+                                    readonly src: "6135:25:117";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 13192;
+                                readonly id: 13322;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "6128:32:113";
+                                readonly src: "6128:32:117";
                             }];
                         };
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 13196;
+                                readonly id: 13326;
                                 readonly name: "_sweepCollector";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18224;
-                                readonly src: "6192:15:113";
+                                readonly referencedDeclaration: 18354;
+                                readonly src: "6192:15:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 13199;
+                                    readonly id: 13329;
                                     readonly name: "_target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 13121;
-                                    readonly src: "6217:7:113";
+                                    readonly referencedDeclaration: 13251;
+                                    readonly src: "6217:7:117";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                         readonly typeString: "contract IERC20";
                                     }];
-                                    readonly id: 13198;
+                                    readonly id: 13328;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "6209:7:113";
+                                    readonly src: "6209:7:117";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_address_$";
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 13197;
+                                        readonly id: 13327;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "6209:7:113";
+                                        readonly src: "6209:7:117";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 13200;
+                                readonly id: 13330;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4774,7 +4774,7 @@ export declare const HyperdriveAdmin: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "6209:16:113";
+                                readonly src: "6209:16:117";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -4789,18 +4789,18 @@ export declare const HyperdriveAdmin: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 13195;
+                                readonly id: 13325;
                                 readonly name: "Sweep";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11598;
-                                readonly src: "6186:5:113";
+                                readonly referencedDeclaration: 11665;
+                                readonly src: "6186:5:117";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$";
                                     readonly typeString: "function (address,address)";
                                 };
                             };
-                            readonly id: 13201;
+                            readonly id: 13331;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4809,89 +4809,89 @@ export declare const HyperdriveAdmin: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "6186:40:113";
+                            readonly src: "6186:40:117";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 13202;
+                        readonly id: 13332;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "6181:45:113";
+                        readonly src: "6181:45:117";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 13118;
+                    readonly id: 13248;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "4833:389:113";
+                    readonly src: "4833:389:117";
                     readonly text: "@dev Transfers the contract's balance of a target token to the sweep\n      collector address.\n @dev WARN: It is unlikely but possible that there is a selector overlap\n      with 'transfer'. Any integrating contracts should be checked\n      for that, as it may result in an unexpected call from this address.\n @param _target The target token to sweep.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 13124;
+                    readonly id: 13254;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 13123;
+                        readonly id: 13253;
                         readonly name: "nonReentrant";
-                        readonly nameLocations: readonly ["5268:12:113"];
+                        readonly nameLocations: readonly ["5268:12:117"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72007;
-                        readonly src: "5268:12:113";
+                        readonly referencedDeclaration: 72137;
+                        readonly src: "5268:12:117";
                     };
                     readonly nodeType: "ModifierInvocation";
-                    readonly src: "5268:12:113";
+                    readonly src: "5268:12:117";
                 }];
                 readonly name: "_sweep";
-                readonly nameLocation: "5236:6:113";
+                readonly nameLocation: "5236:6:117";
                 readonly parameters: {
-                    readonly id: 13122;
+                    readonly id: 13252;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 13121;
+                        readonly id: 13251;
                         readonly mutability: "mutable";
                         readonly name: "_target";
-                        readonly nameLocation: "5250:7:113";
+                        readonly nameLocation: "5250:7:117";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 13204;
-                        readonly src: "5243:14:113";
+                        readonly scope: 13334;
+                        readonly src: "5243:14:117";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                            readonly typeIdentifier: "t_contract$_IERC20_$10417";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
-                            readonly id: 13120;
+                            readonly id: 13250;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 13119;
+                                readonly id: 13249;
                                 readonly name: "IERC20";
-                                readonly nameLocations: readonly ["5243:6:113"];
+                                readonly nameLocations: readonly ["5243:6:117"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10358;
-                                readonly src: "5243:6:113";
+                                readonly referencedDeclaration: 10417;
+                                readonly src: "5243:6:117";
                             };
-                            readonly referencedDeclaration: 10358;
-                            readonly src: "5243:6:113";
+                            readonly referencedDeclaration: 10417;
+                            readonly src: "5243:6:117";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                 readonly typeString: "contract IERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "5242:16:113";
+                    readonly src: "5242:16:117";
                 };
                 readonly returnParameters: {
-                    readonly id: 13125;
+                    readonly id: 13255;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "5281:0:113";
+                    readonly src: "5281:0:117";
                 };
-                readonly scope: 13205;
+                readonly scope: 13335;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -4899,48 +4899,48 @@ export declare const HyperdriveAdmin: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 12894;
+                    readonly id: 13024;
                     readonly name: "IHyperdriveEvents";
-                    readonly nameLocations: readonly ["898:17:113"];
+                    readonly nameLocations: readonly ["898:17:117"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11599;
-                    readonly src: "898:17:113";
+                    readonly referencedDeclaration: 11666;
+                    readonly src: "898:17:117";
                 };
-                readonly id: 12895;
+                readonly id: 13025;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "898:17:113";
+                readonly src: "898:17:117";
             }, {
                 readonly baseName: {
-                    readonly id: 12896;
+                    readonly id: 13026;
                     readonly name: "HyperdriveBase";
-                    readonly nameLocations: readonly ["917:14:113"];
+                    readonly nameLocations: readonly ["917:14:117"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14381;
-                    readonly src: "917:14:113";
+                    readonly referencedDeclaration: 14511;
+                    readonly src: "917:14:117";
                 };
-                readonly id: 12897;
+                readonly id: 13027;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "917:14:113";
+                readonly src: "917:14:117";
             }];
             readonly canonicalName: "HyperdriveAdmin";
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 12893;
+                readonly id: 13023;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "439:422:113";
+                readonly src: "439:422:117";
                 readonly text: "@author DELV\n @title HyperdriveAdmin\n @notice The Hyperdrive admin contract. This contract provides functions that\n         governance can use to pause the pool and update permissions.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [13205, 14381, 18367, 72043, 11599, 12165];
+            readonly linearizedBaseContracts: readonly [13335, 14511, 18497, 72173, 11666, 12232];
             readonly name: "HyperdriveAdmin";
-            readonly nameLocation: "879:15:113";
-            readonly scope: 13206;
-            readonly usedErrors: readonly [71988];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly nameLocation: "879:15:117";
+            readonly scope: 13336;
+            readonly usedErrors: readonly [72118];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 113;
+    readonly id: 117;
 };
 //# sourceMappingURL=HyperdriveAdmin.d.ts.map

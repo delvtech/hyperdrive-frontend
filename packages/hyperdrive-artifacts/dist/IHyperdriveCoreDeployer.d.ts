@@ -351,36 +351,36 @@ export declare const IHyperdriveCoreDeployer: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IHyperdriveCoreDeployer.sol";
-        readonly id: 11294;
+        readonly id: 11361;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11076];
-            readonly IHyperdriveCoreDeployer: readonly [11293];
+            readonly IHyperdrive: readonly [11143];
+            readonly IHyperdriveCoreDeployer: readonly [11360];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:978:89";
         readonly nodes: readonly [{
-            readonly id: 11267;
+            readonly id: 11334;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:89";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11269;
+            readonly id: 11336;
             readonly nodeType: "ImportDirective";
             readonly src: "64:48:89";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "./IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11294;
-            readonly sourceUnit: 11077;
+            readonly scope: 11361;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11268;
+                    readonly id: 11335;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "73:11:89";
                     readonly typeDescriptions: {};
                 };
@@ -388,16 +388,16 @@ export declare const IHyperdriveCoreDeployer: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11293;
+            readonly id: 11360;
             readonly nodeType: "ContractDefinition";
             readonly src: "114:902:89";
             readonly nodes: readonly [{
-                readonly id: 11292;
+                readonly id: 11359;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "732:282:89";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11270;
+                    readonly id: 11337;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "154:573:89";
                     readonly text: "@notice Deploys a Hyperdrive instance with the given parameters.\n @param _config The configuration of the Hyperdrive pool.\n @param _extraData The extra data containing implementation specific data.\n @param _target0 The target0 address.\n @param _target1 The target1 address.\n @param _target2 The target2 address.\n @param _target3 The target3 address.\n @param _target4 The target4 address.\n @param _salt The create2 salt used in the deployment.\n @return The address of the newly deployed Hyperdrive instance.";
@@ -409,50 +409,50 @@ export declare const IHyperdriveCoreDeployer: {
                 readonly name: "deploy";
                 readonly nameLocation: "741:6:89";
                 readonly parameters: {
-                    readonly id: 11288;
+                    readonly id: 11355;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11273;
+                        readonly id: 11340;
                         readonly mutability: "mutable";
                         readonly name: "_config";
                         readonly nameLocation: "787:7:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "757:37:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_PoolConfig_$10867_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_PoolConfig_$10934_memory_ptr";
                             readonly typeString: "struct IHyperdrive.PoolConfig";
                         };
                         readonly typeName: {
-                            readonly id: 11272;
+                            readonly id: 11339;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11271;
+                                readonly id: 11338;
                                 readonly name: "IHyperdrive.PoolConfig";
                                 readonly nameLocations: readonly ["757:11:89", "769:10:89"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10867;
+                                readonly referencedDeclaration: 10934;
                                 readonly src: "757:22:89";
                             };
-                            readonly referencedDeclaration: 10867;
+                            readonly referencedDeclaration: 10934;
                             readonly src: "757:22:89";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_PoolConfig_$10867_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_PoolConfig_$10934_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.PoolConfig";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11275;
+                        readonly id: 11342;
                         readonly mutability: "mutable";
                         readonly name: "_extraData";
                         readonly nameLocation: "817:10:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "804:23:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -461,7 +461,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 11274;
+                            readonly id: 11341;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "804:5:89";
@@ -473,12 +473,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11277;
+                        readonly id: 11344;
                         readonly mutability: "mutable";
                         readonly name: "_target0";
                         readonly nameLocation: "845:8:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "837:16:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -487,7 +487,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11276;
+                            readonly id: 11343;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "837:7:89";
@@ -500,12 +500,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11279;
+                        readonly id: 11346;
                         readonly mutability: "mutable";
                         readonly name: "_target1";
                         readonly nameLocation: "871:8:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "863:16:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -514,7 +514,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11278;
+                            readonly id: 11345;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "863:7:89";
@@ -527,12 +527,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11281;
+                        readonly id: 11348;
                         readonly mutability: "mutable";
                         readonly name: "_target2";
                         readonly nameLocation: "897:8:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "889:16:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -541,7 +541,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11280;
+                            readonly id: 11347;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "889:7:89";
@@ -554,12 +554,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11283;
+                        readonly id: 11350;
                         readonly mutability: "mutable";
                         readonly name: "_target3";
                         readonly nameLocation: "923:8:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "915:16:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -568,7 +568,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11282;
+                            readonly id: 11349;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "915:7:89";
@@ -581,12 +581,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11285;
+                        readonly id: 11352;
                         readonly mutability: "mutable";
                         readonly name: "_target4";
                         readonly nameLocation: "949:8:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "941:16:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -595,7 +595,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11284;
+                            readonly id: 11351;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "941:7:89";
@@ -608,12 +608,12 @@ export declare const IHyperdriveCoreDeployer: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11287;
+                        readonly id: 11354;
                         readonly mutability: "mutable";
                         readonly name: "_salt";
                         readonly nameLocation: "975:5:89";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "967:13:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -622,7 +622,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 11286;
+                            readonly id: 11353;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "967:7:89";
@@ -636,16 +636,16 @@ export declare const IHyperdriveCoreDeployer: {
                     readonly src: "747:239:89";
                 };
                 readonly returnParameters: {
-                    readonly id: 11291;
+                    readonly id: 11358;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11290;
+                        readonly id: 11357;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11292;
+                        readonly scope: 11359;
                         readonly src: "1005:7:89";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -654,7 +654,7 @@ export declare const IHyperdriveCoreDeployer: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11289;
+                            readonly id: 11356;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1005:7:89";
@@ -668,7 +668,7 @@ export declare const IHyperdriveCoreDeployer: {
                     }];
                     readonly src: "1004:9:89";
                 };
-                readonly scope: 11293;
+                readonly scope: 11360;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -679,10 +679,10 @@ export declare const IHyperdriveCoreDeployer: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11293];
+            readonly linearizedBaseContracts: readonly [11360];
             readonly name: "IHyperdriveCoreDeployer";
             readonly nameLocation: "124:23:89";
-            readonly scope: 11294;
+            readonly scope: 11361;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

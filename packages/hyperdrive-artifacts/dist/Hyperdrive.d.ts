@@ -2904,18 +2904,18 @@ export declare const Hyperdrive: {
         readonly id: 4610;
         readonly exportedSymbols: {
             readonly Hyperdrive: readonly [4609];
-            readonly HyperdriveAdmin: readonly [13205];
-            readonly HyperdriveBase: readonly [14381];
-            readonly HyperdriveCheckpoint: readonly [14845];
-            readonly HyperdriveLP: readonly [15747];
-            readonly HyperdriveLong: readonly [16681];
-            readonly HyperdriveShort: readonly [18151];
-            readonly HyperdriveStorage: readonly [18367];
+            readonly HyperdriveAdmin: readonly [13335];
+            readonly HyperdriveBase: readonly [14511];
+            readonly HyperdriveCheckpoint: readonly [14975];
+            readonly HyperdriveLP: readonly [15877];
+            readonly HyperdriveLong: readonly [16811];
+            readonly HyperdriveShort: readonly [18281];
+            readonly HyperdriveStorage: readonly [18497];
             readonly HyperdriveTarget0: readonly [5409];
-            readonly IERC20: readonly [10358];
-            readonly IHyperdrive: readonly [11076];
-            readonly IHyperdriveCore: readonly [11265];
-            readonly IMultiTokenCore: readonly [12131];
+            readonly IERC20: readonly [10417];
+            readonly IHyperdrive: readonly [11143];
+            readonly IHyperdriveCore: readonly [11332];
+            readonly IMultiTokenCore: readonly [12198];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:14646:36";
@@ -2934,14 +2934,14 @@ export declare const Hyperdrive: {
             readonly file: "../interfaces/IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 10359;
+            readonly sourceUnit: 10418;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 3996;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10358;
+                    readonly referencedDeclaration: 10417;
                     readonly src: "73:6:36";
                     readonly typeDescriptions: {};
                 };
@@ -2980,14 +2980,14 @@ export declare const Hyperdrive: {
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 11077;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4000;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
+                    readonly referencedDeclaration: 11143;
                     readonly src: "195:11:36";
                     readonly typeDescriptions: {};
                 };
@@ -3003,14 +3003,14 @@ export declare const Hyperdrive: {
             readonly file: "../interfaces/IHyperdriveCore.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 11266;
+            readonly sourceUnit: 11333;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4002;
                     readonly name: "IHyperdriveCore";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11265;
+                    readonly referencedDeclaration: 11332;
                     readonly src: "256:15:36";
                     readonly typeDescriptions: {};
                 };
@@ -3026,14 +3026,14 @@ export declare const Hyperdrive: {
             readonly file: "../interfaces/IMultiTokenCore.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 12132;
+            readonly sourceUnit: 12199;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4004;
                     readonly name: "IMultiTokenCore";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12131;
+                    readonly referencedDeclaration: 12198;
                     readonly src: "325:15:36";
                     readonly typeDescriptions: {};
                 };
@@ -3049,14 +3049,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveAdmin.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 13206;
+            readonly sourceUnit: 13336;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4006;
                     readonly name: "HyperdriveAdmin";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 13205;
+                    readonly referencedDeclaration: 13335;
                     readonly src: "394:15:36";
                     readonly typeDescriptions: {};
                 };
@@ -3072,14 +3072,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 14382;
+            readonly sourceUnit: 14512;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4008;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14381;
+                    readonly referencedDeclaration: 14511;
                     readonly src: "461:14:36";
                     readonly typeDescriptions: {};
                 };
@@ -3095,14 +3095,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveCheckpoint.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 14846;
+            readonly sourceUnit: 14976;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4010;
                     readonly name: "HyperdriveCheckpoint";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14845;
+                    readonly referencedDeclaration: 14975;
                     readonly src: "526:20:36";
                     readonly typeDescriptions: {};
                 };
@@ -3118,14 +3118,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveLong.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 16682;
+            readonly sourceUnit: 16812;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4012;
                     readonly name: "HyperdriveLong";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 16681;
+                    readonly referencedDeclaration: 16811;
                     readonly src: "603:14:36";
                     readonly typeDescriptions: {};
                 };
@@ -3141,14 +3141,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveLP.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 15748;
+            readonly sourceUnit: 15878;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4014;
                     readonly name: "HyperdriveLP";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 15747;
+                    readonly referencedDeclaration: 15877;
                     readonly src: "668:12:36";
                     readonly typeDescriptions: {};
                 };
@@ -3164,14 +3164,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveShort.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 18152;
+            readonly sourceUnit: 18282;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4016;
                     readonly name: "HyperdriveShort";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18151;
+                    readonly referencedDeclaration: 18281;
                     readonly src: "729:15:36";
                     readonly typeDescriptions: {};
                 };
@@ -3187,14 +3187,14 @@ export declare const Hyperdrive: {
             readonly file: "../internal/HyperdriveStorage.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 4610;
-            readonly sourceUnit: 18368;
+            readonly sourceUnit: 18498;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 4018;
                     readonly name: "HyperdriveStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18367;
+                    readonly referencedDeclaration: 18497;
                     readonly src: "796:17:36";
                     readonly typeDescriptions: {};
                 };
@@ -3702,7 +3702,7 @@ export declare const Hyperdrive: {
                         readonly referencedDeclaration: 4057;
                         readonly src: "5947:7:36";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_PoolConfig_$10867_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_PoolConfig_$10934_memory_ptr";
                             readonly typeString: "struct IHyperdrive.PoolConfig memory";
                         };
                     }];
@@ -3713,7 +3713,7 @@ export declare const Hyperdrive: {
                         readonly name: "HyperdriveStorage";
                         readonly nameLocations: readonly ["5929:17:36"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 18367;
+                        readonly referencedDeclaration: 18497;
                         readonly src: "5929:17:36";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -3736,7 +3736,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_PoolConfig_$10867_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_PoolConfig_$10934_memory_ptr";
                             readonly typeString: "struct IHyperdrive.PoolConfig";
                         };
                         readonly typeName: {
@@ -3747,13 +3747,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.PoolConfig";
                                 readonly nameLocations: readonly ["5755:11:36", "5767:10:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10867;
+                                readonly referencedDeclaration: 10934;
                                 readonly src: "5755:22:36";
                             };
-                            readonly referencedDeclaration: 10867;
+                            readonly referencedDeclaration: 10934;
                             readonly src: "5755:22:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_PoolConfig_$10867_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_PoolConfig_$10934_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.PoolConfig";
                             };
                         };
@@ -4064,10 +4064,10 @@ export declare const Hyperdrive: {
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
+                                            readonly referencedDeclaration: 11143;
                                             readonly src: "6796:11:36";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
@@ -4079,7 +4079,7 @@ export declare const Hyperdrive: {
                                         readonly memberLocation: "6808:17:36";
                                         readonly memberName: "UnexpectedSuccess";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11027;
+                                        readonly referencedDeclaration: 11094;
                                         readonly src: "6796:29:36";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
@@ -4224,10 +4224,10 @@ export declare const Hyperdrive: {
                                         readonly name: "IHyperdrive";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 11076;
+                                        readonly referencedDeclaration: 11143;
                                         readonly src: "6909:11:36";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                             readonly typeString: "type(contract IHyperdrive)";
                                         };
                                     };
@@ -4239,7 +4239,7 @@ export declare const Hyperdrive: {
                                     readonly memberLocation: "6921:10:36";
                                     readonly memberName: "ReturnData";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 11012;
+                                    readonly referencedDeclaration: 11079;
                                     readonly src: "6909:22:36";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_error_pure$_t_bytes_memory_ptr_$returns$__$";
@@ -4751,7 +4751,7 @@ export declare const Hyperdrive: {
                         readonly src: "7649:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11103];
+                readonly baseFunctions: readonly [11170];
                 readonly documentation: {
                     readonly id: 4149;
                     readonly nodeType: "StructuredDocumentation";
@@ -4857,7 +4857,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -4868,13 +4868,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["7560:11:36", "7572:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "7560:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "7560:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -5005,7 +5005,7 @@ export declare const Hyperdrive: {
                         readonly src: "7867:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11118];
+                readonly baseFunctions: readonly [11185];
                 readonly documentation: {
                     readonly id: 4171;
                     readonly nodeType: "StructuredDocumentation";
@@ -5111,7 +5111,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -5122,13 +5122,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["7795:11:36", "7807:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "7795:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "7795:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -5233,7 +5233,7 @@ export declare const Hyperdrive: {
                         readonly src: "8122:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11135];
+                readonly baseFunctions: readonly [11202];
                 readonly documentation: {
                     readonly id: 4191;
                     readonly nodeType: "StructuredDocumentation";
@@ -5339,7 +5339,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -5350,13 +5350,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["8033:11:36", "8045:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "8033:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "8033:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -5487,7 +5487,7 @@ export declare const Hyperdrive: {
                         readonly src: "8341:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11150];
+                readonly baseFunctions: readonly [11217];
                 readonly documentation: {
                     readonly id: 4213;
                     readonly nodeType: "StructuredDocumentation";
@@ -5593,7 +5593,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -5604,13 +5604,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["8269:11:36", "8281:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "8269:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "8269:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -5715,7 +5715,7 @@ export declare const Hyperdrive: {
                         readonly src: "8568:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11163];
+                readonly baseFunctions: readonly [11230];
                 readonly documentation: {
                     readonly id: 4233;
                     readonly nodeType: "StructuredDocumentation";
@@ -5795,7 +5795,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -5806,13 +5806,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["8488:11:36", "8500:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "8488:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "8488:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -5917,7 +5917,7 @@ export declare const Hyperdrive: {
                         readonly src: "8814:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11180];
+                readonly baseFunctions: readonly [11247];
                 readonly documentation: {
                     readonly id: 4251;
                     readonly nodeType: "StructuredDocumentation";
@@ -6049,7 +6049,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -6060,13 +6060,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["8734:11:36", "8746:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "8734:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "8734:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -6171,7 +6171,7 @@ export declare const Hyperdrive: {
                         readonly src: "9030:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11195];
+                readonly baseFunctions: readonly [11262];
                 readonly documentation: {
                     readonly id: 4273;
                     readonly nodeType: "StructuredDocumentation";
@@ -6251,7 +6251,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -6262,13 +6262,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["8949:11:36", "8961:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "8949:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "8949:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -6399,7 +6399,7 @@ export declare const Hyperdrive: {
                         readonly src: "9253:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11210];
+                readonly baseFunctions: readonly [11277];
                 readonly documentation: {
                     readonly id: 4293;
                     readonly nodeType: "StructuredDocumentation";
@@ -6479,7 +6479,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -6490,13 +6490,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["9172:11:36", "9184:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "9172:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "9172:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -6627,7 +6627,7 @@ export declare const Hyperdrive: {
                         readonly src: "9393:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11216];
+                readonly baseFunctions: readonly [11283];
                 readonly documentation: {
                     readonly id: 4313;
                     readonly nodeType: "StructuredDocumentation";
@@ -6743,7 +6743,7 @@ export declare const Hyperdrive: {
                         readonly src: "9590:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11225];
+                readonly baseFunctions: readonly [11292];
                 readonly documentation: {
                     readonly id: 4324;
                     readonly nodeType: "StructuredDocumentation";
@@ -6771,7 +6771,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$10923_calldata_ptr";
+                            readonly typeIdentifier: "t_struct$_Options_$10990_calldata_ptr";
                             readonly typeString: "struct IHyperdrive.Options";
                         };
                         readonly typeName: {
@@ -6782,13 +6782,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IHyperdrive.Options";
                                 readonly nameLocations: readonly ["9518:11:36", "9530:7:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10923;
+                                readonly referencedDeclaration: 10990;
                                 readonly src: "9518:19:36";
                             };
-                            readonly referencedDeclaration: 10923;
+                            readonly referencedDeclaration: 10990;
                             readonly src: "9518:19:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$10923_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Options_$10990_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Options";
                             };
                         };
@@ -6893,7 +6893,7 @@ export declare const Hyperdrive: {
                         readonly src: "9697:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11231];
+                readonly baseFunctions: readonly [11298];
                 readonly documentation: {
                     readonly id: 4338;
                     readonly nodeType: "StructuredDocumentation";
@@ -7009,7 +7009,7 @@ export declare const Hyperdrive: {
                         readonly src: "9817:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11237];
+                readonly baseFunctions: readonly [11304];
                 readonly documentation: {
                     readonly id: 4349;
                     readonly nodeType: "StructuredDocumentation";
@@ -7126,7 +7126,7 @@ export declare const Hyperdrive: {
                         readonly src: "9939:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11243];
+                readonly baseFunctions: readonly [11310];
                 readonly documentation: {
                     readonly id: 4360;
                     readonly nodeType: "StructuredDocumentation";
@@ -7243,7 +7243,7 @@ export declare const Hyperdrive: {
                         readonly src: "10057:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11249];
+                readonly baseFunctions: readonly [11316];
                 readonly documentation: {
                     readonly id: 4371;
                     readonly nodeType: "StructuredDocumentation";
@@ -7360,7 +7360,7 @@ export declare const Hyperdrive: {
                         readonly src: "10177:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11257];
+                readonly baseFunctions: readonly [11324];
                 readonly documentation: {
                     readonly id: 4382;
                     readonly nodeType: "StructuredDocumentation";
@@ -7503,7 +7503,7 @@ export declare const Hyperdrive: {
                         readonly src: "10286:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [11264];
+                readonly baseFunctions: readonly [11331];
                 readonly documentation: {
                     readonly id: 4395;
                     readonly nodeType: "StructuredDocumentation";
@@ -7531,7 +7531,7 @@ export declare const Hyperdrive: {
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                            readonly typeIdentifier: "t_contract$_IERC20_$10417";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
@@ -7542,13 +7542,13 @@ export declare const Hyperdrive: {
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["10259:6:36"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10358;
+                                readonly referencedDeclaration: 10417;
                                 readonly src: "10259:6:36";
                             };
-                            readonly referencedDeclaration: 10358;
+                            readonly referencedDeclaration: 10417;
                             readonly src: "10259:6:36";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
+                                readonly typeIdentifier: "t_contract$_IERC20_$10417";
                                 readonly typeString: "contract IERC20";
                             };
                         };
@@ -7627,7 +7627,7 @@ export declare const Hyperdrive: {
                         readonly src: "10454:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12054];
+                readonly baseFunctions: readonly [12121];
                 readonly documentation: {
                     readonly id: 4407;
                     readonly nodeType: "StructuredDocumentation";
@@ -7823,7 +7823,7 @@ export declare const Hyperdrive: {
                         readonly src: "10659:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12068];
+                readonly baseFunctions: readonly [12135];
                 readonly documentation: {
                     readonly id: 4424;
                     readonly nodeType: "StructuredDocumentation";
@@ -8046,7 +8046,7 @@ export declare const Hyperdrive: {
                         readonly src: "10808:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12090];
+                readonly baseFunctions: readonly [12157];
                 readonly documentation: {
                     readonly id: 4443;
                     readonly nodeType: "StructuredDocumentation";
@@ -8242,7 +8242,7 @@ export declare const Hyperdrive: {
                         readonly src: "10936:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12098];
+                readonly baseFunctions: readonly [12165];
                 readonly documentation: {
                     readonly id: 4460;
                     readonly nodeType: "StructuredDocumentation";
@@ -8385,7 +8385,7 @@ export declare const Hyperdrive: {
                         readonly src: "11070:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12078];
+                readonly baseFunctions: readonly [12145];
                 readonly documentation: {
                     readonly id: 4473;
                     readonly nodeType: "StructuredDocumentation";
@@ -8554,7 +8554,7 @@ export declare const Hyperdrive: {
                         readonly src: "11279:18:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12112];
+                readonly baseFunctions: readonly [12179];
                 readonly documentation: {
                     readonly id: 4488;
                     readonly nodeType: "StructuredDocumentation";
@@ -9209,7 +9209,7 @@ export declare const Hyperdrive: {
                         readonly src: "13261:71:36";
                     }];
                 };
-                readonly baseFunctions: readonly [12130];
+                readonly baseFunctions: readonly [12197];
                 readonly documentation: {
                     readonly id: 4507;
                     readonly nodeType: "StructuredDocumentation";
@@ -10205,7 +10205,7 @@ export declare const Hyperdrive: {
                     readonly name: "IHyperdriveCore";
                     readonly nameLocations: readonly ["4185:15:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11265;
+                    readonly referencedDeclaration: 11332;
                     readonly src: "4185:15:36";
                 };
                 readonly id: 4022;
@@ -10217,7 +10217,7 @@ export declare const Hyperdrive: {
                     readonly name: "HyperdriveAdmin";
                     readonly nameLocations: readonly ["4206:15:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 13205;
+                    readonly referencedDeclaration: 13335;
                     readonly src: "4206:15:36";
                 };
                 readonly id: 4024;
@@ -10229,7 +10229,7 @@ export declare const Hyperdrive: {
                     readonly name: "HyperdriveLP";
                     readonly nameLocations: readonly ["4227:12:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 15747;
+                    readonly referencedDeclaration: 15877;
                     readonly src: "4227:12:36";
                 };
                 readonly id: 4026;
@@ -10241,7 +10241,7 @@ export declare const Hyperdrive: {
                     readonly name: "HyperdriveLong";
                     readonly nameLocations: readonly ["4245:14:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 16681;
+                    readonly referencedDeclaration: 16811;
                     readonly src: "4245:14:36";
                 };
                 readonly id: 4028;
@@ -10253,7 +10253,7 @@ export declare const Hyperdrive: {
                     readonly name: "HyperdriveShort";
                     readonly nameLocations: readonly ["4265:15:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 18151;
+                    readonly referencedDeclaration: 18281;
                     readonly src: "4265:15:36";
                 };
                 readonly id: 4030;
@@ -10265,7 +10265,7 @@ export declare const Hyperdrive: {
                     readonly name: "HyperdriveCheckpoint";
                     readonly nameLocations: readonly ["4286:20:36"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14845;
+                    readonly referencedDeclaration: 14975;
                     readonly src: "4286:20:36";
                 };
                 readonly id: 4032;
@@ -10282,12 +10282,12 @@ export declare const Hyperdrive: {
                 readonly text: "______  __                           _________      _____\n      ___  / / /____  ___________________________  /_________(_)__   ______\n      __  /_/ /__  / / /__  __ \\  _ \\_  ___/  __  /__  ___/_  /__ | / /  _ \\\n      _  __  / _  /_/ /__  /_/ /  __/  /   / /_/ / _  /   _  / __ |/ //  __/\n      /_/ /_/  _\\__, / _   ___/\\___//_/    \\__,_/  /_/    /_/  _____/ \\___/\n               /____/   /_/\n                     XXX          ++          ++          XXX\n     ############   XXXXX        ++0+        +0++        XXXXX   ###########\n   ##////////////########       ++00++      ++00++       ########///////////##\n  ##////////////##########      ++000++    ++000++      ##########///////////##\n  ##%%%%%%/////      ######     ++0000+    +0000++     ######     /////%%%%%%##\n    %%%%%%%%&&             ##   ++0000+    +0000++   ##           &&%%%%%%%%%\n         %&&&                ##  +o000+    +000o+  ##              &&&%\n                              ## ++00+-    -+00++ ##\n                               #% ++0+      +0++ %#\n                               ###-:Oo.++++.oO:-###\n                                ##: 00++++++00 :##\n                    #S###########* 0++00+++00++0 *##########S#\n                  #S               % $ 0+++0 $ %              S#\n                #S   ----------   %+++++:#:+++++%-----------    S#\n              #S   ------------- %++++: ### :++++%------------    S#\n             S    ---------------%++++*\\ | /*++++%-------------     S\n           #S     --------------- %++++ ~W~ ++++%666--o UUUU o-      S#\n         #S?      ---------------  %+++++~+++++%&&&8 o  \\  /  o       ?S#\n        ?*????**+++;::,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,::;+++**????*?\n      #?+////////////////////////////////////////////////////////////////+?#\n    #;;;;;//////////////////////////////////////////////////////////////;;;;;#\n  S;;;;;;;;;//////////////////////////////////////////////////////////;;;;;;;;;S\n /;;;;;;;;;;;///////////////////////////////////////////////////////;;;;;;;;;;;;\\\n |||OOOOOOOO||OOOOOOOO=========== __  ___        ===========OOOOOOOO||OOOOOOOO|||\n |||OOOOOOOO||OOOOOOOO===========|  \\[__ |   \\  /===========OOOOOOOO||OOOOOOOO|||\n |||OOOOOOOO||OOOOOOOO===========|__/[___|___ \\/ ===========OOOOOOOO||OOOOOOOO|||\n ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n |||////////000000000000\\\\\\\\\\\\\\\\|:::::::::::::::|////////00000000000\\\\\\\\\\\\\\\\\\\\|||\n SSS\\\\\\\\\\\\\\\\000000000000////////|:::::0x666:::::|\\\\\\\\\\\\\\\\00000000000//////////SSS\n SSS|||||||||||||||||||||||||||||:::::::::::::::||||||||||||||||||||||||||||||SSS\n SSSSSSSS|_______________|______________||_______________|______________|SSSSSSSS\n SSSSSSSS                                                                SSSSSSSS\n SSSSSSSS                                                                SSSSSSSS\n @author DELV\n @title Hyperdrive\n @notice A fixed-rate AMM that mints bonds on demand for longs and shorts.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [4609, 14845, 18151, 16681, 15747, 17165, 13205, 14381, 18367, 72043, 11599, 12165, 11265, 12131];
+            readonly linearizedBaseContracts: readonly [4609, 14975, 18281, 16811, 15877, 17295, 13335, 14511, 18497, 72173, 11666, 12232, 11332, 12198];
             readonly name: "Hyperdrive";
             readonly nameLocation: "4167:10:36";
             readonly scope: 4610;
-            readonly usedErrors: readonly [11027, 71988];
-            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
+            readonly usedErrors: readonly [11094, 72118];
+            readonly usedEvents: readonly [11486, 11501, 11520, 11535, 11552, 11571, 11590, 11611, 11624, 11631, 11636, 11641, 11646, 11653, 11658, 11665, 12213, 12222, 12231];
         }];
         readonly license: "Apache-2.0";
     };

@@ -20,12 +20,12 @@ export declare const MockSafeCast: {
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b5060e78061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063809fdd3314602d575b600080fd5b603c60383660046099565b6061565b6040516fffffffffffffffffffffffffffffffff909116815260200160405180910390f35b6000606a826070565b92915050565b6000600160801b8210609557604051630f0af95160e11b815260040160405180910390fd5b5090565b60006020828403121560aa57600080fd5b503591905056fea26469706673582212207dc0b2fb9eeb2d37cf13814761a2c84276770fb769d9d562ae2614283e3afc8064736f6c63430008140033";
-        readonly sourceMap: "106:136:143:-:0;;;;;;;;;;;;;;;;;;;";
+        readonly sourceMap: "106:136:147:-:0;;;;;;;;;;;;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly deployedBytecode: {
         readonly object: "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063809fdd3314602d575b600080fd5b603c60383660046099565b6061565b6040516fffffffffffffffffffffffffffffffff909116815260200160405180910390f35b6000606a826070565b92915050565b6000600160801b8210609557604051630f0af95160e11b815260040160405180910390fd5b5090565b60006020828403121560aa57600080fd5b503591905056fea26469706673582212207dc0b2fb9eeb2d37cf13814761a2c84276770fb769d9d562ae2614283e3afc8064736f6c63430008140033";
-        readonly sourceMap: "106:136:143:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;134:106;;;;;;:::i;:::-;;:::i;:::-;;;375:34:235;363:47;;;345:66;;333:2;318:18;134:106:143;;;;;;;;187:9;212:21;231:1;212:18;:21::i;:::-;208:25;134:106;-1:-1:-1;;134:106:143:o;884:190:127:-;937:9;-1:-1:-1;;;964:1:127;:12;958:86;;1000:33;;-1:-1:-1;;;1000:33:127;;;;;;;;;;;958:86;-1:-1:-1;1065:1:127;884:190::o;14:180:235:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:235;;14:180;-1:-1:-1;14:180:235:o";
+        readonly sourceMap: "106:136:147:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;134:106;;;;;;:::i;:::-;;:::i;:::-;;;375:34:239;363:47;;;345:66;;333:2;318:18;134:106:147;;;;;;;;187:9;212:21;231:1;212:18;:21::i;:::-;208:25;134:106;-1:-1:-1;;134:106:147:o;884:190:131:-;937:9;-1:-1:-1;;;964:1:131;:12;958:86;;1000:33;;-1:-1:-1;;;1000:33:131;;;;;;;;;;;958:86;-1:-1:-1;1065:1:131;884:190::o;14:180:239:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:239;;14:180;-1:-1:-1;14:180:239:o";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {
@@ -148,60 +148,60 @@ export declare const MockSafeCast: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockSafeCast.sol";
-        readonly id: 27380;
+        readonly id: 27510;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11076];
-            readonly MockSafeCast: readonly [27379];
-            readonly SafeCast: readonly [22313];
+            readonly IHyperdrive: readonly [11143];
+            readonly MockSafeCast: readonly [27509];
+            readonly SafeCast: readonly [22443];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:204:143";
+        readonly src: "39:204:147";
         readonly nodes: readonly [{
-            readonly id: 27362;
+            readonly id: 27492;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:24:143";
+            readonly src: "39:24:147";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".18"];
         }, {
-            readonly id: 27363;
+            readonly id: 27493;
             readonly nodeType: "ImportDirective";
-            readonly src: "65:39:143";
+            readonly src: "65:39:147";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/SafeCast.sol";
             readonly file: "../src/libraries/SafeCast.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 27380;
-            readonly sourceUnit: 22314;
+            readonly scope: 27510;
+            readonly sourceUnit: 22444;
             readonly symbolAliases: readonly [];
             readonly unitAlias: "";
         }, {
-            readonly id: 27379;
+            readonly id: 27509;
             readonly nodeType: "ContractDefinition";
-            readonly src: "106:136:143";
+            readonly src: "106:136:147";
             readonly nodes: readonly [{
-                readonly id: 27378;
+                readonly id: 27508;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "134:106:143";
+                readonly src: "134:106:147";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27377;
+                    readonly id: 27507;
                     readonly nodeType: "Block";
-                    readonly src: "198:42:143";
+                    readonly src: "198:42:147";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 27375;
+                            readonly id: 27505;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 27370;
+                                readonly id: 27500;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27368;
-                                readonly src: "208:1:143";
+                                readonly referencedDeclaration: 27498;
+                                readonly src: "208:1:147";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
                                     readonly typeString: "uint128";
@@ -211,12 +211,12 @@ export declare const MockSafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 27373;
+                                    readonly id: 27503;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 27365;
-                                    readonly src: "231:1:143";
+                                    readonly referencedDeclaration: 27495;
+                                    readonly src: "231:1:147";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
@@ -228,33 +228,33 @@ export declare const MockSafeCast: {
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 27371;
+                                        readonly id: 27501;
                                         readonly name: "SafeCast";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22313;
-                                        readonly src: "212:8:143";
+                                        readonly referencedDeclaration: 22443;
+                                        readonly src: "212:8:147";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_SafeCast_$22313_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_SafeCast_$22443_$";
                                             readonly typeString: "type(library SafeCast)";
                                         };
                                     };
-                                    readonly id: 27372;
+                                    readonly id: 27502;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "221:9:143";
+                                    readonly memberLocation: "221:9:147";
                                     readonly memberName: "toUint128";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 22199;
-                                    readonly src: "212:18:143";
+                                    readonly referencedDeclaration: 22329;
+                                    readonly src: "212:18:147";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$";
                                         readonly typeString: "function (uint256) pure returns (uint128)";
                                     };
                                 };
-                                readonly id: 27374;
+                                readonly id: 27504;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -263,22 +263,22 @@ export declare const MockSafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "212:21:143";
+                                readonly src: "212:21:147";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
                                     readonly typeString: "uint128";
                                 };
                             };
-                            readonly src: "208:25:143";
+                            readonly src: "208:25:147";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint128";
                                 readonly typeString: "uint128";
                             };
                         };
-                        readonly id: 27376;
+                        readonly id: 27506;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "208:25:143";
+                        readonly src: "208:25:147";
                     }];
                 };
                 readonly functionSelector: "809fdd33";
@@ -286,19 +286,19 @@ export declare const MockSafeCast: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toUint128";
-                readonly nameLocation: "143:9:143";
+                readonly nameLocation: "143:9:147";
                 readonly parameters: {
-                    readonly id: 27366;
+                    readonly id: 27496;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27365;
+                        readonly id: 27495;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "161:1:143";
+                        readonly nameLocation: "161:1:147";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27378;
-                        readonly src: "153:9:143";
+                        readonly scope: 27508;
+                        readonly src: "153:9:147";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -306,10 +306,10 @@ export declare const MockSafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27364;
+                            readonly id: 27494;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "153:7:143";
+                            readonly src: "153:7:147";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -317,20 +317,20 @@ export declare const MockSafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "152:11:143";
+                    readonly src: "152:11:147";
                 };
                 readonly returnParameters: {
-                    readonly id: 27369;
+                    readonly id: 27499;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27368;
+                        readonly id: 27498;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "195:1:143";
+                        readonly nameLocation: "195:1:147";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27378;
-                        readonly src: "187:9:143";
+                        readonly scope: 27508;
+                        readonly src: "187:9:147";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -338,10 +338,10 @@ export declare const MockSafeCast: {
                             readonly typeString: "uint128";
                         };
                         readonly typeName: {
-                            readonly id: 27367;
+                            readonly id: 27497;
                             readonly name: "uint128";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "187:7:143";
+                            readonly src: "187:7:147";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint128";
                                 readonly typeString: "uint128";
@@ -349,9 +349,9 @@ export declare const MockSafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "186:11:143";
+                    readonly src: "186:11:147";
                 };
-                readonly scope: 27379;
+                readonly scope: 27509;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -362,15 +362,15 @@ export declare const MockSafeCast: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [27379];
+            readonly linearizedBaseContracts: readonly [27509];
             readonly name: "MockSafeCast";
-            readonly nameLocation: "115:12:143";
-            readonly scope: 27380;
-            readonly usedErrors: readonly [11033];
+            readonly nameLocation: "115:12:147";
+            readonly scope: 27510;
+            readonly usedErrors: readonly [11100];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 143;
+    readonly id: 147;
 };
 //# sourceMappingURL=MockSafeCast.d.ts.map

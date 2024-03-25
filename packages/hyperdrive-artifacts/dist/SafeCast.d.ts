@@ -2,12 +2,12 @@ export declare const SafeCast: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122057bad2968544e75a44bb4a0bc81d75cf6f7326ae80ea0ca9aecb5d8981316cab64736f6c63430008140033";
-        readonly sourceMap: "343:1864:127:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;343:1864:127;;;;;;;;;;;;;;;;;";
+        readonly sourceMap: "343:1864:131:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;343:1864:131;;;;;;;;;;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly deployedBytecode: {
         readonly object: "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122057bad2968544e75a44bb4a0bc81d75cf6f7326ae80ea0ca9aecb5d8981316cab64736f6c63430008140033";
-        readonly sourceMap: "343:1864:127:-:0;;;;;;;;";
+        readonly sourceMap: "343:1864:131:-:0;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
@@ -105,59 +105,59 @@ export declare const SafeCast: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/libraries/SafeCast.sol";
-        readonly id: 22314;
+        readonly id: 22444;
         readonly exportedSymbols: {
-            readonly IHyperdrive: readonly [11076];
-            readonly SafeCast: readonly [22313];
+            readonly IHyperdrive: readonly [11143];
+            readonly SafeCast: readonly [22443];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "40:2168:127";
+        readonly src: "40:2168:131";
         readonly nodes: readonly [{
-            readonly id: 22136;
+            readonly id: 22266;
             readonly nodeType: "PragmaDirective";
-            readonly src: "40:23:127";
+            readonly src: "40:23:131";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 22138;
+            readonly id: 22268;
             readonly nodeType: "ImportDirective";
-            readonly src: "65:60:127";
+            readonly src: "65:60:131";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 22314;
-            readonly sourceUnit: 11077;
+            readonly scope: 22444;
+            readonly sourceUnit: 11144;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 22137;
+                    readonly id: 22267;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11076;
-                    readonly src: "74:11:127";
+                    readonly referencedDeclaration: 11143;
+                    readonly src: "74:11:131";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 22313;
+            readonly id: 22443;
             readonly nodeType: "ContractDefinition";
-            readonly src: "343:1864:127";
+            readonly src: "343:1864:131";
             readonly nodes: readonly [{
-                readonly id: 22169;
+                readonly id: 22299;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "527:190:127";
+                readonly src: "527:190:131";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 22168;
+                    readonly id: 22298;
                     readonly nodeType: "Block";
-                    readonly src: "591:126:127";
+                    readonly src: "591:126:131";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 22153;
+                            readonly id: 22283;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -165,25 +165,25 @@ export declare const SafeCast: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "605:15:127";
+                            readonly src: "605:15:131";
                             readonly subExpression: {
                                 readonly components: readonly [{
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 22151;
+                                    readonly id: 22281;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 22147;
+                                        readonly id: 22277;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22142;
-                                        readonly src: "607:1:127";
+                                        readonly referencedDeclaration: 22272;
+                                        readonly src: "607:1:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
@@ -196,21 +196,21 @@ export declare const SafeCast: {
                                             readonly typeIdentifier: "t_rational_5192296858534827628530496329220096_by_1";
                                             readonly typeString: "int_const 5192...(26 digits omitted)...0096";
                                         };
-                                        readonly id: 22150;
+                                        readonly id: 22280;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "31";
-                                            readonly id: 22148;
+                                            readonly id: 22278;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly kind: "number";
                                             readonly lValueRequested: false;
                                             readonly nodeType: "Literal";
-                                            readonly src: "611:1:127";
+                                            readonly src: "611:1:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_rational_1_by_1";
                                                 readonly typeString: "int_const 1";
@@ -221,40 +221,40 @@ export declare const SafeCast: {
                                         readonly operator: "<<";
                                         readonly rightExpression: {
                                             readonly hexValue: "313132";
-                                            readonly id: 22149;
+                                            readonly id: 22279;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly kind: "number";
                                             readonly lValueRequested: false;
                                             readonly nodeType: "Literal";
-                                            readonly src: "616:3:127";
+                                            readonly src: "616:3:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_rational_112_by_1";
                                                 readonly typeString: "int_const 112";
                                             };
                                             readonly value: "112";
                                         };
-                                        readonly src: "611:8:127";
+                                        readonly src: "611:8:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_rational_5192296858534827628530496329220096_by_1";
                                             readonly typeString: "int_const 5192...(26 digits omitted)...0096";
                                         };
                                     };
-                                    readonly src: "607:12:127";
+                                    readonly src: "607:12:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 22152;
+                                readonly id: 22282;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "606:14:127";
+                                readonly src: "606:14:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -265,46 +265,46 @@ export declare const SafeCast: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 22160;
+                        readonly id: 22290;
                         readonly nodeType: "IfStatement";
-                        readonly src: "601:86:127";
+                        readonly src: "601:86:131";
                         readonly trueBody: {
-                            readonly id: 22159;
+                            readonly id: 22289;
                             readonly nodeType: "Block";
-                            readonly src: "622:65:127";
+                            readonly src: "622:65:131";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 22154;
+                                            readonly id: 22284;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "643:11:127";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "643:11:131";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 22156;
+                                        readonly id: 22286;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "655:19:127";
+                                        readonly memberLocation: "655:19:131";
                                         readonly memberName: "UnsafeCastToUint112";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11030;
-                                        readonly src: "643:31:127";
+                                        readonly referencedDeclaration: 11097;
+                                        readonly src: "643:31:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 22157;
+                                    readonly id: 22287;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -313,32 +313,32 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "643:33:127";
+                                    readonly src: "643:33:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 22158;
+                                readonly id: 22288;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "636:40:127";
+                                readonly src: "636:40:131";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 22166;
+                            readonly id: 22296;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 22161;
+                                readonly id: 22291;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 22145;
-                                readonly src: "696:1:127";
+                                readonly referencedDeclaration: 22275;
+                                readonly src: "696:1:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint112";
                                     readonly typeString: "uint112";
@@ -348,12 +348,12 @@ export declare const SafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 22164;
+                                    readonly id: 22294;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 22142;
-                                    readonly src: "708:1:127";
+                                    readonly referencedDeclaration: 22272;
+                                    readonly src: "708:1:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
@@ -364,26 +364,26 @@ export declare const SafeCast: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 22163;
+                                    readonly id: 22293;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "700:7:127";
+                                    readonly src: "700:7:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_uint112_$";
                                         readonly typeString: "type(uint112)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 22162;
+                                        readonly id: 22292;
                                         readonly name: "uint112";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "700:7:127";
+                                        readonly src: "700:7:131";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 22165;
+                                readonly id: 22295;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -392,47 +392,47 @@ export declare const SafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "700:10:127";
+                                readonly src: "700:10:131";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint112";
                                     readonly typeString: "uint112";
                                 };
                             };
-                            readonly src: "696:14:127";
+                            readonly src: "696:14:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint112";
                                 readonly typeString: "uint112";
                             };
                         };
-                        readonly id: 22167;
+                        readonly id: 22297;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "696:14:127";
+                        readonly src: "696:14:131";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 22140;
+                    readonly id: 22270;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "366:156:127";
+                    readonly src: "366:156:131";
                     readonly text: "@notice This function safely casts a uint256 to a uint112.\n @param x The uint256 to cast to uint112.\n @return y The uint112 casted from x.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toUint112";
-                readonly nameLocation: "536:9:127";
+                readonly nameLocation: "536:9:131";
                 readonly parameters: {
-                    readonly id: 22143;
+                    readonly id: 22273;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22142;
+                        readonly id: 22272;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "554:1:127";
+                        readonly nameLocation: "554:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22169;
-                        readonly src: "546:9:127";
+                        readonly scope: 22299;
+                        readonly src: "546:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -440,10 +440,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 22141;
+                            readonly id: 22271;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "546:7:127";
+                            readonly src: "546:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -451,20 +451,20 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "545:11:127";
+                    readonly src: "545:11:131";
                 };
                 readonly returnParameters: {
-                    readonly id: 22146;
+                    readonly id: 22276;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22145;
+                        readonly id: 22275;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "588:1:127";
+                        readonly nameLocation: "588:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22169;
-                        readonly src: "580:9:127";
+                        readonly scope: 22299;
+                        readonly src: "580:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -472,10 +472,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint112";
                         };
                         readonly typeName: {
-                            readonly id: 22144;
+                            readonly id: 22274;
                             readonly name: "uint112";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "580:7:127";
+                            readonly src: "580:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint112";
                                 readonly typeString: "uint112";
@@ -483,25 +483,25 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "579:11:127";
+                    readonly src: "579:11:131";
                 };
-                readonly scope: 22313;
+                readonly scope: 22443;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 22199;
+                readonly id: 22329;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "884:190:127";
+                readonly src: "884:190:131";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 22198;
+                    readonly id: 22328;
                     readonly nodeType: "Block";
-                    readonly src: "948:126:127";
+                    readonly src: "948:126:131";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 22183;
+                            readonly id: 22313;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -509,25 +509,25 @@ export declare const SafeCast: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "962:15:127";
+                            readonly src: "962:15:131";
                             readonly subExpression: {
                                 readonly components: readonly [{
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 22181;
+                                    readonly id: 22311;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 22177;
+                                        readonly id: 22307;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22172;
-                                        readonly src: "964:1:127";
+                                        readonly referencedDeclaration: 22302;
+                                        readonly src: "964:1:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
@@ -540,21 +540,21 @@ export declare const SafeCast: {
                                             readonly typeIdentifier: "t_rational_340282366920938463463374607431768211456_by_1";
                                             readonly typeString: "int_const 3402...(31 digits omitted)...1456";
                                         };
-                                        readonly id: 22180;
+                                        readonly id: 22310;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "31";
-                                            readonly id: 22178;
+                                            readonly id: 22308;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly kind: "number";
                                             readonly lValueRequested: false;
                                             readonly nodeType: "Literal";
-                                            readonly src: "968:1:127";
+                                            readonly src: "968:1:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_rational_1_by_1";
                                                 readonly typeString: "int_const 1";
@@ -565,40 +565,40 @@ export declare const SafeCast: {
                                         readonly operator: "<<";
                                         readonly rightExpression: {
                                             readonly hexValue: "313238";
-                                            readonly id: 22179;
+                                            readonly id: 22309;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly kind: "number";
                                             readonly lValueRequested: false;
                                             readonly nodeType: "Literal";
-                                            readonly src: "973:3:127";
+                                            readonly src: "973:3:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_rational_128_by_1";
                                                 readonly typeString: "int_const 128";
                                             };
                                             readonly value: "128";
                                         };
-                                        readonly src: "968:8:127";
+                                        readonly src: "968:8:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_rational_340282366920938463463374607431768211456_by_1";
                                             readonly typeString: "int_const 3402...(31 digits omitted)...1456";
                                         };
                                     };
-                                    readonly src: "964:12:127";
+                                    readonly src: "964:12:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 22182;
+                                readonly id: 22312;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "963:14:127";
+                                readonly src: "963:14:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -609,46 +609,46 @@ export declare const SafeCast: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 22190;
+                        readonly id: 22320;
                         readonly nodeType: "IfStatement";
-                        readonly src: "958:86:127";
+                        readonly src: "958:86:131";
                         readonly trueBody: {
-                            readonly id: 22189;
+                            readonly id: 22319;
                             readonly nodeType: "Block";
-                            readonly src: "979:65:127";
+                            readonly src: "979:65:131";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 22184;
+                                            readonly id: 22314;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "1000:11:127";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "1000:11:131";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 22186;
+                                        readonly id: 22316;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1012:19:127";
+                                        readonly memberLocation: "1012:19:131";
                                         readonly memberName: "UnsafeCastToUint128";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11033;
-                                        readonly src: "1000:31:127";
+                                        readonly referencedDeclaration: 11100;
+                                        readonly src: "1000:31:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 22187;
+                                    readonly id: 22317;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -657,32 +657,32 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1000:33:127";
+                                    readonly src: "1000:33:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 22188;
+                                readonly id: 22318;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "993:40:127";
+                                readonly src: "993:40:131";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 22196;
+                            readonly id: 22326;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 22191;
+                                readonly id: 22321;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 22175;
-                                readonly src: "1053:1:127";
+                                readonly referencedDeclaration: 22305;
+                                readonly src: "1053:1:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
                                     readonly typeString: "uint128";
@@ -692,12 +692,12 @@ export declare const SafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 22194;
+                                    readonly id: 22324;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 22172;
-                                    readonly src: "1065:1:127";
+                                    readonly referencedDeclaration: 22302;
+                                    readonly src: "1065:1:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
@@ -708,26 +708,26 @@ export declare const SafeCast: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 22193;
+                                    readonly id: 22323;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "1057:7:127";
+                                    readonly src: "1057:7:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_uint128_$";
                                         readonly typeString: "type(uint128)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 22192;
+                                        readonly id: 22322;
                                         readonly name: "uint128";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "1057:7:127";
+                                        readonly src: "1057:7:131";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 22195;
+                                readonly id: 22325;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -736,47 +736,47 @@ export declare const SafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "1057:10:127";
+                                readonly src: "1057:10:131";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
                                     readonly typeString: "uint128";
                                 };
                             };
-                            readonly src: "1053:14:127";
+                            readonly src: "1053:14:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint128";
                                 readonly typeString: "uint128";
                             };
                         };
-                        readonly id: 22197;
+                        readonly id: 22327;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1053:14:127";
+                        readonly src: "1053:14:131";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 22170;
+                    readonly id: 22300;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "723:156:127";
+                    readonly src: "723:156:131";
                     readonly text: "@notice This function safely casts a uint256 to a uint128.\n @param x The uint256 to cast to uint128.\n @return y The uint128 casted from x.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toUint128";
-                readonly nameLocation: "893:9:127";
+                readonly nameLocation: "893:9:131";
                 readonly parameters: {
-                    readonly id: 22173;
+                    readonly id: 22303;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22172;
+                        readonly id: 22302;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "911:1:127";
+                        readonly nameLocation: "911:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22199;
-                        readonly src: "903:9:127";
+                        readonly scope: 22329;
+                        readonly src: "903:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -784,10 +784,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 22171;
+                            readonly id: 22301;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "903:7:127";
+                            readonly src: "903:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -795,20 +795,20 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "902:11:127";
+                    readonly src: "902:11:131";
                 };
                 readonly returnParameters: {
-                    readonly id: 22176;
+                    readonly id: 22306;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22175;
+                        readonly id: 22305;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "945:1:127";
+                        readonly nameLocation: "945:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22199;
-                        readonly src: "937:9:127";
+                        readonly scope: 22329;
+                        readonly src: "937:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -816,10 +816,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint128";
                         };
                         readonly typeName: {
-                            readonly id: 22174;
+                            readonly id: 22304;
                             readonly name: "uint128";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "937:7:127";
+                            readonly src: "937:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint128";
                                 readonly typeString: "uint128";
@@ -827,25 +827,25 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "936:11:127";
+                    readonly src: "936:11:131";
                 };
-                readonly scope: 22313;
+                readonly scope: 22443;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 22237;
+                readonly id: 22367;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1240:212:127";
+                readonly src: "1240:212:131";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 22236;
+                    readonly id: 22366;
                     readonly nodeType: "Block";
-                    readonly src: "1302:150:127";
+                    readonly src: "1302:150:131";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 22218;
+                            readonly id: 22348;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -853,25 +853,25 @@ export declare const SafeCast: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "1316:33:127";
+                            readonly src: "1316:33:131";
                             readonly subExpression: {
                                 readonly components: readonly [{
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 22216;
+                                    readonly id: 22346;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 22207;
+                                        readonly id: 22337;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22202;
-                                        readonly src: "1318:1:127";
+                                        readonly referencedDeclaration: 22332;
+                                        readonly src: "1318:1:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
@@ -883,22 +883,22 @@ export declare const SafeCast: {
                                         readonly arguments: readonly [{
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 22212;
+                                                    readonly id: 22342;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
                                                     readonly lValueRequested: false;
                                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "1336:6:127";
+                                                    readonly src: "1336:6:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 22211;
+                                                        readonly id: 22341;
                                                         readonly name: "int128";
                                                         readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "1336:6:127";
+                                                        readonly src: "1336:6:131";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 }];
@@ -907,18 +907,18 @@ export declare const SafeCast: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     }];
-                                                    readonly id: 22210;
+                                                    readonly id: 22340;
                                                     readonly name: "type";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
                                                     readonly referencedDeclaration: -27;
-                                                    readonly src: "1331:4:127";
+                                                    readonly src: "1331:4:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_metatype_pure$__$returns$__$";
                                                         readonly typeString: "function () pure";
                                                     };
                                                 };
-                                                readonly id: 22213;
+                                                readonly id: 22343;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -927,22 +927,22 @@ export declare const SafeCast: {
                                                 readonly nameLocations: readonly [];
                                                 readonly names: readonly [];
                                                 readonly nodeType: "FunctionCall";
-                                                readonly src: "1331:12:127";
+                                                readonly src: "1331:12:131";
                                                 readonly tryCall: false;
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_meta_type_t_int128";
                                                     readonly typeString: "type(int128)";
                                                 };
                                             };
-                                            readonly id: 22214;
+                                            readonly id: 22344;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "1344:3:127";
+                                            readonly memberLocation: "1344:3:131";
                                             readonly memberName: "max";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "1331:16:127";
+                                            readonly src: "1331:16:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int128";
                                                 readonly typeString: "int128";
@@ -953,26 +953,26 @@ export declare const SafeCast: {
                                                 readonly typeIdentifier: "t_int128";
                                                 readonly typeString: "int128";
                                             }];
-                                            readonly id: 22209;
+                                            readonly id: 22339;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "1323:7:127";
+                                            readonly src: "1323:7:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_uint128_$";
                                                 readonly typeString: "type(uint128)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 22208;
+                                                readonly id: 22338;
                                                 readonly name: "uint128";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "1323:7:127";
+                                                readonly src: "1323:7:131";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 22215;
+                                        readonly id: 22345;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -981,27 +981,27 @@ export declare const SafeCast: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "1323:25:127";
+                                        readonly src: "1323:25:131";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint128";
                                             readonly typeString: "uint128";
                                         };
                                     };
-                                    readonly src: "1318:30:127";
+                                    readonly src: "1318:30:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 22217;
+                                readonly id: 22347;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "1317:32:127";
+                                readonly src: "1317:32:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1012,46 +1012,46 @@ export declare const SafeCast: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 22225;
+                        readonly id: 22355;
                         readonly nodeType: "IfStatement";
-                        readonly src: "1312:103:127";
+                        readonly src: "1312:103:131";
                         readonly trueBody: {
-                            readonly id: 22224;
+                            readonly id: 22354;
                             readonly nodeType: "Block";
-                            readonly src: "1351:64:127";
+                            readonly src: "1351:64:131";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 22219;
+                                            readonly id: 22349;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "1372:11:127";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "1372:11:131";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 22221;
+                                        readonly id: 22351;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1384:18:127";
+                                        readonly memberLocation: "1384:18:131";
                                         readonly memberName: "UnsafeCastToInt128";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11036;
-                                        readonly src: "1372:30:127";
+                                        readonly referencedDeclaration: 11103;
+                                        readonly src: "1372:30:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 22222;
+                                    readonly id: 22352;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1060,32 +1060,32 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1372:32:127";
+                                    readonly src: "1372:32:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 22223;
+                                readonly id: 22353;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "1365:39:127";
+                                readonly src: "1365:39:131";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 22234;
+                            readonly id: 22364;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 22226;
+                                readonly id: 22356;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 22205;
-                                readonly src: "1424:1:127";
+                                readonly referencedDeclaration: 22335;
+                                readonly src: "1424:1:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int128";
                                     readonly typeString: "int128";
@@ -1096,12 +1096,12 @@ export declare const SafeCast: {
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 22231;
+                                        readonly id: 22361;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22202;
-                                        readonly src: "1442:1:127";
+                                        readonly referencedDeclaration: 22332;
+                                        readonly src: "1442:1:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
@@ -1112,26 +1112,26 @@ export declare const SafeCast: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 22230;
+                                        readonly id: 22360;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
                                         readonly lValueRequested: false;
                                         readonly nodeType: "ElementaryTypeNameExpression";
-                                        readonly src: "1435:6:127";
+                                        readonly src: "1435:6:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_type$_t_int256_$";
                                             readonly typeString: "type(int256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 22229;
+                                            readonly id: 22359;
                                             readonly name: "int256";
                                             readonly nodeType: "ElementaryTypeName";
-                                            readonly src: "1435:6:127";
+                                            readonly src: "1435:6:131";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 22232;
+                                    readonly id: 22362;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1140,7 +1140,7 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1435:9:127";
+                                    readonly src: "1435:9:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -1152,26 +1152,26 @@ export declare const SafeCast: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     }];
-                                    readonly id: 22228;
+                                    readonly id: 22358;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "1428:6:127";
+                                    readonly src: "1428:6:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                         readonly typeString: "type(int128)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 22227;
+                                        readonly id: 22357;
                                         readonly name: "int128";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "1428:6:127";
+                                        readonly src: "1428:6:131";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 22233;
+                                readonly id: 22363;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1180,47 +1180,47 @@ export declare const SafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "1428:17:127";
+                                readonly src: "1428:17:131";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int128";
                                     readonly typeString: "int128";
                                 };
                             };
-                            readonly src: "1424:21:127";
+                            readonly src: "1424:21:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int128";
                                 readonly typeString: "int128";
                             };
                         };
-                        readonly id: 22235;
+                        readonly id: 22365;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1424:21:127";
+                        readonly src: "1424:21:131";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 22200;
+                    readonly id: 22330;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1080:155:127";
+                    readonly src: "1080:155:131";
                     readonly text: "@notice This function safely casts an uint256 to an int128.\n @param x The uint256 to cast to int128.\n @return y The int128 casted from x.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toInt128";
-                readonly nameLocation: "1249:8:127";
+                readonly nameLocation: "1249:8:131";
                 readonly parameters: {
-                    readonly id: 22203;
+                    readonly id: 22333;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22202;
+                        readonly id: 22332;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "1266:1:127";
+                        readonly nameLocation: "1266:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22237;
-                        readonly src: "1258:9:127";
+                        readonly scope: 22367;
+                        readonly src: "1258:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1228,10 +1228,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 22201;
+                            readonly id: 22331;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1258:7:127";
+                            readonly src: "1258:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1239,20 +1239,20 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1257:11:127";
+                    readonly src: "1257:11:131";
                 };
                 readonly returnParameters: {
-                    readonly id: 22206;
+                    readonly id: 22336;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22205;
+                        readonly id: 22335;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "1299:1:127";
+                        readonly nameLocation: "1299:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22237;
-                        readonly src: "1292:8:127";
+                        readonly scope: 22367;
+                        readonly src: "1292:8:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1260,10 +1260,10 @@ export declare const SafeCast: {
                             readonly typeString: "int128";
                         };
                         readonly typeName: {
-                            readonly id: 22204;
+                            readonly id: 22334;
                             readonly name: "int128";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1292:6:127";
+                            readonly src: "1292:6:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int128";
                                 readonly typeString: "int128";
@@ -1271,25 +1271,25 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1291:10:127";
+                    readonly src: "1291:10:131";
                 };
-                readonly scope: 22313;
+                readonly scope: 22443;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 22277;
+                readonly id: 22407;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1616:219:127";
+                readonly src: "1616:219:131";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 22276;
+                    readonly id: 22406;
                     readonly nodeType: "Block";
-                    readonly src: "1677:158:127";
+                    readonly src: "1677:158:131";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 22261;
+                            readonly id: 22391;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1297,14 +1297,14 @@ export declare const SafeCast: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "1691:49:127";
+                            readonly src: "1691:49:131";
                             readonly subExpression: {
                                 readonly components: readonly [{
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
-                                    readonly id: 22259;
+                                    readonly id: 22389;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1314,18 +1314,18 @@ export declare const SafeCast: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 22251;
+                                        readonly id: 22381;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 22245;
+                                            readonly id: 22375;
                                             readonly name: "x";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 22240;
-                                            readonly src: "1693:1:127";
+                                            readonly referencedDeclaration: 22370;
+                                            readonly src: "1693:1:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
@@ -1336,22 +1336,22 @@ export declare const SafeCast: {
                                         readonly rightExpression: {
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 22248;
+                                                    readonly id: 22378;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
                                                     readonly lValueRequested: false;
                                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "1703:6:127";
+                                                    readonly src: "1703:6:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 22247;
+                                                        readonly id: 22377;
                                                         readonly name: "int128";
                                                         readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "1703:6:127";
+                                                        readonly src: "1703:6:131";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 }];
@@ -1360,18 +1360,18 @@ export declare const SafeCast: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     }];
-                                                    readonly id: 22246;
+                                                    readonly id: 22376;
                                                     readonly name: "type";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
                                                     readonly referencedDeclaration: -27;
-                                                    readonly src: "1698:4:127";
+                                                    readonly src: "1698:4:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_metatype_pure$__$returns$__$";
                                                         readonly typeString: "function () pure";
                                                     };
                                                 };
-                                                readonly id: 22249;
+                                                readonly id: 22379;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1380,28 +1380,28 @@ export declare const SafeCast: {
                                                 readonly nameLocations: readonly [];
                                                 readonly names: readonly [];
                                                 readonly nodeType: "FunctionCall";
-                                                readonly src: "1698:12:127";
+                                                readonly src: "1698:12:131";
                                                 readonly tryCall: false;
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_meta_type_t_int128";
                                                     readonly typeString: "type(int128)";
                                                 };
                                             };
-                                            readonly id: 22250;
+                                            readonly id: 22380;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "1711:3:127";
+                                            readonly memberLocation: "1711:3:131";
                                             readonly memberName: "min";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "1698:16:127";
+                                            readonly src: "1698:16:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int128";
                                                 readonly typeString: "int128";
                                             };
                                         };
-                                        readonly src: "1693:21:127";
+                                        readonly src: "1693:21:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
@@ -1414,18 +1414,18 @@ export declare const SafeCast: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 22258;
+                                        readonly id: 22388;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 22252;
+                                            readonly id: 22382;
                                             readonly name: "x";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 22240;
-                                            readonly src: "1718:1:127";
+                                            readonly referencedDeclaration: 22370;
+                                            readonly src: "1718:1:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
@@ -1436,22 +1436,22 @@ export declare const SafeCast: {
                                         readonly rightExpression: {
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 22255;
+                                                    readonly id: 22385;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
                                                     readonly lValueRequested: false;
                                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "1728:6:127";
+                                                    readonly src: "1728:6:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 22254;
+                                                        readonly id: 22384;
                                                         readonly name: "int128";
                                                         readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "1728:6:127";
+                                                        readonly src: "1728:6:131";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 }];
@@ -1460,18 +1460,18 @@ export declare const SafeCast: {
                                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                                         readonly typeString: "type(int128)";
                                                     }];
-                                                    readonly id: 22253;
+                                                    readonly id: 22383;
                                                     readonly name: "type";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
                                                     readonly referencedDeclaration: -27;
-                                                    readonly src: "1723:4:127";
+                                                    readonly src: "1723:4:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_metatype_pure$__$returns$__$";
                                                         readonly typeString: "function () pure";
                                                     };
                                                 };
-                                                readonly id: 22256;
+                                                readonly id: 22386;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1480,47 +1480,47 @@ export declare const SafeCast: {
                                                 readonly nameLocations: readonly [];
                                                 readonly names: readonly [];
                                                 readonly nodeType: "FunctionCall";
-                                                readonly src: "1723:12:127";
+                                                readonly src: "1723:12:131";
                                                 readonly tryCall: false;
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_meta_type_t_int128";
                                                     readonly typeString: "type(int128)";
                                                 };
                                             };
-                                            readonly id: 22257;
+                                            readonly id: 22387;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "1736:3:127";
+                                            readonly memberLocation: "1736:3:131";
                                             readonly memberName: "max";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "1723:16:127";
+                                            readonly src: "1723:16:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int128";
                                                 readonly typeString: "int128";
                                             };
                                         };
-                                        readonly src: "1718:21:127";
+                                        readonly src: "1718:21:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly src: "1693:46:127";
+                                    readonly src: "1693:46:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 22260;
+                                readonly id: 22390;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "1692:48:127";
+                                readonly src: "1692:48:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1531,46 +1531,46 @@ export declare const SafeCast: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 22268;
+                        readonly id: 22398;
                         readonly nodeType: "IfStatement";
-                        readonly src: "1687:119:127";
+                        readonly src: "1687:119:131";
                         readonly trueBody: {
-                            readonly id: 22267;
+                            readonly id: 22397;
                             readonly nodeType: "Block";
-                            readonly src: "1742:64:127";
+                            readonly src: "1742:64:131";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 22262;
+                                            readonly id: 22392;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "1763:11:127";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "1763:11:131";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 22264;
+                                        readonly id: 22394;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1775:18:127";
+                                        readonly memberLocation: "1775:18:131";
                                         readonly memberName: "UnsafeCastToInt128";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11036;
-                                        readonly src: "1763:30:127";
+                                        readonly referencedDeclaration: 11103;
+                                        readonly src: "1763:30:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 22265;
+                                    readonly id: 22395;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1579,32 +1579,32 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1763:32:127";
+                                    readonly src: "1763:32:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 22266;
+                                readonly id: 22396;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "1756:39:127";
+                                readonly src: "1756:39:131";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 22274;
+                            readonly id: 22404;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 22269;
+                                readonly id: 22399;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 22243;
-                                readonly src: "1815:1:127";
+                                readonly referencedDeclaration: 22373;
+                                readonly src: "1815:1:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int128";
                                     readonly typeString: "int128";
@@ -1614,12 +1614,12 @@ export declare const SafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 22272;
+                                    readonly id: 22402;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 22240;
-                                    readonly src: "1826:1:127";
+                                    readonly referencedDeclaration: 22370;
+                                    readonly src: "1826:1:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
@@ -1630,26 +1630,26 @@ export declare const SafeCast: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     }];
-                                    readonly id: 22271;
+                                    readonly id: 22401;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "1819:6:127";
+                                    readonly src: "1819:6:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_int128_$";
                                         readonly typeString: "type(int128)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 22270;
+                                        readonly id: 22400;
                                         readonly name: "int128";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "1819:6:127";
+                                        readonly src: "1819:6:131";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 22273;
+                                readonly id: 22403;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1658,47 +1658,47 @@ export declare const SafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "1819:9:127";
+                                readonly src: "1819:9:131";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int128";
                                     readonly typeString: "int128";
                                 };
                             };
-                            readonly src: "1815:13:127";
+                            readonly src: "1815:13:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int128";
                                 readonly typeString: "int128";
                             };
                         };
-                        readonly id: 22275;
+                        readonly id: 22405;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1815:13:127";
+                        readonly src: "1815:13:131";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 22238;
+                    readonly id: 22368;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1458:153:127";
+                    readonly src: "1458:153:131";
                     readonly text: "@notice This function safely casts an int256 to an int128.\n @param x The int256 to cast to int128.\n @return y The int128 casted from x.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toInt128";
-                readonly nameLocation: "1625:8:127";
+                readonly nameLocation: "1625:8:131";
                 readonly parameters: {
-                    readonly id: 22241;
+                    readonly id: 22371;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22240;
+                        readonly id: 22370;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "1641:1:127";
+                        readonly nameLocation: "1641:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22277;
-                        readonly src: "1634:8:127";
+                        readonly scope: 22407;
+                        readonly src: "1634:8:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1706,10 +1706,10 @@ export declare const SafeCast: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 22239;
+                            readonly id: 22369;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1634:6:127";
+                            readonly src: "1634:6:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
@@ -1717,20 +1717,20 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1633:10:127";
+                    readonly src: "1633:10:131";
                 };
                 readonly returnParameters: {
-                    readonly id: 22244;
+                    readonly id: 22374;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22243;
+                        readonly id: 22373;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "1674:1:127";
+                        readonly nameLocation: "1674:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22277;
-                        readonly src: "1667:8:127";
+                        readonly scope: 22407;
+                        readonly src: "1667:8:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1738,10 +1738,10 @@ export declare const SafeCast: {
                             readonly typeString: "int128";
                         };
                         readonly typeName: {
-                            readonly id: 22242;
+                            readonly id: 22372;
                             readonly name: "int128";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1667:6:127";
+                            readonly src: "1667:6:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int128";
                                 readonly typeString: "int128";
@@ -1749,25 +1749,25 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1666:10:127";
+                    readonly src: "1666:10:131";
                 };
-                readonly scope: 22313;
+                readonly scope: 22443;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 22312;
+                readonly id: 22442;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2001:204:127";
+                readonly src: "2001:204:131";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 22311;
+                    readonly id: 22441;
                     readonly nodeType: "Block";
-                    readonly src: "2063:142:127";
+                    readonly src: "2063:142:131";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 22296;
+                            readonly id: 22426;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1775,25 +1775,25 @@ export declare const SafeCast: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "2077:33:127";
+                            readonly src: "2077:33:131";
                             readonly subExpression: {
                                 readonly components: readonly [{
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 22294;
+                                    readonly id: 22424;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 22285;
+                                        readonly id: 22415;
                                         readonly name: "x";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 22280;
-                                        readonly src: "2079:1:127";
+                                        readonly referencedDeclaration: 22410;
+                                        readonly src: "2079:1:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
@@ -1805,22 +1805,22 @@ export declare const SafeCast: {
                                         readonly arguments: readonly [{
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 22290;
+                                                    readonly id: 22420;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
                                                     readonly lValueRequested: false;
                                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "2097:6:127";
+                                                    readonly src: "2097:6:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_type$_t_int256_$";
                                                         readonly typeString: "type(int256)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 22289;
+                                                        readonly id: 22419;
                                                         readonly name: "int256";
                                                         readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "2097:6:127";
+                                                        readonly src: "2097:6:131";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 }];
@@ -1829,18 +1829,18 @@ export declare const SafeCast: {
                                                         readonly typeIdentifier: "t_type$_t_int256_$";
                                                         readonly typeString: "type(int256)";
                                                     }];
-                                                    readonly id: 22288;
+                                                    readonly id: 22418;
                                                     readonly name: "type";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
                                                     readonly referencedDeclaration: -27;
-                                                    readonly src: "2092:4:127";
+                                                    readonly src: "2092:4:131";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_metatype_pure$__$returns$__$";
                                                         readonly typeString: "function () pure";
                                                     };
                                                 };
-                                                readonly id: 22291;
+                                                readonly id: 22421;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1849,22 +1849,22 @@ export declare const SafeCast: {
                                                 readonly nameLocations: readonly [];
                                                 readonly names: readonly [];
                                                 readonly nodeType: "FunctionCall";
-                                                readonly src: "2092:12:127";
+                                                readonly src: "2092:12:131";
                                                 readonly tryCall: false;
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_magic_meta_type_t_int256";
                                                     readonly typeString: "type(int256)";
                                                 };
                                             };
-                                            readonly id: 22292;
+                                            readonly id: 22422;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "2105:3:127";
+                                            readonly memberLocation: "2105:3:131";
                                             readonly memberName: "max";
                                             readonly nodeType: "MemberAccess";
-                                            readonly src: "2092:16:127";
+                                            readonly src: "2092:16:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
@@ -1875,26 +1875,26 @@ export declare const SafeCast: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             }];
-                                            readonly id: 22287;
+                                            readonly id: 22417;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "2084:7:127";
+                                            readonly src: "2084:7:131";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_uint256_$";
                                                 readonly typeString: "type(uint256)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 22286;
+                                                readonly id: 22416;
                                                 readonly name: "uint256";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "2084:7:127";
+                                                readonly src: "2084:7:131";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 22293;
+                                        readonly id: 22423;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1903,27 +1903,27 @@ export declare const SafeCast: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "2084:25:127";
+                                        readonly src: "2084:25:131";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly src: "2079:30:127";
+                                    readonly src: "2079:30:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 22295;
+                                readonly id: 22425;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "2078:32:127";
+                                readonly src: "2078:32:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1934,46 +1934,46 @@ export declare const SafeCast: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 22303;
+                        readonly id: 22433;
                         readonly nodeType: "IfStatement";
-                        readonly src: "2073:103:127";
+                        readonly src: "2073:103:131";
                         readonly trueBody: {
-                            readonly id: 22302;
+                            readonly id: 22432;
                             readonly nodeType: "Block";
-                            readonly src: "2112:64:127";
+                            readonly src: "2112:64:131";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 22297;
+                                            readonly id: 22427;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11076;
-                                            readonly src: "2133:11:127";
+                                            readonly referencedDeclaration: 11143;
+                                            readonly src: "2133:11:131";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11143_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 22299;
+                                        readonly id: 22429;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "2145:18:127";
+                                        readonly memberLocation: "2145:18:131";
                                         readonly memberName: "UnsafeCastToInt256";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11039;
-                                        readonly src: "2133:30:127";
+                                        readonly referencedDeclaration: 11106;
+                                        readonly src: "2133:30:131";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 22300;
+                                    readonly id: 22430;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1982,32 +1982,32 @@ export declare const SafeCast: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "2133:32:127";
+                                    readonly src: "2133:32:131";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 22301;
+                                readonly id: 22431;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "2126:39:127";
+                                readonly src: "2126:39:131";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 22309;
+                            readonly id: 22439;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 22304;
+                                readonly id: 22434;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 22283;
-                                readonly src: "2185:1:127";
+                                readonly referencedDeclaration: 22413;
+                                readonly src: "2185:1:131";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
@@ -2017,12 +2017,12 @@ export declare const SafeCast: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 22307;
+                                    readonly id: 22437;
                                     readonly name: "x";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 22280;
-                                    readonly src: "2196:1:127";
+                                    readonly referencedDeclaration: 22410;
+                                    readonly src: "2196:1:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
@@ -2033,26 +2033,26 @@ export declare const SafeCast: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 22306;
+                                    readonly id: 22436;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "2189:6:127";
+                                    readonly src: "2189:6:131";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_int256_$";
                                         readonly typeString: "type(int256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 22305;
+                                        readonly id: 22435;
                                         readonly name: "int256";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "2189:6:127";
+                                        readonly src: "2189:6:131";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 22308;
+                                readonly id: 22438;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2061,47 +2061,47 @@ export declare const SafeCast: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "2189:9:127";
+                                readonly src: "2189:9:131";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly src: "2185:13:127";
+                            readonly src: "2185:13:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly id: 22310;
+                        readonly id: 22440;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2185:13:127";
+                        readonly src: "2185:13:131";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 22278;
+                    readonly id: 22408;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1841:155:127";
+                    readonly src: "1841:155:131";
                     readonly text: "@notice This function safely casts an uint256 to an int256.\n @param x The uint256 to cast to int256.\n @return y The int256 casted from x.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "toInt256";
-                readonly nameLocation: "2010:8:127";
+                readonly nameLocation: "2010:8:131";
                 readonly parameters: {
-                    readonly id: 22281;
+                    readonly id: 22411;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22280;
+                        readonly id: 22410;
                         readonly mutability: "mutable";
                         readonly name: "x";
-                        readonly nameLocation: "2027:1:127";
+                        readonly nameLocation: "2027:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22312;
-                        readonly src: "2019:9:127";
+                        readonly scope: 22442;
+                        readonly src: "2019:9:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2109,10 +2109,10 @@ export declare const SafeCast: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 22279;
+                            readonly id: 22409;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2019:7:127";
+                            readonly src: "2019:7:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2120,20 +2120,20 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2018:11:127";
+                    readonly src: "2018:11:131";
                 };
                 readonly returnParameters: {
-                    readonly id: 22284;
+                    readonly id: 22414;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 22283;
+                        readonly id: 22413;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "2060:1:127";
+                        readonly nameLocation: "2060:1:131";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 22312;
-                        readonly src: "2053:8:127";
+                        readonly scope: 22442;
+                        readonly src: "2053:8:131";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2141,10 +2141,10 @@ export declare const SafeCast: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 22282;
+                            readonly id: 22412;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2053:6:127";
+                            readonly src: "2053:6:131";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
@@ -2152,9 +2152,9 @@ export declare const SafeCast: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2052:10:127";
+                    readonly src: "2052:10:131";
                 };
-                readonly scope: 22313;
+                readonly scope: 22443;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -2165,21 +2165,21 @@ export declare const SafeCast: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly documentation: {
-                readonly id: 22139;
+                readonly id: 22269;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "127:216:127";
+                readonly src: "127:216:131";
                 readonly text: "@notice Safe unsigned integer casting library that reverts on overflow.\n @author Inspired by OpenZeppelin (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeCast.sol)";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [22313];
+            readonly linearizedBaseContracts: readonly [22443];
             readonly name: "SafeCast";
-            readonly nameLocation: "351:8:127";
-            readonly scope: 22314;
+            readonly nameLocation: "351:8:131";
+            readonly scope: 22444;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 127;
+    readonly id: 131;
 };
 //# sourceMappingURL=SafeCast.d.ts.map
