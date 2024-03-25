@@ -11,8 +11,8 @@ export const faqData = [
         </p>
         <p>
           Example: A user deposits 1.00 stETH in a market offering a 5% fixed
-          APR (net of fees) for a 12-month position duration. They can redeem
-          1.05 stETH one year from now.
+          APR (after pool fees) for a 12-month position duration. They can
+          redeem 1.05 stETH one year from now.
         </p>
       </div>
     ),
