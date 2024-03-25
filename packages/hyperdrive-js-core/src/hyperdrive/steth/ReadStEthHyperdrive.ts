@@ -28,7 +28,11 @@ export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
   useSharesAccounting?: boolean;
 }
 
-export class ReadStEthHyperdrive extends stEthHyperdriveMixin(ReadHyperdrive) {}
+export class ReadStEthHyperdrive extends stEthHyperdriveMixin(ReadHyperdrive) {
+  constructor(options: ReadStEthHyperdriveOptions) {
+    super(options);
+  }
+}
 
 /**
  * The public interface of the stETH Hyperdrive mixin.
