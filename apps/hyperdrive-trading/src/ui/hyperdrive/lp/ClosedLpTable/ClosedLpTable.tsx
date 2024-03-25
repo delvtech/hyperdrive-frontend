@@ -256,7 +256,7 @@ export function ClosedLpTable({
     );
   }
   return (
-    <div className="max-h-96 w-full overflow-y-auto">
+    <div className="max-h-[512px] w-full overflow-y-auto">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
