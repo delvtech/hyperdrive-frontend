@@ -31,8 +31,8 @@ additional thought from developers.
   the codebase easier to read and search.
 - Always treat acronyms and abbreviations as words when considering
   capitalization. For example:
-    - Instead of `LongAPRStat`, use `LongAprStat`
-    - Instead of `baseAPIURL`, use `baseApiUrl`
+  - Instead of `LongAPRStat`, use `LongAprStat`
+  - Instead of `baseAPIURL`, use `baseApiUrl`
 - If code review introduces confusion over a piece of code, add clarifying
   comments.
 - Rebase to avoid merge commits in branches and PRs.
@@ -74,7 +74,7 @@ const buttonClass = classNames("daisy-btn", {
 });
 
 // Render the element
-<button className={buttonClass}>Click Me</button>
+<button className={buttonClass}>Click Me</button>;
 ```
 
 ### **3. Avoid use of `line-height`**
@@ -112,9 +112,60 @@ the first word, for instance, 'View all' instead of 'View All'.
 
 Note: Proper nouns should still be capitalized, e.g.: "Dai Savings Rate"
 
-### **4. Functions should have verbs**
+### **5. Functions should have verbs**
 
 Function names should begin with verbs to enhance readability and express the
 action they perform. This convention aids in conveying the function's purpose,
 such as `calculateSum()`, `formatLabel()`, `setIsDisabled()`,
 `convertInchesToFeet`, etc.
+
+### **6. Inferred return types for internal mixins**
+
+The [explicit module boundary types eslint
+rule](https://typescript-eslint.io/rules/explicit-module-boundary-types) is
+disabled for internal [mixin functions](https://www.typescriptlang.org/docs/handbook/mixins.html) to avoid inaccurate return types due to
+differences in how conflicts are handled in [Interfaces vs.
+Intersections](https://www.typescriptlang.org/docs/handbook/2/objects.html#interfaces-vs-intersections),
+and having to duplicate method signatures in both a type and the mixin's
+implementation. Internal mixins should include the [`@internal` doc
+tag](https://typedoc.org/tags/internal/) to indicate that they are not part of
+the public API.
+
+> The exception is classes with private/protected properties. Exported class
+> expressions can't have private or protected properties so a separate type must
+> be defined for the public interface first and should be used in the return
+> type.
+>
+> see: https://github.com/microsoft/TypeScript/issues/30355
+
+```ts
+// ❌ Instead of this
+
+interface IFooBar extends Foo {
+  baz(arg: string): Promise<string>;
+}
+
+export function barMixin<T extends Foo>(Base: T): IFooBar & T {
+  return class extends Base {
+    // duplicated method signatures and type annotations
+    baz(arg: string): Promise<string> {
+      // ...
+    }
+  };
+}
+
+// ✅ Use this
+
+/**
+ * @internal
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function barMixin<T extends Foo>(Base: T) {
+  return class extends Base {
+    // ...
+  };
+}
+
+// export a class that extends the mixin as part of the public API
+export class FooBar extends barMixin(Foo) {}
+```

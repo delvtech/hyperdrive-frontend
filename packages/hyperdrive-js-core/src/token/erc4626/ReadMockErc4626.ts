@@ -1,38 +1,50 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { Constructor } from "src/base/types";
 import { mockErc4626Abi, MockErc4626Abi } from "src/token/erc4626/abi";
-import { ReadErc4626, ReadErc4626Options } from "src/token/erc4626/ReadErc4626";
+import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
-export class ReadMockErc4626 extends ReadErc4626 {
-  mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
+export class ReadMockErc4626 extends mockErc4626Mixin(ReadErc4626) {}
 
-  constructor({
-    name = "Mock ERC-4626 Tokenized Vault",
-    address,
-    contractFactory,
-    network,
-    cache,
-    namespace,
-  }: ReadErc4626Options) {
-    super({
-      address,
-      contractFactory,
-      network,
-      cache,
-      name,
-      namespace,
-    });
-    this.mockErc4626Contract = contractFactory({
-      abi: mockErc4626Abi,
-      address,
-      cache,
-      namespace,
-    });
-  }
+/**
+ * @internal
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function mockErc4626Mixin<T extends Constructor<ReadErc4626>>(
+  BaseReadErc4626: T,
+) {
+  return class extends BaseReadErc4626 {
+    mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 
-  /**
-   * Get the rate of the vault.
-   */
-  getRate({ options }: { options?: ContractReadOptions }): Promise<bigint> {
-    return this.mockErc4626Contract.read("getRate", {}, options);
-  }
+    constructor(...[options]: any[]) {
+      const {
+        name = "Mock ERC-4626 Tokenized Vault",
+        address,
+        contractFactory,
+        network,
+        cache,
+        namespace,
+      } = options as ConstructorParameters<typeof ReadErc4626>[0];
+      super({
+        address,
+        contractFactory,
+        network,
+        cache,
+        name,
+        namespace,
+      });
+      this.mockErc4626Contract = contractFactory({
+        abi: mockErc4626Abi,
+        address,
+        cache,
+        namespace,
+      });
+    }
+
+    /**
+     * Get the rate of the vault.
+     */
+    getRate({ options }: { options?: ContractReadOptions }): Promise<bigint> {
+      return this.mockErc4626Contract.read("getRate", {}, options);
+    }
+  };
 }
