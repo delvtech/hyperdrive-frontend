@@ -63,7 +63,7 @@ export function MarketStats({
         description="Fixed rate earned from opening longs, before fees and slippage are applied."
       />
       <Stat
-        label="LP APY (12 Hour)"
+        label="LP APY (7d)"
         value={
           lpApyStatus !== "loading" ? (
             <span className="flex items-center gap-1.5">
@@ -73,7 +73,7 @@ export function MarketStats({
             <Skeleton className="w-20" />
           )
         }
-        description={`The LP's annual return projection assuming the past 12-hour performance rate continues for a year.`}
+        description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
       />
       <Stat
         description={`The amount of hy${
