@@ -9,7 +9,6 @@ export class ReadMockErc4626Hyperdrive extends mockErc4626HyperdriveMixin(
 
 /**
  * The public interface of the Mock ERC-4626 Hyperdrive mixin.
- * @internal
  */
 export interface MockErc4626HyperdriveMixin {
   getSharesToken(options?: ContractReadOptions): Promise<ReadMockErc4626>;
@@ -18,12 +17,9 @@ export interface MockErc4626HyperdriveMixin {
   }): Promise<bigint>;
 }
 
-/**
- * @internal
- */
 export function mockErc4626HyperdriveMixin<
   T extends Constructor<ReadErc4626Hyperdrive>,
->(Base: T): Constructor<MockErc4626HyperdriveMixin> & T {
+>(Base: T): T & Constructor<MockErc4626HyperdriveMixin> {
   return class extends Base {
     constructor(...[options]: any[]) {
       super({ name: options.name ?? "Mock ERC-4626 Hyperdrive", ...options });

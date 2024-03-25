@@ -6,12 +6,20 @@ import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 export class ReadMockErc4626 extends mockErc4626Mixin(ReadErc4626) {}
 
 /**
- * @internal
+ * The public interface of the Mock ERC-4626 mixin.
  */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export interface MockErc4626Mixin {
+  mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
+
+  /**
+   * Get the rate of the vault.
+   */
+  getRate({ options }: { options?: ContractReadOptions }): Promise<bigint>;
+}
+
 export function mockErc4626Mixin<T extends Constructor<ReadErc4626>>(
   BaseReadErc4626: T,
-) {
+): T & Constructor<MockErc4626Mixin> {
   return class extends BaseReadErc4626 {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 

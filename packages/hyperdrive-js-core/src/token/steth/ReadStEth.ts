@@ -6,11 +6,51 @@ import { StEthAbi, stEthAbi } from "src/token/steth/abi";
 export class ReadStEth extends stEthMixin(ReadErc20) {}
 
 /**
- * @internal
+ * The public interface of the stETH mixin.
  */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function stEthMixin<T extends Constructor<ReadErc20>>(Base: T) {
-  return class extends Base {
+export interface StEthMixin {
+  stEthContract: CachedReadContract<StEthAbi>;
+
+  /**
+   * Get the number of stETH shares held by an account.
+   */
+  getSharesOf({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Get the amount of pooled ETH (stETH) that would be received for a given
+   * number of shares.
+   */
+  getPooledEthByShares({
+    sharesAmount,
+    options,
+  }: {
+    sharesAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Get the number of shares that would be received for a given amount of
+   * pooled ETH (stETH).
+   */
+  getSharesByPooledEth({
+    ethAmount,
+    options,
+  }: {
+    ethAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+}
+
+export function stEthMixin<T extends Constructor<ReadErc20>>(
+  Base: T,
+): T & Constructor<StEthMixin> {
+  return class extends Base implements StEthMixin {
     stEthContract: CachedReadContract<StEthAbi>;
 
     constructor(...[options]: any[]) {
@@ -38,14 +78,14 @@ export function stEthMixin<T extends Constructor<ReadErc20>>(Base: T) {
       });
     }
 
-    async getSharesOf({
+    getSharesOf({
       account,
       options,
     }: {
       account: `0x${string}`;
       options?: ContractReadOptions;
     }): Promise<bigint> {
-      return await this.stEthContract.read(
+      return this.stEthContract.read(
         "sharesOf",
         { _account: account },
         options,

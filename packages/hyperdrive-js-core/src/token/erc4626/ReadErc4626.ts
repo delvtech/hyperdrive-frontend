@@ -6,13 +6,47 @@ import { Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
 export class ReadErc4626 extends erc4626Mixin(ReadErc20) {}
 
 /**
- * @internal
+ * The public interface of the ERC-4626 mixin.
  */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export interface Erc4626Mixin {
+  erc4626Contract: CachedReadContract<Erc4626Abi>;
+
+  /**
+   * Get the total supply of assets in the vault.
+   */
+  getTotalAssets({
+    options,
+  }: {
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Convert a shares amount to an assets amount.
+   */
+  convertToAssets({
+    sharesAmount,
+    options,
+  }: {
+    sharesAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Convert an assets amount to a shares amount.
+   */
+  convertToShares({
+    assetsAmount,
+    options,
+  }: {
+    assetsAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+}
+
 export function erc4626Mixin<T extends Constructor<ReadErc20>>(
-  BaseReadErc20: T,
-) {
-  return class extends BaseReadErc20 {
+  Base: T,
+): T & Constructor<Erc4626Mixin> {
+  return class extends Base implements Erc4626Mixin {
     erc4626Contract: CachedReadContract<Erc4626Abi>;
 
     constructor(...[options]: any[]) {
@@ -40,9 +74,6 @@ export function erc4626Mixin<T extends Constructor<ReadErc20>>(
       });
     }
 
-    /**
-     * Get the total supply of assets in the vault.
-     */
     getTotalAssets({
       options,
     }: {
@@ -51,9 +82,6 @@ export function erc4626Mixin<T extends Constructor<ReadErc20>>(
       return this.erc4626Contract.read("totalAssets", {}, options);
     }
 
-    /**
-     * Convert a shares amount to an assets amount.
-     */
     convertToAssets({
       sharesAmount,
       options,
@@ -68,9 +96,6 @@ export function erc4626Mixin<T extends Constructor<ReadErc20>>(
       );
     }
 
-    /**
-     * Convert an assets amount to a shares amount.
-     */
     convertToShares({
       assetsAmount,
       options,
