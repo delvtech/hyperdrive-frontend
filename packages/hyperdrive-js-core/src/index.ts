@@ -29,11 +29,8 @@ export {
   ReadWriteEth,
   type ReadWriteEthOptions,
 } from "src/token/eth/ReadWriteEth";
-export { ReadStEth, type ReadStEthOptions } from "src/token/steth/ReadStEth";
-export {
-  ReadWriteStEth,
-  type ReadWriteStEthOptions,
-} from "src/token/steth/ReadWriteStEth";
+export { ReadStEth } from "src/token/steth/ReadStEth";
+export { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
 export type {
   ContractFactoryOptions,
@@ -47,18 +44,18 @@ export type {
 } from "src/hyperdrive/HyperdriveContract";
 
 // Pool
+export type { Checkpoint } from "src/pool/Checkpoint";
 export type { PoolConfig } from "src/pool/PoolConfig";
 export type { PoolInfo } from "src/pool/PoolInfo";
-export type { Checkpoint } from "src/pool/Checkpoint";
 export { getCheckpointId } from "src/pool/getCheckpointId";
 
 // Shorts
-export type { Short, ClosedShort, OpenShort } from "src/shorts/types";
+export type { ClosedShort, OpenShort, Short } from "src/shorts/types";
 
 // Longs
-export type { ClosedLong, Long } from "src/longs/types";
 export { calculateFixedRateFromOpenLong } from "src/longs/calculateFixedRateFromOpenLong";
 export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
+export type { ClosedLong, Long } from "src/longs/types";
 
 // LP
 export type { ClosedLpShares } from "src/lp/ClosedLpShares";
