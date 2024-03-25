@@ -1297,35 +1297,36 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       removeLiquidityEvents,
     );
 
-    const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
-      lpSharesIn: lpShareBalance,
-      minOutputPerShare: 1n,
-      asBase: false,
-      destination: account,
-    });
+    let baseValue = 0n;
+    let sharesValue = 0n;
+    if (lpShareBalance) {
+      const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
+        lpSharesIn: lpShareBalance,
+        minOutputPerShare: 1n,
+        asBase: false,
+        destination: account,
+      });
 
-    // convert the proceeds into base using vaultSharePrice
-    const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
-    const proceedsBaseValue = dnum.multiply(
-      [vaultSharePrice, 18],
-      [proceeds, 18],
-    );
+      // convert the proceeds into base using vaultSharePrice
+      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
+      const proceedsBaseValue = dnum.multiply(
+        [vaultSharePrice, 18],
+        [proceeds, 18],
+      );
 
-    // convert the withdrawal shares into base using lpSharePrice
-    const withdrawalSharesBaseValue = dnum.multiply(
-      [lpSharePrice, 18],
-      [withdrawalShares, 18],
-    );
-    const withdrawalSharesSharesValue = dnum.divide(withdrawalSharesBaseValue, [
-      lpSharePrice,
-      18,
-    ]);
+      // convert the withdrawal shares into base using lpSharePrice
+      const withdrawalSharesBaseValue = dnum.multiply(
+        [lpSharePrice, 18],
+        [withdrawalShares, 18],
+      );
+      const withdrawalSharesSharesValue = dnum.divide(
+        withdrawalSharesBaseValue,
+        [lpSharePrice, 18],
+      );
 
-    const baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
-    const sharesValue = dnum.add(
-      [proceeds, 18],
-      withdrawalSharesSharesValue,
-    )[0];
+      baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
+      sharesValue = dnum.add([proceeds, 18], withdrawalSharesSharesValue)[0];
+    }
 
     return {
       lpShareBalance,
