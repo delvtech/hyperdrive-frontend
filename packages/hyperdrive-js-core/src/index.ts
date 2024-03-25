@@ -1,4 +1,5 @@
 // Main Hyperdrive sdk entrypoint for consumers
+export type { Network } from "@delvtech/evm-client";
 export {
   ReadHyperdrive,
   type ReadHyperdriveOptions,
@@ -7,6 +8,10 @@ export {
   ReadWriteHyperdrive,
   type ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
+export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
+export { ReadMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadMockErc4626Hyperdrive";
+export { ReadWriteErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteErc4626Hyperdrive";
+export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteMockErc4626Hyperdrive";
 export {
   ReadStEthHyperdrive,
   type ReadStEthHyperdriveOptions,
@@ -24,6 +29,10 @@ export {
   ReadWriteErc20,
   type ReadWriteErc20Options,
 } from "src/token/erc20/ReadWriteErc20";
+export { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
+export { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
+export { ReadWriteErc4626 } from "src/token/erc4626/ReadWriteErc4626";
+export { ReadWriteMockErc4626 } from "src/token/erc4626/ReadWriteMockErc4626";
 export { ReadEth, type ReadEthOptions } from "src/token/eth/ReadEth";
 export {
   ReadWriteEth,
