@@ -199,7 +199,6 @@ export function RemoveLiquidityForm({
           }
           value={amount ?? ""}
           maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
-          strictMax
           stat={
             lpShares && !!poolInfo
               ? `Withdrawable: ${formatBalance({
