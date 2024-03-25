@@ -16,6 +16,7 @@ export class ReadErc4626Hyperdrive extends erc4626HyperdriveMixin(
 
 /**
  * The public interface of the ERC-4626 Hyperdrive mixin.
+ * @internal
  */
 export interface Erc4626HyperdriveMixin {
   erc4626HyperdriveContract: CachedReadContract<Erc4626HyperdriveAbi>;
@@ -26,6 +27,9 @@ export interface Erc4626HyperdriveMixin {
   getSharesToken(options?: ContractReadOptions): Promise<ReadErc4626>;
 }
 
+/**
+ * @internal
+ */
 export function erc4626HyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): T & Constructor<Erc4626HyperdriveMixin> {

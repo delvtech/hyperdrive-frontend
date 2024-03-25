@@ -7,6 +7,7 @@ export class ReadErc4626 extends erc4626Mixin(ReadErc20) {}
 
 /**
  * The public interface of the ERC-4626 mixin.
+ * @internal
  */
 export interface Erc4626Mixin {
   erc4626Contract: CachedReadContract<Erc4626Abi>;
@@ -43,6 +44,9 @@ export interface Erc4626Mixin {
   }): Promise<bigint>;
 }
 
+/**
+ * @internal
+ */
 export function erc4626Mixin<T extends Constructor<ReadErc20>>(
   Base: T,
 ): T & Constructor<Erc4626Mixin> {

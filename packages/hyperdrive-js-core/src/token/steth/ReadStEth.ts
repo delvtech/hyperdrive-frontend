@@ -7,6 +7,7 @@ export class ReadStEth extends stEthMixin(ReadErc20) {}
 
 /**
  * The public interface of the stETH mixin.
+ * @internal
  */
 export interface StEthMixin {
   stEthContract: CachedReadContract<StEthAbi>;
@@ -47,6 +48,9 @@ export interface StEthMixin {
   }): Promise<bigint>;
 }
 
+/**
+ * @internal
+ */
 export function stEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
 ): T & Constructor<StEthMixin> {

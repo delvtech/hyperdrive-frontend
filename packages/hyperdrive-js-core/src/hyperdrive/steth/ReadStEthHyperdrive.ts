@@ -32,6 +32,7 @@ export class ReadStEthHyperdrive extends stEthHyperdriveMixin(ReadHyperdrive) {}
 
 /**
  * The public interface of the stETH Hyperdrive mixin.
+ * @internal
  */
 export interface StEthHyperdriveMixin {
   stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
@@ -55,6 +56,9 @@ export interface StEthHyperdriveMixin {
   getSharesToken(options?: ContractReadOptions): Promise<ReadStEth>;
 }
 
+/**
+ * @internal
+ */
 export function stEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): T & Constructor<StEthHyperdriveMixin> {
