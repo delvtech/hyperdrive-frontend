@@ -10,7 +10,8 @@ export function customRainbowTheme(): Theme {
       modalBackground: "#202F36", // gray-700
       modalBorder: "#202F36", // gray-700
       modalText: "#EFF4F6", // gray-100
-      accentColor: "#9BF3F0", // teal-DEFAULT
+      accentColor: "#15FFAB", // teal-DEFAULT
+      accentColorForeground: "#202F36", // gray-700
     },
   };
 }
