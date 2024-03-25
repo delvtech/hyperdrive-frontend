@@ -27,7 +27,14 @@ export default function Footer(): ReactElement {
       </aside>
       <nav>
         <header className={footerTitleClassName}>Services</header>
-        <a className="daisy-link-hover daisy-link">Documentation</a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docs-delv.gitbook.io/hyperdrive"
+          className="daisy-link-hover daisy-link"
+        >
+          Documentation
+        </a>
       </nav>
       <nav>
         {/* TODO: Determine if company information is needed here */}
