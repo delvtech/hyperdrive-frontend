@@ -3,13 +3,13 @@ import { Constructor } from "src/base/types";
 import { mockErc4626Abi, MockErc4626Abi } from "src/token/erc4626/abi";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
-export class ReadMockErc4626 extends mockErc4626Mixin(ReadErc4626) {}
+export class ReadMockErc4626 extends readMockErc4626Mixin(ReadErc4626) {}
 
 /**
  * The public interface of the Mock ERC-4626 mixin.
  * @internal
  */
-export interface MockErc4626Mixin {
+export interface ReadMockErc4626Mixin {
   mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 
   /**
@@ -21,9 +21,9 @@ export interface MockErc4626Mixin {
 /**
  * @internal
  */
-export function mockErc4626Mixin<T extends Constructor<ReadErc4626>>(
+export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
   BaseReadErc4626: T,
-): T & Constructor<MockErc4626Mixin> {
+): T & Constructor<ReadMockErc4626Mixin> {
   return class extends BaseReadErc4626 {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 

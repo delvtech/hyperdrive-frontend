@@ -28,7 +28,9 @@ export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
   useSharesAccounting?: boolean;
 }
 
-export class ReadStEthHyperdrive extends stEthHyperdriveMixin(ReadHyperdrive) {
+export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
+  ReadHyperdrive,
+) {
   constructor(options: ReadStEthHyperdriveOptions) {
     super(options);
   }
@@ -38,7 +40,7 @@ export class ReadStEthHyperdrive extends stEthHyperdriveMixin(ReadHyperdrive) {
  * The public interface of the stETH Hyperdrive mixin.
  * @internal
  */
-export interface StEthHyperdriveMixin {
+export interface ReadStEthHyperdriveMixin {
   stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
 
   /**
@@ -63,10 +65,10 @@ export interface StEthHyperdriveMixin {
 /**
  * @internal
  */
-export function stEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
+export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
-): T & Constructor<StEthHyperdriveMixin> {
-  return class extends Base implements StEthHyperdriveMixin {
+): T & Constructor<ReadStEthHyperdriveMixin> {
+  return class extends Base implements ReadStEthHyperdriveMixin {
     stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
     private _useSharesAccounting: boolean;
 

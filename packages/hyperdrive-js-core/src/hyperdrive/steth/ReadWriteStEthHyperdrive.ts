@@ -9,7 +9,7 @@ import {
 } from "src/hyperdrive/ReadWriteHyperdrive";
 import {
   ReadStEthHyperdriveOptions,
-  stEthHyperdriveMixin,
+  readStEthHyperdriveMixin,
 } from "src/hyperdrive/steth/ReadStEthHyperdrive";
 import { StEthHyperdriveAbi } from "src/hyperdrive/steth/abi";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
@@ -18,7 +18,7 @@ import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 export interface ReadWriteStEthHyperdriveOptions
   extends Overwrite<ReadStEthHyperdriveOptions, ReadWriteHyperdriveOptions> {}
 
-export class ReadWriteStEthHyperdrive extends stEthHyperdriveMixin(
+export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadWriteHyperdrive,
 ) {
   declare stEthHyperdriveContract: CachedReadWriteContract<StEthHyperdriveAbi>;

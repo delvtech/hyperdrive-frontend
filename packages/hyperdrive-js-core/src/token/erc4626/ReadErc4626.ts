@@ -3,13 +3,13 @@ import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
 
-export class ReadErc4626 extends erc4626Mixin(ReadErc20) {}
+export class ReadErc4626 extends readErc4626Mixin(ReadErc20) {}
 
 /**
  * The public interface of the ERC-4626 mixin.
  * @internal
  */
-export interface Erc4626Mixin {
+export interface ReadErc4626Mixin {
   erc4626Contract: CachedReadContract<Erc4626Abi>;
 
   /**
@@ -47,10 +47,10 @@ export interface Erc4626Mixin {
 /**
  * @internal
  */
-export function erc4626Mixin<T extends Constructor<ReadErc20>>(
+export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
   Base: T,
-): T & Constructor<Erc4626Mixin> {
-  return class extends Base implements Erc4626Mixin {
+): T & Constructor<ReadErc4626Mixin> {
+  return class extends Base implements ReadErc4626Mixin {
     erc4626Contract: CachedReadContract<Erc4626Abi>;
 
     constructor(...[options]: any[]) {

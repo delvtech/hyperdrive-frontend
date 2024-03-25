@@ -10,7 +10,7 @@ import {
 } from "src/hyperdrive/erc4626/abi";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
-export class ReadErc4626Hyperdrive extends erc4626HyperdriveMixin(
+export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
   ReadHyperdrive,
 ) {}
 
@@ -18,7 +18,7 @@ export class ReadErc4626Hyperdrive extends erc4626HyperdriveMixin(
  * The public interface of the ERC-4626 Hyperdrive mixin.
  * @internal
  */
-export interface Erc4626HyperdriveMixin {
+export interface ReadErc4626HyperdriveMixin {
   erc4626HyperdriveContract: CachedReadContract<Erc4626HyperdriveAbi>;
 
   /**
@@ -30,9 +30,9 @@ export interface Erc4626HyperdriveMixin {
 /**
  * @internal
  */
-export function erc4626HyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T,
-): T & Constructor<Erc4626HyperdriveMixin> {
+export function readErc4626HyperdriveMixin<
+  T extends Constructor<ReadHyperdrive>,
+>(Base: T): T & Constructor<ReadErc4626HyperdriveMixin> {
   return class extends Base {
     erc4626HyperdriveContract: CachedReadContract<Erc4626HyperdriveAbi>;
 

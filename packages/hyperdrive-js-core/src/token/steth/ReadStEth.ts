@@ -3,13 +3,13 @@ import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { StEthAbi, stEthAbi } from "src/token/steth/abi";
 
-export class ReadStEth extends stEthMixin(ReadErc20) {}
+export class ReadStEth extends readStEthMixin(ReadErc20) {}
 
 /**
  * The public interface of the stETH mixin.
  * @internal
  */
-export interface StEthMixin {
+export interface ReadStEthMixin {
   stEthContract: CachedReadContract<StEthAbi>;
 
   /**
@@ -51,10 +51,10 @@ export interface StEthMixin {
 /**
  * @internal
  */
-export function stEthMixin<T extends Constructor<ReadErc20>>(
+export function readStEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
-): T & Constructor<StEthMixin> {
-  return class extends Base implements StEthMixin {
+): T & Constructor<ReadStEthMixin> {
+  return class extends Base implements ReadStEthMixin {
     stEthContract: CachedReadContract<StEthAbi>;
 
     constructor(...[options]: any[]) {
