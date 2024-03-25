@@ -14,11 +14,7 @@ export interface ReadErc4626Mixin {
   /**
    * Get the total supply of assets in the vault.
    */
-  getTotalAssets({
-    options,
-  }: {
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
+  getTotalAssets(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * Convert a shares amount to an assets amount.
@@ -77,11 +73,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       });
     }
 
-    getTotalAssets({
-      options,
-    }: {
-      options?: ContractReadOptions;
-    }): Promise<bigint> {
+    getTotalAssets(options?: ContractReadOptions): Promise<bigint> {
       return this.erc4626Contract.read("totalAssets", {}, options);
     }
 

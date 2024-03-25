@@ -14,7 +14,7 @@ export interface ReadMockErc4626Mixin {
   /**
    * Get the rate of the vault.
    */
-  getRate({ options }: { options?: ContractReadOptions }): Promise<bigint>;
+  getRate(options?: ContractReadOptions): Promise<bigint>;
 }
 
 /**
@@ -23,7 +23,7 @@ export interface ReadMockErc4626Mixin {
 export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
   BaseReadErc4626: T,
 ): T & Constructor<ReadMockErc4626Mixin> {
-  return class extends BaseReadErc4626 {
+  return class extends BaseReadErc4626 implements ReadMockErc4626Mixin {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 
     constructor(...[options]: any[]) {
@@ -54,7 +54,7 @@ export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
     /**
      * Get the rate of the vault.
      */
-    getRate({ options }: { options?: ContractReadOptions }): Promise<bigint> {
+    getRate(options?: ContractReadOptions): Promise<bigint> {
       return this.mockErc4626Contract.read("getRate", {}, options);
     }
   };
