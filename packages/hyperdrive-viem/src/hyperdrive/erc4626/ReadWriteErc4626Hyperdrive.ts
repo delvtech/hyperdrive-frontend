@@ -1,15 +1,9 @@
 import { createNetwork } from "@delvtech/evm-client-viem";
-import {
-  ReadWriteErc20 as ReadWriteErc20Base,
-  ReadWriteErc20Options as ReadWriteErc20OptionsBase,
-} from "@delvtech/hyperdrive-js-core";
+import { ReadWriteErc4626Hyperdrive as ReadWriteErc4626HyperdriveBase } from "@delvtech/hyperdrive-js-core";
 import { createReadWriteContractFactory } from "src/evm-client/createReadWriteContractFactory";
-import { ReadWriteModelOptions } from "src/model/types";
+import { ReadWriteHyperdriveOptions } from "src/hyperdrive/ReadWriteHyperdrive";
 
-export interface ReadWriteErc20Options
-  extends ReadWriteModelOptions<ReadWriteErc20OptionsBase> {}
-
-export class ReadWriteErc20 extends ReadWriteErc20Base {
+export class ReadWriteErc4626Hyperdrive extends ReadWriteErc4626HyperdriveBase {
   constructor({
     address,
     cache,
@@ -17,7 +11,7 @@ export class ReadWriteErc20 extends ReadWriteErc20Base {
     namespace,
     publicClient,
     walletClient,
-  }: ReadWriteErc20Options) {
+  }: ReadWriteHyperdriveOptions) {
     super({
       address,
       cache,

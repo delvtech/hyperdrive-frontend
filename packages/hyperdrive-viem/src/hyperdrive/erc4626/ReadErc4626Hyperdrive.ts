@@ -1,22 +1,16 @@
 import { createNetwork } from "@delvtech/evm-client-viem";
-import {
-  ReadStEth as ReadStEthBase,
-  ReadStEthOptions as ReadStEthOptionsBase,
-} from "@delvtech/hyperdrive-js-core";
+import { ReadErc4626Hyperdrive as ReadErc4626HyperdriveBase } from "@delvtech/hyperdrive-js-core";
 import { createReadContractFactory } from "src/evm-client/createReadContractFactory";
-import { ReadModelOptions } from "src/model/types";
+import { ReadHyperdriveOptions } from "src/hyperdrive/ReadHyperdrive";
 
-export interface ReadStEthOptions
-  extends ReadModelOptions<ReadStEthOptionsBase> {}
-
-export class ReadStEth extends ReadStEthBase {
+export class ReadErc4626Hyperdrive extends ReadErc4626HyperdriveBase {
   constructor({
     address,
     cache,
     name,
     namespace,
     publicClient,
-  }: ReadStEthOptions) {
+  }: ReadHyperdriveOptions) {
     super({
       address,
       cache,

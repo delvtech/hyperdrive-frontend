@@ -1,31 +1,16 @@
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
-import {
-  ReadErc4626Hyperdrive,
-  ReadErc4626HyperdriveOptions,
-} from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
-import { Overwrite } from "src/base/types";
-import { writeHyperdriveMixin } from "src/hyperdrive/ReadWriteHyperdrive";
 import {
   CachedReadWriteContract,
   ContractReadOptions,
 } from "@delvtech/evm-client";
-import { ReadWriteErc4626 } from "src/token/erc4626/ReadWriteErc4626";
 import { Erc4626HyperdriveAbi } from "src/hyperdrive/erc4626/abi";
+import { readErc4626HyperdriveMixin } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
+import { ReadWriteErc4626 } from "src/token/erc4626/ReadWriteErc4626";
 
-export interface ReadWriteErc4626HyperdriveOptions
-  extends Overwrite<
-    ReadErc4626HyperdriveOptions,
-    ReadWriteContractModelOptions
-  > {}
-
-export class ReadWriteErc4626Hyperdrive extends writeHyperdriveMixin(
-  ReadErc4626Hyperdrive,
+export class ReadWriteErc4626Hyperdrive extends readErc4626HyperdriveMixin(
+  ReadWriteHyperdrive,
 ) {
   declare erc4626HyperdriveContract: CachedReadWriteContract<Erc4626HyperdriveAbi>;
-
-  constructor(options: ReadWriteErc4626HyperdriveOptions) {
-    super(options);
-  }
 
   async getSharesToken(
     options?: ContractReadOptions,

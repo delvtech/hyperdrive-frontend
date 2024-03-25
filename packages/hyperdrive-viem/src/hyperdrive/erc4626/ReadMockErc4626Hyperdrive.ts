@@ -1,22 +1,16 @@
 import { createNetwork } from "@delvtech/evm-client-viem";
-import {
-  ReadErc20 as ReadErc20Base,
-  ReadErc20Options as ReadErc20OptionsBase,
-} from "@delvtech/hyperdrive-js-core";
+import { ReadMockErc4626Hyperdrive as ReadMockErc4626HyperdriveBase } from "@delvtech/hyperdrive-js-core";
 import { createReadContractFactory } from "src/evm-client/createReadContractFactory";
-import { ReadModelOptions } from "src/model/types";
+import { ReadHyperdriveOptions } from "src/hyperdrive/ReadHyperdrive";
 
-export interface ReadErc20Options
-  extends ReadModelOptions<ReadErc20OptionsBase> {}
-
-export class ReadErc20 extends ReadErc20Base {
+export class ReadMockErc4626Hyperdrive extends ReadMockErc4626HyperdriveBase {
   constructor({
     address,
     cache,
     name,
     namespace,
     publicClient,
-  }: ReadErc20Options) {
+  }: ReadHyperdriveOptions) {
     super({
       address,
       cache,

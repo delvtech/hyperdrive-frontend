@@ -1,23 +1,20 @@
 import {
-  IReadHyperdrive,
-  ReadHyperdrive,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import {
   CachedReadWriteContract,
   ContractReadOptions,
   ContractWriteOptions,
 } from "@delvtech/evm-client";
-import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
+import {
+  IReadHyperdrive,
+  ReadHyperdrive,
+} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+import { HyperdriveAbi } from "src/hyperdrive/abi";
+import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import {
   ReadWriteContractModelOptions,
   ReadWriteModel,
 } from "src/model/ReadWriteModel";
-import { Constructor } from "src/base/types";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
-import { HyperdriveAbi } from "src/hyperdrive/abi";
-import { isReadWriteContract } from "src/evm-client/utils/isReadWriteContract";
-import { ExpectedWriteContractError } from "src/evm-client/errors/ExpectedReadWriteContractError";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
@@ -213,347 +210,319 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive, ReadWriteModel {
 export interface ReadWriteHyperdriveOptions
   extends ReadWriteContractModelOptions {}
 
-/**
- * A mixin that adds write methods to a {@linkcode ReadHyperdrive} class.
- *
- * The write methods depend on `this.contract` being a
- * {@linkcode CachedReadWriteContract} after the constructor is called. If it's
- * not, an error will be thrown.
- *
- * @param ReadHyperdrive - The class with read methods to extend.
- * @returns - A new class that extends the original class and adds write
- * methods.
- * @throws An {@linkcode ExpectedWriteContractError} If `this.contract` is not a
- * {@linkcode CachedReadWriteContract}.
- */
-export function writeHyperdriveMixin<
-  TReadHyperdrive extends Constructor<ReadHyperdrive>,
->(
-  ReadHyperdrive: TReadHyperdrive,
-): Constructor<IReadWriteHyperdrive> & TReadHyperdrive {
-  return class extends ReadHyperdrive {
-    declare contract: CachedReadWriteContract<HyperdriveAbi>;
-    declare contractFactory: ReadWriteContractFactory;
-
-    constructor(...args: any[]) {
-      const [options] = args as [ReadWriteHyperdriveOptions];
-      super(options);
-      if (!isReadWriteContract(this.contract)) {
-        throw new ExpectedWriteContractError(options.address);
-      }
-    }
-
-    async getBaseToken(
-      options?: ContractReadOptions,
-    ): Promise<ReadWriteErc20 | ReadWriteEth> {
-      const address = await this.contract.read("baseToken", {}, options);
-      return address === ReadWriteEth.address
-        ? new ReadWriteEth({
-            contractFactory: this.contractFactory,
-            network: this.network,
-          })
-        : new ReadWriteErc20({
-            address,
-            contractFactory: this.contractFactory,
-            namespace: this.contract.namespace,
-            network: this.network,
-          });
-    }
-
-    async checkpoint({
-      args: { time },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"checkpoint">): Promise<`0x${string}`> {
-      const hash = await this.contract.write(
-        "checkpoint",
-        { _checkpointTime: BigInt(time) },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async pause({
-      args: { paused },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"pause">): Promise<`0x${string}`> {
-      const hash = await this.contract.write(
-        "pause",
-        { _status: paused },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.deleteRead("getMarketState");
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async initialize({
-      args: {
-        contribution,
-        apr,
-        destination,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"initialize">): Promise<`0x${string}`> {
-      const hash = await this.contract.write(
-        "initialize",
-        {
-          _apr: apr,
-          _contribution: contribution,
-          _options: {
-            destination: destination,
-            asBase: asBase,
-            extraData: extraData,
-          },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async openLong({
-      args: {
-        destination,
-        amount,
-        minBondsOut,
-        minVaultSharePrice,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"openLong">): ReturnType<
-      IReadWriteHyperdrive,
-      "openLong"
-    > {
-      const hash = await this.contract.write(
-        "openLong",
-        {
-          _amount: amount,
-          _minOutput: minBondsOut,
-          _minVaultSharePrice: minVaultSharePrice,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async openShort({
-      args: {
-        destination,
-        bondAmount,
-        minVaultSharePrice,
-        maxDeposit,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"openShort">): ReturnType<
-      IReadWriteHyperdrive,
-      "openShort"
-    > {
-      const hash = await this.contract.write(
-        "openShort",
-        {
-          _bondAmount: bondAmount,
-          _maxDeposit: maxDeposit,
-          _minVaultSharePrice: minVaultSharePrice,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async closeLong({
-      args: {
-        maturityTime,
-        bondAmountIn,
-        minAmountOut,
-        destination,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"closeLong">): ReturnType<
-      IReadWriteHyperdrive,
-      "closeLong"
-    > {
-      const hash = await this.contract.write(
-        "closeLong",
-        {
-          _maturityTime: maturityTime,
-          _bondAmount: bondAmountIn,
-          _minOutput: minAmountOut,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async closeShort({
-      args: {
-        maturityTime,
-        bondAmountIn,
-        minAmountOut,
-        destination,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"closeShort">): ReturnType<
-      IReadWriteHyperdrive,
-      "closeShort"
-    > {
-      const hash = await this.contract.write(
-        "closeShort",
-        {
-          _maturityTime: maturityTime,
-          _bondAmount: bondAmountIn,
-          _minOutput: minAmountOut,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async addLiquidity({
-      args: {
-        destination,
-        contribution,
-        minAPR,
-        minLpSharePrice,
-        maxAPR,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"addLiquidity">): ReturnType<
-      IReadWriteHyperdrive,
-      "addLiquidity"
-    > {
-      const hash = await this.contract.write(
-        "addLiquidity",
-        {
-          _contribution: contribution,
-          _minLpSharePrice: minLpSharePrice,
-          _minApr: minAPR,
-          _maxApr: maxAPR,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async removeLiquidity({
-      args: {
-        destination,
-        lpSharesIn,
-        minOutputPerShare,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"removeLiquidity">): ReturnType<
-      IReadWriteHyperdrive,
-      "removeLiquidity"
-    > {
-      const hash = await this.contract.write(
-        "removeLiquidity",
-        {
-          _lpShares: lpSharesIn,
-          _minOutputPerShare: minOutputPerShare,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-
-    async redeemWithdrawalShares({
-      args: {
-        withdrawalSharesIn,
-        minOutputPerShare,
-        destination,
-        asBase = true,
-        extraData = DEFAULT_EXTRA_DATA,
-      },
-      options,
-      onTransactionMined,
-    }: ExtractMethodParams<"redeemWithdrawalShares">): ReturnType<
-      IReadWriteHyperdrive,
-      "redeemWithdrawalShares"
-    > {
-      const hash = await this.contract.write(
-        "redeemWithdrawalShares",
-        {
-          _withdrawalShares: withdrawalSharesIn,
-          _minOutputPerShare: minOutputPerShare,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
-      this.network.waitForTransaction(hash).then(() => {
-        this.contract.clearCache();
-        onTransactionMined?.(hash);
-      });
-      return hash;
-    }
-  };
-}
-
-export class ReadWriteHyperdrive extends writeHyperdriveMixin(ReadHyperdrive) {
+export class ReadWriteHyperdrive
+  extends ReadHyperdrive
+  implements IReadWriteHyperdrive
+{
   declare contract: CachedReadWriteContract<HyperdriveAbi>;
+  declare contractFactory: ReadWriteContractFactory;
 
   constructor(options: ReadWriteHyperdriveOptions) {
     super(options);
+  }
+
+  async getBaseToken(
+    options?: ContractReadOptions,
+  ): Promise<ReadWriteErc20 | ReadWriteEth> {
+    const address = await this.contract.read("baseToken", {}, options);
+    return address === ReadWriteEth.address
+      ? new ReadWriteEth({
+          contractFactory: this.contractFactory,
+          network: this.network,
+        })
+      : new ReadWriteErc20({
+          address,
+          contractFactory: this.contractFactory,
+          namespace: this.contract.namespace,
+          network: this.network,
+        });
+  }
+
+  async checkpoint({
+    args: { time },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"checkpoint">): Promise<`0x${string}`> {
+    const hash = await this.contract.write(
+      "checkpoint",
+      { _checkpointTime: BigInt(time) },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async pause({
+    args: { paused },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"pause">): Promise<`0x${string}`> {
+    const hash = await this.contract.write(
+      "pause",
+      { _status: paused },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.deleteRead("getMarketState");
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async initialize({
+    args: {
+      contribution,
+      apr,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"initialize">): Promise<`0x${string}`> {
+    const hash = await this.contract.write(
+      "initialize",
+      {
+        _apr: apr,
+        _contribution: contribution,
+        _options: {
+          destination: destination,
+          asBase: asBase,
+          extraData: extraData,
+        },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async openLong({
+    args: {
+      destination,
+      amount,
+      minBondsOut,
+      minVaultSharePrice,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"openLong">): ReturnType<
+    IReadWriteHyperdrive,
+    "openLong"
+  > {
+    const hash = await this.contract.write(
+      "openLong",
+      {
+        _amount: amount,
+        _minOutput: minBondsOut,
+        _minVaultSharePrice: minVaultSharePrice,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async openShort({
+    args: {
+      destination,
+      bondAmount,
+      minVaultSharePrice,
+      maxDeposit,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"openShort">): ReturnType<
+    IReadWriteHyperdrive,
+    "openShort"
+  > {
+    const hash = await this.contract.write(
+      "openShort",
+      {
+        _bondAmount: bondAmount,
+        _maxDeposit: maxDeposit,
+        _minVaultSharePrice: minVaultSharePrice,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async closeLong({
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"closeLong">): ReturnType<
+    IReadWriteHyperdrive,
+    "closeLong"
+  > {
+    const hash = await this.contract.write(
+      "closeLong",
+      {
+        _maturityTime: maturityTime,
+        _bondAmount: bondAmountIn,
+        _minOutput: minAmountOut,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async closeShort({
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"closeShort">): ReturnType<
+    IReadWriteHyperdrive,
+    "closeShort"
+  > {
+    const hash = await this.contract.write(
+      "closeShort",
+      {
+        _maturityTime: maturityTime,
+        _bondAmount: bondAmountIn,
+        _minOutput: minAmountOut,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async addLiquidity({
+    args: {
+      destination,
+      contribution,
+      minAPR,
+      minLpSharePrice,
+      maxAPR,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"addLiquidity">): ReturnType<
+    IReadWriteHyperdrive,
+    "addLiquidity"
+  > {
+    const hash = await this.contract.write(
+      "addLiquidity",
+      {
+        _contribution: contribution,
+        _minLpSharePrice: minLpSharePrice,
+        _minApr: minAPR,
+        _maxApr: maxAPR,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async removeLiquidity({
+    args: {
+      destination,
+      lpSharesIn,
+      minOutputPerShare,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"removeLiquidity">): ReturnType<
+    IReadWriteHyperdrive,
+    "removeLiquidity"
+  > {
+    const hash = await this.contract.write(
+      "removeLiquidity",
+      {
+        _lpShares: lpSharesIn,
+        _minOutputPerShare: minOutputPerShare,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
+  }
+
+  async redeemWithdrawalShares({
+    args: {
+      withdrawalSharesIn,
+      minOutputPerShare,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"redeemWithdrawalShares">): ReturnType<
+    IReadWriteHyperdrive,
+    "redeemWithdrawalShares"
+  > {
+    const hash = await this.contract.write(
+      "redeemWithdrawalShares",
+      {
+        _withdrawalShares: withdrawalSharesIn,
+        _minOutputPerShare: minOutputPerShare,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+      onTransactionMined?.(hash);
+    });
+    return hash;
   }
 }
 
