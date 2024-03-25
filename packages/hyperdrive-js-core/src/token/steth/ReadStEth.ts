@@ -6,7 +6,6 @@ import { StEthAbi, stEthAbi } from "src/token/steth/abi";
 export class ReadStEth extends readStEthMixin(ReadErc20) {}
 
 /**
- * The public interface of the stETH mixin.
  * @internal
  */
 export interface ReadStEthMixin {

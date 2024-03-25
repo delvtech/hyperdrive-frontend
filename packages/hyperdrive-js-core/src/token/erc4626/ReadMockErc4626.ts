@@ -6,7 +6,6 @@ import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 export class ReadMockErc4626 extends readMockErc4626Mixin(ReadErc4626) {}
 
 /**
- * The public interface of the Mock ERC-4626 mixin.
  * @internal
  */
 export interface ReadMockErc4626Mixin {

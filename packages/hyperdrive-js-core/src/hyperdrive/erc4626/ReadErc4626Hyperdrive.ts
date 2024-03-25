@@ -15,7 +15,6 @@ export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
 ) {}
 
 /**
- * The public interface of the ERC-4626 Hyperdrive mixin.
  * @internal
  */
 export interface ReadErc4626HyperdriveMixin {

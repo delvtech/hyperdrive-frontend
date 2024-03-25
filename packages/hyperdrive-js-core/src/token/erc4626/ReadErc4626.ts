@@ -6,7 +6,6 @@ import { Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
 export class ReadErc4626 extends readErc4626Mixin(ReadErc20) {}
 
 /**
- * The public interface of the ERC-4626 mixin.
  * @internal
  */
 export interface ReadErc4626Mixin {

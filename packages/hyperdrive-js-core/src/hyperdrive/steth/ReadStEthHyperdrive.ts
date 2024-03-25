@@ -37,7 +37,6 @@ export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
 }
 
 /**
- * The public interface of the stETH Hyperdrive mixin.
  * @internal
  */
 export interface ReadStEthHyperdriveMixin {

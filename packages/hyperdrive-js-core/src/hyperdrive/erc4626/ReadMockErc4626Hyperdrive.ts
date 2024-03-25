@@ -8,7 +8,6 @@ export class ReadMockErc4626Hyperdrive extends readMockErc4626HyperdriveMixin(
 ) {}
 
 /**
- * The public interface of the Mock ERC-4626 Hyperdrive mixin.
  * @internal
  */
 export interface ReadMockErc4626HyperdriveMixin {
