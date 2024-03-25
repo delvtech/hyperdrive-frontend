@@ -218,6 +218,8 @@ export interface IReadHyperdrive extends ReadModel {
   }): Promise<{
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
+    baseValue: bigint;
+    sharesValue: bigint;
   }>;
 
   /**
@@ -1277,6 +1279,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   async getOpenLpPosition({ account }: { account: `0x${string}` }): Promise<{
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
+    baseValue: bigint;
+    sharesValue: bigint;
   }> {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
       filter: { provider: account },
@@ -1293,8 +1297,40 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       removeLiquidityEvents,
     );
 
+    const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
+      lpSharesIn: lpShareBalance,
+      minOutputPerShare: 1n,
+      asBase: false,
+      destination: account,
+    });
+
+    // convert the proceeds into base using vaultSharePrice
+    const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
+    const proceedsBaseValue = dnum.multiply(
+      [vaultSharePrice, 18],
+      [proceeds, 18],
+    );
+
+    // convert the withdrawal shares into base using lpSharePrice
+    const withdrawalSharesBaseValue = dnum.multiply(
+      [lpSharePrice, 18],
+      [withdrawalShares, 18],
+    );
+    const withdrawalSharesSharesValue = dnum.divide(withdrawalSharesBaseValue, [
+      lpSharePrice,
+      18,
+    ]);
+
+    const baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
+    const sharesValue = dnum.add(
+      [proceeds, 18],
+      withdrawalSharesSharesValue,
+    )[0];
+
     return {
       lpShareBalance,
+      baseValue,
+      sharesValue,
       baseAmountPaid,
     };
   }
@@ -1741,7 +1777,12 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         _minOutputPerShare: minOutputPerShare,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        // since this is calling a write method in view mode, we must specify
+        // the `from` in order to have an account to preview with
+        from: destination,
+      },
     );
 
     return {

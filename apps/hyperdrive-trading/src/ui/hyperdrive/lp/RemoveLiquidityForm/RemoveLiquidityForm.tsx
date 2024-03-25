@@ -173,6 +173,11 @@ export function RemoveLiquidityForm({
     balance: lpShares,
   });
 
+  const slippageReceived = dnum.subtract(
+    [actualValueOut || 0n, hyperdrive.decimals],
+    [desiredOut || 0n, hyperdrive.decimals],
+  )[0];
+
   return (
     <TransactionView
       tokenInput={
@@ -207,11 +212,11 @@ export function RemoveLiquidityForm({
       transactionPreview={
         <>
           <LabelValue
-            label="You receive"
+            label="Amount to withdraw"
             value={`${
               actualValueOut
                 ? `${formatBalance({
-                    balance: actualValueOut,
+                    balance: desiredOut || 0n,
                     decimals: activeWithdrawToken.decimals,
                     places: 4,
                   })}`
@@ -219,8 +224,45 @@ export function RemoveLiquidityForm({
             } ${activeWithdrawToken.symbol}`}
           />
           <LabelValue
+            label="Balance mechanism reward"
+            value={
+              <span
+                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+                data-tip="Additional amount you receive as part of the pool's mechanism for maintaining the existing lp share price"
+              >
+                {actualValueOut
+                  ? `${formatBalance({
+                      balance: slippageReceived,
+                      decimals: activeWithdrawToken.decimals,
+                      places: 4,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </span>
+            }
+          />
+          <LabelValue
+            label="Total you receive"
+            value={
+              <span className="font-bold">
+                {actualValueOut
+                  ? `${formatBalance({
+                      balance: actualValueOut,
+                      decimals: activeWithdrawToken.decimals,
+                      places: 4,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </span>
+            }
+          />
+          <LabelValue
             label="Queued for delayed withdrawal"
-            value={`${formattedWithdrawalSharesOut || 0} ${baseToken.symbol}`}
+            value={
+              <span className="font-bold">
+                {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
+              </span>
+            }
           />
         </>
       }
