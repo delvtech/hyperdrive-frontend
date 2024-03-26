@@ -17,7 +17,7 @@ export function Hero(): ReactElement {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
+            href="https://hyperdrive.delv.tech/docs"
             className="daisy-btn daisy-btn-ghost text-primary"
           >
             Read the Hyperdrive docs <ArrowRightIcon className="inline h-4" />

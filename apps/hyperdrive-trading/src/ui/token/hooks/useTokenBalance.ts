@@ -14,22 +14,25 @@ export function useTokenBalance({
   account: Address | undefined;
   tokenAddress: Address | undefined;
   decimals: number;
-}):
-  | {
-      formatted: string;
-      value: bigint;
-    }
-  | undefined {
+}): {
+  balance:
+    | {
+        formatted: string;
+        value: bigint;
+      }
+    | undefined;
+  status: "error" | "success" | "loading";
+} {
   const isEth = tokenAddress === ETH_MAGIC_NUMBER;
 
-  const { data: ethBalance } = useBalance({
+  const { data: ethBalance, status: ethBalanceStatus } = useBalance({
     address: account,
     query: {
       enabled: isEth,
     },
   });
 
-  const { data: tokenBalance } = useReadContract({
+  const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
     address: tokenAddress,
     abi: erc20Abi,
     functionName: "balanceOf",
@@ -39,17 +42,27 @@ export function useTokenBalance({
     },
   });
 
-  if (isEth && ethBalance) {
+  if (isEth) {
     return {
-      formatted: formatUnits(ethBalance.value, decimals),
-      value: ethBalance.value,
+      balance:
+        ethBalance !== undefined
+          ? {
+              formatted: formatUnits(ethBalance.value, decimals),
+              value: ethBalance.value,
+            }
+          : undefined,
+      status: ethBalanceStatus,
     };
   }
 
-  if (!isEth && tokenBalance !== undefined) {
-    return {
-      formatted: formatUnits(tokenBalance, decimals),
-      value: tokenBalance,
-    };
-  }
+  return {
+    balance:
+      tokenBalance !== undefined
+        ? {
+            formatted: formatUnits(tokenBalance, decimals),
+            value: tokenBalance,
+          }
+        : undefined,
+    status: tokenBalanceStatus,
+  };
 }

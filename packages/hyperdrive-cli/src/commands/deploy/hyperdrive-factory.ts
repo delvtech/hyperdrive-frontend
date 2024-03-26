@@ -182,6 +182,8 @@ export default command({
     });
 
     if (!linkerFactory) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployForwarderFactory],
         initialData: data,

@@ -53,6 +53,8 @@ export default command({
     });
 
     if (!hyperdriveCoreDeployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626HyperdriveCoreDeployer],
         initialData: data,
@@ -65,6 +67,8 @@ export default command({
     });
 
     if (!target0Deployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626Target0Deployer],
         initialData: data,
@@ -77,6 +81,8 @@ export default command({
     });
 
     if (!target1Deployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626Target1Deployer],
         initialData: data,
@@ -89,6 +95,8 @@ export default command({
     });
 
     if (!target2Deployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626Target2Deployer],
         initialData: data,
@@ -101,6 +109,8 @@ export default command({
     });
 
     if (!target3Deployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626Target3Deployer],
         initialData: data,

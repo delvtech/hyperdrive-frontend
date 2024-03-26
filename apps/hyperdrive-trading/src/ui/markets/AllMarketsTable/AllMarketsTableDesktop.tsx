@@ -160,13 +160,21 @@ function getColumns() {
 
 export function AllMarketsTableDesktop(): ReactElement {
   const navigate = useNavigate();
-  const { data: marketsRowData } = useMarketRowData();
+  const { data: marketsRowData, status } = useMarketRowData();
   const memoizedColumns = getColumns();
   const tableInstance = useReactTable({
     columns: memoizedColumns,
     data: marketsRowData || [],
     getCoreRowModel: getCoreRowModel(),
   });
+
+  if (status === "loading") {
+    return (
+      <div className="flex items-center justify-center">
+        <div className="daisy-loading daisy-loading-spinner daisy-loading-lg  text-primary" />
+      </div>
+    );
+  }
   return (
     <table className="daisy-table daisy-table-zebra daisy-table-lg ">
       <thead>
@@ -236,7 +244,10 @@ function GoToMarketButton({
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
-      search={() => ({ position: "Longs", openOrClosed: "Open" })}
+      search={() => ({
+        position: "Longs" as const,
+        openOrClosed: "Open" as const,
+      })}
       params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
