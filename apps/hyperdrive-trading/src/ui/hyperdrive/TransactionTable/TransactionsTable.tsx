@@ -1,9 +1,4 @@
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -29,6 +24,7 @@ import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -476,29 +472,7 @@ export function TransactionTable({
         </tbody>
       </table>
       {tableInstance.getFilteredRowModel().rows.length ? (
-        <div className="flex h-24 items-center justify-center gap-2">
-          <button
-            className="daisy-btn"
-            onClick={() => tableInstance.previousPage()}
-            disabled={!tableInstance.getCanPreviousPage()}
-          >
-            <ArrowLeftIcon className="h-5" />
-          </button>
-          <span className="flex items-center gap-1">
-            <p>Page</p>
-            <p>
-              {tableInstance.getState().pagination.pageIndex + 1} of{" "}
-              {tableInstance.getPageCount()}
-            </p>
-          </span>
-          <button
-            className="daisy-btn"
-            onClick={() => tableInstance.nextPage()}
-            disabled={!tableInstance.getCanNextPage()}
-          >
-            <ArrowRightIcon className="h-5" />
-          </button>
-        </div>
+        <Pagination tableInstance={tableInstance} />
       ) : null}
     </div>
   );
