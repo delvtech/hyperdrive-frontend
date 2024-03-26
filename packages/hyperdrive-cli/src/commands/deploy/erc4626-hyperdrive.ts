@@ -48,6 +48,8 @@ export default command({
     });
 
     if (!factory) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployHyperdriveFactory],
         initialData: data,
@@ -60,6 +62,8 @@ export default command({
     });
 
     if (!hyperdriveDeployer) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC4626HyperdriveDeployer],
         initialData: data,
@@ -84,6 +88,8 @@ export default command({
       deployAndInitialize.options?.contribution.default || "10000000.0";
 
     if (!vault) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const tokenAddress = await context.invokeCommands({
         commands: [deployERC20Mintable],
         initialData: data,
@@ -104,6 +110,8 @@ export default command({
       });
       await walletClient.writeContract(request);
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployMockERC4626],
         initialData: data,
@@ -114,6 +122,8 @@ export default command({
       vault = address as string;
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     const result = await context.invokeCommands({
       commands: [deployAndInitialize],
       optionValues: {

@@ -67,6 +67,8 @@ export default command({
     });
 
     if (!token) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const address = await context.invokeCommands({
         commands: [deployERC20Mintable],
         initialData: data,

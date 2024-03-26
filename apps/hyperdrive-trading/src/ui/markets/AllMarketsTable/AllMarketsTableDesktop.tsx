@@ -236,7 +236,10 @@ function GoToMarketButton({
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
-      search={() => ({ position: "Longs", openOrClosed: "Open" })}
+      search={() => ({
+        position: "Longs" as const,
+        openOrClosed: "Open" as const,
+      })}
       params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
