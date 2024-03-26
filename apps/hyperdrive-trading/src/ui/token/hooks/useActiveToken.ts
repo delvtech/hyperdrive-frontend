@@ -29,7 +29,7 @@ export function useActiveToken<T1, T2>({
     ({ address }) => address === activeTokenAddress,
   ) as TokenConfig<T1 | T2>;
 
-  const activeTokenBalance = useTokenBalance({
+  const { balance: activeTokenBalance } = useTokenBalance({
     account,
     tokenAddress: activeTokenAddress,
     decimals: activeToken.decimals,

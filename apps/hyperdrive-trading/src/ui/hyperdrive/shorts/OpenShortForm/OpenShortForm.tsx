@@ -61,13 +61,13 @@ export function OpenShortForm({
       tokens: [baseToken, sharesToken],
     });
 
-  const baseTokenBalance = useTokenBalance({
+  const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
 
-  const sharesTokenBalance = useTokenBalance({
+  const { balance: sharesTokenBalance } = useTokenBalance({
     account,
     tokenAddress: sharesToken.address,
     decimals: sharesToken.decimals,
