@@ -14,11 +14,10 @@ import {
   findHyperdriveConfig,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { WalletClient } from "node_modules/viem/_types/clients/createWalletClient";
 import { ExtractMethodParams } from "src/base/ExtractMethodParams";
 import { ReturnType } from "src/base/ReturnType";
 import { sdkCache } from "src/sdk/sdkCache";
-import { Address, Hash, PublicClient } from "viem";
+import { Address, Hash, PublicClient, WalletClient } from "viem";
 
 /**
  * The stateless model for the Hyperdrive UI so that it's easy to implement new
