@@ -8,6 +8,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
@@ -15,6 +16,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -169,8 +171,9 @@ export function ClosedShortsTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
-    data: closedShorts || [],
+    data: [...(closedShorts || [])].reverse(),
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   if (!account) {
@@ -241,7 +244,9 @@ export function ClosedShortsTable({
           })}
         </tbody>
       </table>
-      {!closedShorts?.length ? <NonIdealState /> : null}
+      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
+        <Pagination tableInstance={tableInstance} />
+      ) : null}
     </div>
   );
 }
