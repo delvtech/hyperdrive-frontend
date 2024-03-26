@@ -37,7 +37,7 @@ export function LpTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col items-center">
-          <div className="flex w-full items-center justify-between px-6 py-8">
+          <div className="flex w-full items-center justify-between p-8">
             <h5 className="font-medium">LP Position</h5>
             <div className="flex items-center gap-4">
               {(lpShares && lpSharesStatus === "success") ||

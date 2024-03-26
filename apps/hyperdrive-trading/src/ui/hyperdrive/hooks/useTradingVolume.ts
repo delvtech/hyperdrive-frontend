@@ -11,6 +11,7 @@ export function useTradingVolume(
   totalVolume: bigint | undefined;
   longVolume: bigint | undefined;
   shortVolume: bigint | undefined;
+  tradingVolumeStatus: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
@@ -20,7 +21,7 @@ export function useTradingVolume(
     chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID
       ? currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL
       : "earliest";
-  const { data: volume } = useQuery({
+  const { data: volume, status } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
@@ -38,5 +39,6 @@ export function useTradingVolume(
     totalVolume: volume?.totalVolume,
     longVolume: volume?.longVolume,
     shortVolume: volume?.shortVolume,
+    tradingVolumeStatus: status,
   };
 }
