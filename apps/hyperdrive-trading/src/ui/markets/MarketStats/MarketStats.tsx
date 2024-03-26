@@ -34,7 +34,7 @@ export function MarketStats({
     hyperdriveAddress: hyperdrive.address,
     decimals: baseToken.decimals,
   });
-  const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
+  const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
   const { vaultRate } = useYieldSourceRate({
@@ -54,12 +54,12 @@ export function MarketStats({
       <Stat
         label="Fixed APR"
         value={
-          fixedAPR ? (
+          fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+            <Skeleton className="w-20" />
+          ) : (
             <span className="flex items-center gap-1.5">
               {fixedAPR?.formatted || "0"}%
             </span>
-          ) : (
-            <Skeleton className="opacity-50" />
           )
         }
         description="Fixed rate earned from opening longs, before fees and slippage are applied."
