@@ -108,7 +108,7 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="LP APY"
-          tooltip={`The LP's yearly projected return, derived from the past 12 hours of trading activity.`}
+          tooltip={`The LP's yearly projected return, derived from the past 7 days of trading activity.`}
         />
       ),
       cell: ({ row }) => {
