@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
@@ -116,11 +117,7 @@ export function AllMarketsTableMobile(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   if (status === "loading") {
-    return (
-      <div className="flex items-center justify-center">
-        <div className="daisy-loading daisy-loading-spinner daisy-loading-lg  text-primary" />
-      </div>
-    );
+    return <LoadingState />;
   }
 
   return (

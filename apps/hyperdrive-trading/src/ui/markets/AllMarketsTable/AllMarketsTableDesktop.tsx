@@ -9,6 +9,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
@@ -169,11 +170,7 @@ export function AllMarketsTableDesktop(): ReactElement {
   });
 
   if (status === "loading") {
-    return (
-      <div className="flex items-center justify-center">
-        <div className="daisy-loading daisy-loading-spinner daisy-loading-lg  text-primary" />
-      </div>
-    );
+    return <LoadingState />;
   }
   return (
     <table className="daisy-table daisy-table-zebra daisy-table-lg ">
