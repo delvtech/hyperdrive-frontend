@@ -30,14 +30,14 @@ export function MarketStats({
     status: tradingVolumeStatus,
   } = useTradingVolume(hyperdrive.address, currentBlockNumber);
 
-  const { liquidity } = useLiquidity({
+  const { liquidity, liquidityStatus } = useLiquidity({
     hyperdriveAddress: hyperdrive.address,
     decimals: baseToken.decimals,
   });
   const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
-  const { vaultRate } = useYieldSourceRate({
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -46,7 +46,11 @@ export function MarketStats({
       <Stat
         label="Yield Source APY"
         value={
-          <div className="flex flex-row">{vaultRate?.formatted || 0}%</div>
+          vaultRateStatus === "loading" && vaultRate === undefined ? (
+            <Skeleton className="w-20" />
+          ) : (
+            <div className="flex flex-row">{vaultRate?.formatted || 0}%</div>
+          )
         }
         description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
         tooltipPosition="right"
@@ -110,14 +114,18 @@ export function MarketStats({
         label="Available Liquidity"
         description={`The amount of capital that has been deployed by LPs in the pool.`}
         value={
-          <AmountLabel
-            icon={baseToken.iconUrl || ""}
-            symbol={baseToken.symbol}
-            value={formatCompact({
-              value: liquidity?.liquidity || 0n,
-              decimals: baseToken.decimals,
-            })}
-          />
+          liquidityStatus === "loading" && liquidity === undefined ? (
+            <Skeleton className="w-20" />
+          ) : (
+            <AmountLabel
+              icon={baseToken.iconUrl || ""}
+              symbol={baseToken.symbol}
+              value={formatCompact({
+                value: liquidity?.liquidity || 0n,
+                decimals: baseToken.decimals,
+              })}
+            />
+          )
         }
         tooltipPosition="left"
       />
