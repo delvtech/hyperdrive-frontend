@@ -56,6 +56,11 @@ export interface ReadStEthHyperdriveMixin {
   setUseSharesAccounting(shouldUseSharesAccounting: boolean): void;
 
   /**
+   * Get a model of ETH, the base token for this Hyperdrive instance.
+   */
+  getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
+
+  /**
    * Get a model of the Lido stETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadStEth>;
@@ -100,6 +105,13 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       this.contract.clearCache();
     }
 
+    async getBaseToken(): Promise<ReadEth> {
+      return new ReadEth({
+        contractFactory: this.contractFactory,
+        network: this.network,
+      });
+    }
+
     async getSharesToken(options?: ContractReadOptions): Promise<ReadStEth> {
       const address = await this.stEthHyperdriveContract.read(
         "lido",
@@ -110,13 +122,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         address,
         contractFactory: this.contractFactory,
         namespace: this.contract.namespace,
-        network: this.network,
-      });
-    }
-
-    async getBaseToken(): Promise<ReadEth> {
-      return new ReadEth({
-        contractFactory: this.contractFactory,
         network: this.network,
       });
     }
