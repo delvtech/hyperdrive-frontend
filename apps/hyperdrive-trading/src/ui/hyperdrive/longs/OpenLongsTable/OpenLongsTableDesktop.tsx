@@ -1,5 +1,10 @@
 import { Long } from "@delvtech/hyperdrive-viem";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -9,6 +14,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -29,6 +35,156 @@ import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateC
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useAccount } from "wagmi";
 
+const mockData: Long[] = [
+  {
+    assetId:
+      452312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019600n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+  {
+    assetId:
+      552312848583266388373324160190187140051835877600158453279131187532622682256n,
+    baseAmountPaid: 500000000000000000000n,
+    bondAmount: 500474656074108379894n,
+    maturity: 1712019601n,
+  },
+];
+
 export function OpenLongsTableDesktop({
   hyperdrive,
 }: {
@@ -42,9 +198,10 @@ export function OpenLongsTableDesktop({
   });
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
-    data: openLongs || [],
+    data: mockData || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   if (!account) {
@@ -76,7 +233,7 @@ export function OpenLongsTableDesktop({
   }
 
   return (
-    <div className="max-h-[512px] overflow-y-auto overflow-x-clip">
+    <div className="overflow-x-clip">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -151,6 +308,31 @@ export function OpenLongsTableDesktop({
           })}
         </tbody>
       </table>
+      {tableInstance.getFilteredRowModel().rows.length ? (
+        <div className="flex h-24 items-center justify-center gap-2">
+          <button
+            className="daisy-btn"
+            onClick={() => tableInstance.previousPage()}
+            disabled={!tableInstance.getCanPreviousPage()}
+          >
+            <ArrowLeftIcon className="h-5" />
+          </button>
+          <span className="flex items-center gap-1">
+            <p>Page</p>
+            <p>
+              {tableInstance.getState().pagination.pageIndex + 1} of{" "}
+              {tableInstance.getPageCount()}
+            </p>
+          </span>
+          <button
+            className="daisy-btn"
+            onClick={() => tableInstance.nextPage()}
+            disabled={!tableInstance.getCanNextPage()}
+          >
+            <ArrowRightIcon className="h-5" />
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
