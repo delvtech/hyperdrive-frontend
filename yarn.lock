@@ -7086,11 +7086,6 @@ dot-prop@^6.0.1:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@16.0.3:
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
-  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
-
 dotenv@^16.0.3, dotenv@^16.3.1:
   version "16.4.5"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.5.tgz#cdd3b3b604cb327e286b4762e13502f717cb099f"
@@ -7511,13 +7506,6 @@ eslint-config-prettier@^8.3.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.10.0.tgz#3a06a662130807e2502fc3ff8b4143d8a0658e11"
   integrity sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==
 
-eslint-config-turbo@latest:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-turbo/-/eslint-config-turbo-1.13.0.tgz#a8d8fe29708501f56a0214fe46cb994ba92735c0"
-  integrity sha512-xV13WrEjAJLeo6yqR1YEv5R5WPwNMyw8f4FlK2C4zWMr7e8ZiRg81jajltabEOZdeVboHIQ6gGn+FnSmgdVSSQ==
-  dependencies:
-    eslint-plugin-turbo "1.13.0"
-
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz#d4eaac52b8a2e7c3cd1903eb00f7e053356118ac"
@@ -7606,13 +7594,6 @@ eslint-plugin-tailwindcss@^3.8.3:
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.4.4"
-
-eslint-plugin-turbo@1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-turbo/-/eslint-plugin-turbo-1.13.0.tgz#d72f65cc0fc67197bf24b8884955822dca458e02"
-  integrity sha512-y9YRXMSOc43SijAFFkDnrFpstV2k/w6Qmbr5mO/w7tUGzDWkHc87btLa0e/L2PJxod5bzNwsmzeyj8c/AsMMCQ==
-  dependencies:
-    dotenv "16.0.3"
 
 eslint-plugin-unicorn@^47.0.0:
   version "47.0.0"
