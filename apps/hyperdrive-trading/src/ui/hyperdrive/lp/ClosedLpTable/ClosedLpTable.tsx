@@ -228,7 +228,7 @@ export function ClosedLpTable({
     return data;
   }, [closedLpShares, redeemedWithdrawalShares]);
   const tableInstance = useReactTable({
-    data: memoizedData as ClosedLpSharesAndWithdrawalShares[],
+    data: memoizedData?.reverse() as ClosedLpSharesAndWithdrawalShares[],
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
