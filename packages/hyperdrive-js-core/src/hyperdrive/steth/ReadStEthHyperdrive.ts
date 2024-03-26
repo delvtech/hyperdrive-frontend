@@ -66,7 +66,7 @@ export interface ReadStEthHyperdriveMixin {
  */
 export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
-): T & Constructor<ReadStEthHyperdriveMixin> {
+): Constructor<ReadStEthHyperdriveMixin> & T {
   return class extends Base implements ReadStEthHyperdriveMixin {
     stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
     private _useSharesAccounting: boolean;

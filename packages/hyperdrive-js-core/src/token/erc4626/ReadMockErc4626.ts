@@ -22,7 +22,7 @@ export interface ReadMockErc4626Mixin {
  */
 export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
   BaseReadErc4626: T,
-): T & Constructor<ReadMockErc4626Mixin> {
+): Constructor<ReadMockErc4626Mixin> & T {
   return class extends BaseReadErc4626 implements ReadMockErc4626Mixin {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
 
