@@ -14,10 +14,14 @@ export async function getErc4626Hyperdrive({
   publicClient,
   hyperdriveAddress,
   sharesTokenExtensions,
+  baseTokenIconUrl,
+  sharesTokenIconUrl,
 }: {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
+  baseTokenIconUrl: string;
+  sharesTokenIconUrl: string;
 }): Promise<{
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
@@ -27,6 +31,7 @@ export async function getErc4626Hyperdrive({
     publicClient,
     hyperdriveAddress: hyperdriveAddress,
     extensions: sharesTokenExtensions,
+    iconUrl: sharesTokenIconUrl,
   });
 
   const poolConfig = await publicClient.readContract({
@@ -40,6 +45,7 @@ export async function getErc4626Hyperdrive({
     publicClient,
     extensions: {},
     tags: [],
+    iconUrl: baseTokenIconUrl,
   });
 
   const hyperdriveName = formatHyperdriveName({

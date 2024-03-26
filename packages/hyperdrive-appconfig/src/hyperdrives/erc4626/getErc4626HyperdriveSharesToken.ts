@@ -7,10 +7,12 @@ export async function getErc4626HyperdriveSharesToken({
   publicClient,
   hyperdriveAddress,
   extensions,
+  iconUrl,
 }: {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   extensions: YieldSourceExtensions;
+  iconUrl: string;
 }): Promise<TokenConfig<YieldSourceExtensions>> {
   const sharesTokenAddress = await publicClient.readContract({
     abi: IERC4626HyperdriveRead.abi,
@@ -23,6 +25,7 @@ export async function getErc4626HyperdriveSharesToken({
     publicClient,
     tags: ["yieldSource", "erc4626"],
     extensions,
+    iconUrl,
   });
 
   return sharesToken;

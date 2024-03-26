@@ -6,6 +6,8 @@ import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
 import { TokenConfig } from "src/tokens/getTokenConfig";
+import { DAI_ICON_URL, SDAI_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { sdaiExtensions, stethExtensions } from "src/yieldSources/extensions";
 import { erc4626Tag, stethTag, yieldSourceTag } from "src/yieldSources/tags";
 import { PublicClient } from "viem";
 
@@ -22,6 +24,7 @@ export async function getAppConfigFromAddressesJson({
   const tags: Set<Tag> = new Set([yieldSourceTag]);
   const tokens: Set<TokenConfig<KnownTokenExtensions>> = new Set();
 
+  // Add sDAI if present in addresses
   if (addresses.erc4626Hyperdrive) {
     tags.add(erc4626Tag);
 
@@ -29,10 +32,9 @@ export async function getAppConfigFromAddressesJson({
       await getErc4626Hyperdrive({
         publicClient,
         hyperdriveAddress: addresses.erc4626Hyperdrive,
-        sharesTokenExtensions: {
-          shortName: "Maker DSR",
-          protocol: "maker",
-        },
+        sharesTokenExtensions: sdaiExtensions,
+        baseTokenIconUrl: DAI_ICON_URL,
+        sharesTokenIconUrl: SDAI_ICON_URL,
       });
 
     tokens.add(sharesToken);
@@ -40,6 +42,7 @@ export async function getAppConfigFromAddressesJson({
     hyperdrives.push(hyperdriveConfig);
   }
 
+  // Add stETH if present in addresses
   if (addresses.stethHyperdrive) {
     tags.add(stethTag);
 
@@ -47,10 +50,7 @@ export async function getAppConfigFromAddressesJson({
       await getStethHyperdrive({
         publicClient,
         hyperdriveAddress: addresses.stethHyperdrive,
-        sharesTokenExtensions: {
-          shortName: "Lido stETH",
-          protocol: "lido",
-        },
+        sharesTokenExtensions: stethExtensions,
       });
 
     tokens.add(sharesToken);

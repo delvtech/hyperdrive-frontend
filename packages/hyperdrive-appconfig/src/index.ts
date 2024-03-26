@@ -2,6 +2,7 @@
 export type { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 export { localChainAppConfig } from "src/generated/31337.appconfig";
 export { cloudChainAppConfig } from "src/generated/42069.appconfig";
+// TODO: Add sepolia
 
 // appconfig helpers
 export { findBaseToken } from "src/appconfig/helpers/findBaseToken";

@@ -3,7 +3,7 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
 import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { getTokenIconUrl } from "src/tokens/tokenIconsUrls";
+import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
@@ -39,10 +39,7 @@ export async function getStethHyperdrive({
     decimals: 18,
     tags: [],
     extensions: {},
-    iconUrl: getTokenIconUrl({
-      address: poolConfig.baseToken,
-      chainId: publicClient.chain?.id as number,
-    }),
+    iconUrl: ETH_ICON_URL,
   };
 
   const hyperdriveName = formatHyperdriveName({
