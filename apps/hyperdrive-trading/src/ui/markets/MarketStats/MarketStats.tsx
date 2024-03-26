@@ -23,10 +23,12 @@ export function MarketStats({
     tokens: appConfig.tokens,
   });
 
-  const { totalVolume, longVolume, shortVolume } = useTradingVolume(
-    hyperdrive.address,
-    currentBlockNumber,
-  );
+  const {
+    totalVolume,
+    longVolume,
+    shortVolume,
+    status: tradingVolumeStatus,
+  } = useTradingVolume(hyperdrive.address, currentBlockNumber);
 
   const { liquidity } = useLiquidity({
     hyperdriveAddress: hyperdrive.address,
@@ -91,13 +93,17 @@ export function MarketStats({
         })} hy${baseToken.symbol}`}
         label="Volume (24h)"
         value={
-          <AmountLabel
-            symbol={`hy${baseToken.symbol}`}
-            value={formatCompact({
-              value: totalVolume || 0n,
-              decimals: baseToken.decimals,
-            })}
-          />
+          tradingVolumeStatus === "loading" && totalVolume === undefined ? (
+            <Skeleton className="w-20" />
+          ) : (
+            <AmountLabel
+              symbol={`hy${baseToken.symbol}`}
+              value={formatCompact({
+                value: totalVolume || 0n,
+                decimals: baseToken.decimals,
+              })}
+            />
+          )
         }
       />
       <Stat
