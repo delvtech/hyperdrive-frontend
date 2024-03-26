@@ -11,7 +11,7 @@ export function useTradingVolume(
   totalVolume: bigint | undefined;
   longVolume: bigint | undefined;
   shortVolume: bigint | undefined;
-  status: "loading" | "error" | "success";
+  tradingVolumeStatus: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
@@ -39,6 +39,6 @@ export function useTradingVolume(
     totalVolume: volume?.totalVolume,
     longVolume: volume?.longVolume,
     shortVolume: volume?.shortVolume,
-    status,
+    tradingVolumeStatus: status,
   };
 }

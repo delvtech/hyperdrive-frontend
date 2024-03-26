@@ -23,12 +23,8 @@ export function MarketStats({
     tokens: appConfig.tokens,
   });
 
-  const {
-    totalVolume,
-    longVolume,
-    shortVolume,
-    status: tradingVolumeStatus,
-  } = useTradingVolume(hyperdrive.address, currentBlockNumber);
+  const { totalVolume, longVolume, shortVolume, tradingVolumeStatus } =
+    useTradingVolume(hyperdrive.address, currentBlockNumber);
 
   const { liquidity, liquidityStatus } = useLiquidity({
     hyperdriveAddress: hyperdrive.address,
