@@ -6,6 +6,7 @@ import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
 import { TokenConfig } from "src/tokens/getTokenConfig";
+import { DAI_ICON_URL, SDAI_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { sdaiExtensions, stethExtensions } from "src/yieldSources/extensions";
 import { erc4626Tag, stethTag, yieldSourceTag } from "src/yieldSources/tags";
 import { PublicClient } from "viem";
@@ -32,6 +33,8 @@ export async function getAppConfigFromAddressesJson({
         publicClient,
         hyperdriveAddress: addresses.erc4626Hyperdrive,
         sharesTokenExtensions: sdaiExtensions,
+        baseTokenIconUrl: DAI_ICON_URL,
+        sharesTokenIconUrl: SDAI_ICON_URL,
       });
 
     tokens.add(sharesToken);

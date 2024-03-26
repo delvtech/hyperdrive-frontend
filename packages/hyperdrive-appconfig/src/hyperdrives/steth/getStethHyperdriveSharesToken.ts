@@ -1,5 +1,6 @@
 import { IStETHHyperdriveRead } from "@delvtech/hyperdrive-artifacts/IStETHHyperdriveRead";
 import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
+import { STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
@@ -23,6 +24,7 @@ export async function getStethHyperdriveSharesToken({
     publicClient,
     tags: ["yieldSource", "steth"],
     extensions,
+    iconUrl: STETH_ICON_URL,
   });
 
   return sharesToken;
