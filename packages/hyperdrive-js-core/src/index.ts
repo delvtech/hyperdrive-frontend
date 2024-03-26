@@ -15,6 +15,10 @@ export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWrite
 export { ReadLsEthHyperdrive } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
 export { ReadWriteLsEthHyperdrive } from "src/hyperdrive/lseth/ReadWriteLsEthHyperdrive";
 export {
+  ReadStEthHyperdrive,
+  type ReadStEthHyperdriveOptions,
+} from "src/hyperdrive/steth/ReadStEthHyperdrive";
+export {
   ReadWriteStEthHyperdrive,
   type ReadWriteStEthHyperdriveOptions,
 } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
