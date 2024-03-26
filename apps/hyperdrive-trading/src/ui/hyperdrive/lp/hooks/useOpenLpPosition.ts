@@ -12,6 +12,8 @@ export function useOpenLpPosition({
 }: UseOpenLpPositionOptions): {
   lpShareBalance: bigint;
   baseAmountPaid: bigint;
+  baseValue: bigint;
+  sharesValue: bigint;
   openLpPositionStatus: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
@@ -26,6 +28,8 @@ export function useOpenLpPosition({
   return {
     lpShareBalance: data?.lpShareBalance ?? 0n,
     baseAmountPaid: data?.baseAmountPaid ?? 0n,
+    baseValue: data?.baseValue ?? 0n,
+    sharesValue: data?.sharesValue ?? 0n,
     openLpPositionStatus,
   };
 }

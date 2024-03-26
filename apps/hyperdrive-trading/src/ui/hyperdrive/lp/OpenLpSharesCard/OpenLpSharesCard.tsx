@@ -5,7 +5,6 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
-import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -44,16 +43,11 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { baseAmountPaid } = useOpenLpPosition({
+  const { baseAmountPaid, baseValue } = useOpenLpPosition({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
-  const currentValue = calculateValueFromPrice({
-    amount: lpShares || 0n,
-    unitPrice: poolInfo?.lpSharePrice || 0n,
-    decimals: baseToken.decimals,
-  });
-  const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];
+  const profit = dnum.subtract([baseValue, 18], [baseAmountPaid, 18])[0];
   const isPositiveChangeInValue = profit > 0n;
 
   const utilizationRatio = useUtilizationRatio({
@@ -110,7 +104,7 @@ export function OpenLpSharesCard({
                 <p>
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
-                      balance: currentValue,
+                      balance: baseValue,
                       decimals: baseToken.decimals,
                       places: 4,
                     })} ${baseToken.symbol}`

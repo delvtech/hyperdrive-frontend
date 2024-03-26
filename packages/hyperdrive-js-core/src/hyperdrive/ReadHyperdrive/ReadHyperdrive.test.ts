@@ -1,12 +1,12 @@
-import { expect, test } from "vitest";
 import * as dnum from "dnum";
+import { ZERO_ADDRESS } from "src/base/numbers";
+import { ALICE, BOB } from "src/base/testing/accounts";
+import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
+import { CheckpointEvent } from "src/pool/Checkpoint";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { simplePoolConfig } from "src/pool/testing/PoolConfig";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
-import { ALICE, BOB } from "src/base/testing/accounts";
-import { CheckpointEvent } from "src/pool/Checkpoint";
-import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
-import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
-import { ZERO_ADDRESS } from "src/base/numbers";
+import { expect, test } from "vitest";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -1887,6 +1887,14 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
   // current LP position.
 
   const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: simplePoolInfo,
+  });
+  contract.stubSimulateWrite("removeLiquidity", {
+    proceeds: dnum.from("100", 18)[0],
+    withdrawalShares: 0n,
+  });
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
   contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
     {
@@ -1924,6 +1932,8 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
   expect(value).toEqual({
     lpShareBalance: dnum.from("0", 18)[0],
     baseAmountPaid: dnum.from("0", 18)[0],
+    baseValue: dnum.from("0", 18)[0],
+    sharesValue: dnum.from("0", 18)[0],
   });
 });
 
@@ -1937,6 +1947,14 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
 
   const { contract, readHyperdrive, network } = setupReadHyperdrive();
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
+  contract.stubSimulateWrite("removeLiquidity", {
+    proceeds: dnum.from("100", 18)[0],
+    withdrawalShares: 0n,
+  });
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: simplePoolInfo,
+  });
   contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
     {
       eventName: "AddLiquidity",
@@ -1985,6 +2003,8 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
   expect(value).toEqual({
     lpShareBalance: dnum.from("99", 18)[0],
     baseAmountPaid: dnum.from("100", 18)[0],
+    baseValue: dnum.from("100", 18)[0],
+    sharesValue: dnum.from("100", 18)[0],
   });
 });
 

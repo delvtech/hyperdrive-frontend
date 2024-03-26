@@ -1,42 +1,42 @@
 import {
+  BlockTag,
+  CachedReadContract,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
-  BlockTag,
-  CachedReadContract,
   Event,
 } from "@delvtech/evm-client";
+import * as dnum from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-import { sumBigInt } from "src/base/sumBigInt";
-import { PoolConfig } from "src/pool/PoolConfig";
-import { PoolInfo } from "src/pool/PoolInfo";
 import { ReturnType } from "src/base/ReturnType";
-import { LP_ASSET_ID } from "src/lp/assetId";
-import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
+import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
+import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
+import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
+import { sumBigInt } from "src/base/sumBigInt";
+import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
+import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
+import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
+import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
+import { hyperwasm } from "src/hyperwasm";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
-import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
-import { ClosedShort, OpenShort } from "src/shorts/types";
-import { getCheckpointId } from "src/pool/getCheckpointId";
-import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
+import { LP_ASSET_ID } from "src/lp/assetId";
+import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
-import * as dnum from "dnum";
-import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
-import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { PoolConfig } from "src/pool/PoolConfig";
+import { PoolInfo } from "src/pool/PoolInfo";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
+import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
-import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
-import { hyperwasm } from "src/hyperwasm";
-import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
-import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
-import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
-import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
+import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadToken } from "src/token/ReadToken";
-import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
+import { ReadEth } from "src/token/eth/ReadEth";
+import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
+import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
@@ -218,6 +218,8 @@ export interface IReadHyperdrive extends ReadModel {
   }): Promise<{
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
+    baseValue: bigint;
+    sharesValue: bigint;
   }>;
 
   /**
@@ -1277,6 +1279,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   async getOpenLpPosition({ account }: { account: `0x${string}` }): Promise<{
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
+    baseValue: bigint;
+    sharesValue: bigint;
   }> {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
       filter: { provider: account },
@@ -1288,8 +1292,64 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       },
     );
 
-    // combine the adds and removes in order of block number to get the full
-    // transaction history in the order the user executed them
+    const { lpShareBalance, baseAmountPaid } = this._calcOpenLpPosition(
+      addLiquidityEvents,
+      removeLiquidityEvents,
+    );
+
+    let baseValue = 0n;
+    let sharesValue = 0n;
+    if (lpShareBalance) {
+      const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
+        lpSharesIn: lpShareBalance,
+        minOutputPerShare: 1n,
+        asBase: false,
+        destination: account,
+      });
+
+      // convert the proceeds into base using vaultSharePrice
+      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
+      const proceedsBaseValue = dnum.multiply(
+        [vaultSharePrice, 18],
+        [proceeds, 18],
+      );
+
+      // convert the withdrawal shares into base using lpSharePrice
+      const withdrawalSharesBaseValue = dnum.multiply(
+        [lpSharePrice, 18],
+        [withdrawalShares, 18],
+      );
+      const withdrawalSharesSharesValue = dnum.divide(
+        withdrawalSharesBaseValue,
+        [lpSharePrice, 18],
+      );
+
+      baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
+      sharesValue = dnum.add([proceeds, 18], withdrawalSharesSharesValue)[0];
+    }
+
+    return {
+      lpShareBalance,
+      baseValue,
+      sharesValue,
+      baseAmountPaid,
+    };
+  }
+
+  // combine the adds and removes in order of block number to get the full
+  // transaction history in the order the user executed them
+  private _calcOpenLpPosition(
+    addLiquidityEvents: {
+      eventName: "AddLiquidity";
+      blockNumber?: bigint;
+      args: { lpAmount: bigint; baseAmount: bigint };
+    }[],
+    removeLiquidityEvents: {
+      eventName: "RemoveLiquidity";
+      blockNumber?: bigint;
+      args: { lpAmount: bigint; baseAmount: bigint };
+    }[],
+  ) {
     const combinedEventsInOrder = [
       ...addLiquidityEvents,
       ...removeLiquidityEvents,
@@ -1330,10 +1390,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       }
     });
 
-    return {
-      lpShareBalance,
-      baseAmountPaid,
-    };
+    return { lpShareBalance, baseAmountPaid };
   }
 
   async getClosedLpShares({
@@ -1721,7 +1778,12 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         _minOutputPerShare: minOutputPerShare,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        // since this is calling a write method in view mode, we must specify
+        // the `from` in order to have an account to preview with
+        from: destination,
+      },
     );
 
     return {
