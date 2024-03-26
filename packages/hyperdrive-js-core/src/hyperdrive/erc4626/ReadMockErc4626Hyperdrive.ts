@@ -51,7 +51,7 @@ export function readMockErc4626HyperdriveMixin<
       options?: ContractReadOptions;
     }): Promise<bigint> {
       const vault = await this.getSharesToken();
-      return vault.getRate({ options });
+      return vault.getRate(options);
     }
   };
 }
