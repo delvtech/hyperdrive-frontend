@@ -22,7 +22,7 @@ export interface ReadMockErc4626HyperdriveMixin {
  */
 export function readMockErc4626HyperdriveMixin<
   T extends Constructor<ReadErc4626Hyperdrive>,
->(Base: T): T & Constructor<ReadMockErc4626HyperdriveMixin> {
+>(Base: T): Constructor<ReadMockErc4626HyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
       super({ name: options.name ?? "Mock ERC-4626 Hyperdrive", ...options });
@@ -51,7 +51,7 @@ export function readMockErc4626HyperdriveMixin<
       options?: ContractReadOptions;
     }): Promise<bigint> {
       const vault = await this.getSharesToken();
-      return vault.getRate({ options });
+      return vault.getRate(options);
     }
   };
 }

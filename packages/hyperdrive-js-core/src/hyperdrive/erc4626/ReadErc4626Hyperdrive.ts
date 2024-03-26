@@ -31,7 +31,7 @@ export interface ReadErc4626HyperdriveMixin {
  */
 export function readErc4626HyperdriveMixin<
   T extends Constructor<ReadHyperdrive>,
->(Base: T): T & Constructor<ReadErc4626HyperdriveMixin> {
+>(Base: T): Constructor<ReadErc4626HyperdriveMixin> & T {
   return class extends Base {
     erc4626HyperdriveContract: CachedReadContract<Erc4626HyperdriveAbi>;
 
