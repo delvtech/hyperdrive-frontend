@@ -234,7 +234,7 @@ export function RemoveLiquidityForm({
                 <div
                   data-tip="Additional amount you pay or receive as part of the pool's mechanism for maintaining the existing lp share price"
                   className={classNames(
-                    "daisy-tooltip daisy-tooltip-left flex cursor-help items-center border-b border-dashed border-current before:border",
+                    "daisy-tooltip daisy-tooltip-top flex cursor-help items-center border-b border-dashed border-current before:left-2 before:border",
                     {
                       "text-success": slippageReceived > 0n,
                       "text-error": slippageReceived < 0n,
