@@ -17,6 +17,7 @@ import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -29,7 +30,7 @@ interface ClosedLpTablePRops {
   hyperdrive: HyperdriveConfig;
 }
 
-type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
+export type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
   RedeemedWithdrawalShares;
 
 function formatClosedLpMobileColumnData(
@@ -256,7 +257,7 @@ export function ClosedLpTable({
     );
   }
   return (
-    <div className="max-h-[512px] w-full overflow-y-auto">
+    <div className="w-full">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -302,6 +303,9 @@ export function ClosedLpTable({
           )}
         </tbody>
       </table>
+      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
+        <Pagination tableInstance={tableInstance} />
+      ) : null}
       {!closedLpShares?.length &&
       !redeemedWithdrawalShares?.length &&
       closedLpSharesStatus === "success" ? (

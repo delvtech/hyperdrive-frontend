@@ -1,10 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -26,6 +21,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
@@ -34,156 +30,6 @@ import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/Current
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useAccount } from "wagmi";
-
-const mockData: Long[] = [
-  {
-    assetId:
-      452312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019600n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-  {
-    assetId:
-      552312848583266388373324160190187140051835877600158453279131187532622682256n,
-    baseAmountPaid: 500000000000000000000n,
-    bondAmount: 500474656074108379894n,
-    maturity: 1712019601n,
-  },
-];
 
 export function OpenLongsTableDesktop({
   hyperdrive,
@@ -198,7 +44,7 @@ export function OpenLongsTableDesktop({
   });
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
-    data: mockData || [],
+    data: openLongs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -308,30 +154,8 @@ export function OpenLongsTableDesktop({
           })}
         </tbody>
       </table>
-      {tableInstance.getFilteredRowModel().rows.length ? (
-        <div className="flex h-24 items-center justify-center gap-2">
-          <button
-            className="daisy-btn"
-            onClick={() => tableInstance.previousPage()}
-            disabled={!tableInstance.getCanPreviousPage()}
-          >
-            <ArrowLeftIcon className="h-5" />
-          </button>
-          <span className="flex items-center gap-1">
-            <p>Page</p>
-            <p>
-              {tableInstance.getState().pagination.pageIndex + 1} of{" "}
-              {tableInstance.getPageCount()}
-            </p>
-          </span>
-          <button
-            className="daisy-btn"
-            onClick={() => tableInstance.nextPage()}
-            disabled={!tableInstance.getCanNextPage()}
-          >
-            <ArrowRightIcon className="h-5" />
-          </button>
-        </div>
+      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
+        <Pagination tableInstance={tableInstance} />
       ) : null}
     </div>
   );

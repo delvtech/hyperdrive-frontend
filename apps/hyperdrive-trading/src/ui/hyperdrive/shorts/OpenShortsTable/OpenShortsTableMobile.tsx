@@ -10,12 +10,14 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
@@ -36,6 +38,7 @@ export function OpenShortsTableMobile({
     data: openShorts || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   return (
@@ -113,6 +116,9 @@ export function OpenShortsTableMobile({
           })}
         </tbody>
       </table>
+      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
+        <Pagination tableInstance={tableInstance} />
+      ) : null}
     </div>
   );
 }

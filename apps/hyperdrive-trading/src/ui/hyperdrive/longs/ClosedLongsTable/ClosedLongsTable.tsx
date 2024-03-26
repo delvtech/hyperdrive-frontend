@@ -10,6 +10,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
@@ -17,6 +18,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -161,6 +163,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     }),
   ];
 }
+
 export function ClosedLongsTable({
   hyperdrive,
 }: ClosedLongsTableProps): ReactElement {
@@ -175,8 +178,9 @@ export function ClosedLongsTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
-    data: [...(closedLongs || [])].reverse(), // show most recently closed first, TODO: refactor to interactive column sorting
+    data: closedLongs?.reverse() || [], // show most recently closed first, TODO: refactor to interactive column sorting
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   if (!account) {
@@ -206,7 +210,7 @@ export function ClosedLongsTable({
   }
 
   return (
-    <div className="max-h-[512px] overflow-y-auto">
+    <div className="overflow-y-auto">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -248,6 +252,9 @@ export function ClosedLongsTable({
           })}
         </tbody>
       </table>
+      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
+        <Pagination tableInstance={tableInstance} />
+      ) : null}
     </div>
   );
 }
