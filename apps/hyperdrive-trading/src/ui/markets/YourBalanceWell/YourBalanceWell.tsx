@@ -7,6 +7,7 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -58,11 +59,13 @@ function AvailableAsset({
 }) {
   const { address: account } = useAccount();
   const isEth = token.address === ETH_MAGIC_NUMBER;
-  const tokenBalance = useTokenBalance({
-    account: account,
-    tokenAddress: token.address,
-    decimals: token.decimals,
-  });
+  const { balance: tokenBalance, status: tokenBalanceStatus } = useTokenBalance(
+    {
+      account: account,
+      tokenAddress: token.address,
+      decimals: token.decimals,
+    },
+  );
 
   // If you can spend more than the total supply of the token, then it's
   // effectively an infinite approval. See revoke.cash:
@@ -97,16 +100,22 @@ function AvailableAsset({
   return (
     <div className="flex whitespace-nowrap ">
       <div className="flex items-center gap-1 text-h5 font-bold">
-        <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
-        {formatBalance({
-          balance: tokenBalance?.value || 0n,
-          decimals: token.decimals,
-          places: 4,
-        })}{" "}
-        {token.symbol}
+        {tokenBalanceStatus === "loading" || tokenBalance === undefined ? (
+          <Skeleton className="w-52" />
+        ) : (
+          <>
+            <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
+            {formatBalance({
+              balance: tokenBalance.value || 0n,
+              decimals: token.decimals,
+              places: 4,
+            })}{" "}
+            {token.symbol}
+          </>
+        )}
       </div>
 
-      {isEth ? undefined : (
+      {isEth || tokenBalance === undefined ? undefined : (
         <div className="daisy-dropdown daisy-dropdown-end">
           <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
             <EllipsisVerticalIcon className="h-5" />

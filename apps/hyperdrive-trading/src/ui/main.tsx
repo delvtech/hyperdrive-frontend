@@ -29,7 +29,7 @@ root.render(
     <ToastProvider />
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider showRecentTransactions theme={customRainbowTheme()}>
-        <SkeletonTheme baseColor="#1A272D" highlightColor="#202F36">
+        <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
           <App />
         </SkeletonTheme>
       </RainbowKitProvider>
