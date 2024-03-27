@@ -62,7 +62,12 @@ export function OpenLongsTableDesktop({
     );
   }
   if (openLongsStatus === "loading") {
-    return <LoadingState />;
+    return (
+      <LoadingState
+        heading="Loading your Longs..."
+        text="Searching for Long events, calculating current value and PnL..."
+      />
+    );
   }
   if (!openLongs?.length && openLongsStatus === "success") {
     return (
