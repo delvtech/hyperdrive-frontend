@@ -786,17 +786,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }
 
   private async _calcOpenLongs({
-    fromBlock,
-    toBlock,
-    account,
     openLongEvents,
+    closeLongEvents,
+    longsMintedOrReceived,
+    longsRedeemedOrSent,
   }: {
-    fromBlock: bigint | BlockTag;
-    toBlock: bigint | BlockTag;
-    account: `0x${string}`;
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
+    closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
+    longsMintedOrReceived: Event<HyperdriveAbi, "TransferSingle">[];
+    longsRedeemedOrSent: Event<HyperdriveAbi, "TransferSingle">[];
   }) {
-    // Paid base
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
@@ -809,12 +808,6 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       },
     );
 
-    const closeLongEvents = await this.contract.getEvents("CloseLong", {
-      filter: { trader: account },
-      fromBlock,
-      toBlock,
-    });
-
     const totalBaseReceivedByAssetId = mapValues(
       groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
@@ -824,19 +817,6 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         });
         return sumBigInt(baseAmounts);
       },
-    );
-
-    const longsMintedOrReceived = (
-      await this.getTransferSingleEvents({
-        filter: { to: account },
-        fromBlock,
-        toBlock,
-      })
-    ).filter(
-      (transferSingleEvent) =>
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
     );
 
     const longsMintedOrReceivedById = mapValues(
@@ -854,20 +834,6 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         };
       },
     );
-
-    const longsRedeemedOrSent = (
-      await this.getTransferSingleEvents({
-        filter: { from: account },
-        fromBlock,
-        toBlock,
-      })
-    ).filter((transferSingleEvent) => {
-      return (
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG"
-      );
-    });
 
     const longsRedeemedOrSentById = mapValues(
       groupBy(longsRedeemedOrSent, (event) => event.args.id),
@@ -926,12 +892,44 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
-
-    const openLongsById = this._calcOpenLongs({
+    const closeLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
       fromBlock,
       toBlock,
-      account,
+    });
+
+    const longsMintedOrReceived = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsRedeemedOrSent = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter((transferSingleEvent) => {
+      return (
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG"
+      );
+    });
+
+    const openLongsById = this._calcOpenLongs({
       openLongEvents,
+      closeLongEvents,
+      longsMintedOrReceived,
+      longsRedeemedOrSent,
     });
 
     return Object.values(openLongsById).filter((long) => long.bondAmount);
