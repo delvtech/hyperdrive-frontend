@@ -20,19 +20,20 @@ export function useTransactionData({
   hyperdriveAddress: Address;
 }): {
   data: TransactionData[] | undefined;
+  isLoading: boolean;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
 
-  const { data: longs } = useQuery({
+  const { data: longs, status: longEventsStatus } = useQuery({
     queryKey: makeQueryKey("longEvents", { hyperdriveAddress }),
     queryFn: async () => readHyperdrive?.getLongEvents(),
   });
 
-  const { data: shorts } = useQuery({
+  const { data: shorts, status: shortEventsStatus } = useQuery({
     queryKey: makeQueryKey("shortEvents", { hyperdriveAddress }),
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
-  const { data: lpEvents } = useQuery({
+  const { data: lpEvents, status: lpEventsStatus } = useQuery({
     queryKey: makeQueryKey("lpEvents", { hyperdriveAddress }),
     queryFn: async () => readHyperdrive?.getLpEvents(),
   });
@@ -86,5 +87,11 @@ export function useTransactionData({
     return data;
   }, [longs, lpEvents, shorts]);
 
-  return { data };
+  return {
+    data,
+    isLoading:
+      longEventsStatus === "loading" ||
+      shortEventsStatus === "loading" ||
+      lpEventsStatus === "loading",
+  };
 }
