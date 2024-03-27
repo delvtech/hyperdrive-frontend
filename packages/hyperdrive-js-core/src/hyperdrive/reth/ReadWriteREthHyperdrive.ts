@@ -11,10 +11,10 @@ import { ReadWriteREth } from "src/token/reth/ReadWriteREth";
 export class ReadWriteREthHyperdrive extends readREthHyperdriveMixin(
   ReadWriteHyperdrive,
 ) {
-  declare lsEthHyperdriveContract: CachedReadWriteContract<REthHyperdriveAbi>;
+  declare rEthHyperdriveContract: CachedReadWriteContract<REthHyperdriveAbi>;
 
   async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteREth> {
-    const address = await this.lsEthHyperdriveContract.read(
+    const address = await this.rEthHyperdriveContract.read(
       "rocketTokenRETH",
       {},
       options,

@@ -16,7 +16,7 @@ export class ReadREthHyperdrive extends readREthHyperdriveMixin(
  * @internal
  */
 export interface ReadREthHyperdriveMixin {
-  REthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
+  rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
 
   /**
    * Get a model of ETH, the base token for this Hyperdrive instance.
@@ -34,9 +34,9 @@ export interface ReadREthHyperdriveMixin {
  */
 export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
-): T & Constructor<ReadREthHyperdriveMixin> {
+): Constructor<ReadREthHyperdriveMixin> & T {
   return class extends Base implements ReadREthHyperdriveMixin {
-    REthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
+    rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
@@ -48,7 +48,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         namespace,
       } = options as ReadHyperdriveOptions;
       super({ address, contractFactory, network, cache, name, namespace });
-      this.REthHyperdriveContract = contractFactory({
+      this.rEthHyperdriveContract = contractFactory({
         abi: rEthHyperdriveAbi,
         address,
         cache,
@@ -64,7 +64,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getSharesToken(options?: ContractReadOptions): Promise<ReadREth> {
-      const address = await this.REthHyperdriveContract.read(
+      const address = await this.rEthHyperdriveContract.read(
         "rocketTokenRETH",
         {},
         options,
