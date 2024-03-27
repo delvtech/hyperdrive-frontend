@@ -55,7 +55,7 @@ export interface ReadLsEthMixin {
  */
 export function readLsEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
-): T & Constructor<ReadLsEthMixin> {
+): Constructor<ReadLsEthMixin> & T {
   return class extends Base implements ReadLsEthMixin {
     lsEthContract: CachedReadContract<LsEthAbi>;
 
