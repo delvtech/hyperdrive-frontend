@@ -37,7 +37,12 @@ export function OpenShortsTable({
   }
 
   if (openShortsStatus === "loading") {
-    return <LoadingState />;
+    return (
+      <LoadingState
+        heading="Loading your Shorts..."
+        text="Searching for Short events, calculating current value and PnL..."
+      />
+    );
   }
 
   if (!openShorts?.length && openShortsStatus === "success") {

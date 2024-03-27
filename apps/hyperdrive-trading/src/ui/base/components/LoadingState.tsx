@@ -8,7 +8,7 @@ export default function LoadingState({
   heading?: string;
 }): JSX.Element {
   return (
-    <div className="my-28 flex flex-col items-center justify-center">
+    <div className="mx-10 my-28 flex flex-col items-center justify-center">
       <NonIdealState
         heading={heading}
         icon={
