@@ -8,6 +8,10 @@ import {
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
+export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
+  ReadHyperdrive,
+) {}
+
 /**
  * @internal
  */
