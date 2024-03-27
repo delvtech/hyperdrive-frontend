@@ -1,4 +1,4 @@
-export declare const StdJson: {
+export declare const stdJson: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220359e31d60d42bb864703a220e921cef9cc1b5519743e612a9e962525a091341564736f6c63430008140033";
@@ -6961,4 +6961,4 @@ export declare const StdJson: {
     };
     readonly id: 156;
 };
-//# sourceMappingURL=StdJson.d.ts.map
+//# sourceMappingURL=stdJson.d.ts.map
