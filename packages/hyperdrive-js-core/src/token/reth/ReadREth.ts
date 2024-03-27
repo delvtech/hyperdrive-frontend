@@ -1,15 +1,15 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
-import { LsEthAbi, lsEthAbi } from "src/token/lseth/abi";
+import { REthAbi, rEthAbi } from "src/token/reth/abi";
 
-export class ReadLsEth extends readLsEthMixin(ReadErc20) {}
+export class ReadREth extends readREthMixin(ReadErc20) {}
 
 /**
  * @internal
  */
-export interface ReadLsEthMixin {
-  lsEthContract: CachedReadContract<LsEthAbi>;
+export interface ReadREthMixin {
+  rEthContract: CachedReadContract<REthAbi>;
 
   /**
    * Get the total supply of underlying eth in the lsEth contract.
@@ -28,24 +28,24 @@ export interface ReadLsEthMixin {
   }): Promise<bigint>;
 
   /**
-   * Get the amount of ETH that would be received for a given number of shares.
+   * Get the amount of ETH backing an amount of rETH.
    */
-  getEthBalanceFromShares({
-    sharesAmount,
+  getEthValue({
+    rEthAmount,
     options,
   }: {
-    sharesAmount: bigint;
+    rEthAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint>;
 
   /**
-   * Get the number of shares that would be received for a given amount of ETH.
+   * Get the amount of rETH backing an amount of ETH.
    */
-  getSharesFromEthBalance({
-    ethBalance,
+  getREthValue({
+    ethAmount,
     options,
   }: {
-    ethBalance: bigint;
+    ethAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint>;
 }
@@ -53,18 +53,18 @@ export interface ReadLsEthMixin {
 /**
  * @internal
  */
-export function readLsEthMixin<T extends Constructor<ReadErc20>>(
+export function readREthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
-): Constructor<ReadLsEthMixin> & T {
-  return class extends Base implements ReadLsEthMixin {
-    lsEthContract: CachedReadContract<LsEthAbi>;
+): Constructor<ReadREthMixin> & T {
+  return class extends Base implements ReadREthMixin {
+    rEthContract: CachedReadContract<REthAbi>;
 
     constructor(...[options]: any[]) {
       const { contractFactory, address, cache, namespace } =
         options as ReadErc20Options;
       super({ address, contractFactory, cache, namespace });
-      this.lsEthContract = contractFactory({
-        abi: lsEthAbi,
+      this.rEthContract = contractFactory({
+        abi: rEthAbi,
         address,
         cache,
         namespace,
@@ -72,7 +72,7 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
     }
 
     async getTotalEthSupply(options?: ContractReadOptions): Promise<bigint> {
-      return this.lsEthContract.read("totalUnderlyingSupply", {}, options);
+      return this.rEthContract.read("getTotalCollateral", {}, options);
     }
 
     async getEthBalanceOf({
@@ -82,40 +82,41 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
       account: `0x${string}`;
       options?: ContractReadOptions;
     }): Promise<bigint> {
-      return this.lsEthContract.read(
-        "balanceOfUnderlying",
-        { _owner: account },
+      const rEthBalance = await this.getBalanceOf({ account, options });
+      return this.rEthContract.read(
+        "getEthValue",
+        { _rethAmount: rEthBalance },
         options,
       );
     }
 
-    async getEthBalanceFromShares({
-      sharesAmount,
+    async getEthValue({
+      rEthAmount,
       options,
     }: {
-      sharesAmount: bigint;
+      rEthAmount: bigint;
       options?: ContractReadOptions;
     }): Promise<bigint> {
-      return this.lsEthContract.read(
-        "underlyingBalanceFromShares",
+      return this.rEthContract.read(
+        "getEthValue",
         {
-          _shares: sharesAmount,
+          _rethAmount: rEthAmount,
         },
         options,
       );
     }
 
-    async getSharesFromEthBalance({
-      ethBalance,
+    async getREthValue({
+      ethAmount,
       options,
     }: {
-      ethBalance: bigint;
+      ethAmount: bigint;
       options?: ContractReadOptions;
     }): Promise<bigint> {
-      return this.lsEthContract.read(
-        "sharesFromUnderlyingBalance",
+      return this.rEthContract.read(
+        "getRethValue",
         {
-          _underlyingAssetAmount: ethBalance,
+          _ethAmount: ethAmount,
         },
         options,
       );
