@@ -36,7 +36,7 @@ export function FAQEntries(): JSX.Element {
     );
   }
   return (
-    <div className="ml-8 mt-8 flex min-h-[400px] max-w-6xl flex-col">
+    <div className="m-8 flex min-h-[400px] max-w-6xl flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
         <div className="col-span-1 flex flex-col gap-4 text-left">
