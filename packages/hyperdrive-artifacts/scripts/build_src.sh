@@ -54,52 +54,49 @@ echo "Compiling contracts..."
 
 echo "Creating typescript files..."
 
-# Reset the src folder
+# Reset the src directory
 rm -rf "$src_dir_name"
 mkdir "$src_dir_name"
 
-# Loop through each subfolder in the out folder
-for dir in "$temp_dir"/out/*; do
+processOutDir() {
+  local dir=$1
+  for entry in "$dir"/*; do
 
-  # Get the name of the contract
-  dir_name=$(basename $dir)
+    # Ignore test contract directories which end with ".t.sol"
+    if [[ "$entry" == *".t.sol" ]]; then
+      continue
+    fi
 
-  # Ignore test contract directories which end with ".t.sol"
-  if [ "$dir_name" == *".t.sol" ]; then
-    continue
-  fi
+    if [[ -d "$entry" ]]; then
+      processOutDir "$entry"
+    elif [[ -f "$entry" ]]; then
 
-  # Get the name of the contract by removing ".sol" from the end of the
-  # directory name
-  contract_name=${dir_name%.sol}
+      # Get the name of the contract
+      local contract_name=$(basename "$entry" .json)
 
-  # Get the path to the json file
-  in_file="$dir/$contract_name.json"
+      # Ignore the contract if the file is too large. This prevents TSC from
+      # throwing errors while trying to parse large files and prevents the
+      # script from processing files we probably don't want to be importing into
+      # our codebase.
+      local file_size=$(wc -c <"$entry")
+      if [ "$file_size" -gt "$max_file_size" ]; then
+        echo "WARNING: File $entry is too large ($(echo $file_size | tr -d ' ') bytes) and will be omitted."
+        continue
+      fi
 
-  # Ignore the contract if the json file doesn't exist
-  if [ ! -f "$in_file" ]; then
-    continue
-  fi
+      # Write the contract to a typescript file as a named export with `as
+      # const` to prevent typescript from widening the type of the contract.
+      local out_file="$src_dir_name/$contract_name.ts"
+      {
+        echo "export const $contract_name = "
+        cat "$entry"
+        echo " as const;"
+      } >"$out_file"
+    fi
+  done
+}
 
-  # Ignore the contract if the file is too large.
-  # This prevents TSC from throwing errors while trying to parse large files and
-  # prevents the script from processing files we probably don't want to be
-  # importing into our codebase.
-  file_size=$(wc -c <"$in_file")
-  if [ "$file_size" -gt "$max_file_size" ]; then
-    echo "WARNING: File $in_file is too large ($(echo $file_size | tr -d ' ') bytes) and will be omitted."
-    continue
-  fi
-
-  # Write the contract to a typescript file as a named export with `as const` to
-  # prevent typescript from widening the type of the contract.
-  out_file="$src_dir_name/$contract_name.ts"
-  {
-    echo "export const $contract_name = "
-    cat "$in_file"
-    echo " as const;"
-  } >"$out_file"
-done
+processOutDir "$temp_dir/out"
 
 echo "Cleaning up..."
 rm -rf "$temp_dir"
