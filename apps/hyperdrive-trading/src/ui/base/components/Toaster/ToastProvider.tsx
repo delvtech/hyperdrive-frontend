@@ -8,7 +8,7 @@ export default function ToastProvider(): JSX.Element {
         duration: Infinity,
         className: "!p-0 !bg-base-200 !rounded-box",
       }}
-      position="top-right"
+      position="top-center"
     >
       {(t) => (
         <ToastBar toast={t}>
