@@ -785,29 +785,17 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return checkPointEvents;
   }
 
-  /**
-   * Gets the active longs opened by a specific user.
-   * @param account - The user's address
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the active longs opened by a specific user
-   */
-  async getOpenLongs({
-    account,
-    options,
+  private _calcOpenLongs({
+    openLongEvents,
+    closeLongEvents,
+    longsInTransferSingleEvents,
+    longsOutTransferSingleEvents,
   }: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
-
-    const openLongEvents = await this.contract.getEvents("OpenLong", {
-      filter: { trader: account },
-      fromBlock,
-      toBlock,
-    });
-
-    // Paid base
+    openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
+    closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
+    longsInTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
+    longsOutTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
+  }) {
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
@@ -820,12 +808,6 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       },
     );
 
-    const closeLongEvents = await this.contract.getEvents("CloseLong", {
-      filter: { trader: account },
-      fromBlock,
-      toBlock,
-    });
-
     const totalBaseReceivedByAssetId = mapValues(
       groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
@@ -837,21 +819,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       },
     );
 
-    const longsMintedOrReceived = (
-      await this.getTransferSingleEvents({
-        filter: { to: account },
-        fromBlock,
-        toBlock,
-      })
-    ).filter(
-      (transferSingleEvent) =>
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
-    );
-
     const longsMintedOrReceivedById = mapValues(
-      groupBy(longsMintedOrReceived, (event) => event.args.id),
+      groupBy(longsInTransferSingleEvents, (event) => event.args.id),
       (events): Long => {
         const assetId = events[0].args.id;
         const decoded = decodeAssetFromTransferSingleEventData(
@@ -866,22 +835,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       },
     );
 
-    const longsRedeemedOrSent = (
-      await this.getTransferSingleEvents({
-        filter: { from: account },
-        fromBlock,
-        toBlock,
-      })
-    ).filter((transferSingleEvent) => {
-      return (
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG"
-      );
-    });
-
     const longsRedeemedOrSentById = mapValues(
-      groupBy(longsRedeemedOrSent, (event) => event.args.id),
+      groupBy(longsOutTransferSingleEvents, (event) => event.args.id),
       (events): Long => {
         const assetId = events[0].args.id;
         const decoded = decodeAssetFromTransferSingleEventData(
@@ -913,6 +868,69 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         return long;
       },
     );
+    return openLongsById;
+  }
+
+  /**
+   * Gets the active longs opened by a specific user.
+   * @param account - The user's address
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active longs opened by a specific user
+   */
+  async getOpenLongs({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+    const closeLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const longsInTransferSingleEvents = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsOutTransferSingleEvents = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter((transferSingleEvent) => {
+      return (
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG"
+      );
+    });
+
+    const openLongsById = this._calcOpenLongs({
+      openLongEvents,
+      closeLongEvents,
+      longsInTransferSingleEvents,
+      longsOutTransferSingleEvents,
+    });
 
     return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
