@@ -788,13 +788,13 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   private _calcOpenLongs({
     openLongEvents,
     closeLongEvents,
-    longsMintedOrReceived,
-    longsRedeemedOrSent,
+    longsInTransferSingleEvents,
+    longsOutTransferSingleEvents,
   }: {
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
     closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
-    longsMintedOrReceived: Event<HyperdriveAbi, "TransferSingle">[];
-    longsRedeemedOrSent: Event<HyperdriveAbi, "TransferSingle">[];
+    longsInTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
+    longsOutTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
   }) {
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
@@ -820,7 +820,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
 
     const longsMintedOrReceivedById = mapValues(
-      groupBy(longsMintedOrReceived, (event) => event.args.id),
+      groupBy(longsInTransferSingleEvents, (event) => event.args.id),
       (events): Long => {
         const assetId = events[0].args.id;
         const decoded = decodeAssetFromTransferSingleEventData(
@@ -836,7 +836,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
 
     const longsRedeemedOrSentById = mapValues(
-      groupBy(longsRedeemedOrSent, (event) => event.args.id),
+      groupBy(longsOutTransferSingleEvents, (event) => event.args.id),
       (events): Long => {
         const assetId = events[0].args.id;
         const decoded = decodeAssetFromTransferSingleEventData(
@@ -898,7 +898,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       toBlock,
     });
 
-    const longsMintedOrReceived = (
+    const longsInTransferSingleEvents = (
       await this.getTransferSingleEvents({
         filter: { to: account },
         fromBlock,
@@ -911,7 +911,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         ).assetType === "LONG",
     );
 
-    const longsRedeemedOrSent = (
+    const longsOutTransferSingleEvents = (
       await this.getTransferSingleEvents({
         filter: { from: account },
         fromBlock,
@@ -928,8 +928,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     const openLongsById = this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
-      longsMintedOrReceived,
-      longsRedeemedOrSent,
+      longsInTransferSingleEvents,
+      longsOutTransferSingleEvents,
     });
 
     return Object.values(openLongsById).filter((long) => long.bondAmount);
