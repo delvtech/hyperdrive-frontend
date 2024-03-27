@@ -785,28 +785,17 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return checkPointEvents;
   }
 
-  /**
-   * Gets the active longs opened by a specific user.
-   * @param account - The user's address
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the active longs opened by a specific user
-   */
-  async getOpenLongs({
+  private async _calcOpenLongs({
+    fromBlock,
+    toBlock,
     account,
-    options,
+    openLongEvents,
   }: {
+    fromBlock: bigint | BlockTag;
+    toBlock: bigint | BlockTag;
     account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
-
-    const openLongEvents = await this.contract.getEvents("OpenLong", {
-      filter: { trader: account },
-      fromBlock,
-      toBlock,
-    });
-
+    openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
+  }) {
     // Paid base
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
@@ -913,6 +902,37 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         return long;
       },
     );
+    return openLongsById;
+  }
+
+  /**
+   * Gets the active longs opened by a specific user.
+   * @param account - The user's address
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active longs opened by a specific user
+   */
+  async getOpenLongs({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const openLongsById = this._calcOpenLongs({
+      fromBlock,
+      toBlock,
+      account,
+      openLongEvents,
+    });
 
     return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
