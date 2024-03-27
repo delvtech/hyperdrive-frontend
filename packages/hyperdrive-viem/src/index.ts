@@ -15,6 +15,8 @@ export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdr
 export { ReadWriteErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteErc4626Hyperdrive";
 export { ReadMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadMockErc4626Hyperdrive";
 export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteMockErc4626Hyperdrive";
+export { ReadEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadEzEthHyperdrive";
+export { ReadWriteEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadWriteEzEthHyperdrive";
 export { ReadLsEthHyperdrive } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
 export { ReadWriteLsEthHyperdrive } from "src/hyperdrive/lseth/ReadWriteLsEthHyperdrive";
 export { ReadREthHyperdrive } from "src/hyperdrive/reth/ReadREthHyperdrive";
