@@ -52,7 +52,7 @@ export interface ReadStEthMixin {
  */
 export function readStEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
-): T & Constructor<ReadStEthMixin> {
+): Constructor<ReadStEthMixin> & T {
   return class extends Base implements ReadStEthMixin {
     stEthContract: CachedReadContract<StEthAbi>;
 
