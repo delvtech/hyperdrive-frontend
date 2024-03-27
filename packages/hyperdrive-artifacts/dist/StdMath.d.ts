@@ -1,4 +1,4 @@
-export declare const StdMath: {
+export declare const stdMath: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122013eff3196676476065e71659d24ffafdacddfcb2adbc9018868362592cd291ea64736f6c63430008140033";
@@ -1816,4 +1816,4 @@ export declare const StdMath: {
     };
     readonly id: 157;
 };
-//# sourceMappingURL=StdMath.d.ts.map
+//# sourceMappingURL=stdMath.d.ts.map

@@ -1,4 +1,4 @@
-export declare const StdError: {
+export declare const stdError: {
     readonly abi: readonly [{
         readonly type: "function";
         readonly name: "arithmeticError";
@@ -1269,4 +1269,4 @@ export declare const StdError: {
     };
     readonly id: 154;
 };
-//# sourceMappingURL=StdError.d.ts.map
+//# sourceMappingURL=stdError.d.ts.map

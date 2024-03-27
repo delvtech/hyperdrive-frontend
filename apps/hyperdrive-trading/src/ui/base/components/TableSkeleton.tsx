@@ -14,7 +14,7 @@ export function TableSkeleton({
         <tr key={rowIndex}>
           {Array.from({ length: numColumns }).map((_, colIndex) => (
             <td key={colIndex}>
-              <Skeleton className="bg-gray-400" />
+              <Skeleton />
             </td>
           ))}
         </tr>

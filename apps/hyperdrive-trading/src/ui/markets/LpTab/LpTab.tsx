@@ -52,15 +52,17 @@ export function LpTab({
           </div>
 
           {activeOpenOrClosedTab === "Open" ? (
-            <div className="my-20 flex pb-8">
+            <>
               {(() => {
                 if (!account) {
                   return (
-                    <NonIdealState
-                      heading="No wallet connected"
-                      text="Connect your wallet to view your Longs."
-                      action={<ConnectWalletButton />}
-                    />
+                    <div className="my-28">
+                      <NonIdealState
+                        heading="No wallet connected"
+                        text="Connect your wallet to view your positions."
+                        action={<ConnectWalletButton />}
+                      />
+                    </div>
                   );
                 }
 
@@ -68,7 +70,12 @@ export function LpTab({
                   lpSharesStatus === "loading" ||
                   withdrawalSharesStatus === "loading"
                 ) {
-                  return <LoadingState />;
+                  return (
+                    <LoadingState
+                      heading="Loading your LP positions..."
+                      text="Searching for LP events, calculating current value and PnL..."
+                    />
+                  );
                 }
 
                 if (
@@ -78,21 +85,23 @@ export function LpTab({
                   withdrawalSharesStatus === "success"
                 ) {
                   return (
-                    <NonIdealState
-                      heading="You have no open LP positions"
-                      text="Add liquidity, switch wallets, or view your closed LP positions"
-                      action={
-                        <AddLiquidityModalButton
-                          modalId="add-lp"
-                          hyperdrive={hyperdrive}
-                        />
-                      }
-                    />
+                    <div className="my-20">
+                      <NonIdealState
+                        heading="You have no open LP positions"
+                        text="Add liquidity, switch wallets, or view your closed LP positions"
+                        action={
+                          <AddLiquidityModalButton
+                            modalId="add-lp"
+                            hyperdrive={hyperdrive}
+                          />
+                        }
+                      />
+                    </div>
                   );
                 }
 
                 return (
-                  <div className="flex flex-col gap-6 md:flex-row">
+                  <div className="my-20 flex flex-col gap-6 md:flex-row">
                     <OpenLpSharesCard hyperdrive={hyperdrive} />{" "}
                     {withdrawalShares ? (
                       <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
@@ -100,7 +109,7 @@ export function LpTab({
                   </div>
                 );
               })()}
-            </div>
+            </>
           ) : (
             <ClosedLpTable hyperdrive={hyperdrive} />
           )}

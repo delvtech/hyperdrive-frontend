@@ -1,4 +1,4 @@
-export declare const test: {
+export declare const Test: {
     readonly abi: readonly [{
         readonly type: "function";
         readonly name: "IS_TEST";
@@ -1477,4 +1477,4 @@ export declare const test: {
     };
     readonly id: 161;
 };
-//# sourceMappingURL=test.d.ts.map
+//# sourceMappingURL=Test.d.ts.map

@@ -25,6 +25,7 @@ import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -359,7 +360,7 @@ export function TransactionTable({
 }: {
   hyperdrive: HyperdriveConfig;
 }): JSX.Element {
-  const { data: transactionData } = useTransactionData({
+  const { data: transactionData, isLoading } = useTransactionData({
     hyperdriveAddress: hyperdrive.address,
   });
   const appConfig = useAppConfig();
@@ -390,7 +391,7 @@ export function TransactionTable({
     getPaginationRowModel: getPaginationRowModel(),
   });
 
-  if (!transactionData?.length) {
+  if (!transactionData?.length && !isLoading) {
     return (
       <div className="flex h-52 w-full items-center justify-center">
         <NonIdealState
@@ -442,7 +443,8 @@ export function TransactionTable({
             "relative h-52": !tableInstance.getFilteredRowModel().rows.length,
           })}
         >
-          {tableInstance.getFilteredRowModel().rows.length ? (
+          {isLoading ? <TableSkeleton numColumns={4} numRows={5} /> : null}
+          {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
             tableInstance.getRowModel().rows.map((row) => {
               return (
                 <tr key={row.id} className="h-20">
@@ -471,7 +473,7 @@ export function TransactionTable({
           )}
         </tbody>
       </table>
-      {tableInstance.getFilteredRowModel().rows.length ? (
+      {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
         <Pagination tableInstance={tableInstance} />
       ) : null}
     </div>

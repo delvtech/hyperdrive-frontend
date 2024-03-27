@@ -1,4 +1,4 @@
-export declare const StdStorage: {
+export declare const stdStorage: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220b816850fdd4c44c3d30a2c722ee9b8eb8c0f86026e7bb4f19498a80561075a9364736f6c63430008140033";
@@ -18098,4 +18098,4 @@ export declare const StdStorage: {
     };
     readonly id: 158;
 };
-//# sourceMappingURL=StdStorage.d.ts.map
+//# sourceMappingURL=stdStorage.d.ts.map
