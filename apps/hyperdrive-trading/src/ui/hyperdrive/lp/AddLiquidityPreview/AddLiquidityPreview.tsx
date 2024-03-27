@@ -46,7 +46,7 @@ export function AddLiquidityPreview({
               "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
               { "border-b border-dashed border-current": slippagePaid },
             )}
-            data-tip="Slippage paid for adding liquidity"
+            data-tip="Additional amount you pay to maintain the lp share price of the pool when adding liquidity"
           >
             {slippagePaid
               ? `${formatBalance({
