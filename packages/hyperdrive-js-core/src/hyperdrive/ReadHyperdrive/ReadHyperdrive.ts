@@ -785,7 +785,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return checkPointEvents;
   }
 
-  private async _calcOpenLongs({
+  private _calcOpenLongs({
     openLongEvents,
     closeLongEvents,
     longsMintedOrReceived,
