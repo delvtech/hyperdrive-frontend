@@ -54,180 +54,126 @@ const eventMap = {
 } as const;
 type EventName = keyof typeof eventMap;
 
-function FilterSelect({
-  header,
+const columnHelper = createColumnHelper<TransactionData>();
+
+export function TransactionTable({
+  hyperdrive,
 }: {
-  header: Header<TransactionData, unknown>;
-}) {
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  if (isTailwindSmallScreen) {
+  hyperdrive: HyperdriveConfig;
+}): JSX.Element {
+  const { data: transactionData, isLoading } = useTransactionData({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const appConfig = useAppConfig();
+  const isSmallScreenView = useIsTailwindSmallScreen();
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const tableInstance = useReactTable({
+    columns: isSmallScreenView
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, appConfig),
+    data: transactionData || [],
+    initialState: {
+      sorting: [
+        {
+          id: "blockNumber",
+          desc: true,
+        },
+      ],
+    },
+    state: {
+      columnFilters,
+    },
+    onColumnFiltersChange: setColumnFilters,
+    enableColumnFilters: true,
+    enableFilters: true,
+    getFilteredRowModel: getFilteredRowModel(),
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+  });
+
+  // Loaded but no data to display
+  if (!transactionData?.length && !isLoading) {
     return (
-      <div className="daisy-dropdown flex flex-row rounded border">
-        <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
-          {(header.column.getFilterValue() as string) || "All"}
-          <ChevronDownIcon className="h-4" />
-        </label>
-        <ul
-          tabIndex={0}
-          className="daisy-menu daisy-dropdown-content mt-14 rounded-md bg-base-200 p-2 shadow"
-        >
-          {["All", "Longs", "Shorts", "LP"].map((filter) => (
-            <li key={filter} className="daisy-menu-title">
-              <a onClick={() => header.column.setFilterValue(filter)}>
-                {filter}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="flex h-52 w-full items-center justify-center">
+        <NonIdealState
+          heading="There are no transactions to display"
+          text="Open a position or add liquidity to see transactions here."
+        />
       </div>
     );
   }
+
   return (
-    <div className="flex flex-wrap">
-      {["All", "Longs", "Shorts", "LP"].map((filter) => (
-        <a
-          key={filter}
-          className={`${
-            header.column.getFilterValue() === filter ||
-            (!header.column.getFilterValue() && filter === "All")
-              ? "daisy-tab daisy-tab-active text-sm md:text-lg"
-              : "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
-          }`}
-          onClick={() => header.column.setFilterValue(filter)}
+    <div className="flex w-full flex-col">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg h-fit">
+        <thead>
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th
+                  className="sticky top-0 z-10 h-10 bg-base-100 text-sm"
+                  key={header.id}
+                >
+                  <div
+                    className={classNames("font-normal text-neutral-content", {
+                      "flex cursor-pointer select-none items-center gap-2 ":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
+                  {header.column.getCanFilter() ? (
+                    <FilterSelect header={header} />
+                  ) : null}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+
+        <tbody
+          className={classNames({
+            "relative h-52": !tableInstance.getFilteredRowModel().rows.length,
+          })}
         >
-          {filter}
-        </a>
-      ))}
+          {isLoading ? (
+            <TableSkeleton numColumns={4} numRows={5} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr key={row.id} className="h-20">
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
+        </tbody>
+      </table>
+      {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
+        <Pagination tableInstance={tableInstance} />
+      ) : null}
     </div>
   );
-}
-
-function formatTransactionTableMobileData(
-  row: TransactionData,
-  hyperdrive: HyperdriveConfig,
-  appConfig: AppConfig,
-) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const size = dnum.format(
-    [
-      row.eventName === "OpenShort" || row.eventName === "CloseShort"
-        ? row.bondAmount || 0n
-        : row.baseAmount || 0n,
-      18,
-    ],
-    { digits: 2 },
-  );
-
-  let baseQueuedForWithdrawalLabel;
-  if (
-    row.eventName === "RemoveLiquidity" &&
-    row.withdrawalShares &&
-    row.lpSharePrice
-  ) {
-    const baseQueuedForWithdrawal = dnum.multiply(
-      [row.withdrawalShares, hyperdrive.decimals],
-      [row.lpSharePrice, hyperdrive.decimals],
-    )[0];
-
-    baseQueuedForWithdrawalLabel = formatBaseQueuedForWithdrawalLabel(
-      baseQueuedForWithdrawal,
-      hyperdrive.decimals,
-      baseToken.symbol,
-    );
-  }
-  return [
-    {
-      name: "Event",
-      value: (
-        <EventNameCell
-          name={eventMap[row.eventName as EventName] || row.eventName}
-          blockNumber={row.blockNumber || 0n}
-        />
-      ),
-    },
-    {
-      name: "Size",
-      value: (
-        <div className="flex flex-col items-end gap-1">
-          <span className="flex">
-            {size} {baseToken.symbol}
-          </span>
-          <span className="daisy-label-text text-neutral-content ">
-            {baseQueuedForWithdrawalLabel}
-          </span>
-        </div>
-      ),
-    },
-    {
-      name: "Account",
-      value: <AccountCell account={row.trader} />,
-    },
-    {
-      name: "Time",
-      value: <BlockInfo blockNumber={row.blockNumber} />,
-    },
-  ];
-}
-
-const columnHelper = createColumnHelper<TransactionData>();
-
-function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  return [
-    columnHelper.accessor("eventName", {
-      id: "eventName",
-      enableSorting: false,
-      enableColumnFilter: true,
-      header: () => null,
-      cell: ({ row }) => {
-        const data = formatTransactionTableMobileData(
-          row.original,
-          hyperdrive,
-          appConfig,
-        );
-        return (
-          <ul className="flex flex-col items-start gap-4 text-neutral-content">
-            {data.map((column) => (
-              <li key={column.name}>{column.name}</li>
-            ))}
-          </ul>
-        );
-      },
-      filterFn: (row, _, filterValue) => {
-        const type = row.getValue("eventName") as string;
-        const filters = {
-          All: true,
-          Longs: ["OpenLong", "CloseLong"].includes(type),
-          Shorts: ["OpenShort", "CloseShort"].includes(type),
-          LP: [
-            "AddLiquidity",
-            "RemoveLiquidity",
-            "RedeemWithdrawalShares",
-          ].includes(type),
-        } as const;
-        return filters[filterValue as keyof typeof filters];
-      },
-    }),
-    columnHelper.display({
-      id: "ColumnValues",
-      cell: ({ row }) => {
-        const data = formatTransactionTableMobileData(
-          row.original,
-          hyperdrive,
-          appConfig,
-        );
-        return (
-          <ul className="flex flex-col items-end gap-4">
-            {data.map((column) => (
-              <li key={column.name}>{column.value}</li>
-            ))}
-          </ul>
-        );
-      },
-    }),
-  ];
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
@@ -321,18 +267,144 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         );
       },
       enableColumnFilter: false,
-      sortingFn: (a, b) =>
-        Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
+      enableSorting: false,
     }),
     columnHelper.accessor("trader", {
       header: "Account",
       enableColumnFilter: false,
+      enableSorting: false,
       cell: (account) => <AccountCell account={account.getValue()} />,
     }),
     columnHelper.accessor("blockNumber", {
       header: "Time",
       enableColumnFilter: false,
       cell: (blockNumber) => <BlockInfo blockNumber={blockNumber.getValue()} />,
+    }),
+  ];
+}
+
+function formatTransactionTableMobileData(
+  row: TransactionData,
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
+) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const size = dnum.format(
+    [
+      row.eventName === "OpenShort" || row.eventName === "CloseShort"
+        ? row.bondAmount || 0n
+        : row.baseAmount || 0n,
+      18,
+    ],
+    { digits: 2 },
+  );
+
+  let baseQueuedForWithdrawalLabel;
+  if (
+    row.eventName === "RemoveLiquidity" &&
+    row.withdrawalShares &&
+    row.lpSharePrice
+  ) {
+    const baseQueuedForWithdrawal = dnum.multiply(
+      [row.withdrawalShares, hyperdrive.decimals],
+      [row.lpSharePrice, hyperdrive.decimals],
+    )[0];
+
+    baseQueuedForWithdrawalLabel = formatBaseQueuedForWithdrawalLabel(
+      baseQueuedForWithdrawal,
+      hyperdrive.decimals,
+      baseToken.symbol,
+    );
+  }
+  return [
+    {
+      name: "Event",
+      value: (
+        <EventNameCell
+          name={eventMap[row.eventName as EventName] || row.eventName}
+          blockNumber={row.blockNumber || 0n}
+        />
+      ),
+    },
+    {
+      name: "Size",
+      value: (
+        <div className="flex flex-col items-end gap-1">
+          <span className="flex">
+            {size} {baseToken.symbol}
+          </span>
+          <span className="daisy-label-text text-neutral-content ">
+            {baseQueuedForWithdrawalLabel}
+          </span>
+        </div>
+      ),
+    },
+    {
+      name: "Account",
+      value: <AccountCell account={row.trader} />,
+    },
+    {
+      name: "Time",
+      value: <BlockInfo blockNumber={row.blockNumber} />,
+    },
+  ];
+}
+
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  return [
+    columnHelper.accessor("eventName", {
+      id: "eventName",
+      enableSorting: false,
+      enableColumnFilter: true,
+      header: () => null,
+      cell: ({ row }) => {
+        const data = formatTransactionTableMobileData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-4 text-neutral-content">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+      filterFn: (row, _, filterValue) => {
+        const type = row.getValue("eventName") as string;
+        const filters = {
+          All: true,
+          Longs: ["OpenLong", "CloseLong"].includes(type),
+          Shorts: ["OpenShort", "CloseShort"].includes(type),
+          LP: [
+            "AddLiquidity",
+            "RemoveLiquidity",
+            "RedeemWithdrawalShares",
+          ].includes(type),
+        } as const;
+        return filters[filterValue as keyof typeof filters];
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatTransactionTableMobileData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-end gap-4">
+            {data.map((column) => (
+              <li key={column.name}>{column.value}</li>
+            ))}
+          </ul>
+        );
+      },
     }),
   ];
 }
@@ -355,127 +427,50 @@ function formatBaseQueuedForWithdrawalLabel(
   return `+${floorOrAmount} ${baseSymbol} queued for withdrawal`;
 }
 
-export function TransactionTable({
-  hyperdrive,
+function FilterSelect({
+  header,
 }: {
-  hyperdrive: HyperdriveConfig;
-}): JSX.Element {
-  const { data: transactionData, isLoading } = useTransactionData({
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const appConfig = useAppConfig();
-  const isSmallScreenView = useIsTailwindSmallScreen();
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const tableInstance = useReactTable({
-    columns: isSmallScreenView
-      ? getMobileColumns(hyperdrive, appConfig)
-      : getColumns(hyperdrive, appConfig),
-    data: transactionData || [],
-    initialState: {
-      sorting: [
-        {
-          id: "blockNumber",
-          desc: true,
-        },
-      ],
-    },
-    state: {
-      columnFilters,
-    },
-    onColumnFiltersChange: setColumnFilters,
-    enableColumnFilters: true,
-    enableFilters: true,
-    getFilteredRowModel: getFilteredRowModel(),
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-  });
-
-  if (!transactionData?.length && !isLoading) {
+  header: Header<TransactionData, unknown>;
+}) {
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  if (isTailwindSmallScreen) {
     return (
-      <div className="flex h-52 w-full items-center justify-center">
-        <NonIdealState
-          heading="There are no transactions to display"
-          text="Open a position or add liquidity to see transactions here."
-        />
+      <div className="daisy-dropdown flex flex-row rounded border">
+        <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
+          {(header.column.getFilterValue() as string) || "All"}
+          <ChevronDownIcon className="h-4" />
+        </label>
+        <ul
+          tabIndex={0}
+          className="daisy-menu daisy-dropdown-content mt-14 rounded-md bg-base-200 p-2 shadow"
+        >
+          {["All", "Longs", "Shorts", "LP"].map((filter) => (
+            <li key={filter} className="daisy-menu-title">
+              <a onClick={() => header.column.setFilterValue(filter)}>
+                {filter}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
-
   return (
-    <div className="flex w-full flex-col">
-      <table className="daisy-table daisy-table-zebra daisy-table-lg h-fit">
-        <thead>
-          {tableInstance.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th
-                  className="sticky top-0 z-10 h-10 bg-base-100 text-sm"
-                  key={header.id}
-                >
-                  <div
-                    className={classNames({
-                      "flex cursor-pointer select-none items-center gap-2 font-normal text-neutral-content":
-                        header.column.getCanSort(),
-                    })}
-                    onClick={header.column.getToggleSortingHandler()}
-                  >
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )}
-                    {{
-                      asc: <ChevronUpIcon height={15} />,
-                      desc: <ChevronDownIcon height={15} />,
-                    }[header.column.getIsSorted() as string] ?? null}
-                  </div>
-                  {header.column.getCanFilter() ? (
-                    <FilterSelect header={header} />
-                  ) : null}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-
-        <tbody
-          className={classNames({
-            "relative h-52": !tableInstance.getFilteredRowModel().rows.length,
-          })}
+    <div className="flex flex-wrap">
+      {["All", "Longs", "Shorts", "LP"].map((filter) => (
+        <a
+          key={filter}
+          className={`${
+            header.column.getFilterValue() === filter ||
+            (!header.column.getFilterValue() && filter === "All")
+              ? "daisy-tab daisy-tab-active text-sm md:text-lg"
+              : "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
+          }`}
+          onClick={() => header.column.setFilterValue(filter)}
         >
-          {isLoading ? <TableSkeleton numColumns={4} numRows={5} /> : null}
-          {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
-            tableInstance.getRowModel().rows.map((row) => {
-              return (
-                <tr key={row.id} className="h-20">
-                  <>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        <td key={cell.id}>
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </td>
-                      );
-                    })}
-                  </>
-                </tr>
-              );
-            })
-          ) : (
-            <div className="absolute flex h-52 w-full justify-center">
-              <NonIdealState
-                heading="There are no transactions for this position type."
-                text="Open a position or add liquidity to see transactions here."
-              />
-            </div>
-          )}
-        </tbody>
-      </table>
-      {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
-        <Pagination tableInstance={tableInstance} />
-      ) : null}
+          {filter}
+        </a>
+      ))}
     </div>
   );
 }
