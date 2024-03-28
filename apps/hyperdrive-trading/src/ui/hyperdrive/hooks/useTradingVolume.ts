@@ -2,8 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
-import { useChainId } from "wagmi";
+import { Address, BlockTag } from "viem";
 export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint | undefined,
@@ -15,23 +14,30 @@ export function useTradingVolume(
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
-  const chainId = useChainId();
-  const fromBlock =
+
+  // If we have at least 1 day of blocks, go back by 1 day, otherwise
+  // start from the earliest block we have
+  let fromBlock: BlockTag | bigint = "earliest";
+  if (
     currentBlockNumber &&
-    chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID
-      ? currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL
-      : "earliest";
+    currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL > 0
+  ) {
+    fromBlock = currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL;
+  }
+
   const { data: volume, status } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
+      fromBlock: fromBlock.toString(),
     }),
     queryFn: queryEnabled
-      ? () =>
-          readHyperdrive.getTradingVolume({
+      ? () => {
+          return readHyperdrive.getTradingVolume({
             fromBlock,
             toBlock: currentBlockNumber,
-          })
+          });
+        }
       : undefined,
     enabled: queryEnabled,
   });
