@@ -1263,10 +1263,10 @@
     fast-safe-stringify "^2.1.1"
     lru-cache "^10.0.1"
 
-"@delvtech/hyperdrive-wasm@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.9.0.tgz#d58d70feed5fffa54ba172adf1e3dddcdbfb05b8"
-  integrity sha512-kj43xeeiimofpSbkberh4w0cWAzezMtScJppfFEKkE/MuRgPLnIDPyG0Gm/DaZbyhWH2iZS+eONvcYnGYds6/w==
+"@delvtech/hyperdrive-wasm@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.9.1.tgz#29f8b5c45d2d8190ab92bbda76d43729dda020e6"
+  integrity sha512-DntJqQsMEcMJB+EbspceFyfwuWAgth8S1md4w43CTAKPgDpnNkYrZfzoFtGQY6hSvqcj1KTnpE+N9hSxcUzUMA==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
