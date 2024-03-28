@@ -915,6 +915,7 @@ export class ReadHyperdrive extends ReadModel {
       stringifiedPoolInfo,
       stringifiedPoolConfig,
       maxBondsOut,
+      openSharePrice.toString(),
     );
     const maxSharesIn = dnum.divide(
       [BigInt(maxBaseIn), 18],
@@ -1348,12 +1349,16 @@ export class ReadHyperdrive extends ReadModel {
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
+    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
 
     const baseDepositAmount = BigInt(
       hyperwasm.calcOpenShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
+        openSharePrice.toString(),
       ),
     );
     // calcOpenShort only returns the preview in terms of base, so if the user
