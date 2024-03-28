@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -55,7 +56,7 @@ export function useRemoveLiquidity({
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Liquidity removed" txHash={txHash} />,
-            { id: txHash },
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           onExecuted?.(txHash);
         }

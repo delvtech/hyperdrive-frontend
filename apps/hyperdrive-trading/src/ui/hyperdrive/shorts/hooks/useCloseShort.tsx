@@ -4,6 +4,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -54,6 +57,10 @@ export function useCloseShort({
       if (isMutationEnabled) {
         function onTransactionMined(txHash: Hash) {
           queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Short closed" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
           onExecuted?.(txHash);
         }
 
@@ -76,7 +83,13 @@ export function useCloseShort({
               },
               onTransactionMined,
             });
+
+        toast.loading(
+          <TransactionToast message="Closing Short..." txHash={hash} />,
+          { id: hash },
+        );
         onSubmitted?.(hash);
+
         addTransaction({
           hash,
           description: "Close Short",

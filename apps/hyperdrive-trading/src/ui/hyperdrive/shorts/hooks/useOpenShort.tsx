@@ -5,6 +5,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -69,6 +72,15 @@ export function useOpenShort({
             : undefined,
         };
 
+        function onTransactionMined(txHash: `0x${string}`) {
+          queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Short opened" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
+
+          onExecuted?.(txHash);
+        }
         const hash = asBase
           ? await hyperdriveModel.openShortWithBase({
               args: {
@@ -78,10 +90,7 @@ export function useOpenShort({
                 maxDeposit: maxDeposit,
               },
               options: openShortOptions,
-              onTransactionMined: (txHash) => {
-                queryClient.invalidateQueries();
-                onExecuted?.(txHash);
-              },
+              onTransactionMined: onTransactionMined,
             })
           : await hyperdriveModel.openShortWithShares({
               args: {
@@ -96,7 +105,13 @@ export function useOpenShort({
                 onExecuted?.(txHash);
               },
             });
+
+        toast.loading(
+          <TransactionToast message="Opening Short" txHash={hash} />,
+          { id: hash },
+        );
         onSubmitted?.(hash);
+
         addTransaction({
           hash,
           description: "Open Short",

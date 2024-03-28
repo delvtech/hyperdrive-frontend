@@ -4,7 +4,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { SupportedChainId } from "src/chains/supportedChains";
@@ -14,7 +13,6 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -132,13 +130,11 @@ export function OpenShortForm({
     // Some hyperdrives allow native eth deposits, so we must include the
     // traderDeposit as msg.value
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
-    onSubmitted: (hash) => {
+    onSubmitted: () => {
       (window as any)["open-short"].close();
-      toast.loading(<TransactionToast message="Opening Short" txHash={hash} />);
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
-      toast.success(<TransactionToast message="Short opened" txHash={hash} />);
     },
   });
 
