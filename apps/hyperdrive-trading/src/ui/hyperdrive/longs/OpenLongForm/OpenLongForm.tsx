@@ -28,6 +28,7 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
+import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -88,11 +89,12 @@ export function OpenLongForm({
   const { maxBaseIn, maxSharesIn } = useMaxLong({
     hyperdriveAddress: hyperdrive.address,
   });
+  const activeTokenMaxTradeSize =
+    activeToken.address === baseToken.address ? maxBaseIn : maxSharesIn;
 
   const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: depositAmountAsBigInt,
-    maxTradeSize:
-      activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
+    maxTradeSize: activeTokenMaxTradeSize,
   });
 
   const {
@@ -144,6 +146,18 @@ export function OpenLongForm({
     },
   });
 
+  // Max button is wired up to the user's balance, or the pool's max long.
+  // Whichever is smallest.
+  let maxButtonValue = "0";
+  if (activeTokenBalance && activeTokenMaxTradeSize) {
+    maxButtonValue = formatUnits(
+      activeTokenBalance.value > activeTokenMaxTradeSize
+        ? activeTokenMaxTradeSize
+        : activeTokenBalance?.value,
+      activeToken.decimals,
+    );
+  }
+
   return (
     <TransactionView
       tokenInput={
@@ -160,7 +174,7 @@ export function OpenLongForm({
             />
           }
           value={depositAmount ?? ""}
-          maxValue={activeTokenBalance?.formatted}
+          maxValue={maxButtonValue}
           inputLabel="Amount to spend"
           stat={
             activeTokenBalance
