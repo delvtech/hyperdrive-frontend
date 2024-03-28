@@ -11,10 +11,10 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 export class ReadWriteEzEthHyperdrive extends readEzEthHyperdriveMixin(
   ReadWriteHyperdrive,
 ) {
-  declare lsEthHyperdriveContract: CachedReadWriteContract<EzEthHyperdriveAbi>;
+  declare ezEthHyperdriveContract: CachedReadWriteContract<EzEthHyperdriveAbi>;
 
   async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteErc20> {
-    const address = await this.lsEthHyperdriveContract.read(
+    const address = await this.ezEthHyperdriveContract.read(
       "ezETH",
       {},
       options,
