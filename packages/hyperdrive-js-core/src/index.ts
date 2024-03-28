@@ -12,6 +12,8 @@ export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdr
 export { ReadMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadMockErc4626Hyperdrive";
 export { ReadWriteErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteErc4626Hyperdrive";
 export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteMockErc4626Hyperdrive";
+export { ReadEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadEzEthHyperdrive";
+export { ReadWriteEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadWriteEzEthHyperdrive";
 export { ReadLsEthHyperdrive } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
 export { ReadWriteLsEthHyperdrive } from "src/hyperdrive/lseth/ReadWriteLsEthHyperdrive";
 export { ReadREthHyperdrive } from "src/hyperdrive/reth/ReadREthHyperdrive";
@@ -44,6 +46,8 @@ export {
 } from "src/token/eth/ReadWriteEth";
 export { ReadLsEth } from "src/token/lseth/ReadLsEth";
 export { ReadWriteLsEth } from "src/token/lseth/ReadWriteLsEth";
+export { ReadREth } from "src/token/reth/ReadREth";
+export { ReadWriteREth } from "src/token/reth/ReadWriteREth";
 export { ReadStEth } from "src/token/steth/ReadStEth";
 export { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
