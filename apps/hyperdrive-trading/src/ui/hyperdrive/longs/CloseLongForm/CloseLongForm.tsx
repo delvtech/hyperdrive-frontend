@@ -6,11 +6,9 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -92,15 +90,11 @@ export function CloseLongForm({
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
     enabled: previewCloseLongStatus === "success",
-    onSubmitted: (hash) => {
+    onSubmitted: () => {
       (window as any)[`${long.assetId}`].close();
-      toast.loading(
-        <TransactionToast message="Closing Long..." txHash={hash} />,
-      );
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
-      toast.success(<TransactionToast message="Long closed" txHash={hash} />);
     },
   });
 
