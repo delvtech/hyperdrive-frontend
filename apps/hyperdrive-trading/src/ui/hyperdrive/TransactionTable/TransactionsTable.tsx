@@ -92,6 +92,7 @@ export function TransactionTable({
     getPaginationRowModel: getPaginationRowModel(),
   });
 
+  // Loaded but no data to display
   if (!transactionData?.length && !isLoading) {
     return (
       <div className="flex h-52 w-full items-center justify-center">
@@ -144,8 +145,9 @@ export function TransactionTable({
             "relative h-52": !tableInstance.getFilteredRowModel().rows.length,
           })}
         >
-          {isLoading ? <TableSkeleton numColumns={4} numRows={5} /> : null}
-          {tableInstance.getFilteredRowModel().rows.length && !isLoading ? (
+          {isLoading ? (
+            <TableSkeleton numColumns={4} numRows={5} />
+          ) : (
             tableInstance.getRowModel().rows.map((row) => {
               return (
                 <tr key={row.id} className="h-20">
@@ -164,13 +166,6 @@ export function TransactionTable({
                 </tr>
               );
             })
-          ) : (
-            <div className="absolute flex h-52 w-full justify-center">
-              <NonIdealState
-                heading="There are no transactions for this position type."
-                text="Open a position or add liquidity to see transactions here."
-              />
-            </div>
           )}
         </tbody>
       </table>
