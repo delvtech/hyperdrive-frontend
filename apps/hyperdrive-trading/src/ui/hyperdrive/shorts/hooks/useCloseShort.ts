@@ -40,17 +40,18 @@ export function useCloseShort({
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const isMutationEnabled =
+    enabled &&
+    !!maturityTime &&
+    !!bondAmountIn &&
+    minAmountOut !== undefined && // check undefined since 0 is valid
+    !!destination &&
+    !!hyperdriveModel &&
+    !!publicClient;
+
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
-      if (
-        enabled &&
-        !!maturityTime &&
-        !!bondAmountIn &&
-        minAmountOut !== undefined && // check undefined since 0 is valid
-        !!destination &&
-        !!hyperdriveModel &&
-        !!publicClient
-      ) {
+      if (isMutationEnabled) {
         function onTransactionMined(txHash: Hash) {
           queryClient.invalidateQueries();
           onExecuted?.(txHash);
@@ -85,7 +86,7 @@ export function useCloseShort({
   });
 
   return {
-    closeShort,
+    closeShort: isMutationEnabled ? closeShort : undefined,
     closeShortStatus: status,
   };
 }
