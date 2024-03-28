@@ -15,8 +15,8 @@ interface UseRemoveLiquidityOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onSubmitted: (hash: string | undefined) => void;
-  onExecuted: (hash: string | undefined) => void;
+  onSubmitted: (hash: Hash) => void;
+  onExecuted: (hash: Hash) => void;
 }
 
 interface UseRemoveLiquidityResult {

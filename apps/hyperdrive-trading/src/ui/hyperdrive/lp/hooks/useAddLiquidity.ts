@@ -19,8 +19,8 @@ interface UseAddLiquidityOptions {
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
-  onSubmitted: (hash: string | undefined) => void;
-  onExecuted: (hash: string | undefined) => void;
+  onSubmitted: (hash: Hash) => void;
+  onExecuted: (hash: Hash) => void;
 }
 
 interface UseAddLiquidityResult {

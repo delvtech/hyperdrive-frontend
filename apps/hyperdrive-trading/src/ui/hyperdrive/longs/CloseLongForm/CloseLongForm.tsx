@@ -7,12 +7,10 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -22,7 +20,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -57,7 +55,6 @@ export function CloseLongForm({
   });
 
   const { address: account } = useAccount();
-  const chainId = useChainId() as SupportedChainId;
 
   const {
     amount: bondAmount,
@@ -98,20 +95,12 @@ export function CloseLongForm({
     onSubmitted: (hash) => {
       (window as any)[`${long.assetId}`].close();
       toast.loading(
-        <CustomToastMessage
-          message="Closing Long..."
-          link={makeTransactionURL(hash, chainId)}
-        />,
+        <TransactionToast message="Closing Long..." txHash={hash} />,
       );
     },
     onExecuted: (hash) => {
       setAmount("");
-      toast.success(
-        <CustomToastMessage
-          message="Long closed"
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
+      toast.success(<TransactionToast message="Long closed" txHash={hash} />);
     },
   });
 

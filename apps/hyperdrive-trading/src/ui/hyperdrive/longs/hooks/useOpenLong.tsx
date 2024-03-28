@@ -2,6 +2,9 @@ import { ContractWriteOptions } from "@delvtech/hyperdrive-viem";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -62,6 +65,10 @@ export function useOpenLong({
 
       function onTransactionMined(hash: Hash) {
         queryClient.invalidateQueries();
+        toast.success(
+          <TransactionToast message="Long opened" txHash={hash} />,
+          { id: hash, duration: SUCCESS_TOAST_DURATION },
+        );
         onExecuted?.(hash);
       }
 
@@ -86,7 +93,13 @@ export function useOpenLong({
             options,
             onTransactionMined,
           });
+
+      toast.loading(
+        <TransactionToast txHash={hash} message="Opening a Long..." />,
+        { id: hash },
+      );
       onSubmitted?.(hash);
+
       addTransaction({
         hash,
         description: "Open Long",

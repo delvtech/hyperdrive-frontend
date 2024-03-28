@@ -6,7 +6,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
-import { Address } from "viem";
+import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
@@ -18,8 +18,8 @@ interface UseOpenShortOptions {
   asBase?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
-  onSubmitted?: (hash: string | undefined) => void;
-  onExecuted?: (hash: string | undefined) => void;
+  onSubmitted?: (hash: Hash) => void;
+  onExecuted?: (hash: Hash) => void;
   ethValue?: bigint;
 }
 

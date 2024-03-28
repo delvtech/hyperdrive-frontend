@@ -5,8 +5,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -14,7 +12,6 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -126,23 +123,11 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
-    onSubmitted(hash) {
+    onSubmitted: () => {
       (window as any)["open-long"].close();
-      toast.loading(
-        <CustomToastMessage
-          message="Opening a Long..."
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
-      toast.success(
-        <CustomToastMessage
-          message="Long opened"
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
   });
 

@@ -10,14 +10,13 @@ import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateRatio } from "src/base/calculateRatio";
 import { parseUnits } from "src/base/parseUnits";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -134,19 +133,13 @@ export function AddLiquidityForm({
     onSubmitted: (hash) => {
       (window as any)["add-lp"].close();
       toast.loading(
-        <CustomToastMessage
-          message="Adding liquidity..."
-          link={makeTransactionURL(hash, chainId)}
-        />,
+        <TransactionToast message="Adding liquidity..." txHash={hash} />,
       );
     },
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
-        <CustomToastMessage
-          message="Liquidity added"
-          link={makeTransactionURL(hash, chainId)}
-        />,
+        <TransactionToast message="Liquidity added" txHash={hash} />,
       );
     },
   });

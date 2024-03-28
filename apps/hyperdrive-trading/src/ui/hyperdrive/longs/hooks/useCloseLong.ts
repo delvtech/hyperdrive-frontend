@@ -16,8 +16,8 @@ interface UseCloseLongOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onSubmitted?: (hash: string) => void;
-  onExecuted: (hash: string | undefined) => void;
+  onSubmitted?: (hash: Hash) => void;
+  onExecuted: (hash: Hash) => void;
 }
 
 interface UseCloseLongResult {
