@@ -9,7 +9,6 @@ import {
 import * as dnum from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-import { ReturnType } from "src/base/ReturnType";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
@@ -32,7 +31,6 @@ import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFrom
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
-import { ReadToken } from "src/token/ReadToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
@@ -40,362 +38,7 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
-export interface IReadHyperdrive extends ReadModel {
-  /**
-   * Returns the base token of the pool.
-   */
-  getBaseToken(options?: ContractReadOptions): Promise<ReadToken>;
-
-  /**
-   * Gets the pool's configuration parameters
-   */
-  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig>;
-
-  getDecimals(options?: ContractReadOptions): Promise<number>;
-
-  /**
-   * Gets info about the pool's reserves and other state that is important to
-   * evaluate potential trades.
-   */
-  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo>;
-
-  /**
-   * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
-   * open a long.
-   */
-  getSpotRate(options?: ContractReadOptions): Promise<bigint>;
-
-  /**
-   * This function retrieves the available market liquidity
-   */
-  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
-
-  /**
-   * This  returns the LP APY using the following formula for continuous compounding:
-   * r = rate of return
-   * p_0 = from lpSharePrice
-   * p_1 = to lpSharePrice
-   * t = term length in fractions of a year
-   * r = ln(p_1 / p_0) / t
-   */
-  getLpApy(args: {
-    fromBlock?: bigint;
-    toBlock?: bigint;
-  }): Promise<{ lpApy: number }>;
-
-  getCheckpoint(args: {
-    checkpointId: bigint;
-    options?: ContractReadOptions;
-  }): Promise<Checkpoint>;
-
-  getCheckpointExposure(args: {
-    checkpointId: bigint;
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-
-  getCheckpointEvents({
-    fromBlock,
-    toBlock,
-  }: {
-    fromBlock?: bigint;
-    toBlock?: bigint;
-  }): Promise<CheckpointEvent[]>;
-
-  /**
-   *
-   * This function retrieves the market state. This is helpful for retrieving general market state statistics, such as whether the market has been paused.
-   */
-  getMarketState(options?: ContractReadOptions): Promise<MarketState>;
-
-  /**
-   * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
-   * Note that shorts stop accruing yield once they reach maturity.
-   * @param checkpointId - The checkpoint the short was opened in
-   * @param bondAmount - The number of bonds shorted
-   * @param decimals
-   * @param options
-   */
-  getShortAccruedYield({
-    checkpointId,
-    bondAmount,
-    decimals,
-    options,
-  }: {
-    checkpointId: bigint;
-    bondAmount: bigint;
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals: number;
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-
-  /**
-   * Calculates the total trading volume in bonds given a block window.
-   * @param options.fromBlock - The start block, defaults to "earliest"
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the total amount of bonds traded
-   */
-  getTradingVolume(options?: {
-    fromBlock?: BlockTag | bigint;
-    toBlock?: BlockTag | bigint;
-  }): Promise<{
-    totalVolume: bigint;
-    longVolume: bigint;
-    shortVolume: bigint;
-  }>;
-
-  /**
-   * Gets the current price of a bond in the pool.
-   */
-  getLongPrice(options?: ContractReadOptions): Promise<bigint>;
-
-  /**
-   * Gets the active longs opened by a specific user.
-   */
-  getOpenLongs(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<Long[]>;
-
-  /**
-   * Gets the active shorts opened by a specific user.
-   */
-  getOpenShorts(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<OpenShort[]>;
-
-  /**
-   * Gets the closed longs by a specific user.
-   */
-  getClosedLongs(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<ClosedLong[]>;
-
-  /**
-   * Gets the inactive shorts opened by a specific user.
-   */
-  getClosedShorts(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<ClosedShort[]>;
-
-  /**
-   * Gets the maximum amount of bonds a user can open a short for.
-   */
-  getMaxShort(options?: ContractReadOptions): Promise<{
-    maxBaseIn: bigint;
-    maxSharesIn: bigint;
-    maxBondsOut: bigint;
-  }>;
-
-  /**
-   * Gets the maximum amount of bonds a user can open a long for.
-   */
-  getMaxLong(options?: ContractReadOptions): Promise<{
-    maxBaseIn: bigint;
-    maxSharesIn: bigint;
-    maxBondsOut: bigint;
-  }>;
-
-  /**
-   * Gets the amount of LP shares a user has.
-   */
-  getLpShares(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-  getLpSharesTotalSupply(args?: {
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-
-  /**
-   * Gets a user's current LP position.
-   */
-  getOpenLpPosition(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<{
-    lpShareBalance: bigint;
-    baseAmountPaid: bigint;
-    baseValue: bigint;
-    sharesValue: bigint;
-  }>;
-
-  /**
-   * Gets the amount of closed LP shares a user has.
-   */
-  getClosedLpShares(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<ClosedLpShares[]>;
-
-  /**
-   * Gets the amount of withdrawal shares a user has.
-   */
-  getWithdrawalShares(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-
-  /**
-   * Gets the amount of redeemed withdrawal shares a user has.
-   */
-  getRedeemedWithdrawalShares(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<RedeemedWithdrawalShares[]>;
-
-  /**
-   * Predicts the amount of base asset a user will receive when closing a long.
-   */
-  previewCloseLong(args: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
-  }): Promise<bigint>;
-
-  /**
-   * Predicts the amount of base asset a user will receive when closing a short.
-   */
-  previewCloseShort(args: {
-    maturityTime: bigint;
-    shortAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
-  }): Promise<bigint>;
-
-  /**
-   * Predicts the amount of bonds a user will receive when opening a long in
-   * either base or shares. The curve fee returned from this function is paid in bonds.
-   */
-  previewOpenLong(args: {
-    amountIn: bigint;
-    asBase: boolean;
-    /**
-     * @deprecated
-     */
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals?: number;
-    options?: ContractReadOptions;
-  }): Promise<{
-    maturityTime: bigint;
-    bondProceeds: bigint;
-    spotPriceAfterOpen: bigint;
-    spotRateAfterOpen: bigint;
-    curveFee: bigint;
-  }>;
-
-  /**
-   * Predicts the amount of base asset it will cost to open a short.
-   * @param amountOfBondsToShort The number of bonds to short
-   * @param asBase If true, the traderDeposit will be in base. If false, the traderDeposit will be in shares
-   * @param asBase The decimal precision of the traderDeposit value
-   */
-  previewOpenShort(args: {
-    amountOfBondsToShort: bigint;
-    asBase: boolean;
-    options?: ContractReadOptions;
-  }): Promise<{
-    maturityTime: bigint;
-    traderDeposit: bigint;
-    spotPriceAfterOpen: bigint;
-    spotRateAfterOpen: bigint;
-    curveFee: bigint;
-  }>;
-
-  /**
-   * Predicts the amount of LP shares a user will receive when adding liquidity.
-   */
-  previewAddLiquidity(args: {
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    destination: `0x${string}`;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
-  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }>;
-
-  /**
-   * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
-   */
-  previewRemoveLiquidity(args: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
-  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
-
-  /**
-   * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
-   */
-  previewRedeemWithdrawalShares(args: {
-    withdrawalSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
-  }): Promise<{
-    baseProceeds: bigint;
-    withdrawalSharesRedeemed: bigint;
-    asBase: boolean;
-    sharesProceeds: bigint;
-  }>;
-
-  getLongEvents(
-    options?:
-      | ContractGetEventsOptions<HyperdriveAbi, "OpenLong">
-      | ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
-  ): Promise<
-    {
-      trader: `0x${string}`;
-      assetId: bigint;
-      bondAmount: bigint;
-      baseAmount: bigint;
-      eventName: "OpenLong" | "CloseLong";
-      blockNumber: bigint | undefined;
-    }[]
-  >;
-  getShortEvents(
-    options?:
-      | ContractGetEventsOptions<HyperdriveAbi, "OpenShort">
-      | ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
-  ): Promise<
-    {
-      trader: `0x${string}`;
-      assetId: bigint;
-      bondAmount: bigint;
-      baseAmount: bigint;
-      eventName: "OpenShort" | "CloseShort";
-      blockNumber: bigint | undefined;
-    }[]
-  >;
-
-  getLpEvents(): Promise<{
-    addLiquidity: Event<HyperdriveAbi, "AddLiquidity">[];
-    removeLiquidity: Event<HyperdriveAbi, "RemoveLiquidity">[];
-    redeemWithdrawalShares: Event<HyperdriveAbi, "RedeemWithdrawalShares">[];
-    // trader: `0x${string}`;
-    // baseAmount: bigint;
-    // eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
-    // withdrawalShares?: bigint;
-    // blockNumber: bigint | undefined;
-  }>;
-}
-
-export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
+export class ReadHyperdrive extends ReadModel {
   readonly contract: CachedReadContract<HyperdriveAbi>;
 
   /**
@@ -419,14 +62,15 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }
 
   /**
-   * @remarks The base Hyperdrive class supports ERC20 and ETH base
-   * tokens. If the address returned by the contract is not the ETH address, it
-   * is assumed to be an ERC20 token.
+   * Returns the base token of the pool.
+   *
+   * @privateRemarks
+   * The default implementation supports ERC20 and ETH base tokens. If
+   * the address returned by the contract is not the ETH address, it is assumed
+   * to be an ERC20 token.
    */
-  async getBaseToken(
-    options?: ContractReadOptions,
-  ): Promise<ReadErc20 | ReadEth> {
-    const address = await this.contract.read("baseToken", {}, options);
+  async getBaseToken(): Promise<ReadErc20 | ReadEth> {
+    const address = await this.contract.read("baseToken");
     return address === ReadEth.address
       ? new ReadEth({
           contractFactory: this.contractFactory,
@@ -440,8 +84,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
         });
   }
 
-  getDecimals(options?: ContractReadOptions | undefined): Promise<number> {
-    return this.contract.read("decimals", {}, options);
+  getDecimals(): Promise<number> {
+    return this.contract.read("decimals");
   }
 
   getCheckpoint({
@@ -450,7 +94,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }: {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
-  }): ReturnType<IReadHyperdrive, "getCheckpoint"> {
+  }): Promise<Checkpoint> {
     return this.contract.read(
       "getCheckpoint",
       { _checkpointTime: checkpointId },
@@ -464,7 +108,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }: {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
-  }): ReturnType<IReadHyperdrive, "getCheckpointExposure"> {
+  }): Promise<bigint> {
     return this.contract.read(
       "getCheckpointExposure",
       { _checkpointTime: checkpointId },
@@ -472,27 +116,36 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
-  getMarketState(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getMarketState"> {
+  /**
+   *
+   * This function retrieves the market state. This is helpful for retrieving
+   * general market state statistics, such as whether the market has been
+   * paused.
+   */
+  getMarketState(options?: ContractReadOptions): Promise<MarketState> {
     return this.contract.read("getMarketState", undefined, options);
   }
 
-  getPoolConfig(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getPoolConfig"> {
+  /**
+   * Gets the pool's configuration parameters
+   */
+  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
     return this.contract.read("getPoolConfig", undefined, options);
   }
 
-  getPoolInfo(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getPoolInfo"> {
+  /**
+   * Gets info about the pool's reserves and other state that is important to
+   * evaluate potential trades.
+   */
+  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
     return this.contract.read("getPoolInfo", undefined, options);
   }
 
-  async getSpotRate(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getSpotRate"> {
+  /**
+   * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
+   * open a long.
+   */
+  async getSpotRate(options?: ContractReadOptions): Promise<bigint> {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
@@ -504,9 +157,10 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return BigInt(aprString);
   }
 
-  async getLiquidity(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getLiquidity"> {
+  /**
+   * This function retrieves the available market liquidity
+   */
+  async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -518,18 +172,26 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return BigInt(liquidityString);
   }
 
+  /**
+   * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
+   * Note that shorts stop accruing yield once they reach maturity.
+   * @param checkpointId - The checkpoint the short was opened in
+   * @param bondAmount - The number of bonds shorted
+   * @param decimals
+   * @param options
+   */
   async getShortAccruedYield({
     checkpointId,
     bondAmount,
-    // TODO: Remove in favor of this.getDecimals();
     decimals,
     options,
   }: {
     checkpointId: bigint;
     bondAmount: bigint;
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals: number;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
+  }): Promise<bigint> {
     // Get the vault share price when the short was opened
     const checkpoint = await this.getCheckpoint({ checkpointId });
 
@@ -563,10 +225,20 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return accruedYield;
   }
 
+  /**
+   * Calculates the total trading volume in bonds given a block window.
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the total amount of bonds traded
+   */
   async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
-  }): ReturnType<IReadHyperdrive, "getTradingVolume"> {
+  }): Promise<{
+    totalVolume: bigint;
+    longVolume: bigint;
+    shortVolume: bigint;
+  }> {
     const { fromBlock = "earliest", toBlock = "latest" } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
@@ -608,17 +280,10 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
 
   /**
    * Gets the spot price of a long
-   * {@label Get Long Price}
    * @param options - The read options
    * @returns the spot price of a long
-   * ```ts
-   *   const longPrice = await readHyperdrive.getLongPrice();
-   * ```
-   *
    */
-  async getLongPrice(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getLongPrice"> {
+  async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -653,12 +318,20 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   ): Promise<Event<HyperdriveAbi, "CloseShort">[]> {
     return this.contract.getEvents("CloseShort", options);
   }
-
   async getLongEvents(
     options?:
       | ContractGetEventsOptions<HyperdriveAbi, "OpenLong">
       | ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
-  ): ReturnType<IReadHyperdrive, "getLongEvents"> {
+  ): Promise<
+    {
+      trader: `0x${string}`;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      eventName: "OpenLong" | "CloseLong";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
     return [...openLongEvents, ...closeLongEvents].map(
@@ -679,7 +352,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     options?:
       | ContractGetEventsOptions<HyperdriveAbi, "OpenShort">
       | ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
-  ): ReturnType<IReadHyperdrive, "getShortEvents"> {
+  ): Promise<
+    {
+      trader: `0x${string}`;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      eventName: "OpenShort" | "CloseShort";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
     const closeShortEvents = await this.contract.getEvents(
       "CloseShort",
@@ -696,11 +378,15 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       }),
     );
   }
-  async getLpEvents(): ReturnType<IReadHyperdrive, "getLpEvents"> {
+
+  async getLpEvents(): Promise<{
+    addLiquidity: Event<HyperdriveAbi, "AddLiquidity">[];
+    removeLiquidity: Event<HyperdriveAbi, "RemoveLiquidity">[];
+    redeemWithdrawalShares: Event<HyperdriveAbi, "RedeemWithdrawalShares">[];
+  }> {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity");
-    const removeLiquidityEvents = await this.contract.getEvents(
-      "RemoveLiquidity",
-    );
+    const removeLiquidityEvents =
+      await this.contract.getEvents("RemoveLiquidity");
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
     );
@@ -712,13 +398,21 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
+  /**
+   * This  returns the LP APY using the following formula for continuous compounding:
+   * r = rate of return
+   * p_0 = from lpSharePrice
+   * p_1 = to lpSharePrice
+   * t = term length in fractions of a year
+   * r = ln(p_1 / p_0) / t
+   */
   async getLpApy({
     fromBlock,
     toBlock,
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-  }): ReturnType<IReadHyperdrive, "getLpApy"> {
+  }): Promise<{ lpApy: number }> {
     const { positionDuration, checkpointDuration } = await this.getPoolConfig();
 
     const checkpointEvents = await this.getCheckpointEvents({
@@ -777,7 +471,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }: {
     fromBlock?: bigint;
     toBlock?: bigint;
-  }): ReturnType<IReadHyperdrive, "getCheckpointEvents"> {
+  }): Promise<CheckpointEvent[]> {
     const checkPointEvents = await this.contract.getEvents("CreateCheckpoint", {
       fromBlock,
       toBlock,
@@ -883,7 +577,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
+  }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -947,7 +641,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getOpenShorts"> {
+  }): Promise<OpenShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -1085,13 +779,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 
+  /**
+   * Gets the closed longs by a specific user.
+   */
   async getClosedLongs({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getClosedLongs"> {
+  }): Promise<ClosedLong[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -1129,13 +826,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return closedLongsList.filter((long) => long.bondAmount);
   }
 
+  /**
+   * Gets the inactive shorts opened by a specific user.
+   */
   async getClosedShorts({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getClosedShorts"> {
+  }): Promise<ClosedShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
     const closedShorts = await this.contract.getEvents("CloseShort", {
@@ -1174,9 +874,14 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return closedShortsList.filter((short) => short.bondAmount);
   }
 
-  async getMaxShort(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getMaxShort"> {
+  /**
+   * Gets the maximum amount of bonds a user can open a short for.
+   */
+  async getMaxShort(options?: ContractReadOptions): Promise<{
+    maxBaseIn: bigint;
+    maxSharesIn: bigint;
+    maxBondsOut: bigint;
+  }> {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
 
@@ -1223,9 +928,14 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
-  async getMaxLong(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getMaxLong"> {
+  /**
+   * Gets the maximum amount of bonds a user can open a long for.
+   */
+  async getMaxLong(options?: ContractReadOptions): Promise<{
+    maxBaseIn: bigint;
+    maxSharesIn: bigint;
+    maxBondsOut: bigint;
+  }> {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
 
@@ -1272,7 +982,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
 
   getLpSharesTotalSupply(args?: {
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
+  }): Promise<bigint> {
     return this.contract.read(
       "totalSupply",
       { tokenId: LP_ASSET_ID },
@@ -1280,13 +990,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Gets the amount of LP shares a user has.
+   */
   getLpShares({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getLpShares"> {
+  }): Promise<bigint> {
     return this.contract.read(
       "balanceOf",
       { tokenId: LP_ASSET_ID, owner: account },
@@ -1294,7 +1007,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
-  async getOpenLpPosition({ account }: { account: `0x${string}` }): Promise<{
+  /**
+   * Gets a user's current LP position.
+   */
+  async getOpenLpPosition({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<{
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
     baseValue: bigint;
@@ -1326,7 +1048,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       });
 
       // convert the proceeds into base using vaultSharePrice
-      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
+      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo(options);
       const proceedsBaseValue = dnum.multiply(
         [vaultSharePrice, 18],
         [proceeds, 18],
@@ -1411,13 +1133,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return { lpShareBalance, baseAmountPaid };
   }
 
+  /**
+   * Gets the amount of closed LP shares a user has.
+   */
   async getClosedLpShares({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getClosedLpShares"> {
+  }): Promise<ClosedLpShares[]> {
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
       {
@@ -1445,13 +1170,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Gets the amount of withdrawal shares a user has.
+   */
   getWithdrawalShares({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getWithdrawalShares"> {
+  }): Promise<bigint> {
     return this.contract.read(
       "balanceOf",
       { tokenId: WITHDRAW_SHARES_ASSET_ID, owner: account },
@@ -1459,13 +1187,16 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Gets the amount of redeemed withdrawal shares a user has.
+   */
   async getRedeemedWithdrawalShares({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getRedeemedWithdrawalShares"> {
+  }): Promise<RedeemedWithdrawalShares[]> {
     const redeemedWithdrawalShareEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
       {
@@ -1496,14 +1227,25 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Predicts the amount of bonds a user will receive when opening a long in
+   * either base or shares. The curve fee returned from this function is paid in bonds.
+   */
   async previewOpenLong({
     amountIn,
     asBase,
     options,
-  }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
-    IReadHyperdrive,
-    "previewOpenLong"
-  > {
+  }: {
+    amountIn: bigint;
+    asBase: boolean;
+    options?: ContractReadOptions;
+  }): Promise<{
+    maturityTime: bigint;
+    bondProceeds: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -1573,14 +1315,27 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
+  /**
+   * Predicts the amount of base asset it will cost to open a short.
+   * @param amountOfBondsToShort The number of bonds to short
+   * @param asBase If true, the traderDeposit will be in base. If false, the traderDeposit will be in shares
+   * @param asBase The decimal precision of the traderDeposit value
+   */
   async previewOpenShort({
     amountOfBondsToShort,
     asBase,
     options,
-  }: Parameters<IReadHyperdrive["previewOpenShort"]>[0]): ReturnType<
-    IReadHyperdrive,
-    "previewOpenShort"
-  > {
+  }: {
+    amountOfBondsToShort: bigint;
+    asBase: boolean;
+    options?: ContractReadOptions;
+  }): Promise<{
+    maturityTime: bigint;
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -1662,6 +1417,9 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
+  /**
+   * Predicts the amount of base asset a user will receive when closing a long.
+   */
   previewCloseLong({
     maturityTime,
     bondAmountIn,
@@ -1678,7 +1436,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewCloseLong"> {
+  }): Promise<bigint> {
     return this.contract.simulateWrite(
       "closeLong",
       {
@@ -1691,6 +1449,9 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Predicts the amount of base asset a user will receive when closing a short.
+   */
   previewCloseShort({
     maturityTime,
     shortAmountIn,
@@ -1707,7 +1468,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewCloseShort"> {
+  }): Promise<bigint> {
     return this.contract.simulateWrite(
       "closeShort",
       {
@@ -1720,6 +1481,9 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     );
   }
 
+  /**
+   * Predicts the amount of LP shares a user will receive when adding liquidity.
+   */
   async previewAddLiquidity({
     contribution,
     minAPR,
@@ -1738,7 +1502,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewAddLiquidity"> {
+  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
     const lpSharesOut = await this.contract.simulateWrite(
       "addLiquidity",
       {
@@ -1774,6 +1538,9 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
+  /**
+   * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
+   */
   async previewRemoveLiquidity({
     lpSharesIn,
     minOutputPerShare,
@@ -1788,7 +1555,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }> {
     const { proceeds, withdrawalShares } = await this.contract.simulateWrite(
       "removeLiquidity",
       {
@@ -1810,6 +1577,9 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     };
   }
 
+  /**
+   * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
+   */
   async previewRedeemWithdrawalShares({
     withdrawalSharesIn,
     minOutputPerShare,
@@ -1824,7 +1594,12 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
+  }): Promise<{
+    baseProceeds: bigint;
+    withdrawalSharesRedeemed: bigint;
+    asBase: boolean;
+    sharesProceeds: bigint;
+  }> {
     const { proceeds, withdrawalSharesRedeemed } =
       await this.contract.simulateWrite(
         "redeemWithdrawalShares",
