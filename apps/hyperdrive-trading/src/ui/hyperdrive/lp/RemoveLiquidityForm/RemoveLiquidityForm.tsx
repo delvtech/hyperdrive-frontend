@@ -9,14 +9,12 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -118,17 +116,11 @@ export function RemoveLiquidityForm({
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
-    onSubmitted: (hash) => {
+    onSubmitted: () => {
       (window as any)["withdrawalLpModal"].close();
-      toast.loading(
-        <TransactionToast message="Removing liquidity..." txHash={hash} />,
-      );
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
-      toast.success(
-        <TransactionToast message="Liquidity removed" txHash={hash} />,
-      );
     },
   });
 
