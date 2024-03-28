@@ -57,11 +57,6 @@ export type {
   ReadWriteContractFactory,
 } from "src/evm-client/contractFactory";
 
-export type {
-  IReadHyperdriveContract,
-  IReadWriteHyperdriveContract,
-} from "src/hyperdrive/HyperdriveContract";
-
 // Pool
 export type { Checkpoint } from "src/pool/Checkpoint";
 export type { PoolConfig } from "src/pool/PoolConfig";
