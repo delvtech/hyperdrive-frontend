@@ -115,8 +115,8 @@ export function TransactionTable({
                   key={header.id}
                 >
                   <div
-                    className={classNames({
-                      "flex cursor-pointer select-none items-center gap-2 font-normal text-neutral-content":
+                    className={classNames("font-normal text-neutral-content", {
+                      "flex cursor-pointer select-none items-center gap-2 ":
                         header.column.getCanSort(),
                     })}
                     onClick={header.column.getToggleSortingHandler()}
@@ -278,6 +278,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.accessor("trader", {
       header: "Account",
       enableColumnFilter: false,
+      enableSorting: false,
       cell: (account) => <AccountCell account={account.getValue()} />,
     }),
     columnHelper.accessor("blockNumber", {
