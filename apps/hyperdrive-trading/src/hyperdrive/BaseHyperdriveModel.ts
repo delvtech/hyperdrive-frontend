@@ -749,7 +749,6 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     return this.readWriteHyperdrive.previewOpenLong({
       amountIn: baseAmount,
       asBase: true,
-      decimals: this.hyperdriveConfig.decimals,
       options,
     });
   }
@@ -769,7 +768,6 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     return this.readWriteHyperdrive.previewOpenLong({
       amountIn: sharesAmount,
       asBase: true,
-      decimals: this.hyperdriveConfig.decimals,
       options,
     });
   }
