@@ -267,8 +267,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         );
       },
       enableColumnFilter: false,
-      sortingFn: (a, b) =>
-        Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
+      enableSorting: false,
     }),
     columnHelper.accessor("trader", {
       header: "Account",
