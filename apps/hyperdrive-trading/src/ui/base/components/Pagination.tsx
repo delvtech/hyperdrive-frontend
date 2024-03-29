@@ -9,7 +9,7 @@ export function Pagination<T>({
   return (
     <div className="flex h-24 items-center justify-center gap-2">
       <button
-        className="daisy-btn"
+        className="daisy-btn daisy-btn-circle"
         onClick={() => tableInstance.previousPage()}
         disabled={!tableInstance.getCanPreviousPage()}
       >
@@ -23,7 +23,7 @@ export function Pagination<T>({
         </p>
       </span>
       <button
-        className="daisy-btn"
+        className="daisy-btn daisy-btn-circle"
         onClick={() => tableInstance.nextPage()}
         disabled={!tableInstance.getCanNextPage()}
       >

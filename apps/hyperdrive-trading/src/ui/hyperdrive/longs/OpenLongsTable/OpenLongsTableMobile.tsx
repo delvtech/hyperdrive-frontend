@@ -198,7 +198,7 @@ function formatOpenLongMobileColumnData(
       }),
     },
     {
-      name: "Fixed rate (APR)",
+      name: "Fixed APR",
       value: (
         <FixedRateCell
           hyperdrive={hyperdrive}
