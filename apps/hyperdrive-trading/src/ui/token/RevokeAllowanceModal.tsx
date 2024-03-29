@@ -121,6 +121,10 @@ export function RevokeAllowanceModal({
                             balance: tokenBalance?.value,
                             decimals: token.decimals,
                             places: 4,
+                          })} ${token.symbol}\nAllowance: ${formatBalance({
+                            balance: allowance ?? 0n,
+                            decimals: token.decimals,
+                            places: 4,
                           })} ${token.symbol}`
                         : undefined
                     }
