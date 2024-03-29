@@ -24,6 +24,8 @@ export const faqData = [
           Hyperdrive&apos;s{" "}
           <a
             className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
           >
             Position Types
@@ -58,6 +60,8 @@ export const faqData = [
           other investments. Read our docs to learn more about Hyperdrive&apos;s{" "}
           <a
             className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
           >
             Position Types
@@ -97,6 +101,8 @@ export const faqData = [
           <br /> Learn more about{" "}
           <a
             className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/lp-profit-loss"
           >
             LP Profit/Loss
@@ -136,6 +142,8 @@ export const faqData = [
         Learn more about{" "}
         <a
           className="daisy-link"
+          rel="noreferrer"
+          target="_blank"
           href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/value-of-the-lp-position"
         >
           the value of the LP position
@@ -201,6 +209,8 @@ export const faqData = [
           Learn more in the{" "}
           <a
             className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/trading/fees"
           >
             Fees
