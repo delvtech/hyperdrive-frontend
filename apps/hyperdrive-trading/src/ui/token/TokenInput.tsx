@@ -111,7 +111,9 @@ export function TokenInput({
         ) : null}
       </label>
       <label className="daisy-label flex justify-end">
-        {stat ? <span className="daisy-label-text ">{stat}</span> : null}
+        {stat ? (
+          <span className="daisy-label-text whitespace-pre-wrap">{stat}</span>
+        ) : null}
       </label>
     </div>
   );
