@@ -133,11 +133,8 @@ export function OpenLpSharesCard({
                   )}
                 >
                   {isPositiveChangeInValue ? "+" : ""}
-                  {formattedProfit === "-0" ? (
-                    "0"
-                  ) : (
-                    <span>{formattedProfit}</span>
-                  )}{" "}
+                  {/* format balance could return -0 if the bigint value is a small negative number */}
+                  {formattedProfit === "-0" ? "0" : formattedProfit}{" "}
                   {baseToken.symbol}
                 </div>
               }
