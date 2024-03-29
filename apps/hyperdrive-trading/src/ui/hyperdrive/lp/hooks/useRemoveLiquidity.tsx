@@ -4,6 +4,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -15,8 +18,8 @@ interface UseRemoveLiquidityOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onSubmitted: (hash: string | undefined) => void;
-  onExecuted: (hash: string | undefined) => void;
+  onSubmitted: (hash: Hash) => void;
+  onExecuted: (hash: Hash) => void;
 }
 
 interface UseRemoveLiquidityResult {
@@ -51,6 +54,10 @@ export function useRemoveLiquidity({
       if (mutationEnabled) {
         function onTransactionMined(txHash: Hash) {
           queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Liquidity removed" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
           onExecuted?.(txHash);
         }
 
@@ -71,7 +78,13 @@ export function useRemoveLiquidity({
               },
               onTransactionMined,
             });
+
+        toast.loading(
+          <TransactionToast message="Removing liquidity..." txHash={hash} />,
+          { id: hash },
+        );
         onSubmitted?.(hash);
+
         addTransaction({
           hash,
           description: "Remove Liquidity",
