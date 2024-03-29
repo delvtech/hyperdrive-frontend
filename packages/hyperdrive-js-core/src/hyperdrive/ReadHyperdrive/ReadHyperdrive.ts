@@ -1364,6 +1364,36 @@ export class ReadHyperdrive extends ReadModel {
     // calcOpenShort only returns the preview in terms of base, so if the user
     // wants to deposit shares we need to convert that value to shares.
     let traderDeposit = baseDepositAmount;
+
+    //////////////////////////////////////////////////////////////////////
+    // Description: The sdk and the smart contracts are not at parity with their
+    // respective calcOpenShort methods. We are seeing the sdk consistently
+    // returning a smaller trader deposit amount than simulating the call to
+    // openShort.
+    ///////////////////////////////////////////////////////////////////////////
+
+    // The amount from calling the SDK
+    console.log("traderDeposit", dnum.format([traderDeposit, 18]));
+
+    // The amount from performing the tx in view mode
+    const simulated = await this.contract.simulateWrite(
+      "openShort",
+      {
+        _bondAmount: amountOfBondsToShort,
+        _maxDeposit: MAX_UINT256,
+        _minVaultSharePrice: poolInfo.vaultSharePrice,
+        _options: {
+          asBase: true,
+          destination: "0x005BB73FddB8CE049eE366b50d2f48763E9Dc0De",
+          extraData: ZERO_ADDRESS,
+        },
+      },
+      { from: "0x005BB73FddB8CE049eE366b50d2f48763E9Dc0De" },
+    );
+    console.log("from simulate", dnum.format([simulated.deposit, 18]));
+    console.log("has enough allowance", traderDeposit >= simulated.deposit);
+    ///////////////////////////////////////////////////////////////////////////
+
     if (!asBase) {
       traderDeposit = convertBaseToShares({
         decimals,
