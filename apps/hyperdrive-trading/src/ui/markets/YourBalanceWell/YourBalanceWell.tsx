@@ -12,7 +12,7 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
+import { RevokeAllowanceModal } from "src/ui/token/RevokeAllowanceModal";
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
@@ -91,12 +91,7 @@ function AvailableAsset({
   });
 
   // approving a 0 allowance is how to "revoke" allowances
-  const { approve: revokeAllowance } = useApproveToken({
-    tokenAddress: token.address,
-    amount: 0n,
-    spender,
-    enabled: !isEth,
-  });
+
   return (
     <div className="flex whitespace-nowrap ">
       <div className="flex items-center gap-1 text-h5 font-bold">
@@ -136,15 +131,11 @@ function AvailableAsset({
                     })}
               </span>
             </li>
-            <li>
-              <button
-                className="disabled:daisy-btn-disabled disabled:cursor-not-allowed disabled:text-neutral-500"
-                disabled={!allowance}
-                onClick={() => revokeAllowance?.()}
-              >
-                <span>Revoke Allowance</span>
-              </button>
-            </li>
+            <RevokeAllowanceModal
+              allowance={allowance}
+              token={token}
+              spender={spender}
+            />
             {import.meta.env.DEV ? (
               <li>
                 <button disabled={!mint} onClick={() => mint?.()}>
