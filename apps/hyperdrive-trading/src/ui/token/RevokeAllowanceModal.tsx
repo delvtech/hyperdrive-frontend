@@ -5,9 +5,9 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useAccount, useBalance } from "wagmi";
-import { TokenInput } from "./TokenInput";
-import { useApproveToken } from "./hooks/useApproveToken";
 
 export function RevokeAllowanceModal({
   token,
@@ -25,9 +25,9 @@ export function RevokeAllowanceModal({
     // Fetches the account's eth balance by setting `token` to undefined
     token: token.address === ETH_MAGIC_NUMBER ? undefined : token.address,
   });
-  const [selectedOption, setSelectedOption] = useState<
-    "Unlimited" | "FixedAmount" | "Custom"
-  >("Unlimited");
+  const [selectedOption, setSelectedOption] = useState<"Unlimited" | "Custom">(
+    "Unlimited",
+  );
   const {
     amount: customAmount,
     amountAsBigInt: customAmountAsBigInt,
@@ -44,6 +44,8 @@ export function RevokeAllowanceModal({
       revokedAmount = customAmountAsBigInt ?? 0n;
       break;
   }
+
+  // approving a 0 allowance is how to "revoke" allowances
   const { approve: revokeAllowance } = useApproveToken({
     tokenAddress: token.address,
     amount: revokedAmount || 0n,
@@ -56,7 +58,7 @@ export function RevokeAllowanceModal({
   }
   return (
     <Modal
-      modalId="revoke_token"
+      modalId={modalId}
       modalContent={
         <div>
           <div className="flex items-center justify-between">
@@ -64,7 +66,7 @@ export function RevokeAllowanceModal({
               className="daisy-btn daisy-btn-circle daisy-btn-ghost no-animation daisy-btn-sm absolute right-4 top-4 animate-none"
               onClick={closeModal}
             >
-              <XMarkIcon className="w-6 " title="Close position" />
+              <XMarkIcon className="w-6" />
             </button>
             <div className="flex flex-col items-start">
               <h5 className="mb-2 font-bold">Revoke {token.symbol}</h5>
@@ -104,7 +106,6 @@ export function RevokeAllowanceModal({
                 />
                 <span className="daisy-label-text ml-2 flex w-full">
                   <TokenInput
-                    // The active token that needs to be approved should already be selected so we don't need to show a token selector here.
                     token={token.symbol}
                     onChange={(newApprovedAmount) => {
                       setAmount(newApprovedAmount);
@@ -139,7 +140,11 @@ export function RevokeAllowanceModal({
             }}
             className="daisy-btn daisy-btn-circle daisy-btn-warning relative mt-4 w-full"
           >
-            <h5>Revoke {token.symbol}</h5>
+            <h5>
+              {selectedOption === "Unlimited"
+                ? `Revoke all ${token.symbol}`
+                : `Set spending cap`}
+            </h5>
           </button>
         </div>
       }

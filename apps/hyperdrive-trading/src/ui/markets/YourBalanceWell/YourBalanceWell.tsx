@@ -90,8 +90,6 @@ function AvailableAsset({
     destination: account,
   });
 
-  // approving a 0 allowance is how to "revoke" allowances
-
   return (
     <div className="flex whitespace-nowrap ">
       <div className="flex items-center gap-1 text-h5 font-bold">
