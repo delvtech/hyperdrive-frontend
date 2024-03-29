@@ -2,12 +2,10 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { useChainId, usePublicClient, useWriteContract } from "wagmi";
+import { usePublicClient, useWriteContract } from "wagmi";
 
 import { useState } from "react";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { Address, erc20Abi } from "viem";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
@@ -27,7 +25,6 @@ export function useApproveToken({
   isTransactionMined: boolean;
 } {
   const { writeContract, status } = useWriteContract();
-  const chainId = useChainId() as SupportedChainId;
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const [isTransactionMined, setIsTransactionMined] = useState(false);
@@ -52,10 +49,7 @@ export function useApproveToken({
               const loadingDescription =
                 amount === 0n ? "Revoking approval..." : "Approving...";
               toast.loading(
-                <CustomToastMessage
-                  message={loadingDescription}
-                  link={makeTransactionURL(hash, chainId)}
-                />,
+                <TransactionToast message={loadingDescription} txHash={hash} />,
               );
 
               await waitForTransactionAndInvalidateCache({
@@ -68,10 +62,7 @@ export function useApproveToken({
               const loadedDescription =
                 amount === 0n ? "Approval revoked" : "Token approved";
               toast.success(
-                <CustomToastMessage
-                  message={loadedDescription}
-                  link={makeTransactionURL(hash, chainId)}
-                />,
+                <TransactionToast message={loadedDescription} txHash={hash} />,
               );
             },
           },

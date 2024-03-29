@@ -4,6 +4,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -16,8 +19,8 @@ interface UseCloseLongOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onSubmitted?: (hash: string) => void;
-  onExecuted: (hash: string | undefined) => void;
+  onSubmitted?: (hash: Hash) => void;
+  onExecuted: (hash: Hash) => void;
 }
 
 interface UseCloseLongResult {
@@ -55,6 +58,10 @@ export function useCloseLong({
       if (mutationEnabled) {
         function onTransactionMined(txHash: Hash) {
           queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Long closed" txHash={hash} />,
+            { id: hash, duration: SUCCESS_TOAST_DURATION },
+          );
           onExecuted?.(txHash);
         }
         const hash = asBase
@@ -76,7 +83,13 @@ export function useCloseLong({
               },
               onTransactionMined,
             });
+
+        toast.loading(
+          <TransactionToast message="Closing Long..." txHash={hash} />,
+          { id: hash },
+        );
         onSubmitted?.(hash);
+
         addTransaction({
           hash,
           description: "Close Long",

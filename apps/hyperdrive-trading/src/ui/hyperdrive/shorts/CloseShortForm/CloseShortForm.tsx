@@ -6,13 +6,9 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -22,7 +18,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
@@ -56,7 +52,6 @@ export function CloseShortForm({
   });
 
   const { address: account } = useAccount();
-  const chainId = useChainId() as SupportedChainId;
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: baseToken.decimals,
   });
@@ -97,21 +92,9 @@ export function CloseShortForm({
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: (hash) => {
       (window as any)[`${short.assetId}`].close();
-      toast.loading(
-        <CustomToastMessage
-          message="Close Short pending"
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
     onExecuted: (hash) => {
       setAmount("");
-      toast.success(
-        <CustomToastMessage
-          message="Short closed"
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
   });
   const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];

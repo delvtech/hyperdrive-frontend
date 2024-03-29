@@ -7,17 +7,14 @@ import {
 } from "@hyperdrive/appconfig";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
-import toast from "react-hot-toast";
 import { calculateRatio } from "src/base/calculateRatio";
 import { parseUnits } from "src/base/parseUnits";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -131,23 +128,11 @@ export function AddLiquidityForm({
     ...addLiquidityParams,
     enabled:
       addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
-    onSubmitted: (hash) => {
+    onSubmitted: () => {
       (window as any)["add-lp"].close();
-      toast.loading(
-        <CustomToastMessage
-          message="Adding liquidity..."
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
-      toast.success(
-        <CustomToastMessage
-          message="Liquidity added"
-          link={makeTransactionURL(hash, chainId)}
-        />,
-      );
     },
   });
 
