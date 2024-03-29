@@ -215,7 +215,7 @@ function getColumns({
     }),
     columnHelper.accessor("assetId", {
       id: "fixedRate",
-      header: `Fixed Rate (APR)`,
+      header: `Fixed APR`,
       cell: ({ row }) => {
         return (
           <FixedRateCell
