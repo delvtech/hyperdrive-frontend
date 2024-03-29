@@ -12,7 +12,7 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { RevokeAllowanceModal } from "src/ui/token/RevokeAllowanceModal";
+import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalButton";
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
@@ -129,7 +129,7 @@ function AvailableAsset({
                     })}
               </span>
             </li>
-            <RevokeAllowanceModal
+            <RevokeAllowanceModalButton
               allowance={allowance}
               token={token}
               spender={spender}

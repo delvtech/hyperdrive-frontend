@@ -9,7 +9,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useAccount, useBalance } from "wagmi";
 
-export function RevokeAllowanceModal({
+export function RevokeAllowanceModalButton({
   token,
   allowance,
   spender,
