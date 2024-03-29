@@ -25,9 +25,7 @@ export function RevokeAllowanceModal({
     // Fetches the account's eth balance by setting `token` to undefined
     token: token.address === ETH_MAGIC_NUMBER ? undefined : token.address,
   });
-  const [selectedOption, setSelectedOption] = useState<"Unlimited" | "Custom">(
-    "Unlimited",
-  );
+  const [selectedOption, setSelectedOption] = useState<"All" | "Custom">("All");
   const {
     amount: customAmount,
     amountAsBigInt: customAmountAsBigInt,
@@ -37,7 +35,7 @@ export function RevokeAllowanceModal({
   });
   let revokedAmount = 0n;
   switch (selectedOption) {
-    case "Unlimited":
+    case "All":
       revokedAmount = 0n;
       break;
     case "Custom":
@@ -82,9 +80,9 @@ export function RevokeAllowanceModal({
                   type="radio"
                   name="radio-unlimited"
                   className="daisy-radio"
-                  checked={selectedOption === "Unlimited"}
+                  checked={selectedOption === "All"}
                   onChange={() => {
-                    setSelectedOption("Unlimited");
+                    setSelectedOption("All");
                   }}
                 />
                 <span className="daisy-label-text ml-2 flex flex-1  text-left">
@@ -141,7 +139,7 @@ export function RevokeAllowanceModal({
             className="daisy-btn daisy-btn-circle daisy-btn-warning relative mt-4 w-full"
           >
             <h5>
-              {selectedOption === "Unlimited"
+              {selectedOption === "All"
                 ? `Revoke all ${token.symbol}`
                 : `Set spending cap`}
             </h5>
