@@ -49,6 +49,11 @@ export function OpenLpSharesCard({
   });
   const profit = dnum.subtract([baseValue, 18], [baseAmountPaid, 18])[0];
   const isPositiveChangeInValue = profit > 0n;
+  const formattedProfit = formatBalance({
+    balance: profit,
+    decimals: baseToken.decimals,
+    places: 4,
+  });
 
   const utilizationRatio = useUtilizationRatio({
     hyperdrive,
@@ -128,11 +133,8 @@ export function OpenLpSharesCard({
                   )}
                 >
                   {isPositiveChangeInValue ? "+" : ""}
-                  {formatBalance({
-                    balance: profit,
-                    decimals: baseToken.decimals,
-                    places: 4,
-                  })}{" "}
+                  {/* format balance could return -0 if the bigint value is a small negative number */}
+                  {formattedProfit === "-0" ? "0" : formattedProfit}{" "}
                   {baseToken.symbol}
                 </div>
               }
