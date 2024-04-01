@@ -2,7 +2,7 @@ import { formatUnits } from "viem";
 
 export function formatRate(rate: bigint, decimals = 18): string {
   if (rate < 0n) {
-    throw new Error("Rate must be non-negative");
+    return "0";
   }
 
   // APR is stored in 18 decimals, so to avoid rounding errors, eg:
