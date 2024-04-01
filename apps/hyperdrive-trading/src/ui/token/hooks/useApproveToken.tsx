@@ -50,6 +50,7 @@ export function useApproveToken({
                 amount === 0n ? "Revoking approval..." : "Approving...";
               toast.loading(
                 <TransactionToast message={loadingDescription} txHash={hash} />,
+                { id: hash },
               );
 
               await waitForTransactionAndInvalidateCache({
@@ -63,6 +64,7 @@ export function useApproveToken({
                 amount === 0n ? "Approval revoked" : "Token approved";
               toast.success(
                 <TransactionToast message={loadedDescription} txHash={hash} />,
+                { id: hash },
               );
             },
           },
