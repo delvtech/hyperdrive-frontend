@@ -1,1 +1,921 @@
-export const IRiverV1 = { "abi": [{ "type": "function", "name": "allowance", "inputs": [{ "name": "owner", "type": "address", "internalType": "address" }, { "name": "spender", "type": "address", "internalType": "address" }], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "approve", "inputs": [{ "name": "_spender", "type": "address", "internalType": "address" }, { "name": "_value", "type": "uint256", "internalType": "uint256" }], "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }], "stateMutability": "nonpayable" }, { "type": "function", "name": "balanceOf", "inputs": [{ "name": "_owner", "type": "address", "internalType": "address" }], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "balanceOfUnderlying", "inputs": [{ "name": "_owner", "type": "address", "internalType": "address" }], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "decimals", "inputs": [], "outputs": [{ "name": "", "type": "uint8", "internalType": "uint8" }], "stateMutability": "view" }, { "type": "function", "name": "name", "inputs": [], "outputs": [{ "name": "", "type": "string", "internalType": "string" }], "stateMutability": "view" }, { "type": "function", "name": "sharesFromUnderlyingBalance", "inputs": [{ "name": "_underlyingAssetAmount", "type": "uint256", "internalType": "uint256" }], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "symbol", "inputs": [], "outputs": [{ "name": "", "type": "string", "internalType": "string" }], "stateMutability": "view" }, { "type": "function", "name": "totalSupply", "inputs": [], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "totalUnderlyingSupply", "inputs": [], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "function", "name": "transfer", "inputs": [{ "name": "_to", "type": "address", "internalType": "address" }, { "name": "_value", "type": "uint256", "internalType": "uint256" }], "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }], "stateMutability": "nonpayable" }, { "type": "function", "name": "transferFrom", "inputs": [{ "name": "_from", "type": "address", "internalType": "address" }, { "name": "_to", "type": "address", "internalType": "address" }, { "name": "_value", "type": "uint256", "internalType": "uint256" }], "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }], "stateMutability": "nonpayable" }, { "type": "function", "name": "underlyingBalanceFromShares", "inputs": [{ "name": "_shares", "type": "uint256", "internalType": "uint256" }], "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }], "stateMutability": "view" }, { "type": "event", "name": "Approval", "inputs": [{ "name": "owner", "type": "address", "indexed": true, "internalType": "address" }, { "name": "spender", "type": "address", "indexed": true, "internalType": "address" }, { "name": "value", "type": "uint256", "indexed": false, "internalType": "uint256" }], "anonymous": false }, { "type": "event", "name": "Transfer", "inputs": [{ "name": "from", "type": "address", "indexed": true, "internalType": "address" }, { "name": "to", "type": "address", "indexed": true, "internalType": "address" }, { "name": "value", "type": "uint256", "indexed": false, "internalType": "uint256" }], "anonymous": false }], "bytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} }, "deployedBytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} }, "methodIdentifiers": { "allowance(address,address)": "dd62ed3e", "approve(address,uint256)": "095ea7b3", "balanceOf(address)": "70a08231", "balanceOfUnderlying(address)": "3af9e669", "decimals()": "313ce567", "name()": "06fdde03", "sharesFromUnderlyingBalance(uint256)": "799a1954", "symbol()": "95d89b41", "totalSupply()": "18160ddd", "totalUnderlyingSupply()": "143a08d4", "transfer(address,uint256)": "a9059cbb", "transferFrom(address,address,uint256)": "23b872dd", "underlyingBalanceFromShares(uint256)": "f79c3f02" }, "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOfUnderlying\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_underlyingAssetAmount\",\"type\":\"uint256\"}],\"name\":\"sharesFromUnderlyingBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalUnderlyingSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"}],\"name\":\"underlyingBalanceFromShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Kiln\",\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"approve(address,uint256)\":{\"details\":\"An approved account can use transferFrom to transfer funds on behalf of the token owner\",\"params\":{\"_spender\":\"Address that is allowed to spend the tokens\",\"_value\":\"The allowed amount in shares, will override previous value\"},\"returns\":{\"_0\":\"True if success\"}},\"balanceOf(address)\":{\"params\":{\"_owner\":\"Address to be checked\"},\"returns\":{\"_0\":\"The balance of the account in shares\"}},\"balanceOfUnderlying(address)\":{\"params\":{\"_owner\":\"Address to be checked\"},\"returns\":{\"_0\":\"The underlying balance of the account\"}},\"decimals()\":{\"returns\":{\"_0\":\"The token's decimals.\"}},\"name()\":{\"returns\":{\"_0\":\"The token's name.\"}},\"sharesFromUnderlyingBalance(uint256)\":{\"params\":{\"_underlyingAssetAmount\":\"Amount of underlying asset to convert\"},\"returns\":{\"_0\":\"The amount of shares worth the underlying asset amopunt\"}},\"symbol()\":{\"returns\":{\"_0\":\"The token's symbol.\"}},\"totalSupply()\":{\"returns\":{\"_0\":\"The total supply in shares\"}},\"totalUnderlyingSupply()\":{\"returns\":{\"_0\":\"The total underlying asset supply\"}},\"transfer(address,uint256)\":{\"params\":{\"_to\":\"Address receiving the tokens\",\"_value\":\"Amount of shares to be sent\"},\"returns\":{\"_0\":\"True if success\"}},\"transferFrom(address,address,uint256)\":{\"params\":{\"_from\":\"Address sending the tokens\",\"_to\":\"Address receiving the tokens\",\"_value\":\"Amount of shares to be sent\"},\"returns\":{\"_0\":\"True if success\"}},\"underlyingBalanceFromShares(uint256)\":{\"params\":{\"_shares\":\"Amount of shares to convert\"},\"returns\":{\"_0\":\"The underlying asset balance represented by the shares\"}}},\"title\":\"River Interface (v1)\",\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an owner changes the approval for a spender.\"},\"Transfer(address,address,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"allowance(address,address)\":{\"notice\":\"Gets the allowance of a spender for an owner.\"},\"approve(address,uint256)\":{\"notice\":\"Approves an account for future spendings\"},\"balanceOf(address)\":{\"notice\":\"Retrieve the balance of an account\"},\"balanceOfUnderlying(address)\":{\"notice\":\"Retrieve the underlying asset balance of an account\"},\"decimals()\":{\"notice\":\"Gets the token's decimals.\"},\"name()\":{\"notice\":\"Gets the token's name.\"},\"sharesFromUnderlyingBalance(uint256)\":{\"notice\":\"Retrieve the shares count from an underlying asset amount\"},\"symbol()\":{\"notice\":\"Gets the token's symbol.\"},\"totalSupply()\":{\"notice\":\"Retrieve the total token supply\"},\"totalUnderlyingSupply()\":{\"notice\":\"Retrieve the total underlying asset supply\"},\"transfer(address,uint256)\":{\"notice\":\"Performs a transfer from the message sender to the provided account\"},\"transferFrom(address,address,uint256)\":{\"notice\":\"Performs a transfer between two recipients\"},\"underlyingBalanceFromShares(uint256)\":{\"notice\":\"Retrieve the underlying asset balance from an amount of shares\"}},\"notice\":\"The main system interface\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/lseth/IRiverV1.sol\":\"IRiverV1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/lseth/IRiverV1.sol\":{\"keccak256\":\"0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65\",\"dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd\"]},\"contracts/src/interfaces/lseth/ISharesManagerV1.sol\":{\"keccak256\":\"0xfefc57da6aa97835543b9e28aa70912334634001bbade60b95b250d5a2e85581\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0d4a2fbbc6d68a1549bd0350080f0f7cd871d7733e47f23148bf4893bcceaca\",\"dweb:/ipfs/QmfQdu9SZKmMziHa3HgHWkdj6Bw6izZrJT1pSBaWWgumwv\"]}},\"version\":1}", "metadata": { "compiler": { "version": "0.8.20+commit.a1b79de6" }, "language": "Solidity", "output": { "abi": [{ "inputs": [{ "internalType": "address", "name": "owner", "type": "address", "indexed": true }, { "internalType": "address", "name": "spender", "type": "address", "indexed": true }, { "internalType": "uint256", "name": "value", "type": "uint256", "indexed": false }], "type": "event", "name": "Approval", "anonymous": false }, { "inputs": [{ "internalType": "address", "name": "from", "type": "address", "indexed": true }, { "internalType": "address", "name": "to", "type": "address", "indexed": true }, { "internalType": "uint256", "name": "value", "type": "uint256", "indexed": false }], "type": "event", "name": "Transfer", "anonymous": false }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "stateMutability": "view", "type": "function", "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [{ "internalType": "address", "name": "_spender", "type": "address" }, { "internalType": "uint256", "name": "_value", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function", "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }] }, { "inputs": [{ "internalType": "address", "name": "_owner", "type": "address" }], "stateMutability": "view", "type": "function", "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [{ "internalType": "address", "name": "_owner", "type": "address" }], "stateMutability": "view", "type": "function", "name": "balanceOfUnderlying", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [], "stateMutability": "view", "type": "function", "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }] }, { "inputs": [], "stateMutability": "view", "type": "function", "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }] }, { "inputs": [{ "internalType": "uint256", "name": "_underlyingAssetAmount", "type": "uint256" }], "stateMutability": "view", "type": "function", "name": "sharesFromUnderlyingBalance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [], "stateMutability": "view", "type": "function", "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }] }, { "inputs": [], "stateMutability": "view", "type": "function", "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [], "stateMutability": "view", "type": "function", "name": "totalUnderlyingSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }, { "inputs": [{ "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_value", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function", "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }] }, { "inputs": [{ "internalType": "address", "name": "_from", "type": "address" }, { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_value", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function", "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }] }, { "inputs": [{ "internalType": "uint256", "name": "_shares", "type": "uint256" }], "stateMutability": "view", "type": "function", "name": "underlyingBalanceFromShares", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }] }], "devdoc": { "kind": "dev", "methods": { "allowance(address,address)": { "params": { "owner": "The owner of the tokens.", "spender": "The spender of the tokens." }, "returns": { "_0": "The allowance of the spender for the owner." } }, "approve(address,uint256)": { "details": "An approved account can use transferFrom to transfer funds on behalf of the token owner", "params": { "_spender": "Address that is allowed to spend the tokens", "_value": "The allowed amount in shares, will override previous value" }, "returns": { "_0": "True if success" } }, "balanceOf(address)": { "params": { "_owner": "Address to be checked" }, "returns": { "_0": "The balance of the account in shares" } }, "balanceOfUnderlying(address)": { "params": { "_owner": "Address to be checked" }, "returns": { "_0": "The underlying balance of the account" } }, "decimals()": { "returns": { "_0": "The token's decimals." } }, "name()": { "returns": { "_0": "The token's name." } }, "sharesFromUnderlyingBalance(uint256)": { "params": { "_underlyingAssetAmount": "Amount of underlying asset to convert" }, "returns": { "_0": "The amount of shares worth the underlying asset amopunt" } }, "symbol()": { "returns": { "_0": "The token's symbol." } }, "totalSupply()": { "returns": { "_0": "The total supply in shares" } }, "totalUnderlyingSupply()": { "returns": { "_0": "The total underlying asset supply" } }, "transfer(address,uint256)": { "params": { "_to": "Address receiving the tokens", "_value": "Amount of shares to be sent" }, "returns": { "_0": "True if success" } }, "transferFrom(address,address,uint256)": { "params": { "_from": "Address sending the tokens", "_to": "Address receiving the tokens", "_value": "Amount of shares to be sent" }, "returns": { "_0": "True if success" } }, "underlyingBalanceFromShares(uint256)": { "params": { "_shares": "Amount of shares to convert" }, "returns": { "_0": "The underlying asset balance represented by the shares" } } }, "version": 1 }, "userdoc": { "kind": "user", "methods": { "allowance(address,address)": { "notice": "Gets the allowance of a spender for an owner." }, "approve(address,uint256)": { "notice": "Approves an account for future spendings" }, "balanceOf(address)": { "notice": "Retrieve the balance of an account" }, "balanceOfUnderlying(address)": { "notice": "Retrieve the underlying asset balance of an account" }, "decimals()": { "notice": "Gets the token's decimals." }, "name()": { "notice": "Gets the token's name." }, "sharesFromUnderlyingBalance(uint256)": { "notice": "Retrieve the shares count from an underlying asset amount" }, "symbol()": { "notice": "Gets the token's symbol." }, "totalSupply()": { "notice": "Retrieve the total token supply" }, "totalUnderlyingSupply()": { "notice": "Retrieve the total underlying asset supply" }, "transfer(address,uint256)": { "notice": "Performs a transfer from the message sender to the provided account" }, "transferFrom(address,address,uint256)": { "notice": "Performs a transfer between two recipients" }, "underlyingBalanceFromShares(uint256)": { "notice": "Retrieve the underlying asset balance from an amount of shares" } }, "version": 1 } }, "settings": { "remappings": ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "aave-v3-core/=lib/aave-v3-core/", "ds-test/=lib/forge-std/lib/ds-test/src/", "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/", "openzeppelin/=lib/openzeppelin-contracts/contracts/", "solmate/=lib/solmate/src/"], "optimizer": { "enabled": true, "runs": 200 }, "metadata": { "bytecodeHash": "ipfs" }, "compilationTarget": { "contracts/src/interfaces/lseth/IRiverV1.sol": "IRiverV1" }, "libraries": {} }, "sources": { "contracts/src/interfaces/IERC20.sol": { "keccak256": "0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9", "urls": ["bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac", "dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p"], "license": "Apache-2.0" }, "contracts/src/interfaces/lseth/IRiverV1.sol": { "keccak256": "0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814", "urls": ["bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65", "dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd"], "license": "Apache-2.0" }, "contracts/src/interfaces/lseth/ISharesManagerV1.sol": { "keccak256": "0xfefc57da6aa97835543b9e28aa70912334634001bbade60b95b250d5a2e85581", "urls": ["bzz-raw://f0d4a2fbbc6d68a1549bd0350080f0f7cd871d7733e47f23148bf4893bcceaca", "dweb:/ipfs/QmfQdu9SZKmMziHa3HgHWkdj6Bw6izZrJT1pSBaWWgumwv"], "license": "Apache-2.0" } }, "version": 1 }, "ast": { "absolutePath": "contracts/src/interfaces/lseth/IRiverV1.sol", "id": 12925, "exportedSymbols": { "IRiverV1": [12924], "ISharesManagerV1": [13008] }, "nodeType": "SourceUnit", "src": "39:216:115", "nodes": [{ "id": 12918, "nodeType": "PragmaDirective", "src": "39:23:115", "nodes": [], "literals": ["solidity", "0.8", ".20"] }, { "id": 12920, "nodeType": "ImportDirective", "src": "64:58:115", "nodes": [], "absolutePath": "contracts/src/interfaces/lseth/ISharesManagerV1.sol", "file": "./ISharesManagerV1.sol", "nameLocation": "-1:-1:-1", "scope": 12925, "sourceUnit": 13009, "symbolAliases": [{ "foreign": { "id": 12919, "name": "ISharesManagerV1", "nodeType": "Identifier", "overloadedDeclarations": [], "referencedDeclaration": 13008, "src": "73:16:115", "typeDescriptions": {} }, "nameLocation": "-1:-1:-1" }], "unitAlias": "" }, { "id": 12924, "nodeType": "ContractDefinition", "src": "211:43:115", "nodes": [], "abstract": false, "baseContracts": [{ "baseName": { "id": 12922, "name": "ISharesManagerV1", "nameLocations": ["233:16:115"], "nodeType": "IdentifierPath", "referencedDeclaration": 13008, "src": "233:16:115" }, "id": 12923, "nodeType": "InheritanceSpecifier", "src": "233:16:115" }], "canonicalName": "IRiverV1", "contractDependencies": [], "contractKind": "interface", "documentation": { "id": 12921, "nodeType": "StructuredDocumentation", "src": "124:87:115", "text": "@title River Interface (v1)\n @author Kiln\n @notice The main system interface" }, "fullyImplemented": false, "linearizedBaseContracts": [12924, 13008, 10417], "name": "IRiverV1", "nameLocation": "221:8:115", "scope": 12925, "usedErrors": [], "usedEvents": [10333, 10342] }], "license": "Apache-2.0" }, "id": 115 };
+export const IRiverV1 = {
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Approval",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                }
+            ],
+            "name": "allowance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_spender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "approve",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOfUnderlying",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "decimals",
+            "outputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_underlyingAssetAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sharesFromUnderlyingBalance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "symbol",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalSupply",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalUnderlyingSupply",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transfer",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferFrom",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_shares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "underlyingBalanceFromShares",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "bytecode": {
+        "object": "0x",
+        "sourceMap": "",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x",
+        "sourceMap": "",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "allowance(address,address)": "dd62ed3e",
+        "approve(address,uint256)": "095ea7b3",
+        "balanceOf(address)": "70a08231",
+        "balanceOfUnderlying(address)": "3af9e669",
+        "decimals()": "313ce567",
+        "name()": "06fdde03",
+        "sharesFromUnderlyingBalance(uint256)": "799a1954",
+        "symbol()": "95d89b41",
+        "totalSupply()": "18160ddd",
+        "totalUnderlyingSupply()": "143a08d4",
+        "transfer(address,uint256)": "a9059cbb",
+        "transferFrom(address,address,uint256)": "23b872dd",
+        "underlyingBalanceFromShares(uint256)": "f79c3f02"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOfUnderlying\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_underlyingAssetAmount\",\"type\":\"uint256\"}],\"name\":\"sharesFromUnderlyingBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalUnderlyingSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"}],\"name\":\"underlyingBalanceFromShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Kiln\",\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"approve(address,uint256)\":{\"details\":\"An approved account can use transferFrom to transfer funds on behalf of the token owner\",\"params\":{\"_spender\":\"Address that is allowed to spend the tokens\",\"_value\":\"The allowed amount in shares, will override previous value\"},\"returns\":{\"_0\":\"True if success\"}},\"balanceOf(address)\":{\"params\":{\"_owner\":\"Address to be checked\"},\"returns\":{\"_0\":\"The balance of the account in shares\"}},\"balanceOfUnderlying(address)\":{\"params\":{\"_owner\":\"Address to be checked\"},\"returns\":{\"_0\":\"The underlying balance of the account\"}},\"decimals()\":{\"returns\":{\"_0\":\"The token's decimals.\"}},\"name()\":{\"returns\":{\"_0\":\"The token's name.\"}},\"sharesFromUnderlyingBalance(uint256)\":{\"params\":{\"_underlyingAssetAmount\":\"Amount of underlying asset to convert\"},\"returns\":{\"_0\":\"The amount of shares worth the underlying asset amopunt\"}},\"symbol()\":{\"returns\":{\"_0\":\"The token's symbol.\"}},\"totalSupply()\":{\"returns\":{\"_0\":\"The total supply in shares\"}},\"totalUnderlyingSupply()\":{\"returns\":{\"_0\":\"The total underlying asset supply\"}},\"transfer(address,uint256)\":{\"params\":{\"_to\":\"Address receiving the tokens\",\"_value\":\"Amount of shares to be sent\"},\"returns\":{\"_0\":\"True if success\"}},\"transferFrom(address,address,uint256)\":{\"params\":{\"_from\":\"Address sending the tokens\",\"_to\":\"Address receiving the tokens\",\"_value\":\"Amount of shares to be sent\"},\"returns\":{\"_0\":\"True if success\"}},\"underlyingBalanceFromShares(uint256)\":{\"params\":{\"_shares\":\"Amount of shares to convert\"},\"returns\":{\"_0\":\"The underlying asset balance represented by the shares\"}}},\"title\":\"River Interface (v1)\",\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an owner changes the approval for a spender.\"},\"Transfer(address,address,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"allowance(address,address)\":{\"notice\":\"Gets the allowance of a spender for an owner.\"},\"approve(address,uint256)\":{\"notice\":\"Approves an account for future spendings\"},\"balanceOf(address)\":{\"notice\":\"Retrieve the balance of an account\"},\"balanceOfUnderlying(address)\":{\"notice\":\"Retrieve the underlying asset balance of an account\"},\"decimals()\":{\"notice\":\"Gets the token's decimals.\"},\"name()\":{\"notice\":\"Gets the token's name.\"},\"sharesFromUnderlyingBalance(uint256)\":{\"notice\":\"Retrieve the shares count from an underlying asset amount\"},\"symbol()\":{\"notice\":\"Gets the token's symbol.\"},\"totalSupply()\":{\"notice\":\"Retrieve the total token supply\"},\"totalUnderlyingSupply()\":{\"notice\":\"Retrieve the total underlying asset supply\"},\"transfer(address,uint256)\":{\"notice\":\"Performs a transfer from the message sender to the provided account\"},\"transferFrom(address,address,uint256)\":{\"notice\":\"Performs a transfer between two recipients\"},\"underlyingBalanceFromShares(uint256)\":{\"notice\":\"Retrieve the underlying asset balance from an amount of shares\"}},\"notice\":\"The main system interface\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IRiverV1.sol\":\"IRiverV1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IRiverV1.sol\":{\"keccak256\":\"0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65\",\"dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd\"]},\"contracts/src/interfaces/ISharesManagerV1.sol\":{\"keccak256\":\"0xca5ddd1dff26fc16fbf35e7154c5dee64098f6a0e3e44f9335c62b14d3705a98\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://577579582e9762b9244a47ce465a3de3a848fdf1b8a5b0ad07a5b803d8ef02e4\",\"dweb:/ipfs/QmSkPXPtxhcGB6DfVNYY6ZxdNHnkUupxBmDAgPtooKXzqA\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.20+commit.a1b79de6"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "spender",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Approval",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "to",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Transfer",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "spender",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "allowance",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_spender",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "approve",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "balanceOf",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "balanceOfUnderlying",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "decimals",
+                    "outputs": [
+                        {
+                            "internalType": "uint8",
+                            "name": "",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "name",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_underlyingAssetAmount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "sharesFromUnderlyingBalance",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "symbol",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalSupply",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalUnderlyingSupply",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_to",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "transfer",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_to",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "transferFrom",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_shares",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "underlyingBalanceFromShares",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "allowance(address,address)": {
+                        "params": {
+                            "owner": "The owner of the tokens.",
+                            "spender": "The spender of the tokens."
+                        },
+                        "returns": {
+                            "_0": "The allowance of the spender for the owner."
+                        }
+                    },
+                    "approve(address,uint256)": {
+                        "details": "An approved account can use transferFrom to transfer funds on behalf of the token owner",
+                        "params": {
+                            "_spender": "Address that is allowed to spend the tokens",
+                            "_value": "The allowed amount in shares, will override previous value"
+                        },
+                        "returns": {
+                            "_0": "True if success"
+                        }
+                    },
+                    "balanceOf(address)": {
+                        "params": {
+                            "_owner": "Address to be checked"
+                        },
+                        "returns": {
+                            "_0": "The balance of the account in shares"
+                        }
+                    },
+                    "balanceOfUnderlying(address)": {
+                        "params": {
+                            "_owner": "Address to be checked"
+                        },
+                        "returns": {
+                            "_0": "The underlying balance of the account"
+                        }
+                    },
+                    "decimals()": {
+                        "returns": {
+                            "_0": "The token's decimals."
+                        }
+                    },
+                    "name()": {
+                        "returns": {
+                            "_0": "The token's name."
+                        }
+                    },
+                    "sharesFromUnderlyingBalance(uint256)": {
+                        "params": {
+                            "_underlyingAssetAmount": "Amount of underlying asset to convert"
+                        },
+                        "returns": {
+                            "_0": "The amount of shares worth the underlying asset amopunt"
+                        }
+                    },
+                    "symbol()": {
+                        "returns": {
+                            "_0": "The token's symbol."
+                        }
+                    },
+                    "totalSupply()": {
+                        "returns": {
+                            "_0": "The total supply in shares"
+                        }
+                    },
+                    "totalUnderlyingSupply()": {
+                        "returns": {
+                            "_0": "The total underlying asset supply"
+                        }
+                    },
+                    "transfer(address,uint256)": {
+                        "params": {
+                            "_to": "Address receiving the tokens",
+                            "_value": "Amount of shares to be sent"
+                        },
+                        "returns": {
+                            "_0": "True if success"
+                        }
+                    },
+                    "transferFrom(address,address,uint256)": {
+                        "params": {
+                            "_from": "Address sending the tokens",
+                            "_to": "Address receiving the tokens",
+                            "_value": "Amount of shares to be sent"
+                        },
+                        "returns": {
+                            "_0": "True if success"
+                        }
+                    },
+                    "underlyingBalanceFromShares(uint256)": {
+                        "params": {
+                            "_shares": "Amount of shares to convert"
+                        },
+                        "returns": {
+                            "_0": "The underlying asset balance represented by the shares"
+                        }
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "allowance(address,address)": {
+                        "notice": "Gets the allowance of a spender for an owner."
+                    },
+                    "approve(address,uint256)": {
+                        "notice": "Approves an account for future spendings"
+                    },
+                    "balanceOf(address)": {
+                        "notice": "Retrieve the balance of an account"
+                    },
+                    "balanceOfUnderlying(address)": {
+                        "notice": "Retrieve the underlying asset balance of an account"
+                    },
+                    "decimals()": {
+                        "notice": "Gets the token's decimals."
+                    },
+                    "name()": {
+                        "notice": "Gets the token's name."
+                    },
+                    "sharesFromUnderlyingBalance(uint256)": {
+                        "notice": "Retrieve the shares count from an underlying asset amount"
+                    },
+                    "symbol()": {
+                        "notice": "Gets the token's symbol."
+                    },
+                    "totalSupply()": {
+                        "notice": "Retrieve the total token supply"
+                    },
+                    "totalUnderlyingSupply()": {
+                        "notice": "Retrieve the total underlying asset supply"
+                    },
+                    "transfer(address,uint256)": {
+                        "notice": "Performs a transfer from the message sender to the provided account"
+                    },
+                    "transferFrom(address,address,uint256)": {
+                        "notice": "Performs a transfer between two recipients"
+                    },
+                    "underlyingBalanceFromShares(uint256)": {
+                        "notice": "Retrieve the underlying asset balance from an amount of shares"
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                "ds-test/=lib/forge-std/lib/ds-test/src/",
+                "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+                "forge-std/=lib/forge-std/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+                "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+                "solmate/=lib/solmate/src/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "contracts/src/interfaces/IRiverV1.sol": "IRiverV1"
+            },
+            "libraries": {}
+        },
+        "sources": {
+            "contracts/src/interfaces/IERC20.sol": {
+                "keccak256": "0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9",
+                "urls": [
+                    "bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac",
+                    "dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p"
+                ],
+                "license": "Apache-2.0"
+            },
+            "contracts/src/interfaces/IRiverV1.sol": {
+                "keccak256": "0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814",
+                "urls": [
+                    "bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65",
+                    "dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd"
+                ],
+                "license": "Apache-2.0"
+            },
+            "contracts/src/interfaces/ISharesManagerV1.sol": {
+                "keccak256": "0xca5ddd1dff26fc16fbf35e7154c5dee64098f6a0e3e44f9335c62b14d3705a98",
+                "urls": [
+                    "bzz-raw://577579582e9762b9244a47ce465a3de3a848fdf1b8a5b0ad07a5b803d8ef02e4",
+                    "dweb:/ipfs/QmSkPXPtxhcGB6DfVNYY6ZxdNHnkUupxBmDAgPtooKXzqA"
+                ],
+                "license": "Apache-2.0"
+            }
+        },
+        "version": 1
+    },
+    "ast": {
+        "absolutePath": "contracts/src/interfaces/IRiverV1.sol",
+        "id": 12003,
+        "exportedSymbols": {
+            "IRiverV1": [
+                12002
+            ],
+            "ISharesManagerV1": [
+                12492
+            ]
+        },
+        "nodeType": "SourceUnit",
+        "src": "39:216:104",
+        "nodes": [
+            {
+                "id": 11996,
+                "nodeType": "PragmaDirective",
+                "src": "39:23:104",
+                "nodes": [],
+                "literals": [
+                    "solidity",
+                    "0.8",
+                    ".20"
+                ]
+            },
+            {
+                "id": 11998,
+                "nodeType": "ImportDirective",
+                "src": "64:58:104",
+                "nodes": [],
+                "absolutePath": "contracts/src/interfaces/ISharesManagerV1.sol",
+                "file": "./ISharesManagerV1.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 12003,
+                "sourceUnit": 12493,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 11997,
+                            "name": "ISharesManagerV1",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12492,
+                            "src": "73:16:104",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 12002,
+                "nodeType": "ContractDefinition",
+                "src": "211:43:104",
+                "nodes": [],
+                "abstract": false,
+                "baseContracts": [
+                    {
+                        "baseName": {
+                            "id": 12000,
+                            "name": "ISharesManagerV1",
+                            "nameLocations": [
+                                "233:16:104"
+                            ],
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 12492,
+                            "src": "233:16:104"
+                        },
+                        "id": 12001,
+                        "nodeType": "InheritanceSpecifier",
+                        "src": "233:16:104"
+                    }
+                ],
+                "canonicalName": "IRiverV1",
+                "contractDependencies": [],
+                "contractKind": "interface",
+                "documentation": {
+                    "id": 11999,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "124:87:104",
+                    "text": "@title River Interface (v1)\n @author Kiln\n @notice The main system interface"
+                },
+                "fullyImplemented": false,
+                "linearizedBaseContracts": [
+                    12002,
+                    12492,
+                    9980
+                ],
+                "name": "IRiverV1",
+                "nameLocation": "221:8:104",
+                "scope": 12003,
+                "usedErrors": [],
+                "usedEvents": [
+                    9896,
+                    9905
+                ]
+            }
+        ],
+        "license": "Apache-2.0"
+    },
+    "id": 104
+};

@@ -15,7 +15,7 @@ export class ReadWriteREthHyperdrive extends readREthHyperdriveMixin(
 
   async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteREth> {
     const address = await this.rEthHyperdriveContract.read(
-      "rocketTokenRETH",
+      "vaultSharesToken",
       {},
       options,
     );

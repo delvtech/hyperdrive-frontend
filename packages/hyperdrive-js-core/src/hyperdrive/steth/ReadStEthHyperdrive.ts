@@ -112,14 +112,10 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
     }
 
-    async getSharesToken(options?: ContractReadOptions): Promise<ReadStEth> {
-      const address = await this.stEthHyperdriveContract.read(
-        "lido",
-        {},
-        options,
-      );
+    async getSharesToken(): Promise<ReadStEth> {
+      const { vaultSharesToken } = await this.getPoolConfig();
       return new ReadStEth({
-        address,
+        address: vaultSharesToken,
         contractFactory: this.contractFactory,
         namespace: this.contract.namespace,
         network: this.network,
@@ -331,7 +327,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       stEthAmount: bigint,
       options?: ContractReadOptions,
     ): Promise<bigint> {
-      const stEth = await this.getSharesToken(options);
+      const stEth = await this.getSharesToken();
       return stEth.getSharesByPooledEth({ ethAmount: stEthAmount, options });
     }
 
@@ -342,7 +338,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       sharesAmount: bigint,
       options?: ContractReadOptions,
     ): Promise<bigint> {
-      const stEth = await this.getSharesToken(options);
+      const stEth = await this.getSharesToken();
       return stEth.getPooledEthByShares({ sharesAmount, options });
     }
   };

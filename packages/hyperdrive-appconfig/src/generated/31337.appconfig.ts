@@ -63,7 +63,7 @@ export const localChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x5a7e8a85db4e5734387bd66d189f32cca918ea4f",
+      address: "0x23d79e092ce99cff7870e57d371cfee4535a57d6",
       name: "7d BASE-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -73,9 +73,10 @@ export const localChainAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
+        vaultSharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
+          "0xc100b08b59c34b99d6f22bd4001a5ae93f5b3d1c5dd12190a656aeae9d02c646",
         initialVaultSharePrice: 1000000000000000000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -94,7 +95,7 @@ export const localChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xbb6a61c5f8b4194ddaf99a6edb1c184f14892e54",
+      address: "0x066419975a492d81e6a8e1d35a73317df647c1bb",
       name: "7d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -104,9 +105,10 @@ export const localChainAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        vaultSharesToken: "0x68BF6B6131e9c784eaB5747Ba08Cc903A679B6dE",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
+          "0xc100b08b59c34b99d6f22bd4001a5ae93f5b3d1c5dd12190a656aeae9d02c646",
         initialVaultSharePrice: 1000000029965753424n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,

@@ -18,9 +18,10 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build:src": "sh scripts/build_src.sh v0.10.2",
+    "build:src": "sh scripts/build_src.sh v0.11.0",
     "build:dist": "npm run build:src && tsc --build --force",
     "build:new": "rm -rf src && npm run build:dist"
+
   },
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",

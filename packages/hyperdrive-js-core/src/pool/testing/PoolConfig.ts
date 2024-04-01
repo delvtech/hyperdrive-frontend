@@ -3,6 +3,7 @@ import { ZERO_ADDRESS } from "src/pool/testing/constants";
 
 export const simplePoolConfig: PoolConfig = {
   baseToken: ZERO_ADDRESS,
+  vaultSharesToken: ZERO_ADDRESS,
   governance: ZERO_ADDRESS,
   feeCollector: ZERO_ADDRESS,
   sweepCollector: ZERO_ADDRESS,
