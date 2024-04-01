@@ -41,12 +41,14 @@ export function ConnectWalletButton(): JSX.Element {
               }
               return (
                 <div className="flex items-center gap-4">
-                  <button
-                    onClick={openChainModal}
-                    className="daisy-btn rounded-full bg-gray-600 hover:bg-gray-700"
-                  >
-                    {chain.name}
-                  </button>
+                  {import.meta.env.DEV ? (
+                    <button
+                      onClick={openChainModal}
+                      className="daisy-btn rounded-full bg-gray-600 hover:bg-gray-700"
+                    >
+                      {chain.name}
+                    </button>
+                  ) : null}
                   <button
                     className="daisy-btn daisy-btn-circle daisy-btn-primary mx-0 w-32"
                     onClick={openAccountModal}
