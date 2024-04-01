@@ -1,377 +1,377 @@
 export declare const MockYieldSpaceMath: {
     readonly abi: readonly [{
-        readonly type: "function";
-        readonly name: "calculateBondsOutGivenSharesInDown";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "dz";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateMaxBuyBondsOutSafe";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateMaxBuySharesInSafe";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateMaxSellBondsInSafe";
-        readonly inputs: readonly [{
-            readonly name: "z";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "zeta";
-            readonly type: "int256";
-            readonly internalType: "int256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "zMin";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateSharesInGivenBondsOutDown";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "dy";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateSharesInGivenBondsOutUp";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "dy";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateSharesOutGivenBondsInDown";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "dy";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateSharesOutGivenBondsInDownSafe";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "dy";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "kDown";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "function";
-        readonly name: "kUp";
-        readonly inputs: readonly [{
-            readonly name: "ze";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "y";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "t";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "c";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "mu";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "pure";
-    }, {
-        readonly type: "error";
-        readonly name: "ExpInvalidExponent";
         readonly inputs: readonly [];
-    }, {
+        readonly name: "ExpInvalidExponent";
         readonly type: "error";
-        readonly name: "InsufficientLiquidity";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "enum IHyperdrive.InsufficientLiquidityReason";
             readonly name: "reason";
             readonly type: "uint8";
-            readonly internalType: "enum IHyperdrive.InsufficientLiquidityReason";
         }];
-    }, {
+        readonly name: "InsufficientLiquidity";
         readonly type: "error";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "LnInvalidInput";
-        readonly inputs: readonly [];
-    }, {
         readonly type: "error";
-        readonly name: "UnsafeCastToInt256";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "UnsafeCastToInt256";
+        readonly type: "error";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "dz";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateBondsOutGivenSharesInDown";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateMaxBuyBondsOutSafe";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateMaxBuySharesInSafe";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "z";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "int256";
+            readonly name: "zeta";
+            readonly type: "int256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "zMin";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateMaxSellBondsInSafe";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "dy";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateSharesInGivenBondsOutDown";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "dy";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateSharesInGivenBondsOutUp";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "dy";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateSharesOutGivenBondsInDown";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "dy";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateSharesOutGivenBondsInDownSafe";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "kDown";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "ze";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "y";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "t";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "c";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "mu";
+            readonly type: "uint256";
+        }];
+        readonly name: "kUp";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
     }];
     readonly bytecode: {
-        readonly object: "0x608060405234801561001057600080fd5b50610fe7806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c806386c85e101161006657806386c85e101461012a578063a4a6f9d91461013d578063a9afa37314610150578063bc50ebe614610163578063d79d08351461017657600080fd5b80630aea7563146100a357806327d0e265146100c95780632e74108c146100dc5780633ee4114a146100ef5780635880b9fd14610117575b600080fd5b6100b66100b1366004610e1e565b610189565b6040519081526020015b60405180910390f35b6100b66100d7366004610e59565b6101a4565b6100b66100ea366004610e59565b6101c1565b6101026100fd366004610e59565b6101d2565b604080519283529015156020830152016100c0565b610102610125366004610e1e565b6101f9565b6100b6610138366004610e59565b61021e565b6100b661014b366004610e59565b61022f565b61010261015e366004610e1e565b610240565b610102610171366004610e9c565b610253565b6100b6610184366004610e1e565b61027c565b600080610199878787878761028c565b979650505050505050565b6000806101b58888888888886102cb565b98975050505050505050565b6000806101b58888888888886102fb565b6000806000806101e68a8a8a8a8a8a61030c565b909450925050505b965096945050505050565b60008060008061020c89898989896103d3565b909450925050505b9550959350505050565b6000806101b5888888888888610489565b6000806101b588888888888861053a565b60008060008061020c8989898989610601565b6000806000806102688b8b8b8b8b8b8b6106aa565b909450925050505b97509795505050505050565b6000806101998787878787610793565b600061029885856107b8565b6102b76102af866102a9868b61082f565b906107b8565b85908561084b565b6102c19190610efe565b9695505050505050565b6000806102dc88888888888861030c565b9092509050806102f0576102f06000610871565b509695505050505050565b6000806102dc888888888888610895565b600080600061031e898988888861028c565b905061032e866102a9898b610efe565b9750878110156103455760008092509250506101ee565b87810361035381868861084b565b9050670de0b6b3a7640000811061038757610380610379670de0b6b3a76400008961096c565b82906107b8565b905061039f565b61039c610379670de0b6b3a764000089610981565b90505b6103a9818661096c565b9050808a10156103c1576000809350935050506101ee565b90980398600198509650505050505050565b60008060006103e58888888888610793565b90506000610410670de0b6b3a76400006103ff888861096c565b6104099190610efe565b8390610981565b9050670de0b6b3a7640000811061043d57610436610379670de0b6b3a764000089610981565b9050610455565b610452610379670de0b6b3a76400008961096c565b90505b61045f8186610981565b90508881101561047757600080935093505050610214565b97909703976001975095505050505050565b600080610499888887878761028c565b90506104b3856102a96104ac898c610efe565b8690610996565b97506104c08489856109a7565b9750878110156104d4576104d46000610871565b878103670de0b6b3a76400008110610502576104fb610379670de0b6b3a76400008861096c565b905061051a565b610517610379670de0b6b3a764000088610981565b90505b8088101561052c5761052c6000610871565b909603979650505050505050565b60008061054a8888878787610793565b90508587101561055e5761055e6000610871565b958590039561056d87866107b8565b965086811015610581576105816000610871565b86810361058f8185876109a7565b9050670de0b6b3a764000081106105bc576105b5610379670de0b6b3a764000088610981565b90506105d4565b6105d1610379670de0b6b3a76400008861096c565b90505b6105de8185610981565b9050888110156105f2576105f26000610871565b97909703979650505050505050565b6000806000610613888888888861028c565b9050600061063e670de0b6b3a764000061062d8888610981565b6106379190610efe565b839061096c565b9050670de0b6b3a7640000811061066b57610664610379670de0b6b3a76400008961096c565b9050610683565b610680610379670de0b6b3a764000089610981565b90505b8088101561069957600080935093505050610214565b909603976001975095505050505050565b60008060008812156106cc576106bf88610f11565b6106c99087610efe565b95505b60006106d88a8a6109c5565b905060006106e9828a898989610793565b905060006107066106fe896102a9898d61082f565b88908861084b565b90508082101561071f5760008094509450505050610270565b808203670de0b6b3a7640000811061074d57610746610379670de0b6b3a76400008b610981565b9050610765565b610762610379670de0b6b3a76400008b61096c565b90505b8a81101561077d576000809550955050505050610270565b999099039b60019b509950505050505050505050565b600061079f85856107b8565b6102b76107b0866102a9868b610996565b8590856109a7565b6000816000036107d15750670de0b6b3a7640000610829565b826000036107e157506000610829565b60006107ec836109ed565b905060006108016107fc866109ed565b610a1b565b9050818102610818670de0b6b3a764000082610f2d565b905061082381610c4a565b93505050505b92915050565b60006108448383670de0b6b3a764000061084b565b9392505050565b600082600019048411830215820261086257600080fd5b50910281810615159190040190565b80604051633c06d78b60e11b815260040161088c9190610f69565b60405180910390fd5b60008060006108a7898988888861028c565b9050868810156108be5760008092509250506101ee565b96869003966108cd88876107b8565b9750878110156108e45760008092509250506101ee565b8781036108f281868861084b565b9050670de0b6b3a7640000811061091f57610918610379670de0b6b3a76400008961096c565b9050610937565b610934610379670de0b6b3a764000089610981565b90505b610941818661096c565b905089811015610959576000809350935050506101ee565b9890980398600198509650505050505050565b600061084483670de0b6b3a76400008461084b565b600061084483670de0b6b3a7640000846109a7565b60006108448383670de0b6b3a76400005b60008260001904841183021582026109be57600080fd5b5091020490565b6000806109d28484610ddf565b9092509050806109e6576109e66001610871565b5092915050565b60006001600160ff1b03821115610a175760405163396ea70160e11b815260040160405180910390fd5b5090565b6000808213610a3d5760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190610ac99084901c6109ed565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213610c6557506000919050565b680755bf798b4a1bf1e58212610c8e576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b0181810595509293509091906102c174029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c6109ed565b600080600083610dee866109ed565b610df89190610f91565b90506000811215610e10576000809250925050610e17565b9150600190505b9250929050565b600080600080600060a08688031215610e3657600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c08789031215610e7257600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a031215610eb757600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561082957610829610ee8565b6000600160ff1b8201610f2657610f26610ee8565b5060000390565b600082610f4a57634e487b7160e01b600052601260045260246000fd5b600160ff1b821460001984141615610f6457610f64610ee8565b500590565b6020810160048310610f8b57634e487b7160e01b600052602160045260246000fd5b91905290565b81810360008312801583831316838312821617156109e6576109e6610ee856fea2646970667358221220312732ed3022498f89428eb766ede77143edad975b9da6d47aeb46dd8a4a456b64736f6c63430008140033";
-        readonly sourceMap: "135:3645:148:-:0;;;;;;;;;;;;;;;;;;;";
+        readonly object: "0x608060405234801561001057600080fd5b50610fe7806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c806386c85e101161006657806386c85e101461012a578063a4a6f9d91461013d578063a9afa37314610150578063bc50ebe614610163578063d79d08351461017657600080fd5b80630aea7563146100a357806327d0e265146100c95780632e74108c146100dc5780633ee4114a146100ef5780635880b9fd14610117575b600080fd5b6100b66100b1366004610e1e565b610189565b6040519081526020015b60405180910390f35b6100b66100d7366004610e59565b6101a4565b6100b66100ea366004610e59565b6101c1565b6101026100fd366004610e59565b6101d2565b604080519283529015156020830152016100c0565b610102610125366004610e1e565b6101f9565b6100b6610138366004610e59565b61021e565b6100b661014b366004610e59565b61022f565b61010261015e366004610e1e565b610240565b610102610171366004610e9c565b610253565b6100b6610184366004610e1e565b61027c565b600080610199878787878761028c565b979650505050505050565b6000806101b58888888888886102cb565b98975050505050505050565b6000806101b58888888888886102fb565b6000806000806101e68a8a8a8a8a8a61030c565b909450925050505b965096945050505050565b60008060008061020c89898989896103d3565b909450925050505b9550959350505050565b6000806101b5888888888888610489565b6000806101b588888888888861053a565b60008060008061020c8989898989610601565b6000806000806102688b8b8b8b8b8b8b6106aa565b909450925050505b97509795505050505050565b6000806101998787878787610793565b600061029885856107b8565b6102b76102af866102a9868b61082f565b906107b8565b85908561084b565b6102c19190610efe565b9695505050505050565b6000806102dc88888888888861030c565b9092509050806102f0576102f06000610871565b509695505050505050565b6000806102dc888888888888610895565b600080600061031e898988888861028c565b905061032e866102a9898b610efe565b9750878110156103455760008092509250506101ee565b87810361035381868861084b565b9050670de0b6b3a7640000811061038757610380610379670de0b6b3a76400008961096c565b82906107b8565b905061039f565b61039c610379670de0b6b3a764000089610981565b90505b6103a9818661096c565b9050808a10156103c1576000809350935050506101ee565b90980398600198509650505050505050565b60008060006103e58888888888610793565b90506000610410670de0b6b3a76400006103ff888861096c565b6104099190610efe565b8390610981565b9050670de0b6b3a7640000811061043d57610436610379670de0b6b3a764000089610981565b9050610455565b610452610379670de0b6b3a76400008961096c565b90505b61045f8186610981565b90508881101561047757600080935093505050610214565b97909703976001975095505050505050565b600080610499888887878761028c565b90506104b3856102a96104ac898c610efe565b8690610996565b97506104c08489856109a7565b9750878110156104d4576104d46000610871565b878103670de0b6b3a76400008110610502576104fb610379670de0b6b3a76400008861096c565b905061051a565b610517610379670de0b6b3a764000088610981565b90505b8088101561052c5761052c6000610871565b909603979650505050505050565b60008061054a8888878787610793565b90508587101561055e5761055e6000610871565b958590039561056d87866107b8565b965086811015610581576105816000610871565b86810361058f8185876109a7565b9050670de0b6b3a764000081106105bc576105b5610379670de0b6b3a764000088610981565b90506105d4565b6105d1610379670de0b6b3a76400008861096c565b90505b6105de8185610981565b9050888110156105f2576105f26000610871565b97909703979650505050505050565b6000806000610613888888888861028c565b9050600061063e670de0b6b3a764000061062d8888610981565b6106379190610efe565b839061096c565b9050670de0b6b3a7640000811061066b57610664610379670de0b6b3a76400008961096c565b9050610683565b610680610379670de0b6b3a764000089610981565b90505b8088101561069957600080935093505050610214565b909603976001975095505050505050565b60008060008812156106cc576106bf88610f11565b6106c99087610efe565b95505b60006106d88a8a6109c5565b905060006106e9828a898989610793565b905060006107066106fe896102a9898d61082f565b88908861084b565b90508082101561071f5760008094509450505050610270565b808203670de0b6b3a7640000811061074d57610746610379670de0b6b3a76400008b610981565b9050610765565b610762610379670de0b6b3a76400008b61096c565b90505b8a81101561077d576000809550955050505050610270565b999099039b60019b509950505050505050505050565b600061079f85856107b8565b6102b76107b0866102a9868b610996565b8590856109a7565b6000816000036107d15750670de0b6b3a7640000610829565b826000036107e157506000610829565b60006107ec836109ed565b905060006108016107fc866109ed565b610a1b565b9050818102610818670de0b6b3a764000082610f2d565b905061082381610c4a565b93505050505b92915050565b60006108448383670de0b6b3a764000061084b565b9392505050565b600082600019048411830215820261086257600080fd5b50910281810615159190040190565b80604051633c06d78b60e11b815260040161088c9190610f69565b60405180910390fd5b60008060006108a7898988888861028c565b9050868810156108be5760008092509250506101ee565b96869003966108cd88876107b8565b9750878110156108e45760008092509250506101ee565b8781036108f281868861084b565b9050670de0b6b3a7640000811061091f57610918610379670de0b6b3a76400008961096c565b9050610937565b610934610379670de0b6b3a764000089610981565b90505b610941818661096c565b905089811015610959576000809350935050506101ee565b9890980398600198509650505050505050565b600061084483670de0b6b3a76400008461084b565b600061084483670de0b6b3a7640000846109a7565b60006108448383670de0b6b3a76400005b60008260001904841183021582026109be57600080fd5b5091020490565b6000806109d28484610ddf565b9092509050806109e6576109e66001610871565b5092915050565b60006001600160ff1b03821115610a175760405163396ea70160e11b815260040160405180910390fd5b5090565b6000808213610a3d5760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190610ac99084901c6109ed565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213610c6557506000919050565b680755bf798b4a1bf1e58212610c8e576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b0181810595509293509091906102c174029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c6109ed565b600080600083610dee866109ed565b610df89190610f91565b90506000811215610e10576000809250925050610e17565b9150600190505b9250929050565b600080600080600060a08688031215610e3657600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c08789031215610e7257600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a031215610eb757600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561082957610829610ee8565b6000600160ff1b8201610f2657610f26610ee8565b5060000390565b600082610f4a57634e487b7160e01b600052601260045260246000fd5b600160ff1b821460001984141615610f6457610f64610ee8565b500590565b6020810160048310610f8b57634e487b7160e01b600052602160045260246000fd5b91905290565b81810360008312801583831316838312821617156109e6576109e6610ee856fea264697066735822122046371b90d69577dd315ab6bdb1da5450ad1fd38a7176fe063721fef303688a7264736f6c63430008140033";
+        readonly sourceMap: "135:3645:142:-:0;;;;;;;;;;;;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly deployedBytecode: {
-        readonly object: "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c806386c85e101161006657806386c85e101461012a578063a4a6f9d91461013d578063a9afa37314610150578063bc50ebe614610163578063d79d08351461017657600080fd5b80630aea7563146100a357806327d0e265146100c95780632e74108c146100dc5780633ee4114a146100ef5780635880b9fd14610117575b600080fd5b6100b66100b1366004610e1e565b610189565b6040519081526020015b60405180910390f35b6100b66100d7366004610e59565b6101a4565b6100b66100ea366004610e59565b6101c1565b6101026100fd366004610e59565b6101d2565b604080519283529015156020830152016100c0565b610102610125366004610e1e565b6101f9565b6100b6610138366004610e59565b61021e565b6100b661014b366004610e59565b61022f565b61010261015e366004610e1e565b610240565b610102610171366004610e9c565b610253565b6100b6610184366004610e1e565b61027c565b600080610199878787878761028c565b979650505050505050565b6000806101b58888888888886102cb565b98975050505050505050565b6000806101b58888888888886102fb565b6000806000806101e68a8a8a8a8a8a61030c565b909450925050505b965096945050505050565b60008060008061020c89898989896103d3565b909450925050505b9550959350505050565b6000806101b5888888888888610489565b6000806101b588888888888861053a565b60008060008061020c8989898989610601565b6000806000806102688b8b8b8b8b8b8b6106aa565b909450925050505b97509795505050505050565b6000806101998787878787610793565b600061029885856107b8565b6102b76102af866102a9868b61082f565b906107b8565b85908561084b565b6102c19190610efe565b9695505050505050565b6000806102dc88888888888861030c565b9092509050806102f0576102f06000610871565b509695505050505050565b6000806102dc888888888888610895565b600080600061031e898988888861028c565b905061032e866102a9898b610efe565b9750878110156103455760008092509250506101ee565b87810361035381868861084b565b9050670de0b6b3a7640000811061038757610380610379670de0b6b3a76400008961096c565b82906107b8565b905061039f565b61039c610379670de0b6b3a764000089610981565b90505b6103a9818661096c565b9050808a10156103c1576000809350935050506101ee565b90980398600198509650505050505050565b60008060006103e58888888888610793565b90506000610410670de0b6b3a76400006103ff888861096c565b6104099190610efe565b8390610981565b9050670de0b6b3a7640000811061043d57610436610379670de0b6b3a764000089610981565b9050610455565b610452610379670de0b6b3a76400008961096c565b90505b61045f8186610981565b90508881101561047757600080935093505050610214565b97909703976001975095505050505050565b600080610499888887878761028c565b90506104b3856102a96104ac898c610efe565b8690610996565b97506104c08489856109a7565b9750878110156104d4576104d46000610871565b878103670de0b6b3a76400008110610502576104fb610379670de0b6b3a76400008861096c565b905061051a565b610517610379670de0b6b3a764000088610981565b90505b8088101561052c5761052c6000610871565b909603979650505050505050565b60008061054a8888878787610793565b90508587101561055e5761055e6000610871565b958590039561056d87866107b8565b965086811015610581576105816000610871565b86810361058f8185876109a7565b9050670de0b6b3a764000081106105bc576105b5610379670de0b6b3a764000088610981565b90506105d4565b6105d1610379670de0b6b3a76400008861096c565b90505b6105de8185610981565b9050888110156105f2576105f26000610871565b97909703979650505050505050565b6000806000610613888888888861028c565b9050600061063e670de0b6b3a764000061062d8888610981565b6106379190610efe565b839061096c565b9050670de0b6b3a7640000811061066b57610664610379670de0b6b3a76400008961096c565b9050610683565b610680610379670de0b6b3a764000089610981565b90505b8088101561069957600080935093505050610214565b909603976001975095505050505050565b60008060008812156106cc576106bf88610f11565b6106c99087610efe565b95505b60006106d88a8a6109c5565b905060006106e9828a898989610793565b905060006107066106fe896102a9898d61082f565b88908861084b565b90508082101561071f5760008094509450505050610270565b808203670de0b6b3a7640000811061074d57610746610379670de0b6b3a76400008b610981565b9050610765565b610762610379670de0b6b3a76400008b61096c565b90505b8a81101561077d576000809550955050505050610270565b999099039b60019b509950505050505050505050565b600061079f85856107b8565b6102b76107b0866102a9868b610996565b8590856109a7565b6000816000036107d15750670de0b6b3a7640000610829565b826000036107e157506000610829565b60006107ec836109ed565b905060006108016107fc866109ed565b610a1b565b9050818102610818670de0b6b3a764000082610f2d565b905061082381610c4a565b93505050505b92915050565b60006108448383670de0b6b3a764000061084b565b9392505050565b600082600019048411830215820261086257600080fd5b50910281810615159190040190565b80604051633c06d78b60e11b815260040161088c9190610f69565b60405180910390fd5b60008060006108a7898988888861028c565b9050868810156108be5760008092509250506101ee565b96869003966108cd88876107b8565b9750878110156108e45760008092509250506101ee565b8781036108f281868861084b565b9050670de0b6b3a7640000811061091f57610918610379670de0b6b3a76400008961096c565b9050610937565b610934610379670de0b6b3a764000089610981565b90505b610941818661096c565b905089811015610959576000809350935050506101ee565b9890980398600198509650505050505050565b600061084483670de0b6b3a76400008461084b565b600061084483670de0b6b3a7640000846109a7565b60006108448383670de0b6b3a76400005b60008260001904841183021582026109be57600080fd5b5091020490565b6000806109d28484610ddf565b9092509050806109e6576109e66001610871565b5092915050565b60006001600160ff1b03821115610a175760405163396ea70160e11b815260040160405180910390fd5b5090565b6000808213610a3d5760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190610ac99084901c6109ed565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213610c6557506000919050565b680755bf798b4a1bf1e58212610c8e576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b0181810595509293509091906102c174029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c6109ed565b600080600083610dee866109ed565b610df89190610f91565b90506000811215610e10576000809250925050610e17565b9150600190505b9250929050565b600080600080600060a08688031215610e3657600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c08789031215610e7257600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a031215610eb757600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561082957610829610ee8565b6000600160ff1b8201610f2657610f26610ee8565b5060000390565b600082610f4a57634e487b7160e01b600052601260045260246000fd5b600160ff1b821460001984141615610f6457610f64610ee8565b500590565b6020810160048310610f8b57634e487b7160e01b600052602160045260246000fd5b91905290565b81810360008312801583831316838312821617156109e6576109e6610ee856fea2646970667358221220312732ed3022498f89428eb766ede77143edad975b9da6d47aeb46dd8a4a456b64736f6c63430008140033";
-        readonly sourceMap: "135:3645:148:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3288:240;;;;;;:::i;:::-;;:::i;:::-;;;619:25:239;;;607:2;592:18;3288:240:148;;;;;;;;1407:408;;;;;;:::i;:::-;;:::i;583:404::-;;;;;;:::i;:::-;;:::i;1821:382::-;;;;;;:::i;:::-;;:::i;:::-;;;;1351:25:239;;;1419:14;;1412:22;1407:2;1392:18;;1385:50;1324:18;1821:382:148;1183:258:239;2209:336:148;;;;;;:::i;:::-;;:::i;169:408::-;;;;;;:::i;:::-;;:::i;993:::-;;;;;;:::i;:::-;;:::i;2551:336::-;;;;;;:::i;:::-;;:::i;2893:389::-;;;;;;:::i;:::-;;:::i;3534:244::-;;;;;;:::i;:::-;;:::i;3288:240::-;3427:7;3446:14;3463:35;3482:2;3486:1;3489;3492;3495:2;3463:18;:35::i;:::-;3446:52;3288:240;-1:-1:-1;;;;;;;3288:240:148:o;1407:408::-;1597:7;1616:14;1633:152;1696:2;1712:1;1727:2;1743:1;1758;1773:2;1633:49;:152::i;:::-;1616:169;1407:408;-1:-1:-1;;;;;;;;1407:408:148:o;583:404::-;771:7;790:14;807:150;868:2;884:1;899:2;915:1;930;945:2;807:47;:150::i;1821:382::-;2015:7;2024:4;2041:15;2058:12;2074:87;2141:2;2145:1;2148:2;2152:1;2155;2158:2;2074:66;:87::i;:::-;2040:121;;-1:-1:-1;2040:121:148;-1:-1:-1;;;1821:382:148;;;;;;;;;;:::o;2209:336::-;2372:7;2381:4;2398:15;2415:12;2431:72;2487:2;2491:1;2494;2497;2500:2;2431:55;:72::i;:::-;2397:106;;-1:-1:-1;2397:106:148;-1:-1:-1;;;2209:336:148;;;;;;;;;:::o;169:408::-;359:7;378:14;395:152;458:2;474:1;489:2;505:1;520;535:2;395:49;:152::i;993:408::-;1183:7;1202:14;1219:152;1282:2;1298:1;1313:2;1329:1;1344;1359:2;1219:49;:152::i;2551:336::-;2714:7;2723:4;2740:15;2757:12;2773:72;2829:2;2833:1;2836;2839;2842:2;2773:55;:72::i;2893:389::-;3098:7;3107:4;3124:15;3141:12;3157:83;3213:1;3216:4;3222:1;3225:4;3231:1;3234;3237:2;3157:55;:83::i;:::-;3123:117;;-1:-1:-1;3123:117:148;-1:-1:-1;;;2893:389:148;;;;;;;;;;;:::o;3534:244::-;3675:7;3694:14;3711:37;3732:2;3736:1;3739;3742;3745:2;3711:20;:37::i;20059:343:132:-;20198:7;20387:8;:1;20393;20387:5;:8::i;:::-;20349:35;20360:19;20377:1;20360:12;:2;20369;20360:8;:12::i;:::-;:16;;:19::i;:::-;20349:1;;20381:2;20349:10;:35::i;:::-;:46;;;;:::i;:::-;20342:53;20059:343;-1:-1:-1;;;;;;20059:343:132:o;10452:583::-;10642:14;10668:12;10710:141;10762:2;10778:1;10793:2;10809:1;10824;10839:2;10710:38;:141::i;:::-;10690:161;;-1:-1:-1;10690:161:132;-1:-1:-1;10690:161:132;10861:168;;10889:129;10945:59;10889:38;:129::i;:::-;10658:377;10452:583;;;;;;;;:::o;4331:579::-;4519:14;4545:12;4587:139;4637:2;4653:1;4668:2;4684:1;4699;4714:2;4587:36;:139::i;11709:1515::-;11903:7;11912:4;12066:9;12078:20;12082:2;12086:1;12089;12092;12095:2;12078:3;:20::i;:::-;12066:32;-1:-1:-1;12141:15:132;12154:1;12142:6;12146:2;12142:1;:6;:::i;12141:15::-;12137:19;;12238:1;12234;:5;12230:53;;;12263:1;12266:5;12255:17;;;;;;;12230:53;12487:5;;;12517:18;12487:5;12529:2;12533:1;12517:11;:18::i;:::-;12512:23;;193:4:128;12549:2:132;:9;12545:263;;12648:20;12655:12;193:4:128;12665:1:132;12655:9;:12::i;:::-;12648:2;;:6;:20::i;:::-;12643:25;;12545:263;;;12775:22;12782:14;193:4:128;12794:1:132;12782:11;:14::i;12775:22::-;12770:27;;12545:263;12890:12;:2;12899;12890:8;:12::i;:::-;12885:17;;13027:2;13022;:7;13018:55;;;13053:1;13056:5;13045:17;;;;;;;;13018:55;13193:7;;;;13202:4;;-1:-1:-1;11709:1515:132;-1:-1:-1;;;;;;;11709:1515:132:o;13859:1409::-;14022:7;14031:4;14543:9;14555:22;14561:2;14565:1;14568;14571;14574:2;14555:5;:22::i;:::-;14543:34;-1:-1:-1;14587:17:132;14607:28;193:4:128;14617:11:132;:1;14625:2;14617:7;:11::i;:::-;:17;;;;:::i;:::-;14607:1;;:9;:28::i;:::-;14587:48;;193:4:128;14649:9:132;:16;14645:300;;14765:29;14779:14;193:4:128;14791:1:132;14779:11;:14::i;14765:29::-;14753:41;;14645:300;;;14907:27;14921:12;193:4:128;14931:1:132;14921:9;:12::i;14907:27::-;14895:39;;14645:300;14966:21;:9;14984:2;14966:17;:21::i;:::-;14954:33;;15143:2;15131:9;:14;15127:62;;;15169:1;15172:5;15161:17;;;;;;;;15127:62;15230:14;;;;;15246:4;;-1:-1:-1;13859:1409:132;-1:-1:-1;;;;;;13859:1409:132:o;2068:1726::-;2258:7;2415:9;2427:20;2431:2;2435:1;2438;2441;2444:2;2427:3;:20::i;:::-;2415:32;-1:-1:-1;2585:26:132;2609:1;2585:19;2596:7;2601:2;2596;:7;:::i;:::-;2585:2;;:10;:19::i;:26::-;2580:31;-1:-1:-1;2674:20:132;:1;2580:31;2691:2;2674:12;:20::i;:::-;2669:25;;2768:2;2764:1;:6;2760:166;;;2786:129;2842:59;2786:38;:129::i;:::-;3135:6;;;193:4:128;3165:9:132;;3161:261;;3263:20;3270:12;193:4:128;3280:1:132;3270:9;:12::i;3263:20::-;3258:25;;3161:261;;;3389:22;3396:14;193:4:128;3408:1:132;3396:11;:14::i;3389:22::-;3384:27;;3161:261;3495:2;3491:1;:6;3487:166;;;3513:129;3569:59;3513:38;:129::i;:::-;3771:6;;;;2068:1726;-1:-1:-1;;;;;;;2068:1726:132:o;7870:1957::-;8060:7;8220:9;8232:22;8238:2;8242:1;8245;8248;8251:2;8232:5;:22::i;:::-;8220:34;;8328:2;8324:1;:6;8320:166;;;8346:129;8402:59;8346:38;:129::i;:::-;8548:7;;;;;8579:8;8548:7;8585:1;8579:5;:8::i;:::-;8575:12;;8660:1;8656;:5;8652:165;;;8677:129;8733:59;8677:38;:129::i;:::-;9029:5;;;9059:20;9029:5;9073:2;9077:1;9059:13;:20::i;:::-;9054:25;;193:4:128;9093:2:132;:9;9089:263;;9194:22;9201:14;193:4:128;9213:1:132;9201:11;:14::i;9194:22::-;9189:27;;9089:263;;;9321:20;9328:12;193:4:128;9338:1:132;9328:9;:12::i;9321:20::-;9316:25;;9089:263;9434:14;:2;9445;9434:10;:14::i;:::-;9429:19;;9524:2;9519;:7;9515:167;;;9542:129;9598:59;9542:38;:129::i;:::-;9803:7;;;;;7870:1957;-1:-1:-1;;;;;;;7870:1957:132:o;15892:1050::-;16055:7;16064:4;16276:9;16288:20;16292:2;16296:1;16299;16302;16305:2;16288:3;:20::i;:::-;16276:32;-1:-1:-1;16318:16:132;16337:28;193:4:128;16345:13:132;:1;16355:2;16345:9;:13::i;:::-;:19;;;;:::i;:::-;16337:1;;:7;:28::i;:::-;16318:47;;193:4:128;16379:8:132;:15;16375:293;;16490:26;16503:12;193:4:128;16513:1:132;16503:9;:12::i;16490:26::-;16479:37;;16375:293;;;16629:28;16642:14;193:4:128;16654:1:132;16642:11;:14::i;16629:28::-;16618:39;;16375:293;16813:8;16809:1;:12;16805:60;;;16845:1;16848:5;16837:17;;;;;;;;16805:60;16906:12;;;;16920:4;;-1:-1:-1;15892:1050:132;-1:-1:-1;;;;;;15892:1050:132:o;17581:1971::-;17786:7;17795:4;18092:1;18085:4;:8;18081:67;;;18131:5;18132:4;18131:5;:::i;:::-;18116:21;;:4;:21;:::i;:::-;18109:28;;18081:67;18643:10;18656:55;18703:1;18706:4;18656:46;:55::i;:::-;18643:68;;18721:9;18733:22;18739:2;18743:1;18746;18749;18752:2;18733:5;:22::i;:::-;18721:34;-1:-1:-1;18765:11:132;18779:37;18790:21;18809:1;18790:14;:2;18799:4;18790:8;:14::i;:21::-;18779:1;;18813:2;18779:10;:37::i;:::-;18765:51;;18834:3;18830:1;:7;18826:55;;;18861:1;18864:5;18853:17;;;;;;;;;18826:55;18951:7;;;193:4:128;18982:15:132;;18978:295;;19096:28;19109:14;193:4:128;19121:1:132;19109:11;:14::i;19096:28::-;19085:39;;18978:295;;;19236:26;19249:12;193:4:128;19259:1:132;19249:9;:12::i;19236:26::-;19225:37;;18978:295;19430:1;19419:8;:12;19415:60;;;19455:1;19458:5;19447:17;;;;;;;;;;19415:60;19516:12;;;;;19530:4;;-1:-1:-1;17581:1971:132;-1:-1:-1;;;;;;;;;;17581:1971:132:o;20915:352::-;21056:7;21252:8;:1;21258;21252:5;:8::i;:::-;21210:39;21223:21;21242:1;21223:14;:2;21234;21223:10;:14::i;:21::-;21210:1;;21246:2;21210:12;:39::i;3811:844:128:-;3869:7;3935:1;3940;3935:6;3931:47;;-1:-1:-1;193:4:128;3957:10;;3931:47;4031:1;4036;4031:6;4027:45;;-1:-1:-1;4060:1:128;4053:8;;4027:45;4210:15;4228:12;:1;:10;:12::i;:::-;4210:30;;4402:10;4415:16;4418:12;:1;:10;:12::i;:::-;4415:2;:16::i;:::-;4402:29;-1:-1:-1;4509:18:128;;;4546:19;193:4;4509:18;4546:19;:::i;:::-;;;4638:9;4642:4;4638:3;:9::i;:::-;4623:25;;;;;3811:844;;;;;:::o;3190:114::-;3250:7;3277:19;3286:1;3289;193:4;3277:8;:19::i;:::-;3269:28;3190:114;-1:-1:-1;;;3190:114:128:o;2284:748::-;2398:9;2663:1;-1:-1:-1;;2646:19:128;2643:1;2640:26;2637:1;2633:34;2626:42;2613:11;2609:60;2582:146;;2712:1;2709;2702:12;2582:146;-1:-1:-1;2979:9:128;;2926:27;;;2923:34;;2975:27;;;2902:114;;2284:748::o;317:182:127:-;485:6;451:41;;-1:-1:-1;;;451:41:127;;;;;;;;:::i;:::-;;;;;;;;5576:1765:132;5768:7;5777:4;5931:9;5943:20;5947:2;5951:1;5954;5957;5960:2;5943:3;:20::i;:::-;5931:32;;6086:2;6082:1;:6;6078:54;;;6112:1;6115:5;6104:17;;;;;;;6078:54;6194:7;;;;;6225:8;6194:7;6231:1;6225:5;:8::i;:::-;6221:12;;6355:1;6351;:5;6347:53;;;6380:1;6383:5;6372:17;;;;;;;6347:53;6604:5;;;6634:18;6604:5;6646:2;6650:1;6634:11;:18::i;:::-;6629:23;;193:4:128;6666:2:132;:9;6662:261;;6764:20;6771:12;193:4:128;6781:1:132;6771:9;:12::i;6764:20::-;6759:25;;6662:261;;;6890:22;6897:14;193:4:128;6909:1:132;6897:11;:14::i;6890:22::-;6885:27;;6662:261;7005:12;:2;7014;7005:8;:12::i;:::-;7000:17;;7142:2;7137;:7;7133:55;;;7168:1;7171:5;7160:17;;;;;;;;7133:55;7310:7;;;;;7319:4;;-1:-1:-1;5576:1765:132;-1:-1:-1;;;;;;;5576:1765:132:o;3462:114:128:-;3522:7;3549:19;3558:1;193:4;3566:1;3549:8;:19::i;1884:164::-;1946:7;1973:21;1984:1;193:4;1992:1;1973:10;:21::i;1610:118::-;1672:7;1699:21;1710:1;1713;193:4;898:556;1014:9;1279:1;-1:-1:-1;;1262:19:128;1259:1;1256:26;1253:1;1249:34;1242:42;1229:11;1225:60;1198:146;;1328:1;1325;1318:12;1198:146;-1:-1:-1;1415:9:128;;1411:27;;898:556::o;6050:574:129:-;6185:30;6227:12;6285:103;6334:14;6362:16;6285:35;:103::i;:::-;6249:139;;-1:-1:-1;6249:139:129;-1:-1:-1;6249:139:129;6398:220;;6426:181;6482:111;6426:38;:181::i;:::-;6217:407;6050:574;;;;:::o;2001:204:131:-;2053:8;-1:-1:-1;;;;;2079:1:131;:30;;2073:103;;2133:32;;-1:-1:-1;;;2133:32:131;;;;;;;;;;;2073:103;-1:-1:-1;2196:1:131;2001:204::o;8508:3846:128:-;8553:8;8606:1;8601;:6;8597:80;;8634:28;;-1:-1:-1;;;8634:28:128;;;;;;;;;;;8597:80;-1:-1:-1;9289:34:128;9286:41;-1:-1:-1;9283:1:128;9279:49;9386:9;;;9366:18;9363:33;9360:1;9356:41;9350:48;9448:9;;;9436:10;9433:25;9430:1;9426:33;9420:40;9506:9;;;9498:6;9495:21;9492:1;9488:29;9482:36;9562:9;;;9556:4;9553:19;9550:1;9546:27;;;9540:34;;;9617:9;;;9612:3;9609:18;9606:1;9602:26;9596:33;9672:9;;;9664:18;;;9661:1;9657:26;;;9651:33;;;9720:9;;;9712:18;;;9706:25;9902:3;:7;;;9872:2;9902:7;9888:22;;;;;-1:-1:-1;;9868:6:128;;;9928:30;;9929:17;;;9928:28;:30::i;:::-;10733:31;10729:35;;10784:5;;10191:2;10783:13;;;10800:32;10782:50;10852:5;;10851:13;;10868:33;10850:51;10921:5;;10920:13;;10937:33;10919:51;10990:5;;10989:13;;11006:33;10988:51;11059:5;;11058:13;;11075:32;11057:50;11127:5;;11126:13;;11143:30;11125:48;10130:31;10126:35;;10181:5;;10180:13;;10197:32;10179:50;10249:5;;10248:13;;10265:32;10247:50;10317:5;;10316:13;;-1:-1:-1;;10315:50:128;10385:5;;10384:13;;-1:-1:-1;;10383:50:128;10453:5;;10452:13;;;-1:-1:-1;;10451:50:128;10519:5;;;-1:-1:-1;;10519:46:128;11514:10;11904:43;11899:48;12027:71;:91;;;;12006:112;12191:72;12186:77;12334:3;12328:9;;;-1:-1:-1;;8508:3846:128:o;4907:3302::-;4953:8;-1:-1:-1;;5130:1:128;:26;5126:40;;-1:-1:-1;5165:1:128;;4907:3302;-1:-1:-1;4907:3302:128:o;5126:40::-;5365:21;5360:1;:26;5356:87;;5411:32;;-1:-1:-1;;;5411:32:128;;;;;;;;;;;5356:87;5716:7;5710:2;5705:7;;;5704:19;;-1:-1:-1;6052:8:128;6136:2;6076:29;6065:7;;;6064:41;-1:-1:-1;;;6064:51:128;6063:75;;6164:29;6160:33;;6156:37;;;;-1:-1:-1;;6835:35:128;;6890:5;;6470:2;6889:13;;;6906:32;6888:50;6958:5;;6957:13;;-1:-1:-1;;6956:51:128;7027:5;;7026:13;;7043:34;7025:52;7097:5;;7096:13;;-1:-1:-1;;7095:53:128;7168:5;;7167:13;;7184:35;7166:53;6476:32;6409:31;6405:35;;6460:5;;6459:13;;6458:50;;;6533:5;;;-1:-1:-1;;6533:40:128;6593:5;;6592:13;;;6609:35;6591:53;6662:5;;-1:-1:-1;;;6662:50:128;7584:10;;;;-1:-1:-1;6063:75:128;;-1:-1:-1;6458:50:128;;6662;8063:129;8094:49;8065:78;;8172:3;:7;;;8064:116;8063:127;:129::i;7273:398:129:-;7412:7;7421:4;7437:29;7509:16;7469:25;:14;:23;:25::i;:::-;:56;;;;:::i;:::-;7437:88;;7564:1;7539:22;:26;7535:74;;;7589:1;7592:5;7581:17;;;;;;;7535:74;7634:22;-1:-1:-1;7659:4:129;;-1:-1:-1;7273:398:129;;;;;;:::o;14:454:239:-;109:6;117;125;133;141;194:3;182:9;173:7;169:23;165:33;162:53;;;211:1;208;201:12;162:53;-1:-1:-1;;234:23:239;;;304:2;289:18;;276:32;;-1:-1:-1;355:2:239;340:18;;327:32;;406:2;391:18;;378:32;;-1:-1:-1;457:3:239;442:19;429:33;;-1:-1:-1;14:454:239;-1:-1:-1;14:454:239:o;655:523::-;759:6;767;775;783;791;799;852:3;840:9;831:7;827:23;823:33;820:53;;;869:1;866;859:12;820:53;-1:-1:-1;;892:23:239;;;962:2;947:18;;934:32;;-1:-1:-1;1013:2:239;998:18;;985:32;;1064:2;1049:18;;1036:32;;-1:-1:-1;1115:3:239;1100:19;;1087:33;;-1:-1:-1;1167:3:239;1152:19;1139:33;;-1:-1:-1;655:523:239;-1:-1:-1;655:523:239:o;1446:591::-;1558:6;1566;1574;1582;1590;1598;1606;1659:3;1647:9;1638:7;1634:23;1630:33;1627:53;;;1676:1;1673;1666:12;1627:53;-1:-1:-1;;1699:23:239;;;1769:2;1754:18;;1741:32;;-1:-1:-1;1820:2:239;1805:18;;1792:32;;1871:2;1856:18;;1843:32;;-1:-1:-1;1922:3:239;1907:19;;1894:33;;-1:-1:-1;1974:3:239;1959:19;;1946:33;;-1:-1:-1;2026:3:239;2011:19;1998:33;;-1:-1:-1;1446:591:239;-1:-1:-1;1446:591:239:o;2042:127::-;2103:10;2098:3;2094:20;2091:1;2084:31;2134:4;2131:1;2124:15;2158:4;2155:1;2148:15;2174:125;2239:9;;;2260:10;;;2257:36;;;2273:18;;:::i;2304:136::-;2339:3;-1:-1:-1;;;2360:22:239;;2357:48;;2385:18;;:::i;:::-;-1:-1:-1;2425:1:239;2421:13;;2304:136::o;2577:290::-;2616:1;2642;2632:132;;2686:10;2681:3;2677:20;2674:1;2667:31;2721:4;2718:1;2711:15;2749:4;2746:1;2739:15;2632:132;-1:-1:-1;;;2780:18:239;;-1:-1:-1;;2800:13:239;;2776:38;2773:64;;;2817:18;;:::i;:::-;-1:-1:-1;2851:10:239;;2577:290::o;2872:361::-;3037:2;3022:18;;3070:1;3059:13;;3049:144;;3115:10;3110:3;3106:20;3103:1;3096:31;3150:4;3147:1;3140:15;3178:4;3175:1;3168:15;3049:144;3202:25;;;2872:361;:::o;3238:200::-;3304:9;;;3277:4;3332:9;;3360:10;;3372:12;;;3356:29;3395:12;;;3387:21;;3353:56;3350:82;;;3412:18;;:::i";
+        readonly object: "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c806386c85e101161006657806386c85e101461012a578063a4a6f9d91461013d578063a9afa37314610150578063bc50ebe614610163578063d79d08351461017657600080fd5b80630aea7563146100a357806327d0e265146100c95780632e74108c146100dc5780633ee4114a146100ef5780635880b9fd14610117575b600080fd5b6100b66100b1366004610e1e565b610189565b6040519081526020015b60405180910390f35b6100b66100d7366004610e59565b6101a4565b6100b66100ea366004610e59565b6101c1565b6101026100fd366004610e59565b6101d2565b604080519283529015156020830152016100c0565b610102610125366004610e1e565b6101f9565b6100b6610138366004610e59565b61021e565b6100b661014b366004610e59565b61022f565b61010261015e366004610e1e565b610240565b610102610171366004610e9c565b610253565b6100b6610184366004610e1e565b61027c565b600080610199878787878761028c565b979650505050505050565b6000806101b58888888888886102cb565b98975050505050505050565b6000806101b58888888888886102fb565b6000806000806101e68a8a8a8a8a8a61030c565b909450925050505b965096945050505050565b60008060008061020c89898989896103d3565b909450925050505b9550959350505050565b6000806101b5888888888888610489565b6000806101b588888888888861053a565b60008060008061020c8989898989610601565b6000806000806102688b8b8b8b8b8b8b6106aa565b909450925050505b97509795505050505050565b6000806101998787878787610793565b600061029885856107b8565b6102b76102af866102a9868b61082f565b906107b8565b85908561084b565b6102c19190610efe565b9695505050505050565b6000806102dc88888888888861030c565b9092509050806102f0576102f06000610871565b509695505050505050565b6000806102dc888888888888610895565b600080600061031e898988888861028c565b905061032e866102a9898b610efe565b9750878110156103455760008092509250506101ee565b87810361035381868861084b565b9050670de0b6b3a7640000811061038757610380610379670de0b6b3a76400008961096c565b82906107b8565b905061039f565b61039c610379670de0b6b3a764000089610981565b90505b6103a9818661096c565b9050808a10156103c1576000809350935050506101ee565b90980398600198509650505050505050565b60008060006103e58888888888610793565b90506000610410670de0b6b3a76400006103ff888861096c565b6104099190610efe565b8390610981565b9050670de0b6b3a7640000811061043d57610436610379670de0b6b3a764000089610981565b9050610455565b610452610379670de0b6b3a76400008961096c565b90505b61045f8186610981565b90508881101561047757600080935093505050610214565b97909703976001975095505050505050565b600080610499888887878761028c565b90506104b3856102a96104ac898c610efe565b8690610996565b97506104c08489856109a7565b9750878110156104d4576104d46000610871565b878103670de0b6b3a76400008110610502576104fb610379670de0b6b3a76400008861096c565b905061051a565b610517610379670de0b6b3a764000088610981565b90505b8088101561052c5761052c6000610871565b909603979650505050505050565b60008061054a8888878787610793565b90508587101561055e5761055e6000610871565b958590039561056d87866107b8565b965086811015610581576105816000610871565b86810361058f8185876109a7565b9050670de0b6b3a764000081106105bc576105b5610379670de0b6b3a764000088610981565b90506105d4565b6105d1610379670de0b6b3a76400008861096c565b90505b6105de8185610981565b9050888110156105f2576105f26000610871565b97909703979650505050505050565b6000806000610613888888888861028c565b9050600061063e670de0b6b3a764000061062d8888610981565b6106379190610efe565b839061096c565b9050670de0b6b3a7640000811061066b57610664610379670de0b6b3a76400008961096c565b9050610683565b610680610379670de0b6b3a764000089610981565b90505b8088101561069957600080935093505050610214565b909603976001975095505050505050565b60008060008812156106cc576106bf88610f11565b6106c99087610efe565b95505b60006106d88a8a6109c5565b905060006106e9828a898989610793565b905060006107066106fe896102a9898d61082f565b88908861084b565b90508082101561071f5760008094509450505050610270565b808203670de0b6b3a7640000811061074d57610746610379670de0b6b3a76400008b610981565b9050610765565b610762610379670de0b6b3a76400008b61096c565b90505b8a81101561077d576000809550955050505050610270565b999099039b60019b509950505050505050505050565b600061079f85856107b8565b6102b76107b0866102a9868b610996565b8590856109a7565b6000816000036107d15750670de0b6b3a7640000610829565b826000036107e157506000610829565b60006107ec836109ed565b905060006108016107fc866109ed565b610a1b565b9050818102610818670de0b6b3a764000082610f2d565b905061082381610c4a565b93505050505b92915050565b60006108448383670de0b6b3a764000061084b565b9392505050565b600082600019048411830215820261086257600080fd5b50910281810615159190040190565b80604051633c06d78b60e11b815260040161088c9190610f69565b60405180910390fd5b60008060006108a7898988888861028c565b9050868810156108be5760008092509250506101ee565b96869003966108cd88876107b8565b9750878110156108e45760008092509250506101ee565b8781036108f281868861084b565b9050670de0b6b3a7640000811061091f57610918610379670de0b6b3a76400008961096c565b9050610937565b610934610379670de0b6b3a764000089610981565b90505b610941818661096c565b905089811015610959576000809350935050506101ee565b9890980398600198509650505050505050565b600061084483670de0b6b3a76400008461084b565b600061084483670de0b6b3a7640000846109a7565b60006108448383670de0b6b3a76400005b60008260001904841183021582026109be57600080fd5b5091020490565b6000806109d28484610ddf565b9092509050806109e6576109e66001610871565b5092915050565b60006001600160ff1b03821115610a175760405163396ea70160e11b815260040160405180910390fd5b5090565b6000808213610a3d5760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190610ac99084901c6109ed565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213610c6557506000919050565b680755bf798b4a1bf1e58212610c8e576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b0181810595509293509091906102c174029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c6109ed565b600080600083610dee866109ed565b610df89190610f91565b90506000811215610e10576000809250925050610e17565b9150600190505b9250929050565b600080600080600060a08688031215610e3657600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c08789031215610e7257600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a031215610eb757600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561082957610829610ee8565b6000600160ff1b8201610f2657610f26610ee8565b5060000390565b600082610f4a57634e487b7160e01b600052601260045260246000fd5b600160ff1b821460001984141615610f6457610f64610ee8565b500590565b6020810160048310610f8b57634e487b7160e01b600052602160045260246000fd5b91905290565b81810360008312801583831316838312821617156109e6576109e6610ee856fea264697066735822122046371b90d69577dd315ab6bdb1da5450ad1fd38a7176fe063721fef303688a7264736f6c63430008140033";
+        readonly sourceMap: "135:3645:142:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3288:240;;;;;;:::i;:::-;;:::i;:::-;;;619:25:234;;;607:2;592:18;3288:240:142;;;;;;;;1407:408;;;;;;:::i;:::-;;:::i;583:404::-;;;;;;:::i;:::-;;:::i;1821:382::-;;;;;;:::i;:::-;;:::i;:::-;;;;1351:25:234;;;1419:14;;1412:22;1407:2;1392:18;;1385:50;1324:18;1821:382:142;1183:258:234;2209:336:142;;;;;;:::i;:::-;;:::i;169:408::-;;;;;;:::i;:::-;;:::i;993:::-;;;;;;:::i;:::-;;:::i;2551:336::-;;;;;;:::i;:::-;;:::i;2893:389::-;;;;;;:::i;:::-;;:::i;3534:244::-;;;;;;:::i;:::-;;:::i;3288:240::-;3427:7;3446:14;3463:35;3482:2;3486:1;3489;3492;3495:2;3463:18;:35::i;:::-;3446:52;3288:240;-1:-1:-1;;;;;;;3288:240:142:o;1407:408::-;1597:7;1616:14;1633:152;1696:2;1712:1;1727:2;1743:1;1758;1773:2;1633:49;:152::i;:::-;1616:169;1407:408;-1:-1:-1;;;;;;;;1407:408:142:o;583:404::-;771:7;790:14;807:150;868:2;884:1;899:2;915:1;930;945:2;807:47;:150::i;1821:382::-;2015:7;2024:4;2041:15;2058:12;2074:87;2141:2;2145:1;2148:2;2152:1;2155;2158:2;2074:66;:87::i;:::-;2040:121;;-1:-1:-1;2040:121:142;-1:-1:-1;;;1821:382:142;;;;;;;;;;:::o;2209:336::-;2372:7;2381:4;2398:15;2415:12;2431:72;2487:2;2491:1;2494;2497;2500:2;2431:55;:72::i;:::-;2397:106;;-1:-1:-1;2397:106:142;-1:-1:-1;;;2209:336:142;;;;;;;;;:::o;169:408::-;359:7;378:14;395:152;458:2;474:1;489:2;505:1;520;535:2;395:49;:152::i;993:408::-;1183:7;1202:14;1219:152;1282:2;1298:1;1313:2;1329:1;1344;1359:2;1219:49;:152::i;2551:336::-;2714:7;2723:4;2740:15;2757:12;2773:72;2829:2;2833:1;2836;2839;2842:2;2773:55;:72::i;2893:389::-;3098:7;3107:4;3124:15;3141:12;3157:83;3213:1;3216:4;3222:1;3225:4;3231:1;3234;3237:2;3157:55;:83::i;:::-;3123:117;;-1:-1:-1;3123:117:142;-1:-1:-1;;;2893:389:142;;;;;;;;;;;:::o;3534:244::-;3675:7;3694:14;3711:37;3732:2;3736:1;3739;3742;3745:2;3711:20;:37::i;20059:343:126:-;20198:7;20387:8;:1;20393;20387:5;:8::i;:::-;20349:35;20360:19;20377:1;20360:12;:2;20369;20360:8;:12::i;:::-;:16;;:19::i;:::-;20349:1;;20381:2;20349:10;:35::i;:::-;:46;;;;:::i;:::-;20342:53;20059:343;-1:-1:-1;;;;;;20059:343:126:o;10452:583::-;10642:14;10668:12;10710:141;10762:2;10778:1;10793:2;10809:1;10824;10839:2;10710:38;:141::i;:::-;10690:161;;-1:-1:-1;10690:161:126;-1:-1:-1;10690:161:126;10861:168;;10889:129;10945:59;10889:38;:129::i;:::-;10658:377;10452:583;;;;;;;;:::o;4331:579::-;4519:14;4545:12;4587:139;4637:2;4653:1;4668:2;4684:1;4699;4714:2;4587:36;:139::i;11709:1515::-;11903:7;11912:4;12066:9;12078:20;12082:2;12086:1;12089;12092;12095:2;12078:3;:20::i;:::-;12066:32;-1:-1:-1;12141:15:126;12154:1;12142:6;12146:2;12142:1;:6;:::i;12141:15::-;12137:19;;12238:1;12234;:5;12230:53;;;12263:1;12266:5;12255:17;;;;;;;12230:53;12487:5;;;12517:18;12487:5;12529:2;12533:1;12517:11;:18::i;:::-;12512:23;;193:4:122;12549:2:126;:9;12545:263;;12648:20;12655:12;193:4:122;12665:1:126;12655:9;:12::i;:::-;12648:2;;:6;:20::i;:::-;12643:25;;12545:263;;;12775:22;12782:14;193:4:122;12794:1:126;12782:11;:14::i;12775:22::-;12770:27;;12545:263;12890:12;:2;12899;12890:8;:12::i;:::-;12885:17;;13027:2;13022;:7;13018:55;;;13053:1;13056:5;13045:17;;;;;;;;13018:55;13193:7;;;;13202:4;;-1:-1:-1;11709:1515:126;-1:-1:-1;;;;;;;11709:1515:126:o;13859:1409::-;14022:7;14031:4;14543:9;14555:22;14561:2;14565:1;14568;14571;14574:2;14555:5;:22::i;:::-;14543:34;-1:-1:-1;14587:17:126;14607:28;193:4:122;14617:11:126;:1;14625:2;14617:7;:11::i;:::-;:17;;;;:::i;:::-;14607:1;;:9;:28::i;:::-;14587:48;;193:4:122;14649:9:126;:16;14645:300;;14765:29;14779:14;193:4:122;14791:1:126;14779:11;:14::i;14765:29::-;14753:41;;14645:300;;;14907:27;14921:12;193:4:122;14931:1:126;14921:9;:12::i;14907:27::-;14895:39;;14645:300;14966:21;:9;14984:2;14966:17;:21::i;:::-;14954:33;;15143:2;15131:9;:14;15127:62;;;15169:1;15172:5;15161:17;;;;;;;;15127:62;15230:14;;;;;15246:4;;-1:-1:-1;13859:1409:126;-1:-1:-1;;;;;;13859:1409:126:o;2068:1726::-;2258:7;2415:9;2427:20;2431:2;2435:1;2438;2441;2444:2;2427:3;:20::i;:::-;2415:32;-1:-1:-1;2585:26:126;2609:1;2585:19;2596:7;2601:2;2596;:7;:::i;:::-;2585:2;;:10;:19::i;:26::-;2580:31;-1:-1:-1;2674:20:126;:1;2580:31;2691:2;2674:12;:20::i;:::-;2669:25;;2768:2;2764:1;:6;2760:166;;;2786:129;2842:59;2786:38;:129::i;:::-;3135:6;;;193:4:122;3165:9:126;;3161:261;;3263:20;3270:12;193:4:122;3280:1:126;3270:9;:12::i;3263:20::-;3258:25;;3161:261;;;3389:22;3396:14;193:4:122;3408:1:126;3396:11;:14::i;3389:22::-;3384:27;;3161:261;3495:2;3491:1;:6;3487:166;;;3513:129;3569:59;3513:38;:129::i;:::-;3771:6;;;;2068:1726;-1:-1:-1;;;;;;;2068:1726:126:o;7870:1957::-;8060:7;8220:9;8232:22;8238:2;8242:1;8245;8248;8251:2;8232:5;:22::i;:::-;8220:34;;8328:2;8324:1;:6;8320:166;;;8346:129;8402:59;8346:38;:129::i;:::-;8548:7;;;;;8579:8;8548:7;8585:1;8579:5;:8::i;:::-;8575:12;;8660:1;8656;:5;8652:165;;;8677:129;8733:59;8677:38;:129::i;:::-;9029:5;;;9059:20;9029:5;9073:2;9077:1;9059:13;:20::i;:::-;9054:25;;193:4:122;9093:2:126;:9;9089:263;;9194:22;9201:14;193:4:122;9213:1:126;9201:11;:14::i;9194:22::-;9189:27;;9089:263;;;9321:20;9328:12;193:4:122;9338:1:126;9328:9;:12::i;9321:20::-;9316:25;;9089:263;9434:14;:2;9445;9434:10;:14::i;:::-;9429:19;;9524:2;9519;:7;9515:167;;;9542:129;9598:59;9542:38;:129::i;:::-;9803:7;;;;;7870:1957;-1:-1:-1;;;;;;;7870:1957:126:o;15892:1050::-;16055:7;16064:4;16276:9;16288:20;16292:2;16296:1;16299;16302;16305:2;16288:3;:20::i;:::-;16276:32;-1:-1:-1;16318:16:126;16337:28;193:4:122;16345:13:126;:1;16355:2;16345:9;:13::i;:::-;:19;;;;:::i;:::-;16337:1;;:7;:28::i;:::-;16318:47;;193:4:122;16379:8:126;:15;16375:293;;16490:26;16503:12;193:4:122;16513:1:126;16503:9;:12::i;16490:26::-;16479:37;;16375:293;;;16629:28;16642:14;193:4:122;16654:1:126;16642:11;:14::i;16629:28::-;16618:39;;16375:293;16813:8;16809:1;:12;16805:60;;;16845:1;16848:5;16837:17;;;;;;;;16805:60;16906:12;;;;16920:4;;-1:-1:-1;15892:1050:126;-1:-1:-1;;;;;;15892:1050:126:o;17581:1971::-;17786:7;17795:4;18092:1;18085:4;:8;18081:67;;;18131:5;18132:4;18131:5;:::i;:::-;18116:21;;:4;:21;:::i;:::-;18109:28;;18081:67;18643:10;18656:55;18703:1;18706:4;18656:46;:55::i;:::-;18643:68;;18721:9;18733:22;18739:2;18743:1;18746;18749;18752:2;18733:5;:22::i;:::-;18721:34;-1:-1:-1;18765:11:126;18779:37;18790:21;18809:1;18790:14;:2;18799:4;18790:8;:14::i;:21::-;18779:1;;18813:2;18779:10;:37::i;:::-;18765:51;;18834:3;18830:1;:7;18826:55;;;18861:1;18864:5;18853:17;;;;;;;;;18826:55;18951:7;;;193:4:122;18982:15:126;;18978:295;;19096:28;19109:14;193:4:122;19121:1:126;19109:11;:14::i;19096:28::-;19085:39;;18978:295;;;19236:26;19249:12;193:4:122;19259:1:126;19249:9;:12::i;19236:26::-;19225:37;;18978:295;19430:1;19419:8;:12;19415:60;;;19455:1;19458:5;19447:17;;;;;;;;;;19415:60;19516:12;;;;;19530:4;;-1:-1:-1;17581:1971:126;-1:-1:-1;;;;;;;;;;17581:1971:126:o;20915:352::-;21056:7;21252:8;:1;21258;21252:5;:8::i;:::-;21210:39;21223:21;21242:1;21223:14;:2;21234;21223:10;:14::i;:21::-;21210:1;;21246:2;21210:12;:39::i;3811:844:122:-;3869:7;3935:1;3940;3935:6;3931:47;;-1:-1:-1;193:4:122;3957:10;;3931:47;4031:1;4036;4031:6;4027:45;;-1:-1:-1;4060:1:122;4053:8;;4027:45;4210:15;4228:12;:1;:10;:12::i;:::-;4210:30;;4402:10;4415:16;4418:12;:1;:10;:12::i;:::-;4415:2;:16::i;:::-;4402:29;-1:-1:-1;4509:18:122;;;4546:19;193:4;4509:18;4546:19;:::i;:::-;;;4638:9;4642:4;4638:3;:9::i;:::-;4623:25;;;;;3811:844;;;;;:::o;3190:114::-;3250:7;3277:19;3286:1;3289;193:4;3277:8;:19::i;:::-;3269:28;3190:114;-1:-1:-1;;;3190:114:122:o;2284:748::-;2398:9;2663:1;-1:-1:-1;;2646:19:122;2643:1;2640:26;2637:1;2633:34;2626:42;2613:11;2609:60;2582:146;;2712:1;2709;2702:12;2582:146;-1:-1:-1;2979:9:122;;2926:27;;;2923:34;;2975:27;;;2902:114;;2284:748::o;317:182:121:-;485:6;451:41;;-1:-1:-1;;;451:41:121;;;;;;;;:::i;:::-;;;;;;;;5576:1765:126;5768:7;5777:4;5931:9;5943:20;5947:2;5951:1;5954;5957;5960:2;5943:3;:20::i;:::-;5931:32;;6086:2;6082:1;:6;6078:54;;;6112:1;6115:5;6104:17;;;;;;;6078:54;6194:7;;;;;6225:8;6194:7;6231:1;6225:5;:8::i;:::-;6221:12;;6355:1;6351;:5;6347:53;;;6380:1;6383:5;6372:17;;;;;;;6347:53;6604:5;;;6634:18;6604:5;6646:2;6650:1;6634:11;:18::i;:::-;6629:23;;193:4:122;6666:2:126;:9;6662:261;;6764:20;6771:12;193:4:122;6781:1:126;6771:9;:12::i;6764:20::-;6759:25;;6662:261;;;6890:22;6897:14;193:4:122;6909:1:126;6897:11;:14::i;6890:22::-;6885:27;;6662:261;7005:12;:2;7014;7005:8;:12::i;:::-;7000:17;;7142:2;7137;:7;7133:55;;;7168:1;7171:5;7160:17;;;;;;;;7133:55;7310:7;;;;;7319:4;;-1:-1:-1;5576:1765:126;-1:-1:-1;;;;;;;5576:1765:126:o;3462:114:122:-;3522:7;3549:19;3558:1;193:4;3566:1;3549:8;:19::i;1884:164::-;1946:7;1973:21;1984:1;193:4;1992:1;1973:10;:21::i;1610:118::-;1672:7;1699:21;1710:1;1713;193:4;898:556;1014:9;1279:1;-1:-1:-1;;1262:19:122;1259:1;1256:26;1253:1;1249:34;1242:42;1229:11;1225:60;1198:146;;1328:1;1325;1318:12;1198:146;-1:-1:-1;1415:9:122;;1411:27;;898:556::o;6050:574:123:-;6185:30;6227:12;6285:103;6334:14;6362:16;6285:35;:103::i;:::-;6249:139;;-1:-1:-1;6249:139:123;-1:-1:-1;6249:139:123;6398:220;;6426:181;6482:111;6426:38;:181::i;:::-;6217:407;6050:574;;;;:::o;2001:204:125:-;2053:8;-1:-1:-1;;;;;2079:1:125;:30;;2073:103;;2133:32;;-1:-1:-1;;;2133:32:125;;;;;;;;;;;2073:103;-1:-1:-1;2196:1:125;2001:204::o;8508:3846:122:-;8553:8;8606:1;8601;:6;8597:80;;8634:28;;-1:-1:-1;;;8634:28:122;;;;;;;;;;;8597:80;-1:-1:-1;9289:34:122;9286:41;-1:-1:-1;9283:1:122;9279:49;9386:9;;;9366:18;9363:33;9360:1;9356:41;9350:48;9448:9;;;9436:10;9433:25;9430:1;9426:33;9420:40;9506:9;;;9498:6;9495:21;9492:1;9488:29;9482:36;9562:9;;;9556:4;9553:19;9550:1;9546:27;;;9540:34;;;9617:9;;;9612:3;9609:18;9606:1;9602:26;9596:33;9672:9;;;9664:18;;;9661:1;9657:26;;;9651:33;;;9720:9;;;9712:18;;;9706:25;9902:3;:7;;;9872:2;9902:7;9888:22;;;;;-1:-1:-1;;9868:6:122;;;9928:30;;9929:17;;;9928:28;:30::i;:::-;10733:31;10729:35;;10784:5;;10191:2;10783:13;;;10800:32;10782:50;10852:5;;10851:13;;10868:33;10850:51;10921:5;;10920:13;;10937:33;10919:51;10990:5;;10989:13;;11006:33;10988:51;11059:5;;11058:13;;11075:32;11057:50;11127:5;;11126:13;;11143:30;11125:48;10130:31;10126:35;;10181:5;;10180:13;;10197:32;10179:50;10249:5;;10248:13;;10265:32;10247:50;10317:5;;10316:13;;-1:-1:-1;;10315:50:122;10385:5;;10384:13;;-1:-1:-1;;10383:50:122;10453:5;;10452:13;;;-1:-1:-1;;10451:50:122;10519:5;;;-1:-1:-1;;10519:46:122;11514:10;11904:43;11899:48;12027:71;:91;;;;12006:112;12191:72;12186:77;12334:3;12328:9;;;-1:-1:-1;;8508:3846:122:o;4907:3302::-;4953:8;-1:-1:-1;;5130:1:122;:26;5126:40;;-1:-1:-1;5165:1:122;;4907:3302;-1:-1:-1;4907:3302:122:o;5126:40::-;5365:21;5360:1;:26;5356:87;;5411:32;;-1:-1:-1;;;5411:32:122;;;;;;;;;;;5356:87;5716:7;5710:2;5705:7;;;5704:19;;-1:-1:-1;6052:8:122;6136:2;6076:29;6065:7;;;6064:41;-1:-1:-1;;;6064:51:122;6063:75;;6164:29;6160:33;;6156:37;;;;-1:-1:-1;;6835:35:122;;6890:5;;6470:2;6889:13;;;6906:32;6888:50;6958:5;;6957:13;;-1:-1:-1;;6956:51:122;7027:5;;7026:13;;7043:34;7025:52;7097:5;;7096:13;;-1:-1:-1;;7095:53:122;7168:5;;7167:13;;7184:35;7166:53;6476:32;6409:31;6405:35;;6460:5;;6459:13;;6458:50;;;6533:5;;;-1:-1:-1;;6533:40:122;6593:5;;6592:13;;;6609:35;6591:53;6662:5;;-1:-1:-1;;;6662:50:122;7584:10;;;;-1:-1:-1;6063:75:122;;-1:-1:-1;6458:50:122;;6662;8063:129;8094:49;8065:78;;8172:3;:7;;;8064:116;8063:127;:129::i;7273:398:123:-;7412:7;7421:4;7437:29;7509:16;7469:25;:14;:23;:25::i;:::-;:56;;;;:::i;:::-;7437:88;;7564:1;7539:22;:26;7535:74;;;7589:1;7592:5;7581:17;;;;;;;7535:74;7634:22;-1:-1:-1;7659:4:123;;-1:-1:-1;7273:398:123;;;;;;:::o;14:454:234:-;109:6;117;125;133;141;194:3;182:9;173:7;169:23;165:33;162:53;;;211:1;208;201:12;162:53;-1:-1:-1;;234:23:234;;;304:2;289:18;;276:32;;-1:-1:-1;355:2:234;340:18;;327:32;;406:2;391:18;;378:32;;-1:-1:-1;457:3:234;442:19;429:33;;-1:-1:-1;14:454:234;-1:-1:-1;14:454:234:o;655:523::-;759:6;767;775;783;791;799;852:3;840:9;831:7;827:23;823:33;820:53;;;869:1;866;859:12;820:53;-1:-1:-1;;892:23:234;;;962:2;947:18;;934:32;;-1:-1:-1;1013:2:234;998:18;;985:32;;1064:2;1049:18;;1036:32;;-1:-1:-1;1115:3:234;1100:19;;1087:33;;-1:-1:-1;1167:3:234;1152:19;1139:33;;-1:-1:-1;655:523:234;-1:-1:-1;655:523:234:o;1446:591::-;1558:6;1566;1574;1582;1590;1598;1606;1659:3;1647:9;1638:7;1634:23;1630:33;1627:53;;;1676:1;1673;1666:12;1627:53;-1:-1:-1;;1699:23:234;;;1769:2;1754:18;;1741:32;;-1:-1:-1;1820:2:234;1805:18;;1792:32;;1871:2;1856:18;;1843:32;;-1:-1:-1;1922:3:234;1907:19;;1894:33;;-1:-1:-1;1974:3:234;1959:19;;1946:33;;-1:-1:-1;2026:3:234;2011:19;1998:33;;-1:-1:-1;1446:591:234;-1:-1:-1;1446:591:234:o;2042:127::-;2103:10;2098:3;2094:20;2091:1;2084:31;2134:4;2131:1;2124:15;2158:4;2155:1;2148:15;2174:125;2239:9;;;2260:10;;;2257:36;;;2273:18;;:::i;2304:136::-;2339:3;-1:-1:-1;;;2360:22:234;;2357:48;;2385:18;;:::i;:::-;-1:-1:-1;2425:1:234;2421:13;;2304:136::o;2577:290::-;2616:1;2642;2632:132;;2686:10;2681:3;2677:20;2674:1;2667:31;2721:4;2718:1;2711:15;2749:4;2746:1;2739:15;2632:132;-1:-1:-1;;;2780:18:234;;-1:-1:-1;;2800:13:234;;2776:38;2773:64;;;2817:18;;:::i;:::-;-1:-1:-1;2851:10:234;;2577:290::o;2872:361::-;3037:2;3022:18;;3070:1;3059:13;;3049:144;;3115:10;3110:3;3106:20;3103:1;3096:31;3150:4;3147:1;3140:15;3178:4;3175:1;3168:15;3049:144;3202:25;;;2872:361;:::o;3238:200::-;3304:9;;;3277:4;3332:9;;3360:10;;3372:12;;;3356:29;3395:12;;;3387:21;;3353:56;3350:82;;;3412:18;;:::i";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {
@@ -386,7 +386,7 @@ export declare const MockYieldSpaceMath: {
         readonly "kDown(uint256,uint256,uint256,uint256,uint256)": "d79d0835";
         readonly "kUp(uint256,uint256,uint256,uint256,uint256)": "0aea7563";
     };
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ExpInvalidExponent\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"enum IHyperdrive.InsufficientLiquidityReason\",\"name\":\"reason\",\"type\":\"uint8\"}],\"name\":\"InsufficientLiquidity\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LnInvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToInt256\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dz\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateBondsOutGivenSharesInDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxBuyBondsOutSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxBuySharesInSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"zeta\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"zMin\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxSellBondsInSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesInGivenBondsOutDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesInGivenBondsOutUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesOutGivenBondsInDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesOutGivenBondsInDownSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"kDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"kUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"ExpInvalidExponent()\":[{\"notice\":\"Thrown when the exponent to `FixedPointMath.exp` would cause the         the result to be larger than the representable scale.\"}],\"InsufficientLiquidity(uint8)\":[{\"notice\":\"Thrown when the pool doesn't have sufficient liquidity to         complete the trade.\"}],\"LnInvalidInput()\":[{\"notice\":\"Thrown when the input to `FixedPointMath.ln` is less than or         equal to zero.\"}],\"UnsafeCastToInt256()\":[{\"notice\":\"Thrown when casting a value to a int256 that is outside of the         int256 scale.\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockYieldSpaceMath.sol\":\"MockYieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf\",\"dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"contracts/test/MockYieldSpaceMath.sol\":{\"keccak256\":\"0xe1435ba832b094e3d43f5fe5eb4d32d07ba9e57f9871b02867dc043822dcca0a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://33511b8c584bb13af966d5a0ee2c3a33eb2901ddb1696f872a27a8e571ab8a0c\",\"dweb:/ipfs/QmR8dsZQ47SnTMLmYcPSuU1cnqXDSmbKApp1xYJtLy2aDk\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ExpInvalidExponent\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"enum IHyperdrive.InsufficientLiquidityReason\",\"name\":\"reason\",\"type\":\"uint8\"}],\"name\":\"InsufficientLiquidity\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LnInvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToInt256\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dz\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateBondsOutGivenSharesInDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxBuyBondsOutSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxBuySharesInSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"zeta\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"zMin\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateMaxSellBondsInSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesInGivenBondsOutDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesInGivenBondsOutUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesOutGivenBondsInDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dy\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"calculateSharesOutGivenBondsInDownSafe\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"kDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ze\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"t\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"c\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"mu\",\"type\":\"uint256\"}],\"name\":\"kUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"ExpInvalidExponent()\":[{\"notice\":\"Thrown when the exponent to `FixedPointMath.exp` would cause the         the result to be larger than the representable scale.\"}],\"InsufficientLiquidity(uint8)\":[{\"notice\":\"Thrown when the pool doesn't have sufficient liquidity to         complete the trade.\"}],\"LnInvalidInput()\":[{\"notice\":\"Thrown when the input to `FixedPointMath.ln` is less than or         equal to zero.\"}],\"UnsafeCastToInt256()\":[{\"notice\":\"Thrown when casting a value to a int256 that is outside of the         int256 scale.\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockYieldSpaceMath.sol\":\"MockYieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"contracts/test/MockYieldSpaceMath.sol\":{\"keccak256\":\"0xe1435ba832b094e3d43f5fe5eb4d32d07ba9e57f9871b02867dc043822dcca0a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://33511b8c584bb13af966d5a0ee2c3a33eb2901ddb1696f872a27a8e571ab8a0c\",\"dweb:/ipfs/QmR8dsZQ47SnTMLmYcPSuU1cnqXDSmbKApp1xYJtLy2aDk\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -770,7 +770,7 @@ export declare const MockYieldSpaceMath: {
             };
         };
         readonly settings: {
-            readonly remappings: readonly ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "aave-v3-core/=lib/aave-v3-core/", "ds-test/=lib/forge-std/lib/ds-test/src/", "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/", "openzeppelin/=lib/openzeppelin-contracts/contracts/", "solmate/=lib/solmate/src/"];
+            readonly remappings: readonly ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "ds-test/=lib/forge-std/lib/ds-test/src/", "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/", "openzeppelin/=lib/openzeppelin-contracts/contracts/", "solmate/=lib/solmate/src/"];
             readonly optimizer: {
                 readonly enabled: true;
                 readonly runs: 200;
@@ -790,8 +790,8 @@ export declare const MockYieldSpaceMath: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdrive.sol": {
-                readonly keccak256: "0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952";
-                readonly urls: readonly ["bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf", "dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK"];
+                readonly keccak256: "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71";
+                readonly urls: readonly ["bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf", "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveCore.sol": {
@@ -805,8 +805,8 @@ export declare const MockYieldSpaceMath: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveRead.sol": {
-                readonly keccak256: "0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55";
-                readonly urls: readonly ["bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf", "dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6"];
+                readonly keccak256: "0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045";
+                readonly urls: readonly ["bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86", "dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IMultiToken.sol": {
@@ -869,67 +869,67 @@ export declare const MockYieldSpaceMath: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockYieldSpaceMath.sol";
-        readonly id: 27850;
+        readonly id: 27351;
         readonly exportedSymbols: {
-            readonly MockYieldSpaceMath: readonly [27849];
-            readonly YieldSpaceMath: readonly [23422];
+            readonly MockYieldSpaceMath: readonly [27350];
+            readonly YieldSpaceMath: readonly [22915];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:3742:148";
+        readonly src: "39:3742:142";
         readonly nodes: readonly [{
-            readonly id: 27511;
+            readonly id: 27012;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:148";
+            readonly src: "39:23:142";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 27513;
+            readonly id: 27014;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:69:148";
+            readonly src: "64:69:142";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/YieldSpaceMath.sol";
             readonly file: "../src/libraries/YieldSpaceMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 27850;
-            readonly sourceUnit: 23423;
+            readonly scope: 27351;
+            readonly sourceUnit: 22916;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 27512;
+                    readonly id: 27013;
                     readonly name: "YieldSpaceMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 23422;
-                    readonly src: "73:14:148";
+                    readonly referencedDeclaration: 22915;
+                    readonly src: "73:14:142";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 27849;
+            readonly id: 27350;
             readonly nodeType: "ContractDefinition";
-            readonly src: "135:3645:148";
+            readonly src: "135:3645:142";
             readonly nodes: readonly [{
-                readonly id: 27545;
+                readonly id: 27046;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "169:408:148";
+                readonly src: "169:408:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27544;
+                    readonly id: 27045;
                     readonly nodeType: "Block";
-                    readonly src: "368:209:148";
+                    readonly src: "368:209:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27531];
+                        readonly assignments: readonly [27032];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27531;
+                            readonly id: 27032;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "386:6:148";
+                            readonly nameLocation: "386:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27544;
-                            readonly src: "378:14:148";
+                            readonly scope: 27045;
+                            readonly src: "378:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -937,10 +937,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27530;
+                                readonly id: 27031;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "378:7:148";
+                                readonly src: "378:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -948,70 +948,70 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27541;
+                        readonly id: 27042;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27534;
+                                readonly id: 27035;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27515;
-                                readonly src: "458:2:148";
+                                readonly referencedDeclaration: 27016;
+                                readonly src: "458:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27535;
+                                readonly id: 27036;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27517;
-                                readonly src: "474:1:148";
+                                readonly referencedDeclaration: 27018;
+                                readonly src: "474:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27536;
+                                readonly id: 27037;
                                 readonly name: "dz";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27519;
-                                readonly src: "489:2:148";
+                                readonly referencedDeclaration: 27020;
+                                readonly src: "489:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27537;
+                                readonly id: 27038;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27521;
-                                readonly src: "505:1:148";
+                                readonly referencedDeclaration: 27022;
+                                readonly src: "505:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27538;
+                                readonly id: 27039;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27523;
-                                readonly src: "520:1:148";
+                                readonly referencedDeclaration: 27024;
+                                readonly src: "520:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27539;
+                                readonly id: 27040;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27525;
-                                readonly src: "535:2:148";
+                                readonly referencedDeclaration: 27026;
+                                readonly src: "535:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1038,33 +1038,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27532;
+                                    readonly id: 27033;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "395:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "395:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27533;
+                                readonly id: 27034;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "410:34:148";
+                                readonly memberLocation: "410:34:142";
                                 readonly memberName: "calculateBondsOutGivenSharesInDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 22574;
-                                readonly src: "395:49:148";
+                                readonly referencedDeclaration: 22067;
+                                readonly src: "395:49:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27540;
+                            readonly id: 27041;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1073,7 +1073,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "395:152:148";
+                            readonly src: "395:152:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -1081,24 +1081,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "378:169:148";
+                        readonly src: "378:169:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27542;
+                            readonly id: 27043;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27531;
-                            readonly src: "564:6:148";
+                            readonly referencedDeclaration: 27032;
+                            readonly src: "564:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27529;
-                        readonly id: 27543;
+                        readonly functionReturnParameters: 27030;
+                        readonly id: 27044;
                         readonly nodeType: "Return";
-                        readonly src: "557:13:148";
+                        readonly src: "557:13:142";
                     }];
                 };
                 readonly functionSelector: "86c85e10";
@@ -1106,19 +1106,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateBondsOutGivenSharesInDown";
-                readonly nameLocation: "178:34:148";
+                readonly nameLocation: "178:34:142";
                 readonly parameters: {
-                    readonly id: 27526;
+                    readonly id: 27027;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27515;
+                        readonly id: 27016;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "230:2:148";
+                        readonly nameLocation: "230:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "222:10:148";
+                        readonly scope: 27046;
+                        readonly src: "222:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1126,10 +1126,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27514;
+                            readonly id: 27015;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "222:7:148";
+                            readonly src: "222:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1138,13 +1138,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27517;
+                        readonly id: 27018;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "250:1:148";
+                        readonly nameLocation: "250:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "242:9:148";
+                        readonly scope: 27046;
+                        readonly src: "242:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1152,10 +1152,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27516;
+                            readonly id: 27017;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "242:7:148";
+                            readonly src: "242:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1164,13 +1164,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27519;
+                        readonly id: 27020;
                         readonly mutability: "mutable";
                         readonly name: "dz";
-                        readonly nameLocation: "269:2:148";
+                        readonly nameLocation: "269:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "261:10:148";
+                        readonly scope: 27046;
+                        readonly src: "261:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1178,10 +1178,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27518;
+                            readonly id: 27019;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "261:7:148";
+                            readonly src: "261:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1190,13 +1190,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27521;
+                        readonly id: 27022;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "289:1:148";
+                        readonly nameLocation: "289:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "281:9:148";
+                        readonly scope: 27046;
+                        readonly src: "281:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1204,10 +1204,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27520;
+                            readonly id: 27021;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "281:7:148";
+                            readonly src: "281:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1216,13 +1216,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27523;
+                        readonly id: 27024;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "308:1:148";
+                        readonly nameLocation: "308:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "300:9:148";
+                        readonly scope: 27046;
+                        readonly src: "300:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1230,10 +1230,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27522;
+                            readonly id: 27023;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "300:7:148";
+                            readonly src: "300:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1242,13 +1242,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27525;
+                        readonly id: 27026;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "327:2:148";
+                        readonly nameLocation: "327:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "319:10:148";
+                        readonly scope: 27046;
+                        readonly src: "319:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1256,10 +1256,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27524;
+                            readonly id: 27025;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "319:7:148";
+                            readonly src: "319:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1267,20 +1267,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "212:123:148";
+                    readonly src: "212:123:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27529;
+                    readonly id: 27030;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27528;
+                        readonly id: 27029;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27545;
-                        readonly src: "359:7:148";
+                        readonly scope: 27046;
+                        readonly src: "359:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1288,10 +1288,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27527;
+                            readonly id: 27028;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "359:7:148";
+                            readonly src: "359:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1299,33 +1299,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "358:9:148";
+                    readonly src: "358:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27577;
+                readonly id: 27078;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "583:404:148";
+                readonly src: "583:404:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27576;
+                    readonly id: 27077;
                     readonly nodeType: "Block";
-                    readonly src: "780:207:148";
+                    readonly src: "780:207:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27563];
+                        readonly assignments: readonly [27064];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27563;
+                            readonly id: 27064;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "798:6:148";
+                            readonly nameLocation: "798:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27576;
-                            readonly src: "790:14:148";
+                            readonly scope: 27077;
+                            readonly src: "790:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -1333,10 +1333,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27562;
+                                readonly id: 27063;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "790:7:148";
+                                readonly src: "790:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1344,70 +1344,70 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27573;
+                        readonly id: 27074;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27566;
+                                readonly id: 27067;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27547;
-                                readonly src: "868:2:148";
+                                readonly referencedDeclaration: 27048;
+                                readonly src: "868:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27567;
+                                readonly id: 27068;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27549;
-                                readonly src: "884:1:148";
+                                readonly referencedDeclaration: 27050;
+                                readonly src: "884:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27568;
+                                readonly id: 27069;
                                 readonly name: "dy";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27551;
-                                readonly src: "899:2:148";
+                                readonly referencedDeclaration: 27052;
+                                readonly src: "899:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27569;
+                                readonly id: 27070;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27553;
-                                readonly src: "915:1:148";
+                                readonly referencedDeclaration: 27054;
+                                readonly src: "915:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27570;
+                                readonly id: 27071;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27555;
-                                readonly src: "930:1:148";
+                                readonly referencedDeclaration: 27056;
+                                readonly src: "930:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27571;
+                                readonly id: 27072;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27557;
-                                readonly src: "945:2:148";
+                                readonly referencedDeclaration: 27058;
+                                readonly src: "945:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1434,33 +1434,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27564;
+                                    readonly id: 27065;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "807:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "807:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27565;
+                                readonly id: 27066;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "822:32:148";
+                                readonly memberLocation: "822:32:142";
                                 readonly memberName: "calculateSharesInGivenBondsOutUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 22621;
-                                readonly src: "807:47:148";
+                                readonly referencedDeclaration: 22114;
+                                readonly src: "807:47:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27572;
+                            readonly id: 27073;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1469,7 +1469,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "807:150:148";
+                            readonly src: "807:150:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -1477,24 +1477,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "790:167:148";
+                        readonly src: "790:167:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27574;
+                            readonly id: 27075;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27563;
-                            readonly src: "974:6:148";
+                            readonly referencedDeclaration: 27064;
+                            readonly src: "974:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27561;
-                        readonly id: 27575;
+                        readonly functionReturnParameters: 27062;
+                        readonly id: 27076;
                         readonly nodeType: "Return";
-                        readonly src: "967:13:148";
+                        readonly src: "967:13:142";
                     }];
                 };
                 readonly functionSelector: "2e74108c";
@@ -1502,19 +1502,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateSharesInGivenBondsOutUp";
-                readonly nameLocation: "592:32:148";
+                readonly nameLocation: "592:32:142";
                 readonly parameters: {
-                    readonly id: 27558;
+                    readonly id: 27059;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27547;
+                        readonly id: 27048;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "642:2:148";
+                        readonly nameLocation: "642:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "634:10:148";
+                        readonly scope: 27078;
+                        readonly src: "634:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1522,10 +1522,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27546;
+                            readonly id: 27047;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "634:7:148";
+                            readonly src: "634:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1534,13 +1534,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27549;
+                        readonly id: 27050;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "662:1:148";
+                        readonly nameLocation: "662:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "654:9:148";
+                        readonly scope: 27078;
+                        readonly src: "654:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1548,10 +1548,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27548;
+                            readonly id: 27049;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "654:7:148";
+                            readonly src: "654:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1560,13 +1560,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27551;
+                        readonly id: 27052;
                         readonly mutability: "mutable";
                         readonly name: "dy";
-                        readonly nameLocation: "681:2:148";
+                        readonly nameLocation: "681:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "673:10:148";
+                        readonly scope: 27078;
+                        readonly src: "673:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1574,10 +1574,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27550;
+                            readonly id: 27051;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "673:7:148";
+                            readonly src: "673:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1586,13 +1586,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27553;
+                        readonly id: 27054;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "701:1:148";
+                        readonly nameLocation: "701:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "693:9:148";
+                        readonly scope: 27078;
+                        readonly src: "693:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1600,10 +1600,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27552;
+                            readonly id: 27053;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "693:7:148";
+                            readonly src: "693:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1612,13 +1612,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27555;
+                        readonly id: 27056;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "720:1:148";
+                        readonly nameLocation: "720:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "712:9:148";
+                        readonly scope: 27078;
+                        readonly src: "712:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1626,10 +1626,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27554;
+                            readonly id: 27055;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "712:7:148";
+                            readonly src: "712:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1638,13 +1638,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27557;
+                        readonly id: 27058;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "739:2:148";
+                        readonly nameLocation: "739:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "731:10:148";
+                        readonly scope: 27078;
+                        readonly src: "731:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1652,10 +1652,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27556;
+                            readonly id: 27057;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "731:7:148";
+                            readonly src: "731:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1663,20 +1663,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "624:123:148";
+                    readonly src: "624:123:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27561;
+                    readonly id: 27062;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27560;
+                        readonly id: 27061;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27577;
-                        readonly src: "771:7:148";
+                        readonly scope: 27078;
+                        readonly src: "771:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1684,10 +1684,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27559;
+                            readonly id: 27060;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "771:7:148";
+                            readonly src: "771:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1695,33 +1695,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "770:9:148";
+                    readonly src: "770:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27609;
+                readonly id: 27110;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "993:408:148";
+                readonly src: "993:408:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27608;
+                    readonly id: 27109;
                     readonly nodeType: "Block";
-                    readonly src: "1192:209:148";
+                    readonly src: "1192:209:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27595];
+                        readonly assignments: readonly [27096];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27595;
+                            readonly id: 27096;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "1210:6:148";
+                            readonly nameLocation: "1210:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27608;
-                            readonly src: "1202:14:148";
+                            readonly scope: 27109;
+                            readonly src: "1202:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -1729,10 +1729,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27594;
+                                readonly id: 27095;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "1202:7:148";
+                                readonly src: "1202:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1740,70 +1740,70 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27605;
+                        readonly id: 27106;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27598;
+                                readonly id: 27099;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27579;
-                                readonly src: "1282:2:148";
+                                readonly referencedDeclaration: 27080;
+                                readonly src: "1282:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27599;
+                                readonly id: 27100;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27581;
-                                readonly src: "1298:1:148";
+                                readonly referencedDeclaration: 27082;
+                                readonly src: "1298:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27600;
+                                readonly id: 27101;
                                 readonly name: "dy";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27583;
-                                readonly src: "1313:2:148";
+                                readonly referencedDeclaration: 27084;
+                                readonly src: "1313:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27601;
+                                readonly id: 27102;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27585;
-                                readonly src: "1329:1:148";
+                                readonly referencedDeclaration: 27086;
+                                readonly src: "1329:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27602;
+                                readonly id: 27103;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27587;
-                                readonly src: "1344:1:148";
+                                readonly referencedDeclaration: 27088;
+                                readonly src: "1344:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27603;
+                                readonly id: 27104;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27589;
-                                readonly src: "1359:2:148";
+                                readonly referencedDeclaration: 27090;
+                                readonly src: "1359:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1830,33 +1830,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27596;
+                                    readonly id: 27097;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "1219:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "1219:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27597;
+                                readonly id: 27098;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1234:34:148";
+                                readonly memberLocation: "1234:34:142";
                                 readonly memberName: "calculateSharesInGivenBondsOutDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 22885;
-                                readonly src: "1219:49:148";
+                                readonly referencedDeclaration: 22378;
+                                readonly src: "1219:49:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27604;
+                            readonly id: 27105;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1865,7 +1865,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1219:152:148";
+                            readonly src: "1219:152:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -1873,24 +1873,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "1202:169:148";
+                        readonly src: "1202:169:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27606;
+                            readonly id: 27107;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27595;
-                            readonly src: "1388:6:148";
+                            readonly referencedDeclaration: 27096;
+                            readonly src: "1388:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27593;
-                        readonly id: 27607;
+                        readonly functionReturnParameters: 27094;
+                        readonly id: 27108;
                         readonly nodeType: "Return";
-                        readonly src: "1381:13:148";
+                        readonly src: "1381:13:142";
                     }];
                 };
                 readonly functionSelector: "a4a6f9d9";
@@ -1898,19 +1898,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateSharesInGivenBondsOutDown";
-                readonly nameLocation: "1002:34:148";
+                readonly nameLocation: "1002:34:142";
                 readonly parameters: {
-                    readonly id: 27590;
+                    readonly id: 27091;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27579;
+                        readonly id: 27080;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "1054:2:148";
+                        readonly nameLocation: "1054:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1046:10:148";
+                        readonly scope: 27110;
+                        readonly src: "1046:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1918,10 +1918,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27578;
+                            readonly id: 27079;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1046:7:148";
+                            readonly src: "1046:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1930,13 +1930,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27581;
+                        readonly id: 27082;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "1074:1:148";
+                        readonly nameLocation: "1074:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1066:9:148";
+                        readonly scope: 27110;
+                        readonly src: "1066:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1944,10 +1944,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27580;
+                            readonly id: 27081;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1066:7:148";
+                            readonly src: "1066:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1956,13 +1956,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27583;
+                        readonly id: 27084;
                         readonly mutability: "mutable";
                         readonly name: "dy";
-                        readonly nameLocation: "1093:2:148";
+                        readonly nameLocation: "1093:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1085:10:148";
+                        readonly scope: 27110;
+                        readonly src: "1085:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1970,10 +1970,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27582;
+                            readonly id: 27083;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1085:7:148";
+                            readonly src: "1085:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1982,13 +1982,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27585;
+                        readonly id: 27086;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "1113:1:148";
+                        readonly nameLocation: "1113:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1105:9:148";
+                        readonly scope: 27110;
+                        readonly src: "1105:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1996,10 +1996,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27584;
+                            readonly id: 27085;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1105:7:148";
+                            readonly src: "1105:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2008,13 +2008,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27587;
+                        readonly id: 27088;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "1132:1:148";
+                        readonly nameLocation: "1132:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1124:9:148";
+                        readonly scope: 27110;
+                        readonly src: "1124:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2022,10 +2022,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27586;
+                            readonly id: 27087;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1124:7:148";
+                            readonly src: "1124:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2034,13 +2034,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27589;
+                        readonly id: 27090;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "1151:2:148";
+                        readonly nameLocation: "1151:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1143:10:148";
+                        readonly scope: 27110;
+                        readonly src: "1143:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2048,10 +2048,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27588;
+                            readonly id: 27089;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1143:7:148";
+                            readonly src: "1143:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2059,20 +2059,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1036:123:148";
+                    readonly src: "1036:123:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27593;
+                    readonly id: 27094;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27592;
+                        readonly id: 27093;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27609;
-                        readonly src: "1183:7:148";
+                        readonly scope: 27110;
+                        readonly src: "1183:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2080,10 +2080,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27591;
+                            readonly id: 27092;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1183:7:148";
+                            readonly src: "1183:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2091,33 +2091,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1182:9:148";
+                    readonly src: "1182:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27641;
+                readonly id: 27142;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1407:408:148";
+                readonly src: "1407:408:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27640;
+                    readonly id: 27141;
                     readonly nodeType: "Block";
-                    readonly src: "1606:209:148";
+                    readonly src: "1606:209:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27627];
+                        readonly assignments: readonly [27128];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27627;
+                            readonly id: 27128;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "1624:6:148";
+                            readonly nameLocation: "1624:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27640;
-                            readonly src: "1616:14:148";
+                            readonly scope: 27141;
+                            readonly src: "1616:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -2125,10 +2125,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27626;
+                                readonly id: 27127;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "1616:7:148";
+                                readonly src: "1616:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2136,70 +2136,70 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27637;
+                        readonly id: 27138;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27630;
+                                readonly id: 27131;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27611;
-                                readonly src: "1696:2:148";
+                                readonly referencedDeclaration: 27112;
+                                readonly src: "1696:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27631;
+                                readonly id: 27132;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27613;
-                                readonly src: "1712:1:148";
+                                readonly referencedDeclaration: 27114;
+                                readonly src: "1712:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27632;
+                                readonly id: 27133;
                                 readonly name: "dy";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27615;
-                                readonly src: "1727:2:148";
+                                readonly referencedDeclaration: 27116;
+                                readonly src: "1727:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27633;
+                                readonly id: 27134;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27617;
-                                readonly src: "1743:1:148";
+                                readonly referencedDeclaration: 27118;
+                                readonly src: "1743:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27634;
+                                readonly id: 27135;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27619;
-                                readonly src: "1758:1:148";
+                                readonly referencedDeclaration: 27120;
+                                readonly src: "1758:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27635;
+                                readonly id: 27136;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27621;
-                                readonly src: "1773:2:148";
+                                readonly referencedDeclaration: 27122;
+                                readonly src: "1773:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2226,33 +2226,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27628;
+                                    readonly id: 27129;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "1633:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "1633:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27629;
+                                readonly id: 27130;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1648:34:148";
+                                readonly memberLocation: "1648:34:142";
                                 readonly memberName: "calculateSharesOutGivenBondsInDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 22932;
-                                readonly src: "1633:49:148";
+                                readonly referencedDeclaration: 22425;
+                                readonly src: "1633:49:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27636;
+                            readonly id: 27137;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2261,7 +2261,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1633:152:148";
+                            readonly src: "1633:152:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -2269,24 +2269,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "1616:169:148";
+                        readonly src: "1616:169:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27638;
+                            readonly id: 27139;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27627;
-                            readonly src: "1802:6:148";
+                            readonly referencedDeclaration: 27128;
+                            readonly src: "1802:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27625;
-                        readonly id: 27639;
+                        readonly functionReturnParameters: 27126;
+                        readonly id: 27140;
                         readonly nodeType: "Return";
-                        readonly src: "1795:13:148";
+                        readonly src: "1795:13:142";
                     }];
                 };
                 readonly functionSelector: "27d0e265";
@@ -2294,19 +2294,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateSharesOutGivenBondsInDown";
-                readonly nameLocation: "1416:34:148";
+                readonly nameLocation: "1416:34:142";
                 readonly parameters: {
-                    readonly id: 27622;
+                    readonly id: 27123;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27611;
+                        readonly id: 27112;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "1468:2:148";
+                        readonly nameLocation: "1468:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1460:10:148";
+                        readonly scope: 27142;
+                        readonly src: "1460:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2314,10 +2314,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27610;
+                            readonly id: 27111;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1460:7:148";
+                            readonly src: "1460:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2326,13 +2326,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27613;
+                        readonly id: 27114;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "1488:1:148";
+                        readonly nameLocation: "1488:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1480:9:148";
+                        readonly scope: 27142;
+                        readonly src: "1480:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2340,10 +2340,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27612;
+                            readonly id: 27113;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1480:7:148";
+                            readonly src: "1480:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2352,13 +2352,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27615;
+                        readonly id: 27116;
                         readonly mutability: "mutable";
                         readonly name: "dy";
-                        readonly nameLocation: "1507:2:148";
+                        readonly nameLocation: "1507:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1499:10:148";
+                        readonly scope: 27142;
+                        readonly src: "1499:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2366,10 +2366,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27614;
+                            readonly id: 27115;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1499:7:148";
+                            readonly src: "1499:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2378,13 +2378,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27617;
+                        readonly id: 27118;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "1527:1:148";
+                        readonly nameLocation: "1527:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1519:9:148";
+                        readonly scope: 27142;
+                        readonly src: "1519:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2392,10 +2392,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27616;
+                            readonly id: 27117;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1519:7:148";
+                            readonly src: "1519:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2404,13 +2404,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27619;
+                        readonly id: 27120;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "1546:1:148";
+                        readonly nameLocation: "1546:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1538:9:148";
+                        readonly scope: 27142;
+                        readonly src: "1538:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2418,10 +2418,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27618;
+                            readonly id: 27119;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1538:7:148";
+                            readonly src: "1538:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2430,13 +2430,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27621;
+                        readonly id: 27122;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "1565:2:148";
+                        readonly nameLocation: "1565:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1557:10:148";
+                        readonly scope: 27142;
+                        readonly src: "1557:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2444,10 +2444,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27620;
+                            readonly id: 27121;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1557:7:148";
+                            readonly src: "1557:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2455,20 +2455,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1450:123:148";
+                    readonly src: "1450:123:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27625;
+                    readonly id: 27126;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27624;
+                        readonly id: 27125;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27641;
-                        readonly src: "1597:7:148";
+                        readonly scope: 27142;
+                        readonly src: "1597:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2476,10 +2476,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27623;
+                            readonly id: 27124;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1597:7:148";
+                            readonly src: "1597:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2487,33 +2487,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1596:9:148";
+                    readonly src: "1596:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27679;
+                readonly id: 27180;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1821:382:148";
+                readonly src: "1821:382:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27678;
+                    readonly id: 27179;
                     readonly nodeType: "Block";
-                    readonly src: "2030:173:148";
+                    readonly src: "2030:173:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27661, 27663];
+                        readonly assignments: readonly [27162, 27164];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27661;
+                            readonly id: 27162;
                             readonly mutability: "mutable";
                             readonly name: "result1";
-                            readonly nameLocation: "2049:7:148";
+                            readonly nameLocation: "2049:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27678;
-                            readonly src: "2041:15:148";
+                            readonly scope: 27179;
+                            readonly src: "2041:15:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -2521,10 +2521,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27660;
+                                readonly id: 27161;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2041:7:148";
+                                readonly src: "2041:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2533,13 +2533,13 @@ export declare const MockYieldSpaceMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 27663;
+                            readonly id: 27164;
                             readonly mutability: "mutable";
                             readonly name: "result2";
-                            readonly nameLocation: "2063:7:148";
+                            readonly nameLocation: "2063:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27678;
-                            readonly src: "2058:12:148";
+                            readonly scope: 27179;
+                            readonly src: "2058:12:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -2547,10 +2547,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 27662;
+                                readonly id: 27163;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2058:4:148";
+                                readonly src: "2058:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2558,70 +2558,70 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27673;
+                        readonly id: 27174;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27666;
+                                readonly id: 27167;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27643;
-                                readonly src: "2141:2:148";
+                                readonly referencedDeclaration: 27144;
+                                readonly src: "2141:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27667;
+                                readonly id: 27168;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27645;
-                                readonly src: "2145:1:148";
+                                readonly referencedDeclaration: 27146;
+                                readonly src: "2145:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27668;
+                                readonly id: 27169;
                                 readonly name: "dy";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27647;
-                                readonly src: "2148:2:148";
+                                readonly referencedDeclaration: 27148;
+                                readonly src: "2148:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27669;
+                                readonly id: 27170;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27649;
-                                readonly src: "2152:1:148";
+                                readonly referencedDeclaration: 27150;
+                                readonly src: "2152:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27670;
+                                readonly id: 27171;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27651;
-                                readonly src: "2155:1:148";
+                                readonly referencedDeclaration: 27152;
+                                readonly src: "2155:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27671;
+                                readonly id: 27172;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27653;
-                                readonly src: "2158:2:148";
+                                readonly referencedDeclaration: 27154;
+                                readonly src: "2158:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2648,33 +2648,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27664;
+                                    readonly id: 27165;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "2074:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "2074:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27665;
+                                readonly id: 27166;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2102:38:148";
+                                readonly memberLocation: "2102:38:142";
                                 readonly memberName: "calculateSharesOutGivenBondsInDownSafe";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23049;
-                                readonly src: "2074:66:148";
+                                readonly referencedDeclaration: 22542;
+                                readonly src: "2074:66:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 27672;
+                            readonly id: 27173;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2683,7 +2683,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2074:87:148";
+                            readonly src: "2074:87:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
@@ -2691,49 +2691,49 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2040:121:148";
+                        readonly src: "2040:121:142";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 27674;
+                                readonly id: 27175;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27661;
-                                readonly src: "2179:7:148";
+                                readonly referencedDeclaration: 27162;
+                                readonly src: "2179:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27675;
+                                readonly id: 27176;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27663;
-                                readonly src: "2188:7:148";
+                                readonly referencedDeclaration: 27164;
+                                readonly src: "2188:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }];
-                            readonly id: 27676;
+                            readonly id: 27177;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly nodeType: "TupleExpression";
-                            readonly src: "2178:18:148";
+                            readonly src: "2178:18:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 27659;
-                        readonly id: 27677;
+                        readonly functionReturnParameters: 27160;
+                        readonly id: 27178;
                         readonly nodeType: "Return";
-                        readonly src: "2171:25:148";
+                        readonly src: "2171:25:142";
                     }];
                 };
                 readonly functionSelector: "3ee4114a";
@@ -2741,19 +2741,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateSharesOutGivenBondsInDownSafe";
-                readonly nameLocation: "1830:38:148";
+                readonly nameLocation: "1830:38:142";
                 readonly parameters: {
-                    readonly id: 27654;
+                    readonly id: 27155;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27643;
+                        readonly id: 27144;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "1886:2:148";
+                        readonly nameLocation: "1886:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1878:10:148";
+                        readonly scope: 27180;
+                        readonly src: "1878:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2761,10 +2761,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27642;
+                            readonly id: 27143;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1878:7:148";
+                            readonly src: "1878:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2773,13 +2773,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27645;
+                        readonly id: 27146;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "1906:1:148";
+                        readonly nameLocation: "1906:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1898:9:148";
+                        readonly scope: 27180;
+                        readonly src: "1898:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2787,10 +2787,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27644;
+                            readonly id: 27145;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1898:7:148";
+                            readonly src: "1898:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2799,13 +2799,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27647;
+                        readonly id: 27148;
                         readonly mutability: "mutable";
                         readonly name: "dy";
-                        readonly nameLocation: "1925:2:148";
+                        readonly nameLocation: "1925:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1917:10:148";
+                        readonly scope: 27180;
+                        readonly src: "1917:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2813,10 +2813,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27646;
+                            readonly id: 27147;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1917:7:148";
+                            readonly src: "1917:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2825,13 +2825,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27649;
+                        readonly id: 27150;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "1945:1:148";
+                        readonly nameLocation: "1945:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1937:9:148";
+                        readonly scope: 27180;
+                        readonly src: "1937:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2839,10 +2839,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27648;
+                            readonly id: 27149;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1937:7:148";
+                            readonly src: "1937:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2851,13 +2851,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27651;
+                        readonly id: 27152;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "1964:1:148";
+                        readonly nameLocation: "1964:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1956:9:148";
+                        readonly scope: 27180;
+                        readonly src: "1956:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2865,10 +2865,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27650;
+                            readonly id: 27151;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1956:7:148";
+                            readonly src: "1956:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2877,13 +2877,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27653;
+                        readonly id: 27154;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "1983:2:148";
+                        readonly nameLocation: "1983:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "1975:10:148";
+                        readonly scope: 27180;
+                        readonly src: "1975:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2891,10 +2891,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27652;
+                            readonly id: 27153;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1975:7:148";
+                            readonly src: "1975:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2902,20 +2902,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1868:123:148";
+                    readonly src: "1868:123:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27659;
+                    readonly id: 27160;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27656;
+                        readonly id: 27157;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "2015:7:148";
+                        readonly scope: 27180;
+                        readonly src: "2015:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2923,10 +2923,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27655;
+                            readonly id: 27156;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2015:7:148";
+                            readonly src: "2015:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2935,13 +2935,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27658;
+                        readonly id: 27159;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27679;
-                        readonly src: "2024:4:148";
+                        readonly scope: 27180;
+                        readonly src: "2024:4:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2949,10 +2949,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 27657;
+                            readonly id: 27158;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2024:4:148";
+                            readonly src: "2024:4:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -2960,33 +2960,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2014:15:148";
+                    readonly src: "2014:15:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27714;
+                readonly id: 27215;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2209:336:148";
+                readonly src: "2209:336:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27713;
+                    readonly id: 27214;
                     readonly nodeType: "Block";
-                    readonly src: "2387:158:148";
+                    readonly src: "2387:158:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27697, 27699];
+                        readonly assignments: readonly [27198, 27200];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27697;
+                            readonly id: 27198;
                             readonly mutability: "mutable";
                             readonly name: "result1";
-                            readonly nameLocation: "2406:7:148";
+                            readonly nameLocation: "2406:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27713;
-                            readonly src: "2398:15:148";
+                            readonly scope: 27214;
+                            readonly src: "2398:15:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -2994,10 +2994,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27696;
+                                readonly id: 27197;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2398:7:148";
+                                readonly src: "2398:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3006,13 +3006,13 @@ export declare const MockYieldSpaceMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 27699;
+                            readonly id: 27200;
                             readonly mutability: "mutable";
                             readonly name: "result2";
-                            readonly nameLocation: "2420:7:148";
+                            readonly nameLocation: "2420:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27713;
-                            readonly src: "2415:12:148";
+                            readonly scope: 27214;
+                            readonly src: "2415:12:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -3020,10 +3020,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 27698;
+                                readonly id: 27199;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2415:4:148";
+                                readonly src: "2415:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3031,59 +3031,59 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27708;
+                        readonly id: 27209;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27702;
+                                readonly id: 27203;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27681;
-                                readonly src: "2487:2:148";
+                                readonly referencedDeclaration: 27182;
+                                readonly src: "2487:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27703;
+                                readonly id: 27204;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27683;
-                                readonly src: "2491:1:148";
+                                readonly referencedDeclaration: 27184;
+                                readonly src: "2491:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27704;
+                                readonly id: 27205;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27685;
-                                readonly src: "2494:1:148";
+                                readonly referencedDeclaration: 27186;
+                                readonly src: "2494:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27705;
+                                readonly id: 27206;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27687;
-                                readonly src: "2497:1:148";
+                                readonly referencedDeclaration: 27188;
+                                readonly src: "2497:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27706;
+                                readonly id: 27207;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27689;
-                                readonly src: "2500:2:148";
+                                readonly referencedDeclaration: 27190;
+                                readonly src: "2500:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3107,33 +3107,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27700;
+                                    readonly id: 27201;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "2431:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "2431:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27701;
+                                readonly id: 27202;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2459:27:148";
+                                readonly memberLocation: "2459:27:142";
                                 readonly memberName: "calculateMaxBuySharesInSafe";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23139;
-                                readonly src: "2431:55:148";
+                                readonly referencedDeclaration: 22632;
+                                readonly src: "2431:55:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 27707;
+                            readonly id: 27208;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3142,7 +3142,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2431:72:148";
+                            readonly src: "2431:72:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
@@ -3150,49 +3150,49 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2397:106:148";
+                        readonly src: "2397:106:142";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 27709;
+                                readonly id: 27210;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27697;
-                                readonly src: "2521:7:148";
+                                readonly referencedDeclaration: 27198;
+                                readonly src: "2521:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27710;
+                                readonly id: 27211;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27699;
-                                readonly src: "2530:7:148";
+                                readonly referencedDeclaration: 27200;
+                                readonly src: "2530:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }];
-                            readonly id: 27711;
+                            readonly id: 27212;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly nodeType: "TupleExpression";
-                            readonly src: "2520:18:148";
+                            readonly src: "2520:18:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 27695;
-                        readonly id: 27712;
+                        readonly functionReturnParameters: 27196;
+                        readonly id: 27213;
                         readonly nodeType: "Return";
-                        readonly src: "2513:25:148";
+                        readonly src: "2513:25:142";
                     }];
                 };
                 readonly functionSelector: "5880b9fd";
@@ -3200,19 +3200,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateMaxBuySharesInSafe";
-                readonly nameLocation: "2218:27:148";
+                readonly nameLocation: "2218:27:142";
                 readonly parameters: {
-                    readonly id: 27690;
+                    readonly id: 27191;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27681;
+                        readonly id: 27182;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "2263:2:148";
+                        readonly nameLocation: "2263:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2255:10:148";
+                        readonly scope: 27215;
+                        readonly src: "2255:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3220,10 +3220,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27680;
+                            readonly id: 27181;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2255:7:148";
+                            readonly src: "2255:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3232,13 +3232,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27683;
+                        readonly id: 27184;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "2283:1:148";
+                        readonly nameLocation: "2283:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2275:9:148";
+                        readonly scope: 27215;
+                        readonly src: "2275:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3246,10 +3246,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27682;
+                            readonly id: 27183;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2275:7:148";
+                            readonly src: "2275:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3258,13 +3258,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27685;
+                        readonly id: 27186;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "2302:1:148";
+                        readonly nameLocation: "2302:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2294:9:148";
+                        readonly scope: 27215;
+                        readonly src: "2294:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3272,10 +3272,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27684;
+                            readonly id: 27185;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2294:7:148";
+                            readonly src: "2294:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3284,13 +3284,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27687;
+                        readonly id: 27188;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "2321:1:148";
+                        readonly nameLocation: "2321:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2313:9:148";
+                        readonly scope: 27215;
+                        readonly src: "2313:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3298,10 +3298,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27686;
+                            readonly id: 27187;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2313:7:148";
+                            readonly src: "2313:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3310,13 +3310,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27689;
+                        readonly id: 27190;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "2340:2:148";
+                        readonly nameLocation: "2340:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2332:10:148";
+                        readonly scope: 27215;
+                        readonly src: "2332:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3324,10 +3324,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27688;
+                            readonly id: 27189;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2332:7:148";
+                            readonly src: "2332:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3335,20 +3335,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2245:103:148";
+                    readonly src: "2245:103:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27695;
+                    readonly id: 27196;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27692;
+                        readonly id: 27193;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2372:7:148";
+                        readonly scope: 27215;
+                        readonly src: "2372:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3356,10 +3356,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27691;
+                            readonly id: 27192;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2372:7:148";
+                            readonly src: "2372:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3368,13 +3368,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27694;
+                        readonly id: 27195;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27714;
-                        readonly src: "2381:4:148";
+                        readonly scope: 27215;
+                        readonly src: "2381:4:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3382,10 +3382,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 27693;
+                            readonly id: 27194;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2381:4:148";
+                            readonly src: "2381:4:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -3393,33 +3393,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2371:15:148";
+                    readonly src: "2371:15:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27749;
+                readonly id: 27250;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2551:336:148";
+                readonly src: "2551:336:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27748;
+                    readonly id: 27249;
                     readonly nodeType: "Block";
-                    readonly src: "2729:158:148";
+                    readonly src: "2729:158:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27732, 27734];
+                        readonly assignments: readonly [27233, 27235];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27732;
+                            readonly id: 27233;
                             readonly mutability: "mutable";
                             readonly name: "result1";
-                            readonly nameLocation: "2748:7:148";
+                            readonly nameLocation: "2748:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27748;
-                            readonly src: "2740:15:148";
+                            readonly scope: 27249;
+                            readonly src: "2740:15:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -3427,10 +3427,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27731;
+                                readonly id: 27232;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2740:7:148";
+                                readonly src: "2740:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3439,13 +3439,13 @@ export declare const MockYieldSpaceMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 27734;
+                            readonly id: 27235;
                             readonly mutability: "mutable";
                             readonly name: "result2";
-                            readonly nameLocation: "2762:7:148";
+                            readonly nameLocation: "2762:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27748;
-                            readonly src: "2757:12:148";
+                            readonly scope: 27249;
+                            readonly src: "2757:12:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -3453,10 +3453,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 27733;
+                                readonly id: 27234;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2757:4:148";
+                                readonly src: "2757:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3464,59 +3464,59 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27743;
+                        readonly id: 27244;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27737;
+                                readonly id: 27238;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27716;
-                                readonly src: "2829:2:148";
+                                readonly referencedDeclaration: 27217;
+                                readonly src: "2829:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27738;
+                                readonly id: 27239;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27718;
-                                readonly src: "2833:1:148";
+                                readonly referencedDeclaration: 27219;
+                                readonly src: "2833:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27739;
+                                readonly id: 27240;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27720;
-                                readonly src: "2836:1:148";
+                                readonly referencedDeclaration: 27221;
+                                readonly src: "2836:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27740;
+                                readonly id: 27241;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27722;
-                                readonly src: "2839:1:148";
+                                readonly referencedDeclaration: 27223;
+                                readonly src: "2839:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27741;
+                                readonly id: 27242;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27724;
-                                readonly src: "2842:2:148";
+                                readonly referencedDeclaration: 27225;
+                                readonly src: "2842:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3540,33 +3540,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27735;
+                                    readonly id: 27236;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "2773:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "2773:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27736;
+                                readonly id: 27237;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2801:27:148";
+                                readonly memberLocation: "2801:27:142";
                                 readonly memberName: "calculateMaxBuyBondsOutSafe";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23222;
-                                readonly src: "2773:55:148";
+                                readonly referencedDeclaration: 22715;
+                                readonly src: "2773:55:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 27742;
+                            readonly id: 27243;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3575,7 +3575,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2773:72:148";
+                            readonly src: "2773:72:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
@@ -3583,49 +3583,49 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2739:106:148";
+                        readonly src: "2739:106:142";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 27744;
+                                readonly id: 27245;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27732;
-                                readonly src: "2863:7:148";
+                                readonly referencedDeclaration: 27233;
+                                readonly src: "2863:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27745;
+                                readonly id: 27246;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27734;
-                                readonly src: "2872:7:148";
+                                readonly referencedDeclaration: 27235;
+                                readonly src: "2872:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }];
-                            readonly id: 27746;
+                            readonly id: 27247;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly nodeType: "TupleExpression";
-                            readonly src: "2862:18:148";
+                            readonly src: "2862:18:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 27730;
-                        readonly id: 27747;
+                        readonly functionReturnParameters: 27231;
+                        readonly id: 27248;
                         readonly nodeType: "Return";
-                        readonly src: "2855:25:148";
+                        readonly src: "2855:25:142";
                     }];
                 };
                 readonly functionSelector: "a9afa373";
@@ -3633,19 +3633,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateMaxBuyBondsOutSafe";
-                readonly nameLocation: "2560:27:148";
+                readonly nameLocation: "2560:27:142";
                 readonly parameters: {
-                    readonly id: 27725;
+                    readonly id: 27226;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27716;
+                        readonly id: 27217;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "2605:2:148";
+                        readonly nameLocation: "2605:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2597:10:148";
+                        readonly scope: 27250;
+                        readonly src: "2597:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3653,10 +3653,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27715;
+                            readonly id: 27216;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2597:7:148";
+                            readonly src: "2597:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3665,13 +3665,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27718;
+                        readonly id: 27219;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "2625:1:148";
+                        readonly nameLocation: "2625:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2617:9:148";
+                        readonly scope: 27250;
+                        readonly src: "2617:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3679,10 +3679,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27717;
+                            readonly id: 27218;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2617:7:148";
+                            readonly src: "2617:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3691,13 +3691,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27720;
+                        readonly id: 27221;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "2644:1:148";
+                        readonly nameLocation: "2644:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2636:9:148";
+                        readonly scope: 27250;
+                        readonly src: "2636:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3705,10 +3705,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27719;
+                            readonly id: 27220;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2636:7:148";
+                            readonly src: "2636:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3717,13 +3717,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27722;
+                        readonly id: 27223;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "2663:1:148";
+                        readonly nameLocation: "2663:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2655:9:148";
+                        readonly scope: 27250;
+                        readonly src: "2655:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3731,10 +3731,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27721;
+                            readonly id: 27222;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2655:7:148";
+                            readonly src: "2655:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3743,13 +3743,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27724;
+                        readonly id: 27225;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "2682:2:148";
+                        readonly nameLocation: "2682:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2674:10:148";
+                        readonly scope: 27250;
+                        readonly src: "2674:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3757,10 +3757,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27723;
+                            readonly id: 27224;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2674:7:148";
+                            readonly src: "2674:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3768,20 +3768,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2587:103:148";
+                    readonly src: "2587:103:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27730;
+                    readonly id: 27231;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27727;
+                        readonly id: 27228;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2714:7:148";
+                        readonly scope: 27250;
+                        readonly src: "2714:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3789,10 +3789,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27726;
+                            readonly id: 27227;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2714:7:148";
+                            readonly src: "2714:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3801,13 +3801,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27729;
+                        readonly id: 27230;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27749;
-                        readonly src: "2723:4:148";
+                        readonly scope: 27250;
+                        readonly src: "2723:4:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3815,10 +3815,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 27728;
+                            readonly id: 27229;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2723:4:148";
+                            readonly src: "2723:4:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -3826,33 +3826,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2713:15:148";
+                    readonly src: "2713:15:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27790;
+                readonly id: 27291;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2893:389:148";
+                readonly src: "2893:389:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27789;
+                    readonly id: 27290;
                     readonly nodeType: "Block";
-                    readonly src: "3113:169:148";
+                    readonly src: "3113:169:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27771, 27773];
+                        readonly assignments: readonly [27272, 27274];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27771;
+                            readonly id: 27272;
                             readonly mutability: "mutable";
                             readonly name: "result1";
-                            readonly nameLocation: "3132:7:148";
+                            readonly nameLocation: "3132:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27789;
-                            readonly src: "3124:15:148";
+                            readonly scope: 27290;
+                            readonly src: "3124:15:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -3860,10 +3860,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27770;
+                                readonly id: 27271;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "3124:7:148";
+                                readonly src: "3124:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3872,13 +3872,13 @@ export declare const MockYieldSpaceMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 27773;
+                            readonly id: 27274;
                             readonly mutability: "mutable";
                             readonly name: "result2";
-                            readonly nameLocation: "3146:7:148";
+                            readonly nameLocation: "3146:7:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27789;
-                            readonly src: "3141:12:148";
+                            readonly scope: 27290;
+                            readonly src: "3141:12:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -3886,10 +3886,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 27772;
+                                readonly id: 27273;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "3141:4:148";
+                                readonly src: "3141:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -3897,81 +3897,81 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27784;
+                        readonly id: 27285;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27776;
+                                readonly id: 27277;
                                 readonly name: "z";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27751;
-                                readonly src: "3213:1:148";
+                                readonly referencedDeclaration: 27252;
+                                readonly src: "3213:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27777;
+                                readonly id: 27278;
                                 readonly name: "zeta";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27753;
-                                readonly src: "3216:4:148";
+                                readonly referencedDeclaration: 27254;
+                                readonly src: "3216:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             }, {
-                                readonly id: 27778;
+                                readonly id: 27279;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27755;
-                                readonly src: "3222:1:148";
+                                readonly referencedDeclaration: 27256;
+                                readonly src: "3222:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27779;
+                                readonly id: 27280;
                                 readonly name: "zMin";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27757;
-                                readonly src: "3225:4:148";
+                                readonly referencedDeclaration: 27258;
+                                readonly src: "3225:4:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27780;
+                                readonly id: 27281;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27759;
-                                readonly src: "3231:1:148";
+                                readonly referencedDeclaration: 27260;
+                                readonly src: "3231:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27781;
+                                readonly id: 27282;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27761;
-                                readonly src: "3234:1:148";
+                                readonly referencedDeclaration: 27262;
+                                readonly src: "3234:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27782;
+                                readonly id: 27283;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27763;
-                                readonly src: "3237:2:148";
+                                readonly referencedDeclaration: 27264;
+                                readonly src: "3237:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4001,33 +4001,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27774;
+                                    readonly id: 27275;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "3157:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "3157:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27775;
+                                readonly id: 27276;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3185:27:148";
+                                readonly memberLocation: "3185:27:142";
                                 readonly memberName: "calculateMaxSellBondsInSafe";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23353;
-                                readonly src: "3157:55:148";
+                                readonly referencedDeclaration: 22846;
+                                readonly src: "3157:55:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_int256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$";
                                     readonly typeString: "function (uint256,int256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 27783;
+                            readonly id: 27284;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4036,7 +4036,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3157:83:148";
+                            readonly src: "3157:83:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
@@ -4044,49 +4044,49 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "3123:117:148";
+                        readonly src: "3123:117:142";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 27785;
+                                readonly id: 27286;
                                 readonly name: "result1";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27771;
-                                readonly src: "3258:7:148";
+                                readonly referencedDeclaration: 27272;
+                                readonly src: "3258:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27786;
+                                readonly id: 27287;
                                 readonly name: "result2";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27773;
-                                readonly src: "3267:7:148";
+                                readonly referencedDeclaration: 27274;
+                                readonly src: "3267:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }];
-                            readonly id: 27787;
+                            readonly id: 27288;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly nodeType: "TupleExpression";
-                            readonly src: "3257:18:148";
+                            readonly src: "3257:18:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_uint256_$_t_bool_$";
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 27769;
-                        readonly id: 27788;
+                        readonly functionReturnParameters: 27270;
+                        readonly id: 27289;
                         readonly nodeType: "Return";
-                        readonly src: "3250:25:148";
+                        readonly src: "3250:25:142";
                     }];
                 };
                 readonly functionSelector: "bc50ebe6";
@@ -4094,19 +4094,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "calculateMaxSellBondsInSafe";
-                readonly nameLocation: "2902:27:148";
+                readonly nameLocation: "2902:27:142";
                 readonly parameters: {
-                    readonly id: 27764;
+                    readonly id: 27265;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27751;
+                        readonly id: 27252;
                         readonly mutability: "mutable";
                         readonly name: "z";
-                        readonly nameLocation: "2947:1:148";
+                        readonly nameLocation: "2947:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "2939:9:148";
+                        readonly scope: 27291;
+                        readonly src: "2939:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4114,10 +4114,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27750;
+                            readonly id: 27251;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2939:7:148";
+                            readonly src: "2939:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4126,13 +4126,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27753;
+                        readonly id: 27254;
                         readonly mutability: "mutable";
                         readonly name: "zeta";
-                        readonly nameLocation: "2965:4:148";
+                        readonly nameLocation: "2965:4:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "2958:11:148";
+                        readonly scope: 27291;
+                        readonly src: "2958:11:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4140,10 +4140,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 27752;
+                            readonly id: 27253;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2958:6:148";
+                            readonly src: "2958:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
@@ -4152,13 +4152,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27755;
+                        readonly id: 27256;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "2987:1:148";
+                        readonly nameLocation: "2987:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "2979:9:148";
+                        readonly scope: 27291;
+                        readonly src: "2979:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4166,10 +4166,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27754;
+                            readonly id: 27255;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2979:7:148";
+                            readonly src: "2979:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4178,13 +4178,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27757;
+                        readonly id: 27258;
                         readonly mutability: "mutable";
                         readonly name: "zMin";
-                        readonly nameLocation: "3006:4:148";
+                        readonly nameLocation: "3006:4:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "2998:12:148";
+                        readonly scope: 27291;
+                        readonly src: "2998:12:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4192,10 +4192,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27756;
+                            readonly id: 27257;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2998:7:148";
+                            readonly src: "2998:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4204,13 +4204,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27759;
+                        readonly id: 27260;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "3028:1:148";
+                        readonly nameLocation: "3028:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "3020:9:148";
+                        readonly scope: 27291;
+                        readonly src: "3020:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4218,10 +4218,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27758;
+                            readonly id: 27259;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3020:7:148";
+                            readonly src: "3020:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4230,13 +4230,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27761;
+                        readonly id: 27262;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "3047:1:148";
+                        readonly nameLocation: "3047:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "3039:9:148";
+                        readonly scope: 27291;
+                        readonly src: "3039:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4244,10 +4244,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27760;
+                            readonly id: 27261;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3039:7:148";
+                            readonly src: "3039:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4256,13 +4256,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27763;
+                        readonly id: 27264;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "3066:2:148";
+                        readonly nameLocation: "3066:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "3058:10:148";
+                        readonly scope: 27291;
+                        readonly src: "3058:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4270,10 +4270,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27762;
+                            readonly id: 27263;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3058:7:148";
+                            readonly src: "3058:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4281,20 +4281,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2929:145:148";
+                    readonly src: "2929:145:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27769;
+                    readonly id: 27270;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27766;
+                        readonly id: 27267;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "3098:7:148";
+                        readonly scope: 27291;
+                        readonly src: "3098:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4302,10 +4302,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27765;
+                            readonly id: 27266;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3098:7:148";
+                            readonly src: "3098:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4314,13 +4314,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27768;
+                        readonly id: 27269;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27790;
-                        readonly src: "3107:4:148";
+                        readonly scope: 27291;
+                        readonly src: "3107:4:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4328,10 +4328,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 27767;
+                            readonly id: 27268;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3107:4:148";
+                            readonly src: "3107:4:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -4339,33 +4339,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3097:15:148";
+                    readonly src: "3097:15:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27819;
+                readonly id: 27320;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3288:240:148";
+                readonly src: "3288:240:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27818;
+                    readonly id: 27319;
                     readonly nodeType: "Block";
-                    readonly src: "3436:92:148";
+                    readonly src: "3436:92:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27806];
+                        readonly assignments: readonly [27307];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27806;
+                            readonly id: 27307;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "3454:6:148";
+                            readonly nameLocation: "3454:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27818;
-                            readonly src: "3446:14:148";
+                            readonly scope: 27319;
+                            readonly src: "3446:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -4373,10 +4373,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27805;
+                                readonly id: 27306;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "3446:7:148";
+                                readonly src: "3446:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4384,59 +4384,59 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27815;
+                        readonly id: 27316;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27809;
+                                readonly id: 27310;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27792;
-                                readonly src: "3482:2:148";
+                                readonly referencedDeclaration: 27293;
+                                readonly src: "3482:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27810;
+                                readonly id: 27311;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27794;
-                                readonly src: "3486:1:148";
+                                readonly referencedDeclaration: 27295;
+                                readonly src: "3486:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27811;
+                                readonly id: 27312;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27796;
-                                readonly src: "3489:1:148";
+                                readonly referencedDeclaration: 27297;
+                                readonly src: "3489:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27812;
+                                readonly id: 27313;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27798;
-                                readonly src: "3492:1:148";
+                                readonly referencedDeclaration: 27299;
+                                readonly src: "3492:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27813;
+                                readonly id: 27314;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27800;
-                                readonly src: "3495:2:148";
+                                readonly referencedDeclaration: 27301;
+                                readonly src: "3495:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4460,33 +4460,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27807;
+                                    readonly id: 27308;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "3463:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "3463:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27808;
+                                readonly id: 27309;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3478:3:148";
+                                readonly memberLocation: "3478:3:142";
                                 readonly memberName: "kUp";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23387;
-                                readonly src: "3463:18:148";
+                                readonly referencedDeclaration: 22880;
+                                readonly src: "3463:18:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27814;
+                            readonly id: 27315;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4495,7 +4495,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3463:35:148";
+                            readonly src: "3463:35:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -4503,24 +4503,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "3446:52:148";
+                        readonly src: "3446:52:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27816;
+                            readonly id: 27317;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27806;
-                            readonly src: "3515:6:148";
+                            readonly referencedDeclaration: 27307;
+                            readonly src: "3515:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27804;
-                        readonly id: 27817;
+                        readonly functionReturnParameters: 27305;
+                        readonly id: 27318;
                         readonly nodeType: "Return";
-                        readonly src: "3508:13:148";
+                        readonly src: "3508:13:142";
                     }];
                 };
                 readonly functionSelector: "0aea7563";
@@ -4528,19 +4528,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "kUp";
-                readonly nameLocation: "3297:3:148";
+                readonly nameLocation: "3297:3:142";
                 readonly parameters: {
-                    readonly id: 27801;
+                    readonly id: 27302;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27792;
+                        readonly id: 27293;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "3318:2:148";
+                        readonly nameLocation: "3318:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3310:10:148";
+                        readonly scope: 27320;
+                        readonly src: "3310:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4548,10 +4548,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27791;
+                            readonly id: 27292;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3310:7:148";
+                            readonly src: "3310:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4560,13 +4560,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27794;
+                        readonly id: 27295;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "3338:1:148";
+                        readonly nameLocation: "3338:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3330:9:148";
+                        readonly scope: 27320;
+                        readonly src: "3330:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4574,10 +4574,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27793;
+                            readonly id: 27294;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3330:7:148";
+                            readonly src: "3330:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4586,13 +4586,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27796;
+                        readonly id: 27297;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "3357:1:148";
+                        readonly nameLocation: "3357:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3349:9:148";
+                        readonly scope: 27320;
+                        readonly src: "3349:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4600,10 +4600,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27795;
+                            readonly id: 27296;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3349:7:148";
+                            readonly src: "3349:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4612,13 +4612,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27798;
+                        readonly id: 27299;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "3376:1:148";
+                        readonly nameLocation: "3376:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3368:9:148";
+                        readonly scope: 27320;
+                        readonly src: "3368:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4626,10 +4626,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27797;
+                            readonly id: 27298;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3368:7:148";
+                            readonly src: "3368:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4638,13 +4638,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27800;
+                        readonly id: 27301;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "3395:2:148";
+                        readonly nameLocation: "3395:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3387:10:148";
+                        readonly scope: 27320;
+                        readonly src: "3387:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4652,10 +4652,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27799;
+                            readonly id: 27300;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3387:7:148";
+                            readonly src: "3387:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4663,20 +4663,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3300:103:148";
+                    readonly src: "3300:103:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27804;
+                    readonly id: 27305;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27803;
+                        readonly id: 27304;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27819;
-                        readonly src: "3427:7:148";
+                        readonly scope: 27320;
+                        readonly src: "3427:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4684,10 +4684,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27802;
+                            readonly id: 27303;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3427:7:148";
+                            readonly src: "3427:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4695,33 +4695,33 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3426:9:148";
+                    readonly src: "3426:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 27848;
+                readonly id: 27349;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3534:244:148";
+                readonly src: "3534:244:142";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 27847;
+                    readonly id: 27348;
                     readonly nodeType: "Block";
-                    readonly src: "3684:94:148";
+                    readonly src: "3684:94:142";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [27835];
+                        readonly assignments: readonly [27336];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 27835;
+                            readonly id: 27336;
                             readonly mutability: "mutable";
                             readonly name: "result";
-                            readonly nameLocation: "3702:6:148";
+                            readonly nameLocation: "3702:6:142";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 27847;
-                            readonly src: "3694:14:148";
+                            readonly scope: 27348;
+                            readonly src: "3694:14:142";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -4729,10 +4729,10 @@ export declare const MockYieldSpaceMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 27834;
+                                readonly id: 27335;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "3694:7:148";
+                                readonly src: "3694:7:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4740,59 +4740,59 @@ export declare const MockYieldSpaceMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 27844;
+                        readonly id: 27345;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 27838;
+                                readonly id: 27339;
                                 readonly name: "ze";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27821;
-                                readonly src: "3732:2:148";
+                                readonly referencedDeclaration: 27322;
+                                readonly src: "3732:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27839;
+                                readonly id: 27340;
                                 readonly name: "y";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27823;
-                                readonly src: "3736:1:148";
+                                readonly referencedDeclaration: 27324;
+                                readonly src: "3736:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27840;
+                                readonly id: 27341;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27825;
-                                readonly src: "3739:1:148";
+                                readonly referencedDeclaration: 27326;
+                                readonly src: "3739:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27841;
+                                readonly id: 27342;
                                 readonly name: "c";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27827;
-                                readonly src: "3742:1:148";
+                                readonly referencedDeclaration: 27328;
+                                readonly src: "3742:1:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 27842;
+                                readonly id: 27343;
                                 readonly name: "mu";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 27829;
-                                readonly src: "3745:2:148";
+                                readonly referencedDeclaration: 27330;
+                                readonly src: "3745:2:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -4816,33 +4816,33 @@ export declare const MockYieldSpaceMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 27836;
+                                    readonly id: 27337;
                                     readonly name: "YieldSpaceMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 23422;
-                                    readonly src: "3711:14:148";
+                                    readonly referencedDeclaration: 22915;
+                                    readonly src: "3711:14:142";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$23422_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_YieldSpaceMath_$22915_$";
                                         readonly typeString: "type(library YieldSpaceMath)";
                                     };
                                 };
-                                readonly id: 27837;
+                                readonly id: 27338;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3726:5:148";
+                                readonly memberLocation: "3726:5:142";
                                 readonly memberName: "kDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 23421;
-                                readonly src: "3711:20:148";
+                                readonly referencedDeclaration: 22914;
+                                readonly src: "3711:20:142";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 27843;
+                            readonly id: 27344;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4851,7 +4851,7 @@ export declare const MockYieldSpaceMath: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3711:37:148";
+                            readonly src: "3711:37:142";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -4859,24 +4859,24 @@ export declare const MockYieldSpaceMath: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "3694:54:148";
+                        readonly src: "3694:54:142";
                     }, {
                         readonly expression: {
-                            readonly id: 27845;
+                            readonly id: 27346;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 27835;
-                            readonly src: "3765:6:148";
+                            readonly referencedDeclaration: 27336;
+                            readonly src: "3765:6:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 27833;
-                        readonly id: 27846;
+                        readonly functionReturnParameters: 27334;
+                        readonly id: 27347;
                         readonly nodeType: "Return";
-                        readonly src: "3758:13:148";
+                        readonly src: "3758:13:142";
                     }];
                 };
                 readonly functionSelector: "d79d0835";
@@ -4884,19 +4884,19 @@ export declare const MockYieldSpaceMath: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "kDown";
-                readonly nameLocation: "3543:5:148";
+                readonly nameLocation: "3543:5:142";
                 readonly parameters: {
-                    readonly id: 27830;
+                    readonly id: 27331;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27821;
+                        readonly id: 27322;
                         readonly mutability: "mutable";
                         readonly name: "ze";
-                        readonly nameLocation: "3566:2:148";
+                        readonly nameLocation: "3566:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3558:10:148";
+                        readonly scope: 27349;
+                        readonly src: "3558:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4904,10 +4904,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27820;
+                            readonly id: 27321;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3558:7:148";
+                            readonly src: "3558:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4916,13 +4916,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27823;
+                        readonly id: 27324;
                         readonly mutability: "mutable";
                         readonly name: "y";
-                        readonly nameLocation: "3586:1:148";
+                        readonly nameLocation: "3586:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3578:9:148";
+                        readonly scope: 27349;
+                        readonly src: "3578:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4930,10 +4930,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27822;
+                            readonly id: 27323;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3578:7:148";
+                            readonly src: "3578:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4942,13 +4942,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27825;
+                        readonly id: 27326;
                         readonly mutability: "mutable";
                         readonly name: "t";
-                        readonly nameLocation: "3605:1:148";
+                        readonly nameLocation: "3605:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3597:9:148";
+                        readonly scope: 27349;
+                        readonly src: "3597:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4956,10 +4956,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27824;
+                            readonly id: 27325;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3597:7:148";
+                            readonly src: "3597:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4968,13 +4968,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27827;
+                        readonly id: 27328;
                         readonly mutability: "mutable";
                         readonly name: "c";
-                        readonly nameLocation: "3624:1:148";
+                        readonly nameLocation: "3624:1:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3616:9:148";
+                        readonly scope: 27349;
+                        readonly src: "3616:9:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -4982,10 +4982,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27826;
+                            readonly id: 27327;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3616:7:148";
+                            readonly src: "3616:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -4994,13 +4994,13 @@ export declare const MockYieldSpaceMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 27829;
+                        readonly id: 27330;
                         readonly mutability: "mutable";
                         readonly name: "mu";
-                        readonly nameLocation: "3643:2:148";
+                        readonly nameLocation: "3643:2:142";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3635:10:148";
+                        readonly scope: 27349;
+                        readonly src: "3635:10:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -5008,10 +5008,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27828;
+                            readonly id: 27329;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3635:7:148";
+                            readonly src: "3635:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -5019,20 +5019,20 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3548:103:148";
+                    readonly src: "3548:103:142";
                 };
                 readonly returnParameters: {
-                    readonly id: 27833;
+                    readonly id: 27334;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 27832;
+                        readonly id: 27333;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 27848;
-                        readonly src: "3675:7:148";
+                        readonly scope: 27349;
+                        readonly src: "3675:7:142";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -5040,10 +5040,10 @@ export declare const MockYieldSpaceMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 27831;
+                            readonly id: 27332;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3675:7:148";
+                            readonly src: "3675:7:142";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -5051,9 +5051,9 @@ export declare const MockYieldSpaceMath: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3674:9:148";
+                    readonly src: "3674:9:142";
                 };
-                readonly scope: 27849;
+                readonly scope: 27350;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -5064,15 +5064,15 @@ export declare const MockYieldSpaceMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [27849];
+            readonly linearizedBaseContracts: readonly [27350];
             readonly name: "MockYieldSpaceMath";
-            readonly nameLocation: "144:18:148";
-            readonly scope: 27850;
-            readonly usedErrors: readonly [11005, 11017, 11050, 11106];
+            readonly nameLocation: "144:18:142";
+            readonly scope: 27351;
+            readonly usedErrors: readonly [10541, 10553, 10583, 10639];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 148;
+    readonly id: 142;
 };
 //# sourceMappingURL=MockYieldSpaceMath.d.ts.map

@@ -1,7 +1,4 @@
-import {
-  CachedReadWriteContract,
-  ContractReadOptions,
-} from "@delvtech/evm-client";
+import { CachedReadWriteContract } from "@delvtech/evm-client";
 import { Overwrite } from "src/base/types";
 import {
   ReadWriteHyperdrive,
@@ -23,14 +20,10 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
 ) {
   declare stEthHyperdriveContract: CachedReadWriteContract<StEthHyperdriveAbi>;
 
-  async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteStEth> {
-    const address = await this.stEthHyperdriveContract.read(
-      "lido",
-      {},
-      options,
-    );
+  async getSharesToken(): Promise<ReadWriteStEth> {
+    const { vaultSharesToken } = await this.getPoolConfig();
     return new ReadWriteStEth({
-      address,
+      address: vaultSharesToken,
       contractFactory: this.contractFactory,
       namespace: this.contract.namespace,
       network: this.network,

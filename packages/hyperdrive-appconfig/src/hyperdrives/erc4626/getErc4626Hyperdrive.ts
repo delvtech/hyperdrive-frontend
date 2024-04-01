@@ -1,4 +1,5 @@
 import { IERC4626HyperdriveRead } from "@delvtech/hyperdrive-artifacts/IERC4626HyperdriveRead";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
@@ -27,17 +28,17 @@ export async function getErc4626Hyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const sharesToken = await getErc4626HyperdriveSharesToken({
-    publicClient,
-    hyperdriveAddress: hyperdriveAddress,
-    extensions: sharesTokenExtensions,
-    iconUrl: sharesTokenIconUrl,
-  });
-
   const poolConfig = await publicClient.readContract({
     address: hyperdriveAddress,
-    abi: IERC4626HyperdriveRead.abi,
+    abi: IHyperdrive.abi,
     functionName: "getPoolConfig",
+  });
+
+  const sharesToken = await getErc4626HyperdriveSharesToken({
+    publicClient,
+    sharesTokenAddress: poolConfig.vaultSharesToken,
+    extensions: sharesTokenExtensions,
+    iconUrl: sharesTokenIconUrl,
   });
 
   const baseToken = await getTokenConfig({

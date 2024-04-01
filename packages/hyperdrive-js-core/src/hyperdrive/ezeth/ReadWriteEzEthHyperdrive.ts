@@ -15,7 +15,7 @@ export class ReadWriteEzEthHyperdrive extends readEzEthHyperdriveMixin(
 
   async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteErc20> {
     const address = await this.ezEthHyperdriveContract.read(
-      "ezETH",
+      "vaultSharesToken",
       {},
       options,
     );
