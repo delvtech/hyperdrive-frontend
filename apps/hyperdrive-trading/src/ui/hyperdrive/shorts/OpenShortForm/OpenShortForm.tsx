@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
   findYieldSourceToken,
@@ -101,9 +102,21 @@ export function OpenShortForm({
     balance: activeTokenBalance?.value,
   });
 
+  // Increase the expected trader deposit from the SDK by 1% to account for any
+  // discrepancies between calling the SDK's `previewOpenShort` method and the
+  // actual `openShort` method on the contract. This is only used for setting
+  // allowances.
+  // TODO: We can remove this once this is resolved:
+  // https://github.com/delvtech/hyperdrive/issues/894
+  const paddedTraderDepositForAllowance = adjustAmountByPercentage({
+    amount: traderDeposit || 0n,
+    decimals: activeToken.decimals,
+    direction: "up",
+    percentage: 1n,
+  });
   const hasEnoughAllowance = getHasEnoughAllowance({
     allowance: activeTokenAllowance,
-    amount: traderDeposit,
+    amount: paddedTraderDepositForAllowance,
     requiresAllowance,
   });
 
@@ -240,8 +253,11 @@ export function OpenShortForm({
             <ApproveTokenChoices
               spender={hyperdrive.address}
               token={activeToken}
-              amountAsBigInt={traderDeposit}
-              amount={formatUnits(traderDeposit || 0n, activeToken.decimals)}
+              amountAsBigInt={paddedTraderDepositForAllowance}
+              amount={formatUnits(
+                paddedTraderDepositForAllowance || 0n,
+                activeToken.decimals,
+              )}
             />
           );
         }
