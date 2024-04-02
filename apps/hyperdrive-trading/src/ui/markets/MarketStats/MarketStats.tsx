@@ -5,6 +5,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -16,6 +17,7 @@ export function MarketStats({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { data: currentBlockNumber } = useBlockNumber();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -49,7 +51,7 @@ export function MarketStats({
           )
         }
         description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
-        tooltipPosition="right"
+        tooltipPosition={"right"}
       />
       <Stat
         label="Fixed APR"
@@ -76,6 +78,7 @@ export function MarketStats({
           )
         }
         description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
+        tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
       />
       <Stat
         description={`The amount of hy${
@@ -91,6 +94,7 @@ export function MarketStats({
           decimals: baseToken.decimals,
           places: 0,
         })} hy${baseToken.symbol}`}
+        tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
         label="Volume (24h)"
         value={
           tradingVolumeStatus === "loading" && totalVolume === undefined ? (
@@ -123,7 +127,7 @@ export function MarketStats({
             />
           )
         }
-        tooltipPosition="left"
+        tooltipPosition={isTailwindSmallScreen ? "right" : "left"}
       />
     </div>
   );

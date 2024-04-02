@@ -24,7 +24,7 @@ export function ShortsTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col">
-          <div className="flex items-center justify-between p-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <h5 className="font-medium">Short Positions</h5>
             <div className="flex items-center gap-4">
               {account && openShorts?.length ? (
