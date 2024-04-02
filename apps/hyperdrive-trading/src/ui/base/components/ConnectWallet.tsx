@@ -48,7 +48,7 @@ export function ConnectWalletButton(): JSX.Element {
                     {chain.name}
                   </button>
                   <button
-                    className="daisy-btn daisy-btn-circle daisy-btn-primary mx-0 w-32"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary daisy-btn-md mx-0 w-24 md:w-32"
                     onClick={openAccountModal}
                   >
                     {account.displayName}
