@@ -135,20 +135,18 @@ export const faqData = [
           to complete their withdrawal process.
         </p>
         <br />
-        When long or short positions are closed, the liquidity used to back them
-        is freed up and used to buy back Withdrawal Shares, at which point LPs
-        can complete their pending withdrawal process. <br />
-        <br />
-        Learn more about{" "}
-        <a
-          className="daisy-link"
-          rel="noreferrer"
-          target="_blank"
-          href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/value-of-the-lp-position"
-        >
-          the value of the LP position
-        </a>
-        .
+        <p>
+          Learn more about{" "}
+          <a
+            className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
+            href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/value-of-the-lp-position"
+          >
+            the value of the LP position
+          </a>{" "}
+          in the docs.
+        </p>
       </div>
     ),
   },
@@ -174,6 +172,18 @@ export const faqData = [
           system will initiate a delayed withdrawal process. The LP&apos;s
           capital continues to receive the same benefits until enough liquidity
           is freed up for withdrawal.
+        </p>
+        <p>
+          Learn more about the different{" "}
+          <a
+            className="daisy-link"
+            rel="noreferrer"
+            target="_blank"
+            href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
+          >
+            Position Types
+          </a>{" "}
+          in the docs.
         </p>
       </div>
     ),
