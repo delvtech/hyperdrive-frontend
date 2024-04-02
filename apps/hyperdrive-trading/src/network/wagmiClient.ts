@@ -7,7 +7,7 @@ import {
 } from "@rainbow-me/rainbowkit/wallets";
 import { http } from "@wagmi/core";
 import { Chain } from "@wagmi/core/chains";
-import { cloudChain } from "src/network/cloudChain";
+import { cloudChain } from "src/chains/cloudChain";
 import { foundry, sepolia } from "wagmi/chains";
 
 const {
