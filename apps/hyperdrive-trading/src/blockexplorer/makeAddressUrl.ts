@@ -10,7 +10,7 @@ export function makeAddressUrl(
     case mainnet.id:
       return `https://etherscan.io/address/${address}`;
     case sepolia.id:
-      return `https://goerli.etherscan.io/address/${address}`;
+      return `https://sepolia.etherscan.io/address/${address}`;
     case foundry.id:
       return `#`;
     case 42069: // Cloudchain

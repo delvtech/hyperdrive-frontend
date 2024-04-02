@@ -20,7 +20,7 @@ export function useAppConfig(): AppConfig {
       // Return mainnet config when available
       return {} as AppConfig;
     case sepolia.id:
-      // Return goerli config when available
+      // Return sepolia config when available
       return {} as AppConfig;
     default:
       assertNever(chainId);
