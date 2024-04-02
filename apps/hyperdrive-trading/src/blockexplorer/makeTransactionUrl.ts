@@ -1,18 +1,19 @@
 import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
+import { foundry, mainnet, sepolia } from "viem/chains";
 
 export function makeTransactionURL(
   transactionHash: string | undefined,
   chainId: SupportedChainId,
 ): string {
   switch (chainId) {
-    case 1:
+    case mainnet.id:
       return `https://etherscan.io/tx/${transactionHash}`;
-    case 5:
-      return `https://goerli.etherscan.io/tx/${transactionHash}`;
-    case 31337:
+    case sepolia.id:
+      return `https://sepolia.etherscan.io/tx/${transactionHash}`;
+    case foundry.id:
       return `#`;
-    case 42069:
+    case 42069: // cloud chain
       return `#`;
     default:
       assertNever(chainId);

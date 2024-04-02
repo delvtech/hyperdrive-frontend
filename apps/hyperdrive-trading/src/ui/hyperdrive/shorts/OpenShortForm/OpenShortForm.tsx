@@ -6,7 +6,6 @@ import {
 import { MouseEvent, ReactElement } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -28,7 +27,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -39,7 +38,6 @@ export function OpenShortForm({
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
-  const chainId = useChainId() as SupportedChainId;
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({

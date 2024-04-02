@@ -5,20 +5,21 @@ import {
 } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
+import { foundry, mainnet, sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
 export function useAppConfig(): AppConfig {
   const chainId = useChainId() as SupportedChainId;
 
   switch (chainId) {
-    case 31337:
+    case foundry.id:
       return localChainAppConfig;
-    case 42069:
+    case 42069: // cloudchain
       return cloudChainAppConfig;
-    case 1:
+    case mainnet.id:
       // Return mainnet config when available
       return {} as AppConfig;
-    case 5:
+    case sepolia.id:
       // Return goerli config when available
       return {} as AppConfig;
     default:

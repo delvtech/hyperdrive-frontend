@@ -10,7 +10,6 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -25,7 +24,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -66,7 +65,6 @@ export function RemoveLiquidityForm({
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const { address: account } = useAccount();
-  const chainId = useChainId() as SupportedChainId;
 
   // Let users type in an amount of base or shares to withdraw
   const {
