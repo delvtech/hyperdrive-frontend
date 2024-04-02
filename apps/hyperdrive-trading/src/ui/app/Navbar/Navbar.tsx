@@ -9,7 +9,7 @@ export function Navbar(): ReactElement {
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
-        <Link to={"/"} className="inline-flex items-center ">
+        <Link to={"/"} className="inline-flex items-center">
           <HyperdriveLogo />
         </Link>
       </div>
