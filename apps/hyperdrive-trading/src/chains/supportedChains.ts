@@ -1,3 +1,10 @@
-export const supportedChainIds = [42069, 31337, 1, 5] as const;
+import { foundry, mainnet, sepolia } from "viem/chains";
+
+export const supportedChainIds = [
+  42069, // cloud chain
+  foundry.id,
+  mainnet.id,
+  sepolia.id,
+] as const;
 
 export type SupportedChainId = (typeof supportedChainIds)[number];
