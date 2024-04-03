@@ -22,7 +22,8 @@
     "test": "vitest run",
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "gen:version": "bash ./scripts/generate-version.sh"
+    "gen:version": "bash ./scripts/generate-version.sh",
+    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
