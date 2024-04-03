@@ -3,37 +3,6 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,css}", "index.html"],
   theme: {
     colors: {
-      aquamarine: {
-        100: "#E8FFF7",
-        DEFAULT: "#15FFAB",
-        600: "#11cc89",
-      },
-      "sky-blue": {
-        100: "#95ECFF",
-        DEFAULT: "#14D0F9",
-        800: "#00A7CC",
-      },
-      eggplant: {
-        100: "#F3E9ED",
-        DEFAULT: "#753F53",
-        600: "#462632",
-      },
-
-      // Used for primary buttons, links, tabs and states
-      lime: {
-        100: "#DFFF99",
-        DEFAULT: "#BAFF29",
-        800: "#8BCC00",
-      },
-      // Used for interactive text and components such as tabs, tags and
-      // sliders
-      teal: {
-        100: "#E8FCFC",
-        DEFAULT: "#9BF3F0",
-        800: "#49E9E4",
-        900: "#16B6B1",
-      },
-
       gray: {
         50: "#EFF4F6",
         100: "#BDD2DB",
@@ -91,10 +60,8 @@ module.exports = {
           error: "#FF5757",
           success: "#36D399",
 
-          "--tab-radius": "0.4rem",
           "--rounded-box": "2rem", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "0.4rem",
-          "--rounded-badge": "0.4rem",
         },
       },
     ],
