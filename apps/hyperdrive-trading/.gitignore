@@ -35,3 +35,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# WalletConnect domain verification code
+src/public/.well-known/walletconnect.txt
