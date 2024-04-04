@@ -240,7 +240,7 @@ export class ReadHyperdrive extends ReadModel {
     longVolume: bigint;
     shortVolume: bigint;
   }> {
-    const { fromBlock = "earliest", toBlock = "latest" } = options || {};
+    const { fromBlock, toBlock } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
       toBlock,
