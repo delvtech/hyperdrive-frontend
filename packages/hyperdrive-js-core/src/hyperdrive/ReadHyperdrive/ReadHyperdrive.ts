@@ -1057,7 +1057,7 @@ export class ReadHyperdrive extends ReadModel {
       );
       const withdrawalSharesSharesValue = dnum.divide(
         withdrawalSharesBaseValue,
-        [lpSharePrice, 18],
+        [vaultSharePrice, 18],
       );
 
       baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
