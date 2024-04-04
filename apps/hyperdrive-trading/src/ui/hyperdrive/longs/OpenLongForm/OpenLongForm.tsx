@@ -176,6 +176,7 @@ export function OpenLongForm({
           hyperdrive={hyperdrive}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
+          activeToken={activeToken}
           long={{
             bondAmount: bondsReceived || 0n,
             assetId: 0n,
