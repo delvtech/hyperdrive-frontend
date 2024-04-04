@@ -12,8 +12,8 @@ export {
   type ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
 export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
-export { ReadWriteErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteErc4626Hyperdrive";
 export { ReadMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadMockErc4626Hyperdrive";
+export { ReadWriteErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteErc4626Hyperdrive";
 export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWriteMockErc4626Hyperdrive";
 export { ReadEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadEzEthHyperdrive";
 export { ReadWriteEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadWriteEzEthHyperdrive";

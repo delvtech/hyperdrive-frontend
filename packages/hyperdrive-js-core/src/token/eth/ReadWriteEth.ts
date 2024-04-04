@@ -1,8 +1,8 @@
-import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
-import { ReadEth } from "src/token/eth/ReadEth";
-import { ReadWriteToken } from "src/token/ReadWriteToken";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { MethodNotImplementedError } from "src/base/errors/MethodNotImplementedError";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
+import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
+import { ReadWriteToken } from "src/token/ReadWriteToken";
+import { ReadEth } from "src/token/eth/ReadEth";
 
 export interface ReadWriteEthOptions extends ReadWriteModelOptions {}
 

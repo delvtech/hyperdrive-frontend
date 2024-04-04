@@ -1,9 +1,9 @@
 import { Network } from "@delvtech/evm-client";
+import { Prettify } from "src/base/types";
 import {
   ContractFactoryOptions,
   ReadContractFactory,
 } from "src/evm-client/contractFactory";
-import { Prettify } from "src/base/types";
 
 /**
  * The base options required for all read models.

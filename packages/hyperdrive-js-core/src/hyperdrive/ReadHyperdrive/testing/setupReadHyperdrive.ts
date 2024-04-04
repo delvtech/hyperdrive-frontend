@@ -3,8 +3,8 @@ import {
   createCachedReadContract,
 } from "@delvtech/evm-client";
 import { NetworkStub, ReadContractStub } from "@delvtech/evm-client/stubs";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { Abi } from "abitype";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { HyperdriveAbi } from "src/hyperdrive/abi";
 
 // No need to explicitly set return types as they are already set in the Stubs

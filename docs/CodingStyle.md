@@ -31,8 +31,8 @@ additional thought from developers.
   the codebase easier to read and search.
 - Always treat acronyms and abbreviations as words when considering
   capitalization. For example:
-    - Instead of `LongAPRStat`, use `LongAprStat`
-    - Instead of `baseAPIURL`, use `baseApiUrl`
+  - Instead of `LongAPRStat`, use `LongAprStat`
+  - Instead of `baseAPIURL`, use `baseApiUrl`
 - If code review introduces confusion over a piece of code, add clarifying
   comments.
 - Rebase to avoid merge commits in branches and PRs.

@@ -1,0 +1,6 @@
+build
+node_modules
+.docusaurus
+
+# generated files
+docs/sdk/api-reference

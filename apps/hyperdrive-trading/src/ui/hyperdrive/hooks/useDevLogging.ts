@@ -31,10 +31,10 @@ export function useDevLogging(market: HyperdriveConfig): void {
 type BigIntsToStrings<T> = T extends bigint
   ? string
   : T extends Array<infer U>
-  ? BigIntsToStrings<U>[]
-  : T extends object
-  ? { [K in keyof T]: BigIntsToStrings<T[K]> }
-  : T;
+    ? BigIntsToStrings<U>[]
+    : T extends object
+      ? { [K in keyof T]: BigIntsToStrings<T[K]> }
+      : T;
 
 function bigIntsToString<T>(value: T, decimals: number): BigIntsToStrings<T> {
   if (typeof value === "bigint") {

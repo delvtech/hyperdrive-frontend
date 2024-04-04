@@ -42,9 +42,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     spotRateAfterOpen: bigint;
     curveFee: bigint;
   }> {
-    const convertedSharesAmount = await this.convertStethTokensToShares(
-      sharesAmount,
-    );
+    const convertedSharesAmount =
+      await this.convertStethTokensToShares(sharesAmount);
 
     return super.previewOpenLongWithShares({
       sharesAmount: convertedSharesAmount,
@@ -55,9 +54,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
   }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
-    const convertedSharesAmount = await this.convertStethTokensToShares(
-      sharesAmount,
-    );
+    const convertedSharesAmount =
+      await this.convertStethTokensToShares(sharesAmount);
     return super.openLongWithShares({
       args: {
         destination,
@@ -86,9 +84,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
       destination,
       minOutput,
     });
-    const convertedToStethTokens = await this.convertStethSharesToTokens(
-      stethShares,
-    );
+    const convertedToStethTokens =
+      await this.convertStethSharesToTokens(stethShares);
     return convertedToStethTokens;
   }
 
@@ -100,9 +97,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     IHyperdriveModel,
     "closeLongWithShares"
   >): Promise<Hash> {
-    const convertedMinAmountOut = await this.convertStethTokensToShares(
-      minAmountOut,
-    );
+    const convertedMinAmountOut =
+      await this.convertStethTokensToShares(minAmountOut);
     return super.closeLongWithShares({
       args: {
         bondAmountIn,
@@ -143,9 +139,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     IHyperdriveModel,
     "openShortWithShares"
   >): Promise<Hash> {
-    const convertedMaxDeposit = await this.convertStethTokensToShares(
-      maxDeposit,
-    );
+    const convertedMaxDeposit =
+      await this.convertStethTokensToShares(maxDeposit);
     return super.openShortWithShares({
       args: {
         bondAmount,
@@ -193,9 +188,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     IHyperdriveModel,
     "closeShortWithShares"
   >): Promise<Hash> {
-    const convertedMinAmountOut = await this.convertStethTokensToShares(
-      minAmountOut,
-    );
+    const convertedMinAmountOut =
+      await this.convertStethTokensToShares(minAmountOut);
     return super.closeShortWithShares({
       args: {
         bondAmountIn,
@@ -220,9 +214,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     IHyperdriveModel,
     "addLiquidityWithShares"
   >): Promise<Hash> {
-    const convertedContribution = await this.convertStethTokensToShares(
-      contribution,
-    );
+    const convertedContribution =
+      await this.convertStethTokensToShares(contribution);
 
     return super.addLiquidityWithShares({
       args: {
@@ -276,9 +269,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     maxAPR: bigint;
     ethValue?: bigint | undefined;
   }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
-    const convertedContribution = await this.convertStethTokensToShares(
-      contribution,
-    );
+    const convertedContribution =
+      await this.convertStethTokensToShares(contribution);
 
     return super.previewAddLiquidityWithShares({
       destination,
@@ -297,9 +289,8 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     IHyperdriveModel,
     "removeLiquidityWithShares"
   >): Promise<Hash> {
-    const convertedMinOutputPerShare = await this.convertStethTokensToShares(
-      minOutputPerShare,
-    );
+    const convertedMinOutputPerShare =
+      await this.convertStethTokensToShares(minOutputPerShare);
     return super.removeLiquidityWithShares({
       args: {
         destination,

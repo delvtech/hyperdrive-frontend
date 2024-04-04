@@ -5,8 +5,13 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "hyperdrive-trading#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
     "lint": {
       "dependsOn": ["^build"],
+      "env": ["DEV"],
       "outputs": []
     },
     "typecheck": {
