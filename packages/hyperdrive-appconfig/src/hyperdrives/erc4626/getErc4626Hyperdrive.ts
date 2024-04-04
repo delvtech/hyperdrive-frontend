@@ -1,5 +1,5 @@
 import { IERC4626HyperdriveRead } from "@delvtech/hyperdrive-artifacts/IERC4626HyperdriveRead";
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadErc4626Hyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
@@ -28,15 +28,16 @@ export async function getErc4626Hyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const poolConfig = await publicClient.readContract({
+  const readHyperdrive = new ReadErc4626Hyperdrive({
     address: hyperdriveAddress,
-    abi: IHyperdrive.abi,
-    functionName: "getPoolConfig",
+    publicClient,
   });
 
+  const poolConfig = await readHyperdrive.getPoolConfig();
+
+  const readSharesToken = await readHyperdrive.getSharesToken();
   const sharesToken = await getErc4626HyperdriveSharesToken({
-    publicClient,
-    sharesTokenAddress: poolConfig.vaultSharesToken,
+    sharesToken: readSharesToken,
     extensions: sharesTokenExtensions,
     iconUrl: sharesTokenIconUrl,
   });
@@ -52,7 +53,7 @@ export async function getErc4626Hyperdrive({
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseToken.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesToken.extensions.shortName,
+    yieldSourceShortName: readSharesToken.extensions.shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
@@ -64,12 +65,16 @@ export async function getErc4626Hyperdrive({
       functionName: "decimals",
     }),
     baseToken: baseToken.address,
-    sharesToken: sharesToken.address,
+    sharesToken: readSharesToken.address,
     withdrawOptions: {
       isBaseTokenWithdrawalEnabled: true,
     },
     poolConfig,
   };
 
-  return { sharesToken, baseToken, hyperdriveConfig: hyperdriveConfig };
+  return {
+    sharesToken: readSharesToken,
+    baseToken,
+    hyperdriveConfig: hyperdriveConfig,
+  };
 }
