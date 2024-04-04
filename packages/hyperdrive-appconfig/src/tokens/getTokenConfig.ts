@@ -1,5 +1,5 @@
-import { IERC20 } from "@delvtech/hyperdrive-artifacts/IERC20";
-import { Address, PublicClient } from "viem";
+import { ReadErc20, ReadEth } from "@delvtech/hyperdrive-viem";
+import { Address } from "viem";
 
 export type EmptyExtensions = Record<string, never>;
 
@@ -18,39 +18,23 @@ export interface TokenConfig<
 export async function getTokenConfig<
   Extensions = Record<string, string | number | boolean> | EmptyExtensions,
 >({
-  publicClient,
-  address,
+  token,
   iconUrl,
   tags,
   extensions,
 }: {
-  publicClient: PublicClient;
-  address: Address;
+  token: ReadErc20 | ReadEth;
   tags: string[];
   iconUrl: string;
   extensions: Extensions;
 }): Promise<TokenConfig<Extensions>> {
-  const token: TokenConfig<Extensions> = {
-    address,
-    decimals: await publicClient.readContract({
-      address,
-      abi: IERC20.abi,
-      functionName: "decimals",
-    }),
-    name: await publicClient.readContract({
-      address,
-      abi: IERC20.abi,
-      functionName: "name",
-    }),
-    symbol: await publicClient.readContract({
-      address,
-      abi: IERC20.abi,
-      functionName: "symbol",
-    }),
+  return {
+    address: token.address,
+    decimals: await token.getDecimals(),
+    name: await token.getName(),
+    symbol: await token.getSymbol(),
     iconUrl,
     tags,
     extensions,
   };
-
-  return token;
 }

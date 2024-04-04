@@ -1,5 +1,4 @@
-import { IERC4626HyperdriveRead } from "@delvtech/hyperdrive-artifacts/IERC4626HyperdriveRead";
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadErc4626Hyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
@@ -28,48 +27,49 @@ export async function getErc4626Hyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const poolConfig = await publicClient.readContract({
+  const readHyperdrive = new ReadErc4626Hyperdrive({
     address: hyperdriveAddress,
-    abi: IHyperdrive.abi,
-    functionName: "getPoolConfig",
+    publicClient,
   });
 
-  const sharesToken = await getErc4626HyperdriveSharesToken({
-    publicClient,
-    sharesTokenAddress: poolConfig.vaultSharesToken,
+  const poolConfig = await readHyperdrive.getPoolConfig();
+
+  const sharesToken = await readHyperdrive.getSharesToken();
+  const sharesTokenConfig = await getErc4626HyperdriveSharesToken({
+    sharesToken: sharesToken,
     extensions: sharesTokenExtensions,
     iconUrl: sharesTokenIconUrl,
   });
 
-  const baseToken = await getTokenConfig({
-    address: poolConfig.baseToken,
-    publicClient,
+  const baseToken = await readHyperdrive.getBaseToken();
+  const baseTokenConfig = await getTokenConfig({
+    token: baseToken,
     extensions: {},
     tags: [],
     iconUrl: baseTokenIconUrl,
   });
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseToken.symbol,
+    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesToken.extensions.shortName,
+    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
     name: hyperdriveName,
-    decimals: await publicClient.readContract({
-      address: hyperdriveAddress,
-      abi: IERC4626HyperdriveRead.abi,
-      functionName: "decimals",
-    }),
-    baseToken: baseToken.address,
-    sharesToken: sharesToken.address,
+    decimals: await readHyperdrive.getDecimals(),
+    baseToken: baseTokenConfig.address,
+    sharesToken: sharesTokenConfig.address,
     withdrawOptions: {
       isBaseTokenWithdrawalEnabled: true,
     },
     poolConfig,
   };
 
-  return { sharesToken, baseToken, hyperdriveConfig: hyperdriveConfig };
+  return {
+    sharesToken: sharesTokenConfig,
+    baseToken: baseTokenConfig,
+    hyperdriveConfig: hyperdriveConfig,
+  };
 }

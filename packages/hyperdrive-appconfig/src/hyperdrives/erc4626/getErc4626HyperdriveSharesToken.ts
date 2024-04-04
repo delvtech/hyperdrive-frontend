@@ -1,25 +1,20 @@
+import { ReadErc4626 } from "@delvtech/hyperdrive-viem";
 import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
-import { Address, PublicClient } from "viem";
 
 export async function getErc4626HyperdriveSharesToken({
-  publicClient,
-  sharesTokenAddress,
+  sharesToken,
   extensions,
   iconUrl,
 }: {
-  publicClient: PublicClient;
-  sharesTokenAddress: Address;
+  sharesToken: ReadErc4626;
   extensions: YieldSourceExtensions;
   iconUrl: string;
 }): Promise<TokenConfig<YieldSourceExtensions>> {
-  const sharesToken = await getTokenConfig({
-    address: sharesTokenAddress,
-    publicClient,
+  return getTokenConfig({
+    token: sharesToken,
     tags: ["yieldSource", "erc4626"],
     extensions,
     iconUrl,
   });
-
-  return sharesToken;
 }

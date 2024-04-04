@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadStEthHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
@@ -20,18 +20,19 @@ export async function getStethHyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const poolConfig = await publicClient.readContract({
+  const readHyperdrive = new ReadStEthHyperdrive({
     address: hyperdriveAddress,
-    abi: IHyperdrive.abi,
-    functionName: "getPoolConfig",
-  });
-  const sharesToken = await getStethHyperdriveSharesToken({
     publicClient,
-    sharesTokenAddress: poolConfig.vaultSharesToken,
+  });
+  const poolConfig = await readHyperdrive.getPoolConfig();
+
+  const sharesToken = await readHyperdrive.getSharesToken();
+  const sharesTokenConfig = await getStethHyperdriveSharesToken({
+    sharesToken,
     extensions: sharesTokenExtensions,
   });
 
-  const baseToken: TokenConfig<EmptyExtensions> = {
+  const baseTokenConfig: TokenConfig<EmptyExtensions> = {
     address: poolConfig.baseToken,
     name: "Ether",
     symbol: "ETH",
@@ -42,16 +43,16 @@ export async function getStethHyperdrive({
   };
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseToken.symbol,
+    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesToken.extensions.shortName,
+    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
-    baseToken: baseToken.address,
+    baseToken: baseTokenConfig.address,
     sharesToken: sharesToken.address,
     withdrawOptions: {
       // steth hyperdrive does not allow you to withdraw back to native ETH, due
@@ -61,5 +62,9 @@ export async function getStethHyperdrive({
     poolConfig,
   };
 
-  return { sharesToken, baseToken, hyperdriveConfig: hyperdriveConfig };
+  return {
+    sharesToken: sharesTokenConfig,
+    baseToken: baseTokenConfig,
+    hyperdriveConfig: hyperdriveConfig,
+  };
 }
