@@ -34,34 +34,33 @@ export async function getErc4626Hyperdrive({
 
   const poolConfig = await readHyperdrive.getPoolConfig();
 
-  const readSharesToken = await readHyperdrive.getSharesToken();
-  const sharesToken = await getErc4626HyperdriveSharesToken({
-    sharesToken: readSharesToken,
+  const sharesToken = await readHyperdrive.getSharesToken();
+  const sharesTokenConfig = await getErc4626HyperdriveSharesToken({
+    sharesToken: sharesToken,
     extensions: sharesTokenExtensions,
     iconUrl: sharesTokenIconUrl,
   });
 
-  const readBaseToken = await readHyperdrive.getBaseToken();
-
-  const baseToken = await getTokenConfig({
-    token: readBaseToken,
+  const baseToken = await readHyperdrive.getBaseToken();
+  const baseTokenConfig = await getTokenConfig({
+    token: baseToken,
     extensions: {},
     tags: [],
     iconUrl: baseTokenIconUrl,
   });
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseToken.symbol,
+    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesToken.extensions.shortName,
+    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
     name: hyperdriveName,
     decimals: await readHyperdrive.getDecimals(),
-    baseToken: baseToken.address,
-    sharesToken: readSharesToken.address,
+    baseToken: baseTokenConfig.address,
+    sharesToken: sharesTokenConfig.address,
     withdrawOptions: {
       isBaseTokenWithdrawalEnabled: true,
     },
@@ -69,8 +68,8 @@ export async function getErc4626Hyperdrive({
   };
 
   return {
-    sharesToken,
-    baseToken,
+    sharesToken: sharesTokenConfig,
+    baseToken: baseTokenConfig,
     hyperdriveConfig: hyperdriveConfig,
   };
 }
