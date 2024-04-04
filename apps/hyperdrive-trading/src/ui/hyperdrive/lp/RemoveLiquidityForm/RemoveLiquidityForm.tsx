@@ -181,7 +181,7 @@ export function RemoveLiquidityForm({
             } ${baseToken.symbol}-LP`}
           />
           <LabelValue
-            label="Total you receive"
+            label="Total you receive now"
             value={
               <span className="font-bold">
                 {actualValueOut

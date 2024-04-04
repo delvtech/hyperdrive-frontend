@@ -105,11 +105,8 @@ export function AddLiquidityForm({
     enabled: hasEnoughAllowance && hasEnoughBalance,
   };
 
-  const {
-    lpSharesOut,
-    status: addLiquidityPreviewStatus,
-    slippagePaid,
-  } = usePreviewAddLiquidity(addLiquidityParams);
+  const { lpSharesOut, status: addLiquidityPreviewStatus } =
+    usePreviewAddLiquidity(addLiquidityParams);
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
@@ -167,10 +164,10 @@ export function AddLiquidityForm({
       transactionPreview={
         <AddLiquidityPreview
           hyperdrive={hyperdrive}
+          lpSharesOut={lpSharesOut}
           depositAmount={depositAmountAsBigInt}
           depositTokenDecimals={activeToken.decimals}
           depositTokenSymbol={activeToken.symbol}
-          slippagePaid={slippagePaid}
           poolShareAfterDeposit={poolShareAfterDeposit}
         />
       }
