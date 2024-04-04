@@ -2,7 +2,11 @@ import {
   calculateFixedRateFromOpenLong,
   Long,
 } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  HyperdriveConfig,
+  TokenConfig,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
@@ -18,6 +22,7 @@ interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
   spotRateAfterOpen: bigint | undefined;
+  activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
 }
 
@@ -25,6 +30,7 @@ export function OpenLongPreview({
   hyperdrive,
   long,
   spotRateAfterOpen,
+  activeToken,
   curveFee,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
@@ -34,128 +40,140 @@ export function OpenLongPreview({
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
 
-  let changeInFixedApr = 0n;
-  if (spotRateAfterOpen && fixedAPR) {
-    changeInFixedApr = dnum.subtract(
-      [fixedAPR.apr, 18],
-      [spotRateAfterOpen, 18],
-    )[0];
-  }
-
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (
-    <div className="flex flex-col gap-3">
-      <LabelValue
-        label="You receive"
-        value={
-          <span className="font-bold">{`${formatBalance({
-            balance: long.bondAmount,
-            decimals: baseToken.decimals,
-            places: 4,
-          })} hy${baseToken.symbol}`}</span>
-        }
-      />
-      <LabelValue
-        label="Pool fee"
-        value={
-          <span
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-            data-tip="Total combined fee paid to LPs and governance to open the long."
-          >
-            {curveFee
-              ? `${formatBalance({
-                  balance: curveFee,
-                  decimals: baseToken.decimals,
-                  places: 6,
-                })} hy${baseToken.symbol}`
-              : `0 hy${baseToken.symbol}`}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Net fixed rate"
-        value={
-          <span
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-            data-tip="Your net fixed rate after pool fees and slippage are applied."
-          >
-            {long.bondAmount > 0
-              ? `${formatRate(
-                  calculateFixedRateFromOpenLong({
-                    positionDuration:
-                      hyperdrive.poolConfig.positionDuration || 0n,
-                    baseAmount: long.baseAmountPaid,
-                    bondAmount: long.bondAmount,
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
+        <LabelValue
+          label="You spend"
+          value={
+            <span>{`${formatBalance({
+              balance: long.baseAmountPaid,
+              decimals: baseToken.decimals,
+              places: 4,
+            })} ${activeToken.symbol}`}</span>
+          }
+        />
+        <LabelValue
+          label="You receive"
+          value={
+            <span className="font-bold">{`${formatBalance({
+              balance: long.bondAmount,
+              decimals: baseToken.decimals,
+              places: 4,
+            })} hy${baseToken.symbol}`}</span>
+          }
+        />
+        <LabelValue
+          label="Pool fee"
+          value={
+            <span
+              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+              data-tip="Total combined fee paid to LPs and governance to open the long."
+            >
+              {curveFee
+                ? `${formatBalance({
+                    balance: curveFee,
                     decimals: baseToken.decimals,
-                  }),
-                  baseToken.decimals,
-                )}% APR`
-              : "0% APR"}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Fixed APR after open"
-        value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-              { "border-b border-dashed border-current": spotRateAfterOpen },
-            )}
-            data-tip="The market fixed rate after opening the long."
-          >
-            {spotRateAfterOpen ? `${formatRate(spotRateAfterOpen)}% APR` : "-"}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Fixed APR impact"
-        value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-              {
-                "border-b border-dashed border-error text-error":
-                  spotRateAfterOpen,
-              },
-            )}
-            data-tip={`The net market impact on the fixed rate after opening the long.`}
-          >
-            {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Yield at maturity"
-        value={
-          <div
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
-            data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
-          >
-            {long.bondAmount > 0 ? (
-              <span className="cursor-help border-b border-dashed border-success text-success">
-                {long.bondAmount > long.baseAmountPaid ? "+" : ""}
-                {long.baseAmountPaid
-                  ? `${formatBalance({
-                      balance: long.bondAmount - long.baseAmountPaid,
+                    places: 6,
+                  })} hy${baseToken.symbol}`
+                : `0 hy${baseToken.symbol}`}
+            </span>
+          }
+        />
+      </div>
+      <div className="flex flex-col gap-3">
+        <h6 className="font-medium">Fixed Rate</h6>
+        <LabelValue
+          label="Net fixed rate"
+          value={
+            <span
+              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+              data-tip="Your net fixed rate after pool fees and slippage are applied."
+            >
+              {long.bondAmount > 0
+                ? `${formatRate(
+                    calculateFixedRateFromOpenLong({
+                      positionDuration:
+                        hyperdrive.poolConfig.positionDuration || 0n,
+                      baseAmount: long.baseAmountPaid,
+                      bondAmount: long.bondAmount,
                       decimals: baseToken.decimals,
-                      places: 4,
-                    })} ${baseToken.symbol}`
-                  : undefined}
-              </span>
-            ) : (
-              <span className="cursor-help border-b border-dashed">
-                0 {baseToken.symbol}
-              </span>
-            )}
-          </div>
-        }
-      />
-      <LabelValue
-        label="Matures in"
-        value={`${numDays} days, ${formatDate(Date.now() + termLengthMS)}`}
-      />
+                    }),
+                    baseToken.decimals,
+                  )}% APR`
+                : "0% APR"}
+            </span>
+          }
+        />
+        <LabelValue
+          label="Market rate after open"
+          value={
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                { "border-b border-dashed border-current": spotRateAfterOpen },
+              )}
+              data-tip="The market fixed rate after opening the long."
+            >
+              {spotRateAfterOpen
+                ? `${formatRate(spotRateAfterOpen)}% APR`
+                : "-"}
+            </span>
+          }
+        />
+        <LabelValue
+          label="Fixed APR impact"
+          value={
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
+                {
+                  "border-b border-dashed border-error text-error":
+                    spotRateAfterOpen,
+                },
+              )}
+              data-tip={`The net market impact on the fixed rate after opening the long.`}
+            >
+              {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
+            </span>
+          }
+        />
+      </div>
+      <div className="flex flex-col gap-3">
+        <h6 className="font-medium">Term</h6>
+        <LabelValue
+          label="Matures in"
+          value={`${numDays} days, ${formatDate(Date.now() + termLengthMS)}`}
+        />
+        <LabelValue
+          label="Yield at maturity"
+          value={
+            <div
+              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
+              data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
+            >
+              {long.bondAmount > 0 ? (
+                <span className="cursor-help border-b border-dashed border-success text-success">
+                  {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                  {long.baseAmountPaid
+                    ? `${formatBalance({
+                        balance: long.bondAmount - long.baseAmountPaid,
+                        decimals: baseToken.decimals,
+                        places: 4,
+                      })} ${baseToken.symbol}`
+                    : undefined}
+                </span>
+              ) : (
+                <span className="cursor-help border-b border-dashed">
+                  0 {baseToken.symbol}
+                </span>
+              )}
+            </div>
+          }
+        />
+      </div>
     </div>
   );
 }
