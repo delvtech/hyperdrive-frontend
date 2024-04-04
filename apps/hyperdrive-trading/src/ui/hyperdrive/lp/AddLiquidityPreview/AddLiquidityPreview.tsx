@@ -65,26 +65,6 @@ export function AddLiquidityPreview({
           </p>
         }
       />
-      {/* <LabelValue
-        label="Slippage paid"
-        value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-              { "border-b border-dashed border-current": slippagePaid },
-            )}
-            data-tip="Additional amount you pay to maintain the lp share price of the pool when adding liquidity"
-          >
-            {slippagePaid
-              ? `${formatBalance({
-                  balance: slippagePaid,
-                  decimals: depositTokenDecimals,
-                  places: 4,
-                })} ${depositTokenSymbol}`
-              : "-"}
-          </span>
-        }
-      /> */}
       <LabelValue
         label="You receive"
         value={
