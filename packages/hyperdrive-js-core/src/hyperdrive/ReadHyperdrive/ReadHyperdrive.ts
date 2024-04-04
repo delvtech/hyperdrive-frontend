@@ -1062,7 +1062,7 @@ export class ReadHyperdrive extends ReadModel {
       );
       const withdrawalSharesSharesValue = dnum.divide(
         withdrawalSharesBaseValue,
-        [lpSharePrice, 18],
+        [vaultSharePrice, 18],
       );
 
       baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
@@ -1077,8 +1077,10 @@ export class ReadHyperdrive extends ReadModel {
     };
   }
 
-  // combine the adds and removes in order of block number to get the full
-  // transaction history in the order the user executed them
+  /**
+   * Combine the adds and removes in order of block number to get the full
+   * transaction history in the order the user executed them
+   */
   private _calcOpenLpPosition(
     addLiquidityEvents: {
       eventName: "AddLiquidity";
