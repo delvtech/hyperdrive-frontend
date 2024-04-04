@@ -1,13 +1,10 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import classNames from "classnames";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -21,7 +18,7 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
+import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -66,29 +63,14 @@ export function RemoveLiquidityForm({
 
   const { address: account } = useAccount();
 
-  // Let users type in an amount of base or shares to withdraw
+  // Let users type in an amount of lp shares they want to remove
   const {
     amount,
-    amountAsBigInt: desiredOut,
+    amountAsBigInt: lpSharesIn,
     setAmount,
   } = useNumericInput({
     decimals: activeWithdrawToken.decimals,
   });
-
-  // Then calculate the lpSharesIn required to remove that amount of base
-  let desiredOutInBase = desiredOut;
-  if (activeWithdrawToken.address === sharesToken.address) {
-    desiredOutInBase = calculateValueFromPrice({
-      amount: desiredOut || 0n,
-      unitPrice: poolInfo?.vaultSharePrice || 0n,
-      decimals: activeWithdrawToken.decimals,
-    });
-  }
-
-  const lpSharesIn = calculateRequiredLpSharesIn(
-    desiredOutInBase,
-    poolInfo?.lpSharePrice,
-  );
 
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
@@ -98,7 +80,7 @@ export function RemoveLiquidityForm({
     withdrawalShares,
   } = usePreviewRemoveLiquidity({
     destination: account,
-    lpSharesIn: lpSharesIn,
+    lpSharesIn,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare: 1n,
     asBase:
@@ -107,7 +89,7 @@ export function RemoveLiquidityForm({
   });
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
-    lpSharesIn: lpSharesIn,
+    lpSharesIn,
     minOutputPerShare: 1n,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
@@ -136,59 +118,49 @@ export function RemoveLiquidityForm({
       })
     : null;
 
-  const currentLpValueInBase = calculateValueFromPrice({
-    amount: lpShares,
-    unitPrice: poolInfo?.lpSharePrice || 0n,
-    decimals: baseToken.decimals,
-  });
-
-  const currentLpValueInShares = poolInfo
-    ? dnum.divide(
-        [currentLpValueInBase, baseToken.decimals],
-        [poolInfo?.vaultSharePrice, hyperdrive.decimals],
-      )[0]
-    : 0n;
-  const activeWithdrawTokenLpValue =
-    activeWithdrawToken.address === baseToken.address
-      ? currentLpValueInBase
-      : currentLpValueInShares;
-
   const hasEnoughBalance = getHasEnoughBalance({
     amount: lpSharesIn,
     balance: lpShares,
   });
 
-  const slippageReceived = dnum.subtract(
-    [actualValueOut || 0n, hyperdrive.decimals],
-    [desiredOut || 0n, hyperdrive.decimals],
-  )[0];
-
   return (
     <TransactionView
+      setting={
+        <TokenChoices
+          label="Choose asset for withdrawal"
+          vertical
+          tokens={[
+            {
+              tokenConfig: baseToken,
+            },
+            {
+              tokenConfig: sharesToken,
+            },
+          ]}
+          selectedTokenAddress={activeWithdrawToken.address}
+          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+        />
+      }
       tokenInput={
         <TokenInput
-          name={baseToken.name}
+          name="Input LP shares"
           token={
-            <WithdrawTokenPicker
-              hyperdrive={hyperdrive}
-              activeWithdrawToken={activeWithdrawToken}
-              sharesToken={sharesToken}
-              baseToken={baseToken}
-              onChange={(tokenAddress) => {
-                setActiveWithdrawToken(tokenAddress);
-                setAmount("0");
-              }}
-            />
+            <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
+              <img src={baseToken.iconUrl} className="h-5 " />{" "}
+              <span className="text-sm font-semibold">
+                {baseToken.symbol}-LP
+              </span>
+            </div>
           }
           value={amount ?? ""}
-          maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
+          maxValue={formatUnits(lpShares, baseToken.decimals)}
           stat={
             lpShares && !!poolInfo
               ? `Withdrawable: ${formatBalance({
-                  balance: activeWithdrawTokenLpValue,
-                  decimals: baseToken.decimals,
+                  balance: lpShares,
+                  decimals: hyperdrive.decimals,
                   places: 2,
-                })} ${activeWithdrawToken.symbol}`
+                })} ${baseToken.symbol}-LP`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -197,41 +169,16 @@ export function RemoveLiquidityForm({
       transactionPreview={
         <>
           <LabelValue
-            label="Amount to withdraw"
+            label="You remove"
             value={`${
               actualValueOut
                 ? `${formatBalance({
-                    balance: desiredOut || 0n,
-                    decimals: activeWithdrawToken.decimals,
+                    balance: lpShares || 0n,
+                    decimals: hyperdrive.decimals,
                     places: 4,
                   })}`
                 : "0"
-            } ${activeWithdrawToken.symbol}`}
-          />
-          <LabelValue
-            label="Positive slippage"
-            value={
-              !hasEnoughBalance ? (
-                "-"
-              ) : (
-                <div
-                  data-tip="Additional amount you pay or receive for maintaining the lp share price of the pool when removing liquidity"
-                  className={classNames(
-                    "daisy-tooltip daisy-tooltip-top flex cursor-help items-center border-b border-dashed border-current before:left-0 before:border",
-                    {
-                      "text-success": slippageReceived > 0n,
-                      "text-error": slippageReceived < 0n,
-                    },
-                  )}
-                >
-                  {getPositiveSlippageLabel(
-                    slippageReceived,
-                    baseToken,
-                    activeWithdrawToken,
-                  )}
-                </div>
-              )
-            }
+            } ${baseToken.symbol}-LP`}
           />
           <LabelValue
             label="Total you receive"
@@ -260,7 +207,7 @@ export function RemoveLiquidityForm({
       }
       disclaimer={
         <>
-          {desiredOut && !hasEnoughBalance ? (
+          {lpSharesIn && !hasEnoughBalance ? (
             <p className="mb-2 text-center text-sm text-error">
               Insufficient balance
             </p>
@@ -298,44 +245,4 @@ export function RemoveLiquidityForm({
       })()}
     />
   );
-}
-
-function getPositiveSlippageLabel(
-  slippageReceived: bigint,
-  baseToken: TokenConfig<EmptyExtensions>,
-  activeWithdrawToken: TokenConfig<any>,
-) {
-  const isPositiveSlippage = slippageReceived > 0n;
-  const isNegativeSlippage = slippageReceived < 0n;
-
-  const isPositiveButLessThan0001 =
-    isPositiveSlippage &&
-    slippageReceived < dnum.from("0.0001", baseToken.decimals)[0];
-
-  const isNegativeButGreaterThan0001 =
-    isNegativeSlippage &&
-    slippageReceived > dnum.from("-0.0001", baseToken.decimals)[0];
-
-  if (isPositiveButLessThan0001) {
-    return `+<0.0001 ${activeWithdrawToken.symbol}`;
-  }
-
-  if (isNegativeButGreaterThan0001) {
-    return `-<0.0001 ${activeWithdrawToken.symbol}`;
-  }
-
-  return `${isPositiveSlippage ? "+" : ""}${formatBalance({
-    balance: slippageReceived,
-    decimals: activeWithdrawToken.decimals,
-    places: 4,
-  })} ${activeWithdrawToken.symbol}`;
-}
-
-function calculateRequiredLpSharesIn(
-  desiredBaseOut: bigint | undefined,
-  lpSharePrice: bigint | undefined,
-): bigint {
-  return !desiredBaseOut
-    ? 0n
-    : dnum.div([desiredBaseOut, 18], [lpSharePrice || 1n, 18])[0];
 }
