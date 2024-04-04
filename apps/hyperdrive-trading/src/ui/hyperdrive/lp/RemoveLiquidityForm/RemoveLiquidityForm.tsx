@@ -169,7 +169,7 @@ export function RemoveLiquidityForm({
       transactionPreview={
         <>
           <LabelValue
-            label="You remove"
+            label="Amount to withdraw"
             value={`${
               actualValueOut
                 ? `${formatBalance({
