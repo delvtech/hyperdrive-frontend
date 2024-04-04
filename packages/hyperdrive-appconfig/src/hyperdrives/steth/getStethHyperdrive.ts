@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadStEthHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
@@ -20,14 +20,15 @@ export async function getStethHyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const poolConfig = await publicClient.readContract({
+  const readHyperdrive = new ReadStEthHyperdrive({
     address: hyperdriveAddress,
-    abi: IHyperdrive.abi,
-    functionName: "getPoolConfig",
-  });
-  const sharesToken = await getStethHyperdriveSharesToken({
     publicClient,
-    sharesTokenAddress: poolConfig.vaultSharesToken,
+  });
+  const poolConfig = await readHyperdrive.getPoolConfig();
+
+  const readSharesToken = await readHyperdrive.getSharesToken();
+  const sharesToken = await getStethHyperdriveSharesToken({
+    sharesToken: readSharesToken,
     extensions: sharesTokenExtensions,
   });
 
