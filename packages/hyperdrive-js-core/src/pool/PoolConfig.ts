@@ -1,5 +1,5 @@
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { FunctionReturn } from "@delvtech/evm-client";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 
 // Given the unlikely scenario that getPoolConfig will have a second argument,
 // we can infer that the first element is always the PoolConfig. This approach

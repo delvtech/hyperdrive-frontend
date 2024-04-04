@@ -1,5 +1,5 @@
-import { expect, test } from "vitest";
 import { calculateFixedRateFromOpenLong } from "src/longs/calculateFixedRateFromOpenLong";
+import { expect, test } from "vitest";
 
 test("calculateFixedRateFromOpenLong should return fixed rate an open long position is currently earning", async () => {
   const rate = calculateFixedRateFromOpenLong({

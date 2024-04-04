@@ -13,7 +13,8 @@ import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
-import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
+import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
+import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
@@ -93,7 +94,7 @@ export class ReadHyperdrive extends ReadModel {
     options,
   }: {
     checkpointId: bigint;
-    options?: ContractReadOptions | undefined;
+    options?: ContractReadOptions;
   }): Promise<Checkpoint> {
     return this.contract.read(
       "getCheckpoint",
@@ -107,7 +108,7 @@ export class ReadHyperdrive extends ReadModel {
     options,
   }: {
     checkpointId: bigint;
-    options?: ContractReadOptions | undefined;
+    options?: ContractReadOptions;
   }): Promise<bigint> {
     return this.contract.read(
       "getCheckpointExposure",
@@ -239,7 +240,7 @@ export class ReadHyperdrive extends ReadModel {
     longVolume: bigint;
     shortVolume: bigint;
   }> {
-    const { fromBlock = "earliest", toBlock = "latest" } = options || {};
+    const { fromBlock, toBlock } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
       toBlock,
@@ -319,9 +320,8 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.getEvents("CloseShort", options);
   }
   async getLongEvents(
-    options?:
-      | ContractGetEventsOptions<HyperdriveAbi, "OpenLong">
-      | ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
+    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenLong"> &
+      ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -349,9 +349,8 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   async getShortEvents(
-    options?:
-      | ContractGetEventsOptions<HyperdriveAbi, "OpenShort">
-      | ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
+    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenShort"> &
+      ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -379,16 +378,26 @@ export class ReadHyperdrive extends ReadModel {
     );
   }
 
-  async getLpEvents(): Promise<{
+  async getLpEvents(
+    options?: ContractGetEventsOptions<HyperdriveAbi, "AddLiquidity"> &
+      ContractGetEventsOptions<HyperdriveAbi, "RemoveLiquidity"> &
+      ContractGetEventsOptions<HyperdriveAbi, "RedeemWithdrawalShares">,
+  ): Promise<{
     addLiquidity: Event<HyperdriveAbi, "AddLiquidity">[];
     removeLiquidity: Event<HyperdriveAbi, "RemoveLiquidity">[];
     redeemWithdrawalShares: Event<HyperdriveAbi, "RedeemWithdrawalShares">[];
   }> {
-    const addLiquidityEvents = await this.contract.getEvents("AddLiquidity");
-    const removeLiquidityEvents =
-      await this.contract.getEvents("RemoveLiquidity");
+    const addLiquidityEvents = await this.contract.getEvents(
+      "AddLiquidity",
+      options,
+    );
+    const removeLiquidityEvents = await this.contract.getEvents(
+      "RemoveLiquidity",
+      options,
+    );
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
+      options,
     );
 
     return {
@@ -453,29 +462,19 @@ export class ReadHyperdrive extends ReadModel {
     return { lpApy };
   }
 
-  private async getTransferSingleEvents({
-    filter,
-    fromBlock,
-    toBlock,
-  }: ContractGetEventsOptions<HyperdriveAbi, "TransferSingle">) {
-    return this.contract.getEvents("TransferSingle", {
-      filter,
-      fromBlock,
-      toBlock,
-    });
+  private async getTransferSingleEvents(
+    options: ContractGetEventsOptions<HyperdriveAbi, "TransferSingle">,
+  ) {
+    return this.contract.getEvents("TransferSingle", options);
   }
 
-  async getCheckpointEvents({
-    fromBlock,
-    toBlock,
-  }: {
-    fromBlock?: bigint;
-    toBlock?: bigint;
-  }): Promise<CheckpointEvent[]> {
-    const checkPointEvents = await this.contract.getEvents("CreateCheckpoint", {
-      fromBlock,
-      toBlock,
-    });
+  async getCheckpointEvents(
+    options?: ContractGetEventsOptions<HyperdriveAbi, "CreateCheckpoint">,
+  ): Promise<CheckpointEvent[]> {
+    const checkPointEvents = await this.contract.getEvents(
+      "CreateCheckpoint",
+      options,
+    );
     return checkPointEvents;
   }
 
@@ -578,24 +577,20 @@ export class ReadHyperdrive extends ReadModel {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<Long[]> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const toBlock = getBlockFromReadOptions(options);
 
     const openLongEvents = await this.contract.getEvents("OpenLong", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
 
     const longsInTransferSingleEvents = (
       await this.getTransferSingleEvents({
         filter: { to: account },
-        fromBlock,
         toBlock,
       })
     ).filter(
@@ -608,7 +603,6 @@ export class ReadHyperdrive extends ReadModel {
     const longsOutTransferSingleEvents = (
       await this.getTransferSingleEvents({
         filter: { from: account },
-        fromBlock,
         toBlock,
       })
     ).filter((transferSingleEvent) => {
@@ -642,14 +636,12 @@ export class ReadHyperdrive extends ReadModel {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<OpenShort[]> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const toBlock = getBlockFromReadOptions(options);
 
     const { checkpointDuration } = await this.getPoolConfig(options);
 
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
 
@@ -672,7 +664,6 @@ export class ReadHyperdrive extends ReadModel {
     const transferOutEvents = (
       await this.getTransferSingleEvents({
         filter: { from: account },
-        fromBlock,
         toBlock,
       })
     ).filter(
@@ -713,11 +704,10 @@ export class ReadHyperdrive extends ReadModel {
 
     const openShortEvents = await this.contract.getEvents("OpenShort", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
 
-    // Openning a short total cost
+    // Opening a short total cost
     const totalBasePaidByAssetId = mapValues(
       groupBy(openShortEvents, (event) => event.args.assetId.toString()),
       (events) => {
@@ -732,7 +722,6 @@ export class ReadHyperdrive extends ReadModel {
     const transferInEvents = (
       await this.getTransferSingleEvents({
         filter: { to: account },
-        fromBlock,
         toBlock,
       })
     ).filter(
@@ -789,12 +778,10 @@ export class ReadHyperdrive extends ReadModel {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<ClosedLong[]> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const toBlock = getBlockFromReadOptions(options);
 
     const closedLongs = await this.contract.getEvents("CloseLong", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
 
@@ -836,11 +823,9 @@ export class ReadHyperdrive extends ReadModel {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<ClosedShort[]> {
-    const fromBlock = "earliest";
-    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const toBlock = getBlockFromReadOptions(options);
     const closedShorts = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
-      fromBlock,
       toBlock,
     });
 
@@ -1023,13 +1008,16 @@ export class ReadHyperdrive extends ReadModel {
     baseValue: bigint;
     sharesValue: bigint;
   }> {
+    const toBlock = getBlockFromReadOptions(options);
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
       filter: { provider: account },
+      toBlock,
     });
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
       {
         filter: { provider: account },
+        toBlock,
       },
     );
 
@@ -1041,6 +1029,11 @@ export class ReadHyperdrive extends ReadModel {
     let baseValue = 0n;
     let sharesValue = 0n;
     if (lpShareBalance) {
+      // Note: `previewRemoveLiquidity` uses the `simulateWrite` method which
+      // simulates the transaction at the current block. This means that the
+      // calculated value of the position will always be based on the current
+      // state of the pool, even if the lp balance and amount paid were
+      // calculated using past events via the block in options.
       const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
         lpSharesIn: lpShareBalance,
         minOutputPerShare: 1n,
@@ -1049,7 +1042,9 @@ export class ReadHyperdrive extends ReadModel {
       });
 
       // convert the proceeds into base using vaultSharePrice
-      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo(options);
+      // Note: we don't pass in the options here because we want the current
+      // prices that were used in the previewRemoveLiquidity call.
+      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
       const proceedsBaseValue = dnum.multiply(
         [vaultSharePrice, 18],
         [proceeds, 18],
@@ -1150,7 +1145,7 @@ export class ReadHyperdrive extends ReadModel {
       "RemoveLiquidity",
       {
         filter: { provider: account },
-        ...options,
+        toBlock: getBlockFromReadOptions(options),
       },
     );
     return Promise.all(
@@ -1204,7 +1199,7 @@ export class ReadHyperdrive extends ReadModel {
       "RedeemWithdrawalShares",
       {
         filter: { provider: account },
-        ...options,
+        toBlock: getBlockFromReadOptions(options),
       },
     );
 

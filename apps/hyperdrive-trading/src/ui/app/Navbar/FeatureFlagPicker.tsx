@@ -3,13 +3,13 @@ import { ReactElement } from "react";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 export function FeatureFlagPicker(): ReactElement {
   return (
-    <div className="daisy-dropdown-end daisy-dropdown">
-      <label tabIndex={0} className="daisy-btn-ghost daisy-btn rounded-btn">
+    <div className="daisy-dropdown daisy-dropdown-end">
+      <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
         <Cog6ToothIcon className="h-4" /> Devtools
       </label>
       <ul
         tabIndex={0}
-        className="daisy-dropdown-content daisy-menu z-[1] mt-4 w-52 rounded-box bg-base-100 p-2 shadow"
+        className="daisy-menu daisy-dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-100 p-2 shadow"
       >
         <li className="daisy-menu-title">Feature flags</li>
         {/* Place your feature flag menu items here */}

@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
-import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 import * as dnum from "dnum";
+import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
+import { expect, test } from "vitest";
 
 test("should return adjusted amount down when given a basic input", () => {
   const [amount] = dnum.from("100", 18);

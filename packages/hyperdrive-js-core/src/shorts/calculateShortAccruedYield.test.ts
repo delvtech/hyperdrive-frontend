@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
 import * as dnum from "dnum";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
+import { expect, test } from "vitest";
 
 test("calculateShortAccruedYield should return the yield a short has accrued since it was opened", async () => {
   const [sharePriceAtCheckpointOpened] = dnum.from("1.008", 18);

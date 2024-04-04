@@ -2,6 +2,7 @@
   "name": "hyperdrive-frontend",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -23,9 +24,11 @@
   },
   "devDependencies": {
     "@hyperdrive/prettier-config": "*",
+    "eslint": "^8.57.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "latest",
+    "prettier": "3.2.5",
+    "prettier-plugin-organize-imports": "3.2.4",
     "turbo": "latest",
     "typescript": "^5.0.2"
   },
