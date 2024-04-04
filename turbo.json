@@ -7,11 +7,19 @@
     },
     "hyperdrive-trading#build": {
       "dependsOn": ["^build"],
+      "env": [
+        "DEV",
+        "VITE_CUSTOM_CHAIN_NODE_RPC_URL",
+        "VITE_CUSTOM_CHAIN_CHAIN_ID",
+        "VITE_LOCALHOST_NODE_RPC_URL",
+        "VITE_CUSTOM_CHAIN_ADDRESSES_URL",
+        "VITE_WALLET_CONNECT_PROJECT_ID",
+        "VITE_SEPOLIA_RPC_URL"
+      ],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
       "dependsOn": ["^build"],
-      "env": ["DEV"],
       "outputs": []
     },
     "typecheck": {
