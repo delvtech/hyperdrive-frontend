@@ -245,6 +245,12 @@ export const StETHBase = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
+                    "name": "checkpointVaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
                     "name": "vaultSharePrice",
                     "type": "uint256"
                 },
@@ -654,7 +660,7 @@ export const StETHBase = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Lido has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Lido protocol. Instead of      maintaining a balance of shares, this integration can simply use Lido      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"StethHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the stETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/steth/StETHBase.sol\":\"StETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/steth/StETHBase.sol\":{\"keccak256\":\"0x09a034440b771cff04168ffc24f1adacc1d62720c4beab60565e828fd1db84a2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0efc44043bec87c7140b04ad38c98bed2ed9a47dd491a3ec5a10e9880dc690d\",\"dweb:/ipfs/Qmb3QMmYAF9TbKMxidjdPjHbFpEp7uXLFXbf2m8mt3TwN4\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/ILido.sol\":{\"keccak256\":\"0x4e281fcc11a2512234c3ca7fb3dd00708bfb78cea39a7cbd911f2a70812925e6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8db577a2a335ebc7011a7e413abd0a78010e85b1573a26218999e335280f3ba3\",\"dweb:/ipfs/QmQrjdiCvNUjDvEHyHH2Wmo8zRN7H3LLRuvrdftP7pc5kE\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f\",\"dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Lido has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Lido protocol. Instead of      maintaining a balance of shares, this integration can simply use Lido      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"StethHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the stETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/steth/StETHBase.sol\":\"StETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/steth/StETHBase.sol\":{\"keccak256\":\"0x09a034440b771cff04168ffc24f1adacc1d62720c4beab60565e828fd1db84a2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0efc44043bec87c7140b04ad38c98bed2ed9a47dd491a3ec5a10e9880dc690d\",\"dweb:/ipfs/Qmb3QMmYAF9TbKMxidjdPjHbFpEp7uXLFXbf2m8mt3TwN4\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/ILido.sol\":{\"keccak256\":\"0x4e281fcc11a2512234c3ca7fb3dd00708bfb78cea39a7cbd911f2a70812925e6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8db577a2a335ebc7011a7e413abd0a78010e85b1573a26218999e335280f3ba3\",\"dweb:/ipfs/QmQrjdiCvNUjDvEHyHH2Wmo8zRN7H3LLRuvrdftP7pc5kE\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a\",\"dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -902,6 +908,12 @@ export const StETHBase = {
                             "name": "checkpointTime",
                             "type": "uint256",
                             "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "checkpointVaultSharePrice",
+                            "type": "uint256",
+                            "indexed": false
                         },
                         {
                             "internalType": "uint256",
@@ -1372,10 +1384,10 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
+                "keccak256": "0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784",
                 "urls": [
-                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
-                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
+                    "bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa",
+                    "dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1484,10 +1496,10 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067",
+                "keccak256": "0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed",
                 "urls": [
-                    "bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f",
-                    "dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ"
+                    "bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a",
+                    "dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1500,10 +1512,10 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891",
+                "keccak256": "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1",
                 "urls": [
-                    "bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c",
-                    "dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy"
+                    "bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9",
+                    "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1520,29 +1532,29 @@ export const StETHBase = {
     },
     "ast": {
         "absolutePath": "contracts/src/instances/steth/StETHBase.sol",
-        "id": 9703,
+        "id": 9533,
         "exportedSymbols": {
             "FixedPointMath": [
-                19065
+                18968
             ],
             "HyperdriveBase": [
-                13995
+                13835
             ],
             "IHyperdrive": [
-                10676
+                10506
             ],
             "ILido": [
-                11633
+                11465
             ],
             "StETHBase": [
-                9702
+                9532
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:5290:72",
         "nodes": [
             {
-                "id": 9491,
+                "id": 9321,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:72",
                 "nodes": [],
@@ -1553,23 +1565,23 @@ export const StETHBase = {
                 ]
             },
             {
-                "id": 9493,
+                "id": 9323,
                 "nodeType": "ImportDirective",
                 "src": "64:63:72",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 9703,
-                "sourceUnit": 10677,
+                "scope": 9533,
+                "sourceUnit": 10507,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9492,
+                            "id": 9322,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10676,
+                            "referencedDeclaration": 10506,
                             "src": "73:11:72",
                             "typeDescriptions": {}
                         },
@@ -1579,23 +1591,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 9495,
+                "id": 9325,
                 "nodeType": "ImportDirective",
                 "src": "128:51:72",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/ILido.sol",
                 "file": "../../interfaces/ILido.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 9703,
-                "sourceUnit": 11634,
+                "scope": 9533,
+                "sourceUnit": 11466,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9494,
+                            "id": 9324,
                             "name": "ILido",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11633,
+                            "referencedDeclaration": 11465,
                             "src": "137:5:72",
                             "typeDescriptions": {}
                         },
@@ -1605,23 +1617,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 9497,
+                "id": 9327,
                 "nodeType": "ImportDirective",
                 "src": "180:67:72",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
                 "file": "../../internal/HyperdriveBase.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 9703,
-                "sourceUnit": 13996,
+                "scope": 9533,
+                "sourceUnit": 13836,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9496,
+                            "id": 9326,
                             "name": "HyperdriveBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13995,
+                            "referencedDeclaration": 13835,
                             "src": "189:14:72",
                             "typeDescriptions": {}
                         },
@@ -1631,23 +1643,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 9499,
+                "id": 9329,
                 "nodeType": "ImportDirective",
                 "src": "248:68:72",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../../libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 9703,
-                "sourceUnit": 19066,
+                "scope": 9533,
+                "sourceUnit": 18969,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9498,
+                            "id": 9328,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 19065,
+                            "referencedDeclaration": 18968,
                             "src": "257:14:72",
                             "typeDescriptions": {}
                         },
@@ -1657,28 +1669,28 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 9702,
+                "id": 9532,
                 "nodeType": "ContractDefinition",
                 "src": "907:4421:72",
                 "nodes": [
                     {
-                        "id": 9505,
+                        "id": 9335,
                         "nodeType": "UsingForDirective",
                         "src": "959:33:72",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 9503,
+                            "id": 9333,
                             "name": "FixedPointMath",
                             "nameLocations": [
                                 "965:14:72"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 19065,
+                            "referencedDeclaration": 18968,
                             "src": "965:14:72"
                         },
                         "typeName": {
-                            "id": 9504,
+                            "id": 9334,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "984:7:72",
@@ -1689,12 +1701,12 @@ export const StETHBase = {
                         }
                     },
                     {
-                        "id": 9556,
+                        "id": 9386,
                         "nodeType": "FunctionDefinition",
                         "src": "1335:910:72",
                         "nodes": [],
                         "body": {
-                            "id": 9555,
+                            "id": 9385,
                             "nodeType": "Block",
                             "src": "1495:750:72",
                             "nodes": [],
@@ -1705,14 +1717,14 @@ export const StETHBase = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 9521,
+                                        "id": 9351,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 9518,
+                                                "id": 9348,
                                                 "name": "msg",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1723,7 +1735,7 @@ export const StETHBase = {
                                                     "typeString": "msg"
                                                 }
                                             },
-                                            "id": 9519,
+                                            "id": 9349,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1740,11 +1752,11 @@ export const StETHBase = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 9520,
+                                            "id": 9350,
                                             "name": "_baseAmount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9508,
+                                            "referencedDeclaration": 9338,
                                             "src": "1575:11:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1757,11 +1769,11 @@ export const StETHBase = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 9528,
+                                    "id": 9358,
                                     "nodeType": "IfStatement",
                                     "src": "1559:89:72",
                                     "trueBody": {
-                                        "id": 9527,
+                                        "id": 9357,
                                         "nodeType": "Block",
                                         "src": "1588:60:72",
                                         "statements": [
@@ -1771,18 +1783,18 @@ export const StETHBase = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 9522,
+                                                            "id": 9352,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "1609:11:72",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 9524,
+                                                        "id": 9354,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1790,14 +1802,14 @@ export const StETHBase = {
                                                         "memberLocation": "1621:14:72",
                                                         "memberName": "TransferFailed",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10621,
+                                                        "referencedDeclaration": 10451,
                                                         "src": "1609:26:72",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 9525,
+                                                    "id": 9355,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1813,7 +1825,7 @@ export const StETHBase = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 9526,
+                                                "id": 9356,
                                                 "nodeType": "RevertStatement",
                                                 "src": "1602:35:72"
                                             }
@@ -1821,23 +1833,23 @@ export const StETHBase = {
                                     }
                                 },
                                 {
-                                    "id": 9536,
+                                    "id": 9366,
                                     "nodeType": "UncheckedBlock",
                                     "src": "1760:67:72",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 9534,
+                                                "id": 9364,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 9529,
+                                                    "id": 9359,
                                                     "name": "refund",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 9516,
+                                                    "referencedDeclaration": 9346,
                                                     "src": "1784:6:72",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1851,14 +1863,14 @@ export const StETHBase = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 9533,
+                                                    "id": 9363,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
                                                         "expression": {
-                                                            "id": 9530,
+                                                            "id": 9360,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -1869,7 +1881,7 @@ export const StETHBase = {
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 9531,
+                                                        "id": 9361,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1886,11 +1898,11 @@ export const StETHBase = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 9532,
+                                                        "id": 9362,
                                                         "name": "_baseAmount",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 9508,
+                                                        "referencedDeclaration": 9338,
                                                         "src": "1805:11:72",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1909,7 +1921,7 @@ export const StETHBase = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 9535,
+                                            "id": 9365,
                                             "nodeType": "ExpressionStatement",
                                             "src": "1784:32:72"
                                         }
@@ -1917,17 +1929,17 @@ export const StETHBase = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 9549,
+                                        "id": 9379,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 9537,
+                                            "id": 9367,
                                             "name": "sharesMinted",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9514,
+                                            "referencedDeclaration": 9344,
                                             "src": "2086:12:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1939,11 +1951,11 @@ export const StETHBase = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 9547,
+                                                    "id": 9377,
                                                     "name": "_feeCollector",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17839,
+                                                    "referencedDeclaration": 17742,
                                                     "src": "2184:13:72",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
@@ -1970,14 +1982,14 @@ export const StETHBase = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 9541,
+                                                                        "id": 9371,
                                                                         "name": "_vaultSharesToken",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 17792,
+                                                                        "referencedDeclaration": 17695,
                                                                         "src": "2115:17:72",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                             "typeString": "contract IERC20"
                                                                         }
                                                                     }
@@ -1985,11 +1997,11 @@ export const StETHBase = {
                                                                 "expression": {
                                                                     "argumentTypes": [
                                                                         {
-                                                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                             "typeString": "contract IERC20"
                                                                         }
                                                                     ],
-                                                                    "id": 9540,
+                                                                    "id": 9370,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2001,14 +2013,14 @@ export const StETHBase = {
                                                                         "typeString": "type(address)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 9539,
+                                                                        "id": 9369,
                                                                         "name": "address",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "2107:7:72",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 9542,
+                                                                "id": 9372,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2032,18 +2044,18 @@ export const StETHBase = {
                                                                     "typeString": "address"
                                                                 }
                                                             ],
-                                                            "id": 9538,
+                                                            "id": 9368,
                                                             "name": "ILido",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11633,
+                                                            "referencedDeclaration": 11465,
                                                             "src": "2101:5:72",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                                 "typeString": "type(contract ILido)"
                                                             }
                                                         },
-                                                        "id": 9543,
+                                                        "id": 9373,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2055,11 +2067,11 @@ export const StETHBase = {
                                                         "src": "2101:33:72",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_ILido_$11633",
+                                                            "typeIdentifier": "t_contract$_ILido_$11465",
                                                             "typeString": "contract ILido"
                                                         }
                                                     },
-                                                    "id": 9544,
+                                                    "id": 9374,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2067,14 +2079,14 @@ export const StETHBase = {
                                                     "memberLocation": "2135:6:72",
                                                     "memberName": "submit",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 11568,
+                                                    "referencedDeclaration": 11400,
                                                     "src": "2101:40:72",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_payable$_t_address_$returns$_t_uint256_$",
                                                         "typeString": "function (address) payable external returns (uint256)"
                                                     }
                                                 },
-                                                "id": 9546,
+                                                "id": 9376,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2085,11 +2097,11 @@ export const StETHBase = {
                                                 "nodeType": "FunctionCallOptions",
                                                 "options": [
                                                     {
-                                                        "id": 9545,
+                                                        "id": 9375,
                                                         "name": "_baseAmount",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 9508,
+                                                        "referencedDeclaration": 9338,
                                                         "src": "2162:11:72",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -2103,7 +2115,7 @@ export const StETHBase = {
                                                     "typeString": "function (address) payable external returns (uint256)"
                                                 }
                                             },
-                                            "id": 9548,
+                                            "id": 9378,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2125,7 +2137,7 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 9550,
+                                    "id": 9380,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2086:112:72"
                                 },
@@ -2133,11 +2145,11 @@ export const StETHBase = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 9551,
+                                                "id": 9381,
                                                 "name": "sharesMinted",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9514,
+                                                "referencedDeclaration": 9344,
                                                 "src": "2217:12:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2145,11 +2157,11 @@ export const StETHBase = {
                                                 }
                                             },
                                             {
-                                                "id": 9552,
+                                                "id": 9382,
                                                 "name": "refund",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9516,
+                                                "referencedDeclaration": 9346,
                                                 "src": "2231:6:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2157,7 +2169,7 @@ export const StETHBase = {
                                                 }
                                             }
                                         ],
-                                        "id": 9553,
+                                        "id": 9383,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -2170,18 +2182,18 @@ export const StETHBase = {
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 9517,
-                                    "id": 9554,
+                                    "functionReturnParameters": 9347,
+                                    "id": 9384,
                                     "nodeType": "Return",
                                     "src": "2209:29:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13026
+                            12866
                         ],
                         "documentation": {
-                            "id": 9506,
+                            "id": 9336,
                             "nodeType": "StructuredDocumentation",
                             "src": "1024:306:72",
                             "text": "@dev Accepts a deposit from the user in base.\n @param _baseAmount The base amount to deposit.\n @return sharesMinted The shares that were minted in the deposit.\n @return refund The amount of ETH to refund. This should be zero for\n         yield sources that don't accept ETH."
@@ -2192,23 +2204,23 @@ export const StETHBase = {
                         "name": "_depositWithBase",
                         "nameLocation": "1344:16:72",
                         "overrides": {
-                            "id": 9512,
+                            "id": 9342,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "1439:8:72"
                         },
                         "parameters": {
-                            "id": 9511,
+                            "id": 9341,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9508,
+                                    "id": 9338,
                                     "mutability": "mutable",
                                     "name": "_baseAmount",
                                     "nameLocation": "1378:11:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9556,
+                                    "scope": 9386,
                                     "src": "1370:19:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2217,7 +2229,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9507,
+                                        "id": 9337,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1370:7:72",
@@ -2230,12 +2242,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9510,
+                                    "id": 9340,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9556,
+                                    "scope": 9386,
                                     "src": "1399:14:72",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2244,7 +2256,7 @@ export const StETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 9509,
+                                        "id": 9339,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1399:5:72",
@@ -2259,17 +2271,17 @@ export const StETHBase = {
                             "src": "1360:69:72"
                         },
                         "returnParameters": {
-                            "id": 9517,
+                            "id": 9347,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9514,
+                                    "id": 9344,
                                     "mutability": "mutable",
                                     "name": "sharesMinted",
                                     "nameLocation": "1465:12:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9556,
+                                    "scope": 9386,
                                     "src": "1457:20:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2278,7 +2290,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9513,
+                                        "id": 9343,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1457:7:72",
@@ -2291,12 +2303,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9516,
+                                    "id": 9346,
                                     "mutability": "mutable",
                                     "name": "refund",
                                     "nameLocation": "1487:6:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9556,
+                                    "scope": 9386,
                                     "src": "1479:14:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2305,7 +2317,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9515,
+                                        "id": 9345,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1479:7:72",
@@ -2319,18 +2331,18 @@ export const StETHBase = {
                             ],
                             "src": "1456:38:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9582,
+                        "id": 9412,
                         "nodeType": "FunctionDefinition",
                         "src": "2363:324:72",
                         "nodes": [],
                         "body": {
-                            "id": 9581,
+                            "id": 9411,
                             "nodeType": "Block",
                             "src": "2479:208:72",
                             "nodes": [],
@@ -2340,7 +2352,7 @@ export const StETHBase = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 9572,
+                                                    "id": 9402,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -2351,7 +2363,7 @@ export const StETHBase = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 9573,
+                                                "id": 9403,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2368,14 +2380,14 @@ export const StETHBase = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 9576,
+                                                        "id": 9406,
                                                         "name": "this",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -28,
                                                         "src": "2639:4:72",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_StETHBase_$9702",
+                                                            "typeIdentifier": "t_contract$_StETHBase_$9532",
                                                             "typeString": "contract StETHBase"
                                                         }
                                                     }
@@ -2383,11 +2395,11 @@ export const StETHBase = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_StETHBase_$9702",
+                                                            "typeIdentifier": "t_contract$_StETHBase_$9532",
                                                             "typeString": "contract StETHBase"
                                                         }
                                                     ],
-                                                    "id": 9575,
+                                                    "id": 9405,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2399,14 +2411,14 @@ export const StETHBase = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 9574,
+                                                        "id": 9404,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2631:7:72",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 9577,
+                                                "id": 9407,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2423,11 +2435,11 @@ export const StETHBase = {
                                                 }
                                             },
                                             {
-                                                "id": 9578,
+                                                "id": 9408,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9559,
+                                                "referencedDeclaration": 9389,
                                                 "src": "2658:12:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2455,14 +2467,14 @@ export const StETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 9568,
+                                                                "id": 9398,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17792,
+                                                                "referencedDeclaration": 17695,
                                                                 "src": "2555:17:72",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -2470,11 +2482,11 @@ export const StETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 9567,
+                                                            "id": 9397,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2486,14 +2498,14 @@ export const StETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 9566,
+                                                                "id": 9396,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "2547:7:72",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 9569,
+                                                        "id": 9399,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2517,18 +2529,18 @@ export const StETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 9565,
+                                                    "id": 9395,
                                                     "name": "ILido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11633,
+                                                    "referencedDeclaration": 11465,
                                                     "src": "2541:5:72",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                         "typeString": "type(contract ILido)"
                                                     }
                                                 },
-                                                "id": 9570,
+                                                "id": 9400,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2540,11 +2552,11 @@ export const StETHBase = {
                                                 "src": "2541:33:72",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$11633",
+                                                    "typeIdentifier": "t_contract$_ILido_$11465",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 9571,
+                                            "id": 9401,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2552,14 +2564,14 @@ export const StETHBase = {
                                             "memberLocation": "2575:18:72",
                                             "memberName": "transferSharesFrom",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 11590,
+                                            "referencedDeclaration": 11422,
                                             "src": "2541:52:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (address,address,uint256) external returns (uint256)"
                                             }
                                         },
-                                        "id": 9579,
+                                        "id": 9409,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2575,17 +2587,17 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 9580,
+                                    "id": 9410,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2541:139:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13034
+                            12874
                         ],
                         "documentation": {
-                            "id": 9557,
+                            "id": 9387,
                             "nodeType": "StructuredDocumentation",
                             "src": "2251:107:72",
                             "text": "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit."
@@ -2596,23 +2608,23 @@ export const StETHBase = {
                         "name": "_depositWithShares",
                         "nameLocation": "2372:18:72",
                         "overrides": {
-                            "id": 9563,
+                            "id": 9393,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2470:8:72"
                         },
                         "parameters": {
-                            "id": 9562,
+                            "id": 9392,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9559,
+                                    "id": 9389,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "2408:12:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9582,
+                                    "scope": 9412,
                                     "src": "2400:20:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2621,7 +2633,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9558,
+                                        "id": 9388,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2400:7:72",
@@ -2634,12 +2646,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9561,
+                                    "id": 9391,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9582,
+                                    "scope": 9412,
                                     "src": "2430:14:72",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2648,7 +2660,7 @@ export const StETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 9560,
+                                        "id": 9390,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2430:5:72",
@@ -2663,23 +2675,23 @@ export const StETHBase = {
                             "src": "2390:70:72"
                         },
                         "returnParameters": {
-                            "id": 9564,
+                            "id": 9394,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2479:0:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9601,
+                        "id": 9431,
                         "nodeType": "FunctionDefinition",
                         "src": "2790:358:72",
                         "nodes": [],
                         "body": {
-                            "id": 9600,
+                            "id": 9430,
                             "nodeType": "Block",
                             "src": "2952:196:72",
                             "nodes": [],
@@ -2690,18 +2702,18 @@ export const StETHBase = {
                                         "expression": {
                                             "argumentTypes": [],
                                             "expression": {
-                                                "id": 9595,
+                                                "id": 9425,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10676,
+                                                "referencedDeclaration": 10506,
                                                 "src": "3111:11:72",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 9597,
+                                            "id": 9427,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2709,14 +2721,14 @@ export const StETHBase = {
                                             "memberLocation": "3123:16:72",
                                             "memberName": "UnsupportedToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10642,
+                                            "referencedDeclaration": 10472,
                                             "src": "3111:28:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                 "typeString": "function () pure"
                                             }
                                         },
-                                        "id": 9598,
+                                        "id": 9428,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2732,17 +2744,17 @@ export const StETHBase = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 9599,
+                                    "id": 9429,
                                     "nodeType": "RevertStatement",
                                     "src": "3104:37:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13046
+                            12886
                         ],
                         "documentation": {
-                            "id": 9583,
+                            "id": 9413,
                             "nodeType": "StructuredDocumentation",
                             "src": "2693:92:72",
                             "text": "@dev Process a withdrawal in base and send the proceeds to the\n      destination."
@@ -2753,23 +2765,23 @@ export const StETHBase = {
                         "name": "_withdrawWithBase",
                         "nameLocation": "2799:17:72",
                         "overrides": {
-                            "id": 9591,
+                            "id": 9421,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2925:8:72"
                         },
                         "parameters": {
-                            "id": 9590,
+                            "id": 9420,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9585,
+                                    "id": 9415,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9601,
+                                    "scope": 9431,
                                     "src": "2826:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2778,7 +2790,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9584,
+                                        "id": 9414,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2826:7:72",
@@ -2791,12 +2803,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9587,
+                                    "id": 9417,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9601,
+                                    "scope": 9431,
                                     "src": "2853:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2805,7 +2817,7 @@ export const StETHBase = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 9586,
+                                        "id": 9416,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2853:7:72",
@@ -2819,12 +2831,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9589,
+                                    "id": 9419,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9601,
+                                    "scope": 9431,
                                     "src": "2880:14:72",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2833,7 +2845,7 @@ export const StETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 9588,
+                                        "id": 9418,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2880:5:72",
@@ -2848,17 +2860,17 @@ export const StETHBase = {
                             "src": "2816:94:72"
                         },
                         "returnParameters": {
-                            "id": 9594,
+                            "id": 9424,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9593,
+                                    "id": 9423,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9601,
+                                    "scope": 9431,
                                     "src": "2943:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2867,7 +2879,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9592,
+                                        "id": 9422,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2943:7:72",
@@ -2881,18 +2893,18 @@ export const StETHBase = {
                             ],
                             "src": "2942:9:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9624,
+                        "id": 9454,
                         "nodeType": "FunctionDefinition",
                         "src": "3390:331:72",
                         "nodes": [],
                         "body": {
-                            "id": 9623,
+                            "id": 9453,
                             "nodeType": "Block",
                             "src": "3537:184:72",
                             "nodes": [],
@@ -2901,11 +2913,11 @@ export const StETHBase = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 9619,
+                                                "id": 9449,
                                                 "name": "_destination",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9606,
+                                                "referencedDeclaration": 9436,
                                                 "src": "3666:12:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -2913,11 +2925,11 @@ export const StETHBase = {
                                                 }
                                             },
                                             {
-                                                "id": 9620,
+                                                "id": 9450,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9604,
+                                                "referencedDeclaration": 9434,
                                                 "src": "3692:12:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2941,14 +2953,14 @@ export const StETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 9615,
+                                                                "id": 9445,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17792,
+                                                                "referencedDeclaration": 17695,
                                                                 "src": "3618:17:72",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -2956,11 +2968,11 @@ export const StETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 9614,
+                                                            "id": 9444,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2972,14 +2984,14 @@ export const StETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 9613,
+                                                                "id": 9443,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "3610:7:72",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 9616,
+                                                        "id": 9446,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3003,18 +3015,18 @@ export const StETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 9612,
+                                                    "id": 9442,
                                                     "name": "ILido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11633,
+                                                    "referencedDeclaration": 11465,
                                                     "src": "3604:5:72",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                         "typeString": "type(contract ILido)"
                                                     }
                                                 },
-                                                "id": 9617,
+                                                "id": 9447,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3026,11 +3038,11 @@ export const StETHBase = {
                                                 "src": "3604:33:72",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$11633",
+                                                    "typeIdentifier": "t_contract$_ILido_$11465",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 9618,
+                                            "id": 9448,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3038,14 +3050,14 @@ export const StETHBase = {
                                             "memberLocation": "3638:14:72",
                                             "memberName": "transferShares",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 11578,
+                                            "referencedDeclaration": 11410,
                                             "src": "3604:48:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (address,uint256) external returns (uint256)"
                                             }
                                         },
-                                        "id": 9621,
+                                        "id": 9451,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3061,17 +3073,17 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 9622,
+                                    "id": 9452,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3604:110:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13056
+                            12896
                         ],
                         "documentation": {
-                            "id": 9602,
+                            "id": 9432,
                             "nodeType": "StructuredDocumentation",
                             "src": "3154:231:72",
                             "text": "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal."
@@ -3082,23 +3094,23 @@ export const StETHBase = {
                         "name": "_withdrawWithShares",
                         "nameLocation": "3399:19:72",
                         "overrides": {
-                            "id": 9610,
+                            "id": 9440,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "3528:8:72"
                         },
                         "parameters": {
-                            "id": 9609,
+                            "id": 9439,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9604,
+                                    "id": 9434,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "3436:12:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9624,
+                                    "scope": 9454,
                                     "src": "3428:20:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3107,7 +3119,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9603,
+                                        "id": 9433,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3428:7:72",
@@ -3120,12 +3132,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9606,
+                                    "id": 9436,
                                     "mutability": "mutable",
                                     "name": "_destination",
                                     "nameLocation": "3466:12:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9624,
+                                    "scope": 9454,
                                     "src": "3458:20:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3134,7 +3146,7 @@ export const StETHBase = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 9605,
+                                        "id": 9435,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3458:7:72",
@@ -3148,12 +3160,12 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 9608,
+                                    "id": 9438,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9624,
+                                    "scope": 9454,
                                     "src": "3488:14:72",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -3162,7 +3174,7 @@ export const StETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 9607,
+                                        "id": 9437,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3488:5:72",
@@ -3177,33 +3189,33 @@ export const StETHBase = {
                             "src": "3418:100:72"
                         },
                         "returnParameters": {
-                            "id": 9611,
+                            "id": 9441,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3537:0:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9630,
+                        "id": 9460,
                         "nodeType": "FunctionDefinition",
                         "src": "3824:55:72",
                         "nodes": [],
                         "body": {
-                            "id": 9629,
+                            "id": 9459,
                             "nodeType": "Block",
                             "src": "3877:2:72",
                             "nodes": [],
                             "statements": []
                         },
                         "baseFunctions": [
-                            13060
+                            12900
                         ],
                         "documentation": {
-                            "id": 9625,
+                            "id": 9455,
                             "nodeType": "StructuredDocumentation",
                             "src": "3727:92:72",
                             "text": "@dev We override the message value check since this integration is\n      payable."
@@ -3214,35 +3226,35 @@ export const StETHBase = {
                         "name": "_checkMessageValue",
                         "nameLocation": "3833:18:72",
                         "overrides": {
-                            "id": 9627,
+                            "id": 9457,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "3868:8:72"
                         },
                         "parameters": {
-                            "id": 9626,
+                            "id": 9456,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3851:2:72"
                         },
                         "returnParameters": {
-                            "id": 9628,
+                            "id": 9458,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3877:0:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9650,
+                        "id": 9480,
                         "nodeType": "FunctionDefinition",
                         "src": "4051:235:72",
                         "nodes": [],
                         "body": {
-                            "id": 9649,
+                            "id": 9479,
                             "nodeType": "Block",
                             "src": "4152:134:72",
                             "nodes": [],
@@ -3251,11 +3263,11 @@ export const StETHBase = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 9646,
+                                                "id": 9476,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9633,
+                                                "referencedDeclaration": 9463,
                                                 "src": "4253:12:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3275,14 +3287,14 @@ export const StETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 9642,
+                                                                "id": 9472,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17792,
+                                                                "referencedDeclaration": 17695,
                                                                 "src": "4195:17:72",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3290,11 +3302,11 @@ export const StETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 9641,
+                                                            "id": 9471,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3306,14 +3318,14 @@ export const StETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 9640,
+                                                                "id": 9470,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4187:7:72",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 9643,
+                                                        "id": 9473,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3337,18 +3349,18 @@ export const StETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 9639,
+                                                    "id": 9469,
                                                     "name": "ILido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11633,
+                                                    "referencedDeclaration": 11465,
                                                     "src": "4181:5:72",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                         "typeString": "type(contract ILido)"
                                                     }
                                                 },
-                                                "id": 9644,
+                                                "id": 9474,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3360,11 +3372,11 @@ export const StETHBase = {
                                                 "src": "4181:33:72",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$11633",
+                                                    "typeIdentifier": "t_contract$_ILido_$11465",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 9645,
+                                            "id": 9475,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3372,14 +3384,14 @@ export const StETHBase = {
                                             "memberLocation": "4215:20:72",
                                             "memberName": "getPooledEthByShares",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 11606,
+                                            "referencedDeclaration": 11438,
                                             "src": "4181:54:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 9647,
+                                        "id": 9477,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3395,18 +3407,18 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 9638,
-                                    "id": 9648,
+                                    "functionReturnParameters": 9468,
+                                    "id": 9478,
                                     "nodeType": "Return",
                                     "src": "4162:117:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13090
+                            12930
                         ],
                         "documentation": {
-                            "id": 9631,
+                            "id": 9461,
                             "nodeType": "StructuredDocumentation",
                             "src": "3885:161:72",
                             "text": "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount."
@@ -3417,23 +3429,23 @@ export const StETHBase = {
                         "name": "_convertToBase",
                         "nameLocation": "4060:14:72",
                         "overrides": {
-                            "id": 9635,
+                            "id": 9465,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "4125:8:72"
                         },
                         "parameters": {
-                            "id": 9634,
+                            "id": 9464,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9633,
+                                    "id": 9463,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "4092:12:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9650,
+                                    "scope": 9480,
                                     "src": "4084:20:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3442,7 +3454,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9632,
+                                        "id": 9462,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4084:7:72",
@@ -3457,17 +3469,17 @@ export const StETHBase = {
                             "src": "4074:36:72"
                         },
                         "returnParameters": {
-                            "id": 9638,
+                            "id": 9468,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9637,
+                                    "id": 9467,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9650,
+                                    "scope": 9480,
                                     "src": "4143:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3476,7 +3488,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9636,
+                                        "id": 9466,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4143:7:72",
@@ -3490,18 +3502,18 @@ export const StETHBase = {
                             ],
                             "src": "4142:9:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9670,
+                        "id": 9500,
                         "nodeType": "FunctionDefinition",
                         "src": "4458:205:72",
                         "nodes": [],
                         "body": {
-                            "id": 9669,
+                            "id": 9499,
                             "nodeType": "Block",
                             "src": "4560:103:72",
                             "nodes": [],
@@ -3510,11 +3522,11 @@ export const StETHBase = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 9666,
+                                                "id": 9496,
                                                 "name": "_baseAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9653,
+                                                "referencedDeclaration": 9483,
                                                 "src": "4644:11:72",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3534,14 +3546,14 @@ export const StETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 9662,
+                                                                "id": 9492,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17792,
+                                                                "referencedDeclaration": 17695,
                                                                 "src": "4603:17:72",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3549,11 +3561,11 @@ export const StETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 9661,
+                                                            "id": 9491,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3565,14 +3577,14 @@ export const StETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 9660,
+                                                                "id": 9490,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4595:7:72",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 9663,
+                                                        "id": 9493,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3596,18 +3608,18 @@ export const StETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 9659,
+                                                    "id": 9489,
                                                     "name": "ILido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11633,
+                                                    "referencedDeclaration": 11465,
                                                     "src": "4589:5:72",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                         "typeString": "type(contract ILido)"
                                                     }
                                                 },
-                                                "id": 9664,
+                                                "id": 9494,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3619,11 +3631,11 @@ export const StETHBase = {
                                                 "src": "4589:33:72",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$11633",
+                                                    "typeIdentifier": "t_contract$_ILido_$11465",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 9665,
+                                            "id": 9495,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3631,14 +3643,14 @@ export const StETHBase = {
                                             "memberLocation": "4623:20:72",
                                             "memberName": "getSharesByPooledEth",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 11598,
+                                            "referencedDeclaration": 11430,
                                             "src": "4589:54:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 9667,
+                                        "id": 9497,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3654,18 +3666,18 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 9658,
-                                    "id": 9668,
+                                    "functionReturnParameters": 9488,
+                                    "id": 9498,
                                     "nodeType": "Return",
                                     "src": "4570:86:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13098
+                            12938
                         ],
                         "documentation": {
-                            "id": 9651,
+                            "id": 9481,
                             "nodeType": "StructuredDocumentation",
                             "src": "4292:161:72",
                             "text": "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount."
@@ -3676,23 +3688,23 @@ export const StETHBase = {
                         "name": "_convertToShares",
                         "nameLocation": "4467:16:72",
                         "overrides": {
-                            "id": 9655,
+                            "id": 9485,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "4533:8:72"
                         },
                         "parameters": {
-                            "id": 9654,
+                            "id": 9484,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9653,
+                                    "id": 9483,
                                     "mutability": "mutable",
                                     "name": "_baseAmount",
                                     "nameLocation": "4501:11:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9670,
+                                    "scope": 9500,
                                     "src": "4493:19:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3701,7 +3713,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9652,
+                                        "id": 9482,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4493:7:72",
@@ -3716,17 +3728,17 @@ export const StETHBase = {
                             "src": "4483:35:72"
                         },
                         "returnParameters": {
-                            "id": 9658,
+                            "id": 9488,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9657,
+                                    "id": 9487,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9670,
+                                    "scope": 9500,
                                     "src": "4551:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3735,7 +3747,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9656,
+                                        "id": 9486,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4551:7:72",
@@ -3749,18 +3761,18 @@ export const StETHBase = {
                             ],
                             "src": "4550:9:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9680,
+                        "id": 9510,
                         "nodeType": "FunctionDefinition",
                         "src": "4783:191:72",
                         "nodes": [],
                         "body": {
-                            "id": 9679,
+                            "id": 9509,
                             "nodeType": "Block",
                             "src": "4846:128:72",
                             "nodes": [],
@@ -3768,7 +3780,7 @@ export const StETHBase = {
                                 {
                                     "expression": {
                                         "hexValue": "30",
-                                        "id": 9677,
+                                        "id": 9507,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -3782,18 +3794,18 @@ export const StETHBase = {
                                         },
                                         "value": "0"
                                     },
-                                    "functionReturnParameters": 9676,
-                                    "id": 9678,
+                                    "functionReturnParameters": 9506,
+                                    "id": 9508,
                                     "nodeType": "Return",
                                     "src": "4959:8:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13104
+                            12944
                         ],
                         "documentation": {
-                            "id": 9671,
+                            "id": 9501,
                             "nodeType": "StructuredDocumentation",
                             "src": "4669:109:72",
                             "text": "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base."
@@ -3804,29 +3816,29 @@ export const StETHBase = {
                         "name": "_totalBase",
                         "nameLocation": "4792:10:72",
                         "overrides": {
-                            "id": 9673,
+                            "id": 9503,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "4819:8:72"
                         },
                         "parameters": {
-                            "id": 9672,
+                            "id": 9502,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4802:2:72"
                         },
                         "returnParameters": {
-                            "id": 9676,
+                            "id": 9506,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9675,
+                                    "id": 9505,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9680,
+                                    "scope": 9510,
                                     "src": "4837:7:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3835,7 +3847,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9674,
+                                        "id": 9504,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4837:7:72",
@@ -3849,18 +3861,18 @@ export const StETHBase = {
                             ],
                             "src": "4836:9:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 9701,
+                        "id": 9531,
                         "nodeType": "FunctionDefinition",
                         "src": "5132:194:72",
                         "nodes": [],
                         "body": {
-                            "id": 9700,
+                            "id": 9530,
                             "nodeType": "Block",
                             "src": "5245:81:72",
                             "nodes": [],
@@ -3871,14 +3883,14 @@ export const StETHBase = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 9696,
+                                                        "id": 9526,
                                                         "name": "this",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -28,
                                                         "src": "5313:4:72",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_StETHBase_$9702",
+                                                            "typeIdentifier": "t_contract$_StETHBase_$9532",
                                                             "typeString": "contract StETHBase"
                                                         }
                                                     }
@@ -3886,11 +3898,11 @@ export const StETHBase = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_StETHBase_$9702",
+                                                            "typeIdentifier": "t_contract$_StETHBase_$9532",
                                                             "typeString": "contract StETHBase"
                                                         }
                                                     ],
-                                                    "id": 9695,
+                                                    "id": 9525,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3902,14 +3914,14 @@ export const StETHBase = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 9694,
+                                                        "id": 9524,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "5305:7:72",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 9697,
+                                                "id": 9527,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3938,14 +3950,14 @@ export const StETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 9690,
+                                                                "id": 9520,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17792,
+                                                                "referencedDeclaration": 17695,
                                                                 "src": "5276:17:72",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3953,11 +3965,11 @@ export const StETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 9689,
+                                                            "id": 9519,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3969,14 +3981,14 @@ export const StETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 9688,
+                                                                "id": 9518,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "5268:7:72",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 9691,
+                                                        "id": 9521,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4000,18 +4012,18 @@ export const StETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 9687,
+                                                    "id": 9517,
                                                     "name": "ILido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11633,
+                                                    "referencedDeclaration": 11465,
                                                     "src": "5262:5:72",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11633_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ILido_$11465_$",
                                                         "typeString": "type(contract ILido)"
                                                     }
                                                 },
-                                                "id": 9692,
+                                                "id": 9522,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4023,11 +4035,11 @@ export const StETHBase = {
                                                 "src": "5262:33:72",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$11633",
+                                                    "typeIdentifier": "t_contract$_ILido_$11465",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 9693,
+                                            "id": 9523,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4035,14 +4047,14 @@ export const StETHBase = {
                                             "memberLocation": "5296:8:72",
                                             "memberName": "sharesOf",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 11632,
+                                            "referencedDeclaration": 11464,
                                             "src": "5262:42:72",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
                                                 "typeString": "function (address) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 9698,
+                                        "id": 9528,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4058,18 +4070,18 @@ export const StETHBase = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 9686,
-                                    "id": 9699,
+                                    "functionReturnParameters": 9516,
+                                    "id": 9529,
                                     "nodeType": "Return",
                                     "src": "5255:64:72"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            13110
+                            12950
                         ],
                         "documentation": {
-                            "id": 9681,
+                            "id": 9511,
                             "nodeType": "StructuredDocumentation",
                             "src": "4980:147:72",
                             "text": "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares."
@@ -4080,29 +4092,29 @@ export const StETHBase = {
                         "name": "_totalShares",
                         "nameLocation": "5141:12:72",
                         "overrides": {
-                            "id": 9683,
+                            "id": 9513,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "5194:8:72"
                         },
                         "parameters": {
-                            "id": 9682,
+                            "id": 9512,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5153:2:72"
                         },
                         "returnParameters": {
-                            "id": 9686,
+                            "id": 9516,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9685,
+                                    "id": 9515,
                                     "mutability": "mutable",
                                     "name": "shareAmount",
                                     "nameLocation": "5228:11:72",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 9701,
+                                    "scope": 9531,
                                     "src": "5220:19:72",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4111,7 +4123,7 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9684,
+                                        "id": 9514,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5220:7:72",
@@ -4125,7 +4137,7 @@ export const StETHBase = {
                             ],
                             "src": "5219:21:72"
                         },
-                        "scope": 9702,
+                        "scope": 9532,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
@@ -4135,16 +4147,16 @@ export const StETHBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 9501,
+                            "id": 9331,
                             "name": "HyperdriveBase",
                             "nameLocations": [
                                 "938:14:72"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 13995,
+                            "referencedDeclaration": 13835,
                             "src": "938:14:72"
                         },
-                        "id": 9502,
+                        "id": 9332,
                         "nodeType": "InheritanceSpecifier",
                         "src": "938:14:72"
                     }
@@ -4153,46 +4165,46 @@ export const StETHBase = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 9500,
+                    "id": 9330,
                     "nodeType": "StructuredDocumentation",
                     "src": "318:589:72",
                     "text": "@author DELV\n @title StethHyperdrive\n @notice The base contract for the stETH Hyperdrive implementation.\n @dev Lido has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Lido protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Lido\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    9702,
-                    13995,
-                    17990,
-                    71674,
-                    11205,
-                    11777
+                    9532,
+                    13835,
+                    17893,
+                    71565,
+                    11037,
+                    11609
                 ],
                 "name": "StETHBase",
                 "nameLocation": "925:9:72",
-                "scope": 9703,
+                "scope": 9533,
                 "usedErrors": [
-                    71619
+                    71510
                 ],
                 "usedEvents": [
-                    11025,
-                    11040,
-                    11059,
-                    11074,
-                    11091,
-                    11110,
-                    11129,
-                    11150,
-                    11163,
-                    11170,
-                    11175,
-                    11180,
-                    11185,
-                    11192,
-                    11197,
-                    11204,
-                    11758,
-                    11767,
-                    11776
+                    10855,
+                    10870,
+                    10889,
+                    10904,
+                    10921,
+                    10940,
+                    10959,
+                    10980,
+                    10995,
+                    11002,
+                    11007,
+                    11012,
+                    11017,
+                    11024,
+                    11029,
+                    11036,
+                    11590,
+                    11599,
+                    11608
                 ]
             }
         ],

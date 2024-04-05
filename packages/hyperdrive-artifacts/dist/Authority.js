@@ -128,20 +128,20 @@ export const Authority = {
     },
     "ast": {
         "absolutePath": "lib/solmate/src/auth/Auth.sol",
-        "id": 71847,
+        "id": 71738,
         "exportedSymbols": {
             "Auth": [
-                71833
+                71724
             ],
             "Authority": [
-                71846
+                71737
             ]
         },
         "nodeType": "SourceUnit",
         "src": "42:2535:170",
         "nodes": [
             {
-                "id": 71676,
+                "id": 71567,
                 "nodeType": "PragmaDirective",
                 "src": "42:24:170",
                 "nodes": [],
@@ -153,12 +153,12 @@ export const Authority = {
                 ]
             },
             {
-                "id": 71833,
+                "id": 71724,
                 "nodeType": "ContractDefinition",
                 "src": "369:1760:170",
                 "nodes": [
                     {
-                        "id": 71683,
+                        "id": 71574,
                         "nodeType": "EventDefinition",
                         "src": "398:75:170",
                         "nodes": [],
@@ -167,18 +167,18 @@ export const Authority = {
                         "name": "OwnershipTransferred",
                         "nameLocation": "404:20:170",
                         "parameters": {
-                            "id": 71682,
+                            "id": 71573,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71679,
+                                    "id": 71570,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "441:4:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71683,
+                                    "scope": 71574,
                                     "src": "425:20:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -187,7 +187,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71678,
+                                        "id": 71569,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "425:7:170",
@@ -201,13 +201,13 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71681,
+                                    "id": 71572,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newOwner",
                                     "nameLocation": "463:8:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71683,
+                                    "scope": 71574,
                                     "src": "447:24:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -216,7 +216,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71680,
+                                        "id": 71571,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "447:7:170",
@@ -233,7 +233,7 @@ export const Authority = {
                         }
                     },
                     {
-                        "id": 71690,
+                        "id": 71581,
                         "nodeType": "EventDefinition",
                         "src": "479:77:170",
                         "nodes": [],
@@ -242,18 +242,18 @@ export const Authority = {
                         "name": "AuthorityUpdated",
                         "nameLocation": "485:16:170",
                         "parameters": {
-                            "id": 71689,
+                            "id": 71580,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71685,
+                                    "id": 71576,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "518:4:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71690,
+                                    "scope": 71581,
                                     "src": "502:20:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -262,7 +262,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71684,
+                                        "id": 71575,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "502:7:170",
@@ -276,37 +276,37 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71688,
+                                    "id": 71579,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newAuthority",
                                     "nameLocation": "542:12:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71690,
+                                    "scope": 71581,
                                     "src": "524:30:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71846",
+                                        "typeIdentifier": "t_contract$_Authority_$71737",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71687,
+                                        "id": 71578,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71686,
+                                            "id": 71577,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "524:9:170"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71846,
+                                            "referencedDeclaration": 71737,
                                             "src": "524:9:170"
                                         },
-                                        "referencedDeclaration": 71846,
+                                        "referencedDeclaration": 71737,
                                         "src": "524:9:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -317,7 +317,7 @@ export const Authority = {
                         }
                     },
                     {
-                        "id": 71692,
+                        "id": 71583,
                         "nodeType": "VariableDeclaration",
                         "src": "562:20:170",
                         "nodes": [],
@@ -326,7 +326,7 @@ export const Authority = {
                         "mutability": "mutable",
                         "name": "owner",
                         "nameLocation": "577:5:170",
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -334,7 +334,7 @@ export const Authority = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 71691,
+                            "id": 71582,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "562:7:170",
@@ -347,7 +347,7 @@ export const Authority = {
                         "visibility": "public"
                     },
                     {
-                        "id": 71695,
+                        "id": 71586,
                         "nodeType": "VariableDeclaration",
                         "src": "589:26:170",
                         "nodes": [],
@@ -356,59 +356,59 @@ export const Authority = {
                         "mutability": "mutable",
                         "name": "authority",
                         "nameLocation": "606:9:170",
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Authority_$71846",
+                            "typeIdentifier": "t_contract$_Authority_$71737",
                             "typeString": "contract Authority"
                         },
                         "typeName": {
-                            "id": 71694,
+                            "id": 71585,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 71693,
+                                "id": 71584,
                                 "name": "Authority",
                                 "nameLocations": [
                                     "589:9:170"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 71846,
+                                "referencedDeclaration": 71737,
                                 "src": "589:9:170"
                             },
-                            "referencedDeclaration": 71846,
+                            "referencedDeclaration": 71737,
                             "src": "589:9:170",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                "typeIdentifier": "t_contract$_Authority_$71737",
                                 "typeString": "contract Authority"
                             }
                         },
                         "visibility": "public"
                     },
                     {
-                        "id": 71724,
+                        "id": 71615,
                         "nodeType": "FunctionDefinition",
                         "src": "622:224:170",
                         "nodes": [],
                         "body": {
-                            "id": 71723,
+                            "id": 71614,
                             "nodeType": "Block",
                             "src": "672:174:170",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 71705,
+                                        "id": 71596,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 71703,
+                                            "id": 71594,
                                             "name": "owner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71692,
+                                            "referencedDeclaration": 71583,
                                             "src": "682:5:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -418,11 +418,11 @@ export const Authority = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 71704,
+                                            "id": 71595,
                                             "name": "_owner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71697,
+                                            "referencedDeclaration": 71588,
                                             "src": "690:6:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -435,50 +435,50 @@ export const Authority = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 71706,
+                                    "id": 71597,
                                     "nodeType": "ExpressionStatement",
                                     "src": "682:14:170"
                                 },
                                 {
                                     "expression": {
-                                        "id": 71709,
+                                        "id": 71600,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 71707,
+                                            "id": 71598,
                                             "name": "authority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71695,
+                                            "referencedDeclaration": 71586,
                                             "src": "706:9:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 71708,
+                                            "id": 71599,
                                             "name": "_authority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71700,
+                                            "referencedDeclaration": 71591,
                                             "src": "718:10:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "src": "706:22:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
-                                    "id": 71710,
+                                    "id": 71601,
                                     "nodeType": "ExpressionStatement",
                                     "src": "706:22:170"
                                 },
@@ -487,7 +487,7 @@ export const Authority = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 71712,
+                                                    "id": 71603,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -498,7 +498,7 @@ export const Authority = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 71713,
+                                                "id": 71604,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -513,11 +513,11 @@ export const Authority = {
                                                 }
                                             },
                                             {
-                                                "id": 71714,
+                                                "id": 71605,
                                                 "name": "_owner",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71697,
+                                                "referencedDeclaration": 71588,
                                                 "src": "777:6:170",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -536,18 +536,18 @@ export const Authority = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 71711,
+                                            "id": 71602,
                                             "name": "OwnershipTransferred",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71683,
+                                            "referencedDeclaration": 71574,
                                             "src": "744:20:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                                                 "typeString": "function (address,address)"
                                             }
                                         },
-                                        "id": 71715,
+                                        "id": 71606,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -563,7 +563,7 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71716,
+                                    "id": 71607,
                                     "nodeType": "EmitStatement",
                                     "src": "739:45:170"
                                 },
@@ -572,7 +572,7 @@ export const Authority = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 71718,
+                                                    "id": 71609,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -583,7 +583,7 @@ export const Authority = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 71719,
+                                                "id": 71610,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -598,14 +598,14 @@ export const Authority = {
                                                 }
                                             },
                                             {
-                                                "id": 71720,
+                                                "id": 71611,
                                                 "name": "_authority",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71700,
+                                                "referencedDeclaration": 71591,
                                                 "src": "828:10:170",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                     "typeString": "contract Authority"
                                                 }
                                             }
@@ -617,22 +617,22 @@ export const Authority = {
                                                     "typeString": "address"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                     "typeString": "contract Authority"
                                                 }
                                             ],
-                                            "id": 71717,
+                                            "id": 71608,
                                             "name": "AuthorityUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71690,
+                                            "referencedDeclaration": 71581,
                                             "src": "799:16:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71846_$returns$__$",
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71737_$returns$__$",
                                                 "typeString": "function (address,contract Authority)"
                                             }
                                         },
-                                        "id": 71721,
+                                        "id": 71612,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -648,7 +648,7 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71722,
+                                    "id": 71613,
                                     "nodeType": "EmitStatement",
                                     "src": "794:45:170"
                                 }
@@ -660,17 +660,17 @@ export const Authority = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 71701,
+                            "id": 71592,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71697,
+                                    "id": 71588,
                                     "mutability": "mutable",
                                     "name": "_owner",
                                     "nameLocation": "642:6:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71724,
+                                    "scope": 71615,
                                     "src": "634:14:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -679,7 +679,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71696,
+                                        "id": 71587,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "634:7:170",
@@ -693,36 +693,36 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71700,
+                                    "id": 71591,
                                     "mutability": "mutable",
                                     "name": "_authority",
                                     "nameLocation": "660:10:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71724,
+                                    "scope": 71615,
                                     "src": "650:20:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71846",
+                                        "typeIdentifier": "t_contract$_Authority_$71737",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71699,
+                                        "id": 71590,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71698,
+                                            "id": 71589,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "650:9:170"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71846,
+                                            "referencedDeclaration": 71737,
                                             "src": "650:9:170"
                                         },
-                                        "referencedDeclaration": 71846,
+                                        "referencedDeclaration": 71737,
                                         "src": "650:9:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -732,23 +732,23 @@ export const Authority = {
                             "src": "633:38:170"
                         },
                         "returnParameters": {
-                            "id": 71702,
+                            "id": 71593,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "672:0:170"
                         },
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71738,
+                        "id": 71629,
                         "nodeType": "ModifierDefinition",
                         "src": "852:119:170",
                         "nodes": [],
                         "body": {
-                            "id": 71737,
+                            "id": 71628,
                             "nodeType": "Block",
                             "src": "884:87:170",
                             "nodes": [],
@@ -760,7 +760,7 @@ export const Authority = {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 71728,
+                                                            "id": 71619,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -771,7 +771,7 @@ export const Authority = {
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 71729,
+                                                        "id": 71620,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -787,7 +787,7 @@ export const Authority = {
                                                     },
                                                     {
                                                         "expression": {
-                                                            "id": 71730,
+                                                            "id": 71621,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -798,7 +798,7 @@ export const Authority = {
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 71731,
+                                                        "id": 71622,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -824,18 +824,18 @@ export const Authority = {
                                                             "typeString": "bytes4"
                                                         }
                                                     ],
-                                                    "id": 71727,
+                                                    "id": 71618,
                                                     "name": "isAuthorized",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71778,
+                                                    "referencedDeclaration": 71669,
                                                     "src": "902:12:170",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
                                                         "typeString": "function (address,bytes4) view returns (bool)"
                                                     }
                                                 },
-                                                "id": 71732,
+                                                "id": 71623,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -853,7 +853,7 @@ export const Authority = {
                                             },
                                             {
                                                 "hexValue": "554e415554484f52495a4544",
-                                                "id": 71733,
+                                                "id": 71624,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -879,7 +879,7 @@ export const Authority = {
                                                     "typeString": "literal_string \"UNAUTHORIZED\""
                                                 }
                                             ],
-                                            "id": 71726,
+                                            "id": 71617,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -893,7 +893,7 @@ export const Authority = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 71734,
+                                        "id": 71625,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -909,12 +909,12 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71735,
+                                    "id": 71626,
                                     "nodeType": "ExpressionStatement",
                                     "src": "894:58:170"
                                 },
                                 {
-                                    "id": 71736,
+                                    "id": 71627,
                                     "nodeType": "PlaceholderStatement",
                                     "src": "963:1:170"
                                 }
@@ -923,7 +923,7 @@ export const Authority = {
                         "name": "requiresAuth",
                         "nameLocation": "861:12:170",
                         "parameters": {
-                            "id": 71725,
+                            "id": 71616,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "873:2:170"
@@ -932,69 +932,69 @@ export const Authority = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 71778,
+                        "id": 71669,
                         "nodeType": "FunctionDefinition",
                         "src": "977:540:170",
                         "nodes": [],
                         "body": {
-                            "id": 71777,
+                            "id": 71668,
                             "nodeType": "Block",
                             "src": "1070:447:170",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71749
+                                        71640
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71749,
+                                            "id": 71640,
                                             "mutability": "mutable",
                                             "name": "auth",
                                             "nameLocation": "1090:4:170",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71777,
+                                            "scope": 71668,
                                             "src": "1080:14:170",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                 "typeString": "contract Authority"
                                             },
                                             "typeName": {
-                                                "id": 71748,
+                                                "id": 71639,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 71747,
+                                                    "id": 71638,
                                                     "name": "Authority",
                                                     "nameLocations": [
                                                         "1080:9:170"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 71846,
+                                                    "referencedDeclaration": 71737,
                                                     "src": "1080:9:170"
                                                 },
-                                                "referencedDeclaration": 71846,
+                                                "referencedDeclaration": 71737,
                                                 "src": "1080:9:170",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                     "typeString": "contract Authority"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71751,
+                                    "id": 71642,
                                     "initialValue": {
-                                        "id": 71750,
+                                        "id": 71641,
                                         "name": "authority",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 71695,
+                                        "referencedDeclaration": 71586,
                                         "src": "1097:9:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -1007,7 +1007,7 @@ export const Authority = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 71775,
+                                        "id": 71666,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1019,7 +1019,7 @@ export const Authority = {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     },
-                                                    "id": 71770,
+                                                    "id": 71661,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1029,7 +1029,7 @@ export const Authority = {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         },
-                                                        "id": 71760,
+                                                        "id": 71651,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1037,14 +1037,14 @@ export const Authority = {
                                                         "leftExpression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 71754,
+                                                                    "id": 71645,
                                                                     "name": "auth",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71749,
+                                                                    "referencedDeclaration": 71640,
                                                                     "src": "1423:4:170",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_Authority_$71846",
+                                                                        "typeIdentifier": "t_contract$_Authority_$71737",
                                                                         "typeString": "contract Authority"
                                                                     }
                                                                 }
@@ -1052,11 +1052,11 @@ export const Authority = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_Authority_$71846",
+                                                                        "typeIdentifier": "t_contract$_Authority_$71737",
                                                                         "typeString": "contract Authority"
                                                                     }
                                                                 ],
-                                                                "id": 71753,
+                                                                "id": 71644,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1068,14 +1068,14 @@ export const Authority = {
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71752,
+                                                                    "id": 71643,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "1415:7:170",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71755,
+                                                            "id": 71646,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1097,7 +1097,7 @@ export const Authority = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "30",
-                                                                    "id": 71758,
+                                                                    "id": 71649,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -1119,7 +1119,7 @@ export const Authority = {
                                                                         "typeString": "int_const 0"
                                                                     }
                                                                 ],
-                                                                "id": 71757,
+                                                                "id": 71648,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1131,14 +1131,14 @@ export const Authority = {
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71756,
+                                                                    "id": 71647,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "1432:7:170",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71759,
+                                                            "id": 71650,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -1165,11 +1165,11 @@ export const Authority = {
                                                     "rightExpression": {
                                                         "arguments": [
                                                             {
-                                                                "id": 71763,
+                                                                "id": 71654,
                                                                 "name": "user",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71740,
+                                                                "referencedDeclaration": 71631,
                                                                 "src": "1459:4:170",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
@@ -1179,14 +1179,14 @@ export const Authority = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 71766,
+                                                                        "id": 71657,
                                                                         "name": "this",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": -28,
                                                                         "src": "1473:4:170",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_Auth_$71833",
+                                                                            "typeIdentifier": "t_contract$_Auth_$71724",
                                                                             "typeString": "contract Auth"
                                                                         }
                                                                     }
@@ -1194,11 +1194,11 @@ export const Authority = {
                                                                 "expression": {
                                                                     "argumentTypes": [
                                                                         {
-                                                                            "typeIdentifier": "t_contract$_Auth_$71833",
+                                                                            "typeIdentifier": "t_contract$_Auth_$71724",
                                                                             "typeString": "contract Auth"
                                                                         }
                                                                     ],
-                                                                    "id": 71765,
+                                                                    "id": 71656,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -1210,14 +1210,14 @@ export const Authority = {
                                                                         "typeString": "type(address)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 71764,
+                                                                        "id": 71655,
                                                                         "name": "address",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "1465:7:170",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 71767,
+                                                                "id": 71658,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -1234,11 +1234,11 @@ export const Authority = {
                                                                 }
                                                             },
                                                             {
-                                                                "id": 71768,
+                                                                "id": 71659,
                                                                 "name": "functionSig",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71742,
+                                                                "referencedDeclaration": 71633,
                                                                 "src": "1480:11:170",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes4",
@@ -1262,18 +1262,18 @@ export const Authority = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 71761,
+                                                                "id": 71652,
                                                                 "name": "auth",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71749,
+                                                                "referencedDeclaration": 71640,
                                                                 "src": "1446:4:170",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                                     "typeString": "contract Authority"
                                                                 }
                                                             },
-                                                            "id": 71762,
+                                                            "id": 71653,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1281,14 +1281,14 @@ export const Authority = {
                                                             "memberLocation": "1451:7:170",
                                                             "memberName": "canCall",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 71845,
+                                                            "referencedDeclaration": 71736,
                                                             "src": "1446:12:170",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$",
                                                                 "typeString": "function (address,address,bytes4) view external returns (bool)"
                                                             }
                                                         },
-                                                        "id": 71769,
+                                                        "id": 71660,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1311,7 +1311,7 @@ export const Authority = {
                                                     }
                                                 }
                                             ],
-                                            "id": 71771,
+                                            "id": 71662,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": false,
@@ -1331,17 +1331,17 @@ export const Authority = {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             },
-                                            "id": 71774,
+                                            "id": 71665,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 71772,
+                                                "id": 71663,
                                                 "name": "user",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71740,
+                                                "referencedDeclaration": 71631,
                                                 "src": "1497:4:170",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1351,11 +1351,11 @@ export const Authority = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "==",
                                             "rightExpression": {
-                                                "id": 71773,
+                                                "id": 71664,
                                                 "name": "owner",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71692,
+                                                "referencedDeclaration": 71583,
                                                 "src": "1505:5:170",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1374,8 +1374,8 @@ export const Authority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 71746,
-                                    "id": 71776,
+                                    "functionReturnParameters": 71637,
+                                    "id": 71667,
                                     "nodeType": "Return",
                                     "src": "1407:103:170"
                                 }
@@ -1387,17 +1387,17 @@ export const Authority = {
                         "name": "isAuthorized",
                         "nameLocation": "986:12:170",
                         "parameters": {
-                            "id": 71743,
+                            "id": 71634,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71740,
+                                    "id": 71631,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "1007:4:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71778,
+                                    "scope": 71669,
                                     "src": "999:12:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1406,7 +1406,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71739,
+                                        "id": 71630,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "999:7:170",
@@ -1420,12 +1420,12 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71742,
+                                    "id": 71633,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "1020:11:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71778,
+                                    "scope": 71669,
                                     "src": "1013:18:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1434,7 +1434,7 @@ export const Authority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71741,
+                                        "id": 71632,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1013:6:170",
@@ -1449,17 +1449,17 @@ export const Authority = {
                             "src": "998:34:170"
                         },
                         "returnParameters": {
-                            "id": 71746,
+                            "id": 71637,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71745,
+                                    "id": 71636,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71778,
+                                    "scope": 71669,
                                     "src": "1064:4:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1468,7 +1468,7 @@ export const Authority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71744,
+                                        "id": 71635,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1064:4:170",
@@ -1482,18 +1482,18 @@ export const Authority = {
                             ],
                             "src": "1063:6:170"
                         },
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71814,
+                        "id": 71705,
                         "nodeType": "FunctionDefinition",
                         "src": "1523:434:170",
                         "nodes": [],
                         "body": {
-                            "id": 71813,
+                            "id": 71704,
                             "nodeType": "Block",
                             "src": "1584:373:170",
                             "nodes": [],
@@ -1506,7 +1506,7 @@ export const Authority = {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
                                                 },
-                                                "id": 71800,
+                                                "id": 71691,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1516,14 +1516,14 @@ export const Authority = {
                                                         "typeIdentifier": "t_address",
                                                         "typeString": "address"
                                                     },
-                                                    "id": 71788,
+                                                    "id": 71679,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
                                                         "expression": {
-                                                            "id": 71785,
+                                                            "id": 71676,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -1534,7 +1534,7 @@ export const Authority = {
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 71786,
+                                                        "id": 71677,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1551,11 +1551,11 @@ export const Authority = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "==",
                                                     "rightExpression": {
-                                                        "id": 71787,
+                                                        "id": 71678,
                                                         "name": "owner",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71692,
+                                                        "referencedDeclaration": 71583,
                                                         "src": "1794:5:170",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -1574,7 +1574,7 @@ export const Authority = {
                                                     "arguments": [
                                                         {
                                                             "expression": {
-                                                                "id": 71791,
+                                                                "id": 71682,
                                                                 "name": "msg",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -1585,7 +1585,7 @@ export const Authority = {
                                                                     "typeString": "msg"
                                                                 }
                                                             },
-                                                            "id": 71792,
+                                                            "id": 71683,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1602,14 +1602,14 @@ export const Authority = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 71795,
+                                                                    "id": 71686,
                                                                     "name": "this",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": -28,
                                                                     "src": "1841:4:170",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_Auth_$71833",
+                                                                        "typeIdentifier": "t_contract$_Auth_$71724",
                                                                         "typeString": "contract Auth"
                                                                     }
                                                                 }
@@ -1617,11 +1617,11 @@ export const Authority = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_Auth_$71833",
+                                                                        "typeIdentifier": "t_contract$_Auth_$71724",
                                                                         "typeString": "contract Auth"
                                                                     }
                                                                 ],
-                                                                "id": 71794,
+                                                                "id": 71685,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1633,14 +1633,14 @@ export const Authority = {
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71793,
+                                                                    "id": 71684,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "1833:7:170",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71796,
+                                                            "id": 71687,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1658,7 +1658,7 @@ export const Authority = {
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 71797,
+                                                                "id": 71688,
                                                                 "name": "msg",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -1669,7 +1669,7 @@ export const Authority = {
                                                                     "typeString": "msg"
                                                                 }
                                                             },
-                                                            "id": 71798,
+                                                            "id": 71689,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1700,18 +1700,18 @@ export const Authority = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 71789,
+                                                            "id": 71680,
                                                             "name": "authority",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71695,
+                                                            "referencedDeclaration": 71586,
                                                             "src": "1803:9:170",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                                 "typeString": "contract Authority"
                                                             }
                                                         },
-                                                        "id": 71790,
+                                                        "id": 71681,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1719,14 +1719,14 @@ export const Authority = {
                                                         "memberLocation": "1813:7:170",
                                                         "memberName": "canCall",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 71845,
+                                                        "referencedDeclaration": 71736,
                                                         "src": "1803:17:170",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$",
                                                             "typeString": "function (address,address,bytes4) view external returns (bool)"
                                                         }
                                                     },
-                                                    "id": 71799,
+                                                    "id": 71690,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1756,7 +1756,7 @@ export const Authority = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 71784,
+                                            "id": 71675,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1770,7 +1770,7 @@ export const Authority = {
                                                 "typeString": "function (bool) pure"
                                             }
                                         },
-                                        "id": 71801,
+                                        "id": 71692,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1786,50 +1786,50 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71802,
+                                    "id": 71693,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1772:85:170"
                                 },
                                 {
                                     "expression": {
-                                        "id": 71805,
+                                        "id": 71696,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 71803,
+                                            "id": 71694,
                                             "name": "authority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71695,
+                                            "referencedDeclaration": 71586,
                                             "src": "1868:9:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 71804,
+                                            "id": 71695,
                                             "name": "newAuthority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71781,
+                                            "referencedDeclaration": 71672,
                                             "src": "1880:12:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71846",
+                                                "typeIdentifier": "t_contract$_Authority_$71737",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "src": "1868:24:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
-                                    "id": 71806,
+                                    "id": 71697,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1868:24:170"
                                 },
@@ -1838,7 +1838,7 @@ export const Authority = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 71808,
+                                                    "id": 71699,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -1849,7 +1849,7 @@ export const Authority = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 71809,
+                                                "id": 71700,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1864,14 +1864,14 @@ export const Authority = {
                                                 }
                                             },
                                             {
-                                                "id": 71810,
+                                                "id": 71701,
                                                 "name": "newAuthority",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71781,
+                                                "referencedDeclaration": 71672,
                                                 "src": "1937:12:170",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                     "typeString": "contract Authority"
                                                 }
                                             }
@@ -1883,22 +1883,22 @@ export const Authority = {
                                                     "typeString": "address"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_contract$_Authority_$71846",
+                                                    "typeIdentifier": "t_contract$_Authority_$71737",
                                                     "typeString": "contract Authority"
                                                 }
                                             ],
-                                            "id": 71807,
+                                            "id": 71698,
                                             "name": "AuthorityUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71690,
+                                            "referencedDeclaration": 71581,
                                             "src": "1908:16:170",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71846_$returns$__$",
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71737_$returns$__$",
                                                 "typeString": "function (address,contract Authority)"
                                             }
                                         },
-                                        "id": 71811,
+                                        "id": 71702,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1914,7 +1914,7 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71812,
+                                    "id": 71703,
                                     "nodeType": "EmitStatement",
                                     "src": "1903:47:170"
                                 }
@@ -1927,41 +1927,41 @@ export const Authority = {
                         "name": "setAuthority",
                         "nameLocation": "1532:12:170",
                         "parameters": {
-                            "id": 71782,
+                            "id": 71673,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71781,
+                                    "id": 71672,
                                     "mutability": "mutable",
                                     "name": "newAuthority",
                                     "nameLocation": "1555:12:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71814,
+                                    "scope": 71705,
                                     "src": "1545:22:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71846",
+                                        "typeIdentifier": "t_contract$_Authority_$71737",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71780,
+                                        "id": 71671,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71779,
+                                            "id": 71670,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "1545:9:170"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71846,
+                                            "referencedDeclaration": 71737,
                                             "src": "1545:9:170"
                                         },
-                                        "referencedDeclaration": 71846,
+                                        "referencedDeclaration": 71737,
                                         "src": "1545:9:170",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71846",
+                                            "typeIdentifier": "t_contract$_Authority_$71737",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -1971,40 +1971,40 @@ export const Authority = {
                             "src": "1544:24:170"
                         },
                         "returnParameters": {
-                            "id": 71783,
+                            "id": 71674,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1584:0:170"
                         },
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 71832,
+                        "id": 71723,
                         "nodeType": "FunctionDefinition",
                         "src": "1963:164:170",
                         "nodes": [],
                         "body": {
-                            "id": 71831,
+                            "id": 71722,
                             "nodeType": "Block",
                             "src": "2036:91:170",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 71823,
+                                        "id": 71714,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 71821,
+                                            "id": 71712,
                                             "name": "owner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71692,
+                                            "referencedDeclaration": 71583,
                                             "src": "2046:5:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2014,11 +2014,11 @@ export const Authority = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 71822,
+                                            "id": 71713,
                                             "name": "newOwner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71816,
+                                            "referencedDeclaration": 71707,
                                             "src": "2054:8:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2031,7 +2031,7 @@ export const Authority = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 71824,
+                                    "id": 71715,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2046:16:170"
                                 },
@@ -2040,7 +2040,7 @@ export const Authority = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 71826,
+                                                    "id": 71717,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -2051,7 +2051,7 @@ export const Authority = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 71827,
+                                                "id": 71718,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2066,11 +2066,11 @@ export const Authority = {
                                                 }
                                             },
                                             {
-                                                "id": 71828,
+                                                "id": 71719,
                                                 "name": "newOwner",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71816,
+                                                "referencedDeclaration": 71707,
                                                 "src": "2111:8:170",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -2089,18 +2089,18 @@ export const Authority = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 71825,
+                                            "id": 71716,
                                             "name": "OwnershipTransferred",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71683,
+                                            "referencedDeclaration": 71574,
                                             "src": "2078:20:170",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                                                 "typeString": "function (address,address)"
                                             }
                                         },
-                                        "id": 71829,
+                                        "id": 71720,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2116,7 +2116,7 @@ export const Authority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71830,
+                                    "id": 71721,
                                     "nodeType": "EmitStatement",
                                     "src": "2073:47:170"
                                 }
@@ -2127,16 +2127,16 @@ export const Authority = {
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 71819,
+                                "id": 71710,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 71818,
+                                    "id": 71709,
                                     "name": "requiresAuth",
                                     "nameLocations": [
                                         "2023:12:170"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71738,
+                                    "referencedDeclaration": 71629,
                                     "src": "2023:12:170"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -2146,17 +2146,17 @@ export const Authority = {
                         "name": "transferOwnership",
                         "nameLocation": "1972:17:170",
                         "parameters": {
-                            "id": 71817,
+                            "id": 71708,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71816,
+                                    "id": 71707,
                                     "mutability": "mutable",
                                     "name": "newOwner",
                                     "nameLocation": "1998:8:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71832,
+                                    "scope": 71723,
                                     "src": "1990:16:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2165,7 +2165,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71815,
+                                        "id": 71706,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1990:7:170",
@@ -2181,12 +2181,12 @@ export const Authority = {
                             "src": "1989:18:170"
                         },
                         "returnParameters": {
-                            "id": 71820,
+                            "id": 71711,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2036:0:170"
                         },
-                        "scope": 71833,
+                        "scope": 71724,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
@@ -2198,31 +2198,31 @@ export const Authority = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 71677,
+                    "id": 71568,
                     "nodeType": "StructuredDocumentation",
                     "src": "68:301:170",
                     "text": "@notice Provides a flexible and updatable auth pattern which is completely separate from application logic.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)"
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    71833
+                    71724
                 ],
                 "name": "Auth",
                 "nameLocation": "387:4:170",
-                "scope": 71847,
+                "scope": 71738,
                 "usedErrors": [],
                 "usedEvents": [
-                    71683,
-                    71690
+                    71574,
+                    71581
                 ]
             },
             {
-                "id": 71846,
+                "id": 71737,
                 "nodeType": "ContractDefinition",
                 "src": "2422:154:170",
                 "nodes": [
                     {
-                        "id": 71845,
+                        "id": 71736,
                         "nodeType": "FunctionDefinition",
                         "src": "2448:126:170",
                         "nodes": [],
@@ -2233,17 +2233,17 @@ export const Authority = {
                         "name": "canCall",
                         "nameLocation": "2457:7:170",
                         "parameters": {
-                            "id": 71841,
+                            "id": 71732,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71836,
+                                    "id": 71727,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "2482:4:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71845,
+                                    "scope": 71736,
                                     "src": "2474:12:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2252,7 +2252,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71835,
+                                        "id": 71726,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2474:7:170",
@@ -2266,12 +2266,12 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71838,
+                                    "id": 71729,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "2504:6:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71845,
+                                    "scope": 71736,
                                     "src": "2496:14:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2280,7 +2280,7 @@ export const Authority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71837,
+                                        "id": 71728,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2496:7:170",
@@ -2294,12 +2294,12 @@ export const Authority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71840,
+                                    "id": 71731,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "2527:11:170",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71845,
+                                    "scope": 71736,
                                     "src": "2520:18:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2308,7 +2308,7 @@ export const Authority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71839,
+                                        "id": 71730,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2520:6:170",
@@ -2323,17 +2323,17 @@ export const Authority = {
                             "src": "2464:80:170"
                         },
                         "returnParameters": {
-                            "id": 71844,
+                            "id": 71735,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71843,
+                                    "id": 71734,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71845,
+                                    "scope": 71736,
                                     "src": "2568:4:170",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2342,7 +2342,7 @@ export const Authority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71842,
+                                        "id": 71733,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2568:4:170",
@@ -2356,7 +2356,7 @@ export const Authority = {
                             ],
                             "src": "2567:6:170"
                         },
-                        "scope": 71846,
+                        "scope": 71737,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -2368,18 +2368,18 @@ export const Authority = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 71834,
+                    "id": 71725,
                     "nodeType": "StructuredDocumentation",
                     "src": "2131:291:170",
                     "text": "@notice A generic interface for a contract which provides authorization data to an Auth instance.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)"
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    71846
+                    71737
                 ],
                 "name": "Authority",
                 "nameLocation": "2432:9:170",
-                "scope": 71847,
+                "scope": 71738,
                 "usedErrors": [],
                 "usedEvents": []
             }

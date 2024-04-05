@@ -130,26 +130,26 @@ export const IDepositQueue = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IRenzo.sol",
-        "id": 11995,
+        "id": 11827,
         "exportedSymbols": {
             "IDepositQueue": [
-                11994
+                11826
             ],
             "IERC20": [
-                9980
+                9810
             ],
             "IRenzoOracle": [
-                11983
+                11815
             ],
             "IRestakeManager": [
-                11928
+                11760
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:2264:103",
         "nodes": [
             {
-                "id": 11896,
+                "id": 11728,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:103",
                 "nodes": [],
@@ -160,23 +160,23 @@ export const IDepositQueue = {
                 ]
             },
             {
-                "id": 11898,
+                "id": 11730,
                 "nodeType": "ImportDirective",
                 "src": "64:38:103",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "./IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11995,
-                "sourceUnit": 9981,
+                "scope": 11827,
+                "sourceUnit": 9811,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11897,
+                            "id": 11729,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 9980,
+                            "referencedDeclaration": 9810,
                             "src": "73:6:103",
                             "typeDescriptions": {}
                         },
@@ -186,17 +186,17 @@ export const IDepositQueue = {
                 "unitAlias": ""
             },
             {
-                "id": 11928,
+                "id": 11760,
                 "nodeType": "ContractDefinition",
                 "src": "104:1246:103",
                 "nodes": [
                     {
-                        "id": 11904,
+                        "id": 11736,
                         "nodeType": "FunctionDefinition",
                         "src": "289:49:103",
                         "nodes": [],
                         "documentation": {
-                            "id": 11899,
+                            "id": 11731,
                             "nodeType": "StructuredDocumentation",
                             "src": "136:148:103",
                             "text": " @notice Returns the ezETH token contract address\n @dev Getter for public state variable of the ezETH token contract address"
@@ -208,23 +208,23 @@ export const IDepositQueue = {
                         "name": "ezETH",
                         "nameLocation": "298:5:103",
                         "parameters": {
-                            "id": 11900,
+                            "id": 11732,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "303:2:103"
                         },
                         "returnParameters": {
-                            "id": 11903,
+                            "id": 11735,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11902,
+                                    "id": 11734,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11904,
+                                    "scope": 11736,
                                     "src": "329:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -233,7 +233,7 @@ export const IDepositQueue = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11901,
+                                        "id": 11733,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "329:7:103",
@@ -248,18 +248,18 @@ export const IDepositQueue = {
                             ],
                             "src": "328:9:103"
                         },
-                        "scope": 11928,
+                        "scope": 11760,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11910,
+                        "id": 11742,
                         "nodeType": "FunctionDefinition",
                         "src": "499:55:103",
                         "nodes": [],
                         "documentation": {
-                            "id": 11905,
+                            "id": 11737,
                             "nodeType": "StructuredDocumentation",
                             "src": "344:150:103",
                             "text": " @notice Returns the renzo oracle contract address\n @dev Getter for public state variable of the renzo oracle contract address"
@@ -271,23 +271,23 @@ export const IDepositQueue = {
                         "name": "renzoOracle",
                         "nameLocation": "508:11:103",
                         "parameters": {
-                            "id": 11906,
+                            "id": 11738,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "519:2:103"
                         },
                         "returnParameters": {
-                            "id": 11909,
+                            "id": 11741,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11908,
+                                    "id": 11740,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11910,
+                                    "scope": 11742,
                                     "src": "545:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -296,7 +296,7 @@ export const IDepositQueue = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11907,
+                                        "id": 11739,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "545:7:103",
@@ -311,18 +311,18 @@ export const IDepositQueue = {
                             ],
                             "src": "544:9:103"
                         },
-                        "scope": 11928,
+                        "scope": 11760,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11914,
+                        "id": 11746,
                         "nodeType": "FunctionDefinition",
                         "src": "756:39:103",
                         "nodes": [],
                         "documentation": {
-                            "id": 11911,
+                            "id": 11743,
                             "nodeType": "StructuredDocumentation",
                             "src": "560:191:103",
                             "text": " @notice  Allows a user to deposit ETH into the protocol and get back ezETH\n @dev     Convenience function to deposit without a referral ID and backwards compatibility"
@@ -334,29 +334,29 @@ export const IDepositQueue = {
                         "name": "depositETH",
                         "nameLocation": "765:10:103",
                         "parameters": {
-                            "id": 11912,
+                            "id": 11744,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "775:2:103"
                         },
                         "returnParameters": {
-                            "id": 11913,
+                            "id": 11745,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "794:0:103"
                         },
-                        "scope": 11928,
+                        "scope": 11760,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11927,
+                        "id": 11759,
                         "nodeType": "FunctionDefinition",
                         "src": "1229:119:103",
                         "nodes": [],
                         "documentation": {
-                            "id": 11915,
+                            "id": 11747,
                             "nodeType": "StructuredDocumentation",
                             "src": "801:423:103",
                             "text": "@dev This function calculates the TVLs for each operator delegator by individual token, total for each OD, and total for the protocol.\n @return operatorDelegatorTokenTVLs Each OD's TVL indexed by operatorDelegators array by collateralTokens array\n @return operatorDelegatorTVLs Each OD's Total TVL in order of operatorDelegators array\n @return totalTVL The total TVL across all operator delegators."
@@ -368,23 +368,23 @@ export const IDepositQueue = {
                         "name": "calculateTVLs",
                         "nameLocation": "1238:13:103",
                         "parameters": {
-                            "id": 11916,
+                            "id": 11748,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1251:2:103"
                         },
                         "returnParameters": {
-                            "id": 11926,
+                            "id": 11758,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11920,
+                                    "id": 11752,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11927,
+                                    "scope": 11759,
                                     "src": "1301:18:103",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -395,7 +395,7 @@ export const IDepositQueue = {
                                     "typeName": {
                                         "baseType": {
                                             "baseType": {
-                                                "id": 11917,
+                                                "id": 11749,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1301:7:103",
@@ -404,7 +404,7 @@ export const IDepositQueue = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 11918,
+                                            "id": 11750,
                                             "nodeType": "ArrayTypeName",
                                             "src": "1301:9:103",
                                             "typeDescriptions": {
@@ -412,7 +412,7 @@ export const IDepositQueue = {
                                                 "typeString": "uint256[]"
                                             }
                                         },
-                                        "id": 11919,
+                                        "id": 11751,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1301:11:103",
                                         "typeDescriptions": {
@@ -424,12 +424,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11923,
+                                    "id": 11755,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11927,
+                                    "scope": 11759,
                                     "src": "1321:16:103",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -439,7 +439,7 @@ export const IDepositQueue = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 11921,
+                                            "id": 11753,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1321:7:103",
@@ -448,7 +448,7 @@ export const IDepositQueue = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 11922,
+                                        "id": 11754,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1321:9:103",
                                         "typeDescriptions": {
@@ -460,12 +460,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11925,
+                                    "id": 11757,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11927,
+                                    "scope": 11759,
                                     "src": "1339:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -474,7 +474,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11924,
+                                        "id": 11756,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1339:7:103",
@@ -488,7 +488,7 @@ export const IDepositQueue = {
                             ],
                             "src": "1300:47:103"
                         },
-                        "scope": 11928,
+                        "scope": 11760,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -501,21 +501,21 @@ export const IDepositQueue = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11928
+                    11760
                 ],
                 "name": "IRestakeManager",
                 "nameLocation": "114:15:103",
-                "scope": 11995,
+                "scope": 11827,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 11983,
+                "id": 11815,
                 "nodeType": "ContractDefinition",
                 "src": "1352:784:103",
                 "nodes": [
                     {
-                        "id": 11938,
+                        "id": 11770,
                         "nodeType": "FunctionDefinition",
                         "src": "1381:113:103",
                         "nodes": [],
@@ -526,41 +526,41 @@ export const IDepositQueue = {
                         "name": "lookupTokenValue",
                         "nameLocation": "1390:16:103",
                         "parameters": {
-                            "id": 11934,
+                            "id": 11766,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11931,
+                                    "id": 11763,
                                     "mutability": "mutable",
                                     "name": "_token",
                                     "nameLocation": "1423:6:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11938,
+                                    "scope": 11770,
                                     "src": "1416:13:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$9980",
+                                        "typeIdentifier": "t_contract$_IERC20_$9810",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 11930,
+                                        "id": 11762,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 11929,
+                                            "id": 11761,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "1416:6:103"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 9980,
+                                            "referencedDeclaration": 9810,
                                             "src": "1416:6:103"
                                         },
-                                        "referencedDeclaration": 9980,
+                                        "referencedDeclaration": 9810,
                                         "src": "1416:6:103",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -568,12 +568,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11933,
+                                    "id": 11765,
                                     "mutability": "mutable",
                                     "name": "_balance",
                                     "nameLocation": "1447:8:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11938,
+                                    "scope": 11770,
                                     "src": "1439:16:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -582,7 +582,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11932,
+                                        "id": 11764,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1439:7:103",
@@ -597,17 +597,17 @@ export const IDepositQueue = {
                             "src": "1406:55:103"
                         },
                         "returnParameters": {
-                            "id": 11937,
+                            "id": 11769,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11936,
+                                    "id": 11768,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11938,
+                                    "scope": 11770,
                                     "src": "1485:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -616,7 +616,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11935,
+                                        "id": 11767,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1485:7:103",
@@ -630,13 +630,13 @@ export const IDepositQueue = {
                             ],
                             "src": "1484:9:103"
                         },
-                        "scope": 11983,
+                        "scope": 11815,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11948,
+                        "id": 11780,
                         "nodeType": "FunctionDefinition",
                         "src": "1500:121:103",
                         "nodes": [],
@@ -647,41 +647,41 @@ export const IDepositQueue = {
                         "name": "lookupTokenAmountFromValue",
                         "nameLocation": "1509:26:103",
                         "parameters": {
-                            "id": 11944,
+                            "id": 11776,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11941,
+                                    "id": 11773,
                                     "mutability": "mutable",
                                     "name": "_token",
                                     "nameLocation": "1552:6:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11948,
+                                    "scope": 11780,
                                     "src": "1545:13:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$9980",
+                                        "typeIdentifier": "t_contract$_IERC20_$9810",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 11940,
+                                        "id": 11772,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 11939,
+                                            "id": 11771,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "1545:6:103"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 9980,
+                                            "referencedDeclaration": 9810,
                                             "src": "1545:6:103"
                                         },
-                                        "referencedDeclaration": 9980,
+                                        "referencedDeclaration": 9810,
                                         "src": "1545:6:103",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -689,12 +689,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11943,
+                                    "id": 11775,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1576:6:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11948,
+                                    "scope": 11780,
                                     "src": "1568:14:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -703,7 +703,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11942,
+                                        "id": 11774,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1568:7:103",
@@ -718,17 +718,17 @@ export const IDepositQueue = {
                             "src": "1535:53:103"
                         },
                         "returnParameters": {
-                            "id": 11947,
+                            "id": 11779,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11946,
+                                    "id": 11778,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11948,
+                                    "scope": 11780,
                                     "src": "1612:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -737,7 +737,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11945,
+                                        "id": 11777,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1612:7:103",
@@ -751,13 +751,13 @@ export const IDepositQueue = {
                             ],
                             "src": "1611:9:103"
                         },
-                        "scope": 11983,
+                        "scope": 11815,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11960,
+                        "id": 11792,
                         "nodeType": "FunctionDefinition",
                         "src": "1627:134:103",
                         "nodes": [],
@@ -768,50 +768,50 @@ export const IDepositQueue = {
                         "name": "lookupTokenValues",
                         "nameLocation": "1636:17:103",
                         "parameters": {
-                            "id": 11956,
+                            "id": 11788,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11952,
+                                    "id": 11784,
                                     "mutability": "mutable",
                                     "name": "_tokens",
                                     "nameLocation": "1679:7:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11960,
+                                    "scope": 11792,
                                     "src": "1663:23:103",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_contract$_IERC20_$9980_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_contract$_IERC20_$9810_$dyn_memory_ptr",
                                         "typeString": "contract IERC20[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 11950,
+                                            "id": 11782,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 11949,
+                                                "id": 11781,
                                                 "name": "IERC20",
                                                 "nameLocations": [
                                                     "1663:6:103"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 9980,
+                                                "referencedDeclaration": 9810,
                                                 "src": "1663:6:103"
                                             },
-                                            "referencedDeclaration": 9980,
+                                            "referencedDeclaration": 9810,
                                             "src": "1663:6:103",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                "typeIdentifier": "t_contract$_IERC20_$9810",
                                                 "typeString": "contract IERC20"
                                             }
                                         },
-                                        "id": 11951,
+                                        "id": 11783,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1663:8:103",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_contract$_IERC20_$9980_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_contract$_IERC20_$9810_$dyn_storage_ptr",
                                             "typeString": "contract IERC20[]"
                                         }
                                     },
@@ -819,12 +819,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11955,
+                                    "id": 11787,
                                     "mutability": "mutable",
                                     "name": "_balances",
                                     "nameLocation": "1713:9:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11960,
+                                    "scope": 11792,
                                     "src": "1696:26:103",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -834,7 +834,7 @@ export const IDepositQueue = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 11953,
+                                            "id": 11785,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1696:7:103",
@@ -843,7 +843,7 @@ export const IDepositQueue = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 11954,
+                                        "id": 11786,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1696:9:103",
                                         "typeDescriptions": {
@@ -857,17 +857,17 @@ export const IDepositQueue = {
                             "src": "1653:75:103"
                         },
                         "returnParameters": {
-                            "id": 11959,
+                            "id": 11791,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11958,
+                                    "id": 11790,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11960,
+                                    "scope": 11792,
                                     "src": "1752:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -876,7 +876,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11957,
+                                        "id": 11789,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1752:7:103",
@@ -890,13 +890,13 @@ export const IDepositQueue = {
                             ],
                             "src": "1751:9:103"
                         },
-                        "scope": 11983,
+                        "scope": 11815,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11971,
+                        "id": 11803,
                         "nodeType": "FunctionDefinition",
                         "src": "1767:178:103",
                         "nodes": [],
@@ -907,17 +907,17 @@ export const IDepositQueue = {
                         "name": "calculateMintAmount",
                         "nameLocation": "1776:19:103",
                         "parameters": {
-                            "id": 11967,
+                            "id": 11799,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11962,
+                                    "id": 11794,
                                     "mutability": "mutable",
                                     "name": "_currentValueInProtocol",
                                     "nameLocation": "1813:23:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11971,
+                                    "scope": 11803,
                                     "src": "1805:31:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -926,7 +926,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11961,
+                                        "id": 11793,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1805:7:103",
@@ -939,12 +939,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11964,
+                                    "id": 11796,
                                     "mutability": "mutable",
                                     "name": "_newValueAdded",
                                     "nameLocation": "1854:14:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11971,
+                                    "scope": 11803,
                                     "src": "1846:22:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -953,7 +953,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11963,
+                                        "id": 11795,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1846:7:103",
@@ -966,12 +966,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11966,
+                                    "id": 11798,
                                     "mutability": "mutable",
                                     "name": "_existingEzETHSupply",
                                     "nameLocation": "1886:20:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11971,
+                                    "scope": 11803,
                                     "src": "1878:28:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -980,7 +980,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11965,
+                                        "id": 11797,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1878:7:103",
@@ -995,17 +995,17 @@ export const IDepositQueue = {
                             "src": "1795:117:103"
                         },
                         "returnParameters": {
-                            "id": 11970,
+                            "id": 11802,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11969,
+                                    "id": 11801,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11971,
+                                    "scope": 11803,
                                     "src": "1936:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1014,7 +1014,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11968,
+                                        "id": 11800,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1936:7:103",
@@ -1028,13 +1028,13 @@ export const IDepositQueue = {
                             ],
                             "src": "1935:9:103"
                         },
-                        "scope": 11983,
+                        "scope": 11815,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11982,
+                        "id": 11814,
                         "nodeType": "FunctionDefinition",
                         "src": "1951:183:103",
                         "nodes": [],
@@ -1045,17 +1045,17 @@ export const IDepositQueue = {
                         "name": "calculateRedeemAmount",
                         "nameLocation": "1960:21:103",
                         "parameters": {
-                            "id": 11978,
+                            "id": 11810,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11973,
+                                    "id": 11805,
                                     "mutability": "mutable",
                                     "name": "_ezETHBeingBurned",
                                     "nameLocation": "1999:17:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11982,
+                                    "scope": 11814,
                                     "src": "1991:25:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1064,7 +1064,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11972,
+                                        "id": 11804,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1991:7:103",
@@ -1077,12 +1077,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11975,
+                                    "id": 11807,
                                     "mutability": "mutable",
                                     "name": "_existingEzETHSupply",
                                     "nameLocation": "2034:20:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11982,
+                                    "scope": 11814,
                                     "src": "2026:28:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1091,7 +1091,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11974,
+                                        "id": 11806,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2026:7:103",
@@ -1104,12 +1104,12 @@ export const IDepositQueue = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11977,
+                                    "id": 11809,
                                     "mutability": "mutable",
                                     "name": "_currentValueInProtocol",
                                     "nameLocation": "2072:23:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11982,
+                                    "scope": 11814,
                                     "src": "2064:31:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1118,7 +1118,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11976,
+                                        "id": 11808,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2064:7:103",
@@ -1133,17 +1133,17 @@ export const IDepositQueue = {
                             "src": "1981:120:103"
                         },
                         "returnParameters": {
-                            "id": 11981,
+                            "id": 11813,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11980,
+                                    "id": 11812,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11982,
+                                    "scope": 11814,
                                     "src": "2125:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1152,7 +1152,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11979,
+                                        "id": 11811,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2125:7:103",
@@ -1166,7 +1166,7 @@ export const IDepositQueue = {
                             ],
                             "src": "2124:9:103"
                         },
-                        "scope": 11983,
+                        "scope": 11815,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -1179,21 +1179,21 @@ export const IDepositQueue = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11983
+                    11815
                 ],
                 "name": "IRenzoOracle",
                 "nameLocation": "1362:12:103",
-                "scope": 11995,
+                "scope": 11827,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 11994,
+                "id": 11826,
                 "nodeType": "ContractDefinition",
                 "src": "2138:164:103",
                 "nodes": [
                     {
-                        "id": 11986,
+                        "id": 11818,
                         "nodeType": "FunctionDefinition",
                         "src": "2168:51:103",
                         "nodes": [],
@@ -1204,24 +1204,24 @@ export const IDepositQueue = {
                         "name": "depositETHFromProtocol",
                         "nameLocation": "2177:22:103",
                         "parameters": {
-                            "id": 11984,
+                            "id": 11816,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2199:2:103"
                         },
                         "returnParameters": {
-                            "id": 11985,
+                            "id": 11817,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2218:0:103"
                         },
-                        "scope": 11994,
+                        "scope": 11826,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11993,
+                        "id": 11825,
                         "nodeType": "FunctionDefinition",
                         "src": "2225:75:103",
                         "nodes": [],
@@ -1232,17 +1232,17 @@ export const IDepositQueue = {
                         "name": "totalEarned",
                         "nameLocation": "2234:11:103",
                         "parameters": {
-                            "id": 11989,
+                            "id": 11821,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11988,
+                                    "id": 11820,
                                     "mutability": "mutable",
                                     "name": "tokenAddress",
                                     "nameLocation": "2254:12:103",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11993,
+                                    "scope": 11825,
                                     "src": "2246:20:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1251,7 +1251,7 @@ export const IDepositQueue = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11987,
+                                        "id": 11819,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2246:7:103",
@@ -1267,17 +1267,17 @@ export const IDepositQueue = {
                             "src": "2245:22:103"
                         },
                         "returnParameters": {
-                            "id": 11992,
+                            "id": 11824,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11991,
+                                    "id": 11823,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11993,
+                                    "scope": 11825,
                                     "src": "2291:7:103",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1286,7 +1286,7 @@ export const IDepositQueue = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11990,
+                                        "id": 11822,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2291:7:103",
@@ -1300,7 +1300,7 @@ export const IDepositQueue = {
                             ],
                             "src": "2290:9:103"
                         },
-                        "scope": 11994,
+                        "scope": 11826,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -1313,11 +1313,11 @@ export const IDepositQueue = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11994
+                    11826
                 ],
                 "name": "IDepositQueue",
                 "nameLocation": "2148:13:103",
-                "scope": 11995,
+                "scope": 11827,
                 "usedErrors": [],
                 "usedEvents": []
             }

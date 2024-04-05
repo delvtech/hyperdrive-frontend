@@ -379,17 +379,17 @@ export const IRocketDepositPool = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IRocketDepositPool.sol",
-        "id": 12066,
+        "id": 11898,
         "exportedSymbols": {
             "IRocketDepositPool": [
-                12065
+                11897
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:891:105",
         "nodes": [
             {
-                "id": 12004,
+                "id": 11836,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:105",
                 "nodes": [],
@@ -400,12 +400,12 @@ export const IRocketDepositPool = {
                 ]
             },
             {
-                "id": 12065,
+                "id": 11897,
                 "nodeType": "ContractDefinition",
                 "src": "64:865:105",
                 "nodes": [
                     {
-                        "id": 12009,
+                        "id": 11841,
                         "nodeType": "FunctionDefinition",
                         "src": "99:54:105",
                         "nodes": [],
@@ -416,23 +416,23 @@ export const IRocketDepositPool = {
                         "name": "getBalance",
                         "nameLocation": "108:10:105",
                         "parameters": {
-                            "id": 12005,
+                            "id": 11837,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "118:2:105"
                         },
                         "returnParameters": {
-                            "id": 12008,
+                            "id": 11840,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12007,
+                                    "id": 11839,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12009,
+                                    "scope": 11841,
                                     "src": "144:7:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -441,7 +441,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12006,
+                                        "id": 11838,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "144:7:105",
@@ -455,13 +455,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "143:9:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12014,
+                        "id": 11846,
                         "nodeType": "FunctionDefinition",
                         "src": "159:58:105",
                         "nodes": [],
@@ -472,23 +472,23 @@ export const IRocketDepositPool = {
                         "name": "getNodeBalance",
                         "nameLocation": "168:14:105",
                         "parameters": {
-                            "id": 12010,
+                            "id": 11842,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "182:2:105"
                         },
                         "returnParameters": {
-                            "id": 12013,
+                            "id": 11845,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12012,
+                                    "id": 11844,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12014,
+                                    "scope": 11846,
                                     "src": "208:7:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -497,7 +497,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12011,
+                                        "id": 11843,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "208:7:105",
@@ -511,13 +511,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "207:9:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12019,
+                        "id": 11851,
                         "nodeType": "FunctionDefinition",
                         "src": "223:57:105",
                         "nodes": [],
@@ -528,23 +528,23 @@ export const IRocketDepositPool = {
                         "name": "getUserBalance",
                         "nameLocation": "232:14:105",
                         "parameters": {
-                            "id": 12015,
+                            "id": 11847,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "246:2:105"
                         },
                         "returnParameters": {
-                            "id": 12018,
+                            "id": 11850,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12017,
+                                    "id": 11849,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12019,
+                                    "scope": 11851,
                                     "src": "272:6:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -553,7 +553,7 @@ export const IRocketDepositPool = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 12016,
+                                        "id": 11848,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "272:6:105",
@@ -567,13 +567,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "271:8:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12024,
+                        "id": 11856,
                         "nodeType": "FunctionDefinition",
                         "src": "286:60:105",
                         "nodes": [],
@@ -584,23 +584,23 @@ export const IRocketDepositPool = {
                         "name": "getExcessBalance",
                         "nameLocation": "295:16:105",
                         "parameters": {
-                            "id": 12020,
+                            "id": 11852,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "311:2:105"
                         },
                         "returnParameters": {
-                            "id": 12023,
+                            "id": 11855,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12022,
+                                    "id": 11854,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12024,
+                                    "scope": 11856,
                                     "src": "337:7:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -609,7 +609,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12021,
+                                        "id": 11853,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "337:7:105",
@@ -623,13 +623,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "336:9:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12027,
+                        "id": 11859,
                         "nodeType": "FunctionDefinition",
                         "src": "352:36:105",
                         "nodes": [],
@@ -640,24 +640,24 @@ export const IRocketDepositPool = {
                         "name": "deposit",
                         "nameLocation": "361:7:105",
                         "parameters": {
-                            "id": 12025,
+                            "id": 11857,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "368:2:105"
                         },
                         "returnParameters": {
-                            "id": 12026,
+                            "id": 11858,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "387:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12032,
+                        "id": 11864,
                         "nodeType": "FunctionDefinition",
                         "src": "394:67:105",
                         "nodes": [],
@@ -668,23 +668,23 @@ export const IRocketDepositPool = {
                         "name": "getMaximumDepositAmount",
                         "nameLocation": "403:23:105",
                         "parameters": {
-                            "id": 12028,
+                            "id": 11860,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "426:2:105"
                         },
                         "returnParameters": {
-                            "id": 12031,
+                            "id": 11863,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12030,
+                                    "id": 11862,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12032,
+                                    "scope": 11864,
                                     "src": "452:7:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -693,7 +693,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12029,
+                                        "id": 11861,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "452:7:105",
@@ -707,13 +707,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "451:9:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12037,
+                        "id": 11869,
                         "nodeType": "FunctionDefinition",
                         "src": "467:60:105",
                         "nodes": [],
@@ -724,17 +724,17 @@ export const IRocketDepositPool = {
                         "name": "nodeDeposit",
                         "nameLocation": "476:11:105",
                         "parameters": {
-                            "id": 12035,
+                            "id": 11867,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12034,
+                                    "id": 11866,
                                     "mutability": "mutable",
                                     "name": "_totalAmount",
                                     "nameLocation": "496:12:105",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12037,
+                                    "scope": 11869,
                                     "src": "488:20:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -743,7 +743,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12033,
+                                        "id": 11865,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "488:7:105",
@@ -758,18 +758,18 @@ export const IRocketDepositPool = {
                             "src": "487:22:105"
                         },
                         "returnParameters": {
-                            "id": 12036,
+                            "id": 11868,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "526:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12042,
+                        "id": 11874,
                         "nodeType": "FunctionDefinition",
                         "src": "533:56:105",
                         "nodes": [],
@@ -780,17 +780,17 @@ export const IRocketDepositPool = {
                         "name": "nodeCreditWithdrawal",
                         "nameLocation": "542:20:105",
                         "parameters": {
-                            "id": 12040,
+                            "id": 11872,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12039,
+                                    "id": 11871,
                                     "mutability": "mutable",
                                     "name": "_amount",
                                     "nameLocation": "571:7:105",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12042,
+                                    "scope": 11874,
                                     "src": "563:15:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -799,7 +799,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12038,
+                                        "id": 11870,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "563:7:105",
@@ -814,18 +814,18 @@ export const IRocketDepositPool = {
                             "src": "562:17:105"
                         },
                         "returnParameters": {
-                            "id": 12041,
+                            "id": 11873,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "588:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12045,
+                        "id": 11877,
                         "nodeType": "FunctionDefinition",
                         "src": "595:52:105",
                         "nodes": [],
@@ -836,24 +836,24 @@ export const IRocketDepositPool = {
                         "name": "recycleDissolvedDeposit",
                         "nameLocation": "604:23:105",
                         "parameters": {
-                            "id": 12043,
+                            "id": 11875,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "627:2:105"
                         },
                         "returnParameters": {
-                            "id": 12044,
+                            "id": 11876,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "646:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12048,
+                        "id": 11880,
                         "nodeType": "FunctionDefinition",
                         "src": "653:52:105",
                         "nodes": [],
@@ -864,24 +864,24 @@ export const IRocketDepositPool = {
                         "name": "recycleExcessCollateral",
                         "nameLocation": "662:23:105",
                         "parameters": {
-                            "id": 12046,
+                            "id": 11878,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "685:2:105"
                         },
                         "returnParameters": {
-                            "id": 12047,
+                            "id": 11879,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "704:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12051,
+                        "id": 11883,
                         "nodeType": "FunctionDefinition",
                         "src": "711:51:105",
                         "nodes": [],
@@ -892,24 +892,24 @@ export const IRocketDepositPool = {
                         "name": "recycleLiquidatedStake",
                         "nameLocation": "720:22:105",
                         "parameters": {
-                            "id": 12049,
+                            "id": 11881,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "742:2:105"
                         },
                         "returnParameters": {
-                            "id": 12050,
+                            "id": 11882,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "761:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12054,
+                        "id": 11886,
                         "nodeType": "FunctionDefinition",
                         "src": "768:35:105",
                         "nodes": [],
@@ -920,24 +920,24 @@ export const IRocketDepositPool = {
                         "name": "assignDeposits",
                         "nameLocation": "777:14:105",
                         "parameters": {
-                            "id": 12052,
+                            "id": 11884,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "791:2:105"
                         },
                         "returnParameters": {
-                            "id": 12053,
+                            "id": 11885,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "802:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12059,
+                        "id": 11891,
                         "nodeType": "FunctionDefinition",
                         "src": "809:55:105",
                         "nodes": [],
@@ -948,23 +948,23 @@ export const IRocketDepositPool = {
                         "name": "maybeAssignDeposits",
                         "nameLocation": "818:19:105",
                         "parameters": {
-                            "id": 12055,
+                            "id": 11887,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "837:2:105"
                         },
                         "returnParameters": {
-                            "id": 12058,
+                            "id": 11890,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12057,
+                                    "id": 11889,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12059,
+                                    "scope": 11891,
                                     "src": "858:4:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -973,7 +973,7 @@ export const IRocketDepositPool = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12056,
+                                        "id": 11888,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "858:4:105",
@@ -987,13 +987,13 @@ export const IRocketDepositPool = {
                             ],
                             "src": "857:6:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12064,
+                        "id": 11896,
                         "nodeType": "FunctionDefinition",
                         "src": "870:57:105",
                         "nodes": [],
@@ -1004,17 +1004,17 @@ export const IRocketDepositPool = {
                         "name": "withdrawExcessBalance",
                         "nameLocation": "879:21:105",
                         "parameters": {
-                            "id": 12062,
+                            "id": 11894,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12061,
+                                    "id": 11893,
                                     "mutability": "mutable",
                                     "name": "_amount",
                                     "nameLocation": "909:7:105",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12064,
+                                    "scope": 11896,
                                     "src": "901:15:105",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1023,7 +1023,7 @@ export const IRocketDepositPool = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12060,
+                                        "id": 11892,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "901:7:105",
@@ -1038,12 +1038,12 @@ export const IRocketDepositPool = {
                             "src": "900:17:105"
                         },
                         "returnParameters": {
-                            "id": 12063,
+                            "id": 11895,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "926:0:105"
                         },
-                        "scope": 12065,
+                        "scope": 11897,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -1056,11 +1056,11 @@ export const IRocketDepositPool = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    12065
+                    11897
                 ],
                 "name": "IRocketDepositPool",
                 "nameLocation": "74:18:105",
-                "scope": 12066,
+                "scope": 11898,
                 "usedErrors": [],
                 "usedEvents": []
             }

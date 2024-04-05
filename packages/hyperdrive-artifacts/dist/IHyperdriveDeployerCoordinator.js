@@ -418,7 +418,7 @@ export const IHyperdriveDeployerCoordinator = {
         "deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)": "0b3c4f86",
         "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70"
     },
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeploymentAlreadyExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeploymentDoesNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveIsNotDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IncompleteDeployment\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InsufficientValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidBaseToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumTransactionAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTargetIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidVaultSharesToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedExtraData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TargetAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_targetIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deployTarget\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_lp\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy Hyperdrive.\"},\"returns\":{\"_0\":\"The address of the newly deployed Hyperdrive instance.\"}},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"details\":\"As a convention, target0 must be deployed first. After this, the      targets can be deployed in any order.\",\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy the target.\",\"_targetIndex\":\"The index of the target to deploy.\"},\"returns\":{\"_0\":\"target The address of the newly deployed target instance.\"}},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"details\":\"This function utilizes several helper functions that provide      flexibility to implementations.\",\"params\":{\"_apr\":\"The target APR.\",\"_contribution\":\"The amount of capital to supply. The units of this        quantity are either base or vault shares, depending on the value        of `_options.asBase`.\",\"_deploymentId\":\"The ID of the deployment.\",\"_lp\":\"The LP that is initializing the pool.\",\"_options\":\"The options that configure how the initialization is        settled.\"},\"returns\":{\"lpShares\":\"The initial number of LP shares created.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"DeploymentAlreadyExists()\":[{\"notice\":\"Thrown when a user attempts to deploy target0 the deployment has         already been created.\"}],\"DeploymentDoesNotExist()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract that requires         the deployment to be created and the deployment doesn't exist.\"}],\"HyperdriveAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a hyperdrive contract         after it has already been deployed.\"}],\"HyperdriveIsNotDeployed()\":[{\"notice\":\"Thrown when a user attempts to initialize a hyperdrive contract         before is has been deployed.\"}],\"IncompleteDeployment()\":[{\"notice\":\"Thrown when a user attempts to deploy a Hyperdrive entrypoint         without first deploying the required targets.\"}],\"InsufficientValue()\":[{\"notice\":\"Thrown when a deployer provides an insufficient amount of base         to initialize a payable Hyperdrive instance.\"}],\"InvalidBaseToken()\":[{\"notice\":\"Thrown when the base token isn't valid. Each instance will have         different criteria for what constitutes a valid base token.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration specified is zero.\"}],\"InvalidFeeAmounts()\":[{\"notice\":\"Thrown when the curve fee, flat fee, governance LP fee, or         governance zombie fee is greater than 100%.\"}],\"InvalidMinimumShareReserves()\":[{\"notice\":\"Thrown when the minimum share reserves is too small. The         absolute smallest allowable minimum share reserves is 1e3;         however, yield sources may require a larger minimum share         reserves.\"}],\"InvalidMinimumTransactionAmount()\":[{\"notice\":\"Thrown when the minimum transaction amount is too small.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration is smaller than the checkpoint         duration or is not a multiple of the checkpoint duration.\"}],\"InvalidTargetIndex()\":[{\"notice\":\"Thrown when a user attempts to deploy a target using a target         index that is outside of the accepted range.\"}],\"InvalidVaultSharesToken()\":[{\"notice\":\"Thrown when the vault shares token isn't valid. Each instance         will have different criteria for what constitutes a valid base         token.\"}],\"MismatchedConfig()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with a config that doesn't match the deployment's         config hash.\"}],\"MismatchedExtraData()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with extra data that doesn't match the deployment's         extra data hash.\"}],\"NotPayable()\":[{\"notice\":\"Thrown when ether is sent to an instance that doesn't accept         ether as a deposit asset.\"}],\"TargetAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a target contract after         it has already been deployed.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"kind\":\"user\",\"methods\":{\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"notice\":\"Deploys a Hyperdrive instance with the given parameters.\"},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"notice\":\"Deploys a Hyperdrive target instance with the given parameters.\"},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Initializes a pool that was deployed by this coordinator.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":\"IHyperdriveDeployerCoordinator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0x2eb8c9cd2fb58f1c6b1054c5d5e325b78386855bbcfd0a86b595aa98bd05df28\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://cd2aa557854a35ada0b5d334c981739eecbc82580aa35693277749b8cadbe4f4\",\"dweb:/ipfs/QmcRWJuLSrA44XmFC1bMAGCKUfPmVUnUv7YE8fNC4gy91v\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeploymentAlreadyExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeploymentDoesNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveIsNotDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IncompleteDeployment\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InsufficientValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidBaseToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumTransactionAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTargetIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidVaultSharesToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedExtraData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TargetAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_targetIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deployTarget\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_lp\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy Hyperdrive.\"},\"returns\":{\"_0\":\"The address of the newly deployed Hyperdrive instance.\"}},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"details\":\"As a convention, target0 must be deployed first. After this, the      targets can be deployed in any order.\",\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy the target.\",\"_targetIndex\":\"The index of the target to deploy.\"},\"returns\":{\"_0\":\"target The address of the newly deployed target instance.\"}},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"details\":\"This function utilizes several helper functions that provide      flexibility to implementations.\",\"params\":{\"_apr\":\"The target APR.\",\"_contribution\":\"The amount of capital to supply. The units of this        quantity are either base or vault shares, depending on the value        of `_options.asBase`.\",\"_deploymentId\":\"The ID of the deployment.\",\"_lp\":\"The LP that is initializing the pool.\",\"_options\":\"The options that configure how the initialization is        settled.\"},\"returns\":{\"lpShares\":\"The initial number of LP shares created.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"DeploymentAlreadyExists()\":[{\"notice\":\"Thrown when a user attempts to deploy target0 the deployment has         already been created.\"}],\"DeploymentDoesNotExist()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract that requires         the deployment to be created and the deployment doesn't exist.\"}],\"HyperdriveAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a hyperdrive contract         after it has already been deployed.\"}],\"HyperdriveIsNotDeployed()\":[{\"notice\":\"Thrown when a user attempts to initialize a hyperdrive contract         before is has been deployed.\"}],\"IncompleteDeployment()\":[{\"notice\":\"Thrown when a user attempts to deploy a Hyperdrive entrypoint         without first deploying the required targets.\"}],\"InsufficientValue()\":[{\"notice\":\"Thrown when a deployer provides an insufficient amount of base         to initialize a payable Hyperdrive instance.\"}],\"InvalidBaseToken()\":[{\"notice\":\"Thrown when the base token isn't valid. Each instance will have         different criteria for what constitutes a valid base token.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration specified is zero.\"}],\"InvalidFeeAmounts()\":[{\"notice\":\"Thrown when the curve fee, flat fee, governance LP fee, or         governance zombie fee is greater than 100%.\"}],\"InvalidMinimumShareReserves()\":[{\"notice\":\"Thrown when the minimum share reserves is too small. The         absolute smallest allowable minimum share reserves is 1e3;         however, yield sources may require a larger minimum share         reserves.\"}],\"InvalidMinimumTransactionAmount()\":[{\"notice\":\"Thrown when the minimum transaction amount is too small.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration is smaller than the checkpoint         duration or is not a multiple of the checkpoint duration.\"}],\"InvalidTargetIndex()\":[{\"notice\":\"Thrown when a user attempts to deploy a target using a target         index that is outside of the accepted range.\"}],\"InvalidVaultSharesToken()\":[{\"notice\":\"Thrown when the vault shares token isn't valid. Each instance         will have different criteria for what constitutes a valid base         token.\"}],\"MismatchedConfig()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with a config that doesn't match the deployment's         config hash.\"}],\"MismatchedExtraData()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with extra data that doesn't match the deployment's         extra data hash.\"}],\"NotPayable()\":[{\"notice\":\"Thrown when ether is sent to an instance that doesn't accept         ether as a deposit asset.\"}],\"TargetAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a target contract after         it has already been deployed.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"kind\":\"user\",\"methods\":{\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"notice\":\"Deploys a Hyperdrive instance with the given parameters.\"},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"notice\":\"Deploys a Hyperdrive target instance with the given parameters.\"},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Initializes a pool that was deployed by this coordinator.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":\"IHyperdriveDeployerCoordinator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0x2eb8c9cd2fb58f1c6b1054c5d5e325b78386855bbcfd0a86b595aa98bd05df28\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://cd2aa557854a35ada0b5d334c981739eecbc82580aa35693277749b8cadbe4f4\",\"dweb:/ipfs/QmcRWJuLSrA44XmFC1bMAGCKUfPmVUnUv7YE8fNC4gy91v\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -944,10 +944,10 @@ export const IHyperdriveDeployerCoordinator = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
+                "keccak256": "0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784",
                 "urls": [
-                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
-                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
+                    "bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa",
+                    "dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1004,20 +1004,20 @@ export const IHyperdriveDeployerCoordinator = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol",
-        "id": 11005,
+        "id": 10835,
         "exportedSymbols": {
             "IHyperdrive": [
-                10676
+                10506
             ],
             "IHyperdriveDeployerCoordinator": [
-                11004
+                10834
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:5899:88",
         "nodes": [
             {
-                "id": 10895,
+                "id": 10725,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:88",
                 "nodes": [],
@@ -1028,23 +1028,23 @@ export const IHyperdriveDeployerCoordinator = {
                 ]
             },
             {
-                "id": 10897,
+                "id": 10727,
                 "nodeType": "ImportDirective",
                 "src": "64:48:88",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "./IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11005,
-                "sourceUnit": 10677,
+                "scope": 10835,
+                "sourceUnit": 10507,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 10896,
+                            "id": 10726,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10676,
+                            "referencedDeclaration": 10506,
                             "src": "73:11:88",
                             "typeDescriptions": {}
                         },
@@ -1054,17 +1054,17 @@ export const IHyperdriveDeployerCoordinator = {
                 "unitAlias": ""
             },
             {
-                "id": 11004,
+                "id": 10834,
                 "nodeType": "ContractDefinition",
                 "src": "114:5823:88",
                 "nodes": [
                     {
-                        "id": 10900,
+                        "id": 10730,
                         "nodeType": "ErrorDefinition",
                         "src": "300:32:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10898,
+                            "id": 10728,
                             "nodeType": "StructuredDocumentation",
                             "src": "181:114:88",
                             "text": "@notice Thrown when a user attempts to deploy target0 the deployment has\n         already been created."
@@ -1073,19 +1073,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "DeploymentAlreadyExists",
                         "nameLocation": "306:23:88",
                         "parameters": {
-                            "id": 10899,
+                            "id": 10729,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "329:2:88"
                         }
                     },
                     {
-                        "id": 10903,
+                        "id": 10733,
                         "nodeType": "ErrorDefinition",
                         "src": "496:31:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10901,
+                            "id": 10731,
                             "nodeType": "StructuredDocumentation",
                             "src": "338:153:88",
                             "text": "@notice Thrown when a user attempts to deploy a contract that requires\n         the deployment to be created and the deployment doesn't exist."
@@ -1094,19 +1094,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "DeploymentDoesNotExist",
                         "nameLocation": "502:22:88",
                         "parameters": {
-                            "id": 10902,
+                            "id": 10732,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "524:2:88"
                         }
                     },
                     {
-                        "id": 10906,
+                        "id": 10736,
                         "nodeType": "ErrorDefinition",
                         "src": "673:29:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10904,
+                            "id": 10734,
                             "nodeType": "StructuredDocumentation",
                             "src": "533:135:88",
                             "text": "@notice Thrown when a user attempts to deploy a Hyperdrive entrypoint\n         without first deploying the required targets."
@@ -1115,19 +1115,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "IncompleteDeployment",
                         "nameLocation": "679:20:88",
                         "parameters": {
-                            "id": 10905,
+                            "id": 10735,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "699:2:88"
                         }
                     },
                     {
-                        "id": 10909,
+                        "id": 10739,
                         "nodeType": "ErrorDefinition",
                         "src": "836:34:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10907,
+                            "id": 10737,
                             "nodeType": "StructuredDocumentation",
                             "src": "708:123:88",
                             "text": "@notice Thrown when a user attempts to deploy a hyperdrive contract\n         after it has already been deployed."
@@ -1136,19 +1136,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "HyperdriveAlreadyDeployed",
                         "nameLocation": "842:25:88",
                         "parameters": {
-                            "id": 10908,
+                            "id": 10738,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "867:2:88"
                         }
                     },
                     {
-                        "id": 10912,
+                        "id": 10742,
                         "nodeType": "ErrorDefinition",
                         "src": "1001:32:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10910,
+                            "id": 10740,
                             "nodeType": "StructuredDocumentation",
                             "src": "876:120:88",
                             "text": "@notice Thrown when a user attempts to initialize a hyperdrive contract\n         before is has been deployed."
@@ -1157,19 +1157,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "HyperdriveIsNotDeployed",
                         "nameLocation": "1007:23:88",
                         "parameters": {
-                            "id": 10911,
+                            "id": 10741,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1030:2:88"
                         }
                     },
                     {
-                        "id": 10915,
+                        "id": 10745,
                         "nodeType": "ErrorDefinition",
                         "src": "1179:26:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10913,
+                            "id": 10743,
                             "nodeType": "StructuredDocumentation",
                             "src": "1039:135:88",
                             "text": "@notice Thrown when a deployer provides an insufficient amount of base\n         to initialize a payable Hyperdrive instance."
@@ -1178,19 +1178,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InsufficientValue",
                         "nameLocation": "1185:17:88",
                         "parameters": {
-                            "id": 10914,
+                            "id": 10744,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1202:2:88"
                         }
                     },
                     {
-                        "id": 10918,
+                        "id": 10748,
                         "nodeType": "ErrorDefinition",
                         "src": "1367:25:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10916,
+                            "id": 10746,
                             "nodeType": "StructuredDocumentation",
                             "src": "1211:151:88",
                             "text": "@notice Thrown when the base token isn't valid. Each instance will have\n         different criteria for what constitutes a valid base token."
@@ -1199,19 +1199,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidBaseToken",
                         "nameLocation": "1373:16:88",
                         "parameters": {
-                            "id": 10917,
+                            "id": 10747,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1389:2:88"
                         }
                     },
                     {
-                        "id": 10921,
+                        "id": 10751,
                         "nodeType": "ErrorDefinition",
                         "src": "1578:32:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10919,
+                            "id": 10749,
                             "nodeType": "StructuredDocumentation",
                             "src": "1398:175:88",
                             "text": "@notice Thrown when the vault shares token isn't valid. Each instance\n         will have different criteria for what constitutes a valid base\n         token."
@@ -1220,19 +1220,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidVaultSharesToken",
                         "nameLocation": "1584:23:88",
                         "parameters": {
-                            "id": 10920,
+                            "id": 10750,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1607:2:88"
                         }
                     },
                     {
-                        "id": 10924,
+                        "id": 10754,
                         "nodeType": "ErrorDefinition",
                         "src": "1687:34:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10922,
+                            "id": 10752,
                             "nodeType": "StructuredDocumentation",
                             "src": "1616:66:88",
                             "text": "@notice Thrown when the checkpoint duration specified is zero."
@@ -1241,19 +1241,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidCheckpointDuration",
                         "nameLocation": "1693:25:88",
                         "parameters": {
-                            "id": 10923,
+                            "id": 10753,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1718:2:88"
                         }
                     },
                     {
-                        "id": 10927,
+                        "id": 10757,
                         "nodeType": "ErrorDefinition",
                         "src": "1862:26:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10925,
+                            "id": 10755,
                             "nodeType": "StructuredDocumentation",
                             "src": "1727:130:88",
                             "text": "@notice Thrown when the curve fee, flat fee, governance LP fee, or\n         governance zombie fee is greater than 100%."
@@ -1262,19 +1262,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidFeeAmounts",
                         "nameLocation": "1868:17:88",
                         "parameters": {
-                            "id": 10926,
+                            "id": 10756,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1885:2:88"
                         }
                     },
                     {
-                        "id": 10930,
+                        "id": 10760,
                         "nodeType": "ErrorDefinition",
                         "src": "2142:36:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10928,
+                            "id": 10758,
                             "nodeType": "StructuredDocumentation",
                             "src": "1894:243:88",
                             "text": "@notice Thrown when the minimum share reserves is too small. The\n         absolute smallest allowable minimum share reserves is 1e3;\n         however, yield sources may require a larger minimum share\n         reserves."
@@ -1283,19 +1283,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidMinimumShareReserves",
                         "nameLocation": "2148:27:88",
                         "parameters": {
-                            "id": 10929,
+                            "id": 10759,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2175:2:88"
                         }
                     },
                     {
-                        "id": 10933,
+                        "id": 10763,
                         "nodeType": "ErrorDefinition",
                         "src": "2257:40:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10931,
+                            "id": 10761,
                             "nodeType": "StructuredDocumentation",
                             "src": "2184:68:88",
                             "text": "@notice Thrown when the minimum transaction amount is too small."
@@ -1304,19 +1304,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidMinimumTransactionAmount",
                         "nameLocation": "2263:31:88",
                         "parameters": {
-                            "id": 10932,
+                            "id": 10762,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2294:2:88"
                         }
                     },
                     {
-                        "id": 10936,
+                        "id": 10766,
                         "nodeType": "ErrorDefinition",
                         "src": "2458:32:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10934,
+                            "id": 10764,
                             "nodeType": "StructuredDocumentation",
                             "src": "2303:150:88",
                             "text": "@notice Thrown when the position duration is smaller than the checkpoint\n         duration or is not a multiple of the checkpoint duration."
@@ -1325,19 +1325,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidPositionDuration",
                         "nameLocation": "2464:23:88",
                         "parameters": {
-                            "id": 10935,
+                            "id": 10765,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2487:2:88"
                         }
                     },
                     {
-                        "id": 10939,
+                        "id": 10769,
                         "nodeType": "ErrorDefinition",
                         "src": "2635:27:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10937,
+                            "id": 10767,
                             "nodeType": "StructuredDocumentation",
                             "src": "2496:134:88",
                             "text": "@notice Thrown when a user attempts to deploy a target using a target\n         index that is outside of the accepted range."
@@ -1346,19 +1346,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "InvalidTargetIndex",
                         "nameLocation": "2641:18:88",
                         "parameters": {
-                            "id": 10938,
+                            "id": 10768,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2659:2:88"
                         }
                     },
                     {
-                        "id": 10942,
+                        "id": 10772,
                         "nodeType": "ErrorDefinition",
                         "src": "2854:25:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10940,
+                            "id": 10770,
                             "nodeType": "StructuredDocumentation",
                             "src": "2668:181:88",
                             "text": "@notice Thrown when a user attempts to deploy a contract in an existing\n         deployment with a config that doesn't match the deployment's\n         config hash."
@@ -1367,19 +1367,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "MismatchedConfig",
                         "nameLocation": "2860:16:88",
                         "parameters": {
-                            "id": 10941,
+                            "id": 10771,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2876:2:88"
                         }
                     },
                     {
-                        "id": 10945,
+                        "id": 10775,
                         "nodeType": "ErrorDefinition",
                         "src": "3077:28:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10943,
+                            "id": 10773,
                             "nodeType": "StructuredDocumentation",
                             "src": "2885:187:88",
                             "text": "@notice Thrown when a user attempts to deploy a contract in an existing\n         deployment with extra data that doesn't match the deployment's\n         extra data hash."
@@ -1388,19 +1388,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "MismatchedExtraData",
                         "nameLocation": "3083:19:88",
                         "parameters": {
-                            "id": 10944,
+                            "id": 10774,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3102:2:88"
                         }
                     },
                     {
-                        "id": 10948,
+                        "id": 10778,
                         "nodeType": "ErrorDefinition",
                         "src": "3230:19:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10946,
+                            "id": 10776,
                             "nodeType": "StructuredDocumentation",
                             "src": "3111:114:88",
                             "text": "@notice Thrown when ether is sent to an instance that doesn't accept\n         ether as a deposit asset."
@@ -1409,19 +1409,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "NotPayable",
                         "nameLocation": "3236:10:88",
                         "parameters": {
-                            "id": 10947,
+                            "id": 10777,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3246:2:88"
                         }
                     },
                     {
-                        "id": 10951,
+                        "id": 10781,
                         "nodeType": "ErrorDefinition",
                         "src": "3379:30:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10949,
+                            "id": 10779,
                             "nodeType": "StructuredDocumentation",
                             "src": "3255:119:88",
                             "text": "@notice Thrown when a user attempts to deploy a target contract after\n         it has already been deployed."
@@ -1430,19 +1430,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "TargetAlreadyDeployed",
                         "nameLocation": "3385:21:88",
                         "parameters": {
-                            "id": 10950,
+                            "id": 10780,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3406:2:88"
                         }
                     },
                     {
-                        "id": 10954,
+                        "id": 10784,
                         "nodeType": "ErrorDefinition",
                         "src": "3468:23:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10952,
+                            "id": 10782,
                             "nodeType": "StructuredDocumentation",
                             "src": "3415:48:88",
                             "text": "@notice Thrown when an ether transfer fails."
@@ -1451,19 +1451,19 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "TransferFailed",
                         "nameLocation": "3474:14:88",
                         "parameters": {
-                            "id": 10953,
+                            "id": 10783,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3488:2:88"
                         }
                     },
                     {
-                        "id": 10969,
+                        "id": 10799,
                         "nodeType": "FunctionDefinition",
                         "src": "3945:195:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10955,
+                            "id": 10785,
                             "nodeType": "StructuredDocumentation",
                             "src": "3520:420:88",
                             "text": "@notice Deploys a Hyperdrive instance with the given parameters.\n @param _deploymentId The ID of the deployment.\n @param _deployConfig The deploy configuration of the Hyperdrive pool.\n @param _extraData The extra data that contains the pool and sweep targets.\n @param _salt The create2 salt used to deploy Hyperdrive.\n @return The address of the newly deployed Hyperdrive instance."
@@ -1475,17 +1475,17 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "deploy",
                         "nameLocation": "3954:6:88",
                         "parameters": {
-                            "id": 10965,
+                            "id": 10795,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10957,
+                                    "id": 10787,
                                     "mutability": "mutable",
                                     "name": "_deploymentId",
                                     "nameLocation": "3978:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10969,
+                                    "scope": 10799,
                                     "src": "3970:21:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1494,7 +1494,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10956,
+                                        "id": 10786,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3970:7:88",
@@ -1507,37 +1507,37 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10960,
+                                    "id": 10790,
                                     "mutability": "mutable",
                                     "name": "_deployConfig",
                                     "nameLocation": "4037:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10969,
+                                    "scope": 10799,
                                     "src": "4001:49:88",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 10959,
+                                        "id": 10789,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10958,
+                                            "id": 10788,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
                                                 "4001:11:88",
                                                 "4013:16:88"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
+                                            "referencedDeclaration": 10254,
                                             "src": "4001:28:88"
                                         },
-                                        "referencedDeclaration": 10424,
+                                        "referencedDeclaration": 10254,
                                         "src": "4001:28:88",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -1545,12 +1545,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10962,
+                                    "id": 10792,
                                     "mutability": "mutable",
                                     "name": "_extraData",
                                     "nameLocation": "4073:10:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10969,
+                                    "scope": 10799,
                                     "src": "4060:23:88",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1559,7 +1559,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 10961,
+                                        "id": 10791,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4060:5:88",
@@ -1572,12 +1572,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10964,
+                                    "id": 10794,
                                     "mutability": "mutable",
                                     "name": "_salt",
                                     "nameLocation": "4101:5:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10969,
+                                    "scope": 10799,
                                     "src": "4093:13:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1586,7 +1586,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10963,
+                                        "id": 10793,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4093:7:88",
@@ -1601,17 +1601,17 @@ export const IHyperdriveDeployerCoordinator = {
                             "src": "3960:152:88"
                         },
                         "returnParameters": {
-                            "id": 10968,
+                            "id": 10798,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10967,
+                                    "id": 10797,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10969,
+                                    "scope": 10799,
                                     "src": "4131:7:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1620,7 +1620,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 10966,
+                                        "id": 10796,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4131:7:88",
@@ -1635,18 +1635,18 @@ export const IHyperdriveDeployerCoordinator = {
                             ],
                             "src": "4130:9:88"
                         },
-                        "scope": 11004,
+                        "scope": 10834,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 10986,
+                        "id": 10816,
                         "nodeType": "FunctionDefinition",
                         "src": "4773:231:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10970,
+                            "id": 10800,
                             "nodeType": "StructuredDocumentation",
                             "src": "4146:622:88",
                             "text": "@notice Deploys a Hyperdrive target instance with the given parameters.\n @dev As a convention, target0 must be deployed first. After this, the\n      targets can be deployed in any order.\n @param _deploymentId The ID of the deployment.\n @param _deployConfig The deploy configuration of the Hyperdrive pool.\n @param _extraData The extra data that contains the pool and sweep targets.\n @param _targetIndex The index of the target to deploy.\n @param _salt The create2 salt used to deploy the target.\n @return target The address of the newly deployed target instance."
@@ -1658,17 +1658,17 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "deployTarget",
                         "nameLocation": "4782:12:88",
                         "parameters": {
-                            "id": 10982,
+                            "id": 10812,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10972,
+                                    "id": 10802,
                                     "mutability": "mutable",
                                     "name": "_deploymentId",
                                     "nameLocation": "4812:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4804:21:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1677,7 +1677,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10971,
+                                        "id": 10801,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4804:7:88",
@@ -1690,37 +1690,37 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10975,
+                                    "id": 10805,
                                     "mutability": "mutable",
                                     "name": "_deployConfig",
                                     "nameLocation": "4871:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4835:49:88",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 10974,
+                                        "id": 10804,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10973,
+                                            "id": 10803,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
                                                 "4835:11:88",
                                                 "4847:16:88"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
+                                            "referencedDeclaration": 10254,
                                             "src": "4835:28:88"
                                         },
-                                        "referencedDeclaration": 10424,
+                                        "referencedDeclaration": 10254,
                                         "src": "4835:28:88",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -1728,12 +1728,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10977,
+                                    "id": 10807,
                                     "mutability": "mutable",
                                     "name": "_extraData",
                                     "nameLocation": "4907:10:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4894:23:88",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1742,7 +1742,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 10976,
+                                        "id": 10806,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4894:5:88",
@@ -1755,12 +1755,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10979,
+                                    "id": 10809,
                                     "mutability": "mutable",
                                     "name": "_targetIndex",
                                     "nameLocation": "4935:12:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4927:20:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1769,7 +1769,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10978,
+                                        "id": 10808,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4927:7:88",
@@ -1782,12 +1782,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10981,
+                                    "id": 10811,
                                     "mutability": "mutable",
                                     "name": "_salt",
                                     "nameLocation": "4965:5:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4957:13:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1796,7 +1796,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10980,
+                                        "id": 10810,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4957:7:88",
@@ -1811,17 +1811,17 @@ export const IHyperdriveDeployerCoordinator = {
                             "src": "4794:182:88"
                         },
                         "returnParameters": {
-                            "id": 10985,
+                            "id": 10815,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10984,
+                                    "id": 10814,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10986,
+                                    "scope": 10816,
                                     "src": "4995:7:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1830,7 +1830,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 10983,
+                                        "id": 10813,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4995:7:88",
@@ -1845,18 +1845,18 @@ export const IHyperdriveDeployerCoordinator = {
                             ],
                             "src": "4994:9:88"
                         },
-                        "scope": 11004,
+                        "scope": 10834,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11003,
+                        "id": 10833,
                         "nodeType": "FunctionDefinition",
                         "src": "5715:220:88",
                         "nodes": [],
                         "documentation": {
-                            "id": 10987,
+                            "id": 10817,
                             "nodeType": "StructuredDocumentation",
                             "src": "5010:700:88",
                             "text": "@notice Initializes a pool that was deployed by this coordinator.\n @dev This function utilizes several helper functions that provide\n      flexibility to implementations.\n @param _deploymentId The ID of the deployment.\n @param _lp The LP that is initializing the pool.\n @param _contribution The amount of capital to supply. The units of this\n        quantity are either base or vault shares, depending on the value\n        of `_options.asBase`.\n @param _apr The target APR.\n @param _options The options that configure how the initialization is\n        settled.\n @return lpShares The initial number of LP shares created."
@@ -1868,17 +1868,17 @@ export const IHyperdriveDeployerCoordinator = {
                         "name": "initialize",
                         "nameLocation": "5724:10:88",
                         "parameters": {
-                            "id": 10999,
+                            "id": 10829,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10989,
+                                    "id": 10819,
                                     "mutability": "mutable",
                                     "name": "_deploymentId",
                                     "nameLocation": "5752:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5744:21:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1887,7 +1887,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10988,
+                                        "id": 10818,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5744:7:88",
@@ -1900,12 +1900,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10991,
+                                    "id": 10821,
                                     "mutability": "mutable",
                                     "name": "_lp",
                                     "nameLocation": "5783:3:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5775:11:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1914,7 +1914,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 10990,
+                                        "id": 10820,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5775:7:88",
@@ -1928,12 +1928,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10993,
+                                    "id": 10823,
                                     "mutability": "mutable",
                                     "name": "_contribution",
                                     "nameLocation": "5804:13:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5796:21:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1942,7 +1942,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10992,
+                                        "id": 10822,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5796:7:88",
@@ -1955,12 +1955,12 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10995,
+                                    "id": 10825,
                                     "mutability": "mutable",
                                     "name": "_apr",
                                     "nameLocation": "5835:4:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5827:12:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1969,7 +1969,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10994,
+                                        "id": 10824,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5827:7:88",
@@ -1982,37 +1982,37 @@ export const IHyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10998,
+                                    "id": 10828,
                                     "mutability": "mutable",
                                     "name": "_options",
                                     "nameLocation": "5876:8:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5849:35:88",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 10997,
+                                        "id": 10827,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10996,
+                                            "id": 10826,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
                                                 "5849:11:88",
                                                 "5861:7:88"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10526,
+                                            "referencedDeclaration": 10356,
                                             "src": "5849:19:88"
                                         },
-                                        "referencedDeclaration": 10526,
+                                        "referencedDeclaration": 10356,
                                         "src": "5849:19:88",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$10526_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$10356_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
@@ -2022,17 +2022,17 @@ export const IHyperdriveDeployerCoordinator = {
                             "src": "5734:156:88"
                         },
                         "returnParameters": {
-                            "id": 11002,
+                            "id": 10832,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11001,
+                                    "id": 10831,
                                     "mutability": "mutable",
                                     "name": "lpShares",
                                     "nameLocation": "5925:8:88",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11003,
+                                    "scope": 10833,
                                     "src": "5917:16:88",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2041,7 +2041,7 @@ export const IHyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11000,
+                                        "id": 10830,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5917:7:88",
@@ -2055,7 +2055,7 @@ export const IHyperdriveDeployerCoordinator = {
                             ],
                             "src": "5916:18:88"
                         },
-                        "scope": 11004,
+                        "scope": 10834,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
@@ -2068,31 +2068,31 @@ export const IHyperdriveDeployerCoordinator = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11004
+                    10834
                 ],
                 "name": "IHyperdriveDeployerCoordinator",
                 "nameLocation": "124:30:88",
-                "scope": 11005,
+                "scope": 10835,
                 "usedErrors": [
-                    10900,
-                    10903,
-                    10906,
-                    10909,
-                    10912,
-                    10915,
-                    10918,
-                    10921,
-                    10924,
-                    10927,
-                    10930,
-                    10933,
-                    10936,
-                    10939,
-                    10942,
-                    10945,
-                    10948,
-                    10951,
-                    10954
+                    10730,
+                    10733,
+                    10736,
+                    10739,
+                    10742,
+                    10745,
+                    10748,
+                    10751,
+                    10754,
+                    10757,
+                    10760,
+                    10763,
+                    10766,
+                    10769,
+                    10772,
+                    10775,
+                    10778,
+                    10781,
+                    10784
                 ],
                 "usedEvents": []
             }

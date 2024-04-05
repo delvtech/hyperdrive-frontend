@@ -74,20 +74,20 @@ export const StdStyle = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdStyle.sol",
-        "id": 38378,
+        "id": 38269,
         "exportedSymbols": {
             "StdStyle": [
-                38377
+                38268
             ],
             "VmSafe": [
-                40341
+                40232
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:10430:153",
         "nodes": [
             {
-                "id": 37168,
+                "id": 37059,
                 "nodeType": "PragmaDirective",
                 "src": "32:32:153",
                 "nodes": [],
@@ -102,23 +102,23 @@ export const StdStyle = {
                 ]
             },
             {
-                "id": 37170,
+                "id": 37061,
                 "nodeType": "ImportDirective",
                 "src": "66:32:153",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 38378,
-                "sourceUnit": 40814,
+                "scope": 38269,
+                "sourceUnit": 40705,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 37169,
+                            "id": 37060,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40341,
+                            "referencedDeclaration": 40232,
                             "src": "74:6:153",
                             "typeDescriptions": {}
                         },
@@ -128,12 +128,12 @@ export const StdStyle = {
                 "unitAlias": ""
             },
             {
-                "id": 38377,
+                "id": 38268,
                 "nodeType": "ContractDefinition",
                 "src": "100:10361:153",
                 "nodes": [
                     {
-                        "id": 37187,
+                        "id": 37078,
                         "nodeType": "VariableDeclaration",
                         "src": "123:92:153",
                         "nodes": [],
@@ -141,30 +141,30 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "vm",
                         "nameLocation": "147:2:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                             "typeString": "contract VmSafe"
                         },
                         "typeName": {
-                            "id": 37172,
+                            "id": 37063,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 37171,
+                                "id": 37062,
                                 "name": "VmSafe",
                                 "nameLocations": [
                                     "123:6:153"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40341,
+                                "referencedDeclaration": 40232,
                                 "src": "123:6:153"
                             },
-                            "referencedDeclaration": 40341,
+                            "referencedDeclaration": 40232,
                             "src": "123:6:153",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                "typeIdentifier": "t_contract$_VmSafe_$40232",
                                 "typeString": "contract VmSafe"
                             }
                         },
@@ -180,7 +180,7 @@ export const StdStyle = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "6865766d20636865617420636f6465",
-                                                                    "id": 37181,
+                                                                    "id": 37072,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -202,7 +202,7 @@ export const StdStyle = {
                                                                         "typeString": "literal_string \"hevm cheat code\""
                                                                     }
                                                                 ],
-                                                                "id": 37180,
+                                                                "id": 37071,
                                                                 "name": "keccak256",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -213,7 +213,7 @@ export const StdStyle = {
                                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                 }
                                                             },
-                                                            "id": 37182,
+                                                            "id": 37073,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -237,7 +237,7 @@ export const StdStyle = {
                                                                 "typeString": "bytes32"
                                                             }
                                                         ],
-                                                        "id": 37179,
+                                                        "id": 37070,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -249,14 +249,14 @@ export const StdStyle = {
                                                             "typeString": "type(uint256)"
                                                         },
                                                         "typeName": {
-                                                            "id": 37178,
+                                                            "id": 37069,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "175:7:153",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 37183,
+                                                    "id": 37074,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -280,7 +280,7 @@ export const StdStyle = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 37177,
+                                                "id": 37068,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -292,14 +292,14 @@ export const StdStyle = {
                                                     "typeString": "type(uint160)"
                                                 },
                                                 "typeName": {
-                                                    "id": 37176,
+                                                    "id": 37067,
                                                     "name": "uint160",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "167:7:153",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 37184,
+                                            "id": 37075,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -323,7 +323,7 @@ export const StdStyle = {
                                                 "typeString": "uint160"
                                             }
                                         ],
-                                        "id": 37175,
+                                        "id": 37066,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -335,14 +335,14 @@ export const StdStyle = {
                                             "typeString": "type(address)"
                                         },
                                         "typeName": {
-                                            "id": 37174,
+                                            "id": 37065,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "159:7:153",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 37185,
+                                    "id": 37076,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -366,18 +366,18 @@ export const StdStyle = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 37173,
+                                "id": 37064,
                                 "name": "VmSafe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40341,
+                                "referencedDeclaration": 40232,
                                 "src": "152:6:153",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40341_$",
+                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40232_$",
                                     "typeString": "type(contract VmSafe)"
                                 }
                             },
-                            "id": 37186,
+                            "id": 37077,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -389,14 +389,14 @@ export const StdStyle = {
                             "src": "152:63:153",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                "typeIdentifier": "t_contract$_VmSafe_$40232",
                                 "typeString": "contract VmSafe"
                             }
                         },
                         "visibility": "private"
                     },
                     {
-                        "id": 37190,
+                        "id": 37081,
                         "nodeType": "VariableDeclaration",
                         "src": "222:34:153",
                         "nodes": [],
@@ -404,7 +404,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "RED",
                         "nameLocation": "238:3:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -412,7 +412,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37188,
+                            "id": 37079,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "222:6:153",
@@ -423,7 +423,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39316d",
-                            "id": 37189,
+                            "id": 37080,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -440,7 +440,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37193,
+                        "id": 37084,
                         "nodeType": "VariableDeclaration",
                         "src": "262:36:153",
                         "nodes": [],
@@ -448,7 +448,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "GREEN",
                         "nameLocation": "278:5:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -456,7 +456,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37191,
+                            "id": 37082,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "262:6:153",
@@ -467,7 +467,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39326d",
-                            "id": 37192,
+                            "id": 37083,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -484,7 +484,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37196,
+                        "id": 37087,
                         "nodeType": "VariableDeclaration",
                         "src": "304:37:153",
                         "nodes": [],
@@ -492,7 +492,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "YELLOW",
                         "nameLocation": "320:6:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -500,7 +500,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37194,
+                            "id": 37085,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "304:6:153",
@@ -511,7 +511,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39336d",
-                            "id": 37195,
+                            "id": 37086,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -528,7 +528,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37199,
+                        "id": 37090,
                         "nodeType": "VariableDeclaration",
                         "src": "347:35:153",
                         "nodes": [],
@@ -536,7 +536,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "BLUE",
                         "nameLocation": "363:4:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -544,7 +544,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37197,
+                            "id": 37088,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "347:6:153",
@@ -555,7 +555,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39346d",
-                            "id": 37198,
+                            "id": 37089,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -572,7 +572,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37202,
+                        "id": 37093,
                         "nodeType": "VariableDeclaration",
                         "src": "388:38:153",
                         "nodes": [],
@@ -580,7 +580,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "MAGENTA",
                         "nameLocation": "404:7:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -588,7 +588,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37200,
+                            "id": 37091,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "388:6:153",
@@ -599,7 +599,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39356d",
-                            "id": 37201,
+                            "id": 37092,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -616,7 +616,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37205,
+                        "id": 37096,
                         "nodeType": "VariableDeclaration",
                         "src": "432:35:153",
                         "nodes": [],
@@ -624,7 +624,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "CYAN",
                         "nameLocation": "448:4:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -632,7 +632,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37203,
+                            "id": 37094,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "432:6:153",
@@ -643,7 +643,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b39366d",
-                            "id": 37204,
+                            "id": 37095,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -660,7 +660,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37208,
+                        "id": 37099,
                         "nodeType": "VariableDeclaration",
                         "src": "473:34:153",
                         "nodes": [],
@@ -668,7 +668,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "BOLD",
                         "nameLocation": "489:4:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -676,7 +676,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37206,
+                            "id": 37097,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "473:6:153",
@@ -687,7 +687,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b316d",
-                            "id": 37207,
+                            "id": 37098,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -704,7 +704,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37211,
+                        "id": 37102,
                         "nodeType": "VariableDeclaration",
                         "src": "513:33:153",
                         "nodes": [],
@@ -712,7 +712,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "DIM",
                         "nameLocation": "529:3:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -720,7 +720,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37209,
+                            "id": 37100,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "513:6:153",
@@ -731,7 +731,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b326d",
-                            "id": 37210,
+                            "id": 37101,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -748,7 +748,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37214,
+                        "id": 37105,
                         "nodeType": "VariableDeclaration",
                         "src": "552:36:153",
                         "nodes": [],
@@ -756,7 +756,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "ITALIC",
                         "nameLocation": "568:6:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -764,7 +764,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37212,
+                            "id": 37103,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "552:6:153",
@@ -775,7 +775,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b336d",
-                            "id": 37213,
+                            "id": 37104,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -792,7 +792,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37217,
+                        "id": 37108,
                         "nodeType": "VariableDeclaration",
                         "src": "594:39:153",
                         "nodes": [],
@@ -800,7 +800,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "UNDERLINE",
                         "nameLocation": "610:9:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -808,7 +808,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37215,
+                            "id": 37106,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "594:6:153",
@@ -819,7 +819,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b346d",
-                            "id": 37216,
+                            "id": 37107,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -836,7 +836,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37220,
+                        "id": 37111,
                         "nodeType": "VariableDeclaration",
                         "src": "639:37:153",
                         "nodes": [],
@@ -844,7 +844,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "INVERSE",
                         "nameLocation": "655:7:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -852,7 +852,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37218,
+                            "id": 37109,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "639:6:153",
@@ -863,7 +863,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b376d",
-                            "id": 37219,
+                            "id": 37110,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -880,7 +880,7 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37223,
+                        "id": 37114,
                         "nodeType": "VariableDeclaration",
                         "src": "682:35:153",
                         "nodes": [],
@@ -888,7 +888,7 @@ export const StdStyle = {
                         "mutability": "constant",
                         "name": "RESET",
                         "nameLocation": "698:5:153",
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -896,7 +896,7 @@ export const StdStyle = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 37221,
+                            "id": 37112,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "682:6:153",
@@ -907,7 +907,7 @@ export const StdStyle = {
                         },
                         "value": {
                             "hexValue": "1b5b306d",
-                            "id": 37222,
+                            "id": 37113,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -924,12 +924,12 @@ export const StdStyle = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 37243,
+                        "id": 37134,
                         "nodeType": "FunctionDefinition",
                         "src": "724:167:153",
                         "nodes": [],
                         "body": {
-                            "id": 37242,
+                            "id": 37133,
                             "nodeType": "Block",
                             "src": "823:68:153",
                             "nodes": [],
@@ -940,11 +940,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37236,
+                                                        "id": 37127,
                                                         "name": "style",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37225,
+                                                        "referencedDeclaration": 37116,
                                                         "src": "864:5:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -952,11 +952,11 @@ export const StdStyle = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 37237,
+                                                        "id": 37128,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37227,
+                                                        "referencedDeclaration": 37118,
                                                         "src": "871:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -964,11 +964,11 @@ export const StdStyle = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 37238,
+                                                        "id": 37129,
                                                         "name": "RESET",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37223,
+                                                        "referencedDeclaration": 37114,
                                                         "src": "877:5:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -992,7 +992,7 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37234,
+                                                        "id": 37125,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -1003,7 +1003,7 @@ export const StdStyle = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 37235,
+                                                    "id": 37126,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1017,7 +1017,7 @@ export const StdStyle = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 37239,
+                                                "id": 37130,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1041,7 +1041,7 @@ export const StdStyle = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 37233,
+                                            "id": 37124,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1053,14 +1053,14 @@ export const StdStyle = {
                                                 "typeString": "type(string storage pointer)"
                                             },
                                             "typeName": {
-                                                "id": 37232,
+                                                "id": 37123,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "840:6:153",
                                                 "typeDescriptions": {}
                                             }
                                         },
-                                        "id": 37240,
+                                        "id": 37131,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1076,8 +1076,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37231,
-                                    "id": 37241,
+                                    "functionReturnParameters": 37122,
+                                    "id": 37132,
                                     "nodeType": "Return",
                                     "src": "833:51:153"
                                 }
@@ -1089,17 +1089,17 @@ export const StdStyle = {
                         "name": "styleConcat",
                         "nameLocation": "733:11:153",
                         "parameters": {
-                            "id": 37228,
+                            "id": 37119,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37225,
+                                    "id": 37116,
                                     "mutability": "mutable",
                                     "name": "style",
                                     "nameLocation": "759:5:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37243,
+                                    "scope": 37134,
                                     "src": "745:19:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1108,7 +1108,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37224,
+                                        "id": 37115,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "745:6:153",
@@ -1121,12 +1121,12 @@ export const StdStyle = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 37227,
+                                    "id": 37118,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "780:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37243,
+                                    "scope": 37134,
                                     "src": "766:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1135,7 +1135,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37226,
+                                        "id": 37117,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "766:6:153",
@@ -1150,17 +1150,17 @@ export const StdStyle = {
                             "src": "744:41:153"
                         },
                         "returnParameters": {
-                            "id": 37231,
+                            "id": 37122,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37230,
+                                    "id": 37121,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37243,
+                                    "scope": 37134,
                                     "src": "808:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1169,7 +1169,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37229,
+                                        "id": 37120,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "808:6:153",
@@ -1183,18 +1183,18 @@ export const StdStyle = {
                             ],
                             "src": "807:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "private"
                     },
                     {
-                        "id": 37256,
+                        "id": 37147,
                         "nodeType": "FunctionDefinition",
                         "src": "897:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 37255,
+                            "id": 37146,
                             "nodeType": "Block",
                             "src": "968:46:153",
                             "nodes": [],
@@ -1203,11 +1203,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37251,
+                                                "id": 37142,
                                                 "name": "RED",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37190,
+                                                "referencedDeclaration": 37081,
                                                 "src": "997:3:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1215,11 +1215,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37252,
+                                                "id": 37143,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37245,
+                                                "referencedDeclaration": 37136,
                                                 "src": "1002:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1238,18 +1238,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37250,
+                                            "id": 37141,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "985:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37253,
+                                        "id": 37144,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1265,8 +1265,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37249,
-                                    "id": 37254,
+                                    "functionReturnParameters": 37140,
+                                    "id": 37145,
                                     "nodeType": "Return",
                                     "src": "978:29:153"
                                 }
@@ -1278,17 +1278,17 @@ export const StdStyle = {
                         "name": "red",
                         "nameLocation": "906:3:153",
                         "parameters": {
-                            "id": 37246,
+                            "id": 37137,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37245,
+                                    "id": 37136,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "924:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37256,
+                                    "scope": 37147,
                                     "src": "910:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1297,7 +1297,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37244,
+                                        "id": 37135,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "910:6:153",
@@ -1312,17 +1312,17 @@ export const StdStyle = {
                             "src": "909:20:153"
                         },
                         "returnParameters": {
-                            "id": 37249,
+                            "id": 37140,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37248,
+                                    "id": 37139,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37256,
+                                    "scope": 37147,
                                     "src": "953:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1331,7 +1331,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37247,
+                                        "id": 37138,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "953:6:153",
@@ -1345,18 +1345,18 @@ export const StdStyle = {
                             ],
                             "src": "952:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37271,
+                        "id": 37162,
                         "nodeType": "FunctionDefinition",
                         "src": "1020:111:153",
                         "nodes": [],
                         "body": {
-                            "id": 37270,
+                            "id": 37161,
                             "nodeType": "Block",
                             "src": "1085:46:153",
                             "nodes": [],
@@ -1367,11 +1367,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37266,
+                                                        "id": 37157,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37258,
+                                                        "referencedDeclaration": 37149,
                                                         "src": "1118:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1387,18 +1387,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37264,
+                                                        "id": 37155,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1106:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37265,
+                                                    "id": 37156,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1406,14 +1406,14 @@ export const StdStyle = {
                                                     "memberLocation": "1109:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "1106:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37267,
+                                                "id": 37158,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1437,24 +1437,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37263,
+                                            "id": 37154,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1102:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37268,
+                                        "id": 37159,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1470,8 +1470,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37262,
-                                    "id": 37269,
+                                    "functionReturnParameters": 37153,
+                                    "id": 37160,
                                     "nodeType": "Return",
                                     "src": "1095:29:153"
                                 }
@@ -1483,17 +1483,17 @@ export const StdStyle = {
                         "name": "red",
                         "nameLocation": "1029:3:153",
                         "parameters": {
-                            "id": 37259,
+                            "id": 37150,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37258,
+                                    "id": 37149,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1041:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37271,
+                                    "scope": 37162,
                                     "src": "1033:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1502,7 +1502,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37257,
+                                        "id": 37148,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1033:7:153",
@@ -1517,17 +1517,17 @@ export const StdStyle = {
                             "src": "1032:14:153"
                         },
                         "returnParameters": {
-                            "id": 37262,
+                            "id": 37153,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37261,
+                                    "id": 37152,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37271,
+                                    "scope": 37162,
                                     "src": "1070:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1536,7 +1536,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37260,
+                                        "id": 37151,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1070:6:153",
@@ -1550,18 +1550,18 @@ export const StdStyle = {
                             ],
                             "src": "1069:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37286,
+                        "id": 37177,
                         "nodeType": "FunctionDefinition",
                         "src": "1137:110:153",
                         "nodes": [],
                         "body": {
-                            "id": 37285,
+                            "id": 37176,
                             "nodeType": "Block",
                             "src": "1201:46:153",
                             "nodes": [],
@@ -1572,11 +1572,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37281,
+                                                        "id": 37172,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37273,
+                                                        "referencedDeclaration": 37164,
                                                         "src": "1234:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -1592,18 +1592,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37279,
+                                                        "id": 37170,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1222:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37280,
+                                                    "id": 37171,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1611,14 +1611,14 @@ export const StdStyle = {
                                                     "memberLocation": "1225:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "1222:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37282,
+                                                "id": 37173,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1642,24 +1642,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37278,
+                                            "id": 37169,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1218:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37283,
+                                        "id": 37174,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1675,8 +1675,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37277,
-                                    "id": 37284,
+                                    "functionReturnParameters": 37168,
+                                    "id": 37175,
                                     "nodeType": "Return",
                                     "src": "1211:29:153"
                                 }
@@ -1688,17 +1688,17 @@ export const StdStyle = {
                         "name": "red",
                         "nameLocation": "1146:3:153",
                         "parameters": {
-                            "id": 37274,
+                            "id": 37165,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37273,
+                                    "id": 37164,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1157:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37286,
+                                    "scope": 37177,
                                     "src": "1150:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1707,7 +1707,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37272,
+                                        "id": 37163,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1150:6:153",
@@ -1722,17 +1722,17 @@ export const StdStyle = {
                             "src": "1149:13:153"
                         },
                         "returnParameters": {
-                            "id": 37277,
+                            "id": 37168,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37276,
+                                    "id": 37167,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37286,
+                                    "scope": 37177,
                                     "src": "1186:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1741,7 +1741,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37275,
+                                        "id": 37166,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1186:6:153",
@@ -1755,18 +1755,18 @@ export const StdStyle = {
                             ],
                             "src": "1185:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37301,
+                        "id": 37192,
                         "nodeType": "FunctionDefinition",
                         "src": "1253:111:153",
                         "nodes": [],
                         "body": {
-                            "id": 37300,
+                            "id": 37191,
                             "nodeType": "Block",
                             "src": "1318:46:153",
                             "nodes": [],
@@ -1777,11 +1777,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37296,
+                                                        "id": 37187,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37288,
+                                                        "referencedDeclaration": 37179,
                                                         "src": "1351:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -1797,18 +1797,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37294,
+                                                        "id": 37185,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1339:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37295,
+                                                    "id": 37186,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1816,14 +1816,14 @@ export const StdStyle = {
                                                     "memberLocation": "1342:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "1339:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37297,
+                                                "id": 37188,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1847,24 +1847,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37293,
+                                            "id": 37184,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1335:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37298,
+                                        "id": 37189,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1880,8 +1880,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37292,
-                                    "id": 37299,
+                                    "functionReturnParameters": 37183,
+                                    "id": 37190,
                                     "nodeType": "Return",
                                     "src": "1328:29:153"
                                 }
@@ -1893,17 +1893,17 @@ export const StdStyle = {
                         "name": "red",
                         "nameLocation": "1262:3:153",
                         "parameters": {
-                            "id": 37289,
+                            "id": 37180,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37288,
+                                    "id": 37179,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1274:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37301,
+                                    "scope": 37192,
                                     "src": "1266:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1912,7 +1912,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37287,
+                                        "id": 37178,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1266:7:153",
@@ -1928,17 +1928,17 @@ export const StdStyle = {
                             "src": "1265:14:153"
                         },
                         "returnParameters": {
-                            "id": 37292,
+                            "id": 37183,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37291,
+                                    "id": 37182,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37301,
+                                    "scope": 37192,
                                     "src": "1303:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1947,7 +1947,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37290,
+                                        "id": 37181,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1303:6:153",
@@ -1961,18 +1961,18 @@ export const StdStyle = {
                             ],
                             "src": "1302:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37316,
+                        "id": 37207,
                         "nodeType": "FunctionDefinition",
                         "src": "1370:108:153",
                         "nodes": [],
                         "body": {
-                            "id": 37315,
+                            "id": 37206,
                             "nodeType": "Block",
                             "src": "1432:46:153",
                             "nodes": [],
@@ -1983,11 +1983,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37311,
+                                                        "id": 37202,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37303,
+                                                        "referencedDeclaration": 37194,
                                                         "src": "1465:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -2003,18 +2003,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37309,
+                                                        "id": 37200,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1453:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37310,
+                                                    "id": 37201,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2022,14 +2022,14 @@ export const StdStyle = {
                                                     "memberLocation": "1456:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "1453:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37312,
+                                                "id": 37203,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2053,24 +2053,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37308,
+                                            "id": 37199,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1449:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37313,
+                                        "id": 37204,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2086,8 +2086,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37307,
-                                    "id": 37314,
+                                    "functionReturnParameters": 37198,
+                                    "id": 37205,
                                     "nodeType": "Return",
                                     "src": "1442:29:153"
                                 }
@@ -2099,17 +2099,17 @@ export const StdStyle = {
                         "name": "red",
                         "nameLocation": "1379:3:153",
                         "parameters": {
-                            "id": 37304,
+                            "id": 37195,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37303,
+                                    "id": 37194,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1388:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37316,
+                                    "scope": 37207,
                                     "src": "1383:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2118,7 +2118,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37302,
+                                        "id": 37193,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1383:4:153",
@@ -2133,17 +2133,17 @@ export const StdStyle = {
                             "src": "1382:11:153"
                         },
                         "returnParameters": {
-                            "id": 37307,
+                            "id": 37198,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37306,
+                                    "id": 37197,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37316,
+                                    "scope": 37207,
                                     "src": "1417:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2152,7 +2152,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37305,
+                                        "id": 37196,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1417:6:153",
@@ -2166,18 +2166,18 @@ export const StdStyle = {
                             ],
                             "src": "1416:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37331,
+                        "id": 37222,
                         "nodeType": "FunctionDefinition",
                         "src": "1484:121:153",
                         "nodes": [],
                         "body": {
-                            "id": 37330,
+                            "id": 37221,
                             "nodeType": "Block",
                             "src": "1559:46:153",
                             "nodes": [],
@@ -2188,11 +2188,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37326,
+                                                        "id": 37217,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37318,
+                                                        "referencedDeclaration": 37209,
                                                         "src": "1592:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -2208,18 +2208,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37324,
+                                                        "id": 37215,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1580:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37325,
+                                                    "id": 37216,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2227,14 +2227,14 @@ export const StdStyle = {
                                                     "memberLocation": "1583:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "1580:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37327,
+                                                "id": 37218,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2258,24 +2258,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37323,
+                                            "id": 37214,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1576:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37328,
+                                        "id": 37219,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2291,8 +2291,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37322,
-                                    "id": 37329,
+                                    "functionReturnParameters": 37213,
+                                    "id": 37220,
                                     "nodeType": "Return",
                                     "src": "1569:29:153"
                                 }
@@ -2304,17 +2304,17 @@ export const StdStyle = {
                         "name": "redBytes",
                         "nameLocation": "1493:8:153",
                         "parameters": {
-                            "id": 37319,
+                            "id": 37210,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37318,
+                                    "id": 37209,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1515:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37331,
+                                    "scope": 37222,
                                     "src": "1502:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2323,7 +2323,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37317,
+                                        "id": 37208,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1502:5:153",
@@ -2338,17 +2338,17 @@ export const StdStyle = {
                             "src": "1501:19:153"
                         },
                         "returnParameters": {
-                            "id": 37322,
+                            "id": 37213,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37321,
+                                    "id": 37212,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37331,
+                                    "scope": 37222,
                                     "src": "1544:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2357,7 +2357,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37320,
+                                        "id": 37211,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1544:6:153",
@@ -2371,18 +2371,18 @@ export const StdStyle = {
                             ],
                             "src": "1543:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37346,
+                        "id": 37237,
                         "nodeType": "FunctionDefinition",
                         "src": "1611:118:153",
                         "nodes": [],
                         "body": {
-                            "id": 37345,
+                            "id": 37236,
                             "nodeType": "Block",
                             "src": "1683:46:153",
                             "nodes": [],
@@ -2393,11 +2393,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37341,
+                                                        "id": 37232,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37333,
+                                                        "referencedDeclaration": 37224,
                                                         "src": "1716:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -2413,18 +2413,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37339,
+                                                        "id": 37230,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1704:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37340,
+                                                    "id": 37231,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2432,14 +2432,14 @@ export const StdStyle = {
                                                     "memberLocation": "1707:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "1704:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37342,
+                                                "id": 37233,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2463,24 +2463,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37338,
+                                            "id": 37229,
                                             "name": "red",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37256,
-                                                37271,
-                                                37286,
-                                                37301,
-                                                37316
+                                                37147,
+                                                37162,
+                                                37177,
+                                                37192,
+                                                37207
                                             ],
-                                            "referencedDeclaration": 37256,
+                                            "referencedDeclaration": 37147,
                                             "src": "1700:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37343,
+                                        "id": 37234,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2496,8 +2496,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37337,
-                                    "id": 37344,
+                                    "functionReturnParameters": 37228,
+                                    "id": 37235,
                                     "nodeType": "Return",
                                     "src": "1693:29:153"
                                 }
@@ -2509,17 +2509,17 @@ export const StdStyle = {
                         "name": "redBytes32",
                         "nameLocation": "1620:10:153",
                         "parameters": {
-                            "id": 37334,
+                            "id": 37225,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37333,
+                                    "id": 37224,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1639:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37346,
+                                    "scope": 37237,
                                     "src": "1631:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2528,7 +2528,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37332,
+                                        "id": 37223,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1631:7:153",
@@ -2543,17 +2543,17 @@ export const StdStyle = {
                             "src": "1630:14:153"
                         },
                         "returnParameters": {
-                            "id": 37337,
+                            "id": 37228,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37336,
+                                    "id": 37227,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37346,
+                                    "scope": 37237,
                                     "src": "1668:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2562,7 +2562,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37335,
+                                        "id": 37226,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1668:6:153",
@@ -2576,18 +2576,18 @@ export const StdStyle = {
                             ],
                             "src": "1667:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37359,
+                        "id": 37250,
                         "nodeType": "FunctionDefinition",
                         "src": "1735:121:153",
                         "nodes": [],
                         "body": {
-                            "id": 37358,
+                            "id": 37249,
                             "nodeType": "Block",
                             "src": "1808:48:153",
                             "nodes": [],
@@ -2596,11 +2596,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37354,
+                                                "id": 37245,
                                                 "name": "GREEN",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37193,
+                                                "referencedDeclaration": 37084,
                                                 "src": "1837:5:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2608,11 +2608,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37355,
+                                                "id": 37246,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37348,
+                                                "referencedDeclaration": 37239,
                                                 "src": "1844:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2631,18 +2631,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37353,
+                                            "id": 37244,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "1825:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37356,
+                                        "id": 37247,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2658,8 +2658,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37352,
-                                    "id": 37357,
+                                    "functionReturnParameters": 37243,
+                                    "id": 37248,
                                     "nodeType": "Return",
                                     "src": "1818:31:153"
                                 }
@@ -2671,17 +2671,17 @@ export const StdStyle = {
                         "name": "green",
                         "nameLocation": "1744:5:153",
                         "parameters": {
-                            "id": 37349,
+                            "id": 37240,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37348,
+                                    "id": 37239,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1764:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37359,
+                                    "scope": 37250,
                                     "src": "1750:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2690,7 +2690,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37347,
+                                        "id": 37238,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1750:6:153",
@@ -2705,17 +2705,17 @@ export const StdStyle = {
                             "src": "1749:20:153"
                         },
                         "returnParameters": {
-                            "id": 37352,
+                            "id": 37243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37351,
+                                    "id": 37242,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37359,
+                                    "scope": 37250,
                                     "src": "1793:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2724,7 +2724,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37350,
+                                        "id": 37241,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1793:6:153",
@@ -2738,18 +2738,18 @@ export const StdStyle = {
                             ],
                             "src": "1792:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37374,
+                        "id": 37265,
                         "nodeType": "FunctionDefinition",
                         "src": "1862:115:153",
                         "nodes": [],
                         "body": {
-                            "id": 37373,
+                            "id": 37264,
                             "nodeType": "Block",
                             "src": "1929:48:153",
                             "nodes": [],
@@ -2760,11 +2760,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37369,
+                                                        "id": 37260,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37361,
+                                                        "referencedDeclaration": 37252,
                                                         "src": "1964:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -2780,18 +2780,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37367,
+                                                        "id": 37258,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "1952:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37368,
+                                                    "id": 37259,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2799,14 +2799,14 @@ export const StdStyle = {
                                                     "memberLocation": "1955:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "1952:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37370,
+                                                "id": 37261,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2830,24 +2830,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37366,
+                                            "id": 37257,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "1946:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37371,
+                                        "id": 37262,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2863,8 +2863,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37365,
-                                    "id": 37372,
+                                    "functionReturnParameters": 37256,
+                                    "id": 37263,
                                     "nodeType": "Return",
                                     "src": "1939:31:153"
                                 }
@@ -2876,17 +2876,17 @@ export const StdStyle = {
                         "name": "green",
                         "nameLocation": "1871:5:153",
                         "parameters": {
-                            "id": 37362,
+                            "id": 37253,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37361,
+                                    "id": 37252,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "1885:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37374,
+                                    "scope": 37265,
                                     "src": "1877:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2895,7 +2895,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37360,
+                                        "id": 37251,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1877:7:153",
@@ -2910,17 +2910,17 @@ export const StdStyle = {
                             "src": "1876:14:153"
                         },
                         "returnParameters": {
-                            "id": 37365,
+                            "id": 37256,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37364,
+                                    "id": 37255,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37374,
+                                    "scope": 37265,
                                     "src": "1914:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2929,7 +2929,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37363,
+                                        "id": 37254,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1914:6:153",
@@ -2943,18 +2943,18 @@ export const StdStyle = {
                             ],
                             "src": "1913:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37389,
+                        "id": 37280,
                         "nodeType": "FunctionDefinition",
                         "src": "1983:114:153",
                         "nodes": [],
                         "body": {
-                            "id": 37388,
+                            "id": 37279,
                             "nodeType": "Block",
                             "src": "2049:48:153",
                             "nodes": [],
@@ -2965,11 +2965,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37384,
+                                                        "id": 37275,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37376,
+                                                        "referencedDeclaration": 37267,
                                                         "src": "2084:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -2985,18 +2985,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37382,
+                                                        "id": 37273,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2072:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37383,
+                                                    "id": 37274,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3004,14 +3004,14 @@ export const StdStyle = {
                                                     "memberLocation": "2075:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "2072:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37385,
+                                                "id": 37276,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3035,24 +3035,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37381,
+                                            "id": 37272,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "2066:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37386,
+                                        "id": 37277,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3068,8 +3068,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37380,
-                                    "id": 37387,
+                                    "functionReturnParameters": 37271,
+                                    "id": 37278,
                                     "nodeType": "Return",
                                     "src": "2059:31:153"
                                 }
@@ -3081,17 +3081,17 @@ export const StdStyle = {
                         "name": "green",
                         "nameLocation": "1992:5:153",
                         "parameters": {
-                            "id": 37377,
+                            "id": 37268,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37376,
+                                    "id": 37267,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2005:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37389,
+                                    "scope": 37280,
                                     "src": "1998:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3100,7 +3100,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37375,
+                                        "id": 37266,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1998:6:153",
@@ -3115,17 +3115,17 @@ export const StdStyle = {
                             "src": "1997:13:153"
                         },
                         "returnParameters": {
-                            "id": 37380,
+                            "id": 37271,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37379,
+                                    "id": 37270,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37389,
+                                    "scope": 37280,
                                     "src": "2034:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3134,7 +3134,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37378,
+                                        "id": 37269,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2034:6:153",
@@ -3148,18 +3148,18 @@ export const StdStyle = {
                             ],
                             "src": "2033:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37404,
+                        "id": 37295,
                         "nodeType": "FunctionDefinition",
                         "src": "2103:115:153",
                         "nodes": [],
                         "body": {
-                            "id": 37403,
+                            "id": 37294,
                             "nodeType": "Block",
                             "src": "2170:48:153",
                             "nodes": [],
@@ -3170,11 +3170,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37399,
+                                                        "id": 37290,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37391,
+                                                        "referencedDeclaration": 37282,
                                                         "src": "2205:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -3190,18 +3190,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37397,
+                                                        "id": 37288,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2193:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37398,
+                                                    "id": 37289,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3209,14 +3209,14 @@ export const StdStyle = {
                                                     "memberLocation": "2196:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "2193:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37400,
+                                                "id": 37291,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3240,24 +3240,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37396,
+                                            "id": 37287,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "2187:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37401,
+                                        "id": 37292,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3273,8 +3273,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37395,
-                                    "id": 37402,
+                                    "functionReturnParameters": 37286,
+                                    "id": 37293,
                                     "nodeType": "Return",
                                     "src": "2180:31:153"
                                 }
@@ -3286,17 +3286,17 @@ export const StdStyle = {
                         "name": "green",
                         "nameLocation": "2112:5:153",
                         "parameters": {
-                            "id": 37392,
+                            "id": 37283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37391,
+                                    "id": 37282,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2126:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37404,
+                                    "scope": 37295,
                                     "src": "2118:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3305,7 +3305,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37390,
+                                        "id": 37281,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2118:7:153",
@@ -3321,17 +3321,17 @@ export const StdStyle = {
                             "src": "2117:14:153"
                         },
                         "returnParameters": {
-                            "id": 37395,
+                            "id": 37286,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37394,
+                                    "id": 37285,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37404,
+                                    "scope": 37295,
                                     "src": "2155:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3340,7 +3340,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37393,
+                                        "id": 37284,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2155:6:153",
@@ -3354,18 +3354,18 @@ export const StdStyle = {
                             ],
                             "src": "2154:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37419,
+                        "id": 37310,
                         "nodeType": "FunctionDefinition",
                         "src": "2224:112:153",
                         "nodes": [],
                         "body": {
-                            "id": 37418,
+                            "id": 37309,
                             "nodeType": "Block",
                             "src": "2288:48:153",
                             "nodes": [],
@@ -3376,11 +3376,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37414,
+                                                        "id": 37305,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37406,
+                                                        "referencedDeclaration": 37297,
                                                         "src": "2323:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -3396,18 +3396,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37412,
+                                                        "id": 37303,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2311:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37413,
+                                                    "id": 37304,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3415,14 +3415,14 @@ export const StdStyle = {
                                                     "memberLocation": "2314:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "2311:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37415,
+                                                "id": 37306,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3446,24 +3446,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37411,
+                                            "id": 37302,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "2305:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37416,
+                                        "id": 37307,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3479,8 +3479,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37410,
-                                    "id": 37417,
+                                    "functionReturnParameters": 37301,
+                                    "id": 37308,
                                     "nodeType": "Return",
                                     "src": "2298:31:153"
                                 }
@@ -3492,17 +3492,17 @@ export const StdStyle = {
                         "name": "green",
                         "nameLocation": "2233:5:153",
                         "parameters": {
-                            "id": 37407,
+                            "id": 37298,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37406,
+                                    "id": 37297,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2244:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37419,
+                                    "scope": 37310,
                                     "src": "2239:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3511,7 +3511,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37405,
+                                        "id": 37296,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2239:4:153",
@@ -3526,17 +3526,17 @@ export const StdStyle = {
                             "src": "2238:11:153"
                         },
                         "returnParameters": {
-                            "id": 37410,
+                            "id": 37301,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37409,
+                                    "id": 37300,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37419,
+                                    "scope": 37310,
                                     "src": "2273:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3545,7 +3545,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37408,
+                                        "id": 37299,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2273:6:153",
@@ -3559,18 +3559,18 @@ export const StdStyle = {
                             ],
                             "src": "2272:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37434,
+                        "id": 37325,
                         "nodeType": "FunctionDefinition",
                         "src": "2342:125:153",
                         "nodes": [],
                         "body": {
-                            "id": 37433,
+                            "id": 37324,
                             "nodeType": "Block",
                             "src": "2419:48:153",
                             "nodes": [],
@@ -3581,11 +3581,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37429,
+                                                        "id": 37320,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37421,
+                                                        "referencedDeclaration": 37312,
                                                         "src": "2454:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -3601,18 +3601,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37427,
+                                                        "id": 37318,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2442:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37428,
+                                                    "id": 37319,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3620,14 +3620,14 @@ export const StdStyle = {
                                                     "memberLocation": "2445:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "2442:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37430,
+                                                "id": 37321,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3651,24 +3651,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37426,
+                                            "id": 37317,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "2436:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37431,
+                                        "id": 37322,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3684,8 +3684,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37425,
-                                    "id": 37432,
+                                    "functionReturnParameters": 37316,
+                                    "id": 37323,
                                     "nodeType": "Return",
                                     "src": "2429:31:153"
                                 }
@@ -3697,17 +3697,17 @@ export const StdStyle = {
                         "name": "greenBytes",
                         "nameLocation": "2351:10:153",
                         "parameters": {
-                            "id": 37422,
+                            "id": 37313,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37421,
+                                    "id": 37312,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2375:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37434,
+                                    "scope": 37325,
                                     "src": "2362:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3716,7 +3716,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37420,
+                                        "id": 37311,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2362:5:153",
@@ -3731,17 +3731,17 @@ export const StdStyle = {
                             "src": "2361:19:153"
                         },
                         "returnParameters": {
-                            "id": 37425,
+                            "id": 37316,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37424,
+                                    "id": 37315,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37434,
+                                    "scope": 37325,
                                     "src": "2404:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3750,7 +3750,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37423,
+                                        "id": 37314,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2404:6:153",
@@ -3764,18 +3764,18 @@ export const StdStyle = {
                             ],
                             "src": "2403:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37449,
+                        "id": 37340,
                         "nodeType": "FunctionDefinition",
                         "src": "2473:122:153",
                         "nodes": [],
                         "body": {
-                            "id": 37448,
+                            "id": 37339,
                             "nodeType": "Block",
                             "src": "2547:48:153",
                             "nodes": [],
@@ -3786,11 +3786,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37444,
+                                                        "id": 37335,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37436,
+                                                        "referencedDeclaration": 37327,
                                                         "src": "2582:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -3806,18 +3806,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37442,
+                                                        "id": 37333,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2570:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37443,
+                                                    "id": 37334,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3825,14 +3825,14 @@ export const StdStyle = {
                                                     "memberLocation": "2573:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "2570:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37445,
+                                                "id": 37336,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3856,24 +3856,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37441,
+                                            "id": 37332,
                                             "name": "green",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37359,
-                                                37374,
-                                                37389,
-                                                37404,
-                                                37419
+                                                37250,
+                                                37265,
+                                                37280,
+                                                37295,
+                                                37310
                                             ],
-                                            "referencedDeclaration": 37359,
+                                            "referencedDeclaration": 37250,
                                             "src": "2564:5:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37446,
+                                        "id": 37337,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3889,8 +3889,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37440,
-                                    "id": 37447,
+                                    "functionReturnParameters": 37331,
+                                    "id": 37338,
                                     "nodeType": "Return",
                                     "src": "2557:31:153"
                                 }
@@ -3902,17 +3902,17 @@ export const StdStyle = {
                         "name": "greenBytes32",
                         "nameLocation": "2482:12:153",
                         "parameters": {
-                            "id": 37437,
+                            "id": 37328,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37436,
+                                    "id": 37327,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2503:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37449,
+                                    "scope": 37340,
                                     "src": "2495:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3921,7 +3921,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37435,
+                                        "id": 37326,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2495:7:153",
@@ -3936,17 +3936,17 @@ export const StdStyle = {
                             "src": "2494:14:153"
                         },
                         "returnParameters": {
-                            "id": 37440,
+                            "id": 37331,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37439,
+                                    "id": 37330,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37449,
+                                    "scope": 37340,
                                     "src": "2532:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3955,7 +3955,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37438,
+                                        "id": 37329,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2532:6:153",
@@ -3969,18 +3969,18 @@ export const StdStyle = {
                             ],
                             "src": "2531:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37462,
+                        "id": 37353,
                         "nodeType": "FunctionDefinition",
                         "src": "2601:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 37461,
+                            "id": 37352,
                             "nodeType": "Block",
                             "src": "2675:49:153",
                             "nodes": [],
@@ -3989,11 +3989,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37457,
+                                                "id": 37348,
                                                 "name": "YELLOW",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37196,
+                                                "referencedDeclaration": 37087,
                                                 "src": "2704:6:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4001,11 +4001,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37458,
+                                                "id": 37349,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37451,
+                                                "referencedDeclaration": 37342,
                                                 "src": "2712:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4024,18 +4024,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37456,
+                                            "id": 37347,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "2692:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37459,
+                                        "id": 37350,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4051,8 +4051,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37455,
-                                    "id": 37460,
+                                    "functionReturnParameters": 37346,
+                                    "id": 37351,
                                     "nodeType": "Return",
                                     "src": "2685:32:153"
                                 }
@@ -4064,17 +4064,17 @@ export const StdStyle = {
                         "name": "yellow",
                         "nameLocation": "2610:6:153",
                         "parameters": {
-                            "id": 37452,
+                            "id": 37343,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37451,
+                                    "id": 37342,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2631:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37462,
+                                    "scope": 37353,
                                     "src": "2617:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4083,7 +4083,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37450,
+                                        "id": 37341,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2617:6:153",
@@ -4098,17 +4098,17 @@ export const StdStyle = {
                             "src": "2616:20:153"
                         },
                         "returnParameters": {
-                            "id": 37455,
+                            "id": 37346,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37454,
+                                    "id": 37345,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37462,
+                                    "scope": 37353,
                                     "src": "2660:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4117,7 +4117,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37453,
+                                        "id": 37344,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2660:6:153",
@@ -4131,18 +4131,18 @@ export const StdStyle = {
                             ],
                             "src": "2659:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37477,
+                        "id": 37368,
                         "nodeType": "FunctionDefinition",
                         "src": "2730:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 37476,
+                            "id": 37367,
                             "nodeType": "Block",
                             "src": "2798:49:153",
                             "nodes": [],
@@ -4153,11 +4153,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37472,
+                                                        "id": 37363,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37464,
+                                                        "referencedDeclaration": 37355,
                                                         "src": "2834:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4173,18 +4173,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37470,
+                                                        "id": 37361,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2822:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37471,
+                                                    "id": 37362,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4192,14 +4192,14 @@ export const StdStyle = {
                                                     "memberLocation": "2825:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "2822:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37473,
+                                                "id": 37364,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4223,24 +4223,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37469,
+                                            "id": 37360,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "2815:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37474,
+                                        "id": 37365,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4256,8 +4256,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37468,
-                                    "id": 37475,
+                                    "functionReturnParameters": 37359,
+                                    "id": 37366,
                                     "nodeType": "Return",
                                     "src": "2808:32:153"
                                 }
@@ -4269,17 +4269,17 @@ export const StdStyle = {
                         "name": "yellow",
                         "nameLocation": "2739:6:153",
                         "parameters": {
-                            "id": 37465,
+                            "id": 37356,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37464,
+                                    "id": 37355,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2754:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37477,
+                                    "scope": 37368,
                                     "src": "2746:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4288,7 +4288,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37463,
+                                        "id": 37354,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2746:7:153",
@@ -4303,17 +4303,17 @@ export const StdStyle = {
                             "src": "2745:14:153"
                         },
                         "returnParameters": {
-                            "id": 37468,
+                            "id": 37359,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37467,
+                                    "id": 37358,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37477,
+                                    "scope": 37368,
                                     "src": "2783:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4322,7 +4322,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37466,
+                                        "id": 37357,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2783:6:153",
@@ -4336,18 +4336,18 @@ export const StdStyle = {
                             ],
                             "src": "2782:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37492,
+                        "id": 37383,
                         "nodeType": "FunctionDefinition",
                         "src": "2853:116:153",
                         "nodes": [],
                         "body": {
-                            "id": 37491,
+                            "id": 37382,
                             "nodeType": "Block",
                             "src": "2920:49:153",
                             "nodes": [],
@@ -4358,11 +4358,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37487,
+                                                        "id": 37378,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37479,
+                                                        "referencedDeclaration": 37370,
                                                         "src": "2956:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -4378,18 +4378,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37485,
+                                                        "id": 37376,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "2944:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37486,
+                                                    "id": 37377,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4397,14 +4397,14 @@ export const StdStyle = {
                                                     "memberLocation": "2947:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "2944:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37488,
+                                                "id": 37379,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4428,24 +4428,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37484,
+                                            "id": 37375,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "2937:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37489,
+                                        "id": 37380,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4461,8 +4461,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37483,
-                                    "id": 37490,
+                                    "functionReturnParameters": 37374,
+                                    "id": 37381,
                                     "nodeType": "Return",
                                     "src": "2930:32:153"
                                 }
@@ -4474,17 +4474,17 @@ export const StdStyle = {
                         "name": "yellow",
                         "nameLocation": "2862:6:153",
                         "parameters": {
-                            "id": 37480,
+                            "id": 37371,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37479,
+                                    "id": 37370,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2876:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37492,
+                                    "scope": 37383,
                                     "src": "2869:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4493,7 +4493,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37478,
+                                        "id": 37369,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2869:6:153",
@@ -4508,17 +4508,17 @@ export const StdStyle = {
                             "src": "2868:13:153"
                         },
                         "returnParameters": {
-                            "id": 37483,
+                            "id": 37374,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37482,
+                                    "id": 37373,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37492,
+                                    "scope": 37383,
                                     "src": "2905:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4527,7 +4527,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37481,
+                                        "id": 37372,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2905:6:153",
@@ -4541,18 +4541,18 @@ export const StdStyle = {
                             ],
                             "src": "2904:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37507,
+                        "id": 37398,
                         "nodeType": "FunctionDefinition",
                         "src": "2975:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 37506,
+                            "id": 37397,
                             "nodeType": "Block",
                             "src": "3043:49:153",
                             "nodes": [],
@@ -4563,11 +4563,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37502,
+                                                        "id": 37393,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37494,
+                                                        "referencedDeclaration": 37385,
                                                         "src": "3079:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -4583,18 +4583,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37500,
+                                                        "id": 37391,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3067:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37501,
+                                                    "id": 37392,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4602,14 +4602,14 @@ export const StdStyle = {
                                                     "memberLocation": "3070:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "3067:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37503,
+                                                "id": 37394,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4633,24 +4633,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37499,
+                                            "id": 37390,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "3060:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37504,
+                                        "id": 37395,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4666,8 +4666,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37498,
-                                    "id": 37505,
+                                    "functionReturnParameters": 37389,
+                                    "id": 37396,
                                     "nodeType": "Return",
                                     "src": "3053:32:153"
                                 }
@@ -4679,17 +4679,17 @@ export const StdStyle = {
                         "name": "yellow",
                         "nameLocation": "2984:6:153",
                         "parameters": {
-                            "id": 37495,
+                            "id": 37386,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37494,
+                                    "id": 37385,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "2999:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37507,
+                                    "scope": 37398,
                                     "src": "2991:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4698,7 +4698,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37493,
+                                        "id": 37384,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2991:7:153",
@@ -4714,17 +4714,17 @@ export const StdStyle = {
                             "src": "2990:14:153"
                         },
                         "returnParameters": {
-                            "id": 37498,
+                            "id": 37389,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37497,
+                                    "id": 37388,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37507,
+                                    "scope": 37398,
                                     "src": "3028:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4733,7 +4733,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37496,
+                                        "id": 37387,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3028:6:153",
@@ -4747,18 +4747,18 @@ export const StdStyle = {
                             ],
                             "src": "3027:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37522,
+                        "id": 37413,
                         "nodeType": "FunctionDefinition",
                         "src": "3098:114:153",
                         "nodes": [],
                         "body": {
-                            "id": 37521,
+                            "id": 37412,
                             "nodeType": "Block",
                             "src": "3163:49:153",
                             "nodes": [],
@@ -4769,11 +4769,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37517,
+                                                        "id": 37408,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37509,
+                                                        "referencedDeclaration": 37400,
                                                         "src": "3199:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -4789,18 +4789,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37515,
+                                                        "id": 37406,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3187:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37516,
+                                                    "id": 37407,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4808,14 +4808,14 @@ export const StdStyle = {
                                                     "memberLocation": "3190:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "3187:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37518,
+                                                "id": 37409,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4839,24 +4839,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37514,
+                                            "id": 37405,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "3180:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37519,
+                                        "id": 37410,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4872,8 +4872,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37513,
-                                    "id": 37520,
+                                    "functionReturnParameters": 37404,
+                                    "id": 37411,
                                     "nodeType": "Return",
                                     "src": "3173:32:153"
                                 }
@@ -4885,17 +4885,17 @@ export const StdStyle = {
                         "name": "yellow",
                         "nameLocation": "3107:6:153",
                         "parameters": {
-                            "id": 37510,
+                            "id": 37401,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37509,
+                                    "id": 37400,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3119:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37522,
+                                    "scope": 37413,
                                     "src": "3114:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4904,7 +4904,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37508,
+                                        "id": 37399,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3114:4:153",
@@ -4919,17 +4919,17 @@ export const StdStyle = {
                             "src": "3113:11:153"
                         },
                         "returnParameters": {
-                            "id": 37513,
+                            "id": 37404,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37512,
+                                    "id": 37403,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37522,
+                                    "scope": 37413,
                                     "src": "3148:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4938,7 +4938,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37511,
+                                        "id": 37402,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3148:6:153",
@@ -4952,18 +4952,18 @@ export const StdStyle = {
                             ],
                             "src": "3147:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37537,
+                        "id": 37428,
                         "nodeType": "FunctionDefinition",
                         "src": "3218:127:153",
                         "nodes": [],
                         "body": {
-                            "id": 37536,
+                            "id": 37427,
                             "nodeType": "Block",
                             "src": "3296:49:153",
                             "nodes": [],
@@ -4974,11 +4974,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37532,
+                                                        "id": 37423,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37524,
+                                                        "referencedDeclaration": 37415,
                                                         "src": "3332:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -4994,18 +4994,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37530,
+                                                        "id": 37421,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3320:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37531,
+                                                    "id": 37422,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5013,14 +5013,14 @@ export const StdStyle = {
                                                     "memberLocation": "3323:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "3320:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37533,
+                                                "id": 37424,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5044,24 +5044,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37529,
+                                            "id": 37420,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "3313:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37534,
+                                        "id": 37425,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5077,8 +5077,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37528,
-                                    "id": 37535,
+                                    "functionReturnParameters": 37419,
+                                    "id": 37426,
                                     "nodeType": "Return",
                                     "src": "3306:32:153"
                                 }
@@ -5090,17 +5090,17 @@ export const StdStyle = {
                         "name": "yellowBytes",
                         "nameLocation": "3227:11:153",
                         "parameters": {
-                            "id": 37525,
+                            "id": 37416,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37524,
+                                    "id": 37415,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3252:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37537,
+                                    "scope": 37428,
                                     "src": "3239:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5109,7 +5109,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37523,
+                                        "id": 37414,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3239:5:153",
@@ -5124,17 +5124,17 @@ export const StdStyle = {
                             "src": "3238:19:153"
                         },
                         "returnParameters": {
-                            "id": 37528,
+                            "id": 37419,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37527,
+                                    "id": 37418,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37537,
+                                    "scope": 37428,
                                     "src": "3281:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5143,7 +5143,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37526,
+                                        "id": 37417,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3281:6:153",
@@ -5157,18 +5157,18 @@ export const StdStyle = {
                             ],
                             "src": "3280:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37552,
+                        "id": 37443,
                         "nodeType": "FunctionDefinition",
                         "src": "3351:124:153",
                         "nodes": [],
                         "body": {
-                            "id": 37551,
+                            "id": 37442,
                             "nodeType": "Block",
                             "src": "3426:49:153",
                             "nodes": [],
@@ -5179,11 +5179,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37547,
+                                                        "id": 37438,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37539,
+                                                        "referencedDeclaration": 37430,
                                                         "src": "3462:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -5199,18 +5199,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37545,
+                                                        "id": 37436,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3450:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37546,
+                                                    "id": 37437,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5218,14 +5218,14 @@ export const StdStyle = {
                                                     "memberLocation": "3453:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "3450:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37548,
+                                                "id": 37439,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5249,24 +5249,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37544,
+                                            "id": 37435,
                                             "name": "yellow",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37462,
-                                                37477,
-                                                37492,
-                                                37507,
-                                                37522
+                                                37353,
+                                                37368,
+                                                37383,
+                                                37398,
+                                                37413
                                             ],
-                                            "referencedDeclaration": 37462,
+                                            "referencedDeclaration": 37353,
                                             "src": "3443:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37549,
+                                        "id": 37440,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5282,8 +5282,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37543,
-                                    "id": 37550,
+                                    "functionReturnParameters": 37434,
+                                    "id": 37441,
                                     "nodeType": "Return",
                                     "src": "3436:32:153"
                                 }
@@ -5295,17 +5295,17 @@ export const StdStyle = {
                         "name": "yellowBytes32",
                         "nameLocation": "3360:13:153",
                         "parameters": {
-                            "id": 37540,
+                            "id": 37431,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37539,
+                                    "id": 37430,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3382:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37552,
+                                    "scope": 37443,
                                     "src": "3374:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5314,7 +5314,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37538,
+                                        "id": 37429,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3374:7:153",
@@ -5329,17 +5329,17 @@ export const StdStyle = {
                             "src": "3373:14:153"
                         },
                         "returnParameters": {
-                            "id": 37543,
+                            "id": 37434,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37542,
+                                    "id": 37433,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37552,
+                                    "scope": 37443,
                                     "src": "3411:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5348,7 +5348,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37541,
+                                        "id": 37432,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3411:6:153",
@@ -5362,18 +5362,18 @@ export const StdStyle = {
                             ],
                             "src": "3410:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37565,
+                        "id": 37456,
                         "nodeType": "FunctionDefinition",
                         "src": "3481:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 37564,
+                            "id": 37455,
                             "nodeType": "Block",
                             "src": "3553:47:153",
                             "nodes": [],
@@ -5382,11 +5382,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37560,
+                                                "id": 37451,
                                                 "name": "BLUE",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37199,
+                                                "referencedDeclaration": 37090,
                                                 "src": "3582:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5394,11 +5394,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37561,
+                                                "id": 37452,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37554,
+                                                "referencedDeclaration": 37445,
                                                 "src": "3588:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5417,18 +5417,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37559,
+                                            "id": 37450,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "3570:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37562,
+                                        "id": 37453,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5444,8 +5444,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37558,
-                                    "id": 37563,
+                                    "functionReturnParameters": 37449,
+                                    "id": 37454,
                                     "nodeType": "Return",
                                     "src": "3563:30:153"
                                 }
@@ -5457,17 +5457,17 @@ export const StdStyle = {
                         "name": "blue",
                         "nameLocation": "3490:4:153",
                         "parameters": {
-                            "id": 37555,
+                            "id": 37446,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37554,
+                                    "id": 37445,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3509:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37565,
+                                    "scope": 37456,
                                     "src": "3495:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5476,7 +5476,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37553,
+                                        "id": 37444,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3495:6:153",
@@ -5491,17 +5491,17 @@ export const StdStyle = {
                             "src": "3494:20:153"
                         },
                         "returnParameters": {
-                            "id": 37558,
+                            "id": 37449,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37557,
+                                    "id": 37448,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37565,
+                                    "scope": 37456,
                                     "src": "3538:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5510,7 +5510,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37556,
+                                        "id": 37447,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3538:6:153",
@@ -5524,18 +5524,18 @@ export const StdStyle = {
                             ],
                             "src": "3537:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37580,
+                        "id": 37471,
                         "nodeType": "FunctionDefinition",
                         "src": "3606:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37579,
+                            "id": 37470,
                             "nodeType": "Block",
                             "src": "3672:47:153",
                             "nodes": [],
@@ -5546,11 +5546,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37575,
+                                                        "id": 37466,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37567,
+                                                        "referencedDeclaration": 37458,
                                                         "src": "3706:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -5566,18 +5566,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37573,
+                                                        "id": 37464,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3694:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37574,
+                                                    "id": 37465,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5585,14 +5585,14 @@ export const StdStyle = {
                                                     "memberLocation": "3697:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "3694:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37576,
+                                                "id": 37467,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5616,24 +5616,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37572,
+                                            "id": 37463,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "3689:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37577,
+                                        "id": 37468,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5649,8 +5649,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37571,
-                                    "id": 37578,
+                                    "functionReturnParameters": 37462,
+                                    "id": 37469,
                                     "nodeType": "Return",
                                     "src": "3682:30:153"
                                 }
@@ -5662,17 +5662,17 @@ export const StdStyle = {
                         "name": "blue",
                         "nameLocation": "3615:4:153",
                         "parameters": {
-                            "id": 37568,
+                            "id": 37459,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37567,
+                                    "id": 37458,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3628:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37580,
+                                    "scope": 37471,
                                     "src": "3620:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5681,7 +5681,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37566,
+                                        "id": 37457,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3620:7:153",
@@ -5696,17 +5696,17 @@ export const StdStyle = {
                             "src": "3619:14:153"
                         },
                         "returnParameters": {
-                            "id": 37571,
+                            "id": 37462,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37570,
+                                    "id": 37461,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37580,
+                                    "scope": 37471,
                                     "src": "3657:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5715,7 +5715,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37569,
+                                        "id": 37460,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3657:6:153",
@@ -5729,18 +5729,18 @@ export const StdStyle = {
                             ],
                             "src": "3656:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37595,
+                        "id": 37486,
                         "nodeType": "FunctionDefinition",
                         "src": "3725:112:153",
                         "nodes": [],
                         "body": {
-                            "id": 37594,
+                            "id": 37485,
                             "nodeType": "Block",
                             "src": "3790:47:153",
                             "nodes": [],
@@ -5751,11 +5751,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37590,
+                                                        "id": 37481,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37582,
+                                                        "referencedDeclaration": 37473,
                                                         "src": "3824:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -5771,18 +5771,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37588,
+                                                        "id": 37479,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3812:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37589,
+                                                    "id": 37480,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5790,14 +5790,14 @@ export const StdStyle = {
                                                     "memberLocation": "3815:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "3812:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37591,
+                                                "id": 37482,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5821,24 +5821,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37587,
+                                            "id": 37478,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "3807:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37592,
+                                        "id": 37483,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5854,8 +5854,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37586,
-                                    "id": 37593,
+                                    "functionReturnParameters": 37477,
+                                    "id": 37484,
                                     "nodeType": "Return",
                                     "src": "3800:30:153"
                                 }
@@ -5867,17 +5867,17 @@ export const StdStyle = {
                         "name": "blue",
                         "nameLocation": "3734:4:153",
                         "parameters": {
-                            "id": 37583,
+                            "id": 37474,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37582,
+                                    "id": 37473,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3746:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37595,
+                                    "scope": 37486,
                                     "src": "3739:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5886,7 +5886,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37581,
+                                        "id": 37472,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3739:6:153",
@@ -5901,17 +5901,17 @@ export const StdStyle = {
                             "src": "3738:13:153"
                         },
                         "returnParameters": {
-                            "id": 37586,
+                            "id": 37477,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37585,
+                                    "id": 37476,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37595,
+                                    "scope": 37486,
                                     "src": "3775:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5920,7 +5920,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37584,
+                                        "id": 37475,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3775:6:153",
@@ -5934,18 +5934,18 @@ export const StdStyle = {
                             ],
                             "src": "3774:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37610,
+                        "id": 37501,
                         "nodeType": "FunctionDefinition",
                         "src": "3843:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37609,
+                            "id": 37500,
                             "nodeType": "Block",
                             "src": "3909:47:153",
                             "nodes": [],
@@ -5956,11 +5956,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37605,
+                                                        "id": 37496,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37597,
+                                                        "referencedDeclaration": 37488,
                                                         "src": "3943:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -5976,18 +5976,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37603,
+                                                        "id": 37494,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "3931:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37604,
+                                                    "id": 37495,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5995,14 +5995,14 @@ export const StdStyle = {
                                                     "memberLocation": "3934:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "3931:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37606,
+                                                "id": 37497,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6026,24 +6026,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37602,
+                                            "id": 37493,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "3926:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37607,
+                                        "id": 37498,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6059,8 +6059,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37601,
-                                    "id": 37608,
+                                    "functionReturnParameters": 37492,
+                                    "id": 37499,
                                     "nodeType": "Return",
                                     "src": "3919:30:153"
                                 }
@@ -6072,17 +6072,17 @@ export const StdStyle = {
                         "name": "blue",
                         "nameLocation": "3852:4:153",
                         "parameters": {
-                            "id": 37598,
+                            "id": 37489,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37597,
+                                    "id": 37488,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3865:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37610,
+                                    "scope": 37501,
                                     "src": "3857:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6091,7 +6091,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37596,
+                                        "id": 37487,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3857:7:153",
@@ -6107,17 +6107,17 @@ export const StdStyle = {
                             "src": "3856:14:153"
                         },
                         "returnParameters": {
-                            "id": 37601,
+                            "id": 37492,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37600,
+                                    "id": 37491,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37610,
+                                    "scope": 37501,
                                     "src": "3894:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6126,7 +6126,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37599,
+                                        "id": 37490,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3894:6:153",
@@ -6140,18 +6140,18 @@ export const StdStyle = {
                             ],
                             "src": "3893:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37625,
+                        "id": 37516,
                         "nodeType": "FunctionDefinition",
                         "src": "3962:110:153",
                         "nodes": [],
                         "body": {
-                            "id": 37624,
+                            "id": 37515,
                             "nodeType": "Block",
                             "src": "4025:47:153",
                             "nodes": [],
@@ -6162,11 +6162,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37620,
+                                                        "id": 37511,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37612,
+                                                        "referencedDeclaration": 37503,
                                                         "src": "4059:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -6182,18 +6182,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37618,
+                                                        "id": 37509,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4047:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37619,
+                                                    "id": 37510,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6201,14 +6201,14 @@ export const StdStyle = {
                                                     "memberLocation": "4050:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "4047:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37621,
+                                                "id": 37512,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6232,24 +6232,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37617,
+                                            "id": 37508,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "4042:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37622,
+                                        "id": 37513,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6265,8 +6265,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37616,
-                                    "id": 37623,
+                                    "functionReturnParameters": 37507,
+                                    "id": 37514,
                                     "nodeType": "Return",
                                     "src": "4035:30:153"
                                 }
@@ -6278,17 +6278,17 @@ export const StdStyle = {
                         "name": "blue",
                         "nameLocation": "3971:4:153",
                         "parameters": {
-                            "id": 37613,
+                            "id": 37504,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37612,
+                                    "id": 37503,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "3981:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37625,
+                                    "scope": 37516,
                                     "src": "3976:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6297,7 +6297,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37611,
+                                        "id": 37502,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3976:4:153",
@@ -6312,17 +6312,17 @@ export const StdStyle = {
                             "src": "3975:11:153"
                         },
                         "returnParameters": {
-                            "id": 37616,
+                            "id": 37507,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37615,
+                                    "id": 37506,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37625,
+                                    "scope": 37516,
                                     "src": "4010:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6331,7 +6331,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37614,
+                                        "id": 37505,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4010:6:153",
@@ -6345,18 +6345,18 @@ export const StdStyle = {
                             ],
                             "src": "4009:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37640,
+                        "id": 37531,
                         "nodeType": "FunctionDefinition",
                         "src": "4078:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 37639,
+                            "id": 37530,
                             "nodeType": "Block",
                             "src": "4154:47:153",
                             "nodes": [],
@@ -6367,11 +6367,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37635,
+                                                        "id": 37526,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37627,
+                                                        "referencedDeclaration": 37518,
                                                         "src": "4188:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -6387,18 +6387,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37633,
+                                                        "id": 37524,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4176:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37634,
+                                                    "id": 37525,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6406,14 +6406,14 @@ export const StdStyle = {
                                                     "memberLocation": "4179:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "4176:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37636,
+                                                "id": 37527,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6437,24 +6437,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37632,
+                                            "id": 37523,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "4171:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37637,
+                                        "id": 37528,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6470,8 +6470,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37631,
-                                    "id": 37638,
+                                    "functionReturnParameters": 37522,
+                                    "id": 37529,
                                     "nodeType": "Return",
                                     "src": "4164:30:153"
                                 }
@@ -6483,17 +6483,17 @@ export const StdStyle = {
                         "name": "blueBytes",
                         "nameLocation": "4087:9:153",
                         "parameters": {
-                            "id": 37628,
+                            "id": 37519,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37627,
+                                    "id": 37518,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4110:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37640,
+                                    "scope": 37531,
                                     "src": "4097:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6502,7 +6502,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37626,
+                                        "id": 37517,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4097:5:153",
@@ -6517,17 +6517,17 @@ export const StdStyle = {
                             "src": "4096:19:153"
                         },
                         "returnParameters": {
-                            "id": 37631,
+                            "id": 37522,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37630,
+                                    "id": 37521,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37640,
+                                    "scope": 37531,
                                     "src": "4139:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6536,7 +6536,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37629,
+                                        "id": 37520,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4139:6:153",
@@ -6550,18 +6550,18 @@ export const StdStyle = {
                             ],
                             "src": "4138:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37655,
+                        "id": 37546,
                         "nodeType": "FunctionDefinition",
                         "src": "4207:120:153",
                         "nodes": [],
                         "body": {
-                            "id": 37654,
+                            "id": 37545,
                             "nodeType": "Block",
                             "src": "4280:47:153",
                             "nodes": [],
@@ -6572,11 +6572,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37650,
+                                                        "id": 37541,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37642,
+                                                        "referencedDeclaration": 37533,
                                                         "src": "4314:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -6592,18 +6592,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37648,
+                                                        "id": 37539,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4302:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37649,
+                                                    "id": 37540,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6611,14 +6611,14 @@ export const StdStyle = {
                                                     "memberLocation": "4305:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "4302:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37651,
+                                                "id": 37542,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6642,24 +6642,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37647,
+                                            "id": 37538,
                                             "name": "blue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37565,
-                                                37580,
-                                                37595,
-                                                37610,
-                                                37625
+                                                37456,
+                                                37471,
+                                                37486,
+                                                37501,
+                                                37516
                                             ],
-                                            "referencedDeclaration": 37565,
+                                            "referencedDeclaration": 37456,
                                             "src": "4297:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37652,
+                                        "id": 37543,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6675,8 +6675,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37646,
-                                    "id": 37653,
+                                    "functionReturnParameters": 37537,
+                                    "id": 37544,
                                     "nodeType": "Return",
                                     "src": "4290:30:153"
                                 }
@@ -6688,17 +6688,17 @@ export const StdStyle = {
                         "name": "blueBytes32",
                         "nameLocation": "4216:11:153",
                         "parameters": {
-                            "id": 37643,
+                            "id": 37534,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37642,
+                                    "id": 37533,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4236:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37655,
+                                    "scope": 37546,
                                     "src": "4228:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6707,7 +6707,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37641,
+                                        "id": 37532,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4228:7:153",
@@ -6722,17 +6722,17 @@ export const StdStyle = {
                             "src": "4227:14:153"
                         },
                         "returnParameters": {
-                            "id": 37646,
+                            "id": 37537,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37645,
+                                    "id": 37536,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37655,
+                                    "scope": 37546,
                                     "src": "4265:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6741,7 +6741,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37644,
+                                        "id": 37535,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4265:6:153",
@@ -6755,18 +6755,18 @@ export const StdStyle = {
                             ],
                             "src": "4264:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37668,
+                        "id": 37559,
                         "nodeType": "FunctionDefinition",
                         "src": "4333:125:153",
                         "nodes": [],
                         "body": {
-                            "id": 37667,
+                            "id": 37558,
                             "nodeType": "Block",
                             "src": "4408:50:153",
                             "nodes": [],
@@ -6775,11 +6775,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37663,
+                                                "id": 37554,
                                                 "name": "MAGENTA",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37202,
+                                                "referencedDeclaration": 37093,
                                                 "src": "4437:7:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6787,11 +6787,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37664,
+                                                "id": 37555,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37657,
+                                                "referencedDeclaration": 37548,
                                                 "src": "4446:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6810,18 +6810,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37662,
+                                            "id": 37553,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "4425:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37665,
+                                        "id": 37556,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6837,8 +6837,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37661,
-                                    "id": 37666,
+                                    "functionReturnParameters": 37552,
+                                    "id": 37557,
                                     "nodeType": "Return",
                                     "src": "4418:33:153"
                                 }
@@ -6850,17 +6850,17 @@ export const StdStyle = {
                         "name": "magenta",
                         "nameLocation": "4342:7:153",
                         "parameters": {
-                            "id": 37658,
+                            "id": 37549,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37657,
+                                    "id": 37548,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4364:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37668,
+                                    "scope": 37559,
                                     "src": "4350:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6869,7 +6869,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37656,
+                                        "id": 37547,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4350:6:153",
@@ -6884,17 +6884,17 @@ export const StdStyle = {
                             "src": "4349:20:153"
                         },
                         "returnParameters": {
-                            "id": 37661,
+                            "id": 37552,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37660,
+                                    "id": 37551,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37668,
+                                    "scope": 37559,
                                     "src": "4393:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6903,7 +6903,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37659,
+                                        "id": 37550,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4393:6:153",
@@ -6917,18 +6917,18 @@ export const StdStyle = {
                             ],
                             "src": "4392:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37683,
+                        "id": 37574,
                         "nodeType": "FunctionDefinition",
                         "src": "4464:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 37682,
+                            "id": 37573,
                             "nodeType": "Block",
                             "src": "4533:50:153",
                             "nodes": [],
@@ -6939,11 +6939,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37678,
+                                                        "id": 37569,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37670,
+                                                        "referencedDeclaration": 37561,
                                                         "src": "4570:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -6959,18 +6959,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37676,
+                                                        "id": 37567,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4558:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37677,
+                                                    "id": 37568,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6978,14 +6978,14 @@ export const StdStyle = {
                                                     "memberLocation": "4561:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "4558:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37679,
+                                                "id": 37570,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7009,24 +7009,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37675,
+                                            "id": 37566,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "4550:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37680,
+                                        "id": 37571,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7042,8 +7042,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37674,
-                                    "id": 37681,
+                                    "functionReturnParameters": 37565,
+                                    "id": 37572,
                                     "nodeType": "Return",
                                     "src": "4543:33:153"
                                 }
@@ -7055,17 +7055,17 @@ export const StdStyle = {
                         "name": "magenta",
                         "nameLocation": "4473:7:153",
                         "parameters": {
-                            "id": 37671,
+                            "id": 37562,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37670,
+                                    "id": 37561,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4489:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37683,
+                                    "scope": 37574,
                                     "src": "4481:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7074,7 +7074,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37669,
+                                        "id": 37560,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4481:7:153",
@@ -7089,17 +7089,17 @@ export const StdStyle = {
                             "src": "4480:14:153"
                         },
                         "returnParameters": {
-                            "id": 37674,
+                            "id": 37565,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37673,
+                                    "id": 37564,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37683,
+                                    "scope": 37574,
                                     "src": "4518:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7108,7 +7108,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37672,
+                                        "id": 37563,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4518:6:153",
@@ -7122,18 +7122,18 @@ export const StdStyle = {
                             ],
                             "src": "4517:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37698,
+                        "id": 37589,
                         "nodeType": "FunctionDefinition",
                         "src": "4589:118:153",
                         "nodes": [],
                         "body": {
-                            "id": 37697,
+                            "id": 37588,
                             "nodeType": "Block",
                             "src": "4657:50:153",
                             "nodes": [],
@@ -7144,11 +7144,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37693,
+                                                        "id": 37584,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37685,
+                                                        "referencedDeclaration": 37576,
                                                         "src": "4694:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -7164,18 +7164,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37691,
+                                                        "id": 37582,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4682:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37692,
+                                                    "id": 37583,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7183,14 +7183,14 @@ export const StdStyle = {
                                                     "memberLocation": "4685:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "4682:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37694,
+                                                "id": 37585,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7214,24 +7214,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37690,
+                                            "id": 37581,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "4674:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37695,
+                                        "id": 37586,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7247,8 +7247,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37689,
-                                    "id": 37696,
+                                    "functionReturnParameters": 37580,
+                                    "id": 37587,
                                     "nodeType": "Return",
                                     "src": "4667:33:153"
                                 }
@@ -7260,17 +7260,17 @@ export const StdStyle = {
                         "name": "magenta",
                         "nameLocation": "4598:7:153",
                         "parameters": {
-                            "id": 37686,
+                            "id": 37577,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37685,
+                                    "id": 37576,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4613:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37698,
+                                    "scope": 37589,
                                     "src": "4606:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7279,7 +7279,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37684,
+                                        "id": 37575,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4606:6:153",
@@ -7294,17 +7294,17 @@ export const StdStyle = {
                             "src": "4605:13:153"
                         },
                         "returnParameters": {
-                            "id": 37689,
+                            "id": 37580,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37688,
+                                    "id": 37579,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37698,
+                                    "scope": 37589,
                                     "src": "4642:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7313,7 +7313,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37687,
+                                        "id": 37578,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4642:6:153",
@@ -7327,18 +7327,18 @@ export const StdStyle = {
                             ],
                             "src": "4641:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37713,
+                        "id": 37604,
                         "nodeType": "FunctionDefinition",
                         "src": "4713:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 37712,
+                            "id": 37603,
                             "nodeType": "Block",
                             "src": "4782:50:153",
                             "nodes": [],
@@ -7349,11 +7349,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37708,
+                                                        "id": 37599,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37700,
+                                                        "referencedDeclaration": 37591,
                                                         "src": "4819:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -7369,18 +7369,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37706,
+                                                        "id": 37597,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4807:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37707,
+                                                    "id": 37598,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7388,14 +7388,14 @@ export const StdStyle = {
                                                     "memberLocation": "4810:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "4807:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37709,
+                                                "id": 37600,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7419,24 +7419,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37705,
+                                            "id": 37596,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "4799:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37710,
+                                        "id": 37601,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7452,8 +7452,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37704,
-                                    "id": 37711,
+                                    "functionReturnParameters": 37595,
+                                    "id": 37602,
                                     "nodeType": "Return",
                                     "src": "4792:33:153"
                                 }
@@ -7465,17 +7465,17 @@ export const StdStyle = {
                         "name": "magenta",
                         "nameLocation": "4722:7:153",
                         "parameters": {
-                            "id": 37701,
+                            "id": 37592,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37700,
+                                    "id": 37591,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4738:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37713,
+                                    "scope": 37604,
                                     "src": "4730:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7484,7 +7484,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37699,
+                                        "id": 37590,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4730:7:153",
@@ -7500,17 +7500,17 @@ export const StdStyle = {
                             "src": "4729:14:153"
                         },
                         "returnParameters": {
-                            "id": 37704,
+                            "id": 37595,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37703,
+                                    "id": 37594,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37713,
+                                    "scope": 37604,
                                     "src": "4767:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7519,7 +7519,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37702,
+                                        "id": 37593,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4767:6:153",
@@ -7533,18 +7533,18 @@ export const StdStyle = {
                             ],
                             "src": "4766:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37728,
+                        "id": 37619,
                         "nodeType": "FunctionDefinition",
                         "src": "4838:116:153",
                         "nodes": [],
                         "body": {
-                            "id": 37727,
+                            "id": 37618,
                             "nodeType": "Block",
                             "src": "4904:50:153",
                             "nodes": [],
@@ -7555,11 +7555,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37723,
+                                                        "id": 37614,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37715,
+                                                        "referencedDeclaration": 37606,
                                                         "src": "4941:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -7575,18 +7575,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37721,
+                                                        "id": 37612,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "4929:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37722,
+                                                    "id": 37613,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7594,14 +7594,14 @@ export const StdStyle = {
                                                     "memberLocation": "4932:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "4929:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37724,
+                                                "id": 37615,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7625,24 +7625,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37720,
+                                            "id": 37611,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "4921:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37725,
+                                        "id": 37616,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7658,8 +7658,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37719,
-                                    "id": 37726,
+                                    "functionReturnParameters": 37610,
+                                    "id": 37617,
                                     "nodeType": "Return",
                                     "src": "4914:33:153"
                                 }
@@ -7671,17 +7671,17 @@ export const StdStyle = {
                         "name": "magenta",
                         "nameLocation": "4847:7:153",
                         "parameters": {
-                            "id": 37716,
+                            "id": 37607,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37715,
+                                    "id": 37606,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4860:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37728,
+                                    "scope": 37619,
                                     "src": "4855:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7690,7 +7690,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37714,
+                                        "id": 37605,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4855:4:153",
@@ -7705,17 +7705,17 @@ export const StdStyle = {
                             "src": "4854:11:153"
                         },
                         "returnParameters": {
-                            "id": 37719,
+                            "id": 37610,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37718,
+                                    "id": 37609,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37728,
+                                    "scope": 37619,
                                     "src": "4889:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7724,7 +7724,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37717,
+                                        "id": 37608,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4889:6:153",
@@ -7738,18 +7738,18 @@ export const StdStyle = {
                             ],
                             "src": "4888:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37743,
+                        "id": 37634,
                         "nodeType": "FunctionDefinition",
                         "src": "4960:129:153",
                         "nodes": [],
                         "body": {
-                            "id": 37742,
+                            "id": 37633,
                             "nodeType": "Block",
                             "src": "5039:50:153",
                             "nodes": [],
@@ -7760,11 +7760,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37738,
+                                                        "id": 37629,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37730,
+                                                        "referencedDeclaration": 37621,
                                                         "src": "5076:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -7780,18 +7780,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37736,
+                                                        "id": 37627,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5064:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37737,
+                                                    "id": 37628,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7799,14 +7799,14 @@ export const StdStyle = {
                                                     "memberLocation": "5067:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "5064:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37739,
+                                                "id": 37630,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7830,24 +7830,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37735,
+                                            "id": 37626,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "5056:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37740,
+                                        "id": 37631,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7863,8 +7863,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37734,
-                                    "id": 37741,
+                                    "functionReturnParameters": 37625,
+                                    "id": 37632,
                                     "nodeType": "Return",
                                     "src": "5049:33:153"
                                 }
@@ -7876,17 +7876,17 @@ export const StdStyle = {
                         "name": "magentaBytes",
                         "nameLocation": "4969:12:153",
                         "parameters": {
-                            "id": 37731,
+                            "id": 37622,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37730,
+                                    "id": 37621,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "4995:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37743,
+                                    "scope": 37634,
                                     "src": "4982:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7895,7 +7895,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37729,
+                                        "id": 37620,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4982:5:153",
@@ -7910,17 +7910,17 @@ export const StdStyle = {
                             "src": "4981:19:153"
                         },
                         "returnParameters": {
-                            "id": 37734,
+                            "id": 37625,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37733,
+                                    "id": 37624,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37743,
+                                    "scope": 37634,
                                     "src": "5024:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7929,7 +7929,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37732,
+                                        "id": 37623,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5024:6:153",
@@ -7943,18 +7943,18 @@ export const StdStyle = {
                             ],
                             "src": "5023:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37758,
+                        "id": 37649,
                         "nodeType": "FunctionDefinition",
                         "src": "5095:126:153",
                         "nodes": [],
                         "body": {
-                            "id": 37757,
+                            "id": 37648,
                             "nodeType": "Block",
                             "src": "5171:50:153",
                             "nodes": [],
@@ -7965,11 +7965,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37753,
+                                                        "id": 37644,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37745,
+                                                        "referencedDeclaration": 37636,
                                                         "src": "5208:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -7985,18 +7985,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37751,
+                                                        "id": 37642,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5196:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37752,
+                                                    "id": 37643,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8004,14 +8004,14 @@ export const StdStyle = {
                                                     "memberLocation": "5199:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "5196:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37754,
+                                                "id": 37645,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8035,24 +8035,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37750,
+                                            "id": 37641,
                                             "name": "magenta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37668,
-                                                37683,
-                                                37698,
-                                                37713,
-                                                37728
+                                                37559,
+                                                37574,
+                                                37589,
+                                                37604,
+                                                37619
                                             ],
-                                            "referencedDeclaration": 37668,
+                                            "referencedDeclaration": 37559,
                                             "src": "5188:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37755,
+                                        "id": 37646,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8068,8 +8068,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37749,
-                                    "id": 37756,
+                                    "functionReturnParameters": 37640,
+                                    "id": 37647,
                                     "nodeType": "Return",
                                     "src": "5181:33:153"
                                 }
@@ -8081,17 +8081,17 @@ export const StdStyle = {
                         "name": "magentaBytes32",
                         "nameLocation": "5104:14:153",
                         "parameters": {
-                            "id": 37746,
+                            "id": 37637,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37745,
+                                    "id": 37636,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5127:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37758,
+                                    "scope": 37649,
                                     "src": "5119:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8100,7 +8100,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37744,
+                                        "id": 37635,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5119:7:153",
@@ -8115,17 +8115,17 @@ export const StdStyle = {
                             "src": "5118:14:153"
                         },
                         "returnParameters": {
-                            "id": 37749,
+                            "id": 37640,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37748,
+                                    "id": 37639,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37758,
+                                    "scope": 37649,
                                     "src": "5156:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8134,7 +8134,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37747,
+                                        "id": 37638,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5156:6:153",
@@ -8148,18 +8148,18 @@ export const StdStyle = {
                             ],
                             "src": "5155:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37771,
+                        "id": 37662,
                         "nodeType": "FunctionDefinition",
                         "src": "5227:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 37770,
+                            "id": 37661,
                             "nodeType": "Block",
                             "src": "5299:47:153",
                             "nodes": [],
@@ -8168,11 +8168,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37766,
+                                                "id": 37657,
                                                 "name": "CYAN",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37205,
+                                                "referencedDeclaration": 37096,
                                                 "src": "5328:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -8180,11 +8180,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37767,
+                                                "id": 37658,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37760,
+                                                "referencedDeclaration": 37651,
                                                 "src": "5334:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -8203,18 +8203,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37765,
+                                            "id": 37656,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "5316:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37768,
+                                        "id": 37659,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8230,8 +8230,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37764,
-                                    "id": 37769,
+                                    "functionReturnParameters": 37655,
+                                    "id": 37660,
                                     "nodeType": "Return",
                                     "src": "5309:30:153"
                                 }
@@ -8243,17 +8243,17 @@ export const StdStyle = {
                         "name": "cyan",
                         "nameLocation": "5236:4:153",
                         "parameters": {
-                            "id": 37761,
+                            "id": 37652,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37760,
+                                    "id": 37651,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5255:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37771,
+                                    "scope": 37662,
                                     "src": "5241:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8262,7 +8262,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37759,
+                                        "id": 37650,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5241:6:153",
@@ -8277,17 +8277,17 @@ export const StdStyle = {
                             "src": "5240:20:153"
                         },
                         "returnParameters": {
-                            "id": 37764,
+                            "id": 37655,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37763,
+                                    "id": 37654,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37771,
+                                    "scope": 37662,
                                     "src": "5284:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8296,7 +8296,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37762,
+                                        "id": 37653,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5284:6:153",
@@ -8310,18 +8310,18 @@ export const StdStyle = {
                             ],
                             "src": "5283:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37786,
+                        "id": 37677,
                         "nodeType": "FunctionDefinition",
                         "src": "5352:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37785,
+                            "id": 37676,
                             "nodeType": "Block",
                             "src": "5418:47:153",
                             "nodes": [],
@@ -8332,11 +8332,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37781,
+                                                        "id": 37672,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37773,
+                                                        "referencedDeclaration": 37664,
                                                         "src": "5452:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -8352,18 +8352,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37779,
+                                                        "id": 37670,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5440:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37780,
+                                                    "id": 37671,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8371,14 +8371,14 @@ export const StdStyle = {
                                                     "memberLocation": "5443:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "5440:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37782,
+                                                "id": 37673,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8402,24 +8402,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37778,
+                                            "id": 37669,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "5435:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37783,
+                                        "id": 37674,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8435,8 +8435,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37777,
-                                    "id": 37784,
+                                    "functionReturnParameters": 37668,
+                                    "id": 37675,
                                     "nodeType": "Return",
                                     "src": "5428:30:153"
                                 }
@@ -8448,17 +8448,17 @@ export const StdStyle = {
                         "name": "cyan",
                         "nameLocation": "5361:4:153",
                         "parameters": {
-                            "id": 37774,
+                            "id": 37665,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37773,
+                                    "id": 37664,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5374:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37786,
+                                    "scope": 37677,
                                     "src": "5366:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8467,7 +8467,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37772,
+                                        "id": 37663,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5366:7:153",
@@ -8482,17 +8482,17 @@ export const StdStyle = {
                             "src": "5365:14:153"
                         },
                         "returnParameters": {
-                            "id": 37777,
+                            "id": 37668,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37776,
+                                    "id": 37667,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37786,
+                                    "scope": 37677,
                                     "src": "5403:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8501,7 +8501,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37775,
+                                        "id": 37666,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5403:6:153",
@@ -8515,18 +8515,18 @@ export const StdStyle = {
                             ],
                             "src": "5402:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37801,
+                        "id": 37692,
                         "nodeType": "FunctionDefinition",
                         "src": "5471:112:153",
                         "nodes": [],
                         "body": {
-                            "id": 37800,
+                            "id": 37691,
                             "nodeType": "Block",
                             "src": "5536:47:153",
                             "nodes": [],
@@ -8537,11 +8537,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37796,
+                                                        "id": 37687,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37788,
+                                                        "referencedDeclaration": 37679,
                                                         "src": "5570:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -8557,18 +8557,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37794,
+                                                        "id": 37685,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5558:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37795,
+                                                    "id": 37686,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8576,14 +8576,14 @@ export const StdStyle = {
                                                     "memberLocation": "5561:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "5558:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37797,
+                                                "id": 37688,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8607,24 +8607,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37793,
+                                            "id": 37684,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "5553:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37798,
+                                        "id": 37689,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8640,8 +8640,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37792,
-                                    "id": 37799,
+                                    "functionReturnParameters": 37683,
+                                    "id": 37690,
                                     "nodeType": "Return",
                                     "src": "5546:30:153"
                                 }
@@ -8653,17 +8653,17 @@ export const StdStyle = {
                         "name": "cyan",
                         "nameLocation": "5480:4:153",
                         "parameters": {
-                            "id": 37789,
+                            "id": 37680,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37788,
+                                    "id": 37679,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5492:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37801,
+                                    "scope": 37692,
                                     "src": "5485:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8672,7 +8672,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37787,
+                                        "id": 37678,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5485:6:153",
@@ -8687,17 +8687,17 @@ export const StdStyle = {
                             "src": "5484:13:153"
                         },
                         "returnParameters": {
-                            "id": 37792,
+                            "id": 37683,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37791,
+                                    "id": 37682,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37801,
+                                    "scope": 37692,
                                     "src": "5521:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8706,7 +8706,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37790,
+                                        "id": 37681,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5521:6:153",
@@ -8720,18 +8720,18 @@ export const StdStyle = {
                             ],
                             "src": "5520:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37816,
+                        "id": 37707,
                         "nodeType": "FunctionDefinition",
                         "src": "5589:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37815,
+                            "id": 37706,
                             "nodeType": "Block",
                             "src": "5655:47:153",
                             "nodes": [],
@@ -8742,11 +8742,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37811,
+                                                        "id": 37702,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37803,
+                                                        "referencedDeclaration": 37694,
                                                         "src": "5689:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -8762,18 +8762,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37809,
+                                                        "id": 37700,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5677:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37810,
+                                                    "id": 37701,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8781,14 +8781,14 @@ export const StdStyle = {
                                                     "memberLocation": "5680:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "5677:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37812,
+                                                "id": 37703,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8812,24 +8812,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37808,
+                                            "id": 37699,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "5672:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37813,
+                                        "id": 37704,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8845,8 +8845,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37807,
-                                    "id": 37814,
+                                    "functionReturnParameters": 37698,
+                                    "id": 37705,
                                     "nodeType": "Return",
                                     "src": "5665:30:153"
                                 }
@@ -8858,17 +8858,17 @@ export const StdStyle = {
                         "name": "cyan",
                         "nameLocation": "5598:4:153",
                         "parameters": {
-                            "id": 37804,
+                            "id": 37695,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37803,
+                                    "id": 37694,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5611:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37816,
+                                    "scope": 37707,
                                     "src": "5603:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8877,7 +8877,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37802,
+                                        "id": 37693,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5603:7:153",
@@ -8893,17 +8893,17 @@ export const StdStyle = {
                             "src": "5602:14:153"
                         },
                         "returnParameters": {
-                            "id": 37807,
+                            "id": 37698,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37806,
+                                    "id": 37697,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37816,
+                                    "scope": 37707,
                                     "src": "5640:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8912,7 +8912,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37805,
+                                        "id": 37696,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5640:6:153",
@@ -8926,18 +8926,18 @@ export const StdStyle = {
                             ],
                             "src": "5639:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37831,
+                        "id": 37722,
                         "nodeType": "FunctionDefinition",
                         "src": "5708:110:153",
                         "nodes": [],
                         "body": {
-                            "id": 37830,
+                            "id": 37721,
                             "nodeType": "Block",
                             "src": "5771:47:153",
                             "nodes": [],
@@ -8948,11 +8948,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37826,
+                                                        "id": 37717,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37818,
+                                                        "referencedDeclaration": 37709,
                                                         "src": "5805:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -8968,18 +8968,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37824,
+                                                        "id": 37715,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5793:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37825,
+                                                    "id": 37716,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8987,14 +8987,14 @@ export const StdStyle = {
                                                     "memberLocation": "5796:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "5793:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37827,
+                                                "id": 37718,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9018,24 +9018,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37823,
+                                            "id": 37714,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "5788:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37828,
+                                        "id": 37719,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9051,8 +9051,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37822,
-                                    "id": 37829,
+                                    "functionReturnParameters": 37713,
+                                    "id": 37720,
                                     "nodeType": "Return",
                                     "src": "5781:30:153"
                                 }
@@ -9064,17 +9064,17 @@ export const StdStyle = {
                         "name": "cyan",
                         "nameLocation": "5717:4:153",
                         "parameters": {
-                            "id": 37819,
+                            "id": 37710,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37818,
+                                    "id": 37709,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5727:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37831,
+                                    "scope": 37722,
                                     "src": "5722:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9083,7 +9083,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37817,
+                                        "id": 37708,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5722:4:153",
@@ -9098,17 +9098,17 @@ export const StdStyle = {
                             "src": "5721:11:153"
                         },
                         "returnParameters": {
-                            "id": 37822,
+                            "id": 37713,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37821,
+                                    "id": 37712,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37831,
+                                    "scope": 37722,
                                     "src": "5756:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9117,7 +9117,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37820,
+                                        "id": 37711,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5756:6:153",
@@ -9131,18 +9131,18 @@ export const StdStyle = {
                             ],
                             "src": "5755:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37846,
+                        "id": 37737,
                         "nodeType": "FunctionDefinition",
                         "src": "5824:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 37845,
+                            "id": 37736,
                             "nodeType": "Block",
                             "src": "5900:47:153",
                             "nodes": [],
@@ -9153,11 +9153,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37841,
+                                                        "id": 37732,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37833,
+                                                        "referencedDeclaration": 37724,
                                                         "src": "5934:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -9173,18 +9173,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37839,
+                                                        "id": 37730,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "5922:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37840,
+                                                    "id": 37731,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9192,14 +9192,14 @@ export const StdStyle = {
                                                     "memberLocation": "5925:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "5922:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37842,
+                                                "id": 37733,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9223,24 +9223,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37838,
+                                            "id": 37729,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "5917:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37843,
+                                        "id": 37734,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9256,8 +9256,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37837,
-                                    "id": 37844,
+                                    "functionReturnParameters": 37728,
+                                    "id": 37735,
                                     "nodeType": "Return",
                                     "src": "5910:30:153"
                                 }
@@ -9269,17 +9269,17 @@ export const StdStyle = {
                         "name": "cyanBytes",
                         "nameLocation": "5833:9:153",
                         "parameters": {
-                            "id": 37834,
+                            "id": 37725,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37833,
+                                    "id": 37724,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5856:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37846,
+                                    "scope": 37737,
                                     "src": "5843:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9288,7 +9288,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37832,
+                                        "id": 37723,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5843:5:153",
@@ -9303,17 +9303,17 @@ export const StdStyle = {
                             "src": "5842:19:153"
                         },
                         "returnParameters": {
-                            "id": 37837,
+                            "id": 37728,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37836,
+                                    "id": 37727,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37846,
+                                    "scope": 37737,
                                     "src": "5885:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9322,7 +9322,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37835,
+                                        "id": 37726,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5885:6:153",
@@ -9336,18 +9336,18 @@ export const StdStyle = {
                             ],
                             "src": "5884:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37861,
+                        "id": 37752,
                         "nodeType": "FunctionDefinition",
                         "src": "5953:120:153",
                         "nodes": [],
                         "body": {
-                            "id": 37860,
+                            "id": 37751,
                             "nodeType": "Block",
                             "src": "6026:47:153",
                             "nodes": [],
@@ -9358,11 +9358,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37856,
+                                                        "id": 37747,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37848,
+                                                        "referencedDeclaration": 37739,
                                                         "src": "6060:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -9378,18 +9378,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37854,
+                                                        "id": 37745,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6048:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37855,
+                                                    "id": 37746,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9397,14 +9397,14 @@ export const StdStyle = {
                                                     "memberLocation": "6051:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "6048:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37857,
+                                                "id": 37748,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9428,24 +9428,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37853,
+                                            "id": 37744,
                                             "name": "cyan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37771,
-                                                37786,
-                                                37801,
-                                                37816,
-                                                37831
+                                                37662,
+                                                37677,
+                                                37692,
+                                                37707,
+                                                37722
                                             ],
-                                            "referencedDeclaration": 37771,
+                                            "referencedDeclaration": 37662,
                                             "src": "6043:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37858,
+                                        "id": 37749,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9461,8 +9461,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37852,
-                                    "id": 37859,
+                                    "functionReturnParameters": 37743,
+                                    "id": 37750,
                                     "nodeType": "Return",
                                     "src": "6036:30:153"
                                 }
@@ -9474,17 +9474,17 @@ export const StdStyle = {
                         "name": "cyanBytes32",
                         "nameLocation": "5962:11:153",
                         "parameters": {
-                            "id": 37849,
+                            "id": 37740,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37848,
+                                    "id": 37739,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "5982:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37861,
+                                    "scope": 37752,
                                     "src": "5974:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9493,7 +9493,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37847,
+                                        "id": 37738,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5974:7:153",
@@ -9508,17 +9508,17 @@ export const StdStyle = {
                             "src": "5973:14:153"
                         },
                         "returnParameters": {
-                            "id": 37852,
+                            "id": 37743,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37851,
+                                    "id": 37742,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37861,
+                                    "scope": 37752,
                                     "src": "6011:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9527,7 +9527,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37850,
+                                        "id": 37741,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6011:6:153",
@@ -9541,18 +9541,18 @@ export const StdStyle = {
                             ],
                             "src": "6010:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37874,
+                        "id": 37765,
                         "nodeType": "FunctionDefinition",
                         "src": "6079:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 37873,
+                            "id": 37764,
                             "nodeType": "Block",
                             "src": "6151:47:153",
                             "nodes": [],
@@ -9561,11 +9561,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37869,
+                                                "id": 37760,
                                                 "name": "BOLD",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37208,
+                                                "referencedDeclaration": 37099,
                                                 "src": "6180:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -9573,11 +9573,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37870,
+                                                "id": 37761,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37863,
+                                                "referencedDeclaration": 37754,
                                                 "src": "6186:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -9596,18 +9596,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37868,
+                                            "id": 37759,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "6168:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37871,
+                                        "id": 37762,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9623,8 +9623,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37867,
-                                    "id": 37872,
+                                    "functionReturnParameters": 37758,
+                                    "id": 37763,
                                     "nodeType": "Return",
                                     "src": "6161:30:153"
                                 }
@@ -9636,17 +9636,17 @@ export const StdStyle = {
                         "name": "bold",
                         "nameLocation": "6088:4:153",
                         "parameters": {
-                            "id": 37864,
+                            "id": 37755,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37863,
+                                    "id": 37754,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6107:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37874,
+                                    "scope": 37765,
                                     "src": "6093:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9655,7 +9655,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37862,
+                                        "id": 37753,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6093:6:153",
@@ -9670,17 +9670,17 @@ export const StdStyle = {
                             "src": "6092:20:153"
                         },
                         "returnParameters": {
-                            "id": 37867,
+                            "id": 37758,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37866,
+                                    "id": 37757,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37874,
+                                    "scope": 37765,
                                     "src": "6136:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9689,7 +9689,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37865,
+                                        "id": 37756,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6136:6:153",
@@ -9703,18 +9703,18 @@ export const StdStyle = {
                             ],
                             "src": "6135:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37889,
+                        "id": 37780,
                         "nodeType": "FunctionDefinition",
                         "src": "6204:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37888,
+                            "id": 37779,
                             "nodeType": "Block",
                             "src": "6270:47:153",
                             "nodes": [],
@@ -9725,11 +9725,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37884,
+                                                        "id": 37775,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37876,
+                                                        "referencedDeclaration": 37767,
                                                         "src": "6304:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -9745,18 +9745,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37882,
+                                                        "id": 37773,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6292:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37883,
+                                                    "id": 37774,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9764,14 +9764,14 @@ export const StdStyle = {
                                                     "memberLocation": "6295:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "6292:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37885,
+                                                "id": 37776,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9795,24 +9795,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37881,
+                                            "id": 37772,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6287:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37886,
+                                        "id": 37777,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9828,8 +9828,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37880,
-                                    "id": 37887,
+                                    "functionReturnParameters": 37771,
+                                    "id": 37778,
                                     "nodeType": "Return",
                                     "src": "6280:30:153"
                                 }
@@ -9841,17 +9841,17 @@ export const StdStyle = {
                         "name": "bold",
                         "nameLocation": "6213:4:153",
                         "parameters": {
-                            "id": 37877,
+                            "id": 37768,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37876,
+                                    "id": 37767,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6226:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37889,
+                                    "scope": 37780,
                                     "src": "6218:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9860,7 +9860,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37875,
+                                        "id": 37766,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6218:7:153",
@@ -9875,17 +9875,17 @@ export const StdStyle = {
                             "src": "6217:14:153"
                         },
                         "returnParameters": {
-                            "id": 37880,
+                            "id": 37771,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37879,
+                                    "id": 37770,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37889,
+                                    "scope": 37780,
                                     "src": "6255:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9894,7 +9894,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37878,
+                                        "id": 37769,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6255:6:153",
@@ -9908,18 +9908,18 @@ export const StdStyle = {
                             ],
                             "src": "6254:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37904,
+                        "id": 37795,
                         "nodeType": "FunctionDefinition",
                         "src": "6323:112:153",
                         "nodes": [],
                         "body": {
-                            "id": 37903,
+                            "id": 37794,
                             "nodeType": "Block",
                             "src": "6388:47:153",
                             "nodes": [],
@@ -9930,11 +9930,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37899,
+                                                        "id": 37790,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37891,
+                                                        "referencedDeclaration": 37782,
                                                         "src": "6422:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -9950,18 +9950,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37897,
+                                                        "id": 37788,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6410:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37898,
+                                                    "id": 37789,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9969,14 +9969,14 @@ export const StdStyle = {
                                                     "memberLocation": "6413:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "6410:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37900,
+                                                "id": 37791,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10000,24 +10000,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37896,
+                                            "id": 37787,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6405:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37901,
+                                        "id": 37792,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10033,8 +10033,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37895,
-                                    "id": 37902,
+                                    "functionReturnParameters": 37786,
+                                    "id": 37793,
                                     "nodeType": "Return",
                                     "src": "6398:30:153"
                                 }
@@ -10046,17 +10046,17 @@ export const StdStyle = {
                         "name": "bold",
                         "nameLocation": "6332:4:153",
                         "parameters": {
-                            "id": 37892,
+                            "id": 37783,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37891,
+                                    "id": 37782,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6344:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37904,
+                                    "scope": 37795,
                                     "src": "6337:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10065,7 +10065,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37890,
+                                        "id": 37781,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6337:6:153",
@@ -10080,17 +10080,17 @@ export const StdStyle = {
                             "src": "6336:13:153"
                         },
                         "returnParameters": {
-                            "id": 37895,
+                            "id": 37786,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37894,
+                                    "id": 37785,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37904,
+                                    "scope": 37795,
                                     "src": "6373:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10099,7 +10099,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37893,
+                                        "id": 37784,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6373:6:153",
@@ -10113,18 +10113,18 @@ export const StdStyle = {
                             ],
                             "src": "6372:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37919,
+                        "id": 37810,
                         "nodeType": "FunctionDefinition",
                         "src": "6441:113:153",
                         "nodes": [],
                         "body": {
-                            "id": 37918,
+                            "id": 37809,
                             "nodeType": "Block",
                             "src": "6507:47:153",
                             "nodes": [],
@@ -10135,11 +10135,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37914,
+                                                        "id": 37805,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37906,
+                                                        "referencedDeclaration": 37797,
                                                         "src": "6541:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -10155,18 +10155,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37912,
+                                                        "id": 37803,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6529:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37913,
+                                                    "id": 37804,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10174,14 +10174,14 @@ export const StdStyle = {
                                                     "memberLocation": "6532:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "6529:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37915,
+                                                "id": 37806,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10205,24 +10205,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37911,
+                                            "id": 37802,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6524:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37916,
+                                        "id": 37807,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10238,8 +10238,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37910,
-                                    "id": 37917,
+                                    "functionReturnParameters": 37801,
+                                    "id": 37808,
                                     "nodeType": "Return",
                                     "src": "6517:30:153"
                                 }
@@ -10251,17 +10251,17 @@ export const StdStyle = {
                         "name": "bold",
                         "nameLocation": "6450:4:153",
                         "parameters": {
-                            "id": 37907,
+                            "id": 37798,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37906,
+                                    "id": 37797,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6463:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37919,
+                                    "scope": 37810,
                                     "src": "6455:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10270,7 +10270,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 37905,
+                                        "id": 37796,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6455:7:153",
@@ -10286,17 +10286,17 @@ export const StdStyle = {
                             "src": "6454:14:153"
                         },
                         "returnParameters": {
-                            "id": 37910,
+                            "id": 37801,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37909,
+                                    "id": 37800,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37919,
+                                    "scope": 37810,
                                     "src": "6492:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10305,7 +10305,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37908,
+                                        "id": 37799,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6492:6:153",
@@ -10319,18 +10319,18 @@ export const StdStyle = {
                             ],
                             "src": "6491:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37934,
+                        "id": 37825,
                         "nodeType": "FunctionDefinition",
                         "src": "6560:110:153",
                         "nodes": [],
                         "body": {
-                            "id": 37933,
+                            "id": 37824,
                             "nodeType": "Block",
                             "src": "6623:47:153",
                             "nodes": [],
@@ -10341,11 +10341,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37929,
+                                                        "id": 37820,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37921,
+                                                        "referencedDeclaration": 37812,
                                                         "src": "6657:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -10361,18 +10361,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37927,
+                                                        "id": 37818,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6645:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37928,
+                                                    "id": 37819,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10380,14 +10380,14 @@ export const StdStyle = {
                                                     "memberLocation": "6648:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "6645:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37930,
+                                                "id": 37821,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10411,24 +10411,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37926,
+                                            "id": 37817,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6640:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37931,
+                                        "id": 37822,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10444,8 +10444,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37925,
-                                    "id": 37932,
+                                    "functionReturnParameters": 37816,
+                                    "id": 37823,
                                     "nodeType": "Return",
                                     "src": "6633:30:153"
                                 }
@@ -10457,17 +10457,17 @@ export const StdStyle = {
                         "name": "bold",
                         "nameLocation": "6569:4:153",
                         "parameters": {
-                            "id": 37922,
+                            "id": 37813,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37921,
+                                    "id": 37812,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6579:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37934,
+                                    "scope": 37825,
                                     "src": "6574:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10476,7 +10476,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 37920,
+                                        "id": 37811,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6574:4:153",
@@ -10491,17 +10491,17 @@ export const StdStyle = {
                             "src": "6573:11:153"
                         },
                         "returnParameters": {
-                            "id": 37925,
+                            "id": 37816,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37924,
+                                    "id": 37815,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37934,
+                                    "scope": 37825,
                                     "src": "6608:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10510,7 +10510,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37923,
+                                        "id": 37814,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6608:6:153",
@@ -10524,18 +10524,18 @@ export const StdStyle = {
                             ],
                             "src": "6607:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37949,
+                        "id": 37840,
                         "nodeType": "FunctionDefinition",
                         "src": "6676:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 37948,
+                            "id": 37839,
                             "nodeType": "Block",
                             "src": "6752:47:153",
                             "nodes": [],
@@ -10546,11 +10546,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37944,
+                                                        "id": 37835,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37936,
+                                                        "referencedDeclaration": 37827,
                                                         "src": "6786:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -10566,18 +10566,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37942,
+                                                        "id": 37833,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6774:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37943,
+                                                    "id": 37834,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10585,14 +10585,14 @@ export const StdStyle = {
                                                     "memberLocation": "6777:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "6774:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37945,
+                                                "id": 37836,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10616,24 +10616,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37941,
+                                            "id": 37832,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6769:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37946,
+                                        "id": 37837,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10649,8 +10649,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37940,
-                                    "id": 37947,
+                                    "functionReturnParameters": 37831,
+                                    "id": 37838,
                                     "nodeType": "Return",
                                     "src": "6762:30:153"
                                 }
@@ -10662,17 +10662,17 @@ export const StdStyle = {
                         "name": "boldBytes",
                         "nameLocation": "6685:9:153",
                         "parameters": {
-                            "id": 37937,
+                            "id": 37828,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37936,
+                                    "id": 37827,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6708:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37949,
+                                    "scope": 37840,
                                     "src": "6695:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10681,7 +10681,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 37935,
+                                        "id": 37826,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6695:5:153",
@@ -10696,17 +10696,17 @@ export const StdStyle = {
                             "src": "6694:19:153"
                         },
                         "returnParameters": {
-                            "id": 37940,
+                            "id": 37831,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37939,
+                                    "id": 37830,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37949,
+                                    "scope": 37840,
                                     "src": "6737:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10715,7 +10715,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37938,
+                                        "id": 37829,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6737:6:153",
@@ -10729,18 +10729,18 @@ export const StdStyle = {
                             ],
                             "src": "6736:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37964,
+                        "id": 37855,
                         "nodeType": "FunctionDefinition",
                         "src": "6805:120:153",
                         "nodes": [],
                         "body": {
-                            "id": 37963,
+                            "id": 37854,
                             "nodeType": "Block",
                             "src": "6878:47:153",
                             "nodes": [],
@@ -10751,11 +10751,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37959,
+                                                        "id": 37850,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37951,
+                                                        "referencedDeclaration": 37842,
                                                         "src": "6912:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -10771,18 +10771,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37957,
+                                                        "id": 37848,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "6900:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37958,
+                                                    "id": 37849,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10790,14 +10790,14 @@ export const StdStyle = {
                                                     "memberLocation": "6903:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "6900:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37960,
+                                                "id": 37851,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10821,24 +10821,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37956,
+                                            "id": 37847,
                                             "name": "bold",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37874,
-                                                37889,
-                                                37904,
-                                                37919,
-                                                37934
+                                                37765,
+                                                37780,
+                                                37795,
+                                                37810,
+                                                37825
                                             ],
-                                            "referencedDeclaration": 37874,
+                                            "referencedDeclaration": 37765,
                                             "src": "6895:4:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37961,
+                                        "id": 37852,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10854,8 +10854,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37955,
-                                    "id": 37962,
+                                    "functionReturnParameters": 37846,
+                                    "id": 37853,
                                     "nodeType": "Return",
                                     "src": "6888:30:153"
                                 }
@@ -10867,17 +10867,17 @@ export const StdStyle = {
                         "name": "boldBytes32",
                         "nameLocation": "6814:11:153",
                         "parameters": {
-                            "id": 37952,
+                            "id": 37843,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37951,
+                                    "id": 37842,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6834:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37964,
+                                    "scope": 37855,
                                     "src": "6826:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10886,7 +10886,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 37950,
+                                        "id": 37841,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6826:7:153",
@@ -10901,17 +10901,17 @@ export const StdStyle = {
                             "src": "6825:14:153"
                         },
                         "returnParameters": {
-                            "id": 37955,
+                            "id": 37846,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37954,
+                                    "id": 37845,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37964,
+                                    "scope": 37855,
                                     "src": "6863:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10920,7 +10920,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37953,
+                                        "id": 37844,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6863:6:153",
@@ -10934,18 +10934,18 @@ export const StdStyle = {
                             ],
                             "src": "6862:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37977,
+                        "id": 37868,
                         "nodeType": "FunctionDefinition",
                         "src": "6931:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 37976,
+                            "id": 37867,
                             "nodeType": "Block",
                             "src": "7002:46:153",
                             "nodes": [],
@@ -10954,11 +10954,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 37972,
+                                                "id": 37863,
                                                 "name": "DIM",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37211,
+                                                "referencedDeclaration": 37102,
                                                 "src": "7031:3:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -10966,11 +10966,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 37973,
+                                                "id": 37864,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37966,
+                                                "referencedDeclaration": 37857,
                                                 "src": "7036:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -10989,18 +10989,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37971,
+                                            "id": 37862,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "7019:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37974,
+                                        "id": 37865,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11016,8 +11016,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37970,
-                                    "id": 37975,
+                                    "functionReturnParameters": 37861,
+                                    "id": 37866,
                                     "nodeType": "Return",
                                     "src": "7012:29:153"
                                 }
@@ -11029,17 +11029,17 @@ export const StdStyle = {
                         "name": "dim",
                         "nameLocation": "6940:3:153",
                         "parameters": {
-                            "id": 37967,
+                            "id": 37858,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37966,
+                                    "id": 37857,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "6958:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37977,
+                                    "scope": 37868,
                                     "src": "6944:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11048,7 +11048,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37965,
+                                        "id": 37856,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6944:6:153",
@@ -11063,17 +11063,17 @@ export const StdStyle = {
                             "src": "6943:20:153"
                         },
                         "returnParameters": {
-                            "id": 37970,
+                            "id": 37861,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37969,
+                                    "id": 37860,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37977,
+                                    "scope": 37868,
                                     "src": "6987:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11082,7 +11082,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37968,
+                                        "id": 37859,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6987:6:153",
@@ -11096,18 +11096,18 @@ export const StdStyle = {
                             ],
                             "src": "6986:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 37992,
+                        "id": 37883,
                         "nodeType": "FunctionDefinition",
                         "src": "7054:111:153",
                         "nodes": [],
                         "body": {
-                            "id": 37991,
+                            "id": 37882,
                             "nodeType": "Block",
                             "src": "7119:46:153",
                             "nodes": [],
@@ -11118,11 +11118,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 37987,
+                                                        "id": 37878,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37979,
+                                                        "referencedDeclaration": 37870,
                                                         "src": "7152:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -11138,18 +11138,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 37985,
+                                                        "id": 37876,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7140:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 37986,
+                                                    "id": 37877,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11157,14 +11157,14 @@ export const StdStyle = {
                                                     "memberLocation": "7143:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "7140:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 37988,
+                                                "id": 37879,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11188,24 +11188,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37984,
+                                            "id": 37875,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7136:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 37989,
+                                        "id": 37880,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11221,8 +11221,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37983,
-                                    "id": 37990,
+                                    "functionReturnParameters": 37874,
+                                    "id": 37881,
                                     "nodeType": "Return",
                                     "src": "7129:29:153"
                                 }
@@ -11234,17 +11234,17 @@ export const StdStyle = {
                         "name": "dim",
                         "nameLocation": "7063:3:153",
                         "parameters": {
-                            "id": 37980,
+                            "id": 37871,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37979,
+                                    "id": 37870,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7075:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37992,
+                                    "scope": 37883,
                                     "src": "7067:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11253,7 +11253,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 37978,
+                                        "id": 37869,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7067:7:153",
@@ -11268,17 +11268,17 @@ export const StdStyle = {
                             "src": "7066:14:153"
                         },
                         "returnParameters": {
-                            "id": 37983,
+                            "id": 37874,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37982,
+                                    "id": 37873,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 37992,
+                                    "scope": 37883,
                                     "src": "7104:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11287,7 +11287,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37981,
+                                        "id": 37872,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7104:6:153",
@@ -11301,18 +11301,18 @@ export const StdStyle = {
                             ],
                             "src": "7103:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38007,
+                        "id": 37898,
                         "nodeType": "FunctionDefinition",
                         "src": "7171:110:153",
                         "nodes": [],
                         "body": {
-                            "id": 38006,
+                            "id": 37897,
                             "nodeType": "Block",
                             "src": "7235:46:153",
                             "nodes": [],
@@ -11323,11 +11323,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38002,
+                                                        "id": 37893,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37994,
+                                                        "referencedDeclaration": 37885,
                                                         "src": "7268:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -11343,18 +11343,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38000,
+                                                        "id": 37891,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7256:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38001,
+                                                    "id": 37892,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11362,14 +11362,14 @@ export const StdStyle = {
                                                     "memberLocation": "7259:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "7256:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38003,
+                                                "id": 37894,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11393,24 +11393,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 37999,
+                                            "id": 37890,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7252:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38004,
+                                        "id": 37895,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11426,8 +11426,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 37998,
-                                    "id": 38005,
+                                    "functionReturnParameters": 37889,
+                                    "id": 37896,
                                     "nodeType": "Return",
                                     "src": "7245:29:153"
                                 }
@@ -11439,17 +11439,17 @@ export const StdStyle = {
                         "name": "dim",
                         "nameLocation": "7180:3:153",
                         "parameters": {
-                            "id": 37995,
+                            "id": 37886,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37994,
+                                    "id": 37885,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7191:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38007,
+                                    "scope": 37898,
                                     "src": "7184:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11458,7 +11458,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 37993,
+                                        "id": 37884,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7184:6:153",
@@ -11473,17 +11473,17 @@ export const StdStyle = {
                             "src": "7183:13:153"
                         },
                         "returnParameters": {
-                            "id": 37998,
+                            "id": 37889,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 37997,
+                                    "id": 37888,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38007,
+                                    "scope": 37898,
                                     "src": "7220:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11492,7 +11492,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 37996,
+                                        "id": 37887,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7220:6:153",
@@ -11506,18 +11506,18 @@ export const StdStyle = {
                             ],
                             "src": "7219:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38022,
+                        "id": 37913,
                         "nodeType": "FunctionDefinition",
                         "src": "7287:111:153",
                         "nodes": [],
                         "body": {
-                            "id": 38021,
+                            "id": 37912,
                             "nodeType": "Block",
                             "src": "7352:46:153",
                             "nodes": [],
@@ -11528,11 +11528,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38017,
+                                                        "id": 37908,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38009,
+                                                        "referencedDeclaration": 37900,
                                                         "src": "7385:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -11548,18 +11548,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38015,
+                                                        "id": 37906,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7373:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38016,
+                                                    "id": 37907,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11567,14 +11567,14 @@ export const StdStyle = {
                                                     "memberLocation": "7376:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "7373:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38018,
+                                                "id": 37909,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11598,24 +11598,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38014,
+                                            "id": 37905,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7369:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38019,
+                                        "id": 37910,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11631,8 +11631,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38013,
-                                    "id": 38020,
+                                    "functionReturnParameters": 37904,
+                                    "id": 37911,
                                     "nodeType": "Return",
                                     "src": "7362:29:153"
                                 }
@@ -11644,17 +11644,17 @@ export const StdStyle = {
                         "name": "dim",
                         "nameLocation": "7296:3:153",
                         "parameters": {
-                            "id": 38010,
+                            "id": 37901,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38009,
+                                    "id": 37900,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7308:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38022,
+                                    "scope": 37913,
                                     "src": "7300:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11663,7 +11663,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 38008,
+                                        "id": 37899,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7300:7:153",
@@ -11679,17 +11679,17 @@ export const StdStyle = {
                             "src": "7299:14:153"
                         },
                         "returnParameters": {
-                            "id": 38013,
+                            "id": 37904,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38012,
+                                    "id": 37903,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38022,
+                                    "scope": 37913,
                                     "src": "7337:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11698,7 +11698,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38011,
+                                        "id": 37902,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7337:6:153",
@@ -11712,18 +11712,18 @@ export const StdStyle = {
                             ],
                             "src": "7336:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38037,
+                        "id": 37928,
                         "nodeType": "FunctionDefinition",
                         "src": "7404:108:153",
                         "nodes": [],
                         "body": {
-                            "id": 38036,
+                            "id": 37927,
                             "nodeType": "Block",
                             "src": "7466:46:153",
                             "nodes": [],
@@ -11734,11 +11734,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38032,
+                                                        "id": 37923,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38024,
+                                                        "referencedDeclaration": 37915,
                                                         "src": "7499:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -11754,18 +11754,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38030,
+                                                        "id": 37921,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7487:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38031,
+                                                    "id": 37922,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11773,14 +11773,14 @@ export const StdStyle = {
                                                     "memberLocation": "7490:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "7487:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38033,
+                                                "id": 37924,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11804,24 +11804,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38029,
+                                            "id": 37920,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7483:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38034,
+                                        "id": 37925,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11837,8 +11837,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38028,
-                                    "id": 38035,
+                                    "functionReturnParameters": 37919,
+                                    "id": 37926,
                                     "nodeType": "Return",
                                     "src": "7476:29:153"
                                 }
@@ -11850,17 +11850,17 @@ export const StdStyle = {
                         "name": "dim",
                         "nameLocation": "7413:3:153",
                         "parameters": {
-                            "id": 38025,
+                            "id": 37916,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38024,
+                                    "id": 37915,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7422:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38037,
+                                    "scope": 37928,
                                     "src": "7417:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11869,7 +11869,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 38023,
+                                        "id": 37914,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7417:4:153",
@@ -11884,17 +11884,17 @@ export const StdStyle = {
                             "src": "7416:11:153"
                         },
                         "returnParameters": {
-                            "id": 38028,
+                            "id": 37919,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38027,
+                                    "id": 37918,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38037,
+                                    "scope": 37928,
                                     "src": "7451:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11903,7 +11903,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38026,
+                                        "id": 37917,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7451:6:153",
@@ -11917,18 +11917,18 @@ export const StdStyle = {
                             ],
                             "src": "7450:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38052,
+                        "id": 37943,
                         "nodeType": "FunctionDefinition",
                         "src": "7518:121:153",
                         "nodes": [],
                         "body": {
-                            "id": 38051,
+                            "id": 37942,
                             "nodeType": "Block",
                             "src": "7593:46:153",
                             "nodes": [],
@@ -11939,11 +11939,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38047,
+                                                        "id": 37938,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38039,
+                                                        "referencedDeclaration": 37930,
                                                         "src": "7626:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -11959,18 +11959,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38045,
+                                                        "id": 37936,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7614:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38046,
+                                                    "id": 37937,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11978,14 +11978,14 @@ export const StdStyle = {
                                                     "memberLocation": "7617:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "7614:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38048,
+                                                "id": 37939,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12009,24 +12009,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38044,
+                                            "id": 37935,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7610:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38049,
+                                        "id": 37940,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12042,8 +12042,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38043,
-                                    "id": 38050,
+                                    "functionReturnParameters": 37934,
+                                    "id": 37941,
                                     "nodeType": "Return",
                                     "src": "7603:29:153"
                                 }
@@ -12055,17 +12055,17 @@ export const StdStyle = {
                         "name": "dimBytes",
                         "nameLocation": "7527:8:153",
                         "parameters": {
-                            "id": 38040,
+                            "id": 37931,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38039,
+                                    "id": 37930,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7549:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38052,
+                                    "scope": 37943,
                                     "src": "7536:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12074,7 +12074,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 38038,
+                                        "id": 37929,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7536:5:153",
@@ -12089,17 +12089,17 @@ export const StdStyle = {
                             "src": "7535:19:153"
                         },
                         "returnParameters": {
-                            "id": 38043,
+                            "id": 37934,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38042,
+                                    "id": 37933,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38052,
+                                    "scope": 37943,
                                     "src": "7578:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12108,7 +12108,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38041,
+                                        "id": 37932,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7578:6:153",
@@ -12122,18 +12122,18 @@ export const StdStyle = {
                             ],
                             "src": "7577:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38067,
+                        "id": 37958,
                         "nodeType": "FunctionDefinition",
                         "src": "7645:118:153",
                         "nodes": [],
                         "body": {
-                            "id": 38066,
+                            "id": 37957,
                             "nodeType": "Block",
                             "src": "7717:46:153",
                             "nodes": [],
@@ -12144,11 +12144,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38062,
+                                                        "id": 37953,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38054,
+                                                        "referencedDeclaration": 37945,
                                                         "src": "7750:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -12164,18 +12164,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38060,
+                                                        "id": 37951,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7738:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38061,
+                                                    "id": 37952,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12183,14 +12183,14 @@ export const StdStyle = {
                                                     "memberLocation": "7741:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "7738:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38063,
+                                                "id": 37954,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12214,24 +12214,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38059,
+                                            "id": 37950,
                                             "name": "dim",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                37977,
-                                                37992,
-                                                38007,
-                                                38022,
-                                                38037
+                                                37868,
+                                                37883,
+                                                37898,
+                                                37913,
+                                                37928
                                             ],
-                                            "referencedDeclaration": 37977,
+                                            "referencedDeclaration": 37868,
                                             "src": "7734:3:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38064,
+                                        "id": 37955,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12247,8 +12247,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38058,
-                                    "id": 38065,
+                                    "functionReturnParameters": 37949,
+                                    "id": 37956,
                                     "nodeType": "Return",
                                     "src": "7727:29:153"
                                 }
@@ -12260,17 +12260,17 @@ export const StdStyle = {
                         "name": "dimBytes32",
                         "nameLocation": "7654:10:153",
                         "parameters": {
-                            "id": 38055,
+                            "id": 37946,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38054,
+                                    "id": 37945,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7673:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38067,
+                                    "scope": 37958,
                                     "src": "7665:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12279,7 +12279,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 38053,
+                                        "id": 37944,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7665:7:153",
@@ -12294,17 +12294,17 @@ export const StdStyle = {
                             "src": "7664:14:153"
                         },
                         "returnParameters": {
-                            "id": 38058,
+                            "id": 37949,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38057,
+                                    "id": 37948,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38067,
+                                    "scope": 37958,
                                     "src": "7702:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12313,7 +12313,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38056,
+                                        "id": 37947,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7702:6:153",
@@ -12327,18 +12327,18 @@ export const StdStyle = {
                             ],
                             "src": "7701:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38080,
+                        "id": 37971,
                         "nodeType": "FunctionDefinition",
                         "src": "7769:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 38079,
+                            "id": 37970,
                             "nodeType": "Block",
                             "src": "7843:49:153",
                             "nodes": [],
@@ -12347,11 +12347,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 38075,
+                                                "id": 37966,
                                                 "name": "ITALIC",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37214,
+                                                "referencedDeclaration": 37105,
                                                 "src": "7872:6:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -12359,11 +12359,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 38076,
+                                                "id": 37967,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 38069,
+                                                "referencedDeclaration": 37960,
                                                 "src": "7880:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -12382,18 +12382,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38074,
+                                            "id": 37965,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "7860:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38077,
+                                        "id": 37968,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12409,8 +12409,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38073,
-                                    "id": 38078,
+                                    "functionReturnParameters": 37964,
+                                    "id": 37969,
                                     "nodeType": "Return",
                                     "src": "7853:32:153"
                                 }
@@ -12422,17 +12422,17 @@ export const StdStyle = {
                         "name": "italic",
                         "nameLocation": "7778:6:153",
                         "parameters": {
-                            "id": 38070,
+                            "id": 37961,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38069,
+                                    "id": 37960,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7799:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38080,
+                                    "scope": 37971,
                                     "src": "7785:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12441,7 +12441,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38068,
+                                        "id": 37959,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7785:6:153",
@@ -12456,17 +12456,17 @@ export const StdStyle = {
                             "src": "7784:20:153"
                         },
                         "returnParameters": {
-                            "id": 38073,
+                            "id": 37964,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38072,
+                                    "id": 37963,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38080,
+                                    "scope": 37971,
                                     "src": "7828:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12475,7 +12475,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38071,
+                                        "id": 37962,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7828:6:153",
@@ -12489,18 +12489,18 @@ export const StdStyle = {
                             ],
                             "src": "7827:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38095,
+                        "id": 37986,
                         "nodeType": "FunctionDefinition",
                         "src": "7898:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 38094,
+                            "id": 37985,
                             "nodeType": "Block",
                             "src": "7966:49:153",
                             "nodes": [],
@@ -12511,11 +12511,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38090,
+                                                        "id": 37981,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38082,
+                                                        "referencedDeclaration": 37973,
                                                         "src": "8002:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -12531,18 +12531,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38088,
+                                                        "id": 37979,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "7990:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38089,
+                                                    "id": 37980,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12550,14 +12550,14 @@ export const StdStyle = {
                                                     "memberLocation": "7993:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "7990:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38091,
+                                                "id": 37982,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12581,24 +12581,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38087,
+                                            "id": 37978,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "7983:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38092,
+                                        "id": 37983,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12614,8 +12614,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38086,
-                                    "id": 38093,
+                                    "functionReturnParameters": 37977,
+                                    "id": 37984,
                                     "nodeType": "Return",
                                     "src": "7976:32:153"
                                 }
@@ -12627,17 +12627,17 @@ export const StdStyle = {
                         "name": "italic",
                         "nameLocation": "7907:6:153",
                         "parameters": {
-                            "id": 38083,
+                            "id": 37974,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38082,
+                                    "id": 37973,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "7922:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38095,
+                                    "scope": 37986,
                                     "src": "7914:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12646,7 +12646,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 38081,
+                                        "id": 37972,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7914:7:153",
@@ -12661,17 +12661,17 @@ export const StdStyle = {
                             "src": "7913:14:153"
                         },
                         "returnParameters": {
-                            "id": 38086,
+                            "id": 37977,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38085,
+                                    "id": 37976,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38095,
+                                    "scope": 37986,
                                     "src": "7951:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12680,7 +12680,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38084,
+                                        "id": 37975,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7951:6:153",
@@ -12694,18 +12694,18 @@ export const StdStyle = {
                             ],
                             "src": "7950:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38110,
+                        "id": 38001,
                         "nodeType": "FunctionDefinition",
                         "src": "8021:116:153",
                         "nodes": [],
                         "body": {
-                            "id": 38109,
+                            "id": 38000,
                             "nodeType": "Block",
                             "src": "8088:49:153",
                             "nodes": [],
@@ -12716,11 +12716,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38105,
+                                                        "id": 37996,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38097,
+                                                        "referencedDeclaration": 37988,
                                                         "src": "8124:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -12736,18 +12736,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38103,
+                                                        "id": 37994,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8112:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38104,
+                                                    "id": 37995,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12755,14 +12755,14 @@ export const StdStyle = {
                                                     "memberLocation": "8115:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "8112:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38106,
+                                                "id": 37997,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12786,24 +12786,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38102,
+                                            "id": 37993,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "8105:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38107,
+                                        "id": 37998,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12819,8 +12819,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38101,
-                                    "id": 38108,
+                                    "functionReturnParameters": 37992,
+                                    "id": 37999,
                                     "nodeType": "Return",
                                     "src": "8098:32:153"
                                 }
@@ -12832,17 +12832,17 @@ export const StdStyle = {
                         "name": "italic",
                         "nameLocation": "8030:6:153",
                         "parameters": {
-                            "id": 38098,
+                            "id": 37989,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38097,
+                                    "id": 37988,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8044:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38110,
+                                    "scope": 38001,
                                     "src": "8037:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12851,7 +12851,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 38096,
+                                        "id": 37987,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8037:6:153",
@@ -12866,17 +12866,17 @@ export const StdStyle = {
                             "src": "8036:13:153"
                         },
                         "returnParameters": {
-                            "id": 38101,
+                            "id": 37992,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38100,
+                                    "id": 37991,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38110,
+                                    "scope": 38001,
                                     "src": "8073:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12885,7 +12885,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38099,
+                                        "id": 37990,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8073:6:153",
@@ -12899,18 +12899,18 @@ export const StdStyle = {
                             ],
                             "src": "8072:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38125,
+                        "id": 38016,
                         "nodeType": "FunctionDefinition",
                         "src": "8143:117:153",
                         "nodes": [],
                         "body": {
-                            "id": 38124,
+                            "id": 38015,
                             "nodeType": "Block",
                             "src": "8211:49:153",
                             "nodes": [],
@@ -12921,11 +12921,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38120,
+                                                        "id": 38011,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38112,
+                                                        "referencedDeclaration": 38003,
                                                         "src": "8247:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -12941,18 +12941,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38118,
+                                                        "id": 38009,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8235:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38119,
+                                                    "id": 38010,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12960,14 +12960,14 @@ export const StdStyle = {
                                                     "memberLocation": "8238:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "8235:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38121,
+                                                "id": 38012,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12991,24 +12991,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38117,
+                                            "id": 38008,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "8228:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38122,
+                                        "id": 38013,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13024,8 +13024,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38116,
-                                    "id": 38123,
+                                    "functionReturnParameters": 38007,
+                                    "id": 38014,
                                     "nodeType": "Return",
                                     "src": "8221:32:153"
                                 }
@@ -13037,17 +13037,17 @@ export const StdStyle = {
                         "name": "italic",
                         "nameLocation": "8152:6:153",
                         "parameters": {
-                            "id": 38113,
+                            "id": 38004,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38112,
+                                    "id": 38003,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8167:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38125,
+                                    "scope": 38016,
                                     "src": "8159:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13056,7 +13056,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 38111,
+                                        "id": 38002,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8159:7:153",
@@ -13072,17 +13072,17 @@ export const StdStyle = {
                             "src": "8158:14:153"
                         },
                         "returnParameters": {
-                            "id": 38116,
+                            "id": 38007,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38115,
+                                    "id": 38006,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38125,
+                                    "scope": 38016,
                                     "src": "8196:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13091,7 +13091,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38114,
+                                        "id": 38005,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8196:6:153",
@@ -13105,18 +13105,18 @@ export const StdStyle = {
                             ],
                             "src": "8195:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38140,
+                        "id": 38031,
                         "nodeType": "FunctionDefinition",
                         "src": "8266:114:153",
                         "nodes": [],
                         "body": {
-                            "id": 38139,
+                            "id": 38030,
                             "nodeType": "Block",
                             "src": "8331:49:153",
                             "nodes": [],
@@ -13127,11 +13127,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38135,
+                                                        "id": 38026,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38127,
+                                                        "referencedDeclaration": 38018,
                                                         "src": "8367:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -13147,18 +13147,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38133,
+                                                        "id": 38024,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8355:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38134,
+                                                    "id": 38025,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -13166,14 +13166,14 @@ export const StdStyle = {
                                                     "memberLocation": "8358:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "8355:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38136,
+                                                "id": 38027,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13197,24 +13197,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38132,
+                                            "id": 38023,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "8348:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38137,
+                                        "id": 38028,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13230,8 +13230,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38131,
-                                    "id": 38138,
+                                    "functionReturnParameters": 38022,
+                                    "id": 38029,
                                     "nodeType": "Return",
                                     "src": "8341:32:153"
                                 }
@@ -13243,17 +13243,17 @@ export const StdStyle = {
                         "name": "italic",
                         "nameLocation": "8275:6:153",
                         "parameters": {
-                            "id": 38128,
+                            "id": 38019,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38127,
+                                    "id": 38018,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8287:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38140,
+                                    "scope": 38031,
                                     "src": "8282:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13262,7 +13262,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 38126,
+                                        "id": 38017,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8282:4:153",
@@ -13277,17 +13277,17 @@ export const StdStyle = {
                             "src": "8281:11:153"
                         },
                         "returnParameters": {
-                            "id": 38131,
+                            "id": 38022,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38130,
+                                    "id": 38021,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38140,
+                                    "scope": 38031,
                                     "src": "8316:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13296,7 +13296,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38129,
+                                        "id": 38020,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8316:6:153",
@@ -13310,18 +13310,18 @@ export const StdStyle = {
                             ],
                             "src": "8315:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38155,
+                        "id": 38046,
                         "nodeType": "FunctionDefinition",
                         "src": "8386:127:153",
                         "nodes": [],
                         "body": {
-                            "id": 38154,
+                            "id": 38045,
                             "nodeType": "Block",
                             "src": "8464:49:153",
                             "nodes": [],
@@ -13332,11 +13332,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38150,
+                                                        "id": 38041,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38142,
+                                                        "referencedDeclaration": 38033,
                                                         "src": "8500:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -13352,18 +13352,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38148,
+                                                        "id": 38039,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8488:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38149,
+                                                    "id": 38040,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -13371,14 +13371,14 @@ export const StdStyle = {
                                                     "memberLocation": "8491:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "8488:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38151,
+                                                "id": 38042,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13402,24 +13402,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38147,
+                                            "id": 38038,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "8481:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38152,
+                                        "id": 38043,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13435,8 +13435,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38146,
-                                    "id": 38153,
+                                    "functionReturnParameters": 38037,
+                                    "id": 38044,
                                     "nodeType": "Return",
                                     "src": "8474:32:153"
                                 }
@@ -13448,17 +13448,17 @@ export const StdStyle = {
                         "name": "italicBytes",
                         "nameLocation": "8395:11:153",
                         "parameters": {
-                            "id": 38143,
+                            "id": 38034,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38142,
+                                    "id": 38033,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8420:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38155,
+                                    "scope": 38046,
                                     "src": "8407:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13467,7 +13467,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 38141,
+                                        "id": 38032,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8407:5:153",
@@ -13482,17 +13482,17 @@ export const StdStyle = {
                             "src": "8406:19:153"
                         },
                         "returnParameters": {
-                            "id": 38146,
+                            "id": 38037,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38145,
+                                    "id": 38036,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38155,
+                                    "scope": 38046,
                                     "src": "8449:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13501,7 +13501,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38144,
+                                        "id": 38035,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8449:6:153",
@@ -13515,18 +13515,18 @@ export const StdStyle = {
                             ],
                             "src": "8448:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38170,
+                        "id": 38061,
                         "nodeType": "FunctionDefinition",
                         "src": "8519:124:153",
                         "nodes": [],
                         "body": {
-                            "id": 38169,
+                            "id": 38060,
                             "nodeType": "Block",
                             "src": "8594:49:153",
                             "nodes": [],
@@ -13537,11 +13537,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38165,
+                                                        "id": 38056,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38157,
+                                                        "referencedDeclaration": 38048,
                                                         "src": "8630:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -13557,18 +13557,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38163,
+                                                        "id": 38054,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8618:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38164,
+                                                    "id": 38055,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -13576,14 +13576,14 @@ export const StdStyle = {
                                                     "memberLocation": "8621:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "8618:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38166,
+                                                "id": 38057,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13607,24 +13607,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38162,
+                                            "id": 38053,
                                             "name": "italic",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38080,
-                                                38095,
-                                                38110,
-                                                38125,
-                                                38140
+                                                37971,
+                                                37986,
+                                                38001,
+                                                38016,
+                                                38031
                                             ],
-                                            "referencedDeclaration": 38080,
+                                            "referencedDeclaration": 37971,
                                             "src": "8611:6:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38167,
+                                        "id": 38058,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13640,8 +13640,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38161,
-                                    "id": 38168,
+                                    "functionReturnParameters": 38052,
+                                    "id": 38059,
                                     "nodeType": "Return",
                                     "src": "8604:32:153"
                                 }
@@ -13653,17 +13653,17 @@ export const StdStyle = {
                         "name": "italicBytes32",
                         "nameLocation": "8528:13:153",
                         "parameters": {
-                            "id": 38158,
+                            "id": 38049,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38157,
+                                    "id": 38048,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8550:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38170,
+                                    "scope": 38061,
                                     "src": "8542:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13672,7 +13672,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 38156,
+                                        "id": 38047,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8542:7:153",
@@ -13687,17 +13687,17 @@ export const StdStyle = {
                             "src": "8541:14:153"
                         },
                         "returnParameters": {
-                            "id": 38161,
+                            "id": 38052,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38160,
+                                    "id": 38051,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38170,
+                                    "scope": 38061,
                                     "src": "8579:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13706,7 +13706,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38159,
+                                        "id": 38050,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8579:6:153",
@@ -13720,18 +13720,18 @@ export const StdStyle = {
                             ],
                             "src": "8578:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38183,
+                        "id": 38074,
                         "nodeType": "FunctionDefinition",
                         "src": "8649:129:153",
                         "nodes": [],
                         "body": {
-                            "id": 38182,
+                            "id": 38073,
                             "nodeType": "Block",
                             "src": "8726:52:153",
                             "nodes": [],
@@ -13740,11 +13740,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 38178,
+                                                "id": 38069,
                                                 "name": "UNDERLINE",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37217,
+                                                "referencedDeclaration": 37108,
                                                 "src": "8755:9:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -13752,11 +13752,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 38179,
+                                                "id": 38070,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 38172,
+                                                "referencedDeclaration": 38063,
                                                 "src": "8766:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -13775,18 +13775,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38177,
+                                            "id": 38068,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "8743:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38180,
+                                        "id": 38071,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13802,8 +13802,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38176,
-                                    "id": 38181,
+                                    "functionReturnParameters": 38067,
+                                    "id": 38072,
                                     "nodeType": "Return",
                                     "src": "8736:35:153"
                                 }
@@ -13815,17 +13815,17 @@ export const StdStyle = {
                         "name": "underline",
                         "nameLocation": "8658:9:153",
                         "parameters": {
-                            "id": 38173,
+                            "id": 38064,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38172,
+                                    "id": 38063,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8682:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38183,
+                                    "scope": 38074,
                                     "src": "8668:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13834,7 +13834,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38171,
+                                        "id": 38062,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8668:6:153",
@@ -13849,17 +13849,17 @@ export const StdStyle = {
                             "src": "8667:20:153"
                         },
                         "returnParameters": {
-                            "id": 38176,
+                            "id": 38067,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38175,
+                                    "id": 38066,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38183,
+                                    "scope": 38074,
                                     "src": "8711:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13868,7 +13868,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38174,
+                                        "id": 38065,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8711:6:153",
@@ -13882,18 +13882,18 @@ export const StdStyle = {
                             ],
                             "src": "8710:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38198,
+                        "id": 38089,
                         "nodeType": "FunctionDefinition",
                         "src": "8784:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 38197,
+                            "id": 38088,
                             "nodeType": "Block",
                             "src": "8855:52:153",
                             "nodes": [],
@@ -13904,11 +13904,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38193,
+                                                        "id": 38084,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38185,
+                                                        "referencedDeclaration": 38076,
                                                         "src": "8894:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -13924,18 +13924,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38191,
+                                                        "id": 38082,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "8882:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38192,
+                                                    "id": 38083,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -13943,14 +13943,14 @@ export const StdStyle = {
                                                     "memberLocation": "8885:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "8882:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38194,
+                                                "id": 38085,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13974,24 +13974,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38190,
+                                            "id": 38081,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "8872:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38195,
+                                        "id": 38086,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -14007,8 +14007,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38189,
-                                    "id": 38196,
+                                    "functionReturnParameters": 38080,
+                                    "id": 38087,
                                     "nodeType": "Return",
                                     "src": "8865:35:153"
                                 }
@@ -14020,17 +14020,17 @@ export const StdStyle = {
                         "name": "underline",
                         "nameLocation": "8793:9:153",
                         "parameters": {
-                            "id": 38186,
+                            "id": 38077,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38185,
+                                    "id": 38076,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8811:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38198,
+                                    "scope": 38089,
                                     "src": "8803:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14039,7 +14039,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 38184,
+                                        "id": 38075,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8803:7:153",
@@ -14054,17 +14054,17 @@ export const StdStyle = {
                             "src": "8802:14:153"
                         },
                         "returnParameters": {
-                            "id": 38189,
+                            "id": 38080,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38188,
+                                    "id": 38079,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38198,
+                                    "scope": 38089,
                                     "src": "8840:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14073,7 +14073,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38187,
+                                        "id": 38078,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8840:6:153",
@@ -14087,18 +14087,18 @@ export const StdStyle = {
                             ],
                             "src": "8839:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38213,
+                        "id": 38104,
                         "nodeType": "FunctionDefinition",
                         "src": "8913:122:153",
                         "nodes": [],
                         "body": {
-                            "id": 38212,
+                            "id": 38103,
                             "nodeType": "Block",
                             "src": "8983:52:153",
                             "nodes": [],
@@ -14109,11 +14109,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38208,
+                                                        "id": 38099,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38200,
+                                                        "referencedDeclaration": 38091,
                                                         "src": "9022:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -14129,18 +14129,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38206,
+                                                        "id": 38097,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9010:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38207,
+                                                    "id": 38098,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -14148,14 +14148,14 @@ export const StdStyle = {
                                                     "memberLocation": "9013:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "9010:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38209,
+                                                "id": 38100,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -14179,24 +14179,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38205,
+                                            "id": 38096,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "9000:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38210,
+                                        "id": 38101,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -14212,8 +14212,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38204,
-                                    "id": 38211,
+                                    "functionReturnParameters": 38095,
+                                    "id": 38102,
                                     "nodeType": "Return",
                                     "src": "8993:35:153"
                                 }
@@ -14225,17 +14225,17 @@ export const StdStyle = {
                         "name": "underline",
                         "nameLocation": "8922:9:153",
                         "parameters": {
-                            "id": 38201,
+                            "id": 38092,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38200,
+                                    "id": 38091,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "8939:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38213,
+                                    "scope": 38104,
                                     "src": "8932:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14244,7 +14244,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 38199,
+                                        "id": 38090,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8932:6:153",
@@ -14259,17 +14259,17 @@ export const StdStyle = {
                             "src": "8931:13:153"
                         },
                         "returnParameters": {
-                            "id": 38204,
+                            "id": 38095,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38203,
+                                    "id": 38094,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38213,
+                                    "scope": 38104,
                                     "src": "8968:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14278,7 +14278,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38202,
+                                        "id": 38093,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8968:6:153",
@@ -14292,18 +14292,18 @@ export const StdStyle = {
                             ],
                             "src": "8967:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38228,
+                        "id": 38119,
                         "nodeType": "FunctionDefinition",
                         "src": "9041:123:153",
                         "nodes": [],
                         "body": {
-                            "id": 38227,
+                            "id": 38118,
                             "nodeType": "Block",
                             "src": "9112:52:153",
                             "nodes": [],
@@ -14314,11 +14314,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38223,
+                                                        "id": 38114,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38215,
+                                                        "referencedDeclaration": 38106,
                                                         "src": "9151:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -14334,18 +14334,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38221,
+                                                        "id": 38112,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9139:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38222,
+                                                    "id": 38113,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -14353,14 +14353,14 @@ export const StdStyle = {
                                                     "memberLocation": "9142:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "9139:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38224,
+                                                "id": 38115,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -14384,24 +14384,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38220,
+                                            "id": 38111,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "9129:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38225,
+                                        "id": 38116,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -14417,8 +14417,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38219,
-                                    "id": 38226,
+                                    "functionReturnParameters": 38110,
+                                    "id": 38117,
                                     "nodeType": "Return",
                                     "src": "9122:35:153"
                                 }
@@ -14430,17 +14430,17 @@ export const StdStyle = {
                         "name": "underline",
                         "nameLocation": "9050:9:153",
                         "parameters": {
-                            "id": 38216,
+                            "id": 38107,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38215,
+                                    "id": 38106,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9068:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38228,
+                                    "scope": 38119,
                                     "src": "9060:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14449,7 +14449,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 38214,
+                                        "id": 38105,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9060:7:153",
@@ -14465,17 +14465,17 @@ export const StdStyle = {
                             "src": "9059:14:153"
                         },
                         "returnParameters": {
-                            "id": 38219,
+                            "id": 38110,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38218,
+                                    "id": 38109,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38228,
+                                    "scope": 38119,
                                     "src": "9097:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14484,7 +14484,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38217,
+                                        "id": 38108,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9097:6:153",
@@ -14498,18 +14498,18 @@ export const StdStyle = {
                             ],
                             "src": "9096:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38243,
+                        "id": 38134,
                         "nodeType": "FunctionDefinition",
                         "src": "9170:120:153",
                         "nodes": [],
                         "body": {
-                            "id": 38242,
+                            "id": 38133,
                             "nodeType": "Block",
                             "src": "9238:52:153",
                             "nodes": [],
@@ -14520,11 +14520,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38238,
+                                                        "id": 38129,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38230,
+                                                        "referencedDeclaration": 38121,
                                                         "src": "9277:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -14540,18 +14540,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38236,
+                                                        "id": 38127,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9265:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38237,
+                                                    "id": 38128,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -14559,14 +14559,14 @@ export const StdStyle = {
                                                     "memberLocation": "9268:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "9265:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38239,
+                                                "id": 38130,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -14590,24 +14590,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38235,
+                                            "id": 38126,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "9255:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38240,
+                                        "id": 38131,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -14623,8 +14623,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38234,
-                                    "id": 38241,
+                                    "functionReturnParameters": 38125,
+                                    "id": 38132,
                                     "nodeType": "Return",
                                     "src": "9248:35:153"
                                 }
@@ -14636,17 +14636,17 @@ export const StdStyle = {
                         "name": "underline",
                         "nameLocation": "9179:9:153",
                         "parameters": {
-                            "id": 38231,
+                            "id": 38122,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38230,
+                                    "id": 38121,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9194:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38243,
+                                    "scope": 38134,
                                     "src": "9189:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14655,7 +14655,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 38229,
+                                        "id": 38120,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9189:4:153",
@@ -14670,17 +14670,17 @@ export const StdStyle = {
                             "src": "9188:11:153"
                         },
                         "returnParameters": {
-                            "id": 38234,
+                            "id": 38125,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38233,
+                                    "id": 38124,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38243,
+                                    "scope": 38134,
                                     "src": "9223:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14689,7 +14689,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38232,
+                                        "id": 38123,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9223:6:153",
@@ -14703,18 +14703,18 @@ export const StdStyle = {
                             ],
                             "src": "9222:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38258,
+                        "id": 38149,
                         "nodeType": "FunctionDefinition",
                         "src": "9296:133:153",
                         "nodes": [],
                         "body": {
-                            "id": 38257,
+                            "id": 38148,
                             "nodeType": "Block",
                             "src": "9377:52:153",
                             "nodes": [],
@@ -14725,11 +14725,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38253,
+                                                        "id": 38144,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38245,
+                                                        "referencedDeclaration": 38136,
                                                         "src": "9416:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -14745,18 +14745,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38251,
+                                                        "id": 38142,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9404:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38252,
+                                                    "id": 38143,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -14764,14 +14764,14 @@ export const StdStyle = {
                                                     "memberLocation": "9407:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "9404:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38254,
+                                                "id": 38145,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -14795,24 +14795,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38250,
+                                            "id": 38141,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "9394:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38255,
+                                        "id": 38146,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -14828,8 +14828,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38249,
-                                    "id": 38256,
+                                    "functionReturnParameters": 38140,
+                                    "id": 38147,
                                     "nodeType": "Return",
                                     "src": "9387:35:153"
                                 }
@@ -14841,17 +14841,17 @@ export const StdStyle = {
                         "name": "underlineBytes",
                         "nameLocation": "9305:14:153",
                         "parameters": {
-                            "id": 38246,
+                            "id": 38137,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38245,
+                                    "id": 38136,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9333:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38258,
+                                    "scope": 38149,
                                     "src": "9320:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14860,7 +14860,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 38244,
+                                        "id": 38135,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9320:5:153",
@@ -14875,17 +14875,17 @@ export const StdStyle = {
                             "src": "9319:19:153"
                         },
                         "returnParameters": {
-                            "id": 38249,
+                            "id": 38140,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38248,
+                                    "id": 38139,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38258,
+                                    "scope": 38149,
                                     "src": "9362:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14894,7 +14894,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38247,
+                                        "id": 38138,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9362:6:153",
@@ -14908,18 +14908,18 @@ export const StdStyle = {
                             ],
                             "src": "9361:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38273,
+                        "id": 38164,
                         "nodeType": "FunctionDefinition",
                         "src": "9435:130:153",
                         "nodes": [],
                         "body": {
-                            "id": 38272,
+                            "id": 38163,
                             "nodeType": "Block",
                             "src": "9513:52:153",
                             "nodes": [],
@@ -14930,11 +14930,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38268,
+                                                        "id": 38159,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38260,
+                                                        "referencedDeclaration": 38151,
                                                         "src": "9552:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -14950,18 +14950,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38266,
+                                                        "id": 38157,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9540:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38267,
+                                                    "id": 38158,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -14969,14 +14969,14 @@ export const StdStyle = {
                                                     "memberLocation": "9543:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "9540:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38269,
+                                                "id": 38160,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -15000,24 +15000,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38265,
+                                            "id": 38156,
                                             "name": "underline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38183,
-                                                38198,
-                                                38213,
-                                                38228,
-                                                38243
+                                                38074,
+                                                38089,
+                                                38104,
+                                                38119,
+                                                38134
                                             ],
-                                            "referencedDeclaration": 38183,
+                                            "referencedDeclaration": 38074,
                                             "src": "9530:9:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38270,
+                                        "id": 38161,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -15033,8 +15033,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38264,
-                                    "id": 38271,
+                                    "functionReturnParameters": 38155,
+                                    "id": 38162,
                                     "nodeType": "Return",
                                     "src": "9523:35:153"
                                 }
@@ -15046,17 +15046,17 @@ export const StdStyle = {
                         "name": "underlineBytes32",
                         "nameLocation": "9444:16:153",
                         "parameters": {
-                            "id": 38261,
+                            "id": 38152,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38260,
+                                    "id": 38151,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9469:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38273,
+                                    "scope": 38164,
                                     "src": "9461:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15065,7 +15065,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 38259,
+                                        "id": 38150,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9461:7:153",
@@ -15080,17 +15080,17 @@ export const StdStyle = {
                             "src": "9460:14:153"
                         },
                         "returnParameters": {
-                            "id": 38264,
+                            "id": 38155,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38263,
+                                    "id": 38154,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38273,
+                                    "scope": 38164,
                                     "src": "9498:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15099,7 +15099,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38262,
+                                        "id": 38153,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9498:6:153",
@@ -15113,18 +15113,18 @@ export const StdStyle = {
                             ],
                             "src": "9497:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38286,
+                        "id": 38177,
                         "nodeType": "FunctionDefinition",
                         "src": "9571:125:153",
                         "nodes": [],
                         "body": {
-                            "id": 38285,
+                            "id": 38176,
                             "nodeType": "Block",
                             "src": "9646:50:153",
                             "nodes": [],
@@ -15133,11 +15133,11 @@ export const StdStyle = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 38281,
+                                                "id": 38172,
                                                 "name": "INVERSE",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 37220,
+                                                "referencedDeclaration": 37111,
                                                 "src": "9675:7:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -15145,11 +15145,11 @@ export const StdStyle = {
                                                 }
                                             },
                                             {
-                                                "id": 38282,
+                                                "id": 38173,
                                                 "name": "self",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 38275,
+                                                "referencedDeclaration": 38166,
                                                 "src": "9684:4:153",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -15168,18 +15168,18 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38280,
+                                            "id": 38171,
                                             "name": "styleConcat",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 37243,
+                                            "referencedDeclaration": 37134,
                                             "src": "9663:11:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38283,
+                                        "id": 38174,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -15195,8 +15195,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38279,
-                                    "id": 38284,
+                                    "functionReturnParameters": 38170,
+                                    "id": 38175,
                                     "nodeType": "Return",
                                     "src": "9656:33:153"
                                 }
@@ -15208,17 +15208,17 @@ export const StdStyle = {
                         "name": "inverse",
                         "nameLocation": "9580:7:153",
                         "parameters": {
-                            "id": 38276,
+                            "id": 38167,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38275,
+                                    "id": 38166,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9602:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38286,
+                                    "scope": 38177,
                                     "src": "9588:18:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15227,7 +15227,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38274,
+                                        "id": 38165,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9588:6:153",
@@ -15242,17 +15242,17 @@ export const StdStyle = {
                             "src": "9587:20:153"
                         },
                         "returnParameters": {
-                            "id": 38279,
+                            "id": 38170,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38278,
+                                    "id": 38169,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38286,
+                                    "scope": 38177,
                                     "src": "9631:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15261,7 +15261,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38277,
+                                        "id": 38168,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9631:6:153",
@@ -15275,18 +15275,18 @@ export const StdStyle = {
                             ],
                             "src": "9630:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38301,
+                        "id": 38192,
                         "nodeType": "FunctionDefinition",
                         "src": "9702:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 38300,
+                            "id": 38191,
                             "nodeType": "Block",
                             "src": "9771:50:153",
                             "nodes": [],
@@ -15297,11 +15297,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38296,
+                                                        "id": 38187,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38288,
+                                                        "referencedDeclaration": 38179,
                                                         "src": "9808:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -15317,18 +15317,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38294,
+                                                        "id": 38185,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9796:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38295,
+                                                    "id": 38186,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -15336,14 +15336,14 @@ export const StdStyle = {
                                                     "memberLocation": "9799:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39873,
+                                                    "referencedDeclaration": 39764,
                                                     "src": "9796:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38297,
+                                                "id": 38188,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -15367,24 +15367,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38293,
+                                            "id": 38184,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "9788:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38298,
+                                        "id": 38189,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -15400,8 +15400,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38292,
-                                    "id": 38299,
+                                    "functionReturnParameters": 38183,
+                                    "id": 38190,
                                     "nodeType": "Return",
                                     "src": "9781:33:153"
                                 }
@@ -15413,17 +15413,17 @@ export const StdStyle = {
                         "name": "inverse",
                         "nameLocation": "9711:7:153",
                         "parameters": {
-                            "id": 38289,
+                            "id": 38180,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38288,
+                                    "id": 38179,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9727:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38301,
+                                    "scope": 38192,
                                     "src": "9719:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15432,7 +15432,7 @@ export const StdStyle = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 38287,
+                                        "id": 38178,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9719:7:153",
@@ -15447,17 +15447,17 @@ export const StdStyle = {
                             "src": "9718:14:153"
                         },
                         "returnParameters": {
-                            "id": 38292,
+                            "id": 38183,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38291,
+                                    "id": 38182,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38301,
+                                    "scope": 38192,
                                     "src": "9756:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15466,7 +15466,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38290,
+                                        "id": 38181,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9756:6:153",
@@ -15480,18 +15480,18 @@ export const StdStyle = {
                             ],
                             "src": "9755:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38316,
+                        "id": 38207,
                         "nodeType": "FunctionDefinition",
                         "src": "9827:118:153",
                         "nodes": [],
                         "body": {
-                            "id": 38315,
+                            "id": 38206,
                             "nodeType": "Block",
                             "src": "9895:50:153",
                             "nodes": [],
@@ -15502,11 +15502,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38311,
+                                                        "id": 38202,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38303,
+                                                        "referencedDeclaration": 38194,
                                                         "src": "9932:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -15522,18 +15522,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38309,
+                                                        "id": 38200,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "9920:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38310,
+                                                    "id": 38201,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -15541,14 +15541,14 @@ export const StdStyle = {
                                                     "memberLocation": "9923:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39880,
+                                                    "referencedDeclaration": 39771,
                                                     "src": "9920:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (int256) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38312,
+                                                "id": 38203,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -15572,24 +15572,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38308,
+                                            "id": 38199,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "9912:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38313,
+                                        "id": 38204,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -15605,8 +15605,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38307,
-                                    "id": 38314,
+                                    "functionReturnParameters": 38198,
+                                    "id": 38205,
                                     "nodeType": "Return",
                                     "src": "9905:33:153"
                                 }
@@ -15618,17 +15618,17 @@ export const StdStyle = {
                         "name": "inverse",
                         "nameLocation": "9836:7:153",
                         "parameters": {
-                            "id": 38304,
+                            "id": 38195,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38303,
+                                    "id": 38194,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9851:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38316,
+                                    "scope": 38207,
                                     "src": "9844:11:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15637,7 +15637,7 @@ export const StdStyle = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 38302,
+                                        "id": 38193,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9844:6:153",
@@ -15652,17 +15652,17 @@ export const StdStyle = {
                             "src": "9843:13:153"
                         },
                         "returnParameters": {
-                            "id": 38307,
+                            "id": 38198,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38306,
+                                    "id": 38197,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38316,
+                                    "scope": 38207,
                                     "src": "9880:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15671,7 +15671,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38305,
+                                        "id": 38196,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9880:6:153",
@@ -15685,18 +15685,18 @@ export const StdStyle = {
                             ],
                             "src": "9879:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38331,
+                        "id": 38222,
                         "nodeType": "FunctionDefinition",
                         "src": "9951:119:153",
                         "nodes": [],
                         "body": {
-                            "id": 38330,
+                            "id": 38221,
                             "nodeType": "Block",
                             "src": "10020:50:153",
                             "nodes": [],
@@ -15707,11 +15707,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38326,
+                                                        "id": 38217,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38318,
+                                                        "referencedDeclaration": 38209,
                                                         "src": "10057:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -15727,18 +15727,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38324,
+                                                        "id": 38215,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "10045:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38325,
+                                                    "id": 38216,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -15746,14 +15746,14 @@ export const StdStyle = {
                                                     "memberLocation": "10048:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39845,
+                                                    "referencedDeclaration": 39736,
                                                     "src": "10045:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (address) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38327,
+                                                "id": 38218,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -15777,24 +15777,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38323,
+                                            "id": 38214,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "10037:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38328,
+                                        "id": 38219,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -15810,8 +15810,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38322,
-                                    "id": 38329,
+                                    "functionReturnParameters": 38213,
+                                    "id": 38220,
                                     "nodeType": "Return",
                                     "src": "10030:33:153"
                                 }
@@ -15823,17 +15823,17 @@ export const StdStyle = {
                         "name": "inverse",
                         "nameLocation": "9960:7:153",
                         "parameters": {
-                            "id": 38319,
+                            "id": 38210,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38318,
+                                    "id": 38209,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "9976:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38331,
+                                    "scope": 38222,
                                     "src": "9968:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15842,7 +15842,7 @@ export const StdStyle = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 38317,
+                                        "id": 38208,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9968:7:153",
@@ -15858,17 +15858,17 @@ export const StdStyle = {
                             "src": "9967:14:153"
                         },
                         "returnParameters": {
-                            "id": 38322,
+                            "id": 38213,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38321,
+                                    "id": 38212,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38331,
+                                    "scope": 38222,
                                     "src": "10005:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15877,7 +15877,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38320,
+                                        "id": 38211,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10005:6:153",
@@ -15891,18 +15891,18 @@ export const StdStyle = {
                             ],
                             "src": "10004:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38346,
+                        "id": 38237,
                         "nodeType": "FunctionDefinition",
                         "src": "10076:116:153",
                         "nodes": [],
                         "body": {
-                            "id": 38345,
+                            "id": 38236,
                             "nodeType": "Block",
                             "src": "10142:50:153",
                             "nodes": [],
@@ -15913,11 +15913,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38341,
+                                                        "id": 38232,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38333,
+                                                        "referencedDeclaration": 38224,
                                                         "src": "10179:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
@@ -15933,18 +15933,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38339,
+                                                        "id": 38230,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "10167:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38340,
+                                                    "id": 38231,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -15952,14 +15952,14 @@ export const StdStyle = {
                                                     "memberLocation": "10170:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39866,
+                                                    "referencedDeclaration": 39757,
                                                     "src": "10167:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bool) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38342,
+                                                "id": 38233,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -15983,24 +15983,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38338,
+                                            "id": 38229,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "10159:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38343,
+                                        "id": 38234,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -16016,8 +16016,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38337,
-                                    "id": 38344,
+                                    "functionReturnParameters": 38228,
+                                    "id": 38235,
                                     "nodeType": "Return",
                                     "src": "10152:33:153"
                                 }
@@ -16029,17 +16029,17 @@ export const StdStyle = {
                         "name": "inverse",
                         "nameLocation": "10085:7:153",
                         "parameters": {
-                            "id": 38334,
+                            "id": 38225,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38333,
+                                    "id": 38224,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "10098:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38346,
+                                    "scope": 38237,
                                     "src": "10093:9:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -16048,7 +16048,7 @@ export const StdStyle = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 38332,
+                                        "id": 38223,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10093:4:153",
@@ -16063,17 +16063,17 @@ export const StdStyle = {
                             "src": "10092:11:153"
                         },
                         "returnParameters": {
-                            "id": 38337,
+                            "id": 38228,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38336,
+                                    "id": 38227,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38346,
+                                    "scope": 38237,
                                     "src": "10127:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16082,7 +16082,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38335,
+                                        "id": 38226,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10127:6:153",
@@ -16096,18 +16096,18 @@ export const StdStyle = {
                             ],
                             "src": "10126:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38361,
+                        "id": 38252,
                         "nodeType": "FunctionDefinition",
                         "src": "10198:129:153",
                         "nodes": [],
                         "body": {
-                            "id": 38360,
+                            "id": 38251,
                             "nodeType": "Block",
                             "src": "10277:50:153",
                             "nodes": [],
@@ -16118,11 +16118,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38356,
+                                                        "id": 38247,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38348,
+                                                        "referencedDeclaration": 38239,
                                                         "src": "10314:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -16138,18 +16138,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38354,
+                                                        "id": 38245,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "10302:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38355,
+                                                    "id": 38246,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -16157,14 +16157,14 @@ export const StdStyle = {
                                                     "memberLocation": "10305:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39852,
+                                                    "referencedDeclaration": 39743,
                                                     "src": "10302:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes memory) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38357,
+                                                "id": 38248,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -16188,24 +16188,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38353,
+                                            "id": 38244,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "10294:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38358,
+                                        "id": 38249,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -16221,8 +16221,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38352,
-                                    "id": 38359,
+                                    "functionReturnParameters": 38243,
+                                    "id": 38250,
                                     "nodeType": "Return",
                                     "src": "10287:33:153"
                                 }
@@ -16234,17 +16234,17 @@ export const StdStyle = {
                         "name": "inverseBytes",
                         "nameLocation": "10207:12:153",
                         "parameters": {
-                            "id": 38349,
+                            "id": 38240,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38348,
+                                    "id": 38239,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "10233:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38361,
+                                    "scope": 38252,
                                     "src": "10220:17:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16253,7 +16253,7 @@ export const StdStyle = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 38347,
+                                        "id": 38238,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10220:5:153",
@@ -16268,17 +16268,17 @@ export const StdStyle = {
                             "src": "10219:19:153"
                         },
                         "returnParameters": {
-                            "id": 38352,
+                            "id": 38243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38351,
+                                    "id": 38242,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38361,
+                                    "scope": 38252,
                                     "src": "10262:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16287,7 +16287,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38350,
+                                        "id": 38241,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10262:6:153",
@@ -16301,18 +16301,18 @@ export const StdStyle = {
                             ],
                             "src": "10261:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 38376,
+                        "id": 38267,
                         "nodeType": "FunctionDefinition",
                         "src": "10333:126:153",
                         "nodes": [],
                         "body": {
-                            "id": 38375,
+                            "id": 38266,
                             "nodeType": "Block",
                             "src": "10409:50:153",
                             "nodes": [],
@@ -16323,11 +16323,11 @@ export const StdStyle = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 38371,
+                                                        "id": 38262,
                                                         "name": "self",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 38363,
+                                                        "referencedDeclaration": 38254,
                                                         "src": "10446:4:153",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -16343,18 +16343,18 @@ export const StdStyle = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 38369,
+                                                        "id": 38260,
                                                         "name": "vm",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 37187,
+                                                        "referencedDeclaration": 37078,
                                                         "src": "10434:2:153",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                                                             "typeString": "contract VmSafe"
                                                         }
                                                     },
-                                                    "id": 38370,
+                                                    "id": 38261,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -16362,14 +16362,14 @@ export const StdStyle = {
                                                     "memberLocation": "10437:8:153",
                                                     "memberName": "toString",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 39859,
+                                                    "referencedDeclaration": 39750,
                                                     "src": "10434:11:153",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                         "typeString": "function (bytes32) pure external returns (string memory)"
                                                     }
                                                 },
-                                                "id": 38372,
+                                                "id": 38263,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -16393,24 +16393,24 @@ export const StdStyle = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 38368,
+                                            "id": 38259,
                                             "name": "inverse",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                38286,
-                                                38301,
-                                                38316,
-                                                38331,
-                                                38346
+                                                38177,
+                                                38192,
+                                                38207,
+                                                38222,
+                                                38237
                                             ],
-                                            "referencedDeclaration": 38286,
+                                            "referencedDeclaration": 38177,
                                             "src": "10426:7:153",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 38373,
+                                        "id": 38264,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -16426,8 +16426,8 @@ export const StdStyle = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 38367,
-                                    "id": 38374,
+                                    "functionReturnParameters": 38258,
+                                    "id": 38265,
                                     "nodeType": "Return",
                                     "src": "10419:33:153"
                                 }
@@ -16439,17 +16439,17 @@ export const StdStyle = {
                         "name": "inverseBytes32",
                         "nameLocation": "10342:14:153",
                         "parameters": {
-                            "id": 38364,
+                            "id": 38255,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38363,
+                                    "id": 38254,
                                     "mutability": "mutable",
                                     "name": "self",
                                     "nameLocation": "10365:4:153",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38376,
+                                    "scope": 38267,
                                     "src": "10357:12:153",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -16458,7 +16458,7 @@ export const StdStyle = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 38362,
+                                        "id": 38253,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10357:7:153",
@@ -16473,17 +16473,17 @@ export const StdStyle = {
                             "src": "10356:14:153"
                         },
                         "returnParameters": {
-                            "id": 38367,
+                            "id": 38258,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 38366,
+                                    "id": 38257,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 38376,
+                                    "scope": 38267,
                                     "src": "10394:13:153",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16492,7 +16492,7 @@ export const StdStyle = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 38365,
+                                        "id": 38256,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10394:6:153",
@@ -16506,7 +16506,7 @@ export const StdStyle = {
                             ],
                             "src": "10393:15:153"
                         },
-                        "scope": 38377,
+                        "scope": 38268,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -16519,11 +16519,11 @@ export const StdStyle = {
                 "contractKind": "library",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    38377
+                    38268
                 ],
                 "name": "StdStyle",
                 "nameLocation": "108:8:153",
-                "scope": 38378,
+                "scope": 38269,
                 "usedErrors": [],
                 "usedEvents": []
             }

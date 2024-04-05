@@ -245,6 +245,12 @@ export const HyperdriveMultiToken = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
+                    "name": "checkpointVaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
                     "name": "vaultSharePrice",
                     "type": "uint256"
                 },
@@ -654,7 +660,7 @@ export const HyperdriveMultiToken = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Our architecture maintains ERC20 compatibility by allowing users to      access their balances and approvals through ERC20 forwarding contracts      deployed by the registered forwarder factory. To ensure that only the      ERC20 forwarders can call the bridge endpoints, we verify that the      create2 pre-image of the caller address is the ERC20 forwarder bytecode      and the token ID.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"HyperdriveMultiToken\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the MultiToken accounting that Hyperdrive uses to track         user's positions. MultiToken maintains a set of balances and         approvals for a list of sub-tokens specified by an asset ID. This         token is mostly ERC1155 compliant; however, we remove on transfer         callbacks and safe transfer because of the risk of external calls to         untrusted code.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveMultiToken.sol\":\"HyperdriveMultiToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f\",\"dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Our architecture maintains ERC20 compatibility by allowing users to      access their balances and approvals through ERC20 forwarding contracts      deployed by the registered forwarder factory. To ensure that only the      ERC20 forwarders can call the bridge endpoints, we verify that the      create2 pre-image of the caller address is the ERC20 forwarder bytecode      and the token ID.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"HyperdriveMultiToken\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the MultiToken accounting that Hyperdrive uses to track         user's positions. MultiToken maintains a set of balances and         approvals for a list of sub-tokens specified by an asset ID. This         token is mostly ERC1155 compliant; however, we remove on transfer         callbacks and safe transfer because of the risk of external calls to         untrusted code.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveMultiToken.sol\":\"HyperdriveMultiToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a\",\"dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -902,6 +908,12 @@ export const HyperdriveMultiToken = {
                             "name": "checkpointTime",
                             "type": "uint256",
                             "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "checkpointVaultSharePrice",
+                            "type": "uint256",
+                            "indexed": false
                         },
                         {
                             "internalType": "uint256",
@@ -1364,10 +1376,10 @@ export const HyperdriveMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
+                "keccak256": "0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784",
                 "urls": [
-                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
-                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
+                    "bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa",
+                    "dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1476,10 +1488,10 @@ export const HyperdriveMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067",
+                "keccak256": "0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed",
                 "urls": [
-                    "bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f",
-                    "dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ"
+                    "bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a",
+                    "dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1492,10 +1504,10 @@ export const HyperdriveMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891",
+                "keccak256": "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1",
                 "urls": [
-                    "bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c",
-                    "dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy"
+                    "bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9",
+                    "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1512,26 +1524,26 @@ export const HyperdriveMultiToken = {
     },
     "ast": {
         "absolutePath": "contracts/src/internal/HyperdriveMultiToken.sol",
-        "id": 16780,
+        "id": 16683,
         "exportedSymbols": {
             "HyperdriveBase": [
-                13995
+                13835
             ],
             "HyperdriveMultiToken": [
-                16779
+                16682
             ],
             "IHyperdrive": [
-                10676
+                10506
             ],
             "IHyperdriveEvents": [
-                11205
+                11037
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:10777:116",
         "nodes": [
             {
-                "id": 16297,
+                "id": 16200,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:116",
                 "nodes": [],
@@ -1542,23 +1554,23 @@ export const HyperdriveMultiToken = {
                 ]
             },
             {
-                "id": 16299,
+                "id": 16202,
                 "nodeType": "ImportDirective",
                 "src": "64:60:116",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 16780,
-                "sourceUnit": 10677,
+                "scope": 16683,
+                "sourceUnit": 10507,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 16298,
+                            "id": 16201,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10676,
+                            "referencedDeclaration": 10506,
                             "src": "73:11:116",
                             "typeDescriptions": {}
                         },
@@ -1568,23 +1580,23 @@ export const HyperdriveMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 16301,
+                "id": 16204,
                 "nodeType": "ImportDirective",
                 "src": "125:72:116",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdriveEvents.sol",
                 "file": "../interfaces/IHyperdriveEvents.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 16780,
-                "sourceUnit": 11206,
+                "scope": 16683,
+                "sourceUnit": 11038,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 16300,
+                            "id": 16203,
                             "name": "IHyperdriveEvents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11205,
+                            "referencedDeclaration": 11037,
                             "src": "134:17:116",
                             "typeDescriptions": {}
                         },
@@ -1594,23 +1606,23 @@ export const HyperdriveMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 16303,
+                "id": 16206,
                 "nodeType": "ImportDirective",
                 "src": "198:54:116",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
                 "file": "./HyperdriveBase.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 16780,
-                "sourceUnit": 13996,
+                "scope": 16683,
+                "sourceUnit": 13836,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 16302,
+                            "id": 16205,
                             "name": "HyperdriveBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13995,
+                            "referencedDeclaration": 13835,
                             "src": "207:14:116",
                             "typeDescriptions": {}
                         },
@@ -1620,17 +1632,17 @@ export const HyperdriveMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 16779,
+                "id": 16682,
                 "nodeType": "ContractDefinition",
                 "src": "1364:9451:116",
                 "nodes": [
                     {
-                        "id": 16328,
+                        "id": 16231,
                         "nodeType": "ModifierDefinition",
                         "src": "1603:361:116",
                         "nodes": [],
                         "body": {
-                            "id": 16327,
+                            "id": 16230,
                             "nodeType": "Block",
                             "src": "1640:324:116",
                             "nodes": [],
@@ -1641,14 +1653,14 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 16318,
+                                        "id": 16221,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 16313,
+                                                "id": 16216,
                                                 "name": "msg",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1659,7 +1671,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "msg"
                                                 }
                                             },
-                                            "id": 16314,
+                                            "id": 16217,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1678,11 +1690,11 @@ export const HyperdriveMultiToken = {
                                         "rightExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 16316,
+                                                    "id": 16219,
                                                     "name": "tokenID",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16311,
+                                                    "referencedDeclaration": 16214,
                                                     "src": "1829:7:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1697,18 +1709,18 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 16315,
+                                                "id": 16218,
                                                 "name": "_deriveForwarderAddress",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16778,
+                                                "referencedDeclaration": 16681,
                                                 "src": "1805:23:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_address_$",
                                                     "typeString": "function (uint256) view returns (address)"
                                                 }
                                             },
-                                            "id": 16317,
+                                            "id": 16220,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1730,11 +1742,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16325,
+                                    "id": 16228,
                                     "nodeType": "IfStatement",
                                     "src": "1787:116:116",
                                     "trueBody": {
-                                        "id": 16324,
+                                        "id": 16227,
                                         "nodeType": "Block",
                                         "src": "1839:64:116",
                                         "statements": [
@@ -1744,18 +1756,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16319,
+                                                            "id": 16222,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "1860:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16321,
+                                                        "id": 16224,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1763,14 +1775,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "1872:18:116",
                                                         "memberName": "InvalidERC20Bridge",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10562,
+                                                        "referencedDeclaration": 10392,
                                                         "src": "1860:30:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16322,
+                                                    "id": 16225,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1786,7 +1798,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16323,
+                                                "id": 16226,
                                                 "nodeType": "RevertStatement",
                                                 "src": "1853:39:116"
                                             }
@@ -1794,14 +1806,14 @@ export const HyperdriveMultiToken = {
                                     }
                                 },
                                 {
-                                    "id": 16326,
+                                    "id": 16229,
                                     "nodeType": "PlaceholderStatement",
                                     "src": "1956:1:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16309,
+                            "id": 16212,
                             "nodeType": "StructuredDocumentation",
                             "src": "1446:152:116",
                             "text": "@notice This modifier checks the caller is the create2 validated\n         ERC20 bridge.\n @param tokenID The internal token identifier."
@@ -1809,17 +1821,17 @@ export const HyperdriveMultiToken = {
                         "name": "onlyLinker",
                         "nameLocation": "1612:10:116",
                         "parameters": {
-                            "id": 16312,
+                            "id": 16215,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16311,
+                                    "id": 16214,
                                     "mutability": "mutable",
                                     "name": "tokenID",
                                     "nameLocation": "1631:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16328,
+                                    "scope": 16231,
                                     "src": "1623:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1828,7 +1840,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16310,
+                                        "id": 16213,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1623:7:116",
@@ -1846,12 +1858,12 @@ export const HyperdriveMultiToken = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 16402,
+                        "id": 16305,
                         "nodeType": "FunctionDefinition",
                         "src": "2248:716:116",
                         "nodes": [],
                         "body": {
-                            "id": 16401,
+                            "id": 16304,
                             "nodeType": "Block",
                             "src": "2400:564:116",
                             "nodes": [],
@@ -1862,7 +1874,7 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 16354,
+                                        "id": 16257,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1872,17 +1884,17 @@ export const HyperdriveMultiToken = {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             },
-                                            "id": 16347,
+                                            "id": 16250,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 16342,
+                                                "id": 16245,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16331,
+                                                "referencedDeclaration": 16234,
                                                 "src": "2460:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1895,7 +1907,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16345,
+                                                        "id": 16248,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -1917,7 +1929,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16344,
+                                                    "id": 16247,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1929,14 +1941,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16343,
+                                                        "id": 16246,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2468:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16346,
+                                                "id": 16249,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1965,17 +1977,17 @@ export const HyperdriveMultiToken = {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             },
-                                            "id": 16353,
+                                            "id": 16256,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 16348,
+                                                "id": 16251,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16333,
+                                                "referencedDeclaration": 16236,
                                                 "src": "2482:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1988,7 +2000,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16351,
+                                                        "id": 16254,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2010,7 +2022,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16350,
+                                                    "id": 16253,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2022,14 +2034,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16349,
+                                                        "id": 16252,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2488:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16352,
+                                                "id": 16255,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2057,11 +2069,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16361,
+                                    "id": 16264,
                                     "nodeType": "IfStatement",
                                     "src": "2456:111:116",
                                     "trueBody": {
-                                        "id": 16360,
+                                        "id": 16263,
                                         "nodeType": "Block",
                                         "src": "2500:67:116",
                                         "statements": [
@@ -2071,18 +2083,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16355,
+                                                            "id": 16258,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "2521:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16357,
+                                                        "id": 16260,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2090,14 +2102,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "2533:21:116",
                                                         "memberName": "RestrictedZeroAddress",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10607,
+                                                        "referencedDeclaration": 10437,
                                                         "src": "2521:33:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16358,
+                                                    "id": 16261,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2113,7 +2125,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16359,
+                                                "id": 16262,
                                                 "nodeType": "RevertStatement",
                                                 "src": "2514:42:116"
                                             }
@@ -2126,25 +2138,25 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 16366,
+                                        "id": 16269,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 16362,
+                                                "id": 16265,
                                                 "name": "ids",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16336,
+                                                "referencedDeclaration": 16239,
                                                 "src": "2623:3:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             },
-                                            "id": 16363,
+                                            "id": 16266,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2162,18 +2174,18 @@ export const HyperdriveMultiToken = {
                                         "operator": "!=",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 16364,
+                                                "id": 16267,
                                                 "name": "values",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16339,
+                                                "referencedDeclaration": 16242,
                                                 "src": "2637:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             },
-                                            "id": 16365,
+                                            "id": 16268,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2193,11 +2205,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16373,
+                                    "id": 16276,
                                     "nodeType": "IfStatement",
                                     "src": "2619:103:116",
                                     "trueBody": {
-                                        "id": 16372,
+                                        "id": 16275,
                                         "nodeType": "Block",
                                         "src": "2652:70:116",
                                         "statements": [
@@ -2207,18 +2219,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16367,
+                                                            "id": 16270,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "2673:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16369,
+                                                        "id": 16272,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2226,14 +2238,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "2685:24:116",
                                                         "memberName": "BatchInputLengthMismatch",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10535,
+                                                        "referencedDeclaration": 10365,
                                                         "src": "2673:36:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16370,
+                                                    "id": 16273,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2249,7 +2261,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16371,
+                                                "id": 16274,
                                                 "nodeType": "RevertStatement",
                                                 "src": "2666:45:116"
                                             }
@@ -2258,7 +2270,7 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "body": {
-                                        "id": 16399,
+                                        "id": 16302,
                                         "nodeType": "Block",
                                         "src": "2820:138:116",
                                         "statements": [
@@ -2267,24 +2279,24 @@ export const HyperdriveMultiToken = {
                                                     "arguments": [
                                                         {
                                                             "baseExpression": {
-                                                                "id": 16383,
+                                                                "id": 16286,
                                                                 "name": "ids",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16336,
+                                                                "referencedDeclaration": 16239,
                                                                 "src": "2848:3:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                                     "typeString": "uint256[] calldata"
                                                                 }
                                                             },
-                                                            "id": 16385,
+                                                            "id": 16288,
                                                             "indexExpression": {
-                                                                "id": 16384,
+                                                                "id": 16287,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16375,
+                                                                "referencedDeclaration": 16278,
                                                                 "src": "2852:1:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -2303,11 +2315,11 @@ export const HyperdriveMultiToken = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 16386,
+                                                            "id": 16289,
                                                             "name": "from",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 16331,
+                                                            "referencedDeclaration": 16234,
                                                             "src": "2856:4:116",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -2315,11 +2327,11 @@ export const HyperdriveMultiToken = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 16387,
+                                                            "id": 16290,
                                                             "name": "to",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 16333,
+                                                            "referencedDeclaration": 16236,
                                                             "src": "2862:2:116",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -2328,24 +2340,24 @@ export const HyperdriveMultiToken = {
                                                         },
                                                         {
                                                             "baseExpression": {
-                                                                "id": 16388,
+                                                                "id": 16291,
                                                                 "name": "values",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16339,
+                                                                "referencedDeclaration": 16242,
                                                                 "src": "2866:6:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                                     "typeString": "uint256[] calldata"
                                                                 }
                                                             },
-                                                            "id": 16390,
+                                                            "id": 16293,
                                                             "indexExpression": {
-                                                                "id": 16389,
+                                                                "id": 16292,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16375,
+                                                                "referencedDeclaration": 16278,
                                                                 "src": "2873:1:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -2365,7 +2377,7 @@ export const HyperdriveMultiToken = {
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 16391,
+                                                                "id": 16294,
                                                                 "name": "msg",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -2376,7 +2388,7 @@ export const HyperdriveMultiToken = {
                                                                     "typeString": "msg"
                                                                 }
                                                             },
-                                                            "id": 16392,
+                                                            "id": 16295,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2414,18 +2426,18 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "address"
                                                             }
                                                         ],
-                                                        "id": 16382,
+                                                        "id": 16285,
                                                         "name": "_transferFrom",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16503,
+                                                        "referencedDeclaration": 16406,
                                                         "src": "2834:13:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                             "typeString": "function (uint256,address,address,uint256,address)"
                                                         }
                                                     },
-                                                    "id": 16393,
+                                                    "id": 16296,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2441,18 +2453,18 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16394,
+                                                "id": 16297,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "2834:54:116"
                                             },
                                             {
-                                                "id": 16398,
+                                                "id": 16301,
                                                 "nodeType": "UncheckedBlock",
                                                 "src": "2902:46:116",
                                                 "statements": [
                                                     {
                                                         "expression": {
-                                                            "id": 16396,
+                                                            "id": 16299,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2462,11 +2474,11 @@ export const HyperdriveMultiToken = {
                                                             "prefix": true,
                                                             "src": "2930:3:116",
                                                             "subExpression": {
-                                                                "id": 16395,
+                                                                "id": 16298,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16375,
+                                                                "referencedDeclaration": 16278,
                                                                 "src": "2932:1:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -2478,7 +2490,7 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 16397,
+                                                        "id": 16300,
                                                         "nodeType": "ExpressionStatement",
                                                         "src": "2930:3:116"
                                                     }
@@ -2491,17 +2503,17 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 16381,
+                                        "id": 16284,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 16378,
+                                            "id": 16281,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16375,
+                                            "referencedDeclaration": 16278,
                                             "src": "2802:1:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2512,18 +2524,18 @@ export const HyperdriveMultiToken = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 16379,
+                                                "id": 16282,
                                                 "name": "ids",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16336,
+                                                "referencedDeclaration": 16239,
                                                 "src": "2806:3:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             },
-                                            "id": 16380,
+                                            "id": 16283,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2543,20 +2555,20 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16400,
+                                    "id": 16303,
                                     "initializationExpression": {
                                         "assignments": [
-                                            16375
+                                            16278
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 16375,
+                                                "id": 16278,
                                                 "mutability": "mutable",
                                                 "name": "i",
                                                 "nameLocation": "2795:1:116",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 16400,
+                                                "scope": 16303,
                                                 "src": "2787:9:116",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
@@ -2565,7 +2577,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 16374,
+                                                    "id": 16277,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2787:7:116",
@@ -2577,10 +2589,10 @@ export const HyperdriveMultiToken = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 16377,
+                                        "id": 16280,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 16376,
+                                            "id": 16279,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2603,7 +2615,7 @@ export const HyperdriveMultiToken = {
                             ]
                         },
                         "documentation": {
-                            "id": 16329,
+                            "id": 16232,
                             "nodeType": "StructuredDocumentation",
                             "src": "1970:273:116",
                             "text": "@dev Transfers several assets from one account to another.\n @param from The source account.\n @param to The destination account.\n @param ids The array of token ids of the asset to transfer.\n @param values The amount of each token to transfer."
@@ -2614,17 +2626,17 @@ export const HyperdriveMultiToken = {
                         "name": "_batchTransferFrom",
                         "nameLocation": "2257:18:116",
                         "parameters": {
-                            "id": 16340,
+                            "id": 16243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16331,
+                                    "id": 16234,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "2293:4:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16402,
+                                    "scope": 16305,
                                     "src": "2285:12:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2633,7 +2645,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16330,
+                                        "id": 16233,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2285:7:116",
@@ -2647,12 +2659,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16333,
+                                    "id": 16236,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "2315:2:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16402,
+                                    "scope": 16305,
                                     "src": "2307:10:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2661,7 +2673,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16332,
+                                        "id": 16235,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2307:7:116",
@@ -2675,12 +2687,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16336,
+                                    "id": 16239,
                                     "mutability": "mutable",
                                     "name": "ids",
                                     "nameLocation": "2346:3:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16402,
+                                    "scope": 16305,
                                     "src": "2327:22:116",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2690,7 +2702,7 @@ export const HyperdriveMultiToken = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 16334,
+                                            "id": 16237,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2327:7:116",
@@ -2699,7 +2711,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 16335,
+                                        "id": 16238,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2327:9:116",
                                         "typeDescriptions": {
@@ -2711,12 +2723,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16339,
+                                    "id": 16242,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "2378:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16402,
+                                    "scope": 16305,
                                     "src": "2359:25:116",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2726,7 +2738,7 @@ export const HyperdriveMultiToken = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 16337,
+                                            "id": 16240,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2359:7:116",
@@ -2735,7 +2747,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 16338,
+                                        "id": 16241,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2359:9:116",
                                         "typeDescriptions": {
@@ -2749,23 +2761,23 @@ export const HyperdriveMultiToken = {
                             "src": "2275:115:116"
                         },
                         "returnParameters": {
-                            "id": 16341,
+                            "id": 16244,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2400:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16503,
+                        "id": 16406,
                         "nodeType": "FunctionDefinition",
                         "src": "3315:1591:116",
                         "nodes": [],
                         "body": {
-                            "id": 16502,
+                            "id": 16405,
                             "nodeType": "Block",
                             "src": "3468:1438:116",
                             "nodes": [],
@@ -2776,7 +2788,7 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 16428,
+                                        "id": 16331,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2786,17 +2798,17 @@ export const HyperdriveMultiToken = {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             },
-                                            "id": 16421,
+                                            "id": 16324,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 16416,
+                                                "id": 16319,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16407,
+                                                "referencedDeclaration": 16310,
                                                 "src": "3528:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -2809,7 +2821,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16419,
+                                                        "id": 16322,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2831,7 +2843,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16418,
+                                                    "id": 16321,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2843,14 +2855,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16417,
+                                                        "id": 16320,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "3536:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16420,
+                                                "id": 16323,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2879,17 +2891,17 @@ export const HyperdriveMultiToken = {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             },
-                                            "id": 16427,
+                                            "id": 16330,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 16422,
+                                                "id": 16325,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16409,
+                                                "referencedDeclaration": 16312,
                                                 "src": "3550:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -2902,7 +2914,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16425,
+                                                        "id": 16328,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2924,7 +2936,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16424,
+                                                    "id": 16327,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2936,14 +2948,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16423,
+                                                        "id": 16326,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "3556:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16426,
+                                                "id": 16329,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2971,11 +2983,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16435,
+                                    "id": 16338,
                                     "nodeType": "IfStatement",
                                     "src": "3524:111:116",
                                     "trueBody": {
-                                        "id": 16434,
+                                        "id": 16337,
                                         "nodeType": "Block",
                                         "src": "3568:67:116",
                                         "statements": [
@@ -2985,18 +2997,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16429,
+                                                            "id": 16332,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "3589:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16431,
+                                                        "id": 16334,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3004,14 +3016,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "3601:21:116",
                                                         "memberName": "RestrictedZeroAddress",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10607,
+                                                        "referencedDeclaration": 10437,
                                                         "src": "3589:33:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16432,
+                                                    "id": 16335,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3027,7 +3039,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16433,
+                                                "id": 16336,
                                                 "nodeType": "RevertStatement",
                                                 "src": "3582:42:116"
                                             }
@@ -3040,17 +3052,17 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 16438,
+                                        "id": 16341,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 16436,
+                                            "id": 16339,
                                             "name": "caller",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16413,
+                                            "referencedDeclaration": 16316,
                                             "src": "3729:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -3060,11 +3072,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "!=",
                                         "rightExpression": {
-                                            "id": 16437,
+                                            "id": 16340,
                                             "name": "from",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16407,
+                                            "referencedDeclaration": 16310,
                                             "src": "3739:4:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -3077,17 +3089,17 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16477,
+                                    "id": 16380,
                                     "nodeType": "IfStatement",
                                     "src": "3725:888:116",
                                     "trueBody": {
-                                        "id": 16476,
+                                        "id": 16379,
                                         "nodeType": "Block",
                                         "src": "3745:868:116",
                                         "statements": [
                                             {
                                                 "condition": {
-                                                    "id": 16444,
+                                                    "id": 16347,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3099,24 +3111,24 @@ export const HyperdriveMultiToken = {
                                                     "subExpression": {
                                                         "baseExpression": {
                                                             "baseExpression": {
-                                                                "id": 16439,
+                                                                "id": 16342,
                                                                 "name": "_isApprovedForAll",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17878,
+                                                                "referencedDeclaration": 17781,
                                                                 "src": "3880:17:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
                                                                     "typeString": "mapping(address => mapping(address => bool))"
                                                                 }
                                                             },
-                                                            "id": 16441,
+                                                            "id": 16344,
                                                             "indexExpression": {
-                                                                "id": 16440,
+                                                                "id": 16343,
                                                                 "name": "from",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16407,
+                                                                "referencedDeclaration": 16310,
                                                                 "src": "3898:4:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
@@ -3134,13 +3146,13 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "mapping(address => bool)"
                                                             }
                                                         },
-                                                        "id": 16443,
+                                                        "id": 16346,
                                                         "indexExpression": {
-                                                            "id": 16442,
+                                                            "id": 16345,
                                                             "name": "caller",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 16413,
+                                                            "referencedDeclaration": 16316,
                                                             "src": "3904:6:116",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -3163,27 +3175,27 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 16475,
+                                                "id": 16378,
                                                 "nodeType": "IfStatement",
                                                 "src": "3875:728:116",
                                                 "trueBody": {
-                                                    "id": 16474,
+                                                    "id": 16377,
                                                     "nodeType": "Block",
                                                     "src": "3913:690:116",
                                                     "statements": [
                                                         {
                                                             "assignments": [
-                                                                16446
+                                                                16349
                                                             ],
                                                             "declarations": [
                                                                 {
                                                                     "constant": false,
-                                                                    "id": 16446,
+                                                                    "id": 16349,
                                                                     "mutability": "mutable",
                                                                     "name": "approved",
                                                                     "nameLocation": "3998:8:116",
                                                                     "nodeType": "VariableDeclaration",
-                                                                    "scope": 16474,
+                                                                    "scope": 16377,
                                                                     "src": "3990:16:116",
                                                                     "stateVariable": false,
                                                                     "storageLocation": "default",
@@ -3192,7 +3204,7 @@ export const HyperdriveMultiToken = {
                                                                         "typeString": "uint256"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 16445,
+                                                                        "id": 16348,
                                                                         "name": "uint256",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "3990:7:116",
@@ -3204,29 +3216,29 @@ export const HyperdriveMultiToken = {
                                                                     "visibility": "internal"
                                                                 }
                                                             ],
-                                                            "id": 16454,
+                                                            "id": 16357,
                                                             "initialValue": {
                                                                 "baseExpression": {
                                                                     "baseExpression": {
                                                                         "baseExpression": {
-                                                                            "id": 16447,
+                                                                            "id": 16350,
                                                                             "name": "_perTokenApprovals",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 17887,
+                                                                            "referencedDeclaration": 17790,
                                                                             "src": "4009:18:116",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
                                                                                 "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
                                                                             }
                                                                         },
-                                                                        "id": 16449,
+                                                                        "id": 16352,
                                                                         "indexExpression": {
-                                                                            "id": 16448,
+                                                                            "id": 16351,
                                                                             "name": "tokenID",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 16405,
+                                                                            "referencedDeclaration": 16308,
                                                                             "src": "4028:7:116",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
@@ -3244,13 +3256,13 @@ export const HyperdriveMultiToken = {
                                                                             "typeString": "mapping(address => mapping(address => uint256))"
                                                                         }
                                                                     },
-                                                                    "id": 16451,
+                                                                    "id": 16354,
                                                                     "indexExpression": {
-                                                                        "id": 16450,
+                                                                        "id": 16353,
                                                                         "name": "from",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16407,
+                                                                        "referencedDeclaration": 16310,
                                                                         "src": "4037:4:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
@@ -3268,13 +3280,13 @@ export const HyperdriveMultiToken = {
                                                                         "typeString": "mapping(address => uint256)"
                                                                     }
                                                                 },
-                                                                "id": 16453,
+                                                                "id": 16356,
                                                                 "indexExpression": {
-                                                                    "id": 16452,
+                                                                    "id": 16355,
                                                                     "name": "caller",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 16413,
+                                                                    "referencedDeclaration": 16316,
                                                                     "src": "4043:6:116",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
@@ -3301,17 +3313,17 @@ export const HyperdriveMultiToken = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 16461,
+                                                                "id": 16364,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
-                                                                    "id": 16455,
+                                                                    "id": 16358,
                                                                     "name": "approved",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 16446,
+                                                                    "referencedDeclaration": 16349,
                                                                     "src": "4125:8:116",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3324,7 +3336,7 @@ export const HyperdriveMultiToken = {
                                                                     "expression": {
                                                                         "arguments": [
                                                                             {
-                                                                                "id": 16458,
+                                                                                "id": 16361,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -3336,7 +3348,7 @@ export const HyperdriveMultiToken = {
                                                                                     "typeString": "type(uint256)"
                                                                                 },
                                                                                 "typeName": {
-                                                                                    "id": 16457,
+                                                                                    "id": 16360,
                                                                                     "name": "uint256",
                                                                                     "nodeType": "ElementaryTypeName",
                                                                                     "src": "4142:7:116",
@@ -3351,7 +3363,7 @@ export const HyperdriveMultiToken = {
                                                                                     "typeString": "type(uint256)"
                                                                                 }
                                                                             ],
-                                                                            "id": 16456,
+                                                                            "id": 16359,
                                                                             "name": "type",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
@@ -3362,7 +3374,7 @@ export const HyperdriveMultiToken = {
                                                                                 "typeString": "function () pure"
                                                                             }
                                                                         },
-                                                                        "id": 16459,
+                                                                        "id": 16362,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -3378,7 +3390,7 @@ export const HyperdriveMultiToken = {
                                                                             "typeString": "type(uint256)"
                                                                         }
                                                                     },
-                                                                    "id": 16460,
+                                                                    "id": 16363,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3398,17 +3410,17 @@ export const HyperdriveMultiToken = {
                                                                     "typeString": "bool"
                                                                 }
                                                             },
-                                                            "id": 16473,
+                                                            "id": 16376,
                                                             "nodeType": "IfStatement",
                                                             "src": "4121:468:116",
                                                             "trueBody": {
-                                                                "id": 16472,
+                                                                "id": 16375,
                                                                 "nodeType": "Block",
                                                                 "src": "4156:433:116",
                                                                 "statements": [
                                                                     {
                                                                         "expression": {
-                                                                            "id": 16470,
+                                                                            "id": 16373,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -3417,24 +3429,24 @@ export const HyperdriveMultiToken = {
                                                                                 "baseExpression": {
                                                                                     "baseExpression": {
                                                                                         "baseExpression": {
-                                                                                            "id": 16462,
+                                                                                            "id": 16365,
                                                                                             "name": "_perTokenApprovals",
                                                                                             "nodeType": "Identifier",
                                                                                             "overloadedDeclarations": [],
-                                                                                            "referencedDeclaration": 17887,
+                                                                                            "referencedDeclaration": 17790,
                                                                                             "src": "4519:18:116",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
                                                                                                 "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
                                                                                             }
                                                                                         },
-                                                                                        "id": 16466,
+                                                                                        "id": 16369,
                                                                                         "indexExpression": {
-                                                                                            "id": 16463,
+                                                                                            "id": 16366,
                                                                                             "name": "tokenID",
                                                                                             "nodeType": "Identifier",
                                                                                             "overloadedDeclarations": [],
-                                                                                            "referencedDeclaration": 16405,
+                                                                                            "referencedDeclaration": 16308,
                                                                                             "src": "4538:7:116",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_uint256",
@@ -3452,13 +3464,13 @@ export const HyperdriveMultiToken = {
                                                                                             "typeString": "mapping(address => mapping(address => uint256))"
                                                                                         }
                                                                                     },
-                                                                                    "id": 16467,
+                                                                                    "id": 16370,
                                                                                     "indexExpression": {
-                                                                                        "id": 16464,
+                                                                                        "id": 16367,
                                                                                         "name": "from",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
-                                                                                        "referencedDeclaration": 16407,
+                                                                                        "referencedDeclaration": 16310,
                                                                                         "src": "4547:4:116",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_address",
@@ -3476,13 +3488,13 @@ export const HyperdriveMultiToken = {
                                                                                         "typeString": "mapping(address => uint256)"
                                                                                     }
                                                                                 },
-                                                                                "id": 16468,
+                                                                                "id": 16371,
                                                                                 "indexExpression": {
-                                                                                    "id": 16465,
+                                                                                    "id": 16368,
                                                                                     "name": "caller",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 16413,
+                                                                                    "referencedDeclaration": 16316,
                                                                                     "src": "4553:6:116",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_address",
@@ -3503,11 +3515,11 @@ export const HyperdriveMultiToken = {
                                                                             "nodeType": "Assignment",
                                                                             "operator": "-=",
                                                                             "rightHandSide": {
-                                                                                "id": 16469,
+                                                                                "id": 16372,
                                                                                 "name": "amount",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 16411,
+                                                                                "referencedDeclaration": 16314,
                                                                                 "src": "4564:6:116",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -3520,7 +3532,7 @@ export const HyperdriveMultiToken = {
                                                                                 "typeString": "uint256"
                                                                             }
                                                                         },
-                                                                        "id": 16471,
+                                                                        "id": 16374,
                                                                         "nodeType": "ExpressionStatement",
                                                                         "src": "4519:51:116"
                                                                     }
@@ -3535,7 +3547,7 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 16484,
+                                        "id": 16387,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3543,24 +3555,24 @@ export const HyperdriveMultiToken = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 16478,
+                                                    "id": 16381,
                                                     "name": "_balanceOf",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17866,
+                                                    "referencedDeclaration": 17769,
                                                     "src": "4757:10:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                         "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 16481,
+                                                "id": 16384,
                                                 "indexExpression": {
-                                                    "id": 16479,
+                                                    "id": 16382,
                                                     "name": "tokenID",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16405,
+                                                    "referencedDeclaration": 16308,
                                                     "src": "4768:7:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3578,13 +3590,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 16482,
+                                            "id": 16385,
                                             "indexExpression": {
-                                                "id": 16480,
+                                                "id": 16383,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16407,
+                                                "referencedDeclaration": 16310,
                                                 "src": "4777:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3605,11 +3617,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "-=",
                                         "rightHandSide": {
-                                            "id": 16483,
+                                            "id": 16386,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16411,
+                                            "referencedDeclaration": 16314,
                                             "src": "4786:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3622,13 +3634,13 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16485,
+                                    "id": 16388,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4757:35:116"
                                 },
                                 {
                                     "expression": {
-                                        "id": 16492,
+                                        "id": 16395,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3636,24 +3648,24 @@ export const HyperdriveMultiToken = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 16486,
+                                                    "id": 16389,
                                                     "name": "_balanceOf",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17866,
+                                                    "referencedDeclaration": 17769,
                                                     "src": "4802:10:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                         "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 16489,
+                                                "id": 16392,
                                                 "indexExpression": {
-                                                    "id": 16487,
+                                                    "id": 16390,
                                                     "name": "tokenID",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16405,
+                                                    "referencedDeclaration": 16308,
                                                     "src": "4813:7:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3671,13 +3683,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 16490,
+                                            "id": 16393,
                                             "indexExpression": {
-                                                "id": 16488,
+                                                "id": 16391,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16409,
+                                                "referencedDeclaration": 16312,
                                                 "src": "4822:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3698,11 +3710,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "+=",
                                         "rightHandSide": {
-                                            "id": 16491,
+                                            "id": 16394,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16411,
+                                            "referencedDeclaration": 16314,
                                             "src": "4829:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3715,7 +3727,7 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16493,
+                                    "id": 16396,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4802:33:116"
                                 },
@@ -3723,11 +3735,11 @@ export const HyperdriveMultiToken = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 16495,
+                                                "id": 16398,
                                                 "name": "caller",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16413,
+                                                "referencedDeclaration": 16316,
                                                 "src": "4865:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3735,11 +3747,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16496,
+                                                "id": 16399,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16407,
+                                                "referencedDeclaration": 16310,
                                                 "src": "4873:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3747,11 +3759,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16497,
+                                                "id": 16400,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16409,
+                                                "referencedDeclaration": 16312,
                                                 "src": "4879:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3759,11 +3771,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16498,
+                                                "id": 16401,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16405,
+                                                "referencedDeclaration": 16308,
                                                 "src": "4883:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3771,11 +3783,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16499,
+                                                "id": 16402,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16411,
+                                                "referencedDeclaration": 16314,
                                                 "src": "4892:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3806,18 +3818,18 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 16494,
+                                            "id": 16397,
                                             "name": "TransferSingle",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 11758,
+                                            "referencedDeclaration": 11590,
                                             "src": "4850:14:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,address,address,uint256,uint256)"
                                             }
                                         },
-                                        "id": 16500,
+                                        "id": 16403,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3833,14 +3845,14 @@ export const HyperdriveMultiToken = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 16501,
+                                    "id": 16404,
                                     "nodeType": "EmitStatement",
                                     "src": "4845:54:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16403,
+                            "id": 16306,
                             "nodeType": "StructuredDocumentation",
                             "src": "2970:340:116",
                             "text": "@dev Performs the actual transfer logic.\n @param tokenID The token identifier.\n @param from The address whose balance will be reduced.\n @param to The address whose balance will be increased.\n @param amount The amount of token to move.\n @param caller The msg.sender or the caller of the ERC20Forwarder."
@@ -3851,17 +3863,17 @@ export const HyperdriveMultiToken = {
                         "name": "_transferFrom",
                         "nameLocation": "3324:13:116",
                         "parameters": {
-                            "id": 16414,
+                            "id": 16317,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16405,
+                                    "id": 16308,
                                     "mutability": "mutable",
                                     "name": "tokenID",
                                     "nameLocation": "3355:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16503,
+                                    "scope": 16406,
                                     "src": "3347:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3870,7 +3882,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16404,
+                                        "id": 16307,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3347:7:116",
@@ -3883,12 +3895,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16407,
+                                    "id": 16310,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "3380:4:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16503,
+                                    "scope": 16406,
                                     "src": "3372:12:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3897,7 +3909,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16406,
+                                        "id": 16309,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3372:7:116",
@@ -3911,12 +3923,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16409,
+                                    "id": 16312,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "3402:2:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16503,
+                                    "scope": 16406,
                                     "src": "3394:10:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3925,7 +3937,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16408,
+                                        "id": 16311,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3394:7:116",
@@ -3939,12 +3951,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16411,
+                                    "id": 16314,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "3422:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16503,
+                                    "scope": 16406,
                                     "src": "3414:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3953,7 +3965,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16410,
+                                        "id": 16313,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3414:7:116",
@@ -3966,12 +3978,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16413,
+                                    "id": 16316,
                                     "mutability": "mutable",
                                     "name": "caller",
                                     "nameLocation": "3446:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16503,
+                                    "scope": 16406,
                                     "src": "3438:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3980,7 +3992,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16412,
+                                        "id": 16315,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3438:7:116",
@@ -3996,30 +4008,30 @@ export const HyperdriveMultiToken = {
                             "src": "3337:121:116"
                         },
                         "returnParameters": {
-                            "id": 16415,
+                            "id": 16318,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3468:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16532,
+                        "id": 16435,
                         "nodeType": "FunctionDefinition",
                         "src": "5363:301:116",
                         "nodes": [],
                         "body": {
-                            "id": 16531,
+                            "id": 16434,
                             "nodeType": "Block",
                             "src": "5499:165:116",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 16523,
+                                        "id": 16426,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4028,24 +4040,24 @@ export const HyperdriveMultiToken = {
                                             "baseExpression": {
                                                 "baseExpression": {
                                                     "baseExpression": {
-                                                        "id": 16515,
+                                                        "id": 16418,
                                                         "name": "_perTokenApprovals",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17887,
+                                                        "referencedDeclaration": 17790,
                                                         "src": "5509:18:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
                                                             "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
                                                         }
                                                     },
-                                                    "id": 16519,
+                                                    "id": 16422,
                                                     "indexExpression": {
-                                                        "id": 16516,
+                                                        "id": 16419,
                                                         "name": "tokenID",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16506,
+                                                        "referencedDeclaration": 16409,
                                                         "src": "5528:7:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4063,13 +4075,13 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "mapping(address => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 16520,
+                                                "id": 16423,
                                                 "indexExpression": {
-                                                    "id": 16517,
+                                                    "id": 16420,
                                                     "name": "caller",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16512,
+                                                    "referencedDeclaration": 16415,
                                                     "src": "5537:6:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
@@ -4087,13 +4099,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 16521,
+                                            "id": 16424,
                                             "indexExpression": {
-                                                "id": 16518,
+                                                "id": 16421,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16508,
+                                                "referencedDeclaration": 16411,
                                                 "src": "5545:8:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4114,11 +4126,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 16522,
+                                            "id": 16425,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16510,
+                                            "referencedDeclaration": 16413,
                                             "src": "5557:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4131,7 +4143,7 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16524,
+                                    "id": 16427,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5509:54:116"
                                 },
@@ -4139,11 +4151,11 @@ export const HyperdriveMultiToken = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 16526,
+                                                "id": 16429,
                                                 "name": "caller",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16512,
+                                                "referencedDeclaration": 16415,
                                                 "src": "5632:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4151,11 +4163,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16527,
+                                                "id": 16430,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16508,
+                                                "referencedDeclaration": 16411,
                                                 "src": "5640:8:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4163,11 +4175,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16528,
+                                                "id": 16431,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16510,
+                                                "referencedDeclaration": 16413,
                                                 "src": "5650:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4190,18 +4202,18 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 16525,
+                                            "id": 16428,
                                             "name": "Approval",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 11767,
+                                            "referencedDeclaration": 11599,
                                             "src": "5623:8:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,address,uint256)"
                                             }
                                         },
-                                        "id": 16529,
+                                        "id": 16432,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4217,14 +4229,14 @@ export const HyperdriveMultiToken = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 16530,
+                                    "id": 16433,
                                     "nodeType": "EmitStatement",
                                     "src": "5618:39:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16504,
+                            "id": 16407,
                             "nodeType": "StructuredDocumentation",
                             "src": "4912:446:116",
                             "text": "@notice Sets the approval for a sub-token.\n @param tokenID The asset to approve the use of.\n @param operator The address who will be able to use the tokens.\n @param amount The max tokens the approved person can use, setting to\n               uint256.max will cause the value to never decrement\n               [saving gas on transfer].\n @param caller The eth address which initiated the approval call."
@@ -4235,17 +4247,17 @@ export const HyperdriveMultiToken = {
                         "name": "_setApproval",
                         "nameLocation": "5372:12:116",
                         "parameters": {
-                            "id": 16513,
+                            "id": 16416,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16506,
+                                    "id": 16409,
                                     "mutability": "mutable",
                                     "name": "tokenID",
                                     "nameLocation": "5402:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16532,
+                                    "scope": 16435,
                                     "src": "5394:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4254,7 +4266,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16505,
+                                        "id": 16408,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5394:7:116",
@@ -4267,12 +4279,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16508,
+                                    "id": 16411,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "5427:8:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16532,
+                                    "scope": 16435,
                                     "src": "5419:16:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4281,7 +4293,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16507,
+                                        "id": 16410,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5419:7:116",
@@ -4295,12 +4307,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16510,
+                                    "id": 16413,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "5453:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16532,
+                                    "scope": 16435,
                                     "src": "5445:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4309,7 +4321,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16509,
+                                        "id": 16412,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5445:7:116",
@@ -4322,12 +4334,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16512,
+                                    "id": 16415,
                                     "mutability": "mutable",
                                     "name": "caller",
                                     "nameLocation": "5477:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16532,
+                                    "scope": 16435,
                                     "src": "5469:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4336,7 +4348,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16511,
+                                        "id": 16414,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5469:7:116",
@@ -4352,30 +4364,30 @@ export const HyperdriveMultiToken = {
                             "src": "5384:105:116"
                         },
                         "returnParameters": {
-                            "id": 16514,
+                            "id": 16417,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5499:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16569,
+                        "id": 16472,
                         "nodeType": "FunctionDefinition",
                         "src": "5934:316:116",
                         "nodes": [],
                         "body": {
-                            "id": 16568,
+                            "id": 16471,
                             "nodeType": "Block",
                             "src": "6041:209:116",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 16548,
+                                        "id": 16451,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4383,24 +4395,24 @@ export const HyperdriveMultiToken = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 16542,
+                                                    "id": 16445,
                                                     "name": "_balanceOf",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17866,
+                                                    "referencedDeclaration": 17769,
                                                     "src": "6051:10:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                         "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 16545,
+                                                "id": 16448,
                                                 "indexExpression": {
-                                                    "id": 16543,
+                                                    "id": 16446,
                                                     "name": "tokenID",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16535,
+                                                    "referencedDeclaration": 16438,
                                                     "src": "6062:7:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4418,13 +4430,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 16546,
+                                            "id": 16449,
                                             "indexExpression": {
-                                                "id": 16544,
+                                                "id": 16447,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16537,
+                                                "referencedDeclaration": 16440,
                                                 "src": "6071:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4445,11 +4457,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "+=",
                                         "rightHandSide": {
-                                            "id": 16547,
+                                            "id": 16450,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16539,
+                                            "referencedDeclaration": 16442,
                                             "src": "6078:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4462,37 +4474,37 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16549,
+                                    "id": 16452,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6051:33:116"
                                 },
                                 {
                                     "expression": {
-                                        "id": 16554,
+                                        "id": 16457,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 16550,
+                                                "id": 16453,
                                                 "name": "_totalSupply",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17871,
+                                                "referencedDeclaration": 17774,
                                                 "src": "6094:12:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                     "typeString": "mapping(uint256 => uint256)"
                                                 }
                                             },
-                                            "id": 16552,
+                                            "id": 16455,
                                             "indexExpression": {
-                                                "id": 16551,
+                                                "id": 16454,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16535,
+                                                "referencedDeclaration": 16438,
                                                 "src": "6107:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4513,11 +4525,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "+=",
                                         "rightHandSide": {
-                                            "id": 16553,
+                                            "id": 16456,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16539,
+                                            "referencedDeclaration": 16442,
                                             "src": "6119:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4530,7 +4542,7 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16555,
+                                    "id": 16458,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6094:31:116"
                                 },
@@ -4539,7 +4551,7 @@ export const HyperdriveMultiToken = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 16557,
+                                                    "id": 16460,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -4550,7 +4562,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 16558,
+                                                "id": 16461,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4568,7 +4580,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16561,
+                                                        "id": 16464,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -4590,7 +4602,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16560,
+                                                    "id": 16463,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -4602,14 +4614,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16559,
+                                                        "id": 16462,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "6211:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16562,
+                                                "id": 16465,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4626,11 +4638,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16563,
+                                                "id": 16466,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16537,
+                                                "referencedDeclaration": 16440,
                                                 "src": "6223:2:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4638,11 +4650,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16564,
+                                                "id": 16467,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16535,
+                                                "referencedDeclaration": 16438,
                                                 "src": "6227:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4650,11 +4662,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16565,
+                                                "id": 16468,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16539,
+                                                "referencedDeclaration": 16442,
                                                 "src": "6236:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4685,18 +4697,18 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 16556,
+                                            "id": 16459,
                                             "name": "TransferSingle",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 11758,
+                                            "referencedDeclaration": 11590,
                                             "src": "6184:14:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,address,address,uint256,uint256)"
                                             }
                                         },
-                                        "id": 16566,
+                                        "id": 16469,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4712,14 +4724,14 @@ export const HyperdriveMultiToken = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 16567,
+                                    "id": 16470,
                                     "nodeType": "EmitStatement",
                                     "src": "6179:64:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16533,
+                            "id": 16436,
                             "nodeType": "StructuredDocumentation",
                             "src": "5670:259:116",
                             "text": "@notice Minting function to create tokens.\n @param tokenID The asset type to create.\n @param to The address whose balance to increase.\n @param amount The number of tokens to create.\n @dev Must be used from inheriting contracts."
@@ -4730,17 +4742,17 @@ export const HyperdriveMultiToken = {
                         "name": "_mint",
                         "nameLocation": "5943:5:116",
                         "parameters": {
-                            "id": 16540,
+                            "id": 16443,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16535,
+                                    "id": 16438,
                                     "mutability": "mutable",
                                     "name": "tokenID",
                                     "nameLocation": "5966:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16569,
+                                    "scope": 16472,
                                     "src": "5958:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4749,7 +4761,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16534,
+                                        "id": 16437,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5958:7:116",
@@ -4762,12 +4774,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16537,
+                                    "id": 16440,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "5991:2:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16569,
+                                    "scope": 16472,
                                     "src": "5983:10:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4776,7 +4788,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16536,
+                                        "id": 16439,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5983:7:116",
@@ -4790,12 +4802,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16539,
+                                    "id": 16442,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "6011:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16569,
+                                    "scope": 16472,
                                     "src": "6003:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4804,7 +4816,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16538,
+                                        "id": 16441,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6003:7:116",
@@ -4819,23 +4831,23 @@ export const HyperdriveMultiToken = {
                             "src": "5948:75:116"
                         },
                         "returnParameters": {
-                            "id": 16541,
+                            "id": 16444,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6041:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16621,
+                        "id": 16524,
                         "nodeType": "FunctionDefinition",
                         "src": "6522:597:116",
                         "nodes": [],
                         "body": {
-                            "id": 16620,
+                            "id": 16523,
                             "nodeType": "Block",
                             "src": "6593:526:116",
                             "nodes": [],
@@ -4846,7 +4858,7 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 16585,
+                                        "id": 16488,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4854,24 +4866,24 @@ export const HyperdriveMultiToken = {
                                         "leftExpression": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 16579,
+                                                    "id": 16482,
                                                     "name": "_balanceOf",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17866,
+                                                    "referencedDeclaration": 17769,
                                                     "src": "6722:10:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                         "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 16581,
+                                                "id": 16484,
                                                 "indexExpression": {
-                                                    "id": 16580,
+                                                    "id": 16483,
                                                     "name": "tokenID",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16572,
+                                                    "referencedDeclaration": 16475,
                                                     "src": "6733:7:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4889,13 +4901,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 16583,
+                                            "id": 16486,
                                             "indexExpression": {
-                                                "id": 16582,
+                                                "id": 16485,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16574,
+                                                "referencedDeclaration": 16477,
                                                 "src": "6742:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4916,11 +4928,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 16584,
+                                            "id": 16487,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16576,
+                                            "referencedDeclaration": 16479,
                                             "src": "6750:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4933,11 +4945,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16592,
+                                    "id": 16495,
                                     "nodeType": "IfStatement",
                                     "src": "6718:105:116",
                                     "trueBody": {
-                                        "id": 16591,
+                                        "id": 16494,
                                         "nodeType": "Block",
                                         "src": "6758:65:116",
                                         "statements": [
@@ -4947,18 +4959,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16586,
+                                                            "id": 16489,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "6779:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16588,
+                                                        "id": 16491,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4966,14 +4978,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "6791:19:116",
                                                         "memberName": "InsufficientBalance",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10547,
+                                                        "referencedDeclaration": 10377,
                                                         "src": "6779:31:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16589,
+                                                    "id": 16492,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4989,7 +5001,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16590,
+                                                "id": 16493,
                                                 "nodeType": "RevertStatement",
                                                 "src": "6772:40:116"
                                             }
@@ -4997,13 +5009,13 @@ export const HyperdriveMultiToken = {
                                     }
                                 },
                                 {
-                                    "id": 16601,
+                                    "id": 16504,
                                     "nodeType": "UncheckedBlock",
                                     "src": "6882:70:116",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 16599,
+                                                "id": 16502,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5011,24 +5023,24 @@ export const HyperdriveMultiToken = {
                                                 "leftHandSide": {
                                                     "baseExpression": {
                                                         "baseExpression": {
-                                                            "id": 16593,
+                                                            "id": 16496,
                                                             "name": "_balanceOf",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 17866,
+                                                            "referencedDeclaration": 17769,
                                                             "src": "6906:10:116",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                                 "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                             }
                                                         },
-                                                        "id": 16596,
+                                                        "id": 16499,
                                                         "indexExpression": {
-                                                            "id": 16594,
+                                                            "id": 16497,
                                                             "name": "tokenID",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 16572,
+                                                            "referencedDeclaration": 16475,
                                                             "src": "6917:7:116",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -5046,13 +5058,13 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "mapping(address => uint256)"
                                                         }
                                                     },
-                                                    "id": 16597,
+                                                    "id": 16500,
                                                     "indexExpression": {
-                                                        "id": 16595,
+                                                        "id": 16498,
                                                         "name": "from",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16574,
+                                                        "referencedDeclaration": 16477,
                                                         "src": "6926:4:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -5073,11 +5085,11 @@ export const HyperdriveMultiToken = {
                                                 "nodeType": "Assignment",
                                                 "operator": "-=",
                                                 "rightHandSide": {
-                                                    "id": 16598,
+                                                    "id": 16501,
                                                     "name": "amount",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16576,
+                                                    "referencedDeclaration": 16479,
                                                     "src": "6935:6:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5090,7 +5102,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 16600,
+                                            "id": 16503,
                                             "nodeType": "ExpressionStatement",
                                             "src": "6906:35:116"
                                         }
@@ -5098,31 +5110,31 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 16606,
+                                        "id": 16509,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 16602,
+                                                "id": 16505,
                                                 "name": "_totalSupply",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17871,
+                                                "referencedDeclaration": 17774,
                                                 "src": "6961:12:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                     "typeString": "mapping(uint256 => uint256)"
                                                 }
                                             },
-                                            "id": 16604,
+                                            "id": 16507,
                                             "indexExpression": {
-                                                "id": 16603,
+                                                "id": 16506,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16572,
+                                                "referencedDeclaration": 16475,
                                                 "src": "6974:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5143,11 +5155,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "-=",
                                         "rightHandSide": {
-                                            "id": 16605,
+                                            "id": 16508,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16576,
+                                            "referencedDeclaration": 16479,
                                             "src": "6986:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5160,7 +5172,7 @@ export const HyperdriveMultiToken = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 16607,
+                                    "id": 16510,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6961:31:116"
                                 },
@@ -5169,7 +5181,7 @@ export const HyperdriveMultiToken = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 16609,
+                                                    "id": 16512,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -5180,7 +5192,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 16610,
+                                                "id": 16513,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5195,11 +5207,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16611,
+                                                "id": 16514,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16574,
+                                                "referencedDeclaration": 16477,
                                                 "src": "7078:4:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5210,7 +5222,7 @@ export const HyperdriveMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 16614,
+                                                        "id": 16517,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -5232,7 +5244,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 16613,
+                                                    "id": 16516,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -5244,14 +5256,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16612,
+                                                        "id": 16515,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "7084:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16615,
+                                                "id": 16518,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5268,11 +5280,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16616,
+                                                "id": 16519,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16572,
+                                                "referencedDeclaration": 16475,
                                                 "src": "7096:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5280,11 +5292,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16617,
+                                                "id": 16520,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16576,
+                                                "referencedDeclaration": 16479,
                                                 "src": "7105:6:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5315,18 +5327,18 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 16608,
+                                            "id": 16511,
                                             "name": "TransferSingle",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 11758,
+                                            "referencedDeclaration": 11590,
                                             "src": "7051:14:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,address,address,uint256,uint256)"
                                             }
                                         },
-                                        "id": 16618,
+                                        "id": 16521,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5342,14 +5354,14 @@ export const HyperdriveMultiToken = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 16619,
+                                    "id": 16522,
                                     "nodeType": "EmitStatement",
                                     "src": "7046:66:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16570,
+                            "id": 16473,
                             "nodeType": "StructuredDocumentation",
                             "src": "6256:261:116",
                             "text": "@notice Burning function to remove tokens.\n @param tokenID The asset type to remove.\n @param from The address whose balance to decrease.\n @param amount The number of tokens to remove.\n @dev Must be used from inheriting contracts."
@@ -5360,17 +5372,17 @@ export const HyperdriveMultiToken = {
                         "name": "_burn",
                         "nameLocation": "6531:5:116",
                         "parameters": {
-                            "id": 16577,
+                            "id": 16480,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16572,
+                                    "id": 16475,
                                     "mutability": "mutable",
                                     "name": "tokenID",
                                     "nameLocation": "6545:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16621,
+                                    "scope": 16524,
                                     "src": "6537:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5379,7 +5391,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16571,
+                                        "id": 16474,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6537:7:116",
@@ -5392,12 +5404,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16574,
+                                    "id": 16477,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "6562:4:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16621,
+                                    "scope": 16524,
                                     "src": "6554:12:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5406,7 +5418,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16573,
+                                        "id": 16476,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6554:7:116",
@@ -5420,12 +5432,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16576,
+                                    "id": 16479,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "6576:6:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16621,
+                                    "scope": 16524,
                                     "src": "6568:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5434,7 +5446,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16575,
+                                        "id": 16478,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6568:7:116",
@@ -5449,23 +5461,23 @@ export const HyperdriveMultiToken = {
                             "src": "6536:47:116"
                         },
                         "returnParameters": {
-                            "id": 16578,
+                            "id": 16481,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6593:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16730,
+                        "id": 16633,
                         "nodeType": "FunctionDefinition",
                         "src": "8430:1543:116",
                         "nodes": [],
                         "body": {
-                            "id": 16729,
+                            "id": 16632,
                             "nodeType": "Block",
                             "src": "8686:1287:116",
                             "nodes": [],
@@ -5476,14 +5488,14 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 16646,
+                                        "id": 16549,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 16643,
+                                                "id": 16546,
                                                 "name": "block",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -5494,7 +5506,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "block"
                                                 }
                                             },
-                                            "id": 16644,
+                                            "id": 16547,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5511,11 +5523,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">",
                                         "rightExpression": {
-                                            "id": 16645,
+                                            "id": 16548,
                                             "name": "deadline",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16634,
+                                            "referencedDeclaration": 16537,
                                             "src": "8772:8:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5528,11 +5540,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16653,
+                                    "id": 16556,
                                     "nodeType": "IfStatement",
                                     "src": "8750:93:116",
                                     "trueBody": {
-                                        "id": 16652,
+                                        "id": 16555,
                                         "nodeType": "Block",
                                         "src": "8782:61:116",
                                         "statements": [
@@ -5542,18 +5554,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16647,
+                                                            "id": 16550,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "8803:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16649,
+                                                        "id": 16552,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5561,14 +5573,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "8815:15:116",
                                                         "memberName": "ExpiredDeadline",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10544,
+                                                        "referencedDeclaration": 10374,
                                                         "src": "8803:27:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16650,
+                                                    "id": 16553,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5584,7 +5596,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16651,
+                                                "id": 16554,
                                                 "nodeType": "RevertStatement",
                                                 "src": "8796:36:116"
                                             }
@@ -5597,17 +5609,17 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 16659,
+                                        "id": 16562,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 16654,
+                                            "id": 16557,
                                             "name": "owner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16628,
+                                            "referencedDeclaration": 16531,
                                             "src": "8904:5:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -5620,7 +5632,7 @@ export const HyperdriveMultiToken = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "30",
-                                                    "id": 16657,
+                                                    "id": 16560,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -5642,7 +5654,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "int_const 0"
                                                     }
                                                 ],
-                                                "id": 16656,
+                                                "id": 16559,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5654,14 +5666,14 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 16655,
+                                                    "id": 16558,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "8913:7:116",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 16658,
+                                            "id": 16561,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -5683,11 +5695,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16666,
+                                    "id": 16569,
                                     "nodeType": "IfStatement",
                                     "src": "8900:92:116",
                                     "trueBody": {
-                                        "id": 16665,
+                                        "id": 16568,
                                         "nodeType": "Block",
                                         "src": "8925:67:116",
                                         "statements": [
@@ -5697,18 +5709,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16660,
+                                                            "id": 16563,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "8946:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16662,
+                                                        "id": 16565,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5716,14 +5728,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "8958:21:116",
                                                         "memberName": "RestrictedZeroAddress",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10607,
+                                                        "referencedDeclaration": 10437,
                                                         "src": "8946:33:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16663,
+                                                    "id": 16566,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5739,7 +5751,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16664,
+                                                "id": 16567,
                                                 "nodeType": "RevertStatement",
                                                 "src": "8939:42:116"
                                             }
@@ -5748,17 +5760,17 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "assignments": [
-                                        16668
+                                        16571
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 16668,
+                                            "id": 16571,
                                             "mutability": "mutable",
                                             "name": "structHash",
                                             "nameLocation": "9082:10:116",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 16729,
+                                            "scope": 16632,
                                             "src": "9074:18:116",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -5767,7 +5779,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "bytes32"
                                             },
                                             "typeName": {
-                                                "id": 16667,
+                                                "id": 16570,
                                                 "name": "bytes32",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "9074:7:116",
@@ -5779,14 +5791,14 @@ export const HyperdriveMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 16689,
+                                    "id": 16592,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "1901",
-                                                        "id": 16672,
+                                                        "id": 16575,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -5801,11 +5813,11 @@ export const HyperdriveMultiToken = {
                                                         "value": "\u0019\u0001"
                                                     },
                                                     {
-                                                        "id": 16673,
+                                                        "id": 16576,
                                                         "name": "domainSeparator",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16624,
+                                                        "referencedDeclaration": 16527,
                                                         "src": "9180:15:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -5817,11 +5829,11 @@ export const HyperdriveMultiToken = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 16677,
+                                                                        "id": 16580,
                                                                         "name": "permitTypehash",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16626,
+                                                                        "referencedDeclaration": 16529,
                                                                         "src": "9280:14:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes32",
@@ -5829,11 +5841,11 @@ export const HyperdriveMultiToken = {
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 16678,
+                                                                        "id": 16581,
                                                                         "name": "owner",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16628,
+                                                                        "referencedDeclaration": 16531,
                                                                         "src": "9320:5:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
@@ -5841,11 +5853,11 @@ export const HyperdriveMultiToken = {
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 16679,
+                                                                        "id": 16582,
                                                                         "name": "spender",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16630,
+                                                                        "referencedDeclaration": 16533,
                                                                         "src": "9351:7:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
@@ -5853,11 +5865,11 @@ export const HyperdriveMultiToken = {
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 16680,
+                                                                        "id": 16583,
                                                                         "name": "_approved",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16632,
+                                                                        "referencedDeclaration": 16535,
                                                                         "src": "9384:9:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bool",
@@ -5866,24 +5878,24 @@ export const HyperdriveMultiToken = {
                                                                     },
                                                                     {
                                                                         "baseExpression": {
-                                                                            "id": 16681,
+                                                                            "id": 16584,
                                                                             "name": "_nonces",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 17892,
+                                                                            "referencedDeclaration": 17795,
                                                                             "src": "9419:7:116",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                                                 "typeString": "mapping(address => uint256)"
                                                                             }
                                                                         },
-                                                                        "id": 16683,
+                                                                        "id": 16586,
                                                                         "indexExpression": {
-                                                                            "id": 16682,
+                                                                            "id": 16585,
                                                                             "name": "owner",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 16628,
+                                                                            "referencedDeclaration": 16531,
                                                                             "src": "9427:5:116",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
@@ -5902,11 +5914,11 @@ export const HyperdriveMultiToken = {
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 16684,
+                                                                        "id": 16587,
                                                                         "name": "deadline",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 16634,
+                                                                        "referencedDeclaration": 16537,
                                                                         "src": "9459:8:116",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -5942,7 +5954,7 @@ export const HyperdriveMultiToken = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 16675,
+                                                                        "id": 16578,
                                                                         "name": "abi",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
@@ -5953,7 +5965,7 @@ export const HyperdriveMultiToken = {
                                                                             "typeString": "abi"
                                                                         }
                                                                     },
-                                                                    "id": 16676,
+                                                                    "id": 16579,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -5967,7 +5979,7 @@ export const HyperdriveMultiToken = {
                                                                         "typeString": "function () pure returns (bytes memory)"
                                                                     }
                                                                 },
-                                                                "id": 16685,
+                                                                "id": 16588,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5991,7 +6003,7 @@ export const HyperdriveMultiToken = {
                                                                     "typeString": "bytes memory"
                                                                 }
                                                             ],
-                                                            "id": 16674,
+                                                            "id": 16577,
                                                             "name": "keccak256",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -6002,7 +6014,7 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                                             }
                                                         },
-                                                        "id": 16686,
+                                                        "id": 16589,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6035,7 +6047,7 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 16670,
+                                                        "id": 16573,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -6046,7 +6058,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 16671,
+                                                    "id": 16574,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -6060,7 +6072,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 16687,
+                                                "id": 16590,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6084,7 +6096,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 16669,
+                                            "id": 16572,
                                             "name": "keccak256",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -6095,7 +6107,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                             }
                                         },
-                                        "id": 16688,
+                                        "id": 16591,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6116,17 +6128,17 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "assignments": [
-                                        16691
+                                        16594
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 16691,
+                                            "id": 16594,
                                             "mutability": "mutable",
                                             "name": "signer",
                                             "nameLocation": "9549:6:116",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 16729,
+                                            "scope": 16632,
                                             "src": "9541:14:116",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6135,7 +6147,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "address"
                                             },
                                             "typeName": {
-                                                "id": 16690,
+                                                "id": 16593,
                                                 "name": "address",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "9541:7:116",
@@ -6148,15 +6160,15 @@ export const HyperdriveMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 16698,
+                                    "id": 16601,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 16693,
+                                                "id": 16596,
                                                 "name": "structHash",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16668,
+                                                "referencedDeclaration": 16571,
                                                 "src": "9568:10:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
@@ -6164,11 +6176,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16694,
+                                                "id": 16597,
                                                 "name": "v",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16636,
+                                                "referencedDeclaration": 16539,
                                                 "src": "9580:1:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint8",
@@ -6176,11 +6188,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16695,
+                                                "id": 16598,
                                                 "name": "r",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16638,
+                                                "referencedDeclaration": 16541,
                                                 "src": "9583:1:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
@@ -6188,11 +6200,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16696,
+                                                "id": 16599,
                                                 "name": "s",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16640,
+                                                "referencedDeclaration": 16543,
                                                 "src": "9586:1:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
@@ -6219,7 +6231,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "bytes32"
                                                 }
                                             ],
-                                            "id": 16692,
+                                            "id": 16595,
                                             "name": "ecrecover",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -6230,7 +6242,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "function (bytes32,uint8,bytes32,bytes32) pure returns (address)"
                                             }
                                         },
-                                        "id": 16697,
+                                        "id": 16600,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6255,17 +6267,17 @@ export const HyperdriveMultiToken = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 16701,
+                                        "id": 16604,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 16699,
+                                            "id": 16602,
                                             "name": "signer",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16691,
+                                            "referencedDeclaration": 16594,
                                             "src": "9602:6:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -6275,11 +6287,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "!=",
                                         "rightExpression": {
-                                            "id": 16700,
+                                            "id": 16603,
                                             "name": "owner",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16628,
+                                            "referencedDeclaration": 16531,
                                             "src": "9612:5:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -6292,11 +6304,11 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16708,
+                                    "id": 16611,
                                     "nodeType": "IfStatement",
                                     "src": "9598:83:116",
                                     "trueBody": {
-                                        "id": 16707,
+                                        "id": 16610,
                                         "nodeType": "Block",
                                         "src": "9619:62:116",
                                         "statements": [
@@ -6306,18 +6318,18 @@ export const HyperdriveMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 16702,
+                                                            "id": 16605,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10676,
+                                                            "referencedDeclaration": 10506,
                                                             "src": "9640:11:116",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 16704,
+                                                        "id": 16607,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6325,14 +6337,14 @@ export const HyperdriveMultiToken = {
                                                         "memberLocation": "9652:16:116",
                                                         "memberName": "InvalidSignature",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10577,
+                                                        "referencedDeclaration": 10407,
                                                         "src": "9640:28:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 16705,
+                                                    "id": 16608,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6348,7 +6360,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 16706,
+                                                "id": 16609,
                                                 "nodeType": "RevertStatement",
                                                 "src": "9633:37:116"
                                             }
@@ -6356,13 +6368,13 @@ export const HyperdriveMultiToken = {
                                     }
                                 },
                                 {
-                                    "id": 16714,
+                                    "id": 16617,
                                     "nodeType": "UncheckedBlock",
                                     "src": "9733:51:116",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 16712,
+                                                "id": 16615,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6373,24 +6385,24 @@ export const HyperdriveMultiToken = {
                                                 "src": "9757:16:116",
                                                 "subExpression": {
                                                     "baseExpression": {
-                                                        "id": 16709,
+                                                        "id": 16612,
                                                         "name": "_nonces",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17892,
+                                                        "referencedDeclaration": 17795,
                                                         "src": "9759:7:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                             "typeString": "mapping(address => uint256)"
                                                         }
                                                     },
-                                                    "id": 16711,
+                                                    "id": 16614,
                                                     "indexExpression": {
-                                                        "id": 16710,
+                                                        "id": 16613,
                                                         "name": "owner",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16628,
+                                                        "referencedDeclaration": 16531,
                                                         "src": "9767:5:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -6413,7 +6425,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 16713,
+                                            "id": 16616,
                                             "nodeType": "ExpressionStatement",
                                             "src": "9757:16:116"
                                         }
@@ -6421,7 +6433,7 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 16721,
+                                        "id": 16624,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6429,24 +6441,24 @@ export const HyperdriveMultiToken = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 16715,
+                                                    "id": 16618,
                                                     "name": "_isApprovedForAll",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17878,
+                                                    "referencedDeclaration": 17781,
                                                     "src": "9820:17:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
                                                         "typeString": "mapping(address => mapping(address => bool))"
                                                     }
                                                 },
-                                                "id": 16718,
+                                                "id": 16621,
                                                 "indexExpression": {
-                                                    "id": 16716,
+                                                    "id": 16619,
                                                     "name": "owner",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 16628,
+                                                    "referencedDeclaration": 16531,
                                                     "src": "9838:5:116",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
@@ -6464,13 +6476,13 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "mapping(address => bool)"
                                                 }
                                             },
-                                            "id": 16719,
+                                            "id": 16622,
                                             "indexExpression": {
-                                                "id": 16717,
+                                                "id": 16620,
                                                 "name": "spender",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16630,
+                                                "referencedDeclaration": 16533,
                                                 "src": "9845:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -6491,11 +6503,11 @@ export const HyperdriveMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 16720,
+                                            "id": 16623,
                                             "name": "_approved",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16632,
+                                            "referencedDeclaration": 16535,
                                             "src": "9856:9:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -6508,7 +6520,7 @@ export const HyperdriveMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 16722,
+                                    "id": 16625,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9820:45:116"
                                 },
@@ -6516,11 +6528,11 @@ export const HyperdriveMultiToken = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 16724,
+                                                "id": 16627,
                                                 "name": "owner",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16628,
+                                                "referencedDeclaration": 16531,
                                                 "src": "9940:5:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -6528,11 +6540,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16725,
+                                                "id": 16628,
                                                 "name": "spender",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16630,
+                                                "referencedDeclaration": 16533,
                                                 "src": "9947:7:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -6540,11 +6552,11 @@ export const HyperdriveMultiToken = {
                                                 }
                                             },
                                             {
-                                                "id": 16726,
+                                                "id": 16629,
                                                 "name": "_approved",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 16632,
+                                                "referencedDeclaration": 16535,
                                                 "src": "9956:9:116",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -6567,18 +6579,18 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 16723,
+                                            "id": 16626,
                                             "name": "ApprovalForAll",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 11776,
+                                            "referencedDeclaration": 11608,
                                             "src": "9925:14:116",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_bool_$returns$__$",
                                                 "typeString": "function (address,address,bool)"
                                             }
                                         },
-                                        "id": 16727,
+                                        "id": 16630,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6594,14 +6606,14 @@ export const HyperdriveMultiToken = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 16728,
+                                    "id": 16631,
                                     "nodeType": "EmitStatement",
                                     "src": "9920:46:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16622,
+                            "id": 16525,
                             "nodeType": "StructuredDocumentation",
                             "src": "7125:1300:116",
                             "text": "@dev Allows a caller who is not the owner of an account to execute the\n      functionality of 'approve' for all assets with the owners signature.\n @param domainSeparator The EIP712 domain separator for this contract.\n @param permitTypehash The EIP712 typehash for the permit data.\n @param owner The owner of the account which is having the new approval set.\n @param spender The address which will be allowed to spend owner's tokens.\n @param _approved A boolean of the approval status to set to.\n @param deadline The timestamp which the signature must be submitted by\n        to be valid.\n @param v Extra ECDSA data which allows public key recovery from\n        signature assumed to be 27 or 28.\n @param r The r component of the ECDSA signature.\n @param s The s component of the ECDSA signature.\n @dev The signature for this function follows EIP 712 standard and should\n      be generated with the eth_signTypedData JSON RPC call instead of\n      the eth_sign JSON RPC call. If using out of date parity signing\n      libraries the v component may need to be adjusted. Also it is very\n      rare but possible for v to be other values, those values are not\n      supported."
@@ -6612,17 +6624,17 @@ export const HyperdriveMultiToken = {
                         "name": "_permitForAll",
                         "nameLocation": "8439:13:116",
                         "parameters": {
-                            "id": 16641,
+                            "id": 16544,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16624,
+                                    "id": 16527,
                                     "mutability": "mutable",
                                     "name": "domainSeparator",
                                     "nameLocation": "8470:15:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8462:23:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6631,7 +6643,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 16623,
+                                        "id": 16526,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8462:7:116",
@@ -6644,12 +6656,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16626,
+                                    "id": 16529,
                                     "mutability": "mutable",
                                     "name": "permitTypehash",
                                     "nameLocation": "8503:14:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8495:22:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6658,7 +6670,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 16625,
+                                        "id": 16528,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8495:7:116",
@@ -6671,12 +6683,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16628,
+                                    "id": 16531,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "8535:5:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8527:13:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6685,7 +6697,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16627,
+                                        "id": 16530,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8527:7:116",
@@ -6699,12 +6711,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16630,
+                                    "id": 16533,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "8558:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8550:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6713,7 +6725,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16629,
+                                        "id": 16532,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8550:7:116",
@@ -6727,12 +6739,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16632,
+                                    "id": 16535,
                                     "mutability": "mutable",
                                     "name": "_approved",
                                     "nameLocation": "8580:9:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8575:14:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6741,7 +6753,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 16631,
+                                        "id": 16534,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8575:4:116",
@@ -6754,12 +6766,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16634,
+                                    "id": 16537,
                                     "mutability": "mutable",
                                     "name": "deadline",
                                     "nameLocation": "8607:8:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8599:16:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6768,7 +6780,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16633,
+                                        "id": 16536,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8599:7:116",
@@ -6781,12 +6793,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16636,
+                                    "id": 16539,
                                     "mutability": "mutable",
                                     "name": "v",
                                     "nameLocation": "8631:1:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8625:7:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6795,7 +6807,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 16635,
+                                        "id": 16538,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8625:5:116",
@@ -6808,12 +6820,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16638,
+                                    "id": 16541,
                                     "mutability": "mutable",
                                     "name": "r",
                                     "nameLocation": "8650:1:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8642:9:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6822,7 +6834,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 16637,
+                                        "id": 16540,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8642:7:116",
@@ -6835,12 +6847,12 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 16640,
+                                    "id": 16543,
                                     "mutability": "mutable",
                                     "name": "s",
                                     "nameLocation": "8669:1:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16730,
+                                    "scope": 16633,
                                     "src": "8661:9:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6849,7 +6861,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 16639,
+                                        "id": 16542,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8661:7:116",
@@ -6864,40 +6876,40 @@ export const HyperdriveMultiToken = {
                             "src": "8452:224:116"
                         },
                         "returnParameters": {
-                            "id": 16642,
+                            "id": 16545,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8686:0:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 16778,
+                        "id": 16681,
                         "nodeType": "FunctionDefinition",
                         "src": "10223:590:116",
                         "nodes": [],
                         "body": {
-                            "id": 16777,
+                            "id": 16680,
                             "nodeType": "Block",
                             "src": "10319:494:116",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        16739
+                                        16642
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 16739,
+                                            "id": 16642,
                                             "mutability": "mutable",
                                             "name": "salt",
                                             "nameLocation": "10402:4:116",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 16777,
+                                            "scope": 16680,
                                             "src": "10394:12:116",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6906,7 +6918,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "bytes32"
                                             },
                                             "typeName": {
-                                                "id": 16738,
+                                                "id": 16641,
                                                 "name": "bytes32",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "10394:7:116",
@@ -6918,7 +6930,7 @@ export const HyperdriveMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 16750,
+                                    "id": 16653,
                                     "initialValue": {
                                         "arguments": [
                                             {
@@ -6926,14 +6938,14 @@ export const HyperdriveMultiToken = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 16745,
+                                                                "id": 16648,
                                                                 "name": "this",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -28,
                                                                 "src": "10438:4:116",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_HyperdriveMultiToken_$16779",
+                                                                    "typeIdentifier": "t_contract$_HyperdriveMultiToken_$16682",
                                                                     "typeString": "contract HyperdriveMultiToken"
                                                                 }
                                                             }
@@ -6941,11 +6953,11 @@ export const HyperdriveMultiToken = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_HyperdriveMultiToken_$16779",
+                                                                    "typeIdentifier": "t_contract$_HyperdriveMultiToken_$16682",
                                                                     "typeString": "contract HyperdriveMultiToken"
                                                                 }
                                                             ],
-                                                            "id": 16744,
+                                                            "id": 16647,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -6957,14 +6969,14 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 16743,
+                                                                "id": 16646,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "10430:7:116",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 16746,
+                                                        "id": 16649,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6981,11 +6993,11 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 16747,
+                                                        "id": 16650,
                                                         "name": "tokenId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16733,
+                                                        "referencedDeclaration": 16636,
                                                         "src": "10445:7:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -7005,7 +7017,7 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 16741,
+                                                        "id": 16644,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -7016,7 +7028,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 16742,
+                                                    "id": 16645,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -7030,7 +7042,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 16748,
+                                                "id": 16651,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7054,7 +7066,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 16740,
+                                            "id": 16643,
                                             "name": "keccak256",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -7065,7 +7077,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                             }
                                         },
-                                        "id": 16749,
+                                        "id": 16652,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7086,17 +7098,17 @@ export const HyperdriveMultiToken = {
                                 },
                                 {
                                     "assignments": [
-                                        16752
+                                        16655
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 16752,
+                                            "id": 16655,
                                             "mutability": "mutable",
                                             "name": "addressBytes",
                                             "nameLocation": "10555:12:116",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 16777,
+                                            "scope": 16680,
                                             "src": "10547:20:116",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7105,7 +7117,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "bytes32"
                                             },
                                             "typeName": {
-                                                "id": 16751,
+                                                "id": 16654,
                                                 "name": "bytes32",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "10547:7:116",
@@ -7117,7 +7129,7 @@ export const HyperdriveMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 16765,
+                                    "id": 16668,
                                     "initialValue": {
                                         "arguments": [
                                             {
@@ -7126,7 +7138,7 @@ export const HyperdriveMultiToken = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "30786666",
-                                                                "id": 16758,
+                                                                "id": 16661,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -7148,7 +7160,7 @@ export const HyperdriveMultiToken = {
                                                                     "typeString": "int_const 255"
                                                                 }
                                                             ],
-                                                            "id": 16757,
+                                                            "id": 16660,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -7160,14 +7172,14 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "type(bytes1)"
                                                             },
                                                             "typeName": {
-                                                                "id": 16756,
+                                                                "id": 16659,
                                                                 "name": "bytes1",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "10627:6:116",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 16759,
+                                                        "id": 16662,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7184,11 +7196,11 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 16760,
+                                                        "id": 16663,
                                                         "name": "_linkerFactory",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17856,
+                                                        "referencedDeclaration": 17759,
                                                         "src": "10657:14:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -7196,11 +7208,11 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 16761,
+                                                        "id": 16664,
                                                         "name": "salt",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 16739,
+                                                        "referencedDeclaration": 16642,
                                                         "src": "10689:4:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -7208,11 +7220,11 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 16762,
+                                                        "id": 16665,
                                                         "name": "_linkerCodeHash",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17859,
+                                                        "referencedDeclaration": 17762,
                                                         "src": "10711:15:116",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -7240,7 +7252,7 @@ export const HyperdriveMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 16754,
+                                                        "id": 16657,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -7251,7 +7263,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 16755,
+                                                    "id": 16658,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -7265,7 +7277,7 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 16763,
+                                                "id": 16666,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7289,7 +7301,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 16753,
+                                            "id": 16656,
                                             "name": "keccak256",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -7300,7 +7312,7 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                             }
                                         },
-                                        "id": 16764,
+                                        "id": 16667,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7327,11 +7339,11 @@ export const HyperdriveMultiToken = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 16772,
+                                                                "id": 16675,
                                                                 "name": "addressBytes",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 16752,
+                                                                "referencedDeclaration": 16655,
                                                                 "src": "10791:12:116",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
@@ -7346,7 +7358,7 @@ export const HyperdriveMultiToken = {
                                                                     "typeString": "bytes32"
                                                                 }
                                                             ],
-                                                            "id": 16771,
+                                                            "id": 16674,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -7358,14 +7370,14 @@ export const HyperdriveMultiToken = {
                                                                 "typeString": "type(uint256)"
                                                             },
                                                             "typeName": {
-                                                                "id": 16770,
+                                                                "id": 16673,
                                                                 "name": "uint256",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "10783:7:116",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 16773,
+                                                        "id": 16676,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -7389,7 +7401,7 @@ export const HyperdriveMultiToken = {
                                                             "typeString": "uint256"
                                                         }
                                                     ],
-                                                    "id": 16769,
+                                                    "id": 16672,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -7401,14 +7413,14 @@ export const HyperdriveMultiToken = {
                                                         "typeString": "type(uint160)"
                                                     },
                                                     "typeName": {
-                                                        "id": 16768,
+                                                        "id": 16671,
                                                         "name": "uint160",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "10775:7:116",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 16774,
+                                                "id": 16677,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7432,7 +7444,7 @@ export const HyperdriveMultiToken = {
                                                     "typeString": "uint160"
                                                 }
                                             ],
-                                            "id": 16767,
+                                            "id": 16670,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -7444,14 +7456,14 @@ export const HyperdriveMultiToken = {
                                                 "typeString": "type(address)"
                                             },
                                             "typeName": {
-                                                "id": 16766,
+                                                "id": 16669,
                                                 "name": "address",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "10767:7:116",
                                                 "typeDescriptions": {}
                                             }
                                         },
-                                        "id": 16775,
+                                        "id": 16678,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7467,15 +7479,15 @@ export const HyperdriveMultiToken = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "functionReturnParameters": 16737,
-                                    "id": 16776,
+                                    "functionReturnParameters": 16640,
+                                    "id": 16679,
                                     "nodeType": "Return",
                                     "src": "10760:46:116"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 16731,
+                            "id": 16634,
                             "nodeType": "StructuredDocumentation",
                             "src": "9979:239:116",
                             "text": "@notice Derive the ERC20 forwarder address for a provided `tokenId`.\n @param tokenId Token Id of the token whose forwarder contract address\n        need to derived.\n @return Address of the ERC20 forwarder contract."
@@ -7486,17 +7498,17 @@ export const HyperdriveMultiToken = {
                         "name": "_deriveForwarderAddress",
                         "nameLocation": "10232:23:116",
                         "parameters": {
-                            "id": 16734,
+                            "id": 16637,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16733,
+                                    "id": 16636,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "10273:7:116",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16778,
+                                    "scope": 16681,
                                     "src": "10265:15:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7505,7 +7517,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 16732,
+                                        "id": 16635,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10265:7:116",
@@ -7520,17 +7532,17 @@ export const HyperdriveMultiToken = {
                             "src": "10255:31:116"
                         },
                         "returnParameters": {
-                            "id": 16737,
+                            "id": 16640,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 16736,
+                                    "id": 16639,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 16778,
+                                    "scope": 16681,
                                     "src": "10310:7:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7539,7 +7551,7 @@ export const HyperdriveMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 16735,
+                                        "id": 16638,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10310:7:116",
@@ -7554,7 +7566,7 @@ export const HyperdriveMultiToken = {
                             ],
                             "src": "10309:9:116"
                         },
-                        "scope": 16779,
+                        "scope": 16682,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
@@ -7564,31 +7576,31 @@ export const HyperdriveMultiToken = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 16305,
+                            "id": 16208,
                             "name": "IHyperdriveEvents",
                             "nameLocations": [
                                 "1406:17:116"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11205,
+                            "referencedDeclaration": 11037,
                             "src": "1406:17:116"
                         },
-                        "id": 16306,
+                        "id": 16209,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1406:17:116"
                     },
                     {
                         "baseName": {
-                            "id": 16307,
+                            "id": 16210,
                             "name": "HyperdriveBase",
                             "nameLocations": [
                                 "1425:14:116"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 13995,
+                            "referencedDeclaration": 13835,
                             "src": "1425:14:116"
                         },
-                        "id": 16308,
+                        "id": 16211,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1425:14:116"
                     }
@@ -7597,46 +7609,46 @@ export const HyperdriveMultiToken = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 16304,
+                    "id": 16207,
                     "nodeType": "StructuredDocumentation",
                     "src": "254:1110:116",
                     "text": "@author DELV\n @title HyperdriveMultiToken\n @notice Implements the MultiToken accounting that Hyperdrive uses to track\n         user's positions. MultiToken maintains a set of balances and\n         approvals for a list of sub-tokens specified by an asset ID. This\n         token is mostly ERC1155 compliant; however, we remove on transfer\n         callbacks and safe transfer because of the risk of external calls to\n         untrusted code.\n @dev Our architecture maintains ERC20 compatibility by allowing users to\n      access their balances and approvals through ERC20 forwarding contracts\n      deployed by the registered forwarder factory. To ensure that only the\n      ERC20 forwarders can call the bridge endpoints, we verify that the\n      create2 pre-image of the caller address is the ERC20 forwarder bytecode\n      and the token ID.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    16779,
-                    13995,
-                    17990,
-                    71674,
-                    11205,
-                    11777
+                    16682,
+                    13835,
+                    17893,
+                    71565,
+                    11037,
+                    11609
                 ],
                 "name": "HyperdriveMultiToken",
                 "nameLocation": "1382:20:116",
-                "scope": 16780,
+                "scope": 16683,
                 "usedErrors": [
-                    71619
+                    71510
                 ],
                 "usedEvents": [
-                    11025,
-                    11040,
-                    11059,
-                    11074,
-                    11091,
-                    11110,
-                    11129,
-                    11150,
-                    11163,
-                    11170,
-                    11175,
-                    11180,
-                    11185,
-                    11192,
-                    11197,
-                    11204,
-                    11758,
-                    11767,
-                    11776
+                    10855,
+                    10870,
+                    10889,
+                    10904,
+                    10921,
+                    10940,
+                    10959,
+                    10980,
+                    10995,
+                    11002,
+                    11007,
+                    11012,
+                    11017,
+                    11024,
+                    11029,
+                    11036,
+                    11590,
+                    11599,
+                    11608
                 ]
             }
         ],

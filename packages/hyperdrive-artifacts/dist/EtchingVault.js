@@ -59,13 +59,13 @@ export const EtchingVault = {
         "sourceMap": "511:471:130:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;874:106;;;;;;:::i;:::-;-1:-1:-1;957:16:130;;874:106;;;;345:25:234;;;333:2;318:18;874:106:130;;;;;;;;785:83;;;-1:-1:-1;;;;;851:10:130;545:32:234;527:51;;515:2;500:18;785:83:130;381:203:234;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:234;;14:180;-1:-1:-1;14:180:234:o",
         "linkReferences": {},
         "immutableReferences": {
-            "23607": [
+            "23484": [
                 {
                     "start": 135,
                     "length": 32
                 }
             ],
-            "23609": [
+            "23486": [
                 {
                     "start": 69,
                     "length": 32
@@ -181,17 +181,17 @@ export const EtchingVault = {
     },
     "ast": {
         "absolutePath": "contracts/test/EtchingVault.sol",
-        "id": 23645,
+        "id": 23522,
         "exportedSymbols": {
             "EtchingVault": [
-                23644
+                23521
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:944:130",
         "nodes": [
             {
-                "id": 23604,
+                "id": 23481,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:130",
                 "nodes": [],
@@ -202,12 +202,12 @@ export const EtchingVault = {
                 ]
             },
             {
-                "id": 23644,
+                "id": 23521,
                 "nodeType": "ContractDefinition",
                 "src": "511:471:130",
                 "nodes": [
                     {
-                        "id": 23607,
+                        "id": 23484,
                         "nodeType": "VariableDeclaration",
                         "src": "539:37:130",
                         "nodes": [],
@@ -215,7 +215,7 @@ export const EtchingVault = {
                         "mutability": "immutable",
                         "name": "_baseToken",
                         "nameLocation": "566:10:130",
-                        "scope": 23644,
+                        "scope": 23521,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -223,7 +223,7 @@ export const EtchingVault = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 23606,
+                            "id": 23483,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "539:7:130",
@@ -236,7 +236,7 @@ export const EtchingVault = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 23609,
+                        "id": 23486,
                         "nodeType": "VariableDeclaration",
                         "src": "582:43:130",
                         "nodes": [],
@@ -244,7 +244,7 @@ export const EtchingVault = {
                         "mutability": "immutable",
                         "name": "_vaultSharePrice",
                         "nameLocation": "609:16:130",
-                        "scope": 23644,
+                        "scope": 23521,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -252,7 +252,7 @@ export const EtchingVault = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 23608,
+                            "id": 23485,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "582:7:130",
@@ -264,29 +264,29 @@ export const EtchingVault = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 23625,
+                        "id": 23502,
                         "nodeType": "FunctionDefinition",
                         "src": "632:147:130",
                         "nodes": [],
                         "body": {
-                            "id": 23624,
+                            "id": 23501,
                             "nodeType": "Block",
                             "src": "692:87:130",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 23618,
+                                        "id": 23495,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 23616,
+                                            "id": 23493,
                                             "name": "_baseToken",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 23607,
+                                            "referencedDeclaration": 23484,
                                             "src": "702:10:130",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -296,11 +296,11 @@ export const EtchingVault = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 23617,
+                                            "id": 23494,
                                             "name": "_baseToken_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 23611,
+                                            "referencedDeclaration": 23488,
                                             "src": "715:11:130",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -313,23 +313,23 @@ export const EtchingVault = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 23619,
+                                    "id": 23496,
                                     "nodeType": "ExpressionStatement",
                                     "src": "702:24:130"
                                 },
                                 {
                                     "expression": {
-                                        "id": 23622,
+                                        "id": 23499,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 23620,
+                                            "id": 23497,
                                             "name": "_vaultSharePrice",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 23609,
+                                            "referencedDeclaration": 23486,
                                             "src": "736:16:130",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -339,11 +339,11 @@ export const EtchingVault = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 23621,
+                                            "id": 23498,
                                             "name": "_vaultSharePrice_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 23613,
+                                            "referencedDeclaration": 23490,
                                             "src": "755:17:130",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -356,7 +356,7 @@ export const EtchingVault = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 23623,
+                                    "id": 23500,
                                     "nodeType": "ExpressionStatement",
                                     "src": "736:36:130"
                                 }
@@ -368,17 +368,17 @@ export const EtchingVault = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 23614,
+                            "id": 23491,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23611,
+                                    "id": 23488,
                                     "mutability": "mutable",
                                     "name": "_baseToken_",
                                     "nameLocation": "652:11:130",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23625,
+                                    "scope": 23502,
                                     "src": "644:19:130",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -387,7 +387,7 @@ export const EtchingVault = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23610,
+                                        "id": 23487,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "644:7:130",
@@ -401,12 +401,12 @@ export const EtchingVault = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23613,
+                                    "id": 23490,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice_",
                                     "nameLocation": "673:17:130",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23625,
+                                    "scope": 23502,
                                     "src": "665:25:130",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -415,7 +415,7 @@ export const EtchingVault = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23612,
+                                        "id": 23489,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "665:7:130",
@@ -430,42 +430,42 @@ export const EtchingVault = {
                             "src": "643:48:130"
                         },
                         "returnParameters": {
-                            "id": 23615,
+                            "id": 23492,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "692:0:130"
                         },
-                        "scope": 23644,
+                        "scope": 23521,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 23633,
+                        "id": 23510,
                         "nodeType": "FunctionDefinition",
                         "src": "785:83:130",
                         "nodes": [],
                         "body": {
-                            "id": 23632,
+                            "id": 23509,
                             "nodeType": "Block",
                             "src": "834:34:130",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 23630,
+                                        "id": 23507,
                                         "name": "_baseToken",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23607,
+                                        "referencedDeclaration": 23484,
                                         "src": "851:10:130",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         }
                                     },
-                                    "functionReturnParameters": 23629,
-                                    "id": 23631,
+                                    "functionReturnParameters": 23506,
+                                    "id": 23508,
                                     "nodeType": "Return",
                                     "src": "844:17:130"
                                 }
@@ -478,23 +478,23 @@ export const EtchingVault = {
                         "name": "asset",
                         "nameLocation": "794:5:130",
                         "parameters": {
-                            "id": 23626,
+                            "id": 23503,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "799:2:130"
                         },
                         "returnParameters": {
-                            "id": 23629,
+                            "id": 23506,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23628,
+                                    "id": 23505,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23633,
+                                    "scope": 23510,
                                     "src": "825:7:130",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -503,7 +503,7 @@ export const EtchingVault = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23627,
+                                        "id": 23504,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "825:7:130",
@@ -518,37 +518,37 @@ export const EtchingVault = {
                             ],
                             "src": "824:9:130"
                         },
-                        "scope": 23644,
+                        "scope": 23521,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 23643,
+                        "id": 23520,
                         "nodeType": "FunctionDefinition",
                         "src": "874:106:130",
                         "nodes": [],
                         "body": {
-                            "id": 23642,
+                            "id": 23519,
                             "nodeType": "Block",
                             "src": "940:40:130",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 23640,
+                                        "id": 23517,
                                         "name": "_vaultSharePrice",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23609,
+                                        "referencedDeclaration": 23486,
                                         "src": "957:16:130",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 23639,
-                                    "id": 23641,
+                                    "functionReturnParameters": 23516,
+                                    "id": 23518,
                                     "nodeType": "Return",
                                     "src": "950:23:130"
                                 }
@@ -561,17 +561,17 @@ export const EtchingVault = {
                         "name": "convertToAssets",
                         "nameLocation": "883:15:130",
                         "parameters": {
-                            "id": 23636,
+                            "id": 23513,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23635,
+                                    "id": 23512,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23643,
+                                    "scope": 23520,
                                     "src": "899:7:130",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -580,7 +580,7 @@ export const EtchingVault = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23634,
+                                        "id": 23511,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "899:7:130",
@@ -595,17 +595,17 @@ export const EtchingVault = {
                             "src": "898:9:130"
                         },
                         "returnParameters": {
-                            "id": 23639,
+                            "id": 23516,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23638,
+                                    "id": 23515,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23643,
+                                    "scope": 23520,
                                     "src": "931:7:130",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -614,7 +614,7 @@ export const EtchingVault = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23637,
+                                        "id": 23514,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "931:7:130",
@@ -628,7 +628,7 @@ export const EtchingVault = {
                             ],
                             "src": "930:9:130"
                         },
-                        "scope": 23644,
+                        "scope": 23521,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -640,18 +640,18 @@ export const EtchingVault = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 23605,
+                    "id": 23482,
                     "nodeType": "StructuredDocumentation",
                     "src": "64:447:130",
                     "text": "@author DELV\n @title EtchingVault\n @dev This is a helper contract that is etched onto a `MockERC4626` vault\n      as one of the intermediate steps in the \"etching\" process in the Rust\n      debugging tools.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    23644
+                    23521
                 ],
                 "name": "EtchingVault",
                 "nameLocation": "520:12:130",
-                "scope": 23645,
+                "scope": 23522,
                 "usedErrors": [],
                 "usedEvents": []
             }

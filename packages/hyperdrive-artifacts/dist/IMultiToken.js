@@ -1257,29 +1257,29 @@ export const IMultiToken = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
-        "id": 11653,
+        "id": 11485,
         "exportedSymbols": {
             "IMultiToken": [
-                11652
+                11484
             ],
             "IMultiTokenCore": [
-                11743
+                11575
             ],
             "IMultiTokenEvents": [
-                11777
+                11609
             ],
             "IMultiTokenMetadata": [
-                11792
+                11624
             ],
             "IMultiTokenRead": [
-                11865
+                11697
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:383:96",
         "nodes": [
             {
-                "id": 11635,
+                "id": 11467,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:96",
                 "nodes": [],
@@ -1290,23 +1290,23 @@ export const IMultiToken = {
                 ]
             },
             {
-                "id": 11637,
+                "id": 11469,
                 "nodeType": "ImportDirective",
                 "src": "64:56:96",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiTokenCore.sol",
                 "file": "./IMultiTokenCore.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11653,
-                "sourceUnit": 11744,
+                "scope": 11485,
+                "sourceUnit": 11576,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11636,
+                            "id": 11468,
                             "name": "IMultiTokenCore",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11743,
+                            "referencedDeclaration": 11575,
                             "src": "73:15:96",
                             "typeDescriptions": {}
                         },
@@ -1316,23 +1316,23 @@ export const IMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 11639,
+                "id": 11471,
                 "nodeType": "ImportDirective",
                 "src": "121:60:96",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiTokenEvents.sol",
                 "file": "./IMultiTokenEvents.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11653,
-                "sourceUnit": 11778,
+                "scope": 11485,
+                "sourceUnit": 11610,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11638,
+                            "id": 11470,
                             "name": "IMultiTokenEvents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11777,
+                            "referencedDeclaration": 11609,
                             "src": "130:17:96",
                             "typeDescriptions": {}
                         },
@@ -1342,23 +1342,23 @@ export const IMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 11641,
+                "id": 11473,
                 "nodeType": "ImportDirective",
                 "src": "182:64:96",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiTokenMetadata.sol",
                 "file": "./IMultiTokenMetadata.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11653,
-                "sourceUnit": 11793,
+                "scope": 11485,
+                "sourceUnit": 11625,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11640,
+                            "id": 11472,
                             "name": "IMultiTokenMetadata",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11792,
+                            "referencedDeclaration": 11624,
                             "src": "191:19:96",
                             "typeDescriptions": {}
                         },
@@ -1368,23 +1368,23 @@ export const IMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 11643,
+                "id": 11475,
                 "nodeType": "ImportDirective",
                 "src": "247:56:96",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiTokenRead.sol",
                 "file": "./IMultiTokenRead.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11653,
-                "sourceUnit": 11866,
+                "scope": 11485,
+                "sourceUnit": 11698,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11642,
+                            "id": 11474,
                             "name": "IMultiTokenRead",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11865,
+                            "referencedDeclaration": 11697,
                             "src": "256:15:96",
                             "typeDescriptions": {}
                         },
@@ -1394,7 +1394,7 @@ export const IMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 11652,
+                "id": 11484,
                 "nodeType": "ContractDefinition",
                 "src": "305:116:96",
                 "nodes": [],
@@ -1402,61 +1402,61 @@ export const IMultiToken = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 11644,
+                            "id": 11476,
                             "name": "IMultiTokenEvents",
                             "nameLocations": [
                                 "334:17:96"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11777,
+                            "referencedDeclaration": 11609,
                             "src": "334:17:96"
                         },
-                        "id": 11645,
+                        "id": 11477,
                         "nodeType": "InheritanceSpecifier",
                         "src": "334:17:96"
                     },
                     {
                         "baseName": {
-                            "id": 11646,
+                            "id": 11478,
                             "name": "IMultiTokenRead",
                             "nameLocations": [
                                 "357:15:96"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11865,
+                            "referencedDeclaration": 11697,
                             "src": "357:15:96"
                         },
-                        "id": 11647,
+                        "id": 11479,
                         "nodeType": "InheritanceSpecifier",
                         "src": "357:15:96"
                     },
                     {
                         "baseName": {
-                            "id": 11648,
+                            "id": 11480,
                             "name": "IMultiTokenCore",
                             "nameLocations": [
                                 "378:15:96"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11743,
+                            "referencedDeclaration": 11575,
                             "src": "378:15:96"
                         },
-                        "id": 11649,
+                        "id": 11481,
                         "nodeType": "InheritanceSpecifier",
                         "src": "378:15:96"
                     },
                     {
                         "baseName": {
-                            "id": 11650,
+                            "id": 11482,
                             "name": "IMultiTokenMetadata",
                             "nameLocations": [
                                 "399:19:96"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11792,
+                            "referencedDeclaration": 11624,
                             "src": "399:19:96"
                         },
-                        "id": 11651,
+                        "id": 11483,
                         "nodeType": "InheritanceSpecifier",
                         "src": "399:19:96"
                     }
@@ -1466,20 +1466,20 @@ export const IMultiToken = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11652,
-                    11792,
-                    11743,
-                    11865,
-                    11777
+                    11484,
+                    11624,
+                    11575,
+                    11697,
+                    11609
                 ],
                 "name": "IMultiToken",
                 "nameLocation": "315:11:96",
-                "scope": 11653,
+                "scope": 11485,
                 "usedErrors": [],
                 "usedEvents": [
-                    11758,
-                    11767,
-                    11776
+                    11590,
+                    11599,
+                    11608
                 ]
             }
         ],

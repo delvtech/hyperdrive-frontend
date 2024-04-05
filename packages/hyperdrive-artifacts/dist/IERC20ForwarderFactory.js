@@ -340,23 +340,23 @@ export const IERC20ForwarderFactory = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IERC20ForwarderFactory.sol",
-        "id": 10098,
+        "id": 9928,
         "exportedSymbols": {
             "IERC20Forwarder": [
-                10049
+                9879
             ],
             "IERC20ForwarderFactory": [
-                10097
+                9927
             ],
             "IMultiToken": [
-                11652
+                11484
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:1691:81",
         "nodes": [
             {
-                "id": 10051,
+                "id": 9881,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:81",
                 "nodes": [],
@@ -367,23 +367,23 @@ export const IERC20ForwarderFactory = {
                 ]
             },
             {
-                "id": 10053,
+                "id": 9883,
                 "nodeType": "ImportDirective",
                 "src": "64:56:81",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20Forwarder.sol",
                 "file": "./IERC20Forwarder.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10098,
-                "sourceUnit": 10050,
+                "scope": 9928,
+                "sourceUnit": 9880,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 10052,
+                            "id": 9882,
                             "name": "IERC20Forwarder",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10049,
+                            "referencedDeclaration": 9879,
                             "src": "73:15:81",
                             "typeDescriptions": {}
                         },
@@ -393,23 +393,23 @@ export const IERC20ForwarderFactory = {
                 "unitAlias": ""
             },
             {
-                "id": 10055,
+                "id": 9885,
                 "nodeType": "ImportDirective",
                 "src": "121:48:81",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
                 "file": "./IMultiToken.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10098,
-                "sourceUnit": 11653,
+                "scope": 9928,
+                "sourceUnit": 11485,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 10054,
+                            "id": 9884,
                             "name": "IMultiToken",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11652,
+                            "referencedDeclaration": 11484,
                             "src": "130:11:81",
                             "typeDescriptions": {}
                         },
@@ -419,17 +419,17 @@ export const IERC20ForwarderFactory = {
                 "unitAlias": ""
             },
             {
-                "id": 10097,
+                "id": 9927,
                 "nodeType": "ContractDefinition",
                 "src": "171:1558:81",
                 "nodes": [
                     {
-                        "id": 10058,
+                        "id": 9888,
                         "nodeType": "ErrorDefinition",
                         "src": "308:32:81",
                         "nodes": [],
                         "documentation": {
-                            "id": 10056,
+                            "id": 9886,
                             "nodeType": "StructuredDocumentation",
                             "src": "230:73:81",
                             "text": "@notice Thrown when a forwarder is deployed to an unexpected address."
@@ -438,19 +438,19 @@ export const IERC20ForwarderFactory = {
                         "name": "InvalidForwarderAddress",
                         "nameLocation": "314:23:81",
                         "parameters": {
-                            "id": 10057,
+                            "id": 9887,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "337:2:81"
                         }
                     },
                     {
-                        "id": 10070,
+                        "id": 9900,
                         "nodeType": "FunctionDefinition",
                         "src": "702:111:81",
                         "nodes": [],
                         "documentation": {
-                            "id": 10059,
+                            "id": 9889,
                             "nodeType": "StructuredDocumentation",
                             "src": "369:328:81",
                             "text": "@notice Uses create2 to deploy a forwarder at a predictable address as\n         part of our ERC20 multitoken implementation.\n @param _token The MultiToken targeted by this factory.\n @param _tokenId The sub-token ID targeted by this factory.\n @return Returns the address of the deployed forwarder."
@@ -462,41 +462,41 @@ export const IERC20ForwarderFactory = {
                         "name": "create",
                         "nameLocation": "711:6:81",
                         "parameters": {
-                            "id": 10065,
+                            "id": 9895,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10062,
+                                    "id": 9892,
                                     "mutability": "mutable",
                                     "name": "_token",
                                     "nameLocation": "739:6:81",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10070,
+                                    "scope": 9900,
                                     "src": "727:18:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                        "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                         "typeString": "contract IMultiToken"
                                     },
                                     "typeName": {
-                                        "id": 10061,
+                                        "id": 9891,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10060,
+                                            "id": 9890,
                                             "name": "IMultiToken",
                                             "nameLocations": [
                                                 "727:11:81"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 11652,
+                                            "referencedDeclaration": 11484,
                                             "src": "727:11:81"
                                         },
-                                        "referencedDeclaration": 11652,
+                                        "referencedDeclaration": 11484,
                                         "src": "727:11:81",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                            "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                             "typeString": "contract IMultiToken"
                                         }
                                     },
@@ -504,12 +504,12 @@ export const IERC20ForwarderFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10064,
+                                    "id": 9894,
                                     "mutability": "mutable",
                                     "name": "_tokenId",
                                     "nameLocation": "763:8:81",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10070,
+                                    "scope": 9900,
                                     "src": "755:16:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -518,7 +518,7 @@ export const IERC20ForwarderFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10063,
+                                        "id": 9893,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "755:7:81",
@@ -533,41 +533,41 @@ export const IERC20ForwarderFactory = {
                             "src": "717:60:81"
                         },
                         "returnParameters": {
-                            "id": 10069,
+                            "id": 9899,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10068,
+                                    "id": 9898,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10070,
+                                    "scope": 9900,
                                     "src": "796:15:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20Forwarder_$10049",
+                                        "typeIdentifier": "t_contract$_IERC20Forwarder_$9879",
                                         "typeString": "contract IERC20Forwarder"
                                     },
                                     "typeName": {
-                                        "id": 10067,
+                                        "id": 9897,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10066,
+                                            "id": 9896,
                                             "name": "IERC20Forwarder",
                                             "nameLocations": [
                                                 "796:15:81"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10049,
+                                            "referencedDeclaration": 9879,
                                             "src": "796:15:81"
                                         },
-                                        "referencedDeclaration": 10049,
+                                        "referencedDeclaration": 9879,
                                         "src": "796:15:81",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20Forwarder_$10049",
+                                            "typeIdentifier": "t_contract$_IERC20Forwarder_$9879",
                                             "typeString": "contract IERC20Forwarder"
                                         }
                                     },
@@ -576,18 +576,18 @@ export const IERC20ForwarderFactory = {
                             ],
                             "src": "795:17:81"
                         },
-                        "scope": 10097,
+                        "scope": 9927,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 10079,
+                        "id": 9909,
                         "nodeType": "FunctionDefinition",
                         "src": "1010:73:81",
                         "nodes": [],
                         "documentation": {
-                            "id": 10071,
+                            "id": 9901,
                             "nodeType": "StructuredDocumentation",
                             "src": "819:186:81",
                             "text": "@notice Gets the MultiToken and token ID that should be targeted by the\n         calling forwarder.\n @return The target MultiToken.\n @return The target token ID."
@@ -599,47 +599,47 @@ export const IERC20ForwarderFactory = {
                         "name": "getDeployDetails",
                         "nameLocation": "1019:16:81",
                         "parameters": {
-                            "id": 10072,
+                            "id": 9902,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1035:2:81"
                         },
                         "returnParameters": {
-                            "id": 10078,
+                            "id": 9908,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10075,
+                                    "id": 9905,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10079,
+                                    "scope": 9909,
                                     "src": "1061:11:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                        "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                         "typeString": "contract IMultiToken"
                                     },
                                     "typeName": {
-                                        "id": 10074,
+                                        "id": 9904,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10073,
+                                            "id": 9903,
                                             "name": "IMultiToken",
                                             "nameLocations": [
                                                 "1061:11:81"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 11652,
+                                            "referencedDeclaration": 11484,
                                             "src": "1061:11:81"
                                         },
-                                        "referencedDeclaration": 11652,
+                                        "referencedDeclaration": 11484,
                                         "src": "1061:11:81",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                            "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                             "typeString": "contract IMultiToken"
                                         }
                                     },
@@ -647,12 +647,12 @@ export const IERC20ForwarderFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10077,
+                                    "id": 9907,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10079,
+                                    "scope": 9909,
                                     "src": "1074:7:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -661,7 +661,7 @@ export const IERC20ForwarderFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10076,
+                                        "id": 9906,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1074:7:81",
@@ -675,18 +675,18 @@ export const IERC20ForwarderFactory = {
                             ],
                             "src": "1060:22:81"
                         },
-                        "scope": 10097,
+                        "scope": 9927,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 10090,
+                        "id": 9920,
                         "nodeType": "FunctionDefinition",
                         "src": "1343:114:81",
                         "nodes": [],
                         "documentation": {
-                            "id": 10080,
+                            "id": 9910,
                             "nodeType": "StructuredDocumentation",
                             "src": "1089:249:81",
                             "text": "@notice Helper to calculate expected forwarder contract addresses.\n @param _token The target MultiToken of the forwarder.\n @param _tokenId The target token ID of the forwarder.\n @return The expected address of the forwarder."
@@ -698,41 +698,41 @@ export const IERC20ForwarderFactory = {
                         "name": "getForwarder",
                         "nameLocation": "1352:12:81",
                         "parameters": {
-                            "id": 10086,
+                            "id": 9916,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10083,
+                                    "id": 9913,
                                     "mutability": "mutable",
                                     "name": "_token",
                                     "nameLocation": "1386:6:81",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10090,
+                                    "scope": 9920,
                                     "src": "1374:18:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                        "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                         "typeString": "contract IMultiToken"
                                     },
                                     "typeName": {
-                                        "id": 10082,
+                                        "id": 9912,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 10081,
+                                            "id": 9911,
                                             "name": "IMultiToken",
                                             "nameLocations": [
                                                 "1374:11:81"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 11652,
+                                            "referencedDeclaration": 11484,
                                             "src": "1374:11:81"
                                         },
-                                        "referencedDeclaration": 11652,
+                                        "referencedDeclaration": 11484,
                                         "src": "1374:11:81",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IMultiToken_$11652",
+                                            "typeIdentifier": "t_contract$_IMultiToken_$11484",
                                             "typeString": "contract IMultiToken"
                                         }
                                     },
@@ -740,12 +740,12 @@ export const IERC20ForwarderFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10085,
+                                    "id": 9915,
                                     "mutability": "mutable",
                                     "name": "_tokenId",
                                     "nameLocation": "1410:8:81",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10090,
+                                    "scope": 9920,
                                     "src": "1402:16:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -754,7 +754,7 @@ export const IERC20ForwarderFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10084,
+                                        "id": 9914,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1402:7:81",
@@ -769,17 +769,17 @@ export const IERC20ForwarderFactory = {
                             "src": "1364:60:81"
                         },
                         "returnParameters": {
-                            "id": 10089,
+                            "id": 9919,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10088,
+                                    "id": 9918,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10090,
+                                    "scope": 9920,
                                     "src": "1448:7:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -788,7 +788,7 @@ export const IERC20ForwarderFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 10087,
+                                        "id": 9917,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1448:7:81",
@@ -803,18 +803,18 @@ export const IERC20ForwarderFactory = {
                             ],
                             "src": "1447:9:81"
                         },
-                        "scope": 10097,
+                        "scope": 9927,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 10096,
+                        "id": 9926,
                         "nodeType": "FunctionDefinition",
                         "src": "1669:58:81",
                         "nodes": [],
                         "documentation": {
-                            "id": 10091,
+                            "id": 9921,
                             "nodeType": "StructuredDocumentation",
                             "src": "1463:148:81",
                             "text": "@notice Gets the hash of the bytecode of the ERC20 forwarder contract.\n @return The hash of the bytecode of the ERC20 forwarder contract."
@@ -826,23 +826,23 @@ export const IERC20ForwarderFactory = {
                         "name": "ERC20LINK_HASH",
                         "nameLocation": "1678:14:81",
                         "parameters": {
-                            "id": 10092,
+                            "id": 9922,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1692:2:81"
                         },
                         "returnParameters": {
-                            "id": 10095,
+                            "id": 9925,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10094,
+                                    "id": 9924,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10096,
+                                    "scope": 9926,
                                     "src": "1718:7:81",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -851,7 +851,7 @@ export const IERC20ForwarderFactory = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 10093,
+                                        "id": 9923,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1718:7:81",
@@ -865,7 +865,7 @@ export const IERC20ForwarderFactory = {
                             ],
                             "src": "1717:9:81"
                         },
-                        "scope": 10097,
+                        "scope": 9927,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -878,13 +878,13 @@ export const IERC20ForwarderFactory = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    10097
+                    9927
                 ],
                 "name": "IERC20ForwarderFactory",
                 "nameLocation": "181:22:81",
-                "scope": 10098,
+                "scope": 9928,
                 "usedErrors": [
-                    10058
+                    9888
                 ],
                 "usedEvents": []
             }

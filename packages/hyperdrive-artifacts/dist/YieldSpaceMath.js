@@ -1,17 +1,17 @@
 export const YieldSpaceMath = {
     "abi": [],
     "bytecode": {
-        "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220921324ac34cbb3e2aa95fd923984cd16f1bc6e8d82a8bf54bfd798af79d1cb5664736f6c63430008140033",
-        "sourceMap": "1466:19803:126:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1466:19803:126;;;;;;;;;;;;;;;;;",
+        "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200dafd6cd51652d9d73e66e01b86f4b2eb49151533cedd6092a859d9935612cc864736f6c63430008140033",
+        "sourceMap": "1466:19902:126:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1466:19902:126;;;;;;;;;;;;;;;;;",
         "linkReferences": {}
     },
     "deployedBytecode": {
-        "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220921324ac34cbb3e2aa95fd923984cd16f1bc6e8d82a8bf54bfd798af79d1cb5664736f6c63430008140033",
-        "sourceMap": "1466:19803:126:-:0;;;;;;;;",
+        "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200dafd6cd51652d9d73e66e01b86f4b2eb49151533cedd6092a859d9935612cc864736f6c63430008140033",
+        "sourceMap": "1466:19902:126:-:0;;;;;;;;",
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"It is advised for developers to attain the pre-requisite knowledge      of how this implementation works on the mathematical level. This      excerpt attempts to document this pre-requisite knowledge explaining      the underpinning mathematical concepts in an understandable manner and      relating it directly to the code implementation.      This implementation is based on a paper called \\\"YieldSpace with Yield      Bearing Vaults\\\" or more casually \\\"Modified YieldSpace\\\". It can be      found at the following link.      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view      That paper builds on the original YieldSpace paper, \\\"YieldSpace:      An Automated Liquidity Provider for Fixed Yield Tokens\\\". It can be      found at the following link:      https://yieldprotocol.com/YieldSpace.pdf\",\"kind\":\"dev\",\"methods\":{},\"title\":\"YieldSpaceMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Math for the YieldSpace pricing model.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/YieldSpaceMath.sol\":\"YieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"It is advised for developers to attain the pre-requisite knowledge      of how this implementation works on the mathematical level. This      excerpt attempts to document this pre-requisite knowledge explaining      the underpinning mathematical concepts in an understandable manner and      relating it directly to the code implementation.      This implementation is based on a paper called \\\"YieldSpace with Yield      Bearing Vaults\\\" or more casually \\\"Modified YieldSpace\\\". It can be      found at the following link.      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view      That paper builds on the original YieldSpace paper, \\\"YieldSpace:      An Automated Liquidity Provider for Fixed Yield Tokens\\\". It can be      found at the following link:      https://yieldprotocol.com/YieldSpace.pdf\",\"kind\":\"dev\",\"methods\":{},\"title\":\"YieldSpaceMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Math for the YieldSpace pricing model.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/YieldSpaceMath.sol\":\"YieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -78,10 +78,10 @@ export const YieldSpaceMath = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
+                "keccak256": "0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784",
                 "urls": [
-                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
-                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
+                    "bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa",
+                    "dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9"
                 ],
                 "license": "Apache-2.0"
             },
@@ -166,10 +166,10 @@ export const YieldSpaceMath = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891",
+                "keccak256": "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1",
                 "urls": [
-                    "bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c",
-                    "dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy"
+                    "bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9",
+                    "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"
                 ],
                 "license": "Apache-2.0"
             }
@@ -178,32 +178,32 @@ export const YieldSpaceMath = {
     },
     "ast": {
         "absolutePath": "contracts/src/libraries/YieldSpaceMath.sol",
-        "id": 22916,
+        "id": 22793,
         "exportedSymbols": {
             "Errors": [
-                18290
+                18193
             ],
             "FixedPointMath": [
-                19065
+                18968
             ],
             "HyperdriveMath": [
-                19813
+                19716
             ],
             "IHyperdrive": [
-                10676
+                10506
             ],
             "ONE": [
-                18299
+                18202
             ],
             "YieldSpaceMath": [
-                22915
+                22792
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "40:21230:126",
+        "src": "40:21329:126",
         "nodes": [
             {
-                "id": 21938,
+                "id": 21805,
                 "nodeType": "PragmaDirective",
                 "src": "40:23:126",
                 "nodes": [],
@@ -214,23 +214,23 @@ export const YieldSpaceMath = {
                 ]
             },
             {
-                "id": 21940,
+                "id": 21807,
                 "nodeType": "ImportDirective",
                 "src": "65:60:126",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 22916,
-                "sourceUnit": 10677,
+                "scope": 22793,
+                "sourceUnit": 10507,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 21939,
+                            "id": 21806,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10676,
+                            "referencedDeclaration": 10506,
                             "src": "74:11:126",
                             "typeDescriptions": {}
                         },
@@ -240,23 +240,23 @@ export const YieldSpaceMath = {
                 "unitAlias": ""
             },
             {
-                "id": 21942,
+                "id": 21809,
                 "nodeType": "ImportDirective",
                 "src": "126:38:126",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/Errors.sol",
                 "file": "./Errors.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 22916,
-                "sourceUnit": 18291,
+                "scope": 22793,
+                "sourceUnit": 18194,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 21941,
+                            "id": 21808,
                             "name": "Errors",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 18290,
+                            "referencedDeclaration": 18193,
                             "src": "135:6:126",
                             "typeDescriptions": {}
                         },
@@ -266,23 +266,23 @@ export const YieldSpaceMath = {
                 "unitAlias": ""
             },
             {
-                "id": 21945,
+                "id": 21812,
                 "nodeType": "ImportDirective",
                 "src": "165:59:126",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "./FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 22916,
-                "sourceUnit": 19066,
+                "scope": 22793,
+                "sourceUnit": 18969,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 21943,
+                            "id": 21810,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 19065,
+                            "referencedDeclaration": 18968,
                             "src": "174:14:126",
                             "typeDescriptions": {}
                         },
@@ -290,11 +290,11 @@ export const YieldSpaceMath = {
                     },
                     {
                         "foreign": {
-                            "id": 21944,
+                            "id": 21811,
                             "name": "ONE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 18299,
+                            "referencedDeclaration": 18202,
                             "src": "190:3:126",
                             "typeDescriptions": {}
                         },
@@ -304,23 +304,23 @@ export const YieldSpaceMath = {
                 "unitAlias": ""
             },
             {
-                "id": 21947,
+                "id": 21814,
                 "nodeType": "ImportDirective",
                 "src": "225:54:126",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
                 "file": "./HyperdriveMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 22916,
-                "sourceUnit": 19814,
+                "scope": 22793,
+                "sourceUnit": 19717,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 21946,
+                            "id": 21813,
                             "name": "HyperdriveMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 19813,
+                            "referencedDeclaration": 19716,
                             "src": "234:14:126",
                             "typeDescriptions": {}
                         },
@@ -330,28 +330,28 @@ export const YieldSpaceMath = {
                 "unitAlias": ""
             },
             {
-                "id": 22915,
+                "id": 22792,
                 "nodeType": "ContractDefinition",
-                "src": "1466:19803:126",
+                "src": "1466:19902:126",
                 "nodes": [
                     {
-                        "id": 21951,
+                        "id": 21818,
                         "nodeType": "UsingForDirective",
                         "src": "1495:33:126",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 21949,
+                            "id": 21816,
                             "name": "FixedPointMath",
                             "nameLocations": [
                                 "1501:14:126"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 19065,
+                            "referencedDeclaration": 18968,
                             "src": "1501:14:126"
                         },
                         "typeName": {
-                            "id": 21950,
+                            "id": 21817,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "1520:7:126",
@@ -362,29 +362,29 @@ export const YieldSpaceMath = {
                         }
                     },
                     {
-                        "id": 22067,
+                        "id": 21934,
                         "nodeType": "FunctionDefinition",
                         "src": "2068:1726:126",
                         "nodes": [],
                         "body": {
-                            "id": 22066,
+                            "id": 21933,
                             "nodeType": "Block",
                             "src": "2267:1527:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        21970
+                                        21837
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 21970,
+                                            "id": 21837,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "2423:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22066,
+                                            "scope": 21933,
                                             "src": "2415:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -393,7 +393,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 21969,
+                                                "id": 21836,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2415:7:126",
@@ -405,15 +405,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 21978,
+                                    "id": 21845,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 21972,
+                                                "id": 21839,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 21954,
+                                                "referencedDeclaration": 21821,
                                                 "src": "2431:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -421,11 +421,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 21973,
+                                                "id": 21840,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 21956,
+                                                "referencedDeclaration": 21823,
                                                 "src": "2435:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -433,11 +433,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 21974,
+                                                "id": 21841,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 21960,
+                                                "referencedDeclaration": 21827,
                                                 "src": "2438:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -445,11 +445,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 21975,
+                                                "id": 21842,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 21962,
+                                                "referencedDeclaration": 21829,
                                                 "src": "2441:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -457,11 +457,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 21976,
+                                                "id": 21843,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 21964,
+                                                "referencedDeclaration": 21831,
                                                 "src": "2444:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -492,18 +492,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 21971,
+                                            "id": 21838,
                                             "name": "kUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22880,
+                                            "referencedDeclaration": 22757,
                                             "src": "2427:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 21977,
+                                        "id": 21844,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -524,17 +524,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 21989,
+                                        "id": 21856,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 21979,
+                                            "id": 21846,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 21954,
+                                            "referencedDeclaration": 21821,
                                             "src": "2580:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -546,11 +546,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 21987,
+                                                    "id": 21854,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 21960,
+                                                    "referencedDeclaration": 21827,
                                                     "src": "2609:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -572,17 +572,17 @@ export const YieldSpaceMath = {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 21984,
+                                                            "id": 21851,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftExpression": {
-                                                                "id": 21982,
+                                                                "id": 21849,
                                                                 "name": "ze",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 21954,
+                                                                "referencedDeclaration": 21821,
                                                                 "src": "2596:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -592,11 +592,11 @@ export const YieldSpaceMath = {
                                                             "nodeType": "BinaryOperation",
                                                             "operator": "+",
                                                             "rightExpression": {
-                                                                "id": 21983,
+                                                                "id": 21850,
                                                                 "name": "dz",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 21958,
+                                                                "referencedDeclaration": 21825,
                                                                 "src": "2601:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -618,18 +618,18 @@ export const YieldSpaceMath = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 21980,
+                                                            "id": 21847,
                                                             "name": "mu",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 21964,
+                                                            "referencedDeclaration": 21831,
                                                             "src": "2585:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 21981,
+                                                        "id": 21848,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -637,14 +637,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "2588:7:126",
                                                         "memberName": "mulDown",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18345,
+                                                        "referencedDeclaration": 18248,
                                                         "src": "2585:10:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 21985,
+                                                    "id": 21852,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -660,7 +660,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 21986,
+                                                "id": 21853,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -668,14 +668,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "2605:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
+                                                "referencedDeclaration": 18373,
                                                 "src": "2585:23:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 21988,
+                                            "id": 21855,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -697,23 +697,23 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 21990,
+                                    "id": 21857,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2580:31:126"
                                 },
                                 {
                                     "expression": {
-                                        "id": 21997,
+                                        "id": 21864,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 21991,
+                                            "id": 21858,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 21954,
+                                            "referencedDeclaration": 21821,
                                             "src": "2669:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -725,11 +725,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 21994,
+                                                    "id": 21861,
                                                     "name": "ze",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 21954,
+                                                    "referencedDeclaration": 21821,
                                                     "src": "2687:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -737,11 +737,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 21995,
+                                                    "id": 21862,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 21964,
+                                                    "referencedDeclaration": 21831,
                                                     "src": "2691:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -761,18 +761,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 21992,
+                                                    "id": 21859,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 21962,
+                                                    "referencedDeclaration": 21829,
                                                     "src": "2674:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 21993,
+                                                "id": 21860,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -780,14 +780,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "2676:10:126",
                                                 "memberName": "mulDivDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18327,
+                                                "referencedDeclaration": 18230,
                                                 "src": "2674:12:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 21996,
+                                            "id": 21863,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -809,7 +809,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 21998,
+                                    "id": 21865,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2669:25:126"
                                 },
@@ -819,17 +819,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22001,
+                                        "id": 21868,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 21999,
+                                            "id": 21866,
                                             "name": "k",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 21970,
+                                            "referencedDeclaration": 21837,
                                             "src": "2764:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -839,11 +839,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22000,
+                                            "id": 21867,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 21954,
+                                            "referencedDeclaration": 21821,
                                             "src": "2768:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -856,11 +856,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22011,
+                                    "id": 21878,
                                     "nodeType": "IfStatement",
                                     "src": "2760:166:126",
                                     "trueBody": {
-                                        "id": 22010,
+                                        "id": 21877,
                                         "nodeType": "Block",
                                         "src": "2772:154:126",
                                         "statements": [
@@ -870,18 +870,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22005,
+                                                                    "id": 21872,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "2842:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22006,
+                                                                "id": 21873,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -889,14 +889,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "2854:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "2842:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22007,
+                                                            "id": 21874,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -904,10 +904,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "2882:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "2842:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -915,23 +915,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22002,
+                                                            "id": 21869,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "2786:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22004,
+                                                        "id": 21871,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -939,14 +939,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "2793:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "2786:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22008,
+                                                    "id": 21875,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -962,7 +962,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22009,
+                                                "id": 21876,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "2786:129:126"
                                             }
@@ -971,17 +971,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22013
+                                        21880
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22013,
+                                            "id": 21880,
                                             "mutability": "mutable",
                                             "name": "_y",
                                             "nameLocation": "3094:2:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22066,
+                                            "scope": 21933,
                                             "src": "3086:10:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -990,7 +990,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22012,
+                                                "id": 21879,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3086:7:126",
@@ -1002,28 +1002,28 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22014,
+                                    "id": 21881,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "3086:10:126"
                                 },
                                 {
-                                    "id": 22021,
+                                    "id": 21888,
                                     "nodeType": "UncheckedBlock",
                                     "src": "3106:46:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22019,
+                                                "id": 21886,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22015,
+                                                    "id": 21882,
                                                     "name": "_y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22013,
+                                                    "referencedDeclaration": 21880,
                                                     "src": "3130:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1037,17 +1037,17 @@ export const YieldSpaceMath = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 22018,
+                                                    "id": 21885,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 22016,
+                                                        "id": 21883,
                                                         "name": "k",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 21970,
+                                                        "referencedDeclaration": 21837,
                                                         "src": "3135:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1057,11 +1057,11 @@ export const YieldSpaceMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 22017,
+                                                        "id": 21884,
                                                         "name": "ze",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 21954,
+                                                        "referencedDeclaration": 21821,
                                                         "src": "3139:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1080,7 +1080,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22020,
+                                            "id": 21887,
                                             "nodeType": "ExpressionStatement",
                                             "src": "3130:11:126"
                                         }
@@ -1092,17 +1092,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22024,
+                                        "id": 21891,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22022,
+                                            "id": 21889,
                                             "name": "_y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22013,
+                                            "referencedDeclaration": 21880,
                                             "src": "3165:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1112,11 +1112,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22023,
+                                            "id": 21890,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "3171:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1130,23 +1130,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22046,
+                                        "id": 21913,
                                         "nodeType": "Block",
                                         "src": "3300:122:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22044,
+                                                    "id": 21911,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22036,
+                                                        "id": 21903,
                                                         "name": "_y",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22013,
+                                                        "referencedDeclaration": 21880,
                                                         "src": "3384:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1160,11 +1160,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22041,
+                                                                        "id": 21908,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 21960,
+                                                                        "referencedDeclaration": 21827,
                                                                         "src": "3408:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -1180,18 +1180,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22039,
+                                                                        "id": 21906,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "3396:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22040,
+                                                                    "id": 21907,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -1199,14 +1199,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "3400:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "3396:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22042,
+                                                                "id": 21909,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -1231,18 +1231,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22037,
+                                                                "id": 21904,
                                                                 "name": "_y",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22013,
+                                                                "referencedDeclaration": 21880,
                                                                 "src": "3389:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22038,
+                                                            "id": 21905,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1250,14 +1250,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "3392:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "3389:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22043,
+                                                        "id": 21910,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1279,33 +1279,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22045,
+                                                "id": 21912,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3384:27:126"
                                             }
                                         ]
                                     },
-                                    "id": 22047,
+                                    "id": 21914,
                                     "nodeType": "IfStatement",
                                     "src": "3161:261:126",
                                     "trueBody": {
-                                        "id": 22035,
+                                        "id": 21902,
                                         "nodeType": "Block",
                                         "src": "3176:118:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22033,
+                                                    "id": 21900,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22025,
+                                                        "id": 21892,
                                                         "name": "_y",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22013,
+                                                        "referencedDeclaration": 21880,
                                                         "src": "3258:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -1319,11 +1319,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22030,
+                                                                        "id": 21897,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 21960,
+                                                                        "referencedDeclaration": 21827,
                                                                         "src": "3280:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -1339,18 +1339,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22028,
+                                                                        "id": 21895,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "3270:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22029,
+                                                                    "id": 21896,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -1358,14 +1358,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "3274:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "3270:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22031,
+                                                                "id": 21898,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -1390,18 +1390,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22026,
+                                                                "id": 21893,
                                                                 "name": "_y",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22013,
+                                                                "referencedDeclaration": 21880,
                                                                 "src": "3263:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22027,
+                                                            "id": 21894,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1409,14 +1409,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "3266:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "3263:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22032,
+                                                        "id": 21899,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1438,7 +1438,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22034,
+                                                "id": 21901,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3258:25:126"
                                             }
@@ -1451,17 +1451,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22050,
+                                        "id": 21917,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22048,
+                                            "id": 21915,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 21956,
+                                            "referencedDeclaration": 21823,
                                             "src": "3491:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1471,11 +1471,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22049,
+                                            "id": 21916,
                                             "name": "_y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22013,
+                                            "referencedDeclaration": 21880,
                                             "src": "3495:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1488,11 +1488,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22060,
+                                    "id": 21927,
                                     "nodeType": "IfStatement",
                                     "src": "3487:166:126",
                                     "trueBody": {
-                                        "id": 22059,
+                                        "id": 21926,
                                         "nodeType": "Block",
                                         "src": "3499:154:126",
                                         "statements": [
@@ -1502,18 +1502,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22054,
+                                                                    "id": 21921,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "3569:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22055,
+                                                                "id": 21922,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -1521,14 +1521,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "3581:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "3569:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22056,
+                                                            "id": 21923,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -1536,10 +1536,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "3609:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "3569:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -1547,23 +1547,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22051,
+                                                            "id": 21918,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "3513:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22053,
+                                                        "id": 21920,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1571,14 +1571,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "3520:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "3513:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22057,
+                                                    "id": 21924,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1594,7 +1594,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22058,
+                                                "id": 21925,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3513:129:126"
                                             }
@@ -1602,7 +1602,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22065,
+                                    "id": 21932,
                                     "nodeType": "UncheckedBlock",
                                     "src": "3740:48:126",
                                     "statements": [
@@ -1612,17 +1612,17 @@ export const YieldSpaceMath = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 22063,
+                                                "id": 21930,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 22061,
+                                                    "id": 21928,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 21956,
+                                                    "referencedDeclaration": 21823,
                                                     "src": "3771:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1632,11 +1632,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "-",
                                                 "rightExpression": {
-                                                    "id": 22062,
+                                                    "id": 21929,
                                                     "name": "_y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22013,
+                                                    "referencedDeclaration": 21880,
                                                     "src": "3775:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1649,8 +1649,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "functionReturnParameters": 21968,
-                                            "id": 22064,
+                                            "functionReturnParameters": 21835,
+                                            "id": 21931,
                                             "nodeType": "Return",
                                             "src": "3764:13:126"
                                         }
@@ -1659,7 +1659,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 21952,
+                            "id": 21819,
                             "nodeType": "StructuredDocumentation",
                             "src": "1534:529:126",
                             "text": "@dev Calculates the amount of bonds a user will receive from the pool by\n      providing a specified amount of shares. We underestimate the amount\n      of bonds out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dz The amount of shares paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The amount of bonds the trader receives."
@@ -1670,17 +1670,17 @@ export const YieldSpaceMath = {
                         "name": "calculateBondsOutGivenSharesInDown",
                         "nameLocation": "2077:34:126",
                         "parameters": {
-                            "id": 21965,
+                            "id": 21832,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 21954,
+                                    "id": 21821,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "2129:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2121:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1689,7 +1689,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21953,
+                                        "id": 21820,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2121:7:126",
@@ -1702,12 +1702,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 21956,
+                                    "id": 21823,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "2149:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2141:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1716,7 +1716,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21955,
+                                        "id": 21822,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2141:7:126",
@@ -1729,12 +1729,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 21958,
+                                    "id": 21825,
                                     "mutability": "mutable",
                                     "name": "dz",
                                     "nameLocation": "2168:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2160:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1743,7 +1743,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21957,
+                                        "id": 21824,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2160:7:126",
@@ -1756,12 +1756,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 21960,
+                                    "id": 21827,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "2188:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2180:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1770,7 +1770,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21959,
+                                        "id": 21826,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2180:7:126",
@@ -1783,12 +1783,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 21962,
+                                    "id": 21829,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "2207:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2199:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1797,7 +1797,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21961,
+                                        "id": 21828,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2199:7:126",
@@ -1810,12 +1810,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 21964,
+                                    "id": 21831,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "2226:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2218:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1824,7 +1824,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21963,
+                                        "id": 21830,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2218:7:126",
@@ -1839,17 +1839,17 @@ export const YieldSpaceMath = {
                             "src": "2111:123:126"
                         },
                         "returnParameters": {
-                            "id": 21968,
+                            "id": 21835,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 21967,
+                                    "id": 21834,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22067,
+                                    "scope": 21934,
                                     "src": "2258:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1858,7 +1858,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 21966,
+                                        "id": 21833,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2258:7:126",
@@ -1872,35 +1872,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "2257:9:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22114,
+                        "id": 21981,
                         "nodeType": "FunctionDefinition",
                         "src": "4331:579:126",
                         "nodes": [],
                         "body": {
-                            "id": 22113,
+                            "id": 21980,
                             "nodeType": "Block",
                             "src": "4535:375:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22086
+                                        21953
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22086,
+                                            "id": 21953,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "4550:7:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22113,
+                                            "scope": 21980,
                                             "src": "4545:12:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1909,7 +1909,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 22085,
+                                                "id": 21952,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4545:4:126",
@@ -1921,13 +1921,13 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22087,
+                                    "id": 21954,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "4545:12:126"
                                 },
                                 {
                                     "expression": {
-                                        "id": 22099,
+                                        "id": 21966,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1935,11 +1935,11 @@ export const YieldSpaceMath = {
                                         "leftHandSide": {
                                             "components": [
                                                 {
-                                                    "id": 22088,
+                                                    "id": 21955,
                                                     "name": "result",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22083,
+                                                    "referencedDeclaration": 21950,
                                                     "src": "4568:6:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1947,11 +1947,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22089,
+                                                    "id": 21956,
                                                     "name": "success",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22086,
+                                                    "referencedDeclaration": 21953,
                                                     "src": "4576:7:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
@@ -1959,7 +1959,7 @@ export const YieldSpaceMath = {
                                                     }
                                                 }
                                             ],
-                                            "id": 22090,
+                                            "id": 21957,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": true,
@@ -1977,11 +1977,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22092,
+                                                    "id": 21959,
                                                     "name": "ze",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22070,
+                                                    "referencedDeclaration": 21937,
                                                     "src": "4637:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1989,11 +1989,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22093,
+                                                    "id": 21960,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22072,
+                                                    "referencedDeclaration": 21939,
                                                     "src": "4653:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2001,11 +2001,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22094,
+                                                    "id": 21961,
                                                     "name": "dy",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22074,
+                                                    "referencedDeclaration": 21941,
                                                     "src": "4668:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2013,11 +2013,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22095,
+                                                    "id": 21962,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22076,
+                                                    "referencedDeclaration": 21943,
                                                     "src": "4684:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2025,11 +2025,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22096,
+                                                    "id": 21963,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22078,
+                                                    "referencedDeclaration": 21945,
                                                     "src": "4699:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2037,11 +2037,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22097,
+                                                    "id": 21964,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22080,
+                                                    "referencedDeclaration": 21947,
                                                     "src": "4714:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2076,18 +2076,18 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 22091,
+                                                "id": 21958,
                                                 "name": "calculateSharesInGivenBondsOutUpSafe",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22242,
+                                                "referencedDeclaration": 22109,
                                                 "src": "4587:36:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$",
                                                     "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                                 }
                                             },
-                                            "id": 22098,
+                                            "id": 21965,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2109,13 +2109,13 @@ export const YieldSpaceMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 22100,
+                                    "id": 21967,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4567:159:126"
                                 },
                                 {
                                     "condition": {
-                                        "id": 22102,
+                                        "id": 21969,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2125,11 +2125,11 @@ export const YieldSpaceMath = {
                                         "prefix": true,
                                         "src": "4740:8:126",
                                         "subExpression": {
-                                            "id": 22101,
+                                            "id": 21968,
                                             "name": "success",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22086,
+                                            "referencedDeclaration": 21953,
                                             "src": "4741:7:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -2141,11 +2141,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22112,
+                                    "id": 21979,
                                     "nodeType": "IfStatement",
                                     "src": "4736:168:126",
                                     "trueBody": {
-                                        "id": 22111,
+                                        "id": 21978,
                                         "nodeType": "Block",
                                         "src": "4750:154:126",
                                         "statements": [
@@ -2155,18 +2155,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22106,
+                                                                    "id": 21973,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "4820:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22107,
+                                                                "id": 21974,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2174,14 +2174,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "4832:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "4820:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22108,
+                                                            "id": 21975,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2189,10 +2189,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "4860:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "4820:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -2200,23 +2200,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22103,
+                                                            "id": 21970,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "4764:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22105,
+                                                        "id": 21972,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2224,14 +2224,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "4771:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "4764:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22109,
+                                                    "id": 21976,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2247,7 +2247,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22110,
+                                                "id": 21977,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4764:129:126"
                                             }
@@ -2257,7 +2257,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22068,
+                            "id": 21935,
                             "nodeType": "StructuredDocumentation",
                             "src": "3800:526:126",
                             "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We overestimate the amount of\n      shares in.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the trader.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return result The amount of shares the trader pays."
@@ -2268,17 +2268,17 @@ export const YieldSpaceMath = {
                         "name": "calculateSharesInGivenBondsOutUp",
                         "nameLocation": "4340:32:126",
                         "parameters": {
-                            "id": 22081,
+                            "id": 21948,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22070,
+                                    "id": 21937,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "4390:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4382:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2287,7 +2287,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22069,
+                                        "id": 21936,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4382:7:126",
@@ -2300,12 +2300,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22072,
+                                    "id": 21939,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "4410:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4402:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2314,7 +2314,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22071,
+                                        "id": 21938,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4402:7:126",
@@ -2327,12 +2327,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22074,
+                                    "id": 21941,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "4429:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4421:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2341,7 +2341,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22073,
+                                        "id": 21940,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4421:7:126",
@@ -2354,12 +2354,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22076,
+                                    "id": 21943,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "4449:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4441:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2368,7 +2368,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22075,
+                                        "id": 21942,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4441:7:126",
@@ -2381,12 +2381,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22078,
+                                    "id": 21945,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "4468:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4460:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2395,7 +2395,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22077,
+                                        "id": 21944,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4460:7:126",
@@ -2408,12 +2408,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22080,
+                                    "id": 21947,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "4487:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4479:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2422,7 +2422,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22079,
+                                        "id": 21946,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4479:7:126",
@@ -2437,17 +2437,17 @@ export const YieldSpaceMath = {
                             "src": "4372:123:126"
                         },
                         "returnParameters": {
-                            "id": 22084,
+                            "id": 21951,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22083,
+                                    "id": 21950,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "4527:6:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22114,
+                                    "scope": 21981,
                                     "src": "4519:14:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2456,7 +2456,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22082,
+                                        "id": 21949,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4519:7:126",
@@ -2470,35 +2470,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "4518:16:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22242,
+                        "id": 22109,
                         "nodeType": "FunctionDefinition",
                         "src": "5576:1765:126",
                         "nodes": [],
                         "body": {
-                            "id": 22241,
+                            "id": 22108,
                             "nodeType": "Block",
                             "src": "5783:1558:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22135
+                                        22002
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22135,
+                                            "id": 22002,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "5939:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22241,
+                                            "scope": 22108,
                                             "src": "5931:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2507,7 +2507,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22134,
+                                                "id": 22001,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5931:7:126",
@@ -2519,15 +2519,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22143,
+                                    "id": 22010,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22137,
+                                                "id": 22004,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22117,
+                                                "referencedDeclaration": 21984,
                                                 "src": "5947:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2535,11 +2535,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22138,
+                                                "id": 22005,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22119,
+                                                "referencedDeclaration": 21986,
                                                 "src": "5951:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2547,11 +2547,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22139,
+                                                "id": 22006,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22123,
+                                                "referencedDeclaration": 21990,
                                                 "src": "5954:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2559,11 +2559,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22140,
+                                                "id": 22007,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22125,
+                                                "referencedDeclaration": 21992,
                                                 "src": "5957:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2571,11 +2571,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22141,
+                                                "id": 22008,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22127,
+                                                "referencedDeclaration": 21994,
                                                 "src": "5960:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2606,18 +2606,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22136,
+                                            "id": 22003,
                                             "name": "kUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22880,
+                                            "referencedDeclaration": 22757,
                                             "src": "5943:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22142,
+                                        "id": 22009,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2642,17 +2642,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22146,
+                                        "id": 22013,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22144,
+                                            "id": 22011,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22119,
+                                            "referencedDeclaration": 21986,
                                             "src": "6082:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2662,11 +2662,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22145,
+                                            "id": 22012,
                                             "name": "dy",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22121,
+                                            "referencedDeclaration": 21988,
                                             "src": "6086:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2679,11 +2679,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22152,
+                                    "id": 22019,
                                     "nodeType": "IfStatement",
                                     "src": "6078:54:126",
                                     "trueBody": {
-                                        "id": 22151,
+                                        "id": 22018,
                                         "nodeType": "Block",
                                         "src": "6090:42:126",
                                         "statements": [
@@ -2692,7 +2692,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22147,
+                                                            "id": 22014,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2708,7 +2708,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22148,
+                                                            "id": 22015,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2723,7 +2723,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22149,
+                                                    "id": 22016,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -2736,8 +2736,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22133,
-                                                "id": 22150,
+                                                "functionReturnParameters": 22000,
+                                                "id": 22017,
                                                 "nodeType": "Return",
                                                 "src": "6104:17:126"
                                             }
@@ -2745,23 +2745,23 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22157,
+                                    "id": 22024,
                                     "nodeType": "UncheckedBlock",
                                     "src": "6170:42:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22155,
+                                                "id": 22022,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22153,
+                                                    "id": 22020,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22119,
+                                                    "referencedDeclaration": 21986,
                                                     "src": "6194:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2771,11 +2771,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "Assignment",
                                                 "operator": "-=",
                                                 "rightHandSide": {
-                                                    "id": 22154,
+                                                    "id": 22021,
                                                     "name": "dy",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22121,
+                                                    "referencedDeclaration": 21988,
                                                     "src": "6199:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2788,7 +2788,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22156,
+                                            "id": 22023,
                                             "nodeType": "ExpressionStatement",
                                             "src": "6194:7:126"
                                         }
@@ -2796,17 +2796,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22163,
+                                        "id": 22030,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22158,
+                                            "id": 22025,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22119,
+                                            "referencedDeclaration": 21986,
                                             "src": "6221:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2818,11 +2818,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22161,
+                                                    "id": 22028,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22123,
+                                                    "referencedDeclaration": 21990,
                                                     "src": "6231:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2838,18 +2838,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22159,
+                                                    "id": 22026,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22119,
+                                                    "referencedDeclaration": 21986,
                                                     "src": "6225:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22160,
+                                                "id": 22027,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2857,14 +2857,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "6227:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
+                                                "referencedDeclaration": 18373,
                                                 "src": "6225:5:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22162,
+                                            "id": 22029,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2886,7 +2886,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22164,
+                                    "id": 22031,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6221:12:126"
                                 },
@@ -2896,17 +2896,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22167,
+                                        "id": 22034,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22165,
+                                            "id": 22032,
                                             "name": "k",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22135,
+                                            "referencedDeclaration": 22002,
                                             "src": "6351:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2916,11 +2916,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22166,
+                                            "id": 22033,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22119,
+                                            "referencedDeclaration": 21986,
                                             "src": "6355:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2933,11 +2933,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22173,
+                                    "id": 22040,
                                     "nodeType": "IfStatement",
                                     "src": "6347:53:126",
                                     "trueBody": {
-                                        "id": 22172,
+                                        "id": 22039,
                                         "nodeType": "Block",
                                         "src": "6358:42:126",
                                         "statements": [
@@ -2946,7 +2946,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22168,
+                                                            "id": 22035,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2962,7 +2962,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22169,
+                                                            "id": 22036,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2977,7 +2977,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22170,
+                                                    "id": 22037,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -2990,8 +2990,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22133,
-                                                "id": 22171,
+                                                "functionReturnParameters": 22000,
+                                                "id": 22038,
                                                 "nodeType": "Return",
                                                 "src": "6372:17:126"
                                             }
@@ -3000,17 +3000,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22175
+                                        22042
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22175,
+                                            "id": 22042,
                                             "mutability": "mutable",
                                             "name": "_z",
                                             "nameLocation": "6563:2:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22241,
+                                            "scope": 22108,
                                             "src": "6555:10:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3019,7 +3019,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22174,
+                                                "id": 22041,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6555:7:126",
@@ -3031,28 +3031,28 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22176,
+                                    "id": 22043,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "6555:10:126"
                                 },
                                 {
-                                    "id": 22183,
+                                    "id": 22050,
                                     "nodeType": "UncheckedBlock",
                                     "src": "6575:45:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22181,
+                                                "id": 22048,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22177,
+                                                    "id": 22044,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22175,
+                                                    "referencedDeclaration": 22042,
                                                     "src": "6599:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3066,17 +3066,17 @@ export const YieldSpaceMath = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 22180,
+                                                    "id": 22047,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 22178,
+                                                        "id": 22045,
                                                         "name": "k",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22135,
+                                                        "referencedDeclaration": 22002,
                                                         "src": "6604:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3086,11 +3086,11 @@ export const YieldSpaceMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 22179,
+                                                        "id": 22046,
                                                         "name": "y",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22119,
+                                                        "referencedDeclaration": 21986,
                                                         "src": "6608:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3109,7 +3109,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22182,
+                                            "id": 22049,
                                             "nodeType": "ExpressionStatement",
                                             "src": "6599:10:126"
                                         }
@@ -3117,17 +3117,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22190,
+                                        "id": 22057,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22184,
+                                            "id": 22051,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22175,
+                                            "referencedDeclaration": 22042,
                                             "src": "6629:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3139,11 +3139,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22187,
+                                                    "id": 22054,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22127,
+                                                    "referencedDeclaration": 21994,
                                                     "src": "6646:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3151,11 +3151,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22188,
+                                                    "id": 22055,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22125,
+                                                    "referencedDeclaration": 21992,
                                                     "src": "6650:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3175,18 +3175,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22185,
+                                                    "id": 22052,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22175,
+                                                    "referencedDeclaration": 22042,
                                                     "src": "6634:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22186,
+                                                "id": 22053,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3194,14 +3194,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "6637:8:126",
                                                 "memberName": "mulDivUp",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18377,
+                                                "referencedDeclaration": 18280,
                                                 "src": "6634:11:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22189,
+                                            "id": 22056,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3223,7 +3223,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22191,
+                                    "id": 22058,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6629:23:126"
                                 },
@@ -3233,17 +3233,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22194,
+                                        "id": 22061,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22192,
+                                            "id": 22059,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22175,
+                                            "referencedDeclaration": 22042,
                                             "src": "6666:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3253,11 +3253,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22193,
+                                            "id": 22060,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "6672:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3271,23 +3271,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22216,
+                                        "id": 22083,
                                         "nodeType": "Block",
                                         "src": "6801:122:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22214,
+                                                    "id": 22081,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22206,
+                                                        "id": 22073,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22175,
+                                                        "referencedDeclaration": 22042,
                                                         "src": "6885:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3301,11 +3301,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22211,
+                                                                        "id": 22078,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22123,
+                                                                        "referencedDeclaration": 21990,
                                                                         "src": "6909:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -3321,18 +3321,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22209,
+                                                                        "id": 22076,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "6897:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22210,
+                                                                    "id": 22077,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -3340,14 +3340,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "6901:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "6897:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22212,
+                                                                "id": 22079,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3372,18 +3372,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22207,
+                                                                "id": 22074,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22175,
+                                                                "referencedDeclaration": 22042,
                                                                 "src": "6890:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22208,
+                                                            "id": 22075,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3391,14 +3391,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "6893:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "6890:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22213,
+                                                        "id": 22080,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3420,33 +3420,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22215,
+                                                "id": 22082,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "6885:27:126"
                                             }
                                         ]
                                     },
-                                    "id": 22217,
+                                    "id": 22084,
                                     "nodeType": "IfStatement",
                                     "src": "6662:261:126",
                                     "trueBody": {
-                                        "id": 22205,
+                                        "id": 22072,
                                         "nodeType": "Block",
                                         "src": "6677:118:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22203,
+                                                    "id": 22070,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22195,
+                                                        "id": 22062,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22175,
+                                                        "referencedDeclaration": 22042,
                                                         "src": "6759:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3460,11 +3460,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22200,
+                                                                        "id": 22067,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22123,
+                                                                        "referencedDeclaration": 21990,
                                                                         "src": "6781:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -3480,18 +3480,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22198,
+                                                                        "id": 22065,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "6771:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22199,
+                                                                    "id": 22066,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -3499,14 +3499,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "6775:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "6771:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22201,
+                                                                "id": 22068,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3531,18 +3531,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22196,
+                                                                "id": 22063,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22175,
+                                                                "referencedDeclaration": 22042,
                                                                 "src": "6764:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22197,
+                                                            "id": 22064,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3550,14 +3550,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "6767:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "6764:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22202,
+                                                        "id": 22069,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3579,7 +3579,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22204,
+                                                "id": 22071,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "6759:25:126"
                                             }
@@ -3588,17 +3588,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22223,
+                                        "id": 22090,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22218,
+                                            "id": 22085,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22175,
+                                            "referencedDeclaration": 22042,
                                             "src": "7000:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3610,11 +3610,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22221,
+                                                    "id": 22088,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22127,
+                                                    "referencedDeclaration": 21994,
                                                     "src": "7014:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3630,18 +3630,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22219,
+                                                    "id": 22086,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22175,
+                                                    "referencedDeclaration": 22042,
                                                     "src": "7005:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22220,
+                                                "id": 22087,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3649,14 +3649,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "7008:5:126",
                                                 "memberName": "divUp",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18413,
+                                                "referencedDeclaration": 18316,
                                                 "src": "7005:8:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22222,
+                                            "id": 22089,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3678,7 +3678,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22224,
+                                    "id": 22091,
                                     "nodeType": "ExpressionStatement",
                                     "src": "7000:17:126"
                                 },
@@ -3688,17 +3688,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22227,
+                                        "id": 22094,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22225,
+                                            "id": 22092,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22175,
+                                            "referencedDeclaration": 22042,
                                             "src": "7137:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3708,11 +3708,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22226,
+                                            "id": 22093,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22117,
+                                            "referencedDeclaration": 21984,
                                             "src": "7142:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3725,11 +3725,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22233,
+                                    "id": 22100,
                                     "nodeType": "IfStatement",
                                     "src": "7133:55:126",
                                     "trueBody": {
-                                        "id": 22232,
+                                        "id": 22099,
                                         "nodeType": "Block",
                                         "src": "7146:42:126",
                                         "statements": [
@@ -3738,7 +3738,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22228,
+                                                            "id": 22095,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3754,7 +3754,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22229,
+                                                            "id": 22096,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3769,7 +3769,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22230,
+                                                    "id": 22097,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -3782,8 +3782,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22133,
-                                                "id": 22231,
+                                                "functionReturnParameters": 22000,
+                                                "id": 22098,
                                                 "nodeType": "Return",
                                                 "src": "7160:17:126"
                                             }
@@ -3791,7 +3791,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22240,
+                                    "id": 22107,
                                     "nodeType": "UncheckedBlock",
                                     "src": "7278:57:126",
                                     "statements": [
@@ -3803,17 +3803,17 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22236,
+                                                        "id": 22103,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22234,
+                                                            "id": 22101,
                                                             "name": "_z",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22175,
+                                                            "referencedDeclaration": 22042,
                                                             "src": "7310:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -3823,11 +3823,11 @@ export const YieldSpaceMath = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 22235,
+                                                            "id": 22102,
                                                             "name": "ze",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22117,
+                                                            "referencedDeclaration": 21984,
                                                             "src": "7315:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -3842,7 +3842,7 @@ export const YieldSpaceMath = {
                                                     },
                                                     {
                                                         "hexValue": "74727565",
-                                                        "id": 22237,
+                                                        "id": 22104,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -3857,7 +3857,7 @@ export const YieldSpaceMath = {
                                                         "value": "true"
                                                     }
                                                 ],
-                                                "id": 22238,
+                                                "id": 22105,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -3870,8 +3870,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "tuple(uint256,bool)"
                                                 }
                                             },
-                                            "functionReturnParameters": 22133,
-                                            "id": 22239,
+                                            "functionReturnParameters": 22000,
+                                            "id": 22106,
                                             "nodeType": "Return",
                                             "src": "7302:22:126"
                                         }
@@ -3880,7 +3880,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22115,
+                            "id": 21982,
                             "nodeType": "StructuredDocumentation",
                             "src": "4916:655:126",
                             "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. This function returns a\n      success flag instead of reverting. We overestimate the amount of\n      shares in.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the trader.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The amount of shares the trader pays.\n @return A flag indicating if the calculation succeeded."
@@ -3891,17 +3891,17 @@ export const YieldSpaceMath = {
                         "name": "calculateSharesInGivenBondsOutUpSafe",
                         "nameLocation": "5585:36:126",
                         "parameters": {
-                            "id": 22128,
+                            "id": 21995,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22117,
+                                    "id": 21984,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "5639:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5631:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3910,7 +3910,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22116,
+                                        "id": 21983,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5631:7:126",
@@ -3923,12 +3923,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22119,
+                                    "id": 21986,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "5659:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5651:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3937,7 +3937,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22118,
+                                        "id": 21985,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5651:7:126",
@@ -3950,12 +3950,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22121,
+                                    "id": 21988,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "5678:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5670:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3964,7 +3964,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22120,
+                                        "id": 21987,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5670:7:126",
@@ -3977,12 +3977,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22123,
+                                    "id": 21990,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "5698:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5690:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3991,7 +3991,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22122,
+                                        "id": 21989,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5690:7:126",
@@ -4004,12 +4004,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22125,
+                                    "id": 21992,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "5717:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5709:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4018,7 +4018,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22124,
+                                        "id": 21991,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5709:7:126",
@@ -4031,12 +4031,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22127,
+                                    "id": 21994,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "5736:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5728:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4045,7 +4045,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22126,
+                                        "id": 21993,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5728:7:126",
@@ -4060,17 +4060,17 @@ export const YieldSpaceMath = {
                             "src": "5621:123:126"
                         },
                         "returnParameters": {
-                            "id": 22133,
+                            "id": 22000,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22130,
+                                    "id": 21997,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5768:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4079,7 +4079,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22129,
+                                        "id": 21996,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5768:7:126",
@@ -4092,12 +4092,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22132,
+                                    "id": 21999,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22242,
+                                    "scope": 22109,
                                     "src": "5777:4:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4106,7 +4106,7 @@ export const YieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 22131,
+                                        "id": 21998,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5777:4:126",
@@ -4120,35 +4120,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "5767:15:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22378,
+                        "id": 22245,
                         "nodeType": "FunctionDefinition",
                         "src": "7870:1957:126",
                         "nodes": [],
                         "body": {
-                            "id": 22377,
+                            "id": 22244,
                             "nodeType": "Block",
                             "src": "8069:1758:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22261
+                                        22128
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22261,
+                                            "id": 22128,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "8228:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22377,
+                                            "scope": 22244,
                                             "src": "8220:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4157,7 +4157,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22260,
+                                                "id": 22127,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "8220:7:126",
@@ -4169,15 +4169,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22269,
+                                    "id": 22136,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22263,
+                                                "id": 22130,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22245,
+                                                "referencedDeclaration": 22112,
                                                 "src": "8238:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4185,11 +4185,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22264,
+                                                "id": 22131,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22247,
+                                                "referencedDeclaration": 22114,
                                                 "src": "8242:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4197,11 +4197,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22265,
+                                                "id": 22132,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22251,
+                                                "referencedDeclaration": 22118,
                                                 "src": "8245:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4209,11 +4209,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22266,
+                                                "id": 22133,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22253,
+                                                "referencedDeclaration": 22120,
                                                 "src": "8248:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4221,11 +4221,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22267,
+                                                "id": 22134,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22255,
+                                                "referencedDeclaration": 22122,
                                                 "src": "8251:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4256,18 +4256,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22262,
+                                            "id": 22129,
                                             "name": "kDown",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22914,
+                                            "referencedDeclaration": 22791,
                                             "src": "8232:5:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22268,
+                                        "id": 22135,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4292,17 +4292,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22272,
+                                        "id": 22139,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22270,
+                                            "id": 22137,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22247,
+                                            "referencedDeclaration": 22114,
                                             "src": "8324:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4312,11 +4312,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22271,
+                                            "id": 22138,
                                             "name": "dy",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22249,
+                                            "referencedDeclaration": 22116,
                                             "src": "8328:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4329,11 +4329,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22282,
+                                    "id": 22149,
                                     "nodeType": "IfStatement",
                                     "src": "8320:166:126",
                                     "trueBody": {
-                                        "id": 22281,
+                                        "id": 22148,
                                         "nodeType": "Block",
                                         "src": "8332:154:126",
                                         "statements": [
@@ -4343,18 +4343,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22276,
+                                                                    "id": 22143,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "8402:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22277,
+                                                                "id": 22144,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -4362,14 +4362,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "8414:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "8402:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22278,
+                                                            "id": 22145,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4377,10 +4377,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "8442:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "8402:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -4388,23 +4388,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22273,
+                                                            "id": 22140,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "8346:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22275,
+                                                        "id": 22142,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4412,14 +4412,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "8353:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "8346:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22279,
+                                                    "id": 22146,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4435,7 +4435,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22280,
+                                                "id": 22147,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "8346:129:126"
                                             }
@@ -4443,23 +4443,23 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22287,
+                                    "id": 22154,
                                     "nodeType": "UncheckedBlock",
                                     "src": "8524:42:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22285,
+                                                "id": 22152,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22283,
+                                                    "id": 22150,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22247,
+                                                    "referencedDeclaration": 22114,
                                                     "src": "8548:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4469,11 +4469,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "Assignment",
                                                 "operator": "-=",
                                                 "rightHandSide": {
-                                                    "id": 22284,
+                                                    "id": 22151,
                                                     "name": "dy",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22249,
+                                                    "referencedDeclaration": 22116,
                                                     "src": "8553:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4486,7 +4486,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22286,
+                                            "id": 22153,
                                             "nodeType": "ExpressionStatement",
                                             "src": "8548:7:126"
                                         }
@@ -4494,17 +4494,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22293,
+                                        "id": 22160,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22288,
+                                            "id": 22155,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22247,
+                                            "referencedDeclaration": 22114,
                                             "src": "8575:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4516,11 +4516,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22291,
+                                                    "id": 22158,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22251,
+                                                    "referencedDeclaration": 22118,
                                                     "src": "8585:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4536,18 +4536,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22289,
+                                                    "id": 22156,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22247,
+                                                    "referencedDeclaration": 22114,
                                                     "src": "8579:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22290,
+                                                "id": 22157,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4555,14 +4555,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "8581:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
+                                                "referencedDeclaration": 18373,
                                                 "src": "8579:5:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22292,
+                                            "id": 22159,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4584,7 +4584,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22294,
+                                    "id": 22161,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8575:12:126"
                                 },
@@ -4594,17 +4594,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22297,
+                                        "id": 22164,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22295,
+                                            "id": 22162,
                                             "name": "k",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22261,
+                                            "referencedDeclaration": 22128,
                                             "src": "8656:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4614,11 +4614,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22296,
+                                            "id": 22163,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22247,
+                                            "referencedDeclaration": 22114,
                                             "src": "8660:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4631,11 +4631,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22307,
+                                    "id": 22174,
                                     "nodeType": "IfStatement",
                                     "src": "8652:165:126",
                                     "trueBody": {
-                                        "id": 22306,
+                                        "id": 22173,
                                         "nodeType": "Block",
                                         "src": "8663:154:126",
                                         "statements": [
@@ -4645,18 +4645,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22301,
+                                                                    "id": 22168,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "8733:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22302,
+                                                                "id": 22169,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -4664,14 +4664,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "8745:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "8733:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22303,
+                                                            "id": 22170,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4679,10 +4679,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "8773:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "8733:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -4690,23 +4690,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22298,
+                                                            "id": 22165,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "8677:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22300,
+                                                        "id": 22167,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4714,14 +4714,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "8684:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "8677:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22304,
+                                                    "id": 22171,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4737,7 +4737,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22305,
+                                                "id": 22172,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "8677:129:126"
                                             }
@@ -4746,17 +4746,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22309
+                                        22176
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22309,
+                                            "id": 22176,
                                             "mutability": "mutable",
                                             "name": "_z",
                                             "nameLocation": "8988:2:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22377,
+                                            "scope": 22244,
                                             "src": "8980:10:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4765,7 +4765,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22308,
+                                                "id": 22175,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "8980:7:126",
@@ -4777,28 +4777,28 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22310,
+                                    "id": 22177,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "8980:10:126"
                                 },
                                 {
-                                    "id": 22317,
+                                    "id": 22184,
                                     "nodeType": "UncheckedBlock",
                                     "src": "9000:45:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22315,
+                                                "id": 22182,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22311,
+                                                    "id": 22178,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22309,
+                                                    "referencedDeclaration": 22176,
                                                     "src": "9024:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4812,17 +4812,17 @@ export const YieldSpaceMath = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 22314,
+                                                    "id": 22181,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 22312,
+                                                        "id": 22179,
                                                         "name": "k",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22261,
+                                                        "referencedDeclaration": 22128,
                                                         "src": "9029:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4832,11 +4832,11 @@ export const YieldSpaceMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 22313,
+                                                        "id": 22180,
                                                         "name": "y",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22247,
+                                                        "referencedDeclaration": 22114,
                                                         "src": "9033:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4855,7 +4855,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22316,
+                                            "id": 22183,
                                             "nodeType": "ExpressionStatement",
                                             "src": "9024:10:126"
                                         }
@@ -4863,17 +4863,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22324,
+                                        "id": 22191,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22318,
+                                            "id": 22185,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22309,
+                                            "referencedDeclaration": 22176,
                                             "src": "9054:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4885,11 +4885,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22321,
+                                                    "id": 22188,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22255,
+                                                    "referencedDeclaration": 22122,
                                                     "src": "9073:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4897,11 +4897,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22322,
+                                                    "id": 22189,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22253,
+                                                    "referencedDeclaration": 22120,
                                                     "src": "9077:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4921,18 +4921,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22319,
+                                                    "id": 22186,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22309,
+                                                    "referencedDeclaration": 22176,
                                                     "src": "9059:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22320,
+                                                "id": 22187,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4940,14 +4940,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "9062:10:126",
                                                 "memberName": "mulDivDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18327,
+                                                "referencedDeclaration": 18230,
                                                 "src": "9059:13:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22323,
+                                            "id": 22190,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4969,7 +4969,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22325,
+                                    "id": 22192,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9054:25:126"
                                 },
@@ -4979,17 +4979,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22328,
+                                        "id": 22195,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22326,
+                                            "id": 22193,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22309,
+                                            "referencedDeclaration": 22176,
                                             "src": "9093:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4999,11 +4999,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22327,
+                                            "id": 22194,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "9099:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5017,23 +5017,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22350,
+                                        "id": 22217,
                                         "nodeType": "Block",
                                         "src": "9233:119:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22348,
+                                                    "id": 22215,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22340,
+                                                        "id": 22207,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22309,
+                                                        "referencedDeclaration": 22176,
                                                         "src": "9316:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -5047,11 +5047,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22345,
+                                                                        "id": 22212,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22251,
+                                                                        "referencedDeclaration": 22118,
                                                                         "src": "9338:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -5067,18 +5067,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22343,
+                                                                        "id": 22210,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "9328:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22344,
+                                                                    "id": 22211,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -5086,14 +5086,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "9332:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "9328:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22346,
+                                                                "id": 22213,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5118,18 +5118,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22341,
+                                                                "id": 22208,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22309,
+                                                                "referencedDeclaration": 22176,
                                                                 "src": "9321:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22342,
+                                                            "id": 22209,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -5137,14 +5137,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "9324:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "9321:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22347,
+                                                        "id": 22214,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5166,33 +5166,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22349,
+                                                "id": 22216,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "9316:25:126"
                                             }
                                         ]
                                     },
-                                    "id": 22351,
+                                    "id": 22218,
                                     "nodeType": "IfStatement",
                                     "src": "9089:263:126",
                                     "trueBody": {
-                                        "id": 22339,
+                                        "id": 22206,
                                         "nodeType": "Block",
                                         "src": "9104:123:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22337,
+                                                    "id": 22204,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22329,
+                                                        "id": 22196,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22309,
+                                                        "referencedDeclaration": 22176,
                                                         "src": "9189:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -5206,11 +5206,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22334,
+                                                                        "id": 22201,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22251,
+                                                                        "referencedDeclaration": 22118,
                                                                         "src": "9213:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -5226,18 +5226,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22332,
+                                                                        "id": 22199,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "9201:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22333,
+                                                                    "id": 22200,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -5245,14 +5245,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "9205:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "9201:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22335,
+                                                                "id": 22202,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5277,18 +5277,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22330,
+                                                                "id": 22197,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22309,
+                                                                "referencedDeclaration": 22176,
                                                                 "src": "9194:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22331,
+                                                            "id": 22198,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -5296,14 +5296,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "9197:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "9194:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22336,
+                                                        "id": 22203,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5325,7 +5325,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22338,
+                                                "id": 22205,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "9189:27:126"
                                             }
@@ -5334,17 +5334,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22357,
+                                        "id": 22224,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22352,
+                                            "id": 22219,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22309,
+                                            "referencedDeclaration": 22176,
                                             "src": "9429:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5356,11 +5356,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22355,
+                                                    "id": 22222,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22255,
+                                                    "referencedDeclaration": 22122,
                                                     "src": "9445:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5376,18 +5376,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22353,
+                                                    "id": 22220,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22309,
+                                                    "referencedDeclaration": 22176,
                                                     "src": "9434:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22354,
+                                                "id": 22221,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5395,14 +5395,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "9437:7:126",
                                                 "memberName": "divDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18363,
+                                                "referencedDeclaration": 18266,
                                                 "src": "9434:10:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22356,
+                                            "id": 22223,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5424,7 +5424,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22358,
+                                    "id": 22225,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9429:19:126"
                                 },
@@ -5434,17 +5434,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22361,
+                                        "id": 22228,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22359,
+                                            "id": 22226,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22309,
+                                            "referencedDeclaration": 22176,
                                             "src": "9519:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5454,11 +5454,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22360,
+                                            "id": 22227,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22245,
+                                            "referencedDeclaration": 22112,
                                             "src": "9524:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5471,11 +5471,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22371,
+                                    "id": 22238,
                                     "nodeType": "IfStatement",
                                     "src": "9515:167:126",
                                     "trueBody": {
-                                        "id": 22370,
+                                        "id": 22237,
                                         "nodeType": "Block",
                                         "src": "9528:154:126",
                                         "statements": [
@@ -5485,18 +5485,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22365,
+                                                                    "id": 22232,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "9598:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22366,
+                                                                "id": 22233,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5504,14 +5504,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "9610:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "9598:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22367,
+                                                            "id": 22234,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -5519,10 +5519,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "9638:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "9598:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -5530,23 +5530,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22362,
+                                                            "id": 22229,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "9542:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22364,
+                                                        "id": 22231,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5554,14 +5554,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "9549:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "9542:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22368,
+                                                    "id": 22235,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5577,7 +5577,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22369,
+                                                "id": 22236,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "9542:129:126"
                                             }
@@ -5585,7 +5585,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22376,
+                                    "id": 22243,
                                     "nodeType": "UncheckedBlock",
                                     "src": "9772:49:126",
                                     "statements": [
@@ -5595,17 +5595,17 @@ export const YieldSpaceMath = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 22374,
+                                                "id": 22241,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 22372,
+                                                    "id": 22239,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22309,
+                                                    "referencedDeclaration": 22176,
                                                     "src": "9803:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5615,11 +5615,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "-",
                                                 "rightExpression": {
-                                                    "id": 22373,
+                                                    "id": 22240,
                                                     "name": "ze",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22245,
+                                                    "referencedDeclaration": 22112,
                                                     "src": "9808:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5632,8 +5632,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "functionReturnParameters": 22259,
-                                            "id": 22375,
+                                            "functionReturnParameters": 22126,
+                                            "id": 22242,
                                             "nodeType": "Return",
                                             "src": "9796:14:126"
                                         }
@@ -5642,7 +5642,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22243,
+                            "id": 22110,
                             "nodeType": "StructuredDocumentation",
                             "src": "7347:518:126",
                             "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We underestimate the amount of\n      shares in.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the trader.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The amount of shares the user pays."
@@ -5653,17 +5653,17 @@ export const YieldSpaceMath = {
                         "name": "calculateSharesInGivenBondsOutDown",
                         "nameLocation": "7879:34:126",
                         "parameters": {
-                            "id": 22256,
+                            "id": 22123,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22245,
+                                    "id": 22112,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "7931:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "7923:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5672,7 +5672,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22244,
+                                        "id": 22111,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7923:7:126",
@@ -5685,12 +5685,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22247,
+                                    "id": 22114,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "7951:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "7943:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5699,7 +5699,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22246,
+                                        "id": 22113,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7943:7:126",
@@ -5712,12 +5712,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22249,
+                                    "id": 22116,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "7970:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "7962:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5726,7 +5726,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22248,
+                                        "id": 22115,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7962:7:126",
@@ -5739,12 +5739,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22251,
+                                    "id": 22118,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "7990:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "7982:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5753,7 +5753,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22250,
+                                        "id": 22117,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7982:7:126",
@@ -5766,12 +5766,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22253,
+                                    "id": 22120,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "8009:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "8001:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5780,7 +5780,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22252,
+                                        "id": 22119,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8001:7:126",
@@ -5793,12 +5793,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22255,
+                                    "id": 22122,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "8028:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "8020:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5807,7 +5807,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22254,
+                                        "id": 22121,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8020:7:126",
@@ -5822,17 +5822,17 @@ export const YieldSpaceMath = {
                             "src": "7913:123:126"
                         },
                         "returnParameters": {
-                            "id": 22259,
+                            "id": 22126,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22258,
+                                    "id": 22125,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22378,
+                                    "scope": 22245,
                                     "src": "8060:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5841,7 +5841,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22257,
+                                        "id": 22124,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8060:7:126",
@@ -5855,35 +5855,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "8059:9:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22425,
+                        "id": 22292,
                         "nodeType": "FunctionDefinition",
                         "src": "10452:583:126",
                         "nodes": [],
                         "body": {
-                            "id": 22424,
+                            "id": 22291,
                             "nodeType": "Block",
                             "src": "10658:377:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22397
+                                        22264
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22397,
+                                            "id": 22264,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "10673:7:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22424,
+                                            "scope": 22291,
                                             "src": "10668:12:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -5892,7 +5892,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 22396,
+                                                "id": 22263,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "10668:4:126",
@@ -5904,13 +5904,13 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22398,
+                                    "id": 22265,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "10668:12:126"
                                 },
                                 {
                                     "expression": {
-                                        "id": 22410,
+                                        "id": 22277,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5918,11 +5918,11 @@ export const YieldSpaceMath = {
                                         "leftHandSide": {
                                             "components": [
                                                 {
-                                                    "id": 22399,
+                                                    "id": 22266,
                                                     "name": "result",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22394,
+                                                    "referencedDeclaration": 22261,
                                                     "src": "10691:6:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5930,11 +5930,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22400,
+                                                    "id": 22267,
                                                     "name": "success",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22397,
+                                                    "referencedDeclaration": 22264,
                                                     "src": "10699:7:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
@@ -5942,7 +5942,7 @@ export const YieldSpaceMath = {
                                                     }
                                                 }
                                             ],
-                                            "id": 22401,
+                                            "id": 22268,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": true,
@@ -5960,11 +5960,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22403,
+                                                    "id": 22270,
                                                     "name": "ze",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22381,
+                                                    "referencedDeclaration": 22248,
                                                     "src": "10762:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5972,11 +5972,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22404,
+                                                    "id": 22271,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22383,
+                                                    "referencedDeclaration": 22250,
                                                     "src": "10778:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5984,11 +5984,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22405,
+                                                    "id": 22272,
                                                     "name": "dy",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22385,
+                                                    "referencedDeclaration": 22252,
                                                     "src": "10793:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5996,11 +5996,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22406,
+                                                    "id": 22273,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22387,
+                                                    "referencedDeclaration": 22254,
                                                     "src": "10809:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6008,11 +6008,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22407,
+                                                    "id": 22274,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22389,
+                                                    "referencedDeclaration": 22256,
                                                     "src": "10824:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6020,11 +6020,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22408,
+                                                    "id": 22275,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22391,
+                                                    "referencedDeclaration": 22258,
                                                     "src": "10839:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6059,18 +6059,18 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 22402,
+                                                "id": 22269,
                                                 "name": "calculateSharesOutGivenBondsInDownSafe",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22542,
+                                                "referencedDeclaration": 22409,
                                                 "src": "10710:38:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$",
                                                     "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                                 }
                                             },
-                                            "id": 22409,
+                                            "id": 22276,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6092,13 +6092,13 @@ export const YieldSpaceMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 22411,
+                                    "id": 22278,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10690:161:126"
                                 },
                                 {
                                     "condition": {
-                                        "id": 22413,
+                                        "id": 22280,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6108,11 +6108,11 @@ export const YieldSpaceMath = {
                                         "prefix": true,
                                         "src": "10865:8:126",
                                         "subExpression": {
-                                            "id": 22412,
+                                            "id": 22279,
                                             "name": "success",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22397,
+                                            "referencedDeclaration": 22264,
                                             "src": "10866:7:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -6124,11 +6124,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22423,
+                                    "id": 22290,
                                     "nodeType": "IfStatement",
                                     "src": "10861:168:126",
                                     "trueBody": {
-                                        "id": 22422,
+                                        "id": 22289,
                                         "nodeType": "Block",
                                         "src": "10875:154:126",
                                         "statements": [
@@ -6138,18 +6138,18 @@ export const YieldSpaceMath = {
                                                         {
                                                             "expression": {
                                                                 "expression": {
-                                                                    "id": 22417,
+                                                                    "id": 22284,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10676,
+                                                                    "referencedDeclaration": 10506,
                                                                     "src": "10945:11:126",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 22418,
+                                                                "id": 22285,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -6157,14 +6157,14 @@ export const YieldSpaceMath = {
                                                                 "memberLocation": "10957:27:126",
                                                                 "memberName": "InsufficientLiquidityReason",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10532,
+                                                                "referencedDeclaration": 10362,
                                                                 "src": "10945:39:126",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10532_$",
+                                                                    "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$10362_$",
                                                                     "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
                                                                 }
                                                             },
-                                                            "id": 22419,
+                                                            "id": 22286,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -6172,10 +6172,10 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "10985:19:126",
                                                             "memberName": "ArithmeticUnderflow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10528,
+                                                            "referencedDeclaration": 10358,
                                                             "src": "10945:59:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         }
@@ -6183,23 +6183,23 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10532",
+                                                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$10362",
                                                                 "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22414,
+                                                            "id": 22281,
                                                             "name": "Errors",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18290,
+                                                            "referencedDeclaration": 18193,
                                                             "src": "10889:6:126",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18290_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_Errors_$18193_$",
                                                                 "typeString": "type(library Errors)"
                                                             }
                                                         },
-                                                        "id": 22416,
+                                                        "id": 22283,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6207,14 +6207,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "10896:31:126",
                                                         "memberName": "throwInsufficientLiquidityError",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18289,
+                                                        "referencedDeclaration": 18192,
                                                         "src": "10889:38:126",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10532_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$10362_$returns$__$",
                                                             "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
                                                         }
                                                     },
-                                                    "id": 22420,
+                                                    "id": 22287,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6230,7 +6230,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 22421,
+                                                "id": 22288,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "10889:129:126"
                                             }
@@ -6240,7 +6240,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22379,
+                            "id": 22246,
                             "nodeType": "StructuredDocumentation",
                             "src": "9833:614:126",
                             "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function reverts if\n      an integer overflow or underflow occurs. We underestimate the\n      amount of shares out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return result The amount of shares the user receives."
@@ -6251,17 +6251,17 @@ export const YieldSpaceMath = {
                         "name": "calculateSharesOutGivenBondsInDown",
                         "nameLocation": "10461:34:126",
                         "parameters": {
-                            "id": 22392,
+                            "id": 22259,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22381,
+                                    "id": 22248,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "10513:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10505:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6270,7 +6270,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22380,
+                                        "id": 22247,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10505:7:126",
@@ -6283,12 +6283,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22383,
+                                    "id": 22250,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "10533:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10525:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6297,7 +6297,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22382,
+                                        "id": 22249,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10525:7:126",
@@ -6310,12 +6310,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22385,
+                                    "id": 22252,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "10552:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10544:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6324,7 +6324,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22384,
+                                        "id": 22251,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10544:7:126",
@@ -6337,12 +6337,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22387,
+                                    "id": 22254,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "10572:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10564:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6351,7 +6351,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22386,
+                                        "id": 22253,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10564:7:126",
@@ -6364,12 +6364,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22389,
+                                    "id": 22256,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "10591:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10583:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6378,7 +6378,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22388,
+                                        "id": 22255,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10583:7:126",
@@ -6391,12 +6391,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22391,
+                                    "id": 22258,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "10610:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10602:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6405,7 +6405,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22390,
+                                        "id": 22257,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10602:7:126",
@@ -6420,17 +6420,17 @@ export const YieldSpaceMath = {
                             "src": "10495:123:126"
                         },
                         "returnParameters": {
-                            "id": 22395,
+                            "id": 22262,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22394,
+                                    "id": 22261,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "10650:6:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22425,
+                                    "scope": 22292,
                                     "src": "10642:14:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6439,7 +6439,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22393,
+                                        "id": 22260,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10642:7:126",
@@ -6453,35 +6453,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "10641:16:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22542,
+                        "id": 22409,
                         "nodeType": "FunctionDefinition",
                         "src": "11709:1515:126",
                         "nodes": [],
                         "body": {
-                            "id": 22541,
+                            "id": 22408,
                             "nodeType": "Block",
                             "src": "11918:1306:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22446
+                                        22313
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22446,
+                                            "id": 22313,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "12074:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22541,
+                                            "scope": 22408,
                                             "src": "12066:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6490,7 +6490,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22445,
+                                                "id": 22312,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "12066:7:126",
@@ -6502,15 +6502,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22454,
+                                    "id": 22321,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22448,
+                                                "id": 22315,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22428,
+                                                "referencedDeclaration": 22295,
                                                 "src": "12082:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6518,11 +6518,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22449,
+                                                "id": 22316,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22430,
+                                                "referencedDeclaration": 22297,
                                                 "src": "12086:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6530,11 +6530,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22450,
+                                                "id": 22317,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22434,
+                                                "referencedDeclaration": 22301,
                                                 "src": "12089:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6542,11 +6542,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22451,
+                                                "id": 22318,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22436,
+                                                "referencedDeclaration": 22303,
                                                 "src": "12092:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6554,11 +6554,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22452,
+                                                "id": 22319,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22438,
+                                                "referencedDeclaration": 22305,
                                                 "src": "12095:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6589,18 +6589,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22447,
+                                            "id": 22314,
                                             "name": "kUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22880,
+                                            "referencedDeclaration": 22757,
                                             "src": "12078:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22453,
+                                        "id": 22320,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6621,17 +6621,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22463,
+                                        "id": 22330,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22455,
+                                            "id": 22322,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22430,
+                                            "referencedDeclaration": 22297,
                                             "src": "12137:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6643,11 +6643,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22461,
+                                                    "id": 22328,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22434,
+                                                    "referencedDeclaration": 22301,
                                                     "src": "12154:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6669,17 +6669,17 @@ export const YieldSpaceMath = {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 22458,
+                                                            "id": 22325,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftExpression": {
-                                                                "id": 22456,
+                                                                "id": 22323,
                                                                 "name": "y",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22430,
+                                                                "referencedDeclaration": 22297,
                                                                 "src": "12142:1:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -6689,11 +6689,11 @@ export const YieldSpaceMath = {
                                                             "nodeType": "BinaryOperation",
                                                             "operator": "+",
                                                             "rightExpression": {
-                                                                "id": 22457,
+                                                                "id": 22324,
                                                                 "name": "dy",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22432,
+                                                                "referencedDeclaration": 22299,
                                                                 "src": "12146:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -6707,7 +6707,7 @@ export const YieldSpaceMath = {
                                                             }
                                                         }
                                                     ],
-                                                    "id": 22459,
+                                                    "id": 22326,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -6720,7 +6720,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22460,
+                                                "id": 22327,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6728,14 +6728,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "12150:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
+                                                "referencedDeclaration": 18373,
                                                 "src": "12141:12:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22462,
+                                            "id": 22329,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6757,7 +6757,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22464,
+                                    "id": 22331,
                                     "nodeType": "ExpressionStatement",
                                     "src": "12137:19:126"
                                 },
@@ -6767,17 +6767,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22467,
+                                        "id": 22334,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22465,
+                                            "id": 22332,
                                             "name": "k",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22446,
+                                            "referencedDeclaration": 22313,
                                             "src": "12234:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6787,11 +6787,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22466,
+                                            "id": 22333,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22430,
+                                            "referencedDeclaration": 22297,
                                             "src": "12238:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6804,11 +6804,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22473,
+                                    "id": 22340,
                                     "nodeType": "IfStatement",
                                     "src": "12230:53:126",
                                     "trueBody": {
-                                        "id": 22472,
+                                        "id": 22339,
                                         "nodeType": "Block",
                                         "src": "12241:42:126",
                                         "statements": [
@@ -6817,7 +6817,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22468,
+                                                            "id": 22335,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -6833,7 +6833,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22469,
+                                                            "id": 22336,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -6848,7 +6848,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22470,
+                                                    "id": 22337,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -6861,8 +6861,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22444,
-                                                "id": 22471,
+                                                "functionReturnParameters": 22311,
+                                                "id": 22338,
                                                 "nodeType": "Return",
                                                 "src": "12255:17:126"
                                             }
@@ -6871,17 +6871,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22475
+                                        22342
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22475,
+                                            "id": 22342,
                                             "mutability": "mutable",
                                             "name": "_z",
                                             "nameLocation": "12446:2:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22541,
+                                            "scope": 22408,
                                             "src": "12438:10:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6890,7 +6890,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22474,
+                                                "id": 22341,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "12438:7:126",
@@ -6902,28 +6902,28 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22476,
+                                    "id": 22343,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "12438:10:126"
                                 },
                                 {
-                                    "id": 22483,
+                                    "id": 22350,
                                     "nodeType": "UncheckedBlock",
                                     "src": "12458:45:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22481,
+                                                "id": 22348,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22477,
+                                                    "id": 22344,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22475,
+                                                    "referencedDeclaration": 22342,
                                                     "src": "12482:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6937,17 +6937,17 @@ export const YieldSpaceMath = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 22480,
+                                                    "id": 22347,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 22478,
+                                                        "id": 22345,
                                                         "name": "k",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22446,
+                                                        "referencedDeclaration": 22313,
                                                         "src": "12487:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -6957,11 +6957,11 @@ export const YieldSpaceMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 22479,
+                                                        "id": 22346,
                                                         "name": "y",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22430,
+                                                        "referencedDeclaration": 22297,
                                                         "src": "12491:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -6980,7 +6980,7 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22482,
+                                            "id": 22349,
                                             "nodeType": "ExpressionStatement",
                                             "src": "12482:10:126"
                                         }
@@ -6988,17 +6988,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22490,
+                                        "id": 22357,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22484,
+                                            "id": 22351,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22475,
+                                            "referencedDeclaration": 22342,
                                             "src": "12512:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7010,11 +7010,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22487,
+                                                    "id": 22354,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22438,
+                                                    "referencedDeclaration": 22305,
                                                     "src": "12529:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -7022,11 +7022,11 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22488,
+                                                    "id": 22355,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22436,
+                                                    "referencedDeclaration": 22303,
                                                     "src": "12533:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -7046,18 +7046,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22485,
+                                                    "id": 22352,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22475,
+                                                    "referencedDeclaration": 22342,
                                                     "src": "12517:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22486,
+                                                "id": 22353,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7065,14 +7065,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "12520:8:126",
                                                 "memberName": "mulDivUp",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18377,
+                                                "referencedDeclaration": 18280,
                                                 "src": "12517:11:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22489,
+                                            "id": 22356,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7094,7 +7094,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22491,
+                                    "id": 22358,
                                     "nodeType": "ExpressionStatement",
                                     "src": "12512:23:126"
                                 },
@@ -7104,17 +7104,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22494,
+                                        "id": 22361,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22492,
+                                            "id": 22359,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22475,
+                                            "referencedDeclaration": 22342,
                                             "src": "12549:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7124,11 +7124,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22493,
+                                            "id": 22360,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "12555:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7142,23 +7142,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22516,
+                                        "id": 22383,
                                         "nodeType": "Block",
                                         "src": "12685:123:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22514,
+                                                    "id": 22381,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22506,
+                                                        "id": 22373,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22475,
+                                                        "referencedDeclaration": 22342,
                                                         "src": "12770:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -7172,11 +7172,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22511,
+                                                                        "id": 22378,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22434,
+                                                                        "referencedDeclaration": 22301,
                                                                         "src": "12794:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -7192,18 +7192,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22509,
+                                                                        "id": 22376,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "12782:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22510,
+                                                                    "id": 22377,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -7211,14 +7211,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "12786:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "12782:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22512,
+                                                                "id": 22379,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -7243,18 +7243,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22507,
+                                                                "id": 22374,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22475,
+                                                                "referencedDeclaration": 22342,
                                                                 "src": "12775:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22508,
+                                                            "id": 22375,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -7262,14 +7262,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "12778:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "12775:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22513,
+                                                        "id": 22380,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -7291,33 +7291,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22515,
+                                                "id": 22382,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "12770:27:126"
                                             }
                                         ]
                                     },
-                                    "id": 22517,
+                                    "id": 22384,
                                     "nodeType": "IfStatement",
                                     "src": "12545:263:126",
                                     "trueBody": {
-                                        "id": 22505,
+                                        "id": 22372,
                                         "nodeType": "Block",
                                         "src": "12560:119:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22503,
+                                                    "id": 22370,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22495,
+                                                        "id": 22362,
                                                         "name": "_z",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22475,
+                                                        "referencedDeclaration": 22342,
                                                         "src": "12643:2:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -7331,11 +7331,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22500,
+                                                                        "id": 22367,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22434,
+                                                                        "referencedDeclaration": 22301,
                                                                         "src": "12665:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -7351,18 +7351,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22498,
+                                                                        "id": 22365,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "12655:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22499,
+                                                                    "id": 22366,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -7370,14 +7370,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "12659:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "12655:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22501,
+                                                                "id": 22368,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -7402,18 +7402,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22496,
+                                                                "id": 22363,
                                                                 "name": "_z",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22475,
+                                                                "referencedDeclaration": 22342,
                                                                 "src": "12648:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22497,
+                                                            "id": 22364,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -7421,14 +7421,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "12651:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "12648:6:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22502,
+                                                        "id": 22369,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -7450,7 +7450,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22504,
+                                                "id": 22371,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "12643:25:126"
                                             }
@@ -7459,17 +7459,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22523,
+                                        "id": 22390,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22518,
+                                            "id": 22385,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22475,
+                                            "referencedDeclaration": 22342,
                                             "src": "12885:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7481,11 +7481,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22521,
+                                                    "id": 22388,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22438,
+                                                    "referencedDeclaration": 22305,
                                                     "src": "12899:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -7501,18 +7501,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22519,
+                                                    "id": 22386,
                                                     "name": "_z",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22475,
+                                                    "referencedDeclaration": 22342,
                                                     "src": "12890:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22520,
+                                                "id": 22387,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7520,14 +7520,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "12893:5:126",
                                                 "memberName": "divUp",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18413,
+                                                "referencedDeclaration": 18316,
                                                 "src": "12890:8:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22522,
+                                            "id": 22389,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7549,7 +7549,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22524,
+                                    "id": 22391,
                                     "nodeType": "ExpressionStatement",
                                     "src": "12885:17:126"
                                 },
@@ -7559,17 +7559,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22527,
+                                        "id": 22394,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22525,
+                                            "id": 22392,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22428,
+                                            "referencedDeclaration": 22295,
                                             "src": "13022:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7579,11 +7579,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22526,
+                                            "id": 22393,
                                             "name": "_z",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22475,
+                                            "referencedDeclaration": 22342,
                                             "src": "13027:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7596,11 +7596,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22533,
+                                    "id": 22400,
                                     "nodeType": "IfStatement",
                                     "src": "13018:55:126",
                                     "trueBody": {
-                                        "id": 22532,
+                                        "id": 22399,
                                         "nodeType": "Block",
                                         "src": "13031:42:126",
                                         "statements": [
@@ -7609,7 +7609,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22528,
+                                                            "id": 22395,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -7625,7 +7625,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22529,
+                                                            "id": 22396,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -7640,7 +7640,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22530,
+                                                    "id": 22397,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -7653,8 +7653,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22444,
-                                                "id": 22531,
+                                                "functionReturnParameters": 22311,
+                                                "id": 22398,
                                                 "nodeType": "Return",
                                                 "src": "13045:17:126"
                                             }
@@ -7662,7 +7662,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22540,
+                                    "id": 22407,
                                     "nodeType": "UncheckedBlock",
                                     "src": "13161:57:126",
                                     "statements": [
@@ -7674,17 +7674,17 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22536,
+                                                        "id": 22403,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22534,
+                                                            "id": 22401,
                                                             "name": "ze",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22428,
+                                                            "referencedDeclaration": 22295,
                                                             "src": "13193:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -7694,11 +7694,11 @@ export const YieldSpaceMath = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 22535,
+                                                            "id": 22402,
                                                             "name": "_z",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22475,
+                                                            "referencedDeclaration": 22342,
                                                             "src": "13198:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -7713,7 +7713,7 @@ export const YieldSpaceMath = {
                                                     },
                                                     {
                                                         "hexValue": "74727565",
-                                                        "id": 22537,
+                                                        "id": 22404,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7728,7 +7728,7 @@ export const YieldSpaceMath = {
                                                         "value": "true"
                                                     }
                                                 ],
-                                                "id": 22538,
+                                                "id": 22405,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -7741,8 +7741,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "tuple(uint256,bool)"
                                                 }
                                             },
-                                            "functionReturnParameters": 22444,
-                                            "id": 22539,
+                                            "functionReturnParameters": 22311,
+                                            "id": 22406,
                                             "nodeType": "Return",
                                             "src": "13185:22:126"
                                         }
@@ -7751,7 +7751,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22426,
+                            "id": 22293,
                             "nodeType": "StructuredDocumentation",
                             "src": "11041:663:126",
                             "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function returns a\n      success flag instead of reverting. We underestimate the amount of\n      shares out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The amount of shares the user receives\n @return A flag indicating if the calculation succeeded."
@@ -7762,17 +7762,17 @@ export const YieldSpaceMath = {
                         "name": "calculateSharesOutGivenBondsInDownSafe",
                         "nameLocation": "11718:38:126",
                         "parameters": {
-                            "id": 22439,
+                            "id": 22306,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22428,
+                                    "id": 22295,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "11774:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11766:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7781,7 +7781,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22427,
+                                        "id": 22294,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11766:7:126",
@@ -7794,12 +7794,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22430,
+                                    "id": 22297,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "11794:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11786:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7808,7 +7808,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22429,
+                                        "id": 22296,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11786:7:126",
@@ -7821,12 +7821,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22432,
+                                    "id": 22299,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "11813:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11805:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7835,7 +7835,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22431,
+                                        "id": 22298,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11805:7:126",
@@ -7848,12 +7848,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22434,
+                                    "id": 22301,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "11833:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11825:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7862,7 +7862,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22433,
+                                        "id": 22300,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11825:7:126",
@@ -7875,12 +7875,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22436,
+                                    "id": 22303,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "11852:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11844:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7889,7 +7889,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22435,
+                                        "id": 22302,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11844:7:126",
@@ -7902,12 +7902,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22438,
+                                    "id": 22305,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "11871:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11863:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7916,7 +7916,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22437,
+                                        "id": 22304,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11863:7:126",
@@ -7931,17 +7931,17 @@ export const YieldSpaceMath = {
                             "src": "11756:123:126"
                         },
                         "returnParameters": {
-                            "id": 22444,
+                            "id": 22311,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22441,
+                                    "id": 22308,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11903:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7950,7 +7950,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22440,
+                                        "id": 22307,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11903:7:126",
@@ -7963,12 +7963,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22443,
+                                    "id": 22310,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22542,
+                                    "scope": 22409,
                                     "src": "11912:4:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7977,7 +7977,7 @@ export const YieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 22442,
+                                        "id": 22309,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11912:4:126",
@@ -7991,35 +7991,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "11902:15:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22632,
+                        "id": 22499,
                         "nodeType": "FunctionDefinition",
                         "src": "13859:1409:126",
                         "nodes": [],
                         "body": {
-                            "id": 22631,
+                            "id": 22498,
                             "nodeType": "Block",
                             "src": "14037:1231:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22561
+                                        22428
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22561,
+                                            "id": 22428,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "14551:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22631,
+                                            "scope": 22498,
                                             "src": "14543:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -8028,7 +8028,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22560,
+                                                "id": 22427,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "14543:7:126",
@@ -8040,15 +8040,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22569,
+                                    "id": 22436,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22563,
+                                                "id": 22430,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22545,
+                                                "referencedDeclaration": 22412,
                                                 "src": "14561:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8056,11 +8056,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22564,
+                                                "id": 22431,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22547,
+                                                "referencedDeclaration": 22414,
                                                 "src": "14565:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8068,11 +8068,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22565,
+                                                "id": 22432,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22549,
+                                                "referencedDeclaration": 22416,
                                                 "src": "14568:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8080,11 +8080,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22566,
+                                                "id": 22433,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22551,
+                                                "referencedDeclaration": 22418,
                                                 "src": "14571:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8092,11 +8092,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22567,
+                                                "id": 22434,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22553,
+                                                "referencedDeclaration": 22420,
                                                 "src": "14574:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8127,18 +8127,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22562,
+                                            "id": 22429,
                                             "name": "kDown",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22914,
+                                            "referencedDeclaration": 22791,
                                             "src": "14555:5:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22568,
+                                        "id": 22435,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8159,17 +8159,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22571
+                                        22438
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22571,
+                                            "id": 22438,
                                             "mutability": "mutable",
                                             "name": "optimalZe",
                                             "nameLocation": "14595:9:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22631,
+                                            "scope": 22498,
                                             "src": "14587:17:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -8178,7 +8178,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22570,
+                                                "id": 22437,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "14587:7:126",
@@ -8190,7 +8190,7 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22581,
+                                    "id": 22448,
                                     "initialValue": {
                                         "arguments": [
                                             {
@@ -8198,7 +8198,7 @@ export const YieldSpaceMath = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 22579,
+                                                "id": 22446,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8206,11 +8206,11 @@ export const YieldSpaceMath = {
                                                 "leftExpression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 22576,
+                                                            "id": 22443,
                                                             "name": "mu",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22553,
+                                                            "referencedDeclaration": 22420,
                                                             "src": "14625:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -8226,18 +8226,18 @@ export const YieldSpaceMath = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22574,
+                                                            "id": 22441,
                                                             "name": "c",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22551,
+                                                            "referencedDeclaration": 22418,
                                                             "src": "14617:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 22575,
+                                                        "id": 22442,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -8245,14 +8245,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "14619:5:126",
                                                         "memberName": "divUp",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18413,
+                                                        "referencedDeclaration": 18316,
                                                         "src": "14617:7:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 22577,
+                                                    "id": 22444,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8271,11 +8271,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "+",
                                                 "rightExpression": {
-                                                    "id": 22578,
+                                                    "id": 22445,
                                                     "name": "ONE",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 18299,
+                                                    "referencedDeclaration": 18202,
                                                     "src": "14631:3:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -8297,18 +8297,18 @@ export const YieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 22572,
+                                                "id": 22439,
                                                 "name": "k",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22561,
+                                                "referencedDeclaration": 22428,
                                                 "src": "14607:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22573,
+                                            "id": 22440,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8316,14 +8316,14 @@ export const YieldSpaceMath = {
                                             "memberLocation": "14609:7:126",
                                             "memberName": "divDown",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18363,
+                                            "referencedDeclaration": 18266,
                                             "src": "14607:9:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22580,
+                                        "id": 22447,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8348,17 +8348,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22584,
+                                        "id": 22451,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22582,
+                                            "id": 22449,
                                             "name": "optimalZe",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22571,
+                                            "referencedDeclaration": 22438,
                                             "src": "14649:9:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8368,11 +8368,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22583,
+                                            "id": 22450,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "14662:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8386,23 +8386,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22606,
+                                        "id": 22473,
                                         "nodeType": "Block",
                                         "src": "14811:134:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22604,
+                                                    "id": 22471,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22596,
+                                                        "id": 22463,
                                                         "name": "optimalZe",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22571,
+                                                        "referencedDeclaration": 22438,
                                                         "src": "14895:9:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -8416,11 +8416,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22601,
+                                                                        "id": 22468,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22549,
+                                                                        "referencedDeclaration": 22416,
                                                                         "src": "14931:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -8436,18 +8436,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22599,
+                                                                        "id": 22466,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "14921:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22600,
+                                                                    "id": 22467,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -8455,14 +8455,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "14925:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "14921:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22602,
+                                                                "id": 22469,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8487,18 +8487,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22597,
+                                                                "id": 22464,
                                                                 "name": "optimalZe",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22571,
+                                                                "referencedDeclaration": 22438,
                                                                 "src": "14907:9:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22598,
+                                                            "id": 22465,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -8506,14 +8506,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "14917:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "14907:13:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22603,
+                                                        "id": 22470,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -8535,33 +8535,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22605,
+                                                "id": 22472,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "14895:39:126"
                                             }
                                         ]
                                     },
-                                    "id": 22607,
+                                    "id": 22474,
                                     "nodeType": "IfStatement",
                                     "src": "14645:300:126",
                                     "trueBody": {
-                                        "id": 22595,
+                                        "id": 22462,
                                         "nodeType": "Block",
                                         "src": "14667:138:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22593,
+                                                    "id": 22460,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22585,
+                                                        "id": 22452,
                                                         "name": "optimalZe",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22571,
+                                                        "referencedDeclaration": 22438,
                                                         "src": "14753:9:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -8575,11 +8575,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22590,
+                                                                        "id": 22457,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22549,
+                                                                        "referencedDeclaration": 22416,
                                                                         "src": "14791:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -8595,18 +8595,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22588,
+                                                                        "id": 22455,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "14779:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22589,
+                                                                    "id": 22456,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -8614,14 +8614,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "14783:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "14779:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22591,
+                                                                "id": 22458,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8646,18 +8646,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22586,
+                                                                "id": 22453,
                                                                 "name": "optimalZe",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22571,
+                                                                "referencedDeclaration": 22438,
                                                                 "src": "14765:9:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22587,
+                                                            "id": 22454,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -8665,14 +8665,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "14775:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "14765:13:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22592,
+                                                        "id": 22459,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -8694,7 +8694,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22594,
+                                                "id": 22461,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "14753:41:126"
                                             }
@@ -8703,17 +8703,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 22613,
+                                        "id": 22480,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 22608,
+                                            "id": 22475,
                                             "name": "optimalZe",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22571,
+                                            "referencedDeclaration": 22438,
                                             "src": "14954:9:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8725,11 +8725,11 @@ export const YieldSpaceMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 22611,
+                                                    "id": 22478,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22553,
+                                                    "referencedDeclaration": 22420,
                                                     "src": "14984:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -8745,18 +8745,18 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22609,
+                                                    "id": 22476,
                                                     "name": "optimalZe",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22571,
+                                                    "referencedDeclaration": 22438,
                                                     "src": "14966:9:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22610,
+                                                "id": 22477,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8764,14 +8764,14 @@ export const YieldSpaceMath = {
                                                 "memberLocation": "14976:7:126",
                                                 "memberName": "divDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18363,
+                                                "referencedDeclaration": 18266,
                                                 "src": "14966:17:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22612,
+                                            "id": 22479,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8793,7 +8793,7 @@ export const YieldSpaceMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 22614,
+                                    "id": 22481,
                                     "nodeType": "ExpressionStatement",
                                     "src": "14954:33:126"
                                 },
@@ -8803,17 +8803,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22617,
+                                        "id": 22484,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22615,
+                                            "id": 22482,
                                             "name": "optimalZe",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22571,
+                                            "referencedDeclaration": 22438,
                                             "src": "15131:9:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8823,11 +8823,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22616,
+                                            "id": 22483,
                                             "name": "ze",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22545,
+                                            "referencedDeclaration": 22412,
                                             "src": "15143:2:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8840,11 +8840,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22623,
+                                    "id": 22490,
                                     "nodeType": "IfStatement",
                                     "src": "15127:62:126",
                                     "trueBody": {
-                                        "id": 22622,
+                                        "id": 22489,
                                         "nodeType": "Block",
                                         "src": "15147:42:126",
                                         "statements": [
@@ -8853,7 +8853,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22618,
+                                                            "id": 22485,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -8869,7 +8869,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22619,
+                                                            "id": 22486,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -8884,7 +8884,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22620,
+                                                    "id": 22487,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -8897,8 +8897,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22559,
-                                                "id": 22621,
+                                                "functionReturnParameters": 22426,
+                                                "id": 22488,
                                                 "nodeType": "Return",
                                                 "src": "15161:17:126"
                                             }
@@ -8906,7 +8906,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22630,
+                                    "id": 22497,
                                     "nodeType": "UncheckedBlock",
                                     "src": "15198:64:126",
                                     "statements": [
@@ -8918,17 +8918,17 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22626,
+                                                        "id": 22493,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22624,
+                                                            "id": 22491,
                                                             "name": "optimalZe",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22571,
+                                                            "referencedDeclaration": 22438,
                                                             "src": "15230:9:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -8938,11 +8938,11 @@ export const YieldSpaceMath = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 22625,
+                                                            "id": 22492,
                                                             "name": "ze",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22545,
+                                                            "referencedDeclaration": 22412,
                                                             "src": "15242:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -8957,7 +8957,7 @@ export const YieldSpaceMath = {
                                                     },
                                                     {
                                                         "hexValue": "74727565",
-                                                        "id": 22627,
+                                                        "id": 22494,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8972,7 +8972,7 @@ export const YieldSpaceMath = {
                                                         "value": "true"
                                                     }
                                                 ],
-                                                "id": 22628,
+                                                "id": 22495,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -8985,8 +8985,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "tuple(uint256,bool)"
                                                 }
                                             },
-                                            "functionReturnParameters": 22559,
-                                            "id": 22629,
+                                            "functionReturnParameters": 22426,
+                                            "id": 22496,
                                             "nodeType": "Return",
                                             "src": "15222:29:126"
                                         }
@@ -8995,7 +8995,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22543,
+                            "id": 22410,
                             "nodeType": "StructuredDocumentation",
                             "src": "13230:624:126",
                             "text": "@dev Calculates the share payment required to purchase the maximum\n      amount of bonds from the pool. This function returns a success flag\n      instead of reverting. We round so that the max buy amount is\n      underestimated.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The share payment to purchase the maximum amount of bonds.\n @return A flag indicating if the calculation succeeded."
@@ -9006,17 +9006,17 @@ export const YieldSpaceMath = {
                         "name": "calculateMaxBuySharesInSafe",
                         "nameLocation": "13868:27:126",
                         "parameters": {
-                            "id": 22554,
+                            "id": 22421,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22545,
+                                    "id": 22412,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "13913:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "13905:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9025,7 +9025,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22544,
+                                        "id": 22411,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13905:7:126",
@@ -9038,12 +9038,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22547,
+                                    "id": 22414,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "13933:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "13925:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9052,7 +9052,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22546,
+                                        "id": 22413,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13925:7:126",
@@ -9065,12 +9065,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22549,
+                                    "id": 22416,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "13952:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "13944:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9079,7 +9079,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22548,
+                                        "id": 22415,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13944:7:126",
@@ -9092,12 +9092,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22551,
+                                    "id": 22418,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "13971:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "13963:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9106,7 +9106,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22550,
+                                        "id": 22417,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13963:7:126",
@@ -9119,12 +9119,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22553,
+                                    "id": 22420,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "13990:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "13982:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9133,7 +9133,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22552,
+                                        "id": 22419,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13982:7:126",
@@ -9148,17 +9148,17 @@ export const YieldSpaceMath = {
                             "src": "13895:103:126"
                         },
                         "returnParameters": {
-                            "id": 22559,
+                            "id": 22426,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22556,
+                                    "id": 22423,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "14022:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9167,7 +9167,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22555,
+                                        "id": 22422,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14022:7:126",
@@ -9180,12 +9180,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22558,
+                                    "id": 22425,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22632,
+                                    "scope": 22499,
                                     "src": "14031:4:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -9194,7 +9194,7 @@ export const YieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 22557,
+                                        "id": 22424,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14031:4:126",
@@ -9208,35 +9208,35 @@ export const YieldSpaceMath = {
                             ],
                             "src": "14021:15:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22715,
+                        "id": 22582,
                         "nodeType": "FunctionDefinition",
                         "src": "15892:1050:126",
                         "nodes": [],
                         "body": {
-                            "id": 22714,
+                            "id": 22581,
                             "nodeType": "Block",
                             "src": "16070:872:126",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        22651
+                                        22518
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22651,
+                                            "id": 22518,
                                             "mutability": "mutable",
                                             "name": "k",
                                             "nameLocation": "16284:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22714,
+                                            "scope": 22581,
                                             "src": "16276:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -9245,7 +9245,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22650,
+                                                "id": 22517,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "16276:7:126",
@@ -9257,15 +9257,15 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22659,
+                                    "id": 22526,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22653,
+                                                "id": 22520,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22635,
+                                                "referencedDeclaration": 22502,
                                                 "src": "16292:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -9273,11 +9273,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22654,
+                                                "id": 22521,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22637,
+                                                "referencedDeclaration": 22504,
                                                 "src": "16296:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -9285,11 +9285,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22655,
+                                                "id": 22522,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22639,
+                                                "referencedDeclaration": 22506,
                                                 "src": "16299:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -9297,11 +9297,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22656,
+                                                "id": 22523,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22641,
+                                                "referencedDeclaration": 22508,
                                                 "src": "16302:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -9309,11 +9309,11 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22657,
+                                                "id": 22524,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22643,
+                                                "referencedDeclaration": 22510,
                                                 "src": "16305:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -9344,18 +9344,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22652,
+                                            "id": 22519,
                                             "name": "kUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22880,
+                                            "referencedDeclaration": 22757,
                                             "src": "16288:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22658,
+                                        "id": 22525,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9376,17 +9376,17 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22661
+                                        22528
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22661,
+                                            "id": 22528,
                                             "mutability": "mutable",
                                             "name": "optimalY",
                                             "nameLocation": "16326:8:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22714,
+                                            "scope": 22581,
                                             "src": "16318:16:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -9395,7 +9395,7 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22660,
+                                                "id": 22527,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "16318:7:126",
@@ -9407,7 +9407,7 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22671,
+                                    "id": 22538,
                                     "initialValue": {
                                         "arguments": [
                                             {
@@ -9415,7 +9415,7 @@ export const YieldSpaceMath = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 22669,
+                                                "id": 22536,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9423,11 +9423,11 @@ export const YieldSpaceMath = {
                                                 "leftExpression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 22666,
+                                                            "id": 22533,
                                                             "name": "mu",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22643,
+                                                            "referencedDeclaration": 22510,
                                                             "src": "16355:2:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -9443,18 +9443,18 @@ export const YieldSpaceMath = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 22664,
+                                                            "id": 22531,
                                                             "name": "c",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22641,
+                                                            "referencedDeclaration": 22508,
                                                             "src": "16345:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 22665,
+                                                        "id": 22532,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -9462,14 +9462,14 @@ export const YieldSpaceMath = {
                                                         "memberLocation": "16347:7:126",
                                                         "memberName": "divDown",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18363,
+                                                        "referencedDeclaration": 18266,
                                                         "src": "16345:9:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 22667,
+                                                    "id": 22534,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9488,11 +9488,11 @@ export const YieldSpaceMath = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "+",
                                                 "rightExpression": {
-                                                    "id": 22668,
+                                                    "id": 22535,
                                                     "name": "ONE",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 18299,
+                                                    "referencedDeclaration": 18202,
                                                     "src": "16361:3:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -9514,18 +9514,18 @@ export const YieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 22662,
+                                                "id": 22529,
                                                 "name": "k",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22651,
+                                                "referencedDeclaration": 22518,
                                                 "src": "16337:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22663,
+                                            "id": 22530,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -9533,14 +9533,14 @@ export const YieldSpaceMath = {
                                             "memberLocation": "16339:5:126",
                                             "memberName": "divUp",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18413,
+                                            "referencedDeclaration": 18316,
                                             "src": "16337:7:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22670,
+                                        "id": 22537,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9565,17 +9565,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22674,
+                                        "id": 22541,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22672,
+                                            "id": 22539,
                                             "name": "optimalY",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22661,
+                                            "referencedDeclaration": 22528,
                                             "src": "16379:8:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -9585,11 +9585,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22673,
+                                            "id": 22540,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
+                                            "referencedDeclaration": 18202,
                                             "src": "16391:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -9603,23 +9603,23 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22696,
+                                        "id": 22563,
                                         "nodeType": "Block",
                                         "src": "16533:135:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22694,
+                                                    "id": 22561,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22686,
+                                                        "id": 22553,
                                                         "name": "optimalY",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22661,
+                                                        "referencedDeclaration": 22528,
                                                         "src": "16618:8:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -9633,11 +9633,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22691,
+                                                                        "id": 22558,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22639,
+                                                                        "referencedDeclaration": 22506,
                                                                         "src": "16654:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -9653,18 +9653,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22689,
+                                                                        "id": 22556,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "16642:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22690,
+                                                                    "id": 22557,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -9672,14 +9672,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "16646:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
+                                                                    "referencedDeclaration": 18266,
                                                                     "src": "16642:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22692,
+                                                                "id": 22559,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -9704,18 +9704,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22687,
+                                                                "id": 22554,
                                                                 "name": "optimalY",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22661,
+                                                                "referencedDeclaration": 22528,
                                                                 "src": "16629:8:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22688,
+                                                            "id": 22555,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -9723,14 +9723,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "16638:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "16629:12:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22693,
+                                                        "id": 22560,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -9752,33 +9752,33 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22695,
+                                                "id": 22562,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "16618:39:126"
                                             }
                                         ]
                                     },
-                                    "id": 22697,
+                                    "id": 22564,
                                     "nodeType": "IfStatement",
                                     "src": "16375:293:126",
                                     "trueBody": {
-                                        "id": 22685,
+                                        "id": 22552,
                                         "nodeType": "Block",
                                         "src": "16396:131:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22683,
+                                                    "id": 22550,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22675,
+                                                        "id": 22542,
                                                         "name": "optimalY",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22661,
+                                                        "referencedDeclaration": 22528,
                                                         "src": "16479:8:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -9792,11 +9792,11 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22680,
+                                                                        "id": 22547,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22639,
+                                                                        "referencedDeclaration": 22506,
                                                                         "src": "16513:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -9812,18 +9812,18 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22678,
+                                                                        "id": 22545,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
+                                                                        "referencedDeclaration": 18202,
                                                                         "src": "16503:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22679,
+                                                                    "id": 22546,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -9831,14 +9831,14 @@ export const YieldSpaceMath = {
                                                                     "memberLocation": "16507:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
+                                                                    "referencedDeclaration": 18316,
                                                                     "src": "16503:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22681,
+                                                                "id": 22548,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -9863,18 +9863,18 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22676,
+                                                                "id": 22543,
                                                                 "name": "optimalY",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22661,
+                                                                "referencedDeclaration": 22528,
                                                                 "src": "16490:8:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22677,
+                                                            "id": 22544,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -9882,14 +9882,14 @@ export const YieldSpaceMath = {
                                                             "memberLocation": "16499:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
+                                                            "referencedDeclaration": 18373,
                                                             "src": "16490:12:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22682,
+                                                        "id": 22549,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -9911,7 +9911,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22684,
+                                                "id": 22551,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "16479:37:126"
                                             }
@@ -9924,17 +9924,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22700,
+                                        "id": 22567,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22698,
+                                            "id": 22565,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22637,
+                                            "referencedDeclaration": 22504,
                                             "src": "16809:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -9944,11 +9944,11 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22699,
+                                            "id": 22566,
                                             "name": "optimalY",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22661,
+                                            "referencedDeclaration": 22528,
                                             "src": "16813:8:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -9961,11 +9961,11 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22706,
+                                    "id": 22573,
                                     "nodeType": "IfStatement",
                                     "src": "16805:60:126",
                                     "trueBody": {
-                                        "id": 22705,
+                                        "id": 22572,
                                         "nodeType": "Block",
                                         "src": "16823:42:126",
                                         "statements": [
@@ -9974,7 +9974,7 @@ export const YieldSpaceMath = {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22701,
+                                                            "id": 22568,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -9990,7 +9990,7 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22702,
+                                                            "id": 22569,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -10005,7 +10005,7 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22703,
+                                                    "id": 22570,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
@@ -10018,8 +10018,8 @@ export const YieldSpaceMath = {
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22649,
-                                                "id": 22704,
+                                                "functionReturnParameters": 22516,
+                                                "id": 22571,
                                                 "nodeType": "Return",
                                                 "src": "16837:17:126"
                                             }
@@ -10027,7 +10027,7 @@ export const YieldSpaceMath = {
                                     }
                                 },
                                 {
-                                    "id": 22713,
+                                    "id": 22580,
                                     "nodeType": "UncheckedBlock",
                                     "src": "16874:62:126",
                                     "statements": [
@@ -10039,17 +10039,17 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22709,
+                                                        "id": 22576,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22707,
+                                                            "id": 22574,
                                                             "name": "y",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22637,
+                                                            "referencedDeclaration": 22504,
                                                             "src": "16906:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -10059,11 +10059,11 @@ export const YieldSpaceMath = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 22708,
+                                                            "id": 22575,
                                                             "name": "optimalY",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22661,
+                                                            "referencedDeclaration": 22528,
                                                             "src": "16910:8:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -10078,7 +10078,7 @@ export const YieldSpaceMath = {
                                                     },
                                                     {
                                                         "hexValue": "74727565",
-                                                        "id": 22710,
+                                                        "id": 22577,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -10093,7 +10093,7 @@ export const YieldSpaceMath = {
                                                         "value": "true"
                                                     }
                                                 ],
-                                                "id": 22711,
+                                                "id": 22578,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -10106,8 +10106,8 @@ export const YieldSpaceMath = {
                                                     "typeString": "tuple(uint256,bool)"
                                                 }
                                             },
-                                            "functionReturnParameters": 22649,
-                                            "id": 22712,
+                                            "functionReturnParameters": 22516,
+                                            "id": 22579,
                                             "nodeType": "Return",
                                             "src": "16898:27:126"
                                         }
@@ -10116,7 +10116,7 @@ export const YieldSpaceMath = {
                             ]
                         },
                         "documentation": {
-                            "id": 22633,
+                            "id": 22500,
                             "nodeType": "StructuredDocumentation",
                             "src": "15274:613:126",
                             "text": "@dev Calculates the maximum amount of bonds that can be purchased with\n      the specified reserves. This function returns a success flag\n      instead of reverting. We round so that the max buy amount is\n      underestimated.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The maximum amount of bonds that can be purchased.\n @return A flag indicating if the calculation succeeded."
@@ -10127,17 +10127,17 @@ export const YieldSpaceMath = {
                         "name": "calculateMaxBuyBondsOutSafe",
                         "nameLocation": "15901:27:126",
                         "parameters": {
-                            "id": 22644,
+                            "id": 22511,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22635,
+                                    "id": 22502,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "15946:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "15938:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10146,7 +10146,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22634,
+                                        "id": 22501,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15938:7:126",
@@ -10159,12 +10159,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22637,
+                                    "id": 22504,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "15966:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "15958:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10173,7 +10173,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22636,
+                                        "id": 22503,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15958:7:126",
@@ -10186,12 +10186,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22639,
+                                    "id": 22506,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "15985:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "15977:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10200,7 +10200,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22638,
+                                        "id": 22505,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15977:7:126",
@@ -10213,12 +10213,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22641,
+                                    "id": 22508,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "16004:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "15996:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10227,7 +10227,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22640,
+                                        "id": 22507,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15996:7:126",
@@ -10240,12 +10240,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22643,
+                                    "id": 22510,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "16023:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "16015:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10254,7 +10254,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22642,
+                                        "id": 22509,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16015:7:126",
@@ -10269,17 +10269,17 @@ export const YieldSpaceMath = {
                             "src": "15928:103:126"
                         },
                         "returnParameters": {
-                            "id": 22649,
+                            "id": 22516,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22646,
+                                    "id": 22513,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "16055:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10288,7 +10288,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22645,
+                                        "id": 22512,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16055:7:126",
@@ -10301,12 +10301,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22648,
+                                    "id": 22515,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22715,
+                                    "scope": 22582,
                                     "src": "16064:4:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10315,7 +10315,7 @@ export const YieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 22647,
+                                        "id": 22514,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16064:4:126",
@@ -10329,20 +10329,20 @@ export const YieldSpaceMath = {
                             ],
                             "src": "16054:15:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22846,
+                        "id": 22723,
                         "nodeType": "FunctionDefinition",
-                        "src": "17581:1971:126",
+                        "src": "17581:2070:126",
                         "nodes": [],
                         "body": {
-                            "id": 22845,
+                            "id": 22722,
                             "nodeType": "Block",
-                            "src": "17801:1751:126",
+                            "src": "17801:1850:126",
                             "nodes": [],
                             "statements": [
                                 {
@@ -10351,17 +10351,17 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 22739,
+                                        "id": 22606,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22737,
+                                            "id": 22604,
                                             "name": "zeta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22720,
+                                            "referencedDeclaration": 22587,
                                             "src": "18085:4:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -10372,7 +10372,7 @@ export const YieldSpaceMath = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 22738,
+                                            "id": 22605,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -10392,27 +10392,27 @@ export const YieldSpaceMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22751,
+                                    "id": 22618,
                                     "nodeType": "IfStatement",
                                     "src": "18081:67:126",
                                     "trueBody": {
-                                        "id": 22750,
+                                        "id": 22617,
                                         "nodeType": "Block",
                                         "src": "18095:53:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22748,
+                                                    "id": 22615,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22740,
+                                                        "id": 22607,
                                                         "name": "zMin",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22724,
+                                                        "referencedDeclaration": 22591,
                                                         "src": "18109:4:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -10426,17 +10426,17 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22747,
+                                                        "id": 22614,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22741,
+                                                            "id": 22608,
                                                             "name": "zMin",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22724,
+                                                            "referencedDeclaration": 22591,
                                                             "src": "18116:4:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -10448,7 +10448,7 @@ export const YieldSpaceMath = {
                                                         "rightExpression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 22745,
+                                                                    "id": 22612,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -10458,11 +10458,11 @@ export const YieldSpaceMath = {
                                                                     "prefix": true,
                                                                     "src": "18131:5:126",
                                                                     "subExpression": {
-                                                                        "id": 22744,
+                                                                        "id": 22611,
                                                                         "name": "zeta",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22720,
+                                                                        "referencedDeclaration": 22587,
                                                                         "src": "18132:4:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_int256",
@@ -10482,7 +10482,7 @@ export const YieldSpaceMath = {
                                                                         "typeString": "int256"
                                                                     }
                                                                 ],
-                                                                "id": 22743,
+                                                                "id": 22610,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -10494,14 +10494,14 @@ export const YieldSpaceMath = {
                                                                     "typeString": "type(uint256)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 22742,
+                                                                    "id": 22609,
                                                                     "name": "uint256",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "18123:7:126",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 22746,
+                                                            "id": 22613,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -10529,7 +10529,7 @@ export const YieldSpaceMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22749,
+                                                "id": 22616,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "18109:28:126"
                                             }
@@ -10538,18 +10538,19 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "assignments": [
-                                        22753
+                                        22620,
+                                        22622
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22753,
+                                            "id": 22620,
                                             "mutability": "mutable",
                                             "name": "ze",
-                                            "nameLocation": "18651:2:126",
+                                            "nameLocation": "18652:2:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22845,
-                                            "src": "18643:10:126",
+                                            "scope": 22722,
+                                            "src": "18644:10:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -10557,40 +10558,67 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22752,
+                                                "id": 22619,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "18643:7:126",
+                                                "src": "18644:7:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             "visibility": "internal"
+                                        },
+                                        {
+                                            "constant": false,
+                                            "id": 22622,
+                                            "mutability": "mutable",
+                                            "name": "success",
+                                            "nameLocation": "18661:7:126",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 22722,
+                                            "src": "18656:12:126",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            },
+                                            "typeName": {
+                                                "id": 22621,
+                                                "name": "bool",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "18656:4:126",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22759,
+                                    "id": 22628,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22756,
+                                                "id": 22625,
                                                 "name": "z",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22718,
-                                                "src": "18703:1:126",
+                                                "referencedDeclaration": 22585,
+                                                "src": "18736:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 22757,
+                                                "id": 22626,
                                                 "name": "zeta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22720,
-                                                "src": "18706:4:126",
+                                                "referencedDeclaration": 22587,
+                                                "src": "18739:4:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
                                                     "typeString": "int256"
@@ -10609,33 +10637,33 @@ export const YieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 22754,
+                                                "id": 22623,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 19813,
-                                                "src": "18656:14:126",
+                                                "referencedDeclaration": 19716,
+                                                "src": "18672:14:126",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19813_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19716_$",
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 22755,
+                                            "id": 22624,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "18671:31:126",
-                                            "memberName": "calculateEffectiveShareReserves",
+                                            "memberLocation": "18700:35:126",
+                                            "memberName": "calculateEffectiveShareReservesSafe",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 19256,
-                                            "src": "18656:46:126",
+                                            "referencedDeclaration": 19196,
+                                            "src": "18672:63:126",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,int256) pure returns (uint256)"
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$_t_bool_$",
+                                                "typeString": "function (uint256,int256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 22758,
+                                        "id": 22627,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10644,30 +10672,123 @@ export const YieldSpaceMath = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "18656:55:126",
+                                        "src": "18672:72:126",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
+                                            "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
+                                            "typeString": "tuple(uint256,bool)"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "18643:68:126"
+                                    "src": "18643:101:126"
+                                },
+                                {
+                                    "condition": {
+                                        "id": 22630,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "UnaryOperation",
+                                        "operator": "!",
+                                        "prefix": true,
+                                        "src": "18759:8:126",
+                                        "subExpression": {
+                                            "id": 22629,
+                                            "name": "success",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 22622,
+                                            "src": "18760:7:126",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 22636,
+                                    "nodeType": "IfStatement",
+                                    "src": "18755:56:126",
+                                    "trueBody": {
+                                        "id": 22635,
+                                        "nodeType": "Block",
+                                        "src": "18769:42:126",
+                                        "statements": [
+                                            {
+                                                "expression": {
+                                                    "components": [
+                                                        {
+                                                            "hexValue": "30",
+                                                            "id": 22631,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "number",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "18791:1:126",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                "typeString": "int_const 0"
+                                                            },
+                                                            "value": "0"
+                                                        },
+                                                        {
+                                                            "hexValue": "66616c7365",
+                                                            "id": 22632,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "bool",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "18794:5:126",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_bool",
+                                                                "typeString": "bool"
+                                                            },
+                                                            "value": "false"
+                                                        }
+                                                    ],
+                                                    "id": 22633,
+                                                    "isConstant": false,
+                                                    "isInlineArray": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "lValueRequested": false,
+                                                    "nodeType": "TupleExpression",
+                                                    "src": "18790:10:126",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_bool_$",
+                                                        "typeString": "tuple(int_const 0,bool)"
+                                                    }
+                                                },
+                                                "functionReturnParameters": 22603,
+                                                "id": 22634,
+                                                "nodeType": "Return",
+                                                "src": "18783:17:126"
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "assignments": [
-                                        22761
+                                        22638
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22761,
+                                            "id": 22638,
                                             "mutability": "mutable",
                                             "name": "k",
-                                            "nameLocation": "18729:1:126",
+                                            "nameLocation": "18828:1:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22845,
-                                            "src": "18721:9:126",
+                                            "scope": 22722,
+                                            "src": "18820:9:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -10675,10 +10796,10 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22760,
+                                                "id": 22637,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "18721:7:126",
+                                                "src": "18820:7:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10687,64 +10808,64 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22769,
+                                    "id": 22646,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 22763,
+                                                "id": 22640,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22753,
-                                                "src": "18739:2:126",
+                                                "referencedDeclaration": 22620,
+                                                "src": "18838:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 22764,
+                                                "id": 22641,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22722,
-                                                "src": "18743:1:126",
+                                                "referencedDeclaration": 22589,
+                                                "src": "18842:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 22765,
+                                                "id": 22642,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22726,
-                                                "src": "18746:1:126",
+                                                "referencedDeclaration": 22593,
+                                                "src": "18845:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 22766,
+                                                "id": 22643,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22728,
-                                                "src": "18749:1:126",
+                                                "referencedDeclaration": 22595,
+                                                "src": "18848:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 22767,
+                                                "id": 22644,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22730,
-                                                "src": "18752:2:126",
+                                                "referencedDeclaration": 22597,
+                                                "src": "18851:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10774,18 +10895,18 @@ export const YieldSpaceMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 22762,
+                                            "id": 22639,
                                             "name": "kDown",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22914,
-                                            "src": "18733:5:126",
+                                            "referencedDeclaration": 22791,
+                                            "src": "18832:5:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22768,
+                                        "id": 22645,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10794,7 +10915,7 @@ export const YieldSpaceMath = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "18733:22:126",
+                                        "src": "18832:22:126",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -10802,22 +10923,22 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "18721:34:126"
+                                    "src": "18820:34:126"
                                 },
                                 {
                                     "assignments": [
-                                        22771
+                                        22648
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22771,
+                                            "id": 22648,
                                             "mutability": "mutable",
                                             "name": "rhs",
-                                            "nameLocation": "18773:3:126",
+                                            "nameLocation": "18872:3:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22845,
-                                            "src": "18765:11:126",
+                                            "scope": 22722,
+                                            "src": "18864:11:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -10825,10 +10946,10 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22770,
+                                                "id": 22647,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "18765:7:126",
+                                                "src": "18864:7:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10837,18 +10958,18 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22783,
+                                    "id": 22660,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 22779,
+                                                        "id": 22656,
                                                         "name": "t",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22726,
-                                                        "src": "18809:1:126",
+                                                        "referencedDeclaration": 22593,
+                                                        "src": "18908:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -10865,12 +10986,12 @@ export const YieldSpaceMath = {
                                                     "expression": {
                                                         "arguments": [
                                                             {
-                                                                "id": 22776,
+                                                                "id": 22653,
                                                                 "name": "zMin",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22724,
-                                                                "src": "18799:4:126",
+                                                                "referencedDeclaration": 22591,
+                                                                "src": "18898:4:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -10885,33 +11006,33 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22774,
+                                                                "id": 22651,
                                                                 "name": "mu",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22730,
-                                                                "src": "18790:2:126",
+                                                                "referencedDeclaration": 22597,
+                                                                "src": "18889:2:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22775,
+                                                            "id": 22652,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "18793:5:126",
+                                                            "memberLocation": "18892:5:126",
                                                             "memberName": "mulUp",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18395,
-                                                            "src": "18790:8:126",
+                                                            "referencedDeclaration": 18298,
+                                                            "src": "18889:8:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22777,
+                                                        "id": 22654,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -10920,29 +11041,29 @@ export const YieldSpaceMath = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "18790:14:126",
+                                                        "src": "18889:14:126",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "id": 22778,
+                                                    "id": 22655,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "18805:3:126",
+                                                    "memberLocation": "18904:3:126",
                                                     "memberName": "pow",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 18470,
-                                                    "src": "18790:18:126",
+                                                    "referencedDeclaration": 18373,
+                                                    "src": "18889:18:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                     }
                                                 },
-                                                "id": 22780,
+                                                "id": 22657,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10951,7 +11072,7 @@ export const YieldSpaceMath = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "18790:21:126",
+                                                "src": "18889:21:126",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -10959,12 +11080,12 @@ export const YieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 22781,
+                                                "id": 22658,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22730,
-                                                "src": "18813:2:126",
+                                                "referencedDeclaration": 22597,
+                                                "src": "18912:2:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10983,33 +11104,33 @@ export const YieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 22772,
+                                                "id": 22649,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 22728,
-                                                "src": "18779:1:126",
+                                                "referencedDeclaration": 22595,
+                                                "src": "18878:1:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22773,
+                                            "id": 22650,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "18781:8:126",
+                                            "memberLocation": "18880:8:126",
                                             "memberName": "mulDivUp",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18377,
-                                            "src": "18779:10:126",
+                                            "referencedDeclaration": 18280,
+                                            "src": "18878:10:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 22782,
+                                        "id": 22659,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11018,7 +11139,7 @@ export const YieldSpaceMath = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "18779:37:126",
+                                        "src": "18878:37:126",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -11026,7 +11147,7 @@ export const YieldSpaceMath = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "18765:51:126"
+                                    "src": "18864:51:126"
                                 },
                                 {
                                     "condition": {
@@ -11034,18 +11155,18 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22786,
+                                        "id": 22663,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22784,
+                                            "id": 22661,
                                             "name": "k",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22761,
-                                            "src": "18830:1:126",
+                                            "referencedDeclaration": 22638,
+                                            "src": "18929:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11054,44 +11175,44 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22785,
+                                            "id": 22662,
                                             "name": "rhs",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22771,
-                                            "src": "18834:3:126",
+                                            "referencedDeclaration": 22648,
+                                            "src": "18933:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "18830:7:126",
+                                        "src": "18929:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22792,
+                                    "id": 22669,
                                     "nodeType": "IfStatement",
-                                    "src": "18826:55:126",
+                                    "src": "18925:55:126",
                                     "trueBody": {
-                                        "id": 22791,
+                                        "id": 22668,
                                         "nodeType": "Block",
-                                        "src": "18839:42:126",
+                                        "src": "18938:42:126",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22787,
+                                                            "id": 22664,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "number",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "18861:1:126",
+                                                            "src": "18960:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                 "typeString": "int_const 0"
@@ -11100,14 +11221,14 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22788,
+                                                            "id": 22665,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "bool",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "18864:5:126",
+                                                            "src": "18963:5:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -11115,41 +11236,41 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22789,
+                                                    "id": 22666,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "TupleExpression",
-                                                    "src": "18860:10:126",
+                                                    "src": "18959:10:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_bool_$",
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22736,
-                                                "id": 22790,
+                                                "functionReturnParameters": 22603,
+                                                "id": 22667,
                                                 "nodeType": "Return",
-                                                "src": "18853:17:126"
+                                                "src": "18952:17:126"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        22794
+                                        22671
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 22794,
+                                            "id": 22671,
                                             "mutability": "mutable",
                                             "name": "optimalY",
-                                            "nameLocation": "18898:8:126",
+                                            "nameLocation": "18997:8:126",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 22845,
-                                            "src": "18890:16:126",
+                                            "scope": 22722,
+                                            "src": "18989:16:126",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -11157,10 +11278,10 @@ export const YieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 22793,
+                                                "id": 22670,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "18890:7:126",
+                                                "src": "18989:7:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -11169,29 +11290,29 @@ export const YieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 22795,
+                                    "id": 22672,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "18890:16:126"
+                                    "src": "18989:16:126"
                                 },
                                 {
-                                    "id": 22802,
+                                    "id": 22679,
                                     "nodeType": "UncheckedBlock",
-                                    "src": "18916:53:126",
+                                    "src": "19015:53:126",
                                     "statements": [
                                         {
                                             "expression": {
-                                                "id": 22800,
+                                                "id": 22677,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftHandSide": {
-                                                    "id": 22796,
+                                                    "id": 22673,
                                                     "name": "optimalY",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22794,
-                                                    "src": "18940:8:126",
+                                                    "referencedDeclaration": 22671,
+                                                    "src": "19039:8:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -11204,18 +11325,18 @@ export const YieldSpaceMath = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 22799,
+                                                    "id": 22676,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 22797,
+                                                        "id": 22674,
                                                         "name": "k",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22761,
-                                                        "src": "18951:1:126",
+                                                        "referencedDeclaration": 22638,
+                                                        "src": "19050:1:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11224,32 +11345,32 @@ export const YieldSpaceMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "-",
                                                     "rightExpression": {
-                                                        "id": 22798,
+                                                        "id": 22675,
                                                         "name": "rhs",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22771,
-                                                        "src": "18955:3:126",
+                                                        "referencedDeclaration": 22648,
+                                                        "src": "19054:3:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "18951:7:126",
+                                                    "src": "19050:7:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "src": "18940:18:126",
+                                                "src": "19039:18:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 22801,
+                                            "id": 22678,
                                             "nodeType": "ExpressionStatement",
-                                            "src": "18940:18:126"
+                                            "src": "19039:18:126"
                                         }
                                     ]
                                 },
@@ -11259,18 +11380,18 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22805,
+                                        "id": 22682,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22803,
+                                            "id": 22680,
                                             "name": "optimalY",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22794,
-                                            "src": "18982:8:126",
+                                            "referencedDeclaration": 22671,
+                                            "src": "19081:8:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11279,42 +11400,42 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">=",
                                         "rightExpression": {
-                                            "id": 22804,
+                                            "id": 22681,
                                             "name": "ONE",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18299,
-                                            "src": "18994:3:126",
+                                            "referencedDeclaration": 18202,
+                                            "src": "19093:3:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "18982:15:126",
+                                        "src": "19081:15:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 22827,
+                                        "id": 22704,
                                         "nodeType": "Block",
-                                        "src": "19141:132:126",
+                                        "src": "19240:132:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22825,
+                                                    "id": 22702,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22817,
+                                                        "id": 22694,
                                                         "name": "optimalY",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22794,
-                                                        "src": "19225:8:126",
+                                                        "referencedDeclaration": 22671,
+                                                        "src": "19324:8:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11327,12 +11448,12 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22822,
+                                                                        "id": 22699,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22726,
-                                                                        "src": "19259:1:126",
+                                                                        "referencedDeclaration": 22593,
+                                                                        "src": "19358:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -11347,33 +11468,33 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22820,
+                                                                        "id": 22697,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
-                                                                        "src": "19249:3:126",
+                                                                        "referencedDeclaration": 18202,
+                                                                        "src": "19348:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22821,
+                                                                    "id": 22698,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "19253:5:126",
+                                                                    "memberLocation": "19352:5:126",
                                                                     "memberName": "divUp",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18413,
-                                                                    "src": "19249:9:126",
+                                                                    "referencedDeclaration": 18316,
+                                                                    "src": "19348:9:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22823,
+                                                                "id": 22700,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -11382,7 +11503,7 @@ export const YieldSpaceMath = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "19249:12:126",
+                                                                "src": "19348:12:126",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -11398,33 +11519,33 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22818,
+                                                                "id": 22695,
                                                                 "name": "optimalY",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22794,
-                                                                "src": "19236:8:126",
+                                                                "referencedDeclaration": 22671,
+                                                                "src": "19335:8:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22819,
+                                                            "id": 22696,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "19245:3:126",
+                                                            "memberLocation": "19344:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
-                                                            "src": "19236:12:126",
+                                                            "referencedDeclaration": 18373,
+                                                            "src": "19335:12:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22824,
+                                                        "id": 22701,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -11433,47 +11554,47 @@ export const YieldSpaceMath = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "19236:26:126",
+                                                        "src": "19335:26:126",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "19225:37:126",
+                                                    "src": "19324:37:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22826,
+                                                "id": 22703,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "19225:37:126"
+                                                "src": "19324:37:126"
                                             }
                                         ]
                                     },
-                                    "id": 22828,
+                                    "id": 22705,
                                     "nodeType": "IfStatement",
-                                    "src": "18978:295:126",
+                                    "src": "19077:295:126",
                                     "trueBody": {
-                                        "id": 22816,
+                                        "id": 22693,
                                         "nodeType": "Block",
-                                        "src": "18999:136:126",
+                                        "src": "19098:136:126",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 22814,
+                                                    "id": 22691,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 22806,
+                                                        "id": 22683,
                                                         "name": "optimalY",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 22794,
-                                                        "src": "19085:8:126",
+                                                        "referencedDeclaration": 22671,
+                                                        "src": "19184:8:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11486,12 +11607,12 @@ export const YieldSpaceMath = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 22811,
+                                                                        "id": 22688,
                                                                         "name": "t",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 22726,
-                                                                        "src": "19121:1:126",
+                                                                        "referencedDeclaration": 22593,
+                                                                        "src": "19220:1:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -11506,33 +11627,33 @@ export const YieldSpaceMath = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 22809,
+                                                                        "id": 22686,
                                                                         "name": "ONE",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 18299,
-                                                                        "src": "19109:3:126",
+                                                                        "referencedDeclaration": 18202,
+                                                                        "src": "19208:3:126",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 22810,
+                                                                    "id": 22687,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "19113:7:126",
+                                                                    "memberLocation": "19212:7:126",
                                                                     "memberName": "divDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 18363,
-                                                                    "src": "19109:11:126",
+                                                                    "referencedDeclaration": 18266,
+                                                                    "src": "19208:11:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 22812,
+                                                                "id": 22689,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -11541,7 +11662,7 @@ export const YieldSpaceMath = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "19109:14:126",
+                                                                "src": "19208:14:126",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -11557,33 +11678,33 @@ export const YieldSpaceMath = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 22807,
+                                                                "id": 22684,
                                                                 "name": "optimalY",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 22794,
-                                                                "src": "19096:8:126",
+                                                                "referencedDeclaration": 22671,
+                                                                "src": "19195:8:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 22808,
+                                                            "id": 22685,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "19105:3:126",
+                                                            "memberLocation": "19204:3:126",
                                                             "memberName": "pow",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 18470,
-                                                            "src": "19096:12:126",
+                                                            "referencedDeclaration": 18373,
+                                                            "src": "19195:12:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 22813,
+                                                        "id": 22690,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -11592,22 +11713,22 @@ export const YieldSpaceMath = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "19096:28:126",
+                                                        "src": "19195:28:126",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "19085:39:126",
+                                                    "src": "19184:39:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22815,
+                                                "id": 22692,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "19085:39:126"
+                                                "src": "19184:39:126"
                                             }
                                         ]
                                     }
@@ -11618,18 +11739,18 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22831,
+                                        "id": 22708,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 22829,
+                                            "id": 22706,
                                             "name": "optimalY",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22794,
-                                            "src": "19419:8:126",
+                                            "referencedDeclaration": 22671,
+                                            "src": "19518:8:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11638,44 +11759,44 @@ export const YieldSpaceMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 22830,
+                                            "id": 22707,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 22722,
-                                            "src": "19430:1:126",
+                                            "referencedDeclaration": 22589,
+                                            "src": "19529:1:126",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "19419:12:126",
+                                        "src": "19518:12:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 22837,
+                                    "id": 22714,
                                     "nodeType": "IfStatement",
-                                    "src": "19415:60:126",
+                                    "src": "19514:60:126",
                                     "trueBody": {
-                                        "id": 22836,
+                                        "id": 22713,
                                         "nodeType": "Block",
-                                        "src": "19433:42:126",
+                                        "src": "19532:42:126",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "components": [
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 22832,
+                                                            "id": 22709,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "number",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "19455:1:126",
+                                                            "src": "19554:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                 "typeString": "int_const 0"
@@ -11684,14 +11805,14 @@ export const YieldSpaceMath = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 22833,
+                                                            "id": 22710,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "bool",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "19458:5:126",
+                                                            "src": "19557:5:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -11699,31 +11820,31 @@ export const YieldSpaceMath = {
                                                             "value": "false"
                                                         }
                                                     ],
-                                                    "id": 22834,
+                                                    "id": 22711,
                                                     "isConstant": false,
                                                     "isInlineArray": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "TupleExpression",
-                                                    "src": "19454:10:126",
+                                                    "src": "19553:10:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_bool_$",
                                                         "typeString": "tuple(int_const 0,bool)"
                                                     }
                                                 },
-                                                "functionReturnParameters": 22736,
-                                                "id": 22835,
+                                                "functionReturnParameters": 22603,
+                                                "id": 22712,
                                                 "nodeType": "Return",
-                                                "src": "19447:17:126"
+                                                "src": "19546:17:126"
                                             }
                                         ]
                                     }
                                 },
                                 {
-                                    "id": 22844,
+                                    "id": 22721,
                                     "nodeType": "UncheckedBlock",
-                                    "src": "19484:62:126",
+                                    "src": "19583:62:126",
                                     "statements": [
                                         {
                                             "expression": {
@@ -11733,18 +11854,18 @@ export const YieldSpaceMath = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 22840,
+                                                        "id": 22717,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 22838,
+                                                            "id": 22715,
                                                             "name": "optimalY",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22794,
-                                                            "src": "19516:8:126",
+                                                            "referencedDeclaration": 22671,
+                                                            "src": "19615:8:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -11753,18 +11874,18 @@ export const YieldSpaceMath = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 22839,
+                                                            "id": 22716,
                                                             "name": "y",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22722,
-                                                            "src": "19527:1:126",
+                                                            "referencedDeclaration": 22589,
+                                                            "src": "19626:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "src": "19516:12:126",
+                                                        "src": "19615:12:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11772,14 +11893,14 @@ export const YieldSpaceMath = {
                                                     },
                                                     {
                                                         "hexValue": "74727565",
-                                                        "id": 22841,
+                                                        "id": 22718,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "bool",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "19530:4:126",
+                                                        "src": "19629:4:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -11787,30 +11908,30 @@ export const YieldSpaceMath = {
                                                         "value": "true"
                                                     }
                                                 ],
-                                                "id": 22842,
+                                                "id": 22719,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "TupleExpression",
-                                                "src": "19515:20:126",
+                                                "src": "19614:20:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
                                                     "typeString": "tuple(uint256,bool)"
                                                 }
                                             },
-                                            "functionReturnParameters": 22736,
-                                            "id": 22843,
+                                            "functionReturnParameters": 22603,
+                                            "id": 22720,
                                             "nodeType": "Return",
-                                            "src": "19508:27:126"
+                                            "src": "19607:27:126"
                                         }
                                     ]
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 22716,
+                            "id": 22583,
                             "nodeType": "StructuredDocumentation",
                             "src": "16948:628:126",
                             "text": "@dev Calculates the maximum amount of bonds that can be sold with the\n      specified reserves. We round so that the max sell amount is\n      underestimated.\n @param z The share reserves.\n @param zeta The share adjustment.\n @param y The bond reserves.\n @param zMin The minimum share reserves.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The maximum amount of bonds that can be sold.\n @return A flag indicating whether or not the calculation was successful."
@@ -11821,17 +11942,17 @@ export const YieldSpaceMath = {
                         "name": "calculateMaxSellBondsInSafe",
                         "nameLocation": "17590:27:126",
                         "parameters": {
-                            "id": 22731,
+                            "id": 22598,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22718,
+                                    "id": 22585,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "17635:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17627:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11840,7 +11961,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22717,
+                                        "id": 22584,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17627:7:126",
@@ -11853,12 +11974,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22720,
+                                    "id": 22587,
                                     "mutability": "mutable",
                                     "name": "zeta",
                                     "nameLocation": "17653:4:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17646:11:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11867,7 +11988,7 @@ export const YieldSpaceMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 22719,
+                                        "id": 22586,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17646:6:126",
@@ -11880,12 +12001,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22722,
+                                    "id": 22589,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "17675:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17667:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11894,7 +12015,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22721,
+                                        "id": 22588,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17667:7:126",
@@ -11907,12 +12028,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22724,
+                                    "id": 22591,
                                     "mutability": "mutable",
                                     "name": "zMin",
                                     "nameLocation": "17694:4:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17686:12:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11921,7 +12042,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22723,
+                                        "id": 22590,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17686:7:126",
@@ -11934,12 +12055,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22726,
+                                    "id": 22593,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "17716:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17708:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11948,7 +12069,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22725,
+                                        "id": 22592,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17708:7:126",
@@ -11961,12 +12082,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22728,
+                                    "id": 22595,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "17735:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17727:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11975,7 +12096,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22727,
+                                        "id": 22594,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17727:7:126",
@@ -11988,12 +12109,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22730,
+                                    "id": 22597,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "17754:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17746:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12002,7 +12123,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22729,
+                                        "id": 22596,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17746:7:126",
@@ -12017,17 +12138,17 @@ export const YieldSpaceMath = {
                             "src": "17617:145:126"
                         },
                         "returnParameters": {
-                            "id": 22736,
+                            "id": 22603,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22733,
+                                    "id": 22600,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17786:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12036,7 +12157,7 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22732,
+                                        "id": 22599,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17786:7:126",
@@ -12049,12 +12170,12 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22735,
+                                    "id": 22602,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22846,
+                                    "scope": 22723,
                                     "src": "17795:4:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12063,7 +12184,7 @@ export const YieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 22734,
+                                        "id": 22601,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17795:4:126",
@@ -12077,20 +12198,20 @@ export const YieldSpaceMath = {
                             ],
                             "src": "17785:15:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22880,
+                        "id": 22757,
                         "nodeType": "FunctionDefinition",
-                        "src": "20059:343:126",
+                        "src": "20158:343:126",
                         "nodes": [],
                         "body": {
-                            "id": 22879,
+                            "id": 22756,
                             "nodeType": "Block",
-                            "src": "20207:195:126",
+                            "src": "20306:195:126",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12100,7 +12221,7 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22877,
+                                        "id": 22754,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12110,12 +12231,12 @@ export const YieldSpaceMath = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 22869,
+                                                            "id": 22746,
                                                             "name": "t",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22853,
-                                                            "src": "20377:1:126",
+                                                            "referencedDeclaration": 22730,
+                                                            "src": "20476:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -12132,12 +12253,12 @@ export const YieldSpaceMath = {
                                                         "expression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 22866,
+                                                                    "id": 22743,
                                                                     "name": "ze",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 22849,
-                                                                    "src": "20369:2:126",
+                                                                    "referencedDeclaration": 22726,
+                                                                    "src": "20468:2:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -12152,33 +12273,33 @@ export const YieldSpaceMath = {
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 22864,
+                                                                    "id": 22741,
                                                                     "name": "mu",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 22857,
-                                                                    "src": "20360:2:126",
+                                                                    "referencedDeclaration": 22734,
+                                                                    "src": "20459:2:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 },
-                                                                "id": 22865,
+                                                                "id": 22742,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "20363:5:126",
+                                                                "memberLocation": "20462:5:126",
                                                                 "memberName": "mulUp",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 18395,
-                                                                "src": "20360:8:126",
+                                                                "referencedDeclaration": 18298,
+                                                                "src": "20459:8:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 22867,
+                                                            "id": 22744,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -12187,29 +12308,29 @@ export const YieldSpaceMath = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "20360:12:126",
+                                                            "src": "20459:12:126",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 22868,
+                                                        "id": 22745,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "20373:3:126",
+                                                        "memberLocation": "20472:3:126",
                                                         "memberName": "pow",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18470,
-                                                        "src": "20360:16:126",
+                                                        "referencedDeclaration": 18373,
+                                                        "src": "20459:16:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 22870,
+                                                    "id": 22747,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12218,7 +12339,7 @@ export const YieldSpaceMath = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "20360:19:126",
+                                                    "src": "20459:19:126",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -12226,12 +12347,12 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22871,
+                                                    "id": 22748,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22857,
-                                                    "src": "20381:2:126",
+                                                    "referencedDeclaration": 22734,
+                                                    "src": "20480:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -12250,33 +12371,33 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22862,
+                                                    "id": 22739,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22855,
-                                                    "src": "20349:1:126",
+                                                    "referencedDeclaration": 22732,
+                                                    "src": "20448:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22863,
+                                                "id": 22740,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "20351:8:126",
+                                                "memberLocation": "20450:8:126",
                                                 "memberName": "mulDivUp",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18377,
-                                                "src": "20349:10:126",
+                                                "referencedDeclaration": 18280,
+                                                "src": "20448:10:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22872,
+                                            "id": 22749,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12285,7 +12406,7 @@ export const YieldSpaceMath = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "20349:35:126",
+                                            "src": "20448:35:126",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -12297,12 +12418,12 @@ export const YieldSpaceMath = {
                                         "rightExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 22875,
+                                                    "id": 22752,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22853,
-                                                    "src": "20393:1:126",
+                                                    "referencedDeclaration": 22730,
+                                                    "src": "20492:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -12317,33 +12438,33 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22873,
+                                                    "id": 22750,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22851,
-                                                    "src": "20387:1:126",
+                                                    "referencedDeclaration": 22728,
+                                                    "src": "20486:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22874,
+                                                "id": 22751,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "20389:3:126",
+                                                "memberLocation": "20488:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
-                                                "src": "20387:5:126",
+                                                "referencedDeclaration": 18373,
+                                                "src": "20486:5:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22876,
+                                            "id": 22753,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12352,50 +12473,50 @@ export const YieldSpaceMath = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "20387:8:126",
+                                            "src": "20486:8:126",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "20349:46:126",
+                                        "src": "20448:46:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 22861,
-                                    "id": 22878,
+                                    "functionReturnParameters": 22738,
+                                    "id": 22755,
                                     "nodeType": "Return",
-                                    "src": "20342:53:126"
+                                    "src": "20441:53:126"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 22847,
+                            "id": 22724,
                             "nodeType": "StructuredDocumentation",
-                            "src": "19558:496:126",
+                            "src": "19657:496:126",
                             "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)\n      This variant of the calculation overestimates the result.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The YieldSpace invariant, k."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "kUp",
-                        "nameLocation": "20068:3:126",
+                        "nameLocation": "20167:3:126",
                         "parameters": {
-                            "id": 22858,
+                            "id": 22735,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22849,
+                                    "id": 22726,
                                     "mutability": "mutable",
                                     "name": "ze",
-                                    "nameLocation": "20089:2:126",
+                                    "nameLocation": "20188:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20081:10:126",
+                                    "scope": 22757,
+                                    "src": "20180:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12403,10 +12524,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22848,
+                                        "id": 22725,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20081:7:126",
+                                        "src": "20180:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12416,13 +12537,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22851,
+                                    "id": 22728,
                                     "mutability": "mutable",
                                     "name": "y",
-                                    "nameLocation": "20109:1:126",
+                                    "nameLocation": "20208:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20101:9:126",
+                                    "scope": 22757,
+                                    "src": "20200:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12430,10 +12551,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22850,
+                                        "id": 22727,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20101:7:126",
+                                        "src": "20200:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12443,13 +12564,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22853,
+                                    "id": 22730,
                                     "mutability": "mutable",
                                     "name": "t",
-                                    "nameLocation": "20128:1:126",
+                                    "nameLocation": "20227:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20120:9:126",
+                                    "scope": 22757,
+                                    "src": "20219:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12457,10 +12578,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22852,
+                                        "id": 22729,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20120:7:126",
+                                        "src": "20219:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12470,13 +12591,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22855,
+                                    "id": 22732,
                                     "mutability": "mutable",
                                     "name": "c",
-                                    "nameLocation": "20147:1:126",
+                                    "nameLocation": "20246:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20139:9:126",
+                                    "scope": 22757,
+                                    "src": "20238:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12484,10 +12605,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22854,
+                                        "id": 22731,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20139:7:126",
+                                        "src": "20238:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12497,13 +12618,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22857,
+                                    "id": 22734,
                                     "mutability": "mutable",
                                     "name": "mu",
-                                    "nameLocation": "20166:2:126",
+                                    "nameLocation": "20265:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20158:10:126",
+                                    "scope": 22757,
+                                    "src": "20257:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12511,10 +12632,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22856,
+                                        "id": 22733,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20158:7:126",
+                                        "src": "20257:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12523,21 +12644,21 @@ export const YieldSpaceMath = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "20071:103:126"
+                            "src": "20170:103:126"
                         },
                         "returnParameters": {
-                            "id": 22861,
+                            "id": 22738,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22860,
+                                    "id": 22737,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22880,
-                                    "src": "20198:7:126",
+                                    "scope": 22757,
+                                    "src": "20297:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12545,10 +12666,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22859,
+                                        "id": 22736,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20198:7:126",
+                                        "src": "20297:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12557,22 +12678,22 @@ export const YieldSpaceMath = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "20197:9:126"
+                            "src": "20296:9:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 22914,
+                        "id": 22791,
                         "nodeType": "FunctionDefinition",
-                        "src": "20915:352:126",
+                        "src": "21014:352:126",
                         "nodes": [],
                         "body": {
-                            "id": 22913,
+                            "id": 22790,
                             "nodeType": "Block",
-                            "src": "21065:202:126",
+                            "src": "21164:202:126",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12582,7 +12703,7 @@ export const YieldSpaceMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 22911,
+                                        "id": 22788,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12592,12 +12713,12 @@ export const YieldSpaceMath = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 22903,
+                                                            "id": 22780,
                                                             "name": "t",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 22887,
-                                                            "src": "21242:1:126",
+                                                            "referencedDeclaration": 22764,
+                                                            "src": "21341:1:126",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -12614,12 +12735,12 @@ export const YieldSpaceMath = {
                                                         "expression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 22900,
+                                                                    "id": 22777,
                                                                     "name": "ze",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 22883,
-                                                                    "src": "21234:2:126",
+                                                                    "referencedDeclaration": 22760,
+                                                                    "src": "21333:2:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -12634,33 +12755,33 @@ export const YieldSpaceMath = {
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 22898,
+                                                                    "id": 22775,
                                                                     "name": "mu",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 22891,
-                                                                    "src": "21223:2:126",
+                                                                    "referencedDeclaration": 22768,
+                                                                    "src": "21322:2:126",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 },
-                                                                "id": 22899,
+                                                                "id": 22776,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "21226:7:126",
+                                                                "memberLocation": "21325:7:126",
                                                                 "memberName": "mulDown",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 18345,
-                                                                "src": "21223:10:126",
+                                                                "referencedDeclaration": 18248,
+                                                                "src": "21322:10:126",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 22901,
+                                                            "id": 22778,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -12669,29 +12790,29 @@ export const YieldSpaceMath = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "21223:14:126",
+                                                            "src": "21322:14:126",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 22902,
+                                                        "id": 22779,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "21238:3:126",
+                                                        "memberLocation": "21337:3:126",
                                                         "memberName": "pow",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 18470,
-                                                        "src": "21223:18:126",
+                                                        "referencedDeclaration": 18373,
+                                                        "src": "21322:18:126",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 22904,
+                                                    "id": 22781,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12700,7 +12821,7 @@ export const YieldSpaceMath = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "21223:21:126",
+                                                    "src": "21322:21:126",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -12708,12 +12829,12 @@ export const YieldSpaceMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 22905,
+                                                    "id": 22782,
                                                     "name": "mu",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22891,
-                                                    "src": "21246:2:126",
+                                                    "referencedDeclaration": 22768,
+                                                    "src": "21345:2:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -12732,33 +12853,33 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22896,
+                                                    "id": 22773,
                                                     "name": "c",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22889,
-                                                    "src": "21210:1:126",
+                                                    "referencedDeclaration": 22766,
+                                                    "src": "21309:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22897,
+                                                "id": 22774,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "21212:10:126",
+                                                "memberLocation": "21311:10:126",
                                                 "memberName": "mulDivDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18327,
-                                                "src": "21210:12:126",
+                                                "referencedDeclaration": 18230,
+                                                "src": "21309:12:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22906,
+                                            "id": 22783,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12767,7 +12888,7 @@ export const YieldSpaceMath = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "21210:39:126",
+                                            "src": "21309:39:126",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -12779,12 +12900,12 @@ export const YieldSpaceMath = {
                                         "rightExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 22909,
+                                                    "id": 22786,
                                                     "name": "t",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22887,
-                                                    "src": "21258:1:126",
+                                                    "referencedDeclaration": 22764,
+                                                    "src": "21357:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -12799,33 +12920,33 @@ export const YieldSpaceMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 22907,
+                                                    "id": 22784,
                                                     "name": "y",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 22885,
-                                                    "src": "21252:1:126",
+                                                    "referencedDeclaration": 22762,
+                                                    "src": "21351:1:126",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 22908,
+                                                "id": 22785,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "21254:3:126",
+                                                "memberLocation": "21353:3:126",
                                                 "memberName": "pow",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 18470,
-                                                "src": "21252:5:126",
+                                                "referencedDeclaration": 18373,
+                                                "src": "21351:5:126",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 22910,
+                                            "id": 22787,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12834,50 +12955,50 @@ export const YieldSpaceMath = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "21252:8:126",
+                                            "src": "21351:8:126",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "21210:50:126",
+                                        "src": "21309:50:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 22895,
-                                    "id": 22912,
+                                    "functionReturnParameters": 22772,
+                                    "id": 22789,
                                     "nodeType": "Return",
-                                    "src": "21203:57:126"
+                                    "src": "21302:57:126"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 22881,
+                            "id": 22758,
                             "nodeType": "StructuredDocumentation",
-                            "src": "20408:502:126",
+                            "src": "20507:502:126",
                             "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)\n      This variant of the calculation underestimates the result.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The vault share price.\n @param mu The initial vault share price.\n @return The modified YieldSpace Constant."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "kDown",
-                        "nameLocation": "20924:5:126",
+                        "nameLocation": "21023:5:126",
                         "parameters": {
-                            "id": 22892,
+                            "id": 22769,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22883,
+                                    "id": 22760,
                                     "mutability": "mutable",
                                     "name": "ze",
-                                    "nameLocation": "20947:2:126",
+                                    "nameLocation": "21046:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "20939:10:126",
+                                    "scope": 22791,
+                                    "src": "21038:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12885,10 +13006,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22882,
+                                        "id": 22759,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20939:7:126",
+                                        "src": "21038:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12898,13 +13019,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22885,
+                                    "id": 22762,
                                     "mutability": "mutable",
                                     "name": "y",
-                                    "nameLocation": "20967:1:126",
+                                    "nameLocation": "21066:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "20959:9:126",
+                                    "scope": 22791,
+                                    "src": "21058:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12912,10 +13033,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22884,
+                                        "id": 22761,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20959:7:126",
+                                        "src": "21058:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12925,13 +13046,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22887,
+                                    "id": 22764,
                                     "mutability": "mutable",
                                     "name": "t",
-                                    "nameLocation": "20986:1:126",
+                                    "nameLocation": "21085:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "20978:9:126",
+                                    "scope": 22791,
+                                    "src": "21077:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12939,10 +13060,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22886,
+                                        "id": 22763,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20978:7:126",
+                                        "src": "21077:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12952,13 +13073,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22889,
+                                    "id": 22766,
                                     "mutability": "mutable",
                                     "name": "c",
-                                    "nameLocation": "21005:1:126",
+                                    "nameLocation": "21104:1:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "20997:9:126",
+                                    "scope": 22791,
+                                    "src": "21096:9:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12966,10 +13087,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22888,
+                                        "id": 22765,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "20997:7:126",
+                                        "src": "21096:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12979,13 +13100,13 @@ export const YieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 22891,
+                                    "id": 22768,
                                     "mutability": "mutable",
                                     "name": "mu",
-                                    "nameLocation": "21024:2:126",
+                                    "nameLocation": "21123:2:126",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "21016:10:126",
+                                    "scope": 22791,
+                                    "src": "21115:10:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12993,10 +13114,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22890,
+                                        "id": 22767,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "21016:7:126",
+                                        "src": "21115:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -13005,21 +13126,21 @@ export const YieldSpaceMath = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "20929:103:126"
+                            "src": "21028:103:126"
                         },
                         "returnParameters": {
-                            "id": 22895,
+                            "id": 22772,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 22894,
+                                    "id": 22771,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 22914,
-                                    "src": "21056:7:126",
+                                    "scope": 22791,
+                                    "src": "21155:7:126",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -13027,10 +13148,10 @@ export const YieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 22893,
+                                        "id": 22770,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "21056:7:126",
+                                        "src": "21155:7:126",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -13039,9 +13160,9 @@ export const YieldSpaceMath = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "21055:9:126"
+                            "src": "21154:9:126"
                         },
-                        "scope": 22915,
+                        "scope": 22792,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -13053,18 +13174,18 @@ export const YieldSpaceMath = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 21948,
+                    "id": 21815,
                     "nodeType": "StructuredDocumentation",
                     "src": "281:1185:126",
                     "text": "@author DELV\n @title YieldSpaceMath\n @notice Math for the YieldSpace pricing model.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.\n @dev It is advised for developers to attain the pre-requisite knowledge\n      of how this implementation works on the mathematical level. This\n      excerpt attempts to document this pre-requisite knowledge explaining\n      the underpinning mathematical concepts in an understandable manner and\n      relating it directly to the code implementation.\n      This implementation is based on a paper called \"YieldSpace with Yield\n      Bearing Vaults\" or more casually \"Modified YieldSpace\". It can be\n      found at the following link.\n      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view\n      That paper builds on the original YieldSpace paper, \"YieldSpace:\n      An Automated Liquidity Provider for Fixed Yield Tokens\". It can be\n      found at the following link:\n      https://yieldprotocol.com/YieldSpace.pdf"
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    22915
+                    22792
                 ],
                 "name": "YieldSpaceMath",
                 "nameLocation": "1474:14:126",
-                "scope": 22916,
+                "scope": 22793,
                 "usedErrors": [],
                 "usedEvents": []
             }

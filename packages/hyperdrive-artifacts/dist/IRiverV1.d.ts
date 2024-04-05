@@ -659,36 +659,36 @@ export declare const IRiverV1: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRiverV1.sol";
-        readonly id: 12003;
+        readonly id: 11835;
         readonly exportedSymbols: {
-            readonly IRiverV1: readonly [12002];
-            readonly ISharesManagerV1: readonly [12492];
+            readonly IRiverV1: readonly [11834];
+            readonly ISharesManagerV1: readonly [12324];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:216:104";
         readonly nodes: readonly [{
-            readonly id: 11996;
+            readonly id: 11828;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:104";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11998;
+            readonly id: 11830;
             readonly nodeType: "ImportDirective";
             readonly src: "64:58:104";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/ISharesManagerV1.sol";
             readonly file: "./ISharesManagerV1.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 12003;
-            readonly sourceUnit: 12493;
+            readonly scope: 11835;
+            readonly sourceUnit: 12325;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11997;
+                    readonly id: 11829;
                     readonly name: "ISharesManagerV1";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12492;
+                    readonly referencedDeclaration: 12324;
                     readonly src: "73:16:104";
                     readonly typeDescriptions: {};
                 };
@@ -696,21 +696,21 @@ export declare const IRiverV1: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 12002;
+            readonly id: 11834;
             readonly nodeType: "ContractDefinition";
             readonly src: "211:43:104";
             readonly nodes: readonly [];
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 12000;
+                    readonly id: 11832;
                     readonly name: "ISharesManagerV1";
                     readonly nameLocations: readonly ["233:16:104"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12492;
+                    readonly referencedDeclaration: 12324;
                     readonly src: "233:16:104";
                 };
-                readonly id: 12001;
+                readonly id: 11833;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "233:16:104";
             }];
@@ -718,18 +718,18 @@ export declare const IRiverV1: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly documentation: {
-                readonly id: 11999;
+                readonly id: 11831;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "124:87:104";
                 readonly text: "@title River Interface (v1)\n @author Kiln\n @notice The main system interface";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12002, 12492, 9980];
+            readonly linearizedBaseContracts: readonly [11834, 12324, 9810];
             readonly name: "IRiverV1";
             readonly nameLocation: "221:8:104";
-            readonly scope: 12003;
+            readonly scope: 11835;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [9896, 9905];
+            readonly usedEvents: readonly [9726, 9735];
         }];
         readonly license: "Apache-2.0";
     };
