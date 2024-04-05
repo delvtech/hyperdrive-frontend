@@ -574,7 +574,7 @@ export const HyperdriveDeployerCoordinator = {
         "target3Deployer()": "aa8cd6c4",
         "target4Deployer()": "966ecd1c"
     },
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeploymentAlreadyExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeploymentDoesNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveIsNotDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IncompleteDeployment\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InsufficientValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidBaseToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumTransactionAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTargetIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidVaultSharesToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedExtraData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TargetAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"coreDeployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_targetIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deployTarget\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_deployer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"}],\"name\":\"deployments\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"configHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"extraDataHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target1\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target2\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target3\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target4\",\"type\":\"address\"}],\"internalType\":\"struct HyperdriveDeployerCoordinator.Deployment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_lp\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target0Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target1Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target2Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target3Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target4Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"We use multiple deployers to avoid the maximum code size.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_coreDeployer\":\"The core deployer.\",\"_target0Deployer\":\"The target0 deployer.\",\"_target1Deployer\":\"The target1 deployer.\",\"_target2Deployer\":\"The target2 deployer.\",\"_target4Deployer\":\"The target4 deployer.\"}},\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy Hyperdrive.\"},\"returns\":{\"_0\":\"The address of the newly deployed Hyperdrive instance.\"}},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"details\":\"As a convention, target0 must be deployed first. After this, the      targets can be deployed in any order.\",\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy the target.\",\"_targetIndex\":\"The index of the target to deploy.\"},\"returns\":{\"target\":\"The address of the newly deployed target instance.\"}},\"deployments(address,bytes32)\":{\"params\":{\"_deployer\":\"The deployer.\",\"_deploymentId\":\"The deployment ID.\"},\"returns\":{\"_0\":\"The deployment.\"}},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"details\":\"This function utilizes several helper functions that provide      flexibility to implementations.\",\"params\":{\"_apr\":\"The target APR.\",\"_contribution\":\"The amount of capital to supply. The units of this        quantity are either base or vault shares, depending on the value        of `_options.asBase`.\",\"_deploymentId\":\"The ID of the deployment.\",\"_lp\":\"The LP that is initializing the pool.\",\"_options\":\"The options that configure how the initialization is        settled.\"},\"returns\":{\"lpShares\":\"The initial number of LP shares created.\"}}},\"title\":\"HyperdriveDeployerCoordinator\",\"version\":1},\"userdoc\":{\"errors\":{\"DeploymentAlreadyExists()\":[{\"notice\":\"Thrown when a user attempts to deploy target0 the deployment has         already been created.\"}],\"DeploymentDoesNotExist()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract that requires         the deployment to be created and the deployment doesn't exist.\"}],\"HyperdriveAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a hyperdrive contract         after it has already been deployed.\"}],\"HyperdriveIsNotDeployed()\":[{\"notice\":\"Thrown when a user attempts to initialize a hyperdrive contract         before is has been deployed.\"}],\"IncompleteDeployment()\":[{\"notice\":\"Thrown when a user attempts to deploy a Hyperdrive entrypoint         without first deploying the required targets.\"}],\"InsufficientValue()\":[{\"notice\":\"Thrown when a deployer provides an insufficient amount of base         to initialize a payable Hyperdrive instance.\"}],\"InvalidBaseToken()\":[{\"notice\":\"Thrown when the base token isn't valid. Each instance will have         different criteria for what constitutes a valid base token.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration specified is zero.\"}],\"InvalidFeeAmounts()\":[{\"notice\":\"Thrown when the curve fee, flat fee, governance LP fee, or         governance zombie fee is greater than 100%.\"}],\"InvalidMinimumShareReserves()\":[{\"notice\":\"Thrown when the minimum share reserves is too small. The         absolute smallest allowable minimum share reserves is 1e3;         however, yield sources may require a larger minimum share         reserves.\"}],\"InvalidMinimumTransactionAmount()\":[{\"notice\":\"Thrown when the minimum transaction amount is too small.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration is smaller than the checkpoint         duration or is not a multiple of the checkpoint duration.\"}],\"InvalidTargetIndex()\":[{\"notice\":\"Thrown when a user attempts to deploy a target using a target         index that is outside of the accepted range.\"}],\"InvalidVaultSharesToken()\":[{\"notice\":\"Thrown when the vault shares token isn't valid. Each instance         will have different criteria for what constitutes a valid base         token.\"}],\"MismatchedConfig()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with a config that doesn't match the deployment's         config hash.\"}],\"MismatchedExtraData()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with extra data that doesn't match the deployment's         extra data hash.\"}],\"NotPayable()\":[{\"notice\":\"Thrown when ether is sent to an instance that doesn't accept         ether as a deposit asset.\"}],\"TargetAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a target contract after         it has already been deployed.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the deployer coordinator.\"},\"coreDeployer()\":{\"notice\":\"The contract used to deploy new instances of Hyperdrive.\"},\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"notice\":\"Deploys a Hyperdrive instance with the given parameters.\"},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"notice\":\"Deploys a Hyperdrive target instance with the given parameters.\"},\"deployments(address,bytes32)\":{\"notice\":\"Gets the deployment specified by the deployer and deployment ID.\"},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Initializes a pool that was deployed by this coordinator.\"},\"target0Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget0.\"},\"target1Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget1.\"},\"target2Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget2.\"},\"target3Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget3.\"},\"target4Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget4.\"}},\"notice\":\"This Hyperdrive deployer coordinates the process of deploying the         Hyperdrive system utilizing several child deployers.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/deployers/HyperdriveDeployerCoordinator.sol\":\"HyperdriveDeployerCoordinator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/deployers/HyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0x991e41484c7890375add11fbe314e5fa70d1db4257c16fce007b8f42bb6d5024\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://832e22dffc00bfce874808dc5d06e4458d9a50eaa2aa932acab6e5d670f40c03\",\"dweb:/ipfs/QmSWgmKrsaKd44tdJFiekca74aWneL43iJJHBi3ZaB4qgJ\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveCoreDeployer.sol\":{\"keccak256\":\"0x8aaf56733c7d566752a7f4b70652645d1bd68889443b3a55313ff93a7b7a5761\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://52ca088c697f0bd94c371ab825575f53fa187d589386915b068bf1f108b2cf8b\",\"dweb:/ipfs/QmYGTYBULTU8LeQGcUgp7FLYrP973oXqwGofHbLj6crAiU\"]},\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0x2eb8c9cd2fb58f1c6b1054c5d5e325b78386855bbcfd0a86b595aa98bd05df28\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://cd2aa557854a35ada0b5d334c981739eecbc82580aa35693277749b8cadbe4f4\",\"dweb:/ipfs/QmcRWJuLSrA44XmFC1bMAGCKUfPmVUnUv7YE8fNC4gy91v\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IHyperdriveTargetDeployer.sol\":{\"keccak256\":\"0x7845ba86a634960ea10cc90004de897d994c5519ed382c7b6c7571447e30e205\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://00f26f094a5fe200d17030b43bcce07c1374ef1e1bd24acd9617c93ec746b0ed\",\"dweb:/ipfs/QmR7PkD3vAJX8d7psiduNuQhExvBFBsUjp9ZTiWNCPJiss\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeploymentAlreadyExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeploymentDoesNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"HyperdriveIsNotDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IncompleteDeployment\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InsufficientValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidBaseToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumTransactionAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTargetIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidVaultSharesToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MismatchedExtraData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TargetAlreadyDeployed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"coreDeployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"_deployConfig\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_extraData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_targetIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_salt\",\"type\":\"bytes32\"}],\"name\":\"deployTarget\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_deployer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"}],\"name\":\"deployments\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"configHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"extraDataHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target1\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target2\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target3\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"target4\",\"type\":\"address\"}],\"internalType\":\"struct HyperdriveDeployerCoordinator.Deployment\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_deploymentId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_lp\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target0Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target1Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target2Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target3Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target4Deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"We use multiple deployers to avoid the maximum code size.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_coreDeployer\":\"The core deployer.\",\"_target0Deployer\":\"The target0 deployer.\",\"_target1Deployer\":\"The target1 deployer.\",\"_target2Deployer\":\"The target2 deployer.\",\"_target4Deployer\":\"The target4 deployer.\"}},\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy Hyperdrive.\"},\"returns\":{\"_0\":\"The address of the newly deployed Hyperdrive instance.\"}},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"details\":\"As a convention, target0 must be deployed first. After this, the      targets can be deployed in any order.\",\"params\":{\"_deployConfig\":\"The deploy configuration of the Hyperdrive pool.\",\"_deploymentId\":\"The ID of the deployment.\",\"_extraData\":\"The extra data that contains the pool and sweep targets.\",\"_salt\":\"The create2 salt used to deploy the target.\",\"_targetIndex\":\"The index of the target to deploy.\"},\"returns\":{\"target\":\"The address of the newly deployed target instance.\"}},\"deployments(address,bytes32)\":{\"params\":{\"_deployer\":\"The deployer.\",\"_deploymentId\":\"The deployment ID.\"},\"returns\":{\"_0\":\"The deployment.\"}},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"details\":\"This function utilizes several helper functions that provide      flexibility to implementations.\",\"params\":{\"_apr\":\"The target APR.\",\"_contribution\":\"The amount of capital to supply. The units of this        quantity are either base or vault shares, depending on the value        of `_options.asBase`.\",\"_deploymentId\":\"The ID of the deployment.\",\"_lp\":\"The LP that is initializing the pool.\",\"_options\":\"The options that configure how the initialization is        settled.\"},\"returns\":{\"lpShares\":\"The initial number of LP shares created.\"}}},\"title\":\"HyperdriveDeployerCoordinator\",\"version\":1},\"userdoc\":{\"errors\":{\"DeploymentAlreadyExists()\":[{\"notice\":\"Thrown when a user attempts to deploy target0 the deployment has         already been created.\"}],\"DeploymentDoesNotExist()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract that requires         the deployment to be created and the deployment doesn't exist.\"}],\"HyperdriveAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a hyperdrive contract         after it has already been deployed.\"}],\"HyperdriveIsNotDeployed()\":[{\"notice\":\"Thrown when a user attempts to initialize a hyperdrive contract         before is has been deployed.\"}],\"IncompleteDeployment()\":[{\"notice\":\"Thrown when a user attempts to deploy a Hyperdrive entrypoint         without first deploying the required targets.\"}],\"InsufficientValue()\":[{\"notice\":\"Thrown when a deployer provides an insufficient amount of base         to initialize a payable Hyperdrive instance.\"}],\"InvalidBaseToken()\":[{\"notice\":\"Thrown when the base token isn't valid. Each instance will have         different criteria for what constitutes a valid base token.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration specified is zero.\"}],\"InvalidFeeAmounts()\":[{\"notice\":\"Thrown when the curve fee, flat fee, governance LP fee, or         governance zombie fee is greater than 100%.\"}],\"InvalidMinimumShareReserves()\":[{\"notice\":\"Thrown when the minimum share reserves is too small. The         absolute smallest allowable minimum share reserves is 1e3;         however, yield sources may require a larger minimum share         reserves.\"}],\"InvalidMinimumTransactionAmount()\":[{\"notice\":\"Thrown when the minimum transaction amount is too small.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration is smaller than the checkpoint         duration or is not a multiple of the checkpoint duration.\"}],\"InvalidTargetIndex()\":[{\"notice\":\"Thrown when a user attempts to deploy a target using a target         index that is outside of the accepted range.\"}],\"InvalidVaultSharesToken()\":[{\"notice\":\"Thrown when the vault shares token isn't valid. Each instance         will have different criteria for what constitutes a valid base         token.\"}],\"MismatchedConfig()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with a config that doesn't match the deployment's         config hash.\"}],\"MismatchedExtraData()\":[{\"notice\":\"Thrown when a user attempts to deploy a contract in an existing         deployment with extra data that doesn't match the deployment's         extra data hash.\"}],\"NotPayable()\":[{\"notice\":\"Thrown when ether is sent to an instance that doesn't accept         ether as a deposit asset.\"}],\"TargetAlreadyDeployed()\":[{\"notice\":\"Thrown when a user attempts to deploy a target contract after         it has already been deployed.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the deployer coordinator.\"},\"coreDeployer()\":{\"notice\":\"The contract used to deploy new instances of Hyperdrive.\"},\"deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)\":{\"notice\":\"Deploys a Hyperdrive instance with the given parameters.\"},\"deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)\":{\"notice\":\"Deploys a Hyperdrive target instance with the given parameters.\"},\"deployments(address,bytes32)\":{\"notice\":\"Gets the deployment specified by the deployer and deployment ID.\"},\"initialize(bytes32,address,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Initializes a pool that was deployed by this coordinator.\"},\"target0Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget0.\"},\"target1Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget1.\"},\"target2Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget2.\"},\"target3Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget3.\"},\"target4Deployer()\":{\"notice\":\"The contract used to deploy new instances of HyperdriveTarget4.\"}},\"notice\":\"This Hyperdrive deployer coordinates the process of deploying the         Hyperdrive system utilizing several child deployers.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/deployers/HyperdriveDeployerCoordinator.sol\":\"HyperdriveDeployerCoordinator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/deployers/HyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0xf6c8e82f88f58a7f694384882ab7c2218bd07a672e80f137eb50c56aa8d849da\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41b150e78a9b8d5c7dd3b6ad14dd124e5fb84486d8bb7c2732d107f386545214\",\"dweb:/ipfs/QmNT6KEz9LdUJCaV9pvF2YmccHeJPqq5LQAy6Y2wZhfqzR\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveCoreDeployer.sol\":{\"keccak256\":\"0x8aaf56733c7d566752a7f4b70652645d1bd68889443b3a55313ff93a7b7a5761\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://52ca088c697f0bd94c371ab825575f53fa187d589386915b068bf1f108b2cf8b\",\"dweb:/ipfs/QmYGTYBULTU8LeQGcUgp7FLYrP973oXqwGofHbLj6crAiU\"]},\"contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol\":{\"keccak256\":\"0x2eb8c9cd2fb58f1c6b1054c5d5e325b78386855bbcfd0a86b595aa98bd05df28\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://cd2aa557854a35ada0b5d334c981739eecbc82580aa35693277749b8cadbe4f4\",\"dweb:/ipfs/QmcRWJuLSrA44XmFC1bMAGCKUfPmVUnUv7YE8fNC4gy91v\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IHyperdriveTargetDeployer.sol\":{\"keccak256\":\"0x7845ba86a634960ea10cc90004de897d994c5519ed382c7b6c7571447e30e205\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://00f26f094a5fe200d17030b43bcce07c1374ef1e1bd24acd9617c93ec746b0ed\",\"dweb:/ipfs/QmR7PkD3vAJX8d7psiduNuQhExvBFBsUjp9ZTiWNCPJiss\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1259,10 +1259,10 @@ export const HyperdriveDeployerCoordinator = {
         },
         "sources": {
             "contracts/src/deployers/HyperdriveDeployerCoordinator.sol": {
-                "keccak256": "0x991e41484c7890375add11fbe314e5fa70d1db4257c16fce007b8f42bb6d5024",
+                "keccak256": "0xf6c8e82f88f58a7f694384882ab7c2218bd07a672e80f137eb50c56aa8d849da",
                 "urls": [
-                    "bzz-raw://832e22dffc00bfce874808dc5d06e4458d9a50eaa2aa932acab6e5d670f40c03",
-                    "dweb:/ipfs/QmSWgmKrsaKd44tdJFiekca74aWneL43iJJHBi3ZaB4qgJ"
+                    "bzz-raw://41b150e78a9b8d5c7dd3b6ad14dd124e5fb84486d8bb7c2732d107f386545214",
+                    "dweb:/ipfs/QmNT6KEz9LdUJCaV9pvF2YmccHeJPqq5LQAy6Y2wZhfqzR"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1307,10 +1307,10 @@ export const HyperdriveDeployerCoordinator = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
+                "keccak256": "0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784",
                 "urls": [
-                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
-                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
+                    "bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa",
+                    "dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1391,29 +1391,29 @@ export const HyperdriveDeployerCoordinator = {
     },
     "ast": {
         "absolutePath": "contracts/src/deployers/HyperdriveDeployerCoordinator.sol",
-        "id": 1059,
+        "id": 1091,
         "exportedSymbols": {
             "HyperdriveDeployerCoordinator": [
-                1058
+                1090
             ],
             "IHyperdrive": [
-                10676
+                10506
             ],
             "IHyperdriveCoreDeployer": [
-                10893
+                10723
             ],
             "IHyperdriveDeployerCoordinator": [
-                11004
+                10834
             ],
             "IHyperdriveTargetDeployer": [
-                11554
+                11386
             ],
             "ONE": [
-                18299
+                18202
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:20824:0",
+        "src": "39:21024:0",
         "nodes": [
             {
                 "id": 1,
@@ -1434,8 +1434,8 @@ export const HyperdriveDeployerCoordinator = {
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 1059,
-                "sourceUnit": 10677,
+                "scope": 1091,
+                "sourceUnit": 10507,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1443,7 +1443,7 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10676,
+                            "referencedDeclaration": 10506,
                             "src": "73:11:0",
                             "typeDescriptions": {}
                         },
@@ -1460,8 +1460,8 @@ export const HyperdriveDeployerCoordinator = {
                 "absolutePath": "contracts/src/interfaces/IHyperdriveCoreDeployer.sol",
                 "file": "../interfaces/IHyperdriveCoreDeployer.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 1059,
-                "sourceUnit": 10894,
+                "scope": 1091,
+                "sourceUnit": 10724,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1469,7 +1469,7 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "IHyperdriveCoreDeployer",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10893,
+                            "referencedDeclaration": 10723,
                             "src": "134:23:0",
                             "typeDescriptions": {}
                         },
@@ -1486,8 +1486,8 @@ export const HyperdriveDeployerCoordinator = {
                 "absolutePath": "contracts/src/interfaces/IHyperdriveDeployerCoordinator.sol",
                 "file": "../interfaces/IHyperdriveDeployerCoordinator.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 1059,
-                "sourceUnit": 11005,
+                "scope": 1091,
+                "sourceUnit": 10835,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1495,7 +1495,7 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "IHyperdriveDeployerCoordinator",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11004,
+                            "referencedDeclaration": 10834,
                             "src": "219:30:0",
                             "typeDescriptions": {}
                         },
@@ -1512,8 +1512,8 @@ export const HyperdriveDeployerCoordinator = {
                 "absolutePath": "contracts/src/interfaces/IHyperdriveTargetDeployer.sol",
                 "file": "../interfaces/IHyperdriveTargetDeployer.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 1059,
-                "sourceUnit": 11555,
+                "scope": 1091,
+                "sourceUnit": 11387,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1521,7 +1521,7 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "IHyperdriveTargetDeployer",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11554,
+                            "referencedDeclaration": 11386,
                             "src": "318:25:0",
                             "typeDescriptions": {}
                         },
@@ -1538,8 +1538,8 @@ export const HyperdriveDeployerCoordinator = {
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 1059,
-                "sourceUnit": 19066,
+                "scope": 1091,
+                "sourceUnit": 18969,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1547,7 +1547,7 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "ONE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 18299,
+                            "referencedDeclaration": 18202,
                             "src": "407:3:0",
                             "typeDescriptions": {}
                         },
@@ -1557,9 +1557,9 @@ export const HyperdriveDeployerCoordinator = {
                 "unitAlias": ""
             },
             {
-                "id": 1058,
+                "id": 1090,
                 "nodeType": "ContractDefinition",
-                "src": "946:19916:0",
+                "src": "946:20116:0",
                 "nodes": [
                     {
                         "id": 42,
@@ -1820,7 +1820,7 @@ export const HyperdriveDeployerCoordinator = {
                         ],
                         "name": "Deployment",
                         "nameLocation": "1045:10:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "visibility": "public"
                     },
                     {
@@ -1839,7 +1839,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "coreDeployer",
                         "nameLocation": "2400:12:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1875,7 +1875,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "target0Deployer",
                         "nameLocation": "2524:15:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1911,7 +1911,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "target1Deployer",
                         "nameLocation": "2651:15:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1947,7 +1947,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "target2Deployer",
                         "nameLocation": "2778:15:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1983,7 +1983,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "target3Deployer",
                         "nameLocation": "2905:15:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2019,7 +2019,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "immutable",
                         "name": "target4Deployer",
                         "nameLocation": "3032:15:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2054,7 +2054,7 @@ export const HyperdriveDeployerCoordinator = {
                         "mutability": "mutable",
                         "name": "_deployments",
                         "nameLocation": "3186:12:0",
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2592,7 +2592,7 @@ export const HyperdriveDeployerCoordinator = {
                             "parameters": [],
                             "src": "3743:0:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
@@ -2858,10 +2858,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "4866:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -2873,7 +2873,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "4897:25:0",
                                                         "memberName": "HyperdriveAlreadyDeployed",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10909,
+                                                        "referencedDeclaration": 10739,
                                                         "src": "4866:56:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -3029,10 +3029,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "5142:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -3044,7 +3044,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "5173:22:0",
                                                         "memberName": "DeploymentDoesNotExist",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10903,
+                                                        "referencedDeclaration": 10733,
                                                         "src": "5142:53:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -3700,10 +3700,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "5553:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -3715,7 +3715,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "5584:20:0",
                                                         "memberName": "IncompleteDeployment",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10906,
+                                                        "referencedDeclaration": 10736,
                                                         "src": "5553:51:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -3768,7 +3768,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 115,
                                                             "src": "5720:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         }
@@ -3776,7 +3776,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         ],
@@ -3911,10 +3911,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "5783:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -3926,7 +3926,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "5814:16:0",
                                                         "memberName": "MismatchedConfig",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10942,
+                                                        "referencedDeclaration": 10772,
                                                         "src": "5783:47:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -4070,10 +4070,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "6005:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -4085,7 +4085,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "6036:19:0",
                                                         "memberName": "MismatchedExtraData",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10945,
+                                                        "referencedDeclaration": 10775,
                                                         "src": "6005:50:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -4126,7 +4126,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 115,
                                                 "src": "6361:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             }
@@ -4134,7 +4134,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             ],
@@ -4142,10 +4142,10 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "_checkPoolConfig",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 944,
+                                            "referencedDeclaration": 976,
                                             "src": "6344:16:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$__$",
                                                 "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) view"
                                             }
                                         },
@@ -4186,7 +4186,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                 "typeString": "struct IHyperdrive.PoolConfig"
                                             },
                                             "typeName": {
@@ -4200,13 +4200,13 @@ export const HyperdriveDeployerCoordinator = {
                                                         "6506:10:0"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 10470,
+                                                    "referencedDeclaration": 10300,
                                                     "src": "6494:22:0"
                                                 },
-                                                "referencedDeclaration": 10470,
+                                                "referencedDeclaration": 10300,
                                                 "src": "6494:22:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_storage_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig"
                                                 }
                                             },
@@ -4224,7 +4224,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 115,
                                                 "src": "6549:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             }
@@ -4232,7 +4232,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             ],
@@ -4240,10 +4240,10 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "_copyPoolConfig",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 1057,
+                                            "referencedDeclaration": 1089,
                                             "src": "6533:15:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$_t_struct$_PoolConfig_$10470_memory_ptr_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$_t_struct$_PoolConfig_$10300_memory_ptr_$",
                                                 "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) pure returns (struct IHyperdrive.PoolConfig memory)"
                                             }
                                         },
@@ -4259,7 +4259,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "src": "6533:30:0",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                         }
                                     },
@@ -4282,7 +4282,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 245,
                                                 "src": "6573:6:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
@@ -4294,7 +4294,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "memberLocation": "6580:22:0",
                                             "memberName": "initialVaultSharePrice",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10441,
+                                            "referencedDeclaration": 10271,
                                             "src": "6573:29:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4484,7 +4484,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 245,
                                                 "src": "6938:6:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
@@ -4792,7 +4792,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 },
                                                 {
@@ -4850,10 +4850,10 @@ export const HyperdriveDeployerCoordinator = {
                                                     "name": "IHyperdriveCoreDeployer",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10893,
+                                                    "referencedDeclaration": 10723,
                                                     "src": "6880:23:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveCoreDeployer_$10893_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveCoreDeployer_$10723_$",
                                                         "typeString": "type(contract IHyperdriveCoreDeployer)"
                                                     }
                                                 },
@@ -4869,7 +4869,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "src": "6880:37:0",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IHyperdriveCoreDeployer_$10893",
+                                                    "typeIdentifier": "t_contract$_IHyperdriveCoreDeployer_$10723",
                                                     "typeString": "contract IHyperdriveCoreDeployer"
                                                 }
                                             },
@@ -4881,10 +4881,10 @@ export const HyperdriveDeployerCoordinator = {
                                             "memberLocation": "6918:6:0",
                                             "memberName": "deploy",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10892,
+                                            "referencedDeclaration": 10722,
                                             "src": "6880:44:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_address_$_t_address_$_t_address_$_t_address_$_t_address_$_t_bytes32_$returns$_t_address_$",
+                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_address_$_t_address_$_t_address_$_t_address_$_t_address_$_t_bytes32_$returns$_t_address_$",
                                                 "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,address,address,address,address,address,bytes32) external returns (address)"
                                             }
                                         },
@@ -5052,7 +5052,7 @@ export const HyperdriveDeployerCoordinator = {
                             ]
                         },
                         "baseFunctions": [
-                            10969
+                            10799
                         ],
                         "documentation": {
                             "id": 110,
@@ -5109,7 +5109,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
@@ -5123,13 +5123,13 @@ export const HyperdriveDeployerCoordinator = {
                                                 "4507:16:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
+                                            "referencedDeclaration": 10254,
                                             "src": "4495:28:0"
                                         },
-                                        "referencedDeclaration": 10424,
+                                        "referencedDeclaration": 10254,
                                         "src": "4495:28:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -5227,20 +5227,20 @@ export const HyperdriveDeployerCoordinator = {
                             ],
                             "src": "4624:9:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 720,
+                        "id": 752,
                         "nodeType": "FunctionDefinition",
-                        "src": "8078:6137:0",
+                        "src": "8078:6337:0",
                         "nodes": [],
                         "body": {
-                            "id": 719,
+                            "id": 751,
                             "nodeType": "Block",
-                            "src": "8316:5899:0",
+                            "src": "8316:6099:0",
                             "nodes": [],
                             "statements": [
                                 {
@@ -5489,10 +5489,10 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "name": "IHyperdriveDeployerCoordinator",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 11004,
+                                                                        "referencedDeclaration": 10834,
                                                                         "src": "8872:30:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                             "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                         }
                                                                     },
@@ -5504,7 +5504,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "memberLocation": "8903:23:0",
                                                                     "memberName": "DeploymentAlreadyExists",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 10900,
+                                                                    "referencedDeclaration": 10730,
                                                                     "src": "8872:54:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -5545,7 +5545,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 313,
                                                             "src": "9094:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         }
@@ -5553,7 +5553,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         ],
@@ -5561,10 +5561,10 @@ export const HyperdriveDeployerCoordinator = {
                                                         "name": "_checkPoolConfig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 944,
+                                                        "referencedDeclaration": 976,
                                                         "src": "9077:16:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$__$",
                                                             "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) view"
                                                         }
                                                     },
@@ -5632,7 +5632,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 313,
                                                             "src": "9298:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         },
@@ -5652,7 +5652,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             },
                                                             {
@@ -5664,10 +5664,10 @@ export const HyperdriveDeployerCoordinator = {
                                                         "name": "_getInitialVaultSharePrice",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 955,
+                                                        "referencedDeclaration": 987,
                                                         "src": "9254:26:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_uint256_$",
+                                                            "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_uint256_$",
                                                             "typeString": "function (struct IHyperdrive.PoolDeployConfig memory,bytes memory) view returns (uint256)"
                                                         }
                                                     },
@@ -5736,7 +5736,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "referencedDeclaration": 313,
                                                                     "src": "9410:13:0",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                                     }
                                                                 }
@@ -5744,7 +5744,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                                     }
                                                                 ],
@@ -5931,7 +5931,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "stateVariable": false,
                                                         "storageLocation": "memory",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolConfig"
                                                         },
                                                         "typeName": {
@@ -5945,13 +5945,13 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "9627:10:0"
                                                                 ],
                                                                 "nodeType": "IdentifierPath",
-                                                                "referencedDeclaration": 10470,
+                                                                "referencedDeclaration": 10300,
                                                                 "src": "9615:22:0"
                                                             },
-                                                            "referencedDeclaration": 10470,
+                                                            "referencedDeclaration": 10300,
                                                             "src": "9615:22:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_storage_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_storage_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolConfig"
                                                             }
                                                         },
@@ -5969,7 +5969,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 313,
                                                             "src": "9688:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         }
@@ -5977,7 +5977,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         ],
@@ -5985,10 +5985,10 @@ export const HyperdriveDeployerCoordinator = {
                                                         "name": "_copyPoolConfig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 1057,
+                                                        "referencedDeclaration": 1089,
                                                         "src": "9655:15:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$_t_struct$_PoolConfig_$10470_memory_ptr_$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$_t_struct$_PoolConfig_$10300_memory_ptr_$",
                                                             "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) pure returns (struct IHyperdrive.PoolConfig memory)"
                                                         }
                                                     },
@@ -6004,7 +6004,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "src": "9655:60:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                         "typeString": "struct IHyperdrive.PoolConfig memory"
                                                     }
                                                 },
@@ -6027,7 +6027,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 376,
                                                             "src": "9729:7:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolConfig memory"
                                                             }
                                                         },
@@ -6039,7 +6039,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "9737:22:0",
                                                         "memberName": "initialVaultSharePrice",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10441,
+                                                        "referencedDeclaration": 10271,
                                                         "src": "9729:30:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -6101,7 +6101,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "referencedDeclaration": 376,
                                                                 "src": "9914:7:0",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                 }
                                                             },
@@ -6269,7 +6269,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                 },
                                                                 {
@@ -6307,10 +6307,10 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "name": "IHyperdriveTargetDeployer",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 11554,
+                                                                    "referencedDeclaration": 11386,
                                                                     "src": "9847:25:0",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11554_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11386_$",
                                                                         "typeString": "type(contract IHyperdriveTargetDeployer)"
                                                                     }
                                                                 },
@@ -6326,7 +6326,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "src": "9847:42:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11554",
+                                                                    "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11386",
                                                                     "typeString": "contract IHyperdriveTargetDeployer"
                                                                 }
                                                             },
@@ -6338,10 +6338,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "memberLocation": "9890:6:0",
                                                             "memberName": "deploy",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 11553,
+                                                            "referencedDeclaration": 11385,
                                                             "src": "9847:49:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
+                                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
                                                                 "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,bytes32) external returns (address)"
                                                             }
                                                         },
@@ -6900,7 +6900,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "configHash",
                                             "nameLocation": "10762:10:0",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 719,
+                                            "scope": 751,
                                             "src": "10754:18:0",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7128,10 +7128,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "10886:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -7143,7 +7143,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "10917:22:0",
                                                         "memberName": "DeploymentDoesNotExist",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10903,
+                                                        "referencedDeclaration": 10733,
                                                         "src": "10886:53:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -7196,7 +7196,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "referencedDeclaration": 313,
                                                             "src": "11055:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         }
@@ -7204,7 +7204,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         ],
@@ -7323,10 +7323,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "11107:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -7338,7 +7338,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "11138:16:0",
                                                         "memberName": "MismatchedConfig",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10942,
+                                                        "referencedDeclaration": 10772,
                                                         "src": "11107:47:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -7547,10 +7547,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
+                                                            "referencedDeclaration": 10834,
                                                             "src": "11392:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
@@ -7562,7 +7562,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "memberLocation": "11423:19:0",
                                                         "memberName": "MismatchedExtraData",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10945,
+                                                        "referencedDeclaration": 10775,
                                                         "src": "11392:50:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -7603,7 +7603,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 313,
                                                 "src": "11748:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             }
@@ -7611,7 +7611,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             ],
@@ -7619,10 +7619,10 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "_checkPoolConfig",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 944,
+                                            "referencedDeclaration": 976,
                                             "src": "11731:16:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_view$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$__$",
                                                 "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) view"
                                             }
                                         },
@@ -7658,12 +7658,12 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "config",
                                             "nameLocation": "11911:6:0",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 719,
+                                            "scope": 751,
                                             "src": "11881:36:0",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                 "typeString": "struct IHyperdrive.PoolConfig"
                                             },
                                             "typeName": {
@@ -7677,13 +7677,13 @@ export const HyperdriveDeployerCoordinator = {
                                                         "11893:10:0"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 10470,
+                                                    "referencedDeclaration": 10300,
                                                     "src": "11881:22:0"
                                                 },
-                                                "referencedDeclaration": 10470,
+                                                "referencedDeclaration": 10300,
                                                 "src": "11881:22:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_storage_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig"
                                                 }
                                             },
@@ -7701,7 +7701,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 313,
                                                 "src": "11936:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             }
@@ -7709,7 +7709,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             ],
@@ -7717,10 +7717,10 @@ export const HyperdriveDeployerCoordinator = {
                                             "name": "_copyPoolConfig",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 1057,
+                                            "referencedDeclaration": 1089,
                                             "src": "11920:15:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10424_memory_ptr_$returns$_t_struct$_PoolConfig_$10470_memory_ptr_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_PoolDeployConfig_$10254_memory_ptr_$returns$_t_struct$_PoolConfig_$10300_memory_ptr_$",
                                                 "typeString": "function (struct IHyperdrive.PoolDeployConfig memory) pure returns (struct IHyperdrive.PoolConfig memory)"
                                             }
                                         },
@@ -7736,7 +7736,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "src": "11920:30:0",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                         }
                                     },
@@ -7759,7 +7759,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "referencedDeclaration": 514,
                                                 "src": "11960:6:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
@@ -7771,7 +7771,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "memberLocation": "11967:22:0",
                                             "memberName": "initialVaultSharePrice",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10441,
+                                            "referencedDeclaration": 10271,
                                             "src": "11960:29:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7936,18 +7936,18 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 577,
+                                            "id": 585,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 575,
+                                                "id": 583,
                                                 "name": "_targetIndex",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": 317,
-                                                "src": "12771:12:0",
+                                                "src": "12821:12:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -7957,21 +7957,21 @@ export const HyperdriveDeployerCoordinator = {
                                             "operator": "==",
                                             "rightExpression": {
                                                 "hexValue": "32",
-                                                "id": 576,
+                                                "id": 584,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "12787:1:0",
+                                                "src": "12837:1:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_2_by_1",
                                                     "typeString": "int_const 2"
                                                 },
                                                 "value": "2"
                                             },
-                                            "src": "12771:17:0",
+                                            "src": "12821:17:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -7983,18 +7983,18 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 621,
+                                                "id": 637,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 619,
+                                                    "id": 635,
                                                     "name": "_targetIndex",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
                                                     "referencedDeclaration": 317,
-                                                    "src": "13216:12:0",
+                                                    "src": "13316:12:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -8004,21 +8004,21 @@ export const HyperdriveDeployerCoordinator = {
                                                 "operator": "==",
                                                 "rightExpression": {
                                                     "hexValue": "33",
-                                                    "id": 620,
+                                                    "id": 636,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "kind": "number",
                                                     "lValueRequested": false,
                                                     "nodeType": "Literal",
-                                                    "src": "13232:1:0",
+                                                    "src": "13332:1:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_rational_3_by_1",
                                                         "typeString": "int_const 3"
                                                     },
                                                     "value": "3"
                                                 },
-                                                "src": "13216:17:0",
+                                                "src": "13316:17:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -8030,18 +8030,18 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 665,
+                                                    "id": 689,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 663,
+                                                        "id": 687,
                                                         "name": "_targetIndex",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": 317,
-                                                        "src": "13661:12:0",
+                                                        "src": "13811:12:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -8051,30 +8051,30 @@ export const HyperdriveDeployerCoordinator = {
                                                     "operator": "==",
                                                     "rightExpression": {
                                                         "hexValue": "34",
-                                                        "id": 664,
+                                                        "id": 688,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "13677:1:0",
+                                                        "src": "13827:1:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_4_by_1",
                                                             "typeString": "int_const 4"
                                                         },
                                                         "value": "4"
                                                     },
-                                                    "src": "13661:17:0",
+                                                    "src": "13811:17:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
                                                 "falseBody": {
-                                                    "id": 712,
+                                                    "id": 744,
                                                     "nodeType": "Block",
-                                                    "src": "14102:83:0",
+                                                    "src": "14302:83:0",
                                                     "statements": [
                                                         {
                                                             "errorCall": {
@@ -8082,33 +8082,33 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 707,
+                                                                        "id": 739,
                                                                         "name": "IHyperdriveDeployerCoordinator",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 11004,
-                                                                        "src": "14123:30:0",
+                                                                        "referencedDeclaration": 10834,
+                                                                        "src": "14323:30:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                             "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                         }
                                                                     },
-                                                                    "id": 709,
+                                                                    "id": 741,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "14154:18:0",
+                                                                    "memberLocation": "14354:18:0",
                                                                     "memberName": "InvalidTargetIndex",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 10939,
-                                                                    "src": "14123:49:0",
+                                                                    "referencedDeclaration": 10769,
+                                                                    "src": "14323:49:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                         "typeString": "function () pure"
                                                                     }
                                                                 },
-                                                                "id": 710,
+                                                                "id": 742,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8117,26 +8117,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "14123:51:0",
+                                                                "src": "14323:51:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_tuple$__$",
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 711,
+                                                            "id": 743,
                                                             "nodeType": "RevertStatement",
-                                                            "src": "14116:58:0"
+                                                            "src": "14316:58:0"
                                                         }
                                                     ]
                                                 },
-                                                "id": 713,
+                                                "id": 745,
                                                 "nodeType": "IfStatement",
-                                                "src": "13657:528:0",
+                                                "src": "13807:578:0",
                                                 "trueBody": {
-                                                    "id": 706,
+                                                    "id": 738,
                                                     "nodeType": "Block",
-                                                    "src": "13680:416:0",
+                                                    "src": "13830:466:0",
                                                     "statements": [
                                                         {
                                                             "condition": {
@@ -8144,7 +8144,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 },
-                                                                "id": 677,
+                                                                "id": 701,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8153,40 +8153,40 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "expression": {
                                                                         "baseExpression": {
                                                                             "baseExpression": {
-                                                                                "id": 666,
+                                                                                "id": 690,
                                                                                 "name": "_deployments",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
                                                                                 "referencedDeclaration": 68,
-                                                                                "src": "13698:12:0",
+                                                                                "src": "13848:12:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                                     "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                                 }
                                                                             },
-                                                                            "id": 669,
+                                                                            "id": 693,
                                                                             "indexExpression": {
                                                                                 "expression": {
-                                                                                    "id": 667,
+                                                                                    "id": 691,
                                                                                     "name": "msg",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
                                                                                     "referencedDeclaration": -15,
-                                                                                    "src": "13711:3:0",
+                                                                                    "src": "13861:3:0",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_magic_message",
                                                                                         "typeString": "msg"
                                                                                     }
                                                                                 },
-                                                                                "id": 668,
+                                                                                "id": 692,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
                                                                                 "lValueRequested": false,
-                                                                                "memberLocation": "13715:6:0",
+                                                                                "memberLocation": "13865:6:0",
                                                                                 "memberName": "sender",
                                                                                 "nodeType": "MemberAccess",
-                                                                                "src": "13711:10:0",
+                                                                                "src": "13861:10:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_address",
                                                                                     "typeString": "address"
@@ -8197,20 +8197,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "nodeType": "IndexAccess",
-                                                                            "src": "13698:24:0",
+                                                                            "src": "13848:24:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                                 "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                             }
                                                                         },
-                                                                        "id": 671,
+                                                                        "id": 695,
                                                                         "indexExpression": {
-                                                                            "id": 670,
+                                                                            "id": 694,
                                                                             "name": "_deploymentId",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 310,
-                                                                            "src": "13723:13:0",
+                                                                            "src": "13873:13:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_bytes32",
                                                                                 "typeString": "bytes32"
@@ -8221,22 +8221,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "IndexAccess",
-                                                                        "src": "13698:39:0",
+                                                                        "src": "13848:39:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                             "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                         }
                                                                     },
-                                                                    "id": 672,
+                                                                    "id": 696,
                                                                     "isConstant": false,
                                                                     "isLValue": true,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "13738:7:0",
+                                                                    "memberLocation": "13888:7:0",
                                                                     "memberName": "target4",
                                                                     "nodeType": "MemberAccess",
                                                                     "referencedDeclaration": 41,
-                                                                    "src": "13698:47:0",
+                                                                    "src": "13848:47:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
@@ -8248,14 +8248,14 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "30",
-                                                                            "id": 675,
+                                                                            "id": 699,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
                                                                             "kind": "number",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "13757:1:0",
+                                                                            "src": "13907:1:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                                 "typeString": "int_const 0"
@@ -8270,26 +8270,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                                 "typeString": "int_const 0"
                                                                             }
                                                                         ],
-                                                                        "id": 674,
+                                                                        "id": 698,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "13749:7:0",
+                                                                        "src": "13899:7:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_type$_t_address_$",
                                                                             "typeString": "type(address)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 673,
+                                                                            "id": 697,
                                                                             "name": "address",
                                                                             "nodeType": "ElementaryTypeName",
-                                                                            "src": "13749:7:0",
+                                                                            "src": "13899:7:0",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 676,
+                                                                    "id": 700,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -8298,26 +8298,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "13749:10:0",
+                                                                    "src": "13899:10:0",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
                                                                     }
                                                                 },
-                                                                "src": "13698:61:0",
+                                                                "src": "13848:61:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bool",
                                                                     "typeString": "bool"
                                                                 }
                                                             },
-                                                            "id": 684,
+                                                            "id": 708,
                                                             "nodeType": "IfStatement",
-                                                            "src": "13694:161:0",
+                                                            "src": "13844:161:0",
                                                             "trueBody": {
-                                                                "id": 683,
+                                                                "id": 707,
                                                                 "nodeType": "Block",
-                                                                "src": "13761:94:0",
+                                                                "src": "13911:94:0",
                                                                 "statements": [
                                                                     {
                                                                         "errorCall": {
@@ -8325,33 +8325,33 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "expression": {
                                                                                 "argumentTypes": [],
                                                                                 "expression": {
-                                                                                    "id": 678,
+                                                                                    "id": 702,
                                                                                     "name": "IHyperdriveDeployerCoordinator",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 11004,
-                                                                                    "src": "13786:30:0",
+                                                                                    "referencedDeclaration": 10834,
+                                                                                    "src": "13936:30:0",
                                                                                     "typeDescriptions": {
-                                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                                         "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                                     }
                                                                                 },
-                                                                                "id": 680,
+                                                                                "id": 704,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
                                                                                 "lValueRequested": false,
-                                                                                "memberLocation": "13817:21:0",
+                                                                                "memberLocation": "13967:21:0",
                                                                                 "memberName": "TargetAlreadyDeployed",
                                                                                 "nodeType": "MemberAccess",
-                                                                                "referencedDeclaration": 10951,
-                                                                                "src": "13786:52:0",
+                                                                                "referencedDeclaration": 10781,
+                                                                                "src": "13936:52:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                                     "typeString": "function () pure"
                                                                                 }
                                                                             },
-                                                                            "id": 681,
+                                                                            "id": 705,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -8360,34 +8360,34 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "nameLocations": [],
                                                                             "names": [],
                                                                             "nodeType": "FunctionCall",
-                                                                            "src": "13786:54:0",
+                                                                            "src": "13936:54:0",
                                                                             "tryCall": false,
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_tuple$__$",
                                                                                 "typeString": "tuple()"
                                                                             }
                                                                         },
-                                                                        "id": 682,
+                                                                        "id": 706,
                                                                         "nodeType": "RevertStatement",
-                                                                        "src": "13779:61:0"
+                                                                        "src": "13929:61:0"
                                                                     }
                                                                 ]
                                                             }
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 694,
+                                                                "id": 726,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
-                                                                    "id": 685,
+                                                                    "id": 709,
                                                                     "name": "target",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 322,
-                                                                    "src": "13868:6:0",
+                                                                    "src": "14018:6:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
@@ -8398,36 +8398,172 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "rightHandSide": {
                                                                     "arguments": [
                                                                         {
-                                                                            "id": 690,
+                                                                            "id": 714,
                                                                             "name": "config",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 514,
-                                                                            "src": "13944:6:0",
+                                                                            "src": "14094:6:0",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                                 "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                             }
                                                                         },
                                                                         {
-                                                                            "id": 691,
+                                                                            "id": 715,
                                                                             "name": "_extraData",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 315,
-                                                                            "src": "13968:10:0",
+                                                                            "src": "14118:10:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_bytes_memory_ptr",
                                                                                 "typeString": "bytes memory"
                                                                             }
                                                                         },
                                                                         {
-                                                                            "id": 692,
-                                                                            "name": "_salt",
-                                                                            "nodeType": "Identifier",
-                                                                            "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 319,
-                                                                            "src": "13996:5:0",
+                                                                            "arguments": [
+                                                                                {
+                                                                                    "arguments": [
+                                                                                        {
+                                                                                            "expression": {
+                                                                                                "id": 719,
+                                                                                                "name": "msg",
+                                                                                                "nodeType": "Identifier",
+                                                                                                "overloadedDeclarations": [],
+                                                                                                "referencedDeclaration": -15,
+                                                                                                "src": "14167:3:0",
+                                                                                                "typeDescriptions": {
+                                                                                                    "typeIdentifier": "t_magic_message",
+                                                                                                    "typeString": "msg"
+                                                                                                }
+                                                                                            },
+                                                                                            "id": 720,
+                                                                                            "isConstant": false,
+                                                                                            "isLValue": false,
+                                                                                            "isPure": false,
+                                                                                            "lValueRequested": false,
+                                                                                            "memberLocation": "14171:6:0",
+                                                                                            "memberName": "sender",
+                                                                                            "nodeType": "MemberAccess",
+                                                                                            "src": "14167:10:0",
+                                                                                            "typeDescriptions": {
+                                                                                                "typeIdentifier": "t_address",
+                                                                                                "typeString": "address"
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "id": 721,
+                                                                                            "name": "_deploymentId",
+                                                                                            "nodeType": "Identifier",
+                                                                                            "overloadedDeclarations": [],
+                                                                                            "referencedDeclaration": 310,
+                                                                                            "src": "14179:13:0",
+                                                                                            "typeDescriptions": {
+                                                                                                "typeIdentifier": "t_bytes32",
+                                                                                                "typeString": "bytes32"
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "id": 722,
+                                                                                            "name": "_salt",
+                                                                                            "nodeType": "Identifier",
+                                                                                            "overloadedDeclarations": [],
+                                                                                            "referencedDeclaration": 319,
+                                                                                            "src": "14194:5:0",
+                                                                                            "typeDescriptions": {
+                                                                                                "typeIdentifier": "t_bytes32",
+                                                                                                "typeString": "bytes32"
+                                                                                            }
+                                                                                        }
+                                                                                    ],
+                                                                                    "expression": {
+                                                                                        "argumentTypes": [
+                                                                                            {
+                                                                                                "typeIdentifier": "t_address",
+                                                                                                "typeString": "address"
+                                                                                            },
+                                                                                            {
+                                                                                                "typeIdentifier": "t_bytes32",
+                                                                                                "typeString": "bytes32"
+                                                                                            },
+                                                                                            {
+                                                                                                "typeIdentifier": "t_bytes32",
+                                                                                                "typeString": "bytes32"
+                                                                                            }
+                                                                                        ],
+                                                                                        "expression": {
+                                                                                            "id": 717,
+                                                                                            "name": "abi",
+                                                                                            "nodeType": "Identifier",
+                                                                                            "overloadedDeclarations": [],
+                                                                                            "referencedDeclaration": -1,
+                                                                                            "src": "14156:3:0",
+                                                                                            "typeDescriptions": {
+                                                                                                "typeIdentifier": "t_magic_abi",
+                                                                                                "typeString": "abi"
+                                                                                            }
+                                                                                        },
+                                                                                        "id": 718,
+                                                                                        "isConstant": false,
+                                                                                        "isLValue": false,
+                                                                                        "isPure": true,
+                                                                                        "lValueRequested": false,
+                                                                                        "memberLocation": "14160:6:0",
+                                                                                        "memberName": "encode",
+                                                                                        "nodeType": "MemberAccess",
+                                                                                        "src": "14156:10:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                                                                                            "typeString": "function () pure returns (bytes memory)"
+                                                                                        }
+                                                                                    },
+                                                                                    "id": 723,
+                                                                                    "isConstant": false,
+                                                                                    "isLValue": false,
+                                                                                    "isPure": false,
+                                                                                    "kind": "functionCall",
+                                                                                    "lValueRequested": false,
+                                                                                    "nameLocations": [],
+                                                                                    "names": [],
+                                                                                    "nodeType": "FunctionCall",
+                                                                                    "src": "14156:44:0",
+                                                                                    "tryCall": false,
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                        "typeString": "bytes memory"
+                                                                                    }
+                                                                                }
+                                                                            ],
+                                                                            "expression": {
+                                                                                "argumentTypes": [
+                                                                                    {
+                                                                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                        "typeString": "bytes memory"
+                                                                                    }
+                                                                                ],
+                                                                                "id": 716,
+                                                                                "name": "keccak256",
+                                                                                "nodeType": "Identifier",
+                                                                                "overloadedDeclarations": [],
+                                                                                "referencedDeclaration": -8,
+                                                                                "src": "14146:9:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                                                                                    "typeString": "function (bytes memory) pure returns (bytes32)"
+                                                                                }
+                                                                            },
+                                                                            "id": 724,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": false,
+                                                                            "kind": "functionCall",
+                                                                            "lValueRequested": false,
+                                                                            "nameLocations": [],
+                                                                            "names": [],
+                                                                            "nodeType": "FunctionCall",
+                                                                            "src": "14146:55:0",
+                                                                            "tryCall": false,
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_bytes32",
                                                                                 "typeString": "bytes32"
@@ -8437,7 +8573,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "expression": {
                                                                         "argumentTypes": [
                                                                             {
-                                                                                "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                                 "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                             },
                                                                             {
@@ -8452,12 +8588,12 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "expression": {
                                                                             "arguments": [
                                                                                 {
-                                                                                    "id": 687,
+                                                                                    "id": 711,
                                                                                     "name": "target4Deployer",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
                                                                                     "referencedDeclaration": 60,
-                                                                                    "src": "13903:15:0",
+                                                                                    "src": "14053:15:0",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_address",
                                                                                         "typeString": "address"
@@ -8471,18 +8607,18 @@ export const HyperdriveDeployerCoordinator = {
                                                                                         "typeString": "address"
                                                                                     }
                                                                                 ],
-                                                                                "id": 686,
+                                                                                "id": 710,
                                                                                 "name": "IHyperdriveTargetDeployer",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 11554,
-                                                                                "src": "13877:25:0",
+                                                                                "referencedDeclaration": 11386,
+                                                                                "src": "14027:25:0",
                                                                                 "typeDescriptions": {
-                                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11554_$",
+                                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11386_$",
                                                                                     "typeString": "type(contract IHyperdriveTargetDeployer)"
                                                                                 }
                                                                             },
-                                                                            "id": 688,
+                                                                            "id": 712,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -8491,29 +8627,29 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "nameLocations": [],
                                                                             "names": [],
                                                                             "nodeType": "FunctionCall",
-                                                                            "src": "13877:42:0",
+                                                                            "src": "14027:42:0",
                                                                             "tryCall": false,
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11554",
+                                                                                "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11386",
                                                                                 "typeString": "contract IHyperdriveTargetDeployer"
                                                                             }
                                                                         },
-                                                                        "id": 689,
+                                                                        "id": 713,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "13920:6:0",
+                                                                        "memberLocation": "14070:6:0",
                                                                         "memberName": "deploy",
                                                                         "nodeType": "MemberAccess",
-                                                                        "referencedDeclaration": 11553,
-                                                                        "src": "13877:49:0",
+                                                                        "referencedDeclaration": 11385,
+                                                                        "src": "14027:49:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
+                                                                            "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
                                                                             "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,bytes32) external returns (address)"
                                                                         }
                                                                     },
-                                                                    "id": 693,
+                                                                    "id": 725,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -8522,26 +8658,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "13877:138:0",
+                                                                    "src": "14027:188:0",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
                                                                     }
                                                                 },
-                                                                "src": "13868:147:0",
+                                                                "src": "14018:197:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
-                                                            "id": 695,
+                                                            "id": 727,
                                                             "nodeType": "ExpressionStatement",
-                                                            "src": "13868:147:0"
+                                                            "src": "14018:197:0"
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 704,
+                                                                "id": 736,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8550,40 +8686,40 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "expression": {
                                                                         "baseExpression": {
                                                                             "baseExpression": {
-                                                                                "id": 696,
+                                                                                "id": 728,
                                                                                 "name": "_deployments",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
                                                                                 "referencedDeclaration": 68,
-                                                                                "src": "14029:12:0",
+                                                                                "src": "14229:12:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                                     "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                                 }
                                                                             },
-                                                                            "id": 700,
+                                                                            "id": 732,
                                                                             "indexExpression": {
                                                                                 "expression": {
-                                                                                    "id": 697,
+                                                                                    "id": 729,
                                                                                     "name": "msg",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
                                                                                     "referencedDeclaration": -15,
-                                                                                    "src": "14042:3:0",
+                                                                                    "src": "14242:3:0",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_magic_message",
                                                                                         "typeString": "msg"
                                                                                     }
                                                                                 },
-                                                                                "id": 698,
+                                                                                "id": 730,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
                                                                                 "lValueRequested": false,
-                                                                                "memberLocation": "14046:6:0",
+                                                                                "memberLocation": "14246:6:0",
                                                                                 "memberName": "sender",
                                                                                 "nodeType": "MemberAccess",
-                                                                                "src": "14042:10:0",
+                                                                                "src": "14242:10:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_address",
                                                                                     "typeString": "address"
@@ -8594,20 +8730,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "nodeType": "IndexAccess",
-                                                                            "src": "14029:24:0",
+                                                                            "src": "14229:24:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                                 "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                             }
                                                                         },
-                                                                        "id": 701,
+                                                                        "id": 733,
                                                                         "indexExpression": {
-                                                                            "id": 699,
+                                                                            "id": 731,
                                                                             "name": "_deploymentId",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 310,
-                                                                            "src": "14054:13:0",
+                                                                            "src": "14254:13:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_bytes32",
                                                                                 "typeString": "bytes32"
@@ -8618,22 +8754,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "IndexAccess",
-                                                                        "src": "14029:39:0",
+                                                                        "src": "14229:39:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                             "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                         }
                                                                     },
-                                                                    "id": 702,
+                                                                    "id": 734,
                                                                     "isConstant": false,
                                                                     "isLValue": true,
                                                                     "isPure": false,
                                                                     "lValueRequested": true,
-                                                                    "memberLocation": "14069:7:0",
+                                                                    "memberLocation": "14269:7:0",
                                                                     "memberName": "target4",
                                                                     "nodeType": "MemberAccess",
                                                                     "referencedDeclaration": 41,
-                                                                    "src": "14029:47:0",
+                                                                    "src": "14229:47:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
@@ -8642,37 +8778,37 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nodeType": "Assignment",
                                                                 "operator": "=",
                                                                 "rightHandSide": {
-                                                                    "id": 703,
+                                                                    "id": 735,
                                                                     "name": "target",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 322,
-                                                                    "src": "14079:6:0",
+                                                                    "src": "14279:6:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
                                                                     }
                                                                 },
-                                                                "src": "14029:56:0",
+                                                                "src": "14229:56:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
-                                                            "id": 705,
+                                                            "id": 737,
                                                             "nodeType": "ExpressionStatement",
-                                                            "src": "14029:56:0"
+                                                            "src": "14229:56:0"
                                                         }
                                                     ]
                                                 }
                                             },
-                                            "id": 714,
+                                            "id": 746,
                                             "nodeType": "IfStatement",
-                                            "src": "13212:973:0",
+                                            "src": "13312:1073:0",
                                             "trueBody": {
-                                                "id": 662,
+                                                "id": 686,
                                                 "nodeType": "Block",
-                                                "src": "13235:416:0",
+                                                "src": "13335:466:0",
                                                 "statements": [
                                                     {
                                                         "condition": {
@@ -8680,7 +8816,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             },
-                                                            "id": 633,
+                                                            "id": 649,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -8689,40 +8825,40 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "baseExpression": {
                                                                         "baseExpression": {
-                                                                            "id": 622,
+                                                                            "id": 638,
                                                                             "name": "_deployments",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 68,
-                                                                            "src": "13253:12:0",
+                                                                            "src": "13353:12:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                                 "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                             }
                                                                         },
-                                                                        "id": 625,
+                                                                        "id": 641,
                                                                         "indexExpression": {
                                                                             "expression": {
-                                                                                "id": 623,
+                                                                                "id": 639,
                                                                                 "name": "msg",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
                                                                                 "referencedDeclaration": -15,
-                                                                                "src": "13266:3:0",
+                                                                                "src": "13366:3:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_magic_message",
                                                                                     "typeString": "msg"
                                                                                 }
                                                                             },
-                                                                            "id": 624,
+                                                                            "id": 640,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
-                                                                            "memberLocation": "13270:6:0",
+                                                                            "memberLocation": "13370:6:0",
                                                                             "memberName": "sender",
                                                                             "nodeType": "MemberAccess",
-                                                                            "src": "13266:10:0",
+                                                                            "src": "13366:10:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
                                                                                 "typeString": "address"
@@ -8733,20 +8869,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "IndexAccess",
-                                                                        "src": "13253:24:0",
+                                                                        "src": "13353:24:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                             "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                         }
                                                                     },
-                                                                    "id": 627,
+                                                                    "id": 643,
                                                                     "indexExpression": {
-                                                                        "id": 626,
+                                                                        "id": 642,
                                                                         "name": "_deploymentId",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 310,
-                                                                        "src": "13278:13:0",
+                                                                        "src": "13378:13:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes32",
                                                                             "typeString": "bytes32"
@@ -8757,22 +8893,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "IndexAccess",
-                                                                    "src": "13253:39:0",
+                                                                    "src": "13353:39:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                         "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                     }
                                                                 },
-                                                                "id": 628,
+                                                                "id": 644,
                                                                 "isConstant": false,
                                                                 "isLValue": true,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "13293:7:0",
+                                                                "memberLocation": "13393:7:0",
                                                                 "memberName": "target3",
                                                                 "nodeType": "MemberAccess",
                                                                 "referencedDeclaration": 38,
-                                                                "src": "13253:47:0",
+                                                                "src": "13353:47:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -8784,14 +8920,14 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "arguments": [
                                                                     {
                                                                         "hexValue": "30",
-                                                                        "id": 631,
+                                                                        "id": 647,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "kind": "number",
                                                                         "lValueRequested": false,
                                                                         "nodeType": "Literal",
-                                                                        "src": "13312:1:0",
+                                                                        "src": "13412:1:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_rational_0_by_1",
                                                                             "typeString": "int_const 0"
@@ -8806,26 +8942,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "typeString": "int_const 0"
                                                                         }
                                                                     ],
-                                                                    "id": 630,
+                                                                    "id": 646,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                                    "src": "13304:7:0",
+                                                                    "src": "13404:7:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_type$_t_address_$",
                                                                         "typeString": "type(address)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 629,
+                                                                        "id": 645,
                                                                         "name": "address",
                                                                         "nodeType": "ElementaryTypeName",
-                                                                        "src": "13304:7:0",
+                                                                        "src": "13404:7:0",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 632,
+                                                                "id": 648,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -8834,26 +8970,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "13304:10:0",
+                                                                "src": "13404:10:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
-                                                            "src": "13253:61:0",
+                                                            "src": "13353:61:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
                                                             }
                                                         },
-                                                        "id": 640,
+                                                        "id": 656,
                                                         "nodeType": "IfStatement",
-                                                        "src": "13249:161:0",
+                                                        "src": "13349:161:0",
                                                         "trueBody": {
-                                                            "id": 639,
+                                                            "id": 655,
                                                             "nodeType": "Block",
-                                                            "src": "13316:94:0",
+                                                            "src": "13416:94:0",
                                                             "statements": [
                                                                 {
                                                                     "errorCall": {
@@ -8861,33 +8997,33 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "expression": {
                                                                             "argumentTypes": [],
                                                                             "expression": {
-                                                                                "id": 634,
+                                                                                "id": 650,
                                                                                 "name": "IHyperdriveDeployerCoordinator",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 11004,
-                                                                                "src": "13341:30:0",
+                                                                                "referencedDeclaration": 10834,
+                                                                                "src": "13441:30:0",
                                                                                 "typeDescriptions": {
-                                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                                     "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                                 }
                                                                             },
-                                                                            "id": 636,
+                                                                            "id": 652,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
-                                                                            "memberLocation": "13372:21:0",
+                                                                            "memberLocation": "13472:21:0",
                                                                             "memberName": "TargetAlreadyDeployed",
                                                                             "nodeType": "MemberAccess",
-                                                                            "referencedDeclaration": 10951,
-                                                                            "src": "13341:52:0",
+                                                                            "referencedDeclaration": 10781,
+                                                                            "src": "13441:52:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                                 "typeString": "function () pure"
                                                                             }
                                                                         },
-                                                                        "id": 637,
+                                                                        "id": 653,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -8896,34 +9032,34 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "nameLocations": [],
                                                                         "names": [],
                                                                         "nodeType": "FunctionCall",
-                                                                        "src": "13341:54:0",
+                                                                        "src": "13441:54:0",
                                                                         "tryCall": false,
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_tuple$__$",
                                                                             "typeString": "tuple()"
                                                                         }
                                                                     },
-                                                                    "id": 638,
+                                                                    "id": 654,
                                                                     "nodeType": "RevertStatement",
-                                                                    "src": "13334:61:0"
+                                                                    "src": "13434:61:0"
                                                                 }
                                                             ]
                                                         }
                                                     },
                                                     {
                                                         "expression": {
-                                                            "id": 650,
+                                                            "id": 674,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftHandSide": {
-                                                                "id": 641,
+                                                                "id": 657,
                                                                 "name": "target",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": 322,
-                                                                "src": "13423:6:0",
+                                                                "src": "13523:6:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -8934,36 +9070,172 @@ export const HyperdriveDeployerCoordinator = {
                                                             "rightHandSide": {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 646,
+                                                                        "id": 662,
                                                                         "name": "config",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 514,
-                                                                        "src": "13499:6:0",
+                                                                        "src": "13599:6:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 647,
+                                                                        "id": 663,
                                                                         "name": "_extraData",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 315,
-                                                                        "src": "13523:10:0",
+                                                                        "src": "13623:10:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 648,
-                                                                        "name": "_salt",
-                                                                        "nodeType": "Identifier",
-                                                                        "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 319,
-                                                                        "src": "13551:5:0",
+                                                                        "arguments": [
+                                                                            {
+                                                                                "arguments": [
+                                                                                    {
+                                                                                        "expression": {
+                                                                                            "id": 667,
+                                                                                            "name": "msg",
+                                                                                            "nodeType": "Identifier",
+                                                                                            "overloadedDeclarations": [],
+                                                                                            "referencedDeclaration": -15,
+                                                                                            "src": "13672:3:0",
+                                                                                            "typeDescriptions": {
+                                                                                                "typeIdentifier": "t_magic_message",
+                                                                                                "typeString": "msg"
+                                                                                            }
+                                                                                        },
+                                                                                        "id": 668,
+                                                                                        "isConstant": false,
+                                                                                        "isLValue": false,
+                                                                                        "isPure": false,
+                                                                                        "lValueRequested": false,
+                                                                                        "memberLocation": "13676:6:0",
+                                                                                        "memberName": "sender",
+                                                                                        "nodeType": "MemberAccess",
+                                                                                        "src": "13672:10:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_address",
+                                                                                            "typeString": "address"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "id": 669,
+                                                                                        "name": "_deploymentId",
+                                                                                        "nodeType": "Identifier",
+                                                                                        "overloadedDeclarations": [],
+                                                                                        "referencedDeclaration": 310,
+                                                                                        "src": "13684:13:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_bytes32",
+                                                                                            "typeString": "bytes32"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "id": 670,
+                                                                                        "name": "_salt",
+                                                                                        "nodeType": "Identifier",
+                                                                                        "overloadedDeclarations": [],
+                                                                                        "referencedDeclaration": 319,
+                                                                                        "src": "13699:5:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_bytes32",
+                                                                                            "typeString": "bytes32"
+                                                                                        }
+                                                                                    }
+                                                                                ],
+                                                                                "expression": {
+                                                                                    "argumentTypes": [
+                                                                                        {
+                                                                                            "typeIdentifier": "t_address",
+                                                                                            "typeString": "address"
+                                                                                        },
+                                                                                        {
+                                                                                            "typeIdentifier": "t_bytes32",
+                                                                                            "typeString": "bytes32"
+                                                                                        },
+                                                                                        {
+                                                                                            "typeIdentifier": "t_bytes32",
+                                                                                            "typeString": "bytes32"
+                                                                                        }
+                                                                                    ],
+                                                                                    "expression": {
+                                                                                        "id": 665,
+                                                                                        "name": "abi",
+                                                                                        "nodeType": "Identifier",
+                                                                                        "overloadedDeclarations": [],
+                                                                                        "referencedDeclaration": -1,
+                                                                                        "src": "13661:3:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_magic_abi",
+                                                                                            "typeString": "abi"
+                                                                                        }
+                                                                                    },
+                                                                                    "id": 666,
+                                                                                    "isConstant": false,
+                                                                                    "isLValue": false,
+                                                                                    "isPure": true,
+                                                                                    "lValueRequested": false,
+                                                                                    "memberLocation": "13665:6:0",
+                                                                                    "memberName": "encode",
+                                                                                    "nodeType": "MemberAccess",
+                                                                                    "src": "13661:10:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                                                                                        "typeString": "function () pure returns (bytes memory)"
+                                                                                    }
+                                                                                },
+                                                                                "id": 671,
+                                                                                "isConstant": false,
+                                                                                "isLValue": false,
+                                                                                "isPure": false,
+                                                                                "kind": "functionCall",
+                                                                                "lValueRequested": false,
+                                                                                "nameLocations": [],
+                                                                                "names": [],
+                                                                                "nodeType": "FunctionCall",
+                                                                                "src": "13661:44:0",
+                                                                                "tryCall": false,
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                    "typeString": "bytes memory"
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "expression": {
+                                                                            "argumentTypes": [
+                                                                                {
+                                                                                    "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                    "typeString": "bytes memory"
+                                                                                }
+                                                                            ],
+                                                                            "id": 664,
+                                                                            "name": "keccak256",
+                                                                            "nodeType": "Identifier",
+                                                                            "overloadedDeclarations": [],
+                                                                            "referencedDeclaration": -8,
+                                                                            "src": "13651:9:0",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                                                                                "typeString": "function (bytes memory) pure returns (bytes32)"
+                                                                            }
+                                                                        },
+                                                                        "id": 672,
+                                                                        "isConstant": false,
+                                                                        "isLValue": false,
+                                                                        "isPure": false,
+                                                                        "kind": "functionCall",
+                                                                        "lValueRequested": false,
+                                                                        "nameLocations": [],
+                                                                        "names": [],
+                                                                        "nodeType": "FunctionCall",
+                                                                        "src": "13651:55:0",
+                                                                        "tryCall": false,
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes32",
                                                                             "typeString": "bytes32"
@@ -8973,7 +9245,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "argumentTypes": [
                                                                         {
-                                                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                         },
                                                                         {
@@ -8988,12 +9260,12 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "expression": {
                                                                         "arguments": [
                                                                             {
-                                                                                "id": 643,
+                                                                                "id": 659,
                                                                                 "name": "target3Deployer",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
                                                                                 "referencedDeclaration": 57,
-                                                                                "src": "13458:15:0",
+                                                                                "src": "13558:15:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_address",
                                                                                     "typeString": "address"
@@ -9007,18 +9279,18 @@ export const HyperdriveDeployerCoordinator = {
                                                                                     "typeString": "address"
                                                                                 }
                                                                             ],
-                                                                            "id": 642,
+                                                                            "id": 658,
                                                                             "name": "IHyperdriveTargetDeployer",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 11554,
-                                                                            "src": "13432:25:0",
+                                                                            "referencedDeclaration": 11386,
+                                                                            "src": "13532:25:0",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11554_$",
+                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11386_$",
                                                                                 "typeString": "type(contract IHyperdriveTargetDeployer)"
                                                                             }
                                                                         },
-                                                                        "id": 644,
+                                                                        "id": 660,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -9027,29 +9299,29 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "nameLocations": [],
                                                                         "names": [],
                                                                         "nodeType": "FunctionCall",
-                                                                        "src": "13432:42:0",
+                                                                        "src": "13532:42:0",
                                                                         "tryCall": false,
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11554",
+                                                                            "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11386",
                                                                             "typeString": "contract IHyperdriveTargetDeployer"
                                                                         }
                                                                     },
-                                                                    "id": 645,
+                                                                    "id": 661,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "13475:6:0",
+                                                                    "memberLocation": "13575:6:0",
                                                                     "memberName": "deploy",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 11553,
-                                                                    "src": "13432:49:0",
+                                                                    "referencedDeclaration": 11385,
+                                                                    "src": "13532:49:0",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
+                                                                        "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
                                                                         "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,bytes32) external returns (address)"
                                                                     }
                                                                 },
-                                                                "id": 649,
+                                                                "id": 673,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -9058,26 +9330,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "13432:138:0",
+                                                                "src": "13532:188:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
-                                                            "src": "13423:147:0",
+                                                            "src": "13523:197:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             }
                                                         },
-                                                        "id": 651,
+                                                        "id": 675,
                                                         "nodeType": "ExpressionStatement",
-                                                        "src": "13423:147:0"
+                                                        "src": "13523:197:0"
                                                     },
                                                     {
                                                         "expression": {
-                                                            "id": 660,
+                                                            "id": 684,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -9086,40 +9358,40 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "baseExpression": {
                                                                         "baseExpression": {
-                                                                            "id": 652,
+                                                                            "id": 676,
                                                                             "name": "_deployments",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 68,
-                                                                            "src": "13584:12:0",
+                                                                            "src": "13734:12:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                                 "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                             }
                                                                         },
-                                                                        "id": 656,
+                                                                        "id": 680,
                                                                         "indexExpression": {
                                                                             "expression": {
-                                                                                "id": 653,
+                                                                                "id": 677,
                                                                                 "name": "msg",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
                                                                                 "referencedDeclaration": -15,
-                                                                                "src": "13597:3:0",
+                                                                                "src": "13747:3:0",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_magic_message",
                                                                                     "typeString": "msg"
                                                                                 }
                                                                             },
-                                                                            "id": 654,
+                                                                            "id": 678,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
-                                                                            "memberLocation": "13601:6:0",
+                                                                            "memberLocation": "13751:6:0",
                                                                             "memberName": "sender",
                                                                             "nodeType": "MemberAccess",
-                                                                            "src": "13597:10:0",
+                                                                            "src": "13747:10:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
                                                                                 "typeString": "address"
@@ -9130,20 +9402,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "IndexAccess",
-                                                                        "src": "13584:24:0",
+                                                                        "src": "13734:24:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                             "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                         }
                                                                     },
-                                                                    "id": 657,
+                                                                    "id": 681,
                                                                     "indexExpression": {
-                                                                        "id": 655,
+                                                                        "id": 679,
                                                                         "name": "_deploymentId",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 310,
-                                                                        "src": "13609:13:0",
+                                                                        "src": "13759:13:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes32",
                                                                             "typeString": "bytes32"
@@ -9154,22 +9426,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "IndexAccess",
-                                                                    "src": "13584:39:0",
+                                                                    "src": "13734:39:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                         "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                     }
                                                                 },
-                                                                "id": 658,
+                                                                "id": 682,
                                                                 "isConstant": false,
                                                                 "isLValue": true,
                                                                 "isPure": false,
                                                                 "lValueRequested": true,
-                                                                "memberLocation": "13624:7:0",
+                                                                "memberLocation": "13774:7:0",
                                                                 "memberName": "target3",
                                                                 "nodeType": "MemberAccess",
                                                                 "referencedDeclaration": 38,
-                                                                "src": "13584:47:0",
+                                                                "src": "13734:47:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -9178,37 +9450,37 @@ export const HyperdriveDeployerCoordinator = {
                                                             "nodeType": "Assignment",
                                                             "operator": "=",
                                                             "rightHandSide": {
-                                                                "id": 659,
+                                                                "id": 683,
                                                                 "name": "target",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": 322,
-                                                                "src": "13634:6:0",
+                                                                "src": "13784:6:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
-                                                            "src": "13584:56:0",
+                                                            "src": "13734:56:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             }
                                                         },
-                                                        "id": 661,
+                                                        "id": 685,
                                                         "nodeType": "ExpressionStatement",
-                                                        "src": "13584:56:0"
+                                                        "src": "13734:56:0"
                                                     }
                                                 ]
                                             }
                                         },
-                                        "id": 715,
+                                        "id": 747,
                                         "nodeType": "IfStatement",
-                                        "src": "12767:1418:0",
+                                        "src": "12817:1568:0",
                                         "trueBody": {
-                                            "id": 618,
+                                            "id": 634,
                                             "nodeType": "Block",
-                                            "src": "12790:416:0",
+                                            "src": "12840:466:0",
                                             "statements": [
                                                 {
                                                     "condition": {
@@ -9216,7 +9488,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         },
-                                                        "id": 589,
+                                                        "id": 597,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -9225,40 +9497,40 @@ export const HyperdriveDeployerCoordinator = {
                                                             "expression": {
                                                                 "baseExpression": {
                                                                     "baseExpression": {
-                                                                        "id": 578,
+                                                                        "id": 586,
                                                                         "name": "_deployments",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 68,
-                                                                        "src": "12808:12:0",
+                                                                        "src": "12858:12:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                             "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                         }
                                                                     },
-                                                                    "id": 581,
+                                                                    "id": 589,
                                                                     "indexExpression": {
                                                                         "expression": {
-                                                                            "id": 579,
+                                                                            "id": 587,
                                                                             "name": "msg",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": -15,
-                                                                            "src": "12821:3:0",
+                                                                            "src": "12871:3:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_magic_message",
                                                                                 "typeString": "msg"
                                                                             }
                                                                         },
-                                                                        "id": 580,
+                                                                        "id": 588,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "12825:6:0",
+                                                                        "memberLocation": "12875:6:0",
                                                                         "memberName": "sender",
                                                                         "nodeType": "MemberAccess",
-                                                                        "src": "12821:10:0",
+                                                                        "src": "12871:10:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
                                                                             "typeString": "address"
@@ -9269,20 +9541,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "IndexAccess",
-                                                                    "src": "12808:24:0",
+                                                                    "src": "12858:24:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                         "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                     }
                                                                 },
-                                                                "id": 583,
+                                                                "id": 591,
                                                                 "indexExpression": {
-                                                                    "id": 582,
+                                                                    "id": 590,
                                                                     "name": "_deploymentId",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 310,
-                                                                    "src": "12833:13:0",
+                                                                    "src": "12883:13:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes32",
                                                                         "typeString": "bytes32"
@@ -9293,22 +9565,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "IndexAccess",
-                                                                "src": "12808:39:0",
+                                                                "src": "12858:39:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                     "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                 }
                                                             },
-                                                            "id": 584,
+                                                            "id": 592,
                                                             "isConstant": false,
                                                             "isLValue": true,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "12848:7:0",
+                                                            "memberLocation": "12898:7:0",
                                                             "memberName": "target2",
                                                             "nodeType": "MemberAccess",
                                                             "referencedDeclaration": 35,
-                                                            "src": "12808:47:0",
+                                                            "src": "12858:47:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -9320,14 +9592,14 @@ export const HyperdriveDeployerCoordinator = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "30",
-                                                                    "id": 587,
+                                                                    "id": 595,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "12867:1:0",
+                                                                    "src": "12917:1:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_0_by_1",
                                                                         "typeString": "int_const 0"
@@ -9342,26 +9614,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "typeString": "int_const 0"
                                                                     }
                                                                 ],
-                                                                "id": 586,
+                                                                "id": 594,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                                "src": "12859:7:0",
+                                                                "src": "12909:7:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_type$_t_address_$",
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 585,
+                                                                    "id": 593,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
-                                                                    "src": "12859:7:0",
+                                                                    "src": "12909:7:0",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 588,
+                                                            "id": 596,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -9370,26 +9642,26 @@ export const HyperdriveDeployerCoordinator = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "12859:10:0",
+                                                            "src": "12909:10:0",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             }
                                                         },
-                                                        "src": "12808:61:0",
+                                                        "src": "12858:61:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
                                                         }
                                                     },
-                                                    "id": 596,
+                                                    "id": 604,
                                                     "nodeType": "IfStatement",
-                                                    "src": "12804:161:0",
+                                                    "src": "12854:161:0",
                                                     "trueBody": {
-                                                        "id": 595,
+                                                        "id": 603,
                                                         "nodeType": "Block",
-                                                        "src": "12871:94:0",
+                                                        "src": "12921:94:0",
                                                         "statements": [
                                                             {
                                                                 "errorCall": {
@@ -9397,33 +9669,33 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "expression": {
                                                                         "argumentTypes": [],
                                                                         "expression": {
-                                                                            "id": 590,
+                                                                            "id": 598,
                                                                             "name": "IHyperdriveDeployerCoordinator",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 11004,
-                                                                            "src": "12896:30:0",
+                                                                            "referencedDeclaration": 10834,
+                                                                            "src": "12946:30:0",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                             }
                                                                         },
-                                                                        "id": 592,
+                                                                        "id": 600,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "12927:21:0",
+                                                                        "memberLocation": "12977:21:0",
                                                                         "memberName": "TargetAlreadyDeployed",
                                                                         "nodeType": "MemberAccess",
-                                                                        "referencedDeclaration": 10951,
-                                                                        "src": "12896:52:0",
+                                                                        "referencedDeclaration": 10781,
+                                                                        "src": "12946:52:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                             "typeString": "function () pure"
                                                                         }
                                                                     },
-                                                                    "id": 593,
+                                                                    "id": 601,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -9432,34 +9704,34 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "12896:54:0",
+                                                                    "src": "12946:54:0",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_tuple$__$",
                                                                         "typeString": "tuple()"
                                                                     }
                                                                 },
-                                                                "id": 594,
+                                                                "id": 602,
                                                                 "nodeType": "RevertStatement",
-                                                                "src": "12889:61:0"
+                                                                "src": "12939:61:0"
                                                             }
                                                         ]
                                                     }
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 606,
+                                                        "id": 622,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftHandSide": {
-                                                            "id": 597,
+                                                            "id": 605,
                                                             "name": "target",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": 322,
-                                                            "src": "12978:6:0",
+                                                            "src": "13028:6:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -9470,36 +9742,172 @@ export const HyperdriveDeployerCoordinator = {
                                                         "rightHandSide": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 602,
+                                                                    "id": 610,
                                                                     "name": "config",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 514,
-                                                                    "src": "13054:6:0",
+                                                                    "src": "13104:6:0",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 603,
+                                                                    "id": 611,
                                                                     "name": "_extraData",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 315,
-                                                                    "src": "13078:10:0",
+                                                                    "src": "13128:10:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                                         "typeString": "bytes memory"
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 604,
-                                                                    "name": "_salt",
-                                                                    "nodeType": "Identifier",
-                                                                    "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 319,
-                                                                    "src": "13106:5:0",
+                                                                    "arguments": [
+                                                                        {
+                                                                            "arguments": [
+                                                                                {
+                                                                                    "expression": {
+                                                                                        "id": 615,
+                                                                                        "name": "msg",
+                                                                                        "nodeType": "Identifier",
+                                                                                        "overloadedDeclarations": [],
+                                                                                        "referencedDeclaration": -15,
+                                                                                        "src": "13177:3:0",
+                                                                                        "typeDescriptions": {
+                                                                                            "typeIdentifier": "t_magic_message",
+                                                                                            "typeString": "msg"
+                                                                                        }
+                                                                                    },
+                                                                                    "id": 616,
+                                                                                    "isConstant": false,
+                                                                                    "isLValue": false,
+                                                                                    "isPure": false,
+                                                                                    "lValueRequested": false,
+                                                                                    "memberLocation": "13181:6:0",
+                                                                                    "memberName": "sender",
+                                                                                    "nodeType": "MemberAccess",
+                                                                                    "src": "13177:10:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_address",
+                                                                                        "typeString": "address"
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "id": 617,
+                                                                                    "name": "_deploymentId",
+                                                                                    "nodeType": "Identifier",
+                                                                                    "overloadedDeclarations": [],
+                                                                                    "referencedDeclaration": 310,
+                                                                                    "src": "13189:13:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_bytes32",
+                                                                                        "typeString": "bytes32"
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "id": 618,
+                                                                                    "name": "_salt",
+                                                                                    "nodeType": "Identifier",
+                                                                                    "overloadedDeclarations": [],
+                                                                                    "referencedDeclaration": 319,
+                                                                                    "src": "13204:5:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_bytes32",
+                                                                                        "typeString": "bytes32"
+                                                                                    }
+                                                                                }
+                                                                            ],
+                                                                            "expression": {
+                                                                                "argumentTypes": [
+                                                                                    {
+                                                                                        "typeIdentifier": "t_address",
+                                                                                        "typeString": "address"
+                                                                                    },
+                                                                                    {
+                                                                                        "typeIdentifier": "t_bytes32",
+                                                                                        "typeString": "bytes32"
+                                                                                    },
+                                                                                    {
+                                                                                        "typeIdentifier": "t_bytes32",
+                                                                                        "typeString": "bytes32"
+                                                                                    }
+                                                                                ],
+                                                                                "expression": {
+                                                                                    "id": 613,
+                                                                                    "name": "abi",
+                                                                                    "nodeType": "Identifier",
+                                                                                    "overloadedDeclarations": [],
+                                                                                    "referencedDeclaration": -1,
+                                                                                    "src": "13166:3:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_magic_abi",
+                                                                                        "typeString": "abi"
+                                                                                    }
+                                                                                },
+                                                                                "id": 614,
+                                                                                "isConstant": false,
+                                                                                "isLValue": false,
+                                                                                "isPure": true,
+                                                                                "lValueRequested": false,
+                                                                                "memberLocation": "13170:6:0",
+                                                                                "memberName": "encode",
+                                                                                "nodeType": "MemberAccess",
+                                                                                "src": "13166:10:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                                                                                    "typeString": "function () pure returns (bytes memory)"
+                                                                                }
+                                                                            },
+                                                                            "id": 619,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": false,
+                                                                            "kind": "functionCall",
+                                                                            "lValueRequested": false,
+                                                                            "nameLocations": [],
+                                                                            "names": [],
+                                                                            "nodeType": "FunctionCall",
+                                                                            "src": "13166:44:0",
+                                                                            "tryCall": false,
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                "typeString": "bytes memory"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "expression": {
+                                                                        "argumentTypes": [
+                                                                            {
+                                                                                "typeIdentifier": "t_bytes_memory_ptr",
+                                                                                "typeString": "bytes memory"
+                                                                            }
+                                                                        ],
+                                                                        "id": 612,
+                                                                        "name": "keccak256",
+                                                                        "nodeType": "Identifier",
+                                                                        "overloadedDeclarations": [],
+                                                                        "referencedDeclaration": -8,
+                                                                        "src": "13156:9:0",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                                                                            "typeString": "function (bytes memory) pure returns (bytes32)"
+                                                                        }
+                                                                    },
+                                                                    "id": 620,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": false,
+                                                                    "kind": "functionCall",
+                                                                    "lValueRequested": false,
+                                                                    "nameLocations": [],
+                                                                    "names": [],
+                                                                    "nodeType": "FunctionCall",
+                                                                    "src": "13156:55:0",
+                                                                    "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes32",
                                                                         "typeString": "bytes32"
@@ -9509,7 +9917,7 @@ export const HyperdriveDeployerCoordinator = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                     },
                                                                     {
@@ -9524,12 +9932,12 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "arguments": [
                                                                         {
-                                                                            "id": 599,
+                                                                            "id": 607,
                                                                             "name": "target2Deployer",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": 54,
-                                                                            "src": "13013:15:0",
+                                                                            "src": "13063:15:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
                                                                                 "typeString": "address"
@@ -9543,18 +9951,18 @@ export const HyperdriveDeployerCoordinator = {
                                                                                 "typeString": "address"
                                                                             }
                                                                         ],
-                                                                        "id": 598,
+                                                                        "id": 606,
                                                                         "name": "IHyperdriveTargetDeployer",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 11554,
-                                                                        "src": "12987:25:0",
+                                                                        "referencedDeclaration": 11386,
+                                                                        "src": "13037:25:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11554_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11386_$",
                                                                             "typeString": "type(contract IHyperdriveTargetDeployer)"
                                                                         }
                                                                     },
-                                                                    "id": 600,
+                                                                    "id": 608,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -9563,29 +9971,29 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "12987:42:0",
+                                                                    "src": "13037:42:0",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11554",
+                                                                        "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11386",
                                                                         "typeString": "contract IHyperdriveTargetDeployer"
                                                                     }
                                                                 },
-                                                                "id": 601,
+                                                                "id": 609,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "13030:6:0",
+                                                                "memberLocation": "13080:6:0",
                                                                 "memberName": "deploy",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 11553,
-                                                                "src": "12987:49:0",
+                                                                "referencedDeclaration": 11385,
+                                                                "src": "13037:49:0",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
+                                                                    "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
                                                                     "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,bytes32) external returns (address)"
                                                                 }
                                                             },
-                                                            "id": 605,
+                                                            "id": 621,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -9594,26 +10002,26 @@ export const HyperdriveDeployerCoordinator = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "12987:138:0",
+                                                            "src": "13037:188:0",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             }
                                                         },
-                                                        "src": "12978:147:0",
+                                                        "src": "13028:197:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         }
                                                     },
-                                                    "id": 607,
+                                                    "id": 623,
                                                     "nodeType": "ExpressionStatement",
-                                                    "src": "12978:147:0"
+                                                    "src": "13028:197:0"
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 616,
+                                                        "id": 632,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -9622,40 +10030,40 @@ export const HyperdriveDeployerCoordinator = {
                                                             "expression": {
                                                                 "baseExpression": {
                                                                     "baseExpression": {
-                                                                        "id": 608,
+                                                                        "id": 624,
                                                                         "name": "_deployments",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": 68,
-                                                                        "src": "13139:12:0",
+                                                                        "src": "13239:12:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                             "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                         }
                                                                     },
-                                                                    "id": 612,
+                                                                    "id": 628,
                                                                     "indexExpression": {
                                                                         "expression": {
-                                                                            "id": 609,
+                                                                            "id": 625,
                                                                             "name": "msg",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": -15,
-                                                                            "src": "13152:3:0",
+                                                                            "src": "13252:3:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_magic_message",
                                                                                 "typeString": "msg"
                                                                             }
                                                                         },
-                                                                        "id": 610,
+                                                                        "id": 626,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "13156:6:0",
+                                                                        "memberLocation": "13256:6:0",
                                                                         "memberName": "sender",
                                                                         "nodeType": "MemberAccess",
-                                                                        "src": "13152:10:0",
+                                                                        "src": "13252:10:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
                                                                             "typeString": "address"
@@ -9666,20 +10074,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "IndexAccess",
-                                                                    "src": "13139:24:0",
+                                                                    "src": "13239:24:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                         "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                     }
                                                                 },
-                                                                "id": 613,
+                                                                "id": 629,
                                                                 "indexExpression": {
-                                                                    "id": 611,
+                                                                    "id": 627,
                                                                     "name": "_deploymentId",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 310,
-                                                                    "src": "13164:13:0",
+                                                                    "src": "13264:13:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes32",
                                                                         "typeString": "bytes32"
@@ -9690,22 +10098,22 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "IndexAccess",
-                                                                "src": "13139:39:0",
+                                                                "src": "13239:39:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                     "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                                 }
                                                             },
-                                                            "id": 614,
+                                                            "id": 630,
                                                             "isConstant": false,
                                                             "isLValue": true,
                                                             "isPure": false,
                                                             "lValueRequested": true,
-                                                            "memberLocation": "13179:7:0",
+                                                            "memberLocation": "13279:7:0",
                                                             "memberName": "target2",
                                                             "nodeType": "MemberAccess",
                                                             "referencedDeclaration": 35,
-                                                            "src": "13139:47:0",
+                                                            "src": "13239:47:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -9714,37 +10122,37 @@ export const HyperdriveDeployerCoordinator = {
                                                         "nodeType": "Assignment",
                                                         "operator": "=",
                                                         "rightHandSide": {
-                                                            "id": 615,
+                                                            "id": 631,
                                                             "name": "target",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": 322,
-                                                            "src": "13189:6:0",
+                                                            "src": "13289:6:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
                                                             }
                                                         },
-                                                        "src": "13139:56:0",
+                                                        "src": "13239:56:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         }
                                                     },
-                                                    "id": 617,
+                                                    "id": 633,
                                                     "nodeType": "ExpressionStatement",
-                                                    "src": "13139:56:0"
+                                                    "src": "13239:56:0"
                                                 }
                                             ]
                                         }
                                     },
-                                    "id": 716,
+                                    "id": 748,
                                     "nodeType": "IfStatement",
-                                    "src": "12322:1863:0",
+                                    "src": "12322:2063:0",
                                     "trueBody": {
-                                        "id": 574,
+                                        "id": 582,
                                         "nodeType": "Block",
-                                        "src": "12345:416:0",
+                                        "src": "12345:466:0",
                                         "statements": [
                                             {
                                                 "condition": {
@@ -9937,10 +10345,10 @@ export const HyperdriveDeployerCoordinator = {
                                                                         "name": "IHyperdriveDeployerCoordinator",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 11004,
+                                                                        "referencedDeclaration": 10834,
                                                                         "src": "12451:30:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                             "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                         }
                                                                     },
@@ -9952,7 +10360,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "memberLocation": "12482:21:0",
                                                                     "memberName": "TargetAlreadyDeployed",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 10951,
+                                                                    "referencedDeclaration": 10781,
                                                                     "src": "12451:52:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
@@ -9984,7 +10392,7 @@ export const HyperdriveDeployerCoordinator = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 562,
+                                                    "id": 570,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10013,7 +10421,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "referencedDeclaration": 514,
                                                                 "src": "12609:6:0",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                 }
                                                             },
@@ -10030,12 +10438,148 @@ export const HyperdriveDeployerCoordinator = {
                                                                 }
                                                             },
                                                             {
-                                                                "id": 560,
-                                                                "name": "_salt",
-                                                                "nodeType": "Identifier",
-                                                                "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 319,
-                                                                "src": "12661:5:0",
+                                                                "arguments": [
+                                                                    {
+                                                                        "arguments": [
+                                                                            {
+                                                                                "expression": {
+                                                                                    "id": 563,
+                                                                                    "name": "msg",
+                                                                                    "nodeType": "Identifier",
+                                                                                    "overloadedDeclarations": [],
+                                                                                    "referencedDeclaration": -15,
+                                                                                    "src": "12682:3:0",
+                                                                                    "typeDescriptions": {
+                                                                                        "typeIdentifier": "t_magic_message",
+                                                                                        "typeString": "msg"
+                                                                                    }
+                                                                                },
+                                                                                "id": 564,
+                                                                                "isConstant": false,
+                                                                                "isLValue": false,
+                                                                                "isPure": false,
+                                                                                "lValueRequested": false,
+                                                                                "memberLocation": "12686:6:0",
+                                                                                "memberName": "sender",
+                                                                                "nodeType": "MemberAccess",
+                                                                                "src": "12682:10:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_address",
+                                                                                    "typeString": "address"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "id": 565,
+                                                                                "name": "_deploymentId",
+                                                                                "nodeType": "Identifier",
+                                                                                "overloadedDeclarations": [],
+                                                                                "referencedDeclaration": 310,
+                                                                                "src": "12694:13:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_bytes32",
+                                                                                    "typeString": "bytes32"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "id": 566,
+                                                                                "name": "_salt",
+                                                                                "nodeType": "Identifier",
+                                                                                "overloadedDeclarations": [],
+                                                                                "referencedDeclaration": 319,
+                                                                                "src": "12709:5:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_bytes32",
+                                                                                    "typeString": "bytes32"
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "expression": {
+                                                                            "argumentTypes": [
+                                                                                {
+                                                                                    "typeIdentifier": "t_address",
+                                                                                    "typeString": "address"
+                                                                                },
+                                                                                {
+                                                                                    "typeIdentifier": "t_bytes32",
+                                                                                    "typeString": "bytes32"
+                                                                                },
+                                                                                {
+                                                                                    "typeIdentifier": "t_bytes32",
+                                                                                    "typeString": "bytes32"
+                                                                                }
+                                                                            ],
+                                                                            "expression": {
+                                                                                "id": 561,
+                                                                                "name": "abi",
+                                                                                "nodeType": "Identifier",
+                                                                                "overloadedDeclarations": [],
+                                                                                "referencedDeclaration": -1,
+                                                                                "src": "12671:3:0",
+                                                                                "typeDescriptions": {
+                                                                                    "typeIdentifier": "t_magic_abi",
+                                                                                    "typeString": "abi"
+                                                                                }
+                                                                            },
+                                                                            "id": 562,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "lValueRequested": false,
+                                                                            "memberLocation": "12675:6:0",
+                                                                            "memberName": "encode",
+                                                                            "nodeType": "MemberAccess",
+                                                                            "src": "12671:10:0",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                                                                                "typeString": "function () pure returns (bytes memory)"
+                                                                            }
+                                                                        },
+                                                                        "id": 567,
+                                                                        "isConstant": false,
+                                                                        "isLValue": false,
+                                                                        "isPure": false,
+                                                                        "kind": "functionCall",
+                                                                        "lValueRequested": false,
+                                                                        "nameLocations": [],
+                                                                        "names": [],
+                                                                        "nodeType": "FunctionCall",
+                                                                        "src": "12671:44:0",
+                                                                        "tryCall": false,
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_bytes_memory_ptr",
+                                                                            "typeString": "bytes memory"
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "expression": {
+                                                                    "argumentTypes": [
+                                                                        {
+                                                                            "typeIdentifier": "t_bytes_memory_ptr",
+                                                                            "typeString": "bytes memory"
+                                                                        }
+                                                                    ],
+                                                                    "id": 560,
+                                                                    "name": "keccak256",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": -8,
+                                                                    "src": "12661:9:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                                                                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                                                                    }
+                                                                },
+                                                                "id": 568,
+                                                                "isConstant": false,
+                                                                "isLValue": false,
+                                                                "isPure": false,
+                                                                "kind": "functionCall",
+                                                                "lValueRequested": false,
+                                                                "nameLocations": [],
+                                                                "names": [],
+                                                                "nodeType": "FunctionCall",
+                                                                "src": "12661:55:0",
+                                                                "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
@@ -10045,7 +10589,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                                 },
                                                                 {
@@ -10083,10 +10627,10 @@ export const HyperdriveDeployerCoordinator = {
                                                                     "name": "IHyperdriveTargetDeployer",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 11554,
+                                                                    "referencedDeclaration": 11386,
                                                                     "src": "12542:25:0",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11554_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdriveTargetDeployer_$11386_$",
                                                                         "typeString": "type(contract IHyperdriveTargetDeployer)"
                                                                     }
                                                                 },
@@ -10102,7 +10646,7 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "src": "12542:42:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11554",
+                                                                    "typeIdentifier": "t_contract$_IHyperdriveTargetDeployer_$11386",
                                                                     "typeString": "contract IHyperdriveTargetDeployer"
                                                                 }
                                                             },
@@ -10114,14 +10658,14 @@ export const HyperdriveDeployerCoordinator = {
                                                             "memberLocation": "12585:6:0",
                                                             "memberName": "deploy",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 11553,
+                                                            "referencedDeclaration": 11385,
                                                             "src": "12542:49:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10470_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
+                                                                "typeIdentifier": "t_function_external_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes32_$returns$_t_address_$",
                                                                 "typeString": "function (struct IHyperdrive.PoolConfig memory,bytes memory,bytes32) external returns (address)"
                                                             }
                                                         },
-                                                        "id": 561,
+                                                        "id": 569,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -10130,26 +10674,26 @@ export const HyperdriveDeployerCoordinator = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "12542:138:0",
+                                                        "src": "12542:188:0",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         }
                                                     },
-                                                    "src": "12533:147:0",
+                                                    "src": "12533:197:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
                                                         "typeString": "address"
                                                     }
                                                 },
-                                                "id": 563,
+                                                "id": 571,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "12533:147:0"
+                                                "src": "12533:197:0"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 572,
+                                                    "id": 580,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10158,40 +10702,40 @@ export const HyperdriveDeployerCoordinator = {
                                                         "expression": {
                                                             "baseExpression": {
                                                                 "baseExpression": {
-                                                                    "id": 564,
+                                                                    "id": 572,
                                                                     "name": "_deployments",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": 68,
-                                                                    "src": "12694:12:0",
+                                                                    "src": "12744:12:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                         "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                                     }
                                                                 },
-                                                                "id": 568,
+                                                                "id": 576,
                                                                 "indexExpression": {
                                                                     "expression": {
-                                                                        "id": 565,
+                                                                        "id": 573,
                                                                         "name": "msg",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
                                                                         "referencedDeclaration": -15,
-                                                                        "src": "12707:3:0",
+                                                                        "src": "12757:3:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_magic_message",
                                                                             "typeString": "msg"
                                                                         }
                                                                     },
-                                                                    "id": 566,
+                                                                    "id": 574,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "12711:6:0",
+                                                                    "memberLocation": "12761:6:0",
                                                                     "memberName": "sender",
                                                                     "nodeType": "MemberAccess",
-                                                                    "src": "12707:10:0",
+                                                                    "src": "12757:10:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
@@ -10202,20 +10746,20 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "IndexAccess",
-                                                                "src": "12694:24:0",
+                                                                "src": "12744:24:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                                     "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                                 }
                                                             },
-                                                            "id": 569,
+                                                            "id": 577,
                                                             "indexExpression": {
-                                                                "id": 567,
+                                                                "id": 575,
                                                                 "name": "_deploymentId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": 310,
-                                                                "src": "12719:13:0",
+                                                                "src": "12769:13:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
@@ -10226,22 +10770,22 @@ export const HyperdriveDeployerCoordinator = {
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "nodeType": "IndexAccess",
-                                                            "src": "12694:39:0",
+                                                            "src": "12744:39:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                                 "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                             }
                                                         },
-                                                        "id": 570,
+                                                        "id": 578,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": true,
-                                                        "memberLocation": "12734:7:0",
+                                                        "memberLocation": "12784:7:0",
                                                         "memberName": "target1",
                                                         "nodeType": "MemberAccess",
                                                         "referencedDeclaration": 32,
-                                                        "src": "12694:47:0",
+                                                        "src": "12744:47:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
@@ -10250,52 +10794,52 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nodeType": "Assignment",
                                                     "operator": "=",
                                                     "rightHandSide": {
-                                                        "id": 571,
+                                                        "id": 579,
                                                         "name": "target",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": 322,
-                                                        "src": "12744:6:0",
+                                                        "src": "12794:6:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
                                                             "typeString": "address"
                                                         }
                                                     },
-                                                    "src": "12694:56:0",
+                                                    "src": "12744:56:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
                                                         "typeString": "address"
                                                     }
                                                 },
-                                                "id": 573,
+                                                "id": 581,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "12694:56:0"
+                                                "src": "12744:56:0"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "expression": {
-                                        "id": 717,
+                                        "id": 749,
                                         "name": "target",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
                                         "referencedDeclaration": 322,
-                                        "src": "14202:6:0",
+                                        "src": "14402:6:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         }
                                     },
                                     "functionReturnParameters": 323,
-                                    "id": 718,
+                                    "id": 750,
                                     "nodeType": "Return",
-                                    "src": "14195:13:0"
+                                    "src": "14395:13:0"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            10986
+                            10816
                         ],
                         "documentation": {
                             "id": 308,
@@ -10320,7 +10864,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "_deploymentId",
                                     "nameLocation": "8117:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8109:21:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10347,12 +10891,12 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "_deployConfig",
                                     "nameLocation": "8176:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8140:49:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
@@ -10366,13 +10910,13 @@ export const HyperdriveDeployerCoordinator = {
                                                 "8152:16:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
+                                            "referencedDeclaration": 10254,
                                             "src": "8140:28:0"
                                         },
-                                        "referencedDeclaration": 10424,
+                                        "referencedDeclaration": 10254,
                                         "src": "8140:28:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -10385,7 +10929,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "_extraData",
                                     "nameLocation": "8212:10:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8199:23:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10412,7 +10956,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "_targetIndex",
                                     "nameLocation": "8240:12:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8232:20:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10439,7 +10983,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "_salt",
                                     "nameLocation": "8270:5:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8262:13:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10473,7 +11017,7 @@ export const HyperdriveDeployerCoordinator = {
                                     "name": "target",
                                     "nameLocation": "8308:6:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 720,
+                                    "scope": 752,
                                     "src": "8300:14:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10497,20 +11041,20 @@ export const HyperdriveDeployerCoordinator = {
                             ],
                             "src": "8299:16:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 826,
+                        "id": 858,
                         "nodeType": "FunctionDefinition",
-                        "src": "14926:1363:0",
+                        "src": "15126:1363:0",
                         "nodes": [],
                         "body": {
-                            "id": 825,
+                            "id": 857,
                             "nodeType": "Block",
-                            "src": "15146:1143:0",
+                            "src": "15346:1143:0",
                             "nodes": [],
                             "statements": [
                                 {
@@ -10518,18 +11062,18 @@ export const HyperdriveDeployerCoordinator = {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 737,
+                                            "id": 769,
                                             "name": "_checkMessageValue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 864,
-                                            "src": "15206:18:0",
+                                            "referencedDeclaration": 896,
+                                            "src": "15406:18:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_view$__$returns$__$",
                                                 "typeString": "function () view"
                                             }
                                         },
-                                        "id": 738,
+                                        "id": 770,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10538,101 +11082,101 @@ export const HyperdriveDeployerCoordinator = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15206:20:0",
+                                        "src": "15406:20:0",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 739,
+                                    "id": 771,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "15206:20:0"
+                                    "src": "15406:20:0"
                                 },
                                 {
                                     "assignments": [
-                                        742
+                                        774
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 742,
+                                            "id": 774,
                                             "mutability": "mutable",
                                             "name": "hyperdrive",
-                                            "nameLocation": "15310:10:0",
+                                            "nameLocation": "15510:10:0",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 825,
-                                            "src": "15298:22:0",
+                                            "scope": 857,
+                                            "src": "15498:22:0",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                 "typeString": "contract IHyperdrive"
                                             },
                                             "typeName": {
-                                                "id": 741,
+                                                "id": 773,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 740,
+                                                    "id": 772,
                                                     "name": "IHyperdrive",
                                                     "nameLocations": [
-                                                        "15298:11:0"
+                                                        "15498:11:0"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 10676,
-                                                    "src": "15298:11:0"
+                                                    "referencedDeclaration": 10506,
+                                                    "src": "15498:11:0"
                                                 },
-                                                "referencedDeclaration": 10676,
-                                                "src": "15298:11:0",
+                                                "referencedDeclaration": 10506,
+                                                "src": "15498:11:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                     "typeString": "contract IHyperdrive"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 752,
+                                    "id": 784,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
                                                     "baseExpression": {
                                                         "baseExpression": {
-                                                            "id": 744,
+                                                            "id": 776,
                                                             "name": "_deployments",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": 68,
-                                                            "src": "15348:12:0",
+                                                            "src": "15548:12:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                                 "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                             }
                                                         },
-                                                        "id": 747,
+                                                        "id": 779,
                                                         "indexExpression": {
                                                             "expression": {
-                                                                "id": 745,
+                                                                "id": 777,
                                                                 "name": "msg",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -15,
-                                                                "src": "15361:3:0",
+                                                                "src": "15561:3:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_magic_message",
                                                                     "typeString": "msg"
                                                                 }
                                                             },
-                                                            "id": 746,
+                                                            "id": 778,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "15365:6:0",
+                                                            "memberLocation": "15565:6:0",
                                                             "memberName": "sender",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "15361:10:0",
+                                                            "src": "15561:10:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -10643,20 +11187,20 @@ export const HyperdriveDeployerCoordinator = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "15348:24:0",
+                                                        "src": "15548:24:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                             "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                                         }
                                                     },
-                                                    "id": 749,
+                                                    "id": 781,
                                                     "indexExpression": {
-                                                        "id": 748,
+                                                        "id": 780,
                                                         "name": "_deploymentId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 723,
-                                                        "src": "15373:13:0",
+                                                        "referencedDeclaration": 755,
+                                                        "src": "15573:13:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
                                                             "typeString": "bytes32"
@@ -10667,22 +11211,22 @@ export const HyperdriveDeployerCoordinator = {
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "nodeType": "IndexAccess",
-                                                    "src": "15348:39:0",
+                                                    "src": "15548:39:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                                         "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                                     }
                                                 },
-                                                "id": 750,
+                                                "id": 782,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "15388:10:0",
+                                                "memberLocation": "15588:10:0",
                                                 "memberName": "hyperdrive",
                                                 "nodeType": "MemberAccess",
                                                 "referencedDeclaration": 26,
-                                                "src": "15348:50:0",
+                                                "src": "15548:50:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -10696,18 +11240,18 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 743,
+                                            "id": 775,
                                             "name": "IHyperdrive",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10676,
-                                            "src": "15323:11:0",
+                                            "referencedDeclaration": 10506,
+                                            "src": "15523:11:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10676_$",
+                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
                                                 "typeString": "type(contract IHyperdrive)"
                                             }
                                         },
-                                        "id": 751,
+                                        "id": 783,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10716,15 +11260,15 @@ export const HyperdriveDeployerCoordinator = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15323:85:0",
+                                        "src": "15523:85:0",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                            "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                             "typeString": "contract IHyperdrive"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "15298:110:0"
+                                    "src": "15498:110:0"
                                 },
                                 {
                                     "condition": {
@@ -10732,7 +11276,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 761,
+                                        "id": 793,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10740,14 +11284,14 @@ export const HyperdriveDeployerCoordinator = {
                                         "leftExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 755,
+                                                    "id": 787,
                                                     "name": "hyperdrive",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 742,
-                                                    "src": "15430:10:0",
+                                                    "referencedDeclaration": 774,
+                                                    "src": "15630:10:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                        "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                         "typeString": "contract IHyperdrive"
                                                     }
                                                 }
@@ -10755,30 +11299,30 @@ export const HyperdriveDeployerCoordinator = {
                                             "expression": {
                                                 "argumentTypes": [
                                                     {
-                                                        "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                        "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                         "typeString": "contract IHyperdrive"
                                                     }
                                                 ],
-                                                "id": 754,
+                                                "id": 786,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "lValueRequested": false,
                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                "src": "15422:7:0",
+                                                "src": "15622:7:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_type$_t_address_$",
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 753,
+                                                    "id": 785,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "15422:7:0",
+                                                    "src": "15622:7:0",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 756,
+                                            "id": 788,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -10787,7 +11331,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "15422:19:0",
+                                            "src": "15622:19:0",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -10800,14 +11344,14 @@ export const HyperdriveDeployerCoordinator = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "30",
-                                                    "id": 759,
+                                                    "id": 791,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "kind": "number",
                                                     "lValueRequested": false,
                                                     "nodeType": "Literal",
-                                                    "src": "15453:1:0",
+                                                    "src": "15653:1:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_rational_0_by_1",
                                                         "typeString": "int_const 0"
@@ -10822,26 +11366,26 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeString": "int_const 0"
                                                     }
                                                 ],
-                                                "id": 758,
+                                                "id": 790,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "lValueRequested": false,
                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                "src": "15445:7:0",
+                                                "src": "15645:7:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_type$_t_address_$",
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 757,
+                                                    "id": 789,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "15445:7:0",
+                                                    "src": "15645:7:0",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 760,
+                                            "id": 792,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -10850,26 +11394,26 @@ export const HyperdriveDeployerCoordinator = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "15445:10:0",
+                                            "src": "15645:10:0",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             }
                                         },
-                                        "src": "15422:33:0",
+                                        "src": "15622:33:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 768,
+                                    "id": 800,
                                     "nodeType": "IfStatement",
-                                    "src": "15418:127:0",
+                                    "src": "15618:127:0",
                                     "trueBody": {
-                                        "id": 767,
+                                        "id": 799,
                                         "nodeType": "Block",
-                                        "src": "15457:88:0",
+                                        "src": "15657:88:0",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -10877,33 +11421,33 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 762,
+                                                            "id": 794,
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
-                                                            "src": "15478:30:0",
+                                                            "referencedDeclaration": 10834,
+                                                            "src": "15678:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
-                                                        "id": 764,
+                                                        "id": 796,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "15509:23:0",
+                                                        "memberLocation": "15709:23:0",
                                                         "memberName": "HyperdriveIsNotDeployed",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10912,
-                                                        "src": "15478:54:0",
+                                                        "referencedDeclaration": 10742,
+                                                        "src": "15678:54:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 765,
+                                                    "id": 797,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -10912,34 +11456,34 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "15478:56:0",
+                                                    "src": "15678:56:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 766,
+                                                "id": 798,
                                                 "nodeType": "RevertStatement",
-                                                "src": "15471:63:0"
+                                                "src": "15671:63:0"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        770
+                                        802
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 770,
+                                            "id": 802,
                                             "mutability": "mutable",
                                             "name": "value",
-                                            "nameLocation": "15633:5:0",
+                                            "nameLocation": "15833:5:0",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 825,
-                                            "src": "15625:13:0",
+                                            "scope": 857,
+                                            "src": "15825:13:0",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -10947,10 +11491,10 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 769,
+                                                "id": 801,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "15625:7:0",
+                                                "src": "15825:7:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10959,54 +11503,54 @@ export const HyperdriveDeployerCoordinator = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 777,
+                                    "id": 809,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 772,
+                                                "id": 804,
                                                 "name": "hyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 742,
-                                                "src": "15673:10:0",
+                                                "referencedDeclaration": 774,
+                                                "src": "15873:10:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                     "typeString": "contract IHyperdrive"
                                                 }
                                             },
                                             {
-                                                "id": 773,
+                                                "id": 805,
                                                 "name": "_lp",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 725,
-                                                "src": "15697:3:0",
+                                                "referencedDeclaration": 757,
+                                                "src": "15897:3:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 774,
+                                                "id": 806,
                                                 "name": "_contribution",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 727,
-                                                "src": "15714:13:0",
+                                                "referencedDeclaration": 759,
+                                                "src": "15914:13:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 775,
+                                                "id": 807,
                                                 "name": "_options",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 732,
-                                                "src": "15741:8:0",
+                                                "referencedDeclaration": 764,
+                                                "src": "15941:8:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                                     "typeString": "struct IHyperdrive.Options memory"
                                                 }
                                             }
@@ -11014,7 +11558,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                    "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                     "typeString": "contract IHyperdrive"
                                                 },
                                                 {
@@ -11026,22 +11570,22 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeString": "uint256"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                                     "typeString": "struct IHyperdrive.Options memory"
                                                 }
                                             ],
-                                            "id": 771,
+                                            "id": 803,
                                             "name": "_prepareInitialize",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 860,
-                                            "src": "15641:18:0",
+                                            "referencedDeclaration": 892,
+                                            "src": "15841:18:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IHyperdrive_$10676_$_t_address_$_t_uint256_$_t_struct$_Options_$10526_memory_ptr_$returns$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IHyperdrive_$10506_$_t_address_$_t_uint256_$_t_struct$_Options_$10356_memory_ptr_$returns$_t_uint256_$",
                                                 "typeString": "function (contract IHyperdrive,address,uint256,struct IHyperdrive.Options memory) returns (uint256)"
                                             }
                                         },
-                                        "id": 776,
+                                        "id": 808,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11050,7 +11594,7 @@ export const HyperdriveDeployerCoordinator = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15641:118:0",
+                                        "src": "15841:118:0",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -11058,22 +11602,22 @@ export const HyperdriveDeployerCoordinator = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "15625:134:0"
+                                    "src": "15825:134:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 787,
+                                        "id": 819,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 778,
+                                            "id": 810,
                                             "name": "lpShares",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 735,
-                                            "src": "15808:8:0",
+                                            "referencedDeclaration": 767,
+                                            "src": "16008:8:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11084,38 +11628,38 @@ export const HyperdriveDeployerCoordinator = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 783,
+                                                    "id": 815,
                                                     "name": "_contribution",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 727,
-                                                    "src": "15870:13:0",
+                                                    "referencedDeclaration": 759,
+                                                    "src": "16070:13:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
                                                 {
-                                                    "id": 784,
+                                                    "id": 816,
                                                     "name": "_apr",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 729,
-                                                    "src": "15897:4:0",
+                                                    "referencedDeclaration": 761,
+                                                    "src": "16097:4:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
                                                 {
-                                                    "id": 785,
+                                                    "id": 817,
                                                     "name": "_options",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 732,
-                                                    "src": "15915:8:0",
+                                                    "referencedDeclaration": 764,
+                                                    "src": "16115:8:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                                         "typeString": "struct IHyperdrive.Options memory"
                                                     }
                                                 }
@@ -11131,7 +11675,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeString": "uint256"
                                                     },
                                                     {
-                                                        "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                                         "typeString": "struct IHyperdrive.Options memory"
                                                     }
                                                 ],
@@ -11146,38 +11690,38 @@ export const HyperdriveDeployerCoordinator = {
                                                             "typeString": "uint256"
                                                         },
                                                         {
-                                                            "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                                             "typeString": "struct IHyperdrive.Options memory"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 779,
+                                                        "id": 811,
                                                         "name": "hyperdrive",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 742,
-                                                        "src": "15819:10:0",
+                                                        "referencedDeclaration": 774,
+                                                        "src": "16019:10:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                                            "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                                             "typeString": "contract IHyperdrive"
                                                         }
                                                     },
-                                                    "id": 780,
+                                                    "id": 812,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "15830:10:0",
+                                                    "memberLocation": "16030:10:0",
                                                     "memberName": "initialize",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10763,
-                                                    "src": "15819:21:0",
+                                                    "referencedDeclaration": 10593,
+                                                    "src": "16019:21:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10526_memory_ptr_$returns$_t_uint256_$",
+                                                        "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10356_memory_ptr_$returns$_t_uint256_$",
                                                         "typeString": "function (uint256,uint256,struct IHyperdrive.Options memory) payable external returns (uint256)"
                                                     }
                                                 },
-                                                "id": 782,
+                                                "id": 814,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11188,25 +11732,25 @@ export const HyperdriveDeployerCoordinator = {
                                                 "nodeType": "FunctionCallOptions",
                                                 "options": [
                                                     {
-                                                        "id": 781,
+                                                        "id": 813,
                                                         "name": "value",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 770,
-                                                        "src": "15849:5:0",
+                                                        "referencedDeclaration": 802,
+                                                        "src": "16049:5:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     }
                                                 ],
-                                                "src": "15819:37:0",
+                                                "src": "16019:37:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10526_memory_ptr_$returns$_t_uint256_$value",
+                                                    "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_uint256_$_t_struct$_Options_$10356_memory_ptr_$returns$_t_uint256_$value",
                                                     "typeString": "function (uint256,uint256,struct IHyperdrive.Options memory) payable external returns (uint256)"
                                                 }
                                             },
-                                            "id": 786,
+                                            "id": 818,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -11215,37 +11759,37 @@ export const HyperdriveDeployerCoordinator = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "15819:114:0",
+                                            "src": "16019:114:0",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "15808:125:0",
+                                        "src": "16008:125:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 788,
+                                    "id": 820,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "15808:125:0"
+                                    "src": "16008:125:0"
                                 },
                                 {
                                     "assignments": [
-                                        790
+                                        822
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 790,
+                                            "id": 822,
                                             "mutability": "mutable",
                                             "name": "refund",
-                                            "nameLocation": "16002:6:0",
+                                            "nameLocation": "16202:6:0",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 825,
-                                            "src": "15994:14:0",
+                                            "scope": 857,
+                                            "src": "16194:14:0",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -11253,10 +11797,10 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 789,
+                                                "id": 821,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "15994:7:0",
+                                                "src": "16194:7:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -11265,39 +11809,39 @@ export const HyperdriveDeployerCoordinator = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 795,
+                                    "id": 827,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 794,
+                                        "id": 826,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 791,
+                                                "id": 823,
                                                 "name": "msg",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": -15,
-                                                "src": "16011:3:0",
+                                                "src": "16211:3:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_magic_message",
                                                     "typeString": "msg"
                                                 }
                                             },
-                                            "id": 792,
+                                            "id": 824,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "16015:5:0",
+                                            "memberLocation": "16215:5:0",
                                             "memberName": "value",
                                             "nodeType": "MemberAccess",
-                                            "src": "16011:9:0",
+                                            "src": "16211:9:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11306,25 +11850,25 @@ export const HyperdriveDeployerCoordinator = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "-",
                                         "rightExpression": {
-                                            "id": 793,
+                                            "id": 825,
                                             "name": "value",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 770,
-                                            "src": "16023:5:0",
+                                            "referencedDeclaration": 802,
+                                            "src": "16223:5:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "16011:17:0",
+                                        "src": "16211:17:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "15994:34:0"
+                                    "src": "16194:34:0"
                                 },
                                 {
                                     "condition": {
@@ -11332,18 +11876,18 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 798,
+                                        "id": 830,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 796,
+                                            "id": 828,
                                             "name": "refund",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 790,
-                                            "src": "16042:6:0",
+                                            "referencedDeclaration": 822,
+                                            "src": "16242:6:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -11353,49 +11897,49 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": ">",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 797,
+                                            "id": 829,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "16051:1:0",
+                                            "src": "16251:1:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "16042:10:0",
+                                        "src": "16242:10:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 822,
+                                    "id": 854,
                                     "nodeType": "IfStatement",
-                                    "src": "16038:219:0",
+                                    "src": "16238:219:0",
                                     "trueBody": {
-                                        "id": 821,
+                                        "id": 853,
                                         "nodeType": "Block",
-                                        "src": "16054:203:0",
+                                        "src": "16254:203:0",
                                         "statements": [
                                             {
                                                 "assignments": [
-                                                    800,
+                                                    832,
                                                     null
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 800,
+                                                        "id": 832,
                                                         "mutability": "mutable",
                                                         "name": "success",
-                                                        "nameLocation": "16074:7:0",
+                                                        "nameLocation": "16274:7:0",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 821,
-                                                        "src": "16069:12:0",
+                                                        "scope": 853,
+                                                        "src": "16269:12:0",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -11403,10 +11947,10 @@ export const HyperdriveDeployerCoordinator = {
                                                             "typeString": "bool"
                                                         },
                                                         "typeName": {
-                                                            "id": 799,
+                                                            "id": 831,
                                                             "name": "bool",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "16069:4:0",
+                                                            "src": "16269:4:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -11416,19 +11960,19 @@ export const HyperdriveDeployerCoordinator = {
                                                     },
                                                     null
                                                 ],
-                                                "id": 811,
+                                                "id": 843,
                                                 "initialValue": {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "",
-                                                            "id": 809,
+                                                            "id": 841,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "string",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "16129:2:0",
+                                                            "src": "16329:2:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
                                                                 "typeString": "literal_string \"\""
@@ -11454,26 +11998,26 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "arguments": [
                                                                     {
                                                                         "expression": {
-                                                                            "id": 803,
+                                                                            "id": 835,
                                                                             "name": "msg",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": -15,
-                                                                            "src": "16095:3:0",
+                                                                            "src": "16295:3:0",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_magic_message",
                                                                                 "typeString": "msg"
                                                                             }
                                                                         },
-                                                                        "id": 804,
+                                                                        "id": 836,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "16099:6:0",
+                                                                        "memberLocation": "16299:6:0",
                                                                         "memberName": "sender",
                                                                         "nodeType": "MemberAccess",
-                                                                        "src": "16095:10:0",
+                                                                        "src": "16295:10:0",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
                                                                             "typeString": "address"
@@ -11487,27 +12031,27 @@ export const HyperdriveDeployerCoordinator = {
                                                                             "typeString": "address"
                                                                         }
                                                                     ],
-                                                                    "id": 802,
+                                                                    "id": 834,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                                    "src": "16087:8:0",
+                                                                    "src": "16287:8:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_type$_t_address_payable_$",
                                                                         "typeString": "type(address payable)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 801,
+                                                                        "id": 833,
                                                                         "name": "address",
                                                                         "nodeType": "ElementaryTypeName",
-                                                                        "src": "16087:8:0",
+                                                                        "src": "16287:8:0",
                                                                         "stateMutability": "payable",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 805,
+                                                                "id": 837,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -11516,28 +12060,28 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "16087:19:0",
+                                                                "src": "16287:19:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address_payable",
                                                                     "typeString": "address payable"
                                                                 }
                                                             },
-                                                            "id": 806,
+                                                            "id": 838,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "16107:4:0",
+                                                            "memberLocation": "16307:4:0",
                                                             "memberName": "call",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "16087:24:0",
+                                                            "src": "16287:24:0",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                                                                 "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
                                                             }
                                                         },
-                                                        "id": 808,
+                                                        "id": 840,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -11548,25 +12092,25 @@ export const HyperdriveDeployerCoordinator = {
                                                         "nodeType": "FunctionCallOptions",
                                                         "options": [
                                                             {
-                                                                "id": 807,
+                                                                "id": 839,
                                                                 "name": "refund",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 790,
-                                                                "src": "16120:6:0",
+                                                                "referencedDeclaration": 822,
+                                                                "src": "16320:6:0",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             }
                                                         ],
-                                                        "src": "16087:41:0",
+                                                        "src": "16287:41:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value",
                                                             "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
                                                         }
                                                     },
-                                                    "id": 810,
+                                                    "id": 842,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11575,7 +12119,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "16087:45:0",
+                                                    "src": "16287:45:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
@@ -11583,11 +12127,11 @@ export const HyperdriveDeployerCoordinator = {
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "16068:64:0"
+                                                "src": "16268:64:0"
                                             },
                                             {
                                                 "condition": {
-                                                    "id": 813,
+                                                    "id": 845,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -11595,14 +12139,14 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nodeType": "UnaryOperation",
                                                     "operator": "!",
                                                     "prefix": true,
-                                                    "src": "16150:8:0",
+                                                    "src": "16350:8:0",
                                                     "subExpression": {
-                                                        "id": 812,
+                                                        "id": 844,
                                                         "name": "success",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 800,
-                                                        "src": "16151:7:0",
+                                                        "referencedDeclaration": 832,
+                                                        "src": "16351:7:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -11613,13 +12157,13 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 820,
+                                                "id": 852,
                                                 "nodeType": "IfStatement",
-                                                "src": "16146:101:0",
+                                                "src": "16346:101:0",
                                                 "trueBody": {
-                                                    "id": 819,
+                                                    "id": 851,
                                                     "nodeType": "Block",
-                                                    "src": "16160:87:0",
+                                                    "src": "16360:87:0",
                                                     "statements": [
                                                         {
                                                             "errorCall": {
@@ -11627,33 +12171,33 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 814,
+                                                                        "id": 846,
                                                                         "name": "IHyperdriveDeployerCoordinator",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 11004,
-                                                                        "src": "16185:30:0",
+                                                                        "referencedDeclaration": 10834,
+                                                                        "src": "16385:30:0",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                             "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                                         }
                                                                     },
-                                                                    "id": 816,
+                                                                    "id": 848,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "16216:14:0",
+                                                                    "memberLocation": "16416:14:0",
                                                                     "memberName": "TransferFailed",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 10954,
-                                                                    "src": "16185:45:0",
+                                                                    "referencedDeclaration": 10784,
+                                                                    "src": "16385:45:0",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                         "typeString": "function () pure"
                                                                     }
                                                                 },
-                                                                "id": 817,
+                                                                "id": 849,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -11662,16 +12206,16 @@ export const HyperdriveDeployerCoordinator = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "16185:47:0",
+                                                                "src": "16385:47:0",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_tuple$__$",
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 818,
+                                                            "id": 850,
                                                             "nodeType": "RevertStatement",
-                                                            "src": "16178:54:0"
+                                                            "src": "16378:54:0"
                                                         }
                                                     ]
                                                 }
@@ -11681,31 +12225,31 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 823,
+                                        "id": 855,
                                         "name": "lpShares",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 735,
-                                        "src": "16274:8:0",
+                                        "referencedDeclaration": 767,
+                                        "src": "16474:8:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 736,
-                                    "id": 824,
+                                    "functionReturnParameters": 768,
+                                    "id": 856,
                                     "nodeType": "Return",
-                                    "src": "16267:15:0"
+                                    "src": "16467:15:0"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            11003
+                            10833
                         ],
                         "documentation": {
-                            "id": 721,
+                            "id": 753,
                             "nodeType": "StructuredDocumentation",
-                            "src": "14221:700:0",
+                            "src": "14421:700:0",
                             "text": "@notice Initializes a pool that was deployed by this coordinator.\n @dev This function utilizes several helper functions that provide\n      flexibility to implementations.\n @param _deploymentId The ID of the deployment.\n @param _lp The LP that is initializing the pool.\n @param _contribution The amount of capital to supply. The units of this\n        quantity are either base or vault shares, depending on the value\n        of `_options.asBase`.\n @param _apr The target APR.\n @param _options The options that configure how the initialization is\n        settled.\n @return lpShares The initial number of LP shares created."
                         },
                         "functionSelector": "16abfc70",
@@ -11713,20 +12257,20 @@ export const HyperdriveDeployerCoordinator = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "initialize",
-                        "nameLocation": "14935:10:0",
+                        "nameLocation": "15135:10:0",
                         "parameters": {
-                            "id": 733,
+                            "id": 765,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 723,
+                                    "id": 755,
                                     "mutability": "mutable",
                                     "name": "_deploymentId",
-                                    "nameLocation": "14963:13:0",
+                                    "nameLocation": "15163:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "14955:21:0",
+                                    "scope": 858,
+                                    "src": "15155:21:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11734,10 +12278,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 722,
+                                        "id": 754,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14955:7:0",
+                                        "src": "15155:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -11747,13 +12291,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 725,
+                                    "id": 757,
                                     "mutability": "mutable",
                                     "name": "_lp",
-                                    "nameLocation": "14994:3:0",
+                                    "nameLocation": "15194:3:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "14986:11:0",
+                                    "scope": 858,
+                                    "src": "15186:11:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11761,10 +12305,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 724,
+                                        "id": 756,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14986:7:0",
+                                        "src": "15186:7:0",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -11775,13 +12319,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 727,
+                                    "id": 759,
                                     "mutability": "mutable",
                                     "name": "_contribution",
-                                    "nameLocation": "15015:13:0",
+                                    "nameLocation": "15215:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "15007:21:0",
+                                    "scope": 858,
+                                    "src": "15207:21:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11789,10 +12333,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 726,
+                                        "id": 758,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15007:7:0",
+                                        "src": "15207:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11802,13 +12346,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 729,
+                                    "id": 761,
                                     "mutability": "mutable",
                                     "name": "_apr",
-                                    "nameLocation": "15046:4:0",
+                                    "nameLocation": "15246:4:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "15038:12:0",
+                                    "scope": 858,
+                                    "src": "15238:12:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11816,10 +12360,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 728,
+                                        "id": 760,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15038:7:0",
+                                        "src": "15238:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11829,58 +12373,58 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 732,
+                                    "id": 764,
                                     "mutability": "mutable",
                                     "name": "_options",
-                                    "nameLocation": "15087:8:0",
+                                    "nameLocation": "15287:8:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "15060:35:0",
+                                    "scope": 858,
+                                    "src": "15260:35:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 731,
+                                        "id": 763,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 730,
+                                            "id": 762,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
-                                                "15060:11:0",
-                                                "15072:7:0"
+                                                "15260:11:0",
+                                                "15272:7:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10526,
-                                            "src": "15060:19:0"
+                                            "referencedDeclaration": 10356,
+                                            "src": "15260:19:0"
                                         },
-                                        "referencedDeclaration": 10526,
-                                        "src": "15060:19:0",
+                                        "referencedDeclaration": 10356,
+                                        "src": "15260:19:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$10526_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$10356_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "14945:156:0"
+                            "src": "15145:156:0"
                         },
                         "returnParameters": {
-                            "id": 736,
+                            "id": 768,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 735,
+                                    "id": 767,
                                     "mutability": "mutable",
                                     "name": "lpShares",
-                                    "nameLocation": "15136:8:0",
+                                    "nameLocation": "15336:8:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 826,
-                                    "src": "15128:16:0",
+                                    "scope": 858,
+                                    "src": "15328:16:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11888,10 +12432,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 734,
+                                        "id": 766,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15128:7:0",
+                                        "src": "15328:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11900,47 +12444,47 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15127:18:0"
+                            "src": "15327:18:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 844,
+                        "id": 876,
                         "nodeType": "FunctionDefinition",
-                        "src": "16495:189:0",
+                        "src": "16695:189:0",
                         "nodes": [],
                         "body": {
-                            "id": 843,
+                            "id": 875,
                             "nodeType": "Block",
-                            "src": "16622:62:0",
+                            "src": "16822:62:0",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "baseExpression": {
                                             "baseExpression": {
-                                                "id": 837,
+                                                "id": 869,
                                                 "name": "_deployments",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": 68,
-                                                "src": "16639:12:0",
+                                                "src": "16839:12:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$_$",
                                                     "typeString": "mapping(address => mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref))"
                                                 }
                                             },
-                                            "id": 839,
+                                            "id": 871,
                                             "indexExpression": {
-                                                "id": 838,
+                                                "id": 870,
                                                 "name": "_deployer",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 829,
-                                                "src": "16652:9:0",
+                                                "referencedDeclaration": 861,
+                                                "src": "16852:9:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -11951,20 +12495,20 @@ export const HyperdriveDeployerCoordinator = {
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "nodeType": "IndexAccess",
-                                            "src": "16639:23:0",
+                                            "src": "16839:23:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Deployment_$42_storage_$",
                                                 "typeString": "mapping(bytes32 => struct HyperdriveDeployerCoordinator.Deployment storage ref)"
                                             }
                                         },
-                                        "id": 841,
+                                        "id": 873,
                                         "indexExpression": {
-                                            "id": 840,
+                                            "id": 872,
                                             "name": "_deploymentId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 831,
-                                            "src": "16663:13:0",
+                                            "referencedDeclaration": 863,
+                                            "src": "16863:13:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
@@ -11975,23 +12519,23 @@ export const HyperdriveDeployerCoordinator = {
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "IndexAccess",
-                                        "src": "16639:38:0",
+                                        "src": "16839:38:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_struct$_Deployment_$42_storage",
                                             "typeString": "struct HyperdriveDeployerCoordinator.Deployment storage ref"
                                         }
                                     },
-                                    "functionReturnParameters": 836,
-                                    "id": 842,
+                                    "functionReturnParameters": 868,
+                                    "id": 874,
                                     "nodeType": "Return",
-                                    "src": "16632:45:0"
+                                    "src": "16832:45:0"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 827,
+                            "id": 859,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16295:195:0",
+                            "src": "16495:195:0",
                             "text": "@notice Gets the deployment specified by the deployer and deployment ID.\n @param _deployer The deployer.\n @param _deploymentId The deployment ID.\n @return The deployment."
                         },
                         "functionSelector": "20503b3f",
@@ -11999,20 +12543,20 @@ export const HyperdriveDeployerCoordinator = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "deployments",
-                        "nameLocation": "16504:11:0",
+                        "nameLocation": "16704:11:0",
                         "parameters": {
-                            "id": 832,
+                            "id": 864,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 829,
+                                    "id": 861,
                                     "mutability": "mutable",
                                     "name": "_deployer",
-                                    "nameLocation": "16533:9:0",
+                                    "nameLocation": "16733:9:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 844,
-                                    "src": "16525:17:0",
+                                    "scope": 876,
+                                    "src": "16725:17:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12020,10 +12564,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 828,
+                                        "id": 860,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16525:7:0",
+                                        "src": "16725:7:0",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -12034,13 +12578,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 831,
+                                    "id": 863,
                                     "mutability": "mutable",
                                     "name": "_deploymentId",
-                                    "nameLocation": "16560:13:0",
+                                    "nameLocation": "16760:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 844,
-                                    "src": "16552:21:0",
+                                    "scope": 876,
+                                    "src": "16752:21:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12048,10 +12592,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 830,
+                                        "id": 862,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16552:7:0",
+                                        "src": "16752:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -12060,21 +12604,21 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16515:64:0"
+                            "src": "16715:64:0"
                         },
                         "returnParameters": {
-                            "id": 836,
+                            "id": 868,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 835,
+                                    "id": 867,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 844,
-                                    "src": "16603:17:0",
+                                    "scope": 876,
+                                    "src": "16803:17:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -12082,20 +12626,20 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "struct HyperdriveDeployerCoordinator.Deployment"
                                     },
                                     "typeName": {
-                                        "id": 834,
+                                        "id": 866,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 833,
+                                            "id": 865,
                                             "name": "Deployment",
                                             "nameLocations": [
-                                                "16603:10:0"
+                                                "16803:10:0"
                                             ],
                                             "nodeType": "IdentifierPath",
                                             "referencedDeclaration": 42,
-                                            "src": "16603:10:0"
+                                            "src": "16803:10:0"
                                         },
                                         "referencedDeclaration": 42,
-                                        "src": "16603:10:0",
+                                        "src": "16803:10:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_struct$_Deployment_$42_storage_ptr",
                                             "typeString": "struct HyperdriveDeployerCoordinator.Deployment"
@@ -12104,65 +12648,65 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16602:19:0"
+                            "src": "16802:19:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 860,
+                        "id": 892,
                         "nodeType": "FunctionDefinition",
-                        "src": "17336:205:0",
+                        "src": "17536:205:0",
                         "nodes": [],
                         "documentation": {
-                            "id": 845,
+                            "id": 877,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16690:641:0",
+                            "src": "16890:641:0",
                             "text": "@dev Prepares the coordinator for initialization by drawing funds from\n      the LP, if necessary.\n @param _hyperdrive The Hyperdrive instance that is being initialized.\n @param _lp The LP that is initializing the pool.\n @param _contribution The amount of capital to supply. The units of this\n        quantity are either base or vault shares, depending on the value\n        of `_options.asBase`.\n @param _options The options that configure how the initialization is\n        settled.\n @return value The value that should be sent in the initialize\n         transaction."
                         },
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_prepareInitialize",
-                        "nameLocation": "17345:18:0",
+                        "nameLocation": "17545:18:0",
                         "parameters": {
-                            "id": 856,
+                            "id": 888,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 848,
+                                    "id": 880,
                                     "mutability": "mutable",
                                     "name": "_hyperdrive",
-                                    "nameLocation": "17385:11:0",
+                                    "nameLocation": "17585:11:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 860,
-                                    "src": "17373:23:0",
+                                    "scope": 892,
+                                    "src": "17573:23:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                        "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                         "typeString": "contract IHyperdrive"
                                     },
                                     "typeName": {
-                                        "id": 847,
+                                        "id": 879,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 846,
+                                            "id": 878,
                                             "name": "IHyperdrive",
                                             "nameLocations": [
-                                                "17373:11:0"
+                                                "17573:11:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10676,
-                                            "src": "17373:11:0"
+                                            "referencedDeclaration": 10506,
+                                            "src": "17573:11:0"
                                         },
-                                        "referencedDeclaration": 10676,
-                                        "src": "17373:11:0",
+                                        "referencedDeclaration": 10506,
+                                        "src": "17573:11:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IHyperdrive_$10676",
+                                            "typeIdentifier": "t_contract$_IHyperdrive_$10506",
                                             "typeString": "contract IHyperdrive"
                                         }
                                     },
@@ -12170,13 +12714,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 850,
+                                    "id": 882,
                                     "mutability": "mutable",
                                     "name": "_lp",
-                                    "nameLocation": "17414:3:0",
+                                    "nameLocation": "17614:3:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 860,
-                                    "src": "17406:11:0",
+                                    "scope": 892,
+                                    "src": "17606:11:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12184,10 +12728,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 849,
+                                        "id": 881,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17406:7:0",
+                                        "src": "17606:7:0",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -12198,13 +12742,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 852,
+                                    "id": 884,
                                     "mutability": "mutable",
                                     "name": "_contribution",
-                                    "nameLocation": "17435:13:0",
+                                    "nameLocation": "17635:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 860,
-                                    "src": "17427:21:0",
+                                    "scope": 892,
+                                    "src": "17627:21:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12212,10 +12756,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 851,
+                                        "id": 883,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17427:7:0",
+                                        "src": "17627:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12225,58 +12769,58 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 855,
+                                    "id": 887,
                                     "mutability": "mutable",
                                     "name": "_options",
-                                    "nameLocation": "17485:8:0",
+                                    "nameLocation": "17685:8:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 860,
-                                    "src": "17458:35:0",
+                                    "scope": 892,
+                                    "src": "17658:35:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$10526_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$10356_memory_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 854,
+                                        "id": 886,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 853,
+                                            "id": 885,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
-                                                "17458:11:0",
-                                                "17470:7:0"
+                                                "17658:11:0",
+                                                "17670:7:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10526,
-                                            "src": "17458:19:0"
+                                            "referencedDeclaration": 10356,
+                                            "src": "17658:19:0"
                                         },
-                                        "referencedDeclaration": 10526,
-                                        "src": "17458:19:0",
+                                        "referencedDeclaration": 10356,
+                                        "src": "17658:19:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$10526_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$10356_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "17363:136:0"
+                            "src": "17563:136:0"
                         },
                         "returnParameters": {
-                            "id": 859,
+                            "id": 891,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 858,
+                                    "id": 890,
                                     "mutability": "mutable",
                                     "name": "value",
-                                    "nameLocation": "17534:5:0",
+                                    "nameLocation": "17734:5:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 860,
-                                    "src": "17526:13:0",
+                                    "scope": 892,
+                                    "src": "17726:13:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12284,10 +12828,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 857,
+                                        "id": 889,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17526:7:0",
+                                        "src": "17726:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12296,55 +12840,55 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "17525:15:0"
+                            "src": "17725:15:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 864,
+                        "id": 896,
                         "nodeType": "FunctionDefinition",
-                        "src": "17696:52:0",
+                        "src": "17896:52:0",
                         "nodes": [],
                         "documentation": {
-                            "id": 861,
+                            "id": 893,
                             "nodeType": "StructuredDocumentation",
-                            "src": "17547:144:0",
+                            "src": "17747:144:0",
                             "text": "@dev A yield source dependent check that prevents ether from being\n      transferred to Hyperdrive instances that don't accept ether."
                         },
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_checkMessageValue",
-                        "nameLocation": "17705:18:0",
+                        "nameLocation": "17905:18:0",
                         "parameters": {
-                            "id": 862,
+                            "id": 894,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "17723:2:0"
+                            "src": "17923:2:0"
                         },
                         "returnParameters": {
-                            "id": 863,
+                            "id": 895,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "17747:0:0"
+                            "src": "17947:0:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 944,
+                        "id": 976,
                         "nodeType": "FunctionDefinition",
-                        "src": "17903:1191:0",
+                        "src": "18103:1191:0",
                         "nodes": [],
                         "body": {
-                            "id": 943,
+                            "id": 975,
                             "nodeType": "Block",
-                            "src": "18016:1078:0",
+                            "src": "18216:1078:0",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12353,34 +12897,34 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 874,
+                                        "id": 906,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 871,
+                                                "id": 903,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 868,
-                                                "src": "18167:13:0",
+                                                "referencedDeclaration": 900,
+                                                "src": "18367:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 872,
+                                            "id": 904,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "18181:20:0",
+                                            "memberLocation": "18381:20:0",
                                             "memberName": "minimumShareReserves",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10398,
-                                            "src": "18167:34:0",
+                                            "referencedDeclaration": 10228,
+                                            "src": "18367:34:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -12390,33 +12934,33 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "hexValue": "316533",
-                                            "id": 873,
+                                            "id": 905,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "18204:3:0",
+                                            "src": "18404:3:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_1000_by_1",
                                                 "typeString": "int_const 1000"
                                             },
                                             "value": "1e3"
                                         },
-                                        "src": "18167:40:0",
+                                        "src": "18367:40:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 881,
+                                    "id": 913,
                                     "nodeType": "IfStatement",
-                                    "src": "18163:138:0",
+                                    "src": "18363:138:0",
                                     "trueBody": {
-                                        "id": 880,
+                                        "id": 912,
                                         "nodeType": "Block",
-                                        "src": "18209:92:0",
+                                        "src": "18409:92:0",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -12424,33 +12968,33 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 875,
+                                                            "id": 907,
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
-                                                            "src": "18230:30:0",
+                                                            "referencedDeclaration": 10834,
+                                                            "src": "18430:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
-                                                        "id": 877,
+                                                        "id": 909,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18261:27:0",
+                                                        "memberLocation": "18461:27:0",
                                                         "memberName": "InvalidMinimumShareReserves",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10930,
-                                                        "src": "18230:58:0",
+                                                        "referencedDeclaration": 10760,
+                                                        "src": "18430:58:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 878,
+                                                    "id": 910,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12459,16 +13003,16 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "18230:60:0",
+                                                    "src": "18430:60:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 879,
+                                                "id": 911,
                                                 "nodeType": "RevertStatement",
-                                                "src": "18223:67:0"
+                                                "src": "18423:67:0"
                                             }
                                         ]
                                     }
@@ -12479,34 +13023,34 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 885,
+                                        "id": 917,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 882,
+                                                "id": 914,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 868,
-                                                "src": "18315:13:0",
+                                                "referencedDeclaration": 900,
+                                                "src": "18515:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 883,
+                                            "id": 915,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "18329:18:0",
+                                            "memberLocation": "18529:18:0",
                                             "memberName": "checkpointDuration",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10407,
-                                            "src": "18315:32:0",
+                                            "referencedDeclaration": 10237,
+                                            "src": "18515:32:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -12516,33 +13060,33 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "==",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 884,
+                                            "id": 916,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "18351:1:0",
+                                            "src": "18551:1:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "18315:37:0",
+                                        "src": "18515:37:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 892,
+                                    "id": 924,
                                     "nodeType": "IfStatement",
-                                    "src": "18311:133:0",
+                                    "src": "18511:133:0",
                                     "trueBody": {
-                                        "id": 891,
+                                        "id": 923,
                                         "nodeType": "Block",
-                                        "src": "18354:90:0",
+                                        "src": "18554:90:0",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -12550,33 +13094,33 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 886,
+                                                            "id": 918,
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
-                                                            "src": "18375:30:0",
+                                                            "referencedDeclaration": 10834,
+                                                            "src": "18575:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
-                                                        "id": 888,
+                                                        "id": 920,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18406:25:0",
+                                                        "memberLocation": "18606:25:0",
                                                         "memberName": "InvalidCheckpointDuration",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10924,
-                                                        "src": "18375:56:0",
+                                                        "referencedDeclaration": 10754,
+                                                        "src": "18575:56:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 889,
+                                                    "id": 921,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12585,16 +13129,16 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "18375:58:0",
+                                                    "src": "18575:58:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 890,
+                                                "id": 922,
                                                 "nodeType": "RevertStatement",
-                                                "src": "18368:65:0"
+                                                "src": "18568:65:0"
                                             }
                                         ]
                                     }
@@ -12605,7 +13149,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 905,
+                                        "id": 937,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12615,34 +13159,34 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 897,
+                                            "id": 929,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
                                                 "expression": {
-                                                    "id": 893,
+                                                    "id": 925,
                                                     "name": "_deployConfig",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 868,
-                                                    "src": "18470:13:0",
+                                                    "referencedDeclaration": 900,
+                                                    "src": "18670:13:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                         "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                     }
                                                 },
-                                                "id": 894,
+                                                "id": 926,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "18484:16:0",
+                                                "memberLocation": "18684:16:0",
                                                 "memberName": "positionDuration",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 10404,
-                                                "src": "18470:30:0",
+                                                "referencedDeclaration": 10234,
+                                                "src": "18670:30:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -12652,33 +13196,33 @@ export const HyperdriveDeployerCoordinator = {
                                             "operator": "<",
                                             "rightExpression": {
                                                 "expression": {
-                                                    "id": 895,
+                                                    "id": 927,
                                                     "name": "_deployConfig",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 868,
-                                                    "src": "18503:13:0",
+                                                    "referencedDeclaration": 900,
+                                                    "src": "18703:13:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                         "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                     }
                                                 },
-                                                "id": 896,
+                                                "id": 928,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "18517:18:0",
+                                                "memberLocation": "18717:18:0",
                                                 "memberName": "checkpointDuration",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 10407,
-                                                "src": "18503:32:0",
+                                                "referencedDeclaration": 10237,
+                                                "src": "18703:32:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "src": "18470:65:0",
+                                            "src": "18670:65:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -12691,7 +13235,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 904,
+                                            "id": 936,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12701,34 +13245,34 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 902,
+                                                "id": 934,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
                                                     "expression": {
-                                                        "id": 898,
+                                                        "id": 930,
                                                         "name": "_deployConfig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 868,
-                                                        "src": "18551:13:0",
+                                                        "referencedDeclaration": 900,
+                                                        "src": "18751:13:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                         }
                                                     },
-                                                    "id": 899,
+                                                    "id": 931,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "18565:16:0",
+                                                    "memberLocation": "18765:16:0",
                                                     "memberName": "positionDuration",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10404,
-                                                    "src": "18551:30:0",
+                                                    "referencedDeclaration": 10234,
+                                                    "src": "18751:30:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -12738,33 +13282,33 @@ export const HyperdriveDeployerCoordinator = {
                                                 "operator": "%",
                                                 "rightExpression": {
                                                     "expression": {
-                                                        "id": 900,
+                                                        "id": 932,
                                                         "name": "_deployConfig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 868,
-                                                        "src": "18584:13:0",
+                                                        "referencedDeclaration": 900,
+                                                        "src": "18784:13:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                         }
                                                     },
-                                                    "id": 901,
+                                                    "id": 933,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "18598:18:0",
+                                                    "memberLocation": "18798:18:0",
                                                     "memberName": "checkpointDuration",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10407,
-                                                    "src": "18584:32:0",
+                                                    "referencedDeclaration": 10237,
+                                                    "src": "18784:32:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "src": "18551:65:0",
+                                                "src": "18751:65:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -12774,39 +13318,39 @@ export const HyperdriveDeployerCoordinator = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 903,
+                                                "id": 935,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "18632:1:0",
+                                                "src": "18832:1:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_0_by_1",
                                                     "typeString": "int_const 0"
                                                 },
                                                 "value": "0"
                                             },
-                                            "src": "18551:82:0",
+                                            "src": "18751:82:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "src": "18470:163:0",
+                                        "src": "18670:163:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 912,
+                                    "id": 944,
                                     "nodeType": "IfStatement",
-                                    "src": "18453:279:0",
+                                    "src": "18653:279:0",
                                     "trueBody": {
-                                        "id": 911,
+                                        "id": 943,
                                         "nodeType": "Block",
-                                        "src": "18644:88:0",
+                                        "src": "18844:88:0",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -12814,33 +13358,33 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 906,
+                                                            "id": 938,
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
-                                                            "src": "18665:30:0",
+                                                            "referencedDeclaration": 10834,
+                                                            "src": "18865:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
-                                                        "id": 908,
+                                                        "id": 940,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18696:23:0",
+                                                        "memberLocation": "18896:23:0",
                                                         "memberName": "InvalidPositionDuration",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10936,
-                                                        "src": "18665:54:0",
+                                                        "referencedDeclaration": 10766,
+                                                        "src": "18865:54:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 909,
+                                                    "id": 941,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12849,16 +13393,16 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "18665:56:0",
+                                                    "src": "18865:56:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 910,
+                                                "id": 942,
                                                 "nodeType": "RevertStatement",
-                                                "src": "18658:63:0"
+                                                "src": "18858:63:0"
                                             }
                                         ]
                                     }
@@ -12869,7 +13413,7 @@ export const HyperdriveDeployerCoordinator = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 935,
+                                        "id": 967,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12879,7 +13423,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             },
-                                            "id": 929,
+                                            "id": 961,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -12889,7 +13433,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
                                                 },
-                                                "id": 923,
+                                                "id": 955,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12899,7 +13443,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 917,
+                                                    "id": 949,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12907,42 +13451,42 @@ export const HyperdriveDeployerCoordinator = {
                                                     "leftExpression": {
                                                         "expression": {
                                                             "expression": {
-                                                                "id": 913,
+                                                                "id": 945,
                                                                 "name": "_deployConfig",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 868,
-                                                                "src": "18810:13:0",
+                                                                "referencedDeclaration": 900,
+                                                                "src": "19010:13:0",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                                 }
                                                             },
-                                                            "id": 914,
+                                                            "id": 946,
                                                             "isConstant": false,
                                                             "isLValue": true,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "18824:4:0",
+                                                            "memberLocation": "19024:4:0",
                                                             "memberName": "fees",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10423,
-                                                            "src": "18810:18:0",
+                                                            "referencedDeclaration": 10253,
+                                                            "src": "19010:18:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.Fees memory"
                                                             }
                                                         },
-                                                        "id": 915,
+                                                        "id": 947,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18829:5:0",
+                                                        "memberLocation": "19029:5:0",
                                                         "memberName": "curve",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10371,
-                                                        "src": "18810:24:0",
+                                                        "referencedDeclaration": 10201,
+                                                        "src": "19010:24:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -12951,18 +13495,18 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": ">",
                                                     "rightExpression": {
-                                                        "id": 916,
+                                                        "id": 948,
                                                         "name": "ONE",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 18299,
-                                                        "src": "18837:3:0",
+                                                        "referencedDeclaration": 18202,
+                                                        "src": "19037:3:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "18810:30:0",
+                                                    "src": "19010:30:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
@@ -12975,7 +13519,7 @@ export const HyperdriveDeployerCoordinator = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 922,
+                                                    "id": 954,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -12983,42 +13527,42 @@ export const HyperdriveDeployerCoordinator = {
                                                     "leftExpression": {
                                                         "expression": {
                                                             "expression": {
-                                                                "id": 918,
+                                                                "id": 950,
                                                                 "name": "_deployConfig",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 868,
-                                                                "src": "18856:13:0",
+                                                                "referencedDeclaration": 900,
+                                                                "src": "19056:13:0",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                                 }
                                                             },
-                                                            "id": 919,
+                                                            "id": 951,
                                                             "isConstant": false,
                                                             "isLValue": true,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "18870:4:0",
+                                                            "memberLocation": "19070:4:0",
                                                             "memberName": "fees",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10423,
-                                                            "src": "18856:18:0",
+                                                            "referencedDeclaration": 10253,
+                                                            "src": "19056:18:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.Fees memory"
                                                             }
                                                         },
-                                                        "id": 920,
+                                                        "id": 952,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18875:4:0",
+                                                        "memberLocation": "19075:4:0",
                                                         "memberName": "flat",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10374,
-                                                        "src": "18856:23:0",
+                                                        "referencedDeclaration": 10204,
+                                                        "src": "19056:23:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -13027,24 +13571,24 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": ">",
                                                     "rightExpression": {
-                                                        "id": 921,
+                                                        "id": 953,
                                                         "name": "ONE",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 18299,
-                                                        "src": "18882:3:0",
+                                                        "referencedDeclaration": 18202,
+                                                        "src": "19082:3:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "18856:29:0",
+                                                    "src": "19056:29:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "src": "18810:75:0",
+                                                "src": "19010:75:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -13057,7 +13601,7 @@ export const HyperdriveDeployerCoordinator = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 928,
+                                                "id": 960,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13065,42 +13609,42 @@ export const HyperdriveDeployerCoordinator = {
                                                 "leftExpression": {
                                                     "expression": {
                                                         "expression": {
-                                                            "id": 924,
+                                                            "id": 956,
                                                             "name": "_deployConfig",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 868,
-                                                            "src": "18901:13:0",
+                                                            "referencedDeclaration": 900,
+                                                            "src": "19101:13:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                             }
                                                         },
-                                                        "id": 925,
+                                                        "id": 957,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "18915:4:0",
+                                                        "memberLocation": "19115:4:0",
                                                         "memberName": "fees",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10423,
-                                                        "src": "18901:18:0",
+                                                        "referencedDeclaration": 10253,
+                                                        "src": "19101:18:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                             "typeString": "struct IHyperdrive.Fees memory"
                                                         }
                                                     },
-                                                    "id": 926,
+                                                    "id": 958,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "18920:12:0",
+                                                    "memberLocation": "19120:12:0",
                                                     "memberName": "governanceLP",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10377,
-                                                    "src": "18901:31:0",
+                                                    "referencedDeclaration": 10207,
+                                                    "src": "19101:31:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -13109,24 +13653,24 @@ export const HyperdriveDeployerCoordinator = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": ">",
                                                 "rightExpression": {
-                                                    "id": 927,
+                                                    "id": 959,
                                                     "name": "ONE",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 18299,
-                                                    "src": "18935:3:0",
+                                                    "referencedDeclaration": 18202,
+                                                    "src": "19135:3:0",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "src": "18901:37:0",
+                                                "src": "19101:37:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
                                                 }
                                             },
-                                            "src": "18810:128:0",
+                                            "src": "19010:128:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -13139,7 +13683,7 @@ export const HyperdriveDeployerCoordinator = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 934,
+                                            "id": 966,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -13147,42 +13691,42 @@ export const HyperdriveDeployerCoordinator = {
                                             "leftExpression": {
                                                 "expression": {
                                                     "expression": {
-                                                        "id": 930,
+                                                        "id": 962,
                                                         "name": "_deployConfig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 868,
-                                                        "src": "18954:13:0",
+                                                        "referencedDeclaration": 900,
+                                                        "src": "19154:13:0",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                         }
                                                     },
-                                                    "id": 931,
+                                                    "id": 963,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "18968:4:0",
+                                                    "memberLocation": "19168:4:0",
                                                     "memberName": "fees",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10423,
-                                                    "src": "18954:18:0",
+                                                    "referencedDeclaration": 10253,
+                                                    "src": "19154:18:0",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                         "typeString": "struct IHyperdrive.Fees memory"
                                                     }
                                                 },
-                                                "id": 932,
+                                                "id": 964,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "18973:16:0",
+                                                "memberLocation": "19173:16:0",
                                                 "memberName": "governanceZombie",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 10380,
-                                                "src": "18954:35:0",
+                                                "referencedDeclaration": 10210,
+                                                "src": "19154:35:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -13191,36 +13735,36 @@ export const HyperdriveDeployerCoordinator = {
                                             "nodeType": "BinaryOperation",
                                             "operator": ">",
                                             "rightExpression": {
-                                                "id": 933,
+                                                "id": 965,
                                                 "name": "ONE",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18299,
-                                                "src": "18992:3:0",
+                                                "referencedDeclaration": 18202,
+                                                "src": "19192:3:0",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "src": "18954:41:0",
+                                            "src": "19154:41:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "src": "18810:185:0",
+                                        "src": "19010:185:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 942,
+                                    "id": 974,
                                     "nodeType": "IfStatement",
-                                    "src": "18793:295:0",
+                                    "src": "18993:295:0",
                                     "trueBody": {
-                                        "id": 941,
+                                        "id": 973,
                                         "nodeType": "Block",
-                                        "src": "19006:82:0",
+                                        "src": "19206:82:0",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -13228,33 +13772,33 @@ export const HyperdriveDeployerCoordinator = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 936,
+                                                            "id": 968,
                                                             "name": "IHyperdriveDeployerCoordinator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 11004,
-                                                            "src": "19027:30:0",
+                                                            "referencedDeclaration": 10834,
+                                                            "src": "19227:30:0",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$11004_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdriveDeployerCoordinator_$10834_$",
                                                                 "typeString": "type(contract IHyperdriveDeployerCoordinator)"
                                                             }
                                                         },
-                                                        "id": 938,
+                                                        "id": 970,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "19058:17:0",
+                                                        "memberLocation": "19258:17:0",
                                                         "memberName": "InvalidFeeAmounts",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10927,
-                                                        "src": "19027:48:0",
+                                                        "referencedDeclaration": 10757,
+                                                        "src": "19227:48:0",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 939,
+                                                    "id": 971,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -13263,16 +13807,16 @@ export const HyperdriveDeployerCoordinator = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "19027:50:0",
+                                                    "src": "19227:50:0",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 940,
+                                                "id": 972,
                                                 "nodeType": "RevertStatement",
-                                                "src": "19020:57:0"
+                                                "src": "19220:57:0"
                                             }
                                         ]
                                     }
@@ -13280,125 +13824,125 @@ export const HyperdriveDeployerCoordinator = {
                             ]
                         },
                         "documentation": {
-                            "id": 865,
+                            "id": 897,
                             "nodeType": "StructuredDocumentation",
-                            "src": "17754:144:0",
+                            "src": "17954:144:0",
                             "text": "@dev Checks the pool configuration to ensure that it is valid.\n @param _deployConfig The deploy configuration of the Hyperdrive pool."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_checkPoolConfig",
-                        "nameLocation": "17912:16:0",
+                        "nameLocation": "18112:16:0",
                         "parameters": {
-                            "id": 869,
+                            "id": 901,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 868,
+                                    "id": 900,
                                     "mutability": "mutable",
                                     "name": "_deployConfig",
-                                    "nameLocation": "17974:13:0",
+                                    "nameLocation": "18174:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 944,
-                                    "src": "17938:49:0",
+                                    "scope": 976,
+                                    "src": "18138:49:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 867,
+                                        "id": 899,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 866,
+                                            "id": 898,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
-                                                "17938:11:0",
-                                                "17950:16:0"
+                                                "18138:11:0",
+                                                "18150:16:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
-                                            "src": "17938:28:0"
+                                            "referencedDeclaration": 10254,
+                                            "src": "18138:28:0"
                                         },
-                                        "referencedDeclaration": 10424,
-                                        "src": "17938:28:0",
+                                        "referencedDeclaration": 10254,
+                                        "src": "18138:28:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "17928:65:0"
+                            "src": "18128:65:0"
                         },
                         "returnParameters": {
-                            "id": 870,
+                            "id": 902,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "18016:0:0"
+                            "src": "18216:0:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 955,
+                        "id": 987,
                         "nodeType": "FunctionDefinition",
-                        "src": "19414:174:0",
+                        "src": "19614:174:0",
                         "nodes": [],
                         "documentation": {
-                            "id": 945,
+                            "id": 977,
                             "nodeType": "StructuredDocumentation",
-                            "src": "19100:309:0",
+                            "src": "19300:309:0",
                             "text": "@dev Gets the initial vault share price of the Hyperdrive pool.\n @param _deployConfig The deploy config that will be used to deploy the\n        pool.\n @param _extraData The extra data passed to the child deployers.\n @return The initial vault share price of the Hyperdrive pool."
                         },
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_getInitialVaultSharePrice",
-                        "nameLocation": "19423:26:0",
+                        "nameLocation": "19623:26:0",
                         "parameters": {
-                            "id": 951,
+                            "id": 983,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 948,
+                                    "id": 980,
                                     "mutability": "mutable",
                                     "name": "_deployConfig",
-                                    "nameLocation": "19495:13:0",
+                                    "nameLocation": "19695:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 955,
-                                    "src": "19459:49:0",
+                                    "scope": 987,
+                                    "src": "19659:49:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 947,
+                                        "id": 979,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 946,
+                                            "id": 978,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
-                                                "19459:11:0",
-                                                "19471:16:0"
+                                                "19659:11:0",
+                                                "19671:16:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
-                                            "src": "19459:28:0"
+                                            "referencedDeclaration": 10254,
+                                            "src": "19659:28:0"
                                         },
-                                        "referencedDeclaration": 10424,
-                                        "src": "19459:28:0",
+                                        "referencedDeclaration": 10254,
+                                        "src": "19659:28:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -13406,13 +13950,13 @@ export const HyperdriveDeployerCoordinator = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 950,
+                                    "id": 982,
                                     "mutability": "mutable",
                                     "name": "_extraData",
-                                    "nameLocation": "19531:10:0",
+                                    "nameLocation": "19731:10:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 955,
-                                    "src": "19518:23:0",
+                                    "scope": 987,
+                                    "src": "19718:23:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -13420,10 +13964,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 949,
+                                        "id": 981,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "19518:5:0",
+                                        "src": "19718:5:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes_storage_ptr",
                                             "typeString": "bytes"
@@ -13432,21 +13976,21 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "19449:98:0"
+                            "src": "19649:98:0"
                         },
                         "returnParameters": {
-                            "id": 954,
+                            "id": 986,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 953,
+                                    "id": 985,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 955,
-                                    "src": "19579:7:0",
+                                    "scope": 987,
+                                    "src": "19779:7:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -13454,10 +13998,10 @@ export const HyperdriveDeployerCoordinator = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 952,
+                                        "id": 984,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "19579:7:0",
+                                        "src": "19779:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -13466,56 +14010,56 @@ export const HyperdriveDeployerCoordinator = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "19578:9:0"
+                            "src": "19778:9:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 1057,
+                        "id": 1089,
                         "nodeType": "FunctionDefinition",
-                        "src": "19804:1056:0",
+                        "src": "20004:1056:0",
                         "nodes": [],
                         "body": {
-                            "id": 1056,
+                            "id": 1088,
                             "nodeType": "Block",
-                            "src": "19956:904:0",
+                            "src": "20156:904:0",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 970,
+                                        "id": 1002,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 965,
+                                                "id": 997,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20033:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20233:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 967,
+                                            "id": 999,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20041:9:0",
+                                            "memberLocation": "20241:9:0",
                                             "memberName": "baseToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10428,
-                                            "src": "20033:17:0",
+                                            "referencedDeclaration": 10258,
+                                            "src": "20233:17:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                "typeIdentifier": "t_contract$_IERC20_$9810",
                                                 "typeString": "contract IERC20"
                                             }
                                         },
@@ -13523,74 +14067,74 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 968,
+                                                "id": 1000,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20053:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20253:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 969,
+                                            "id": 1001,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20067:9:0",
+                                            "memberLocation": "20267:9:0",
                                             "memberName": "baseToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10385,
-                                            "src": "20053:23:0",
+                                            "referencedDeclaration": 10215,
+                                            "src": "20253:23:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                "typeIdentifier": "t_contract$_IERC20_$9810",
                                                 "typeString": "contract IERC20"
                                             }
                                         },
-                                        "src": "20033:43:0",
+                                        "src": "20233:43:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                             "typeString": "contract IERC20"
                                         }
                                     },
-                                    "id": 971,
+                                    "id": 1003,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20033:43:0"
+                                    "src": "20233:43:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 977,
+                                        "id": 1009,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 972,
+                                                "id": 1004,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20086:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20286:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 974,
+                                            "id": 1006,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20094:16:0",
+                                            "memberLocation": "20294:16:0",
                                             "memberName": "vaultSharesToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10432,
-                                            "src": "20086:24:0",
+                                            "referencedDeclaration": 10262,
+                                            "src": "20286:24:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                "typeIdentifier": "t_contract$_IERC20_$9810",
                                                 "typeString": "contract IERC20"
                                             }
                                         },
@@ -13598,72 +14142,72 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 975,
+                                                "id": 1007,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20113:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20313:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 976,
+                                            "id": 1008,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20127:16:0",
+                                            "memberLocation": "20327:16:0",
                                             "memberName": "vaultSharesToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10389,
-                                            "src": "20113:30:0",
+                                            "referencedDeclaration": 10219,
+                                            "src": "20313:30:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_IERC20_$9980",
+                                                "typeIdentifier": "t_contract$_IERC20_$9810",
                                                 "typeString": "contract IERC20"
                                             }
                                         },
-                                        "src": "20086:57:0",
+                                        "src": "20286:57:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$9980",
+                                            "typeIdentifier": "t_contract$_IERC20_$9810",
                                             "typeString": "contract IERC20"
                                         }
                                     },
-                                    "id": 978,
+                                    "id": 1010,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20086:57:0"
+                                    "src": "20286:57:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 984,
+                                        "id": 1016,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 979,
+                                                "id": 1011,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20153:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20353:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 981,
+                                            "id": 1013,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20161:13:0",
+                                            "memberLocation": "20361:13:0",
                                             "memberName": "linkerFactory",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10435,
-                                            "src": "20153:21:0",
+                                            "referencedDeclaration": 10265,
+                                            "src": "20353:21:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
@@ -13673,72 +14217,72 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 982,
+                                                "id": 1014,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20177:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20377:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 983,
+                                            "id": 1015,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20191:13:0",
+                                            "memberLocation": "20391:13:0",
                                             "memberName": "linkerFactory",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10392,
-                                            "src": "20177:27:0",
+                                            "referencedDeclaration": 10222,
+                                            "src": "20377:27:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             }
                                         },
-                                        "src": "20153:51:0",
+                                        "src": "20353:51:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 985,
+                                    "id": 1017,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20153:51:0"
+                                    "src": "20353:51:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 991,
+                                        "id": 1023,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 986,
+                                                "id": 1018,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20214:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20414:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 988,
+                                            "id": 1020,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20222:14:0",
+                                            "memberLocation": "20422:14:0",
                                             "memberName": "linkerCodeHash",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10438,
-                                            "src": "20214:22:0",
+                                            "referencedDeclaration": 10268,
+                                            "src": "20414:22:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
@@ -13748,72 +14292,72 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 989,
+                                                "id": 1021,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20239:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20439:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 990,
+                                            "id": 1022,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20253:14:0",
+                                            "memberLocation": "20453:14:0",
                                             "memberName": "linkerCodeHash",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10395,
-                                            "src": "20239:28:0",
+                                            "referencedDeclaration": 10225,
+                                            "src": "20439:28:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "src": "20214:53:0",
+                                        "src": "20414:53:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
                                         }
                                     },
-                                    "id": 992,
+                                    "id": 1024,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20214:53:0"
+                                    "src": "20414:53:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 998,
+                                        "id": 1030,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 993,
+                                                "id": 1025,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20277:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20477:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 995,
+                                            "id": 1027,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20285:20:0",
+                                            "memberLocation": "20485:20:0",
                                             "memberName": "minimumShareReserves",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10444,
-                                            "src": "20277:28:0",
+                                            "referencedDeclaration": 10274,
+                                            "src": "20477:28:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -13822,600 +14366,600 @@ export const HyperdriveDeployerCoordinator = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "expression": {
-                                                "id": 996,
-                                                "name": "_deployConfig",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20308:13:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
-                                                }
-                                            },
-                                            "id": 997,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "20322:20:0",
-                                            "memberName": "minimumShareReserves",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10398,
-                                            "src": "20308:34:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "src": "20277:65:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "id": 999,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "20277:65:0"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 1005,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "lValueRequested": false,
-                                        "leftHandSide": {
-                                            "expression": {
-                                                "id": 1000,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20352:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1002,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20360:24:0",
-                                            "memberName": "minimumTransactionAmount",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10447,
-                                            "src": "20352:32:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1003,
-                                                "name": "_deployConfig",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20387:13:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
-                                                }
-                                            },
-                                            "id": 1004,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "20414:24:0",
-                                            "memberName": "minimumTransactionAmount",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10401,
-                                            "src": "20387:51:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "src": "20352:86:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "id": 1006,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "20352:86:0"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 1012,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "lValueRequested": false,
-                                        "leftHandSide": {
-                                            "expression": {
-                                                "id": 1007,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20448:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1009,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20456:16:0",
-                                            "memberName": "positionDuration",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10450,
-                                            "src": "20448:24:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1010,
-                                                "name": "_deployConfig",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20475:13:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
-                                                }
-                                            },
-                                            "id": 1011,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "20489:16:0",
-                                            "memberName": "positionDuration",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10404,
-                                            "src": "20475:30:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "src": "20448:57:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "id": 1013,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "20448:57:0"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 1019,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "lValueRequested": false,
-                                        "leftHandSide": {
-                                            "expression": {
-                                                "id": 1014,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20515:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1016,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20523:18:0",
-                                            "memberName": "checkpointDuration",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10453,
-                                            "src": "20515:26:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1017,
-                                                "name": "_deployConfig",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20544:13:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
-                                                }
-                                            },
-                                            "id": 1018,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "20558:18:0",
-                                            "memberName": "checkpointDuration",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10407,
-                                            "src": "20544:32:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "src": "20515:61:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "id": 1020,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "20515:61:0"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 1026,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "lValueRequested": false,
-                                        "leftHandSide": {
-                                            "expression": {
-                                                "id": 1021,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20586:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1023,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20594:11:0",
-                                            "memberName": "timeStretch",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10456,
-                                            "src": "20586:19:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1024,
-                                                "name": "_deployConfig",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20608:13:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
-                                                }
-                                            },
-                                            "id": 1025,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "20622:11:0",
-                                            "memberName": "timeStretch",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10410,
-                                            "src": "20608:25:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            }
-                                        },
-                                        "src": "20586:47:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "id": 1027,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "20586:47:0"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 1033,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "lValueRequested": false,
-                                        "leftHandSide": {
                                             "expression": {
                                                 "id": 1028,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20643:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1030,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20651:10:0",
-                                            "memberName": "governance",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10459,
-                                            "src": "20643:18:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1031,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20664:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20508:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 1032,
+                                            "id": 1029,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20678:10:0",
-                                            "memberName": "governance",
+                                            "memberLocation": "20522:20:0",
+                                            "memberName": "minimumShareReserves",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10413,
-                                            "src": "20664:24:0",
+                                            "referencedDeclaration": 10228,
+                                            "src": "20508:34:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
                                             }
                                         },
-                                        "src": "20643:45:0",
+                                        "src": "20477:65:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
                                         }
                                     },
-                                    "id": 1034,
+                                    "id": 1031,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20643:45:0"
+                                    "src": "20477:65:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 1040,
+                                        "id": 1037,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
+                                            "expression": {
+                                                "id": 1032,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20552:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1034,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20560:24:0",
+                                            "memberName": "minimumTransactionAmount",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10277,
+                                            "src": "20552:32:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
                                             "expression": {
                                                 "id": 1035,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20698:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1037,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20706:12:0",
-                                            "memberName": "feeCollector",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10462,
-                                            "src": "20698:20:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1038,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20721:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20587:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 1039,
+                                            "id": 1036,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20735:12:0",
-                                            "memberName": "feeCollector",
+                                            "memberLocation": "20614:24:0",
+                                            "memberName": "minimumTransactionAmount",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10416,
-                                            "src": "20721:26:0",
+                                            "referencedDeclaration": 10231,
+                                            "src": "20587:51:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
                                             }
                                         },
-                                        "src": "20698:49:0",
+                                        "src": "20552:86:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
                                         }
                                     },
-                                    "id": 1041,
+                                    "id": 1038,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20698:49:0"
+                                    "src": "20552:86:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 1047,
+                                        "id": 1044,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
+                                            "expression": {
+                                                "id": 1039,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20648:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1041,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20656:16:0",
+                                            "memberName": "positionDuration",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10280,
+                                            "src": "20648:24:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
                                             "expression": {
                                                 "id": 1042,
-                                                "name": "_config",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20757:7:0",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
-                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
-                                                }
-                                            },
-                                            "id": 1044,
-                                            "isConstant": false,
-                                            "isLValue": true,
-                                            "isPure": false,
-                                            "lValueRequested": true,
-                                            "memberLocation": "20765:14:0",
-                                            "memberName": "sweepCollector",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10465,
-                                            "src": "20757:22:0",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
-                                            }
-                                        },
-                                        "nodeType": "Assignment",
-                                        "operator": "=",
-                                        "rightHandSide": {
-                                            "expression": {
-                                                "id": 1045,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20782:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "20675:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 1046,
+                                            "id": 1043,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20796:14:0",
-                                            "memberName": "sweepCollector",
+                                            "memberLocation": "20689:16:0",
+                                            "memberName": "positionDuration",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10419,
-                                            "src": "20782:28:0",
+                                            "referencedDeclaration": 10234,
+                                            "src": "20675:30:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_address",
-                                                "typeString": "address"
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
                                             }
                                         },
-                                        "src": "20757:53:0",
+                                        "src": "20648:57:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
                                         }
                                     },
-                                    "id": 1048,
+                                    "id": 1045,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20757:53:0"
+                                    "src": "20648:57:0"
                                 },
                                 {
                                     "expression": {
-                                        "id": 1054,
+                                        "id": 1051,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 1049,
+                                                "id": 1046,
                                                 "name": "_config",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 963,
-                                                "src": "20820:7:0",
+                                                "referencedDeclaration": 995,
+                                                "src": "20715:7:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolConfig memory"
                                                 }
                                             },
-                                            "id": 1051,
+                                            "id": 1048,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "20828:4:0",
+                                            "memberLocation": "20723:18:0",
+                                            "memberName": "checkpointDuration",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10283,
+                                            "src": "20715:26:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 1049,
+                                                "name": "_deployConfig",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 991,
+                                                "src": "20744:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
+                                                }
+                                            },
+                                            "id": 1050,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "20758:18:0",
+                                            "memberName": "checkpointDuration",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10237,
+                                            "src": "20744:32:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "20715:61:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 1052,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "20715:61:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 1058,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "id": 1053,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20786:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1055,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20794:11:0",
+                                            "memberName": "timeStretch",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10286,
+                                            "src": "20786:19:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 1056,
+                                                "name": "_deployConfig",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 991,
+                                                "src": "20808:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
+                                                }
+                                            },
+                                            "id": 1057,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "20822:11:0",
+                                            "memberName": "timeStretch",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10240,
+                                            "src": "20808:25:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "20786:47:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 1059,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "20786:47:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 1065,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "id": 1060,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20843:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1062,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20851:10:0",
+                                            "memberName": "governance",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10289,
+                                            "src": "20843:18:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 1063,
+                                                "name": "_deployConfig",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 991,
+                                                "src": "20864:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
+                                                }
+                                            },
+                                            "id": 1064,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "20878:10:0",
+                                            "memberName": "governance",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10243,
+                                            "src": "20864:24:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "20843:45:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 1066,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "20843:45:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 1072,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "id": 1067,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20898:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1069,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20906:12:0",
+                                            "memberName": "feeCollector",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10292,
+                                            "src": "20898:20:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 1070,
+                                                "name": "_deployConfig",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 991,
+                                                "src": "20921:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
+                                                }
+                                            },
+                                            "id": 1071,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "20935:12:0",
+                                            "memberName": "feeCollector",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10246,
+                                            "src": "20921:26:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "20898:49:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 1073,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "20898:49:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 1079,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "id": 1074,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "20957:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1076,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "20965:14:0",
+                                            "memberName": "sweepCollector",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10295,
+                                            "src": "20957:22:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 1077,
+                                                "name": "_deployConfig",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 991,
+                                                "src": "20982:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolDeployConfig memory"
+                                                }
+                                            },
+                                            "id": 1078,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "20996:14:0",
+                                            "memberName": "sweepCollector",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 10249,
+                                            "src": "20982:28:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "20957:53:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 1080,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "20957:53:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 1086,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "id": 1081,
+                                                "name": "_config",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 995,
+                                                "src": "21020:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                    "typeString": "struct IHyperdrive.PoolConfig memory"
+                                                }
+                                            },
+                                            "id": 1083,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "21028:4:0",
                                             "memberName": "fees",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10469,
-                                            "src": "20820:12:0",
+                                            "referencedDeclaration": 10299,
+                                            "src": "21020:12:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                 "typeString": "struct IHyperdrive.Fees memory"
                                             }
                                         },
@@ -14423,146 +14967,146 @@ export const HyperdriveDeployerCoordinator = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 1052,
+                                                "id": 1084,
                                                 "name": "_deployConfig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 959,
-                                                "src": "20835:13:0",
+                                                "referencedDeclaration": 991,
+                                                "src": "21035:13:0",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                                     "typeString": "struct IHyperdrive.PoolDeployConfig memory"
                                                 }
                                             },
-                                            "id": 1053,
+                                            "id": 1085,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "20849:4:0",
+                                            "memberLocation": "21049:4:0",
                                             "memberName": "fees",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10423,
-                                            "src": "20835:18:0",
+                                            "referencedDeclaration": 10253,
+                                            "src": "21035:18:0",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                                 "typeString": "struct IHyperdrive.Fees memory"
                                             }
                                         },
-                                        "src": "20820:33:0",
+                                        "src": "21020:33:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Fees_$10381_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
                                             "typeString": "struct IHyperdrive.Fees memory"
                                         }
                                     },
-                                    "id": 1055,
+                                    "id": 1087,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "20820:33:0"
+                                    "src": "21020:33:0"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 956,
+                            "id": 988,
                             "nodeType": "StructuredDocumentation",
-                            "src": "19594:205:0",
+                            "src": "19794:205:0",
                             "text": "@notice Copies the deploy config into a pool config.\n @param _deployConfig The deploy configuration of the Hyperdrive pool.\n @return _config The pool configuration of the Hyperdrive pool."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_copyPoolConfig",
-                        "nameLocation": "19813:15:0",
+                        "nameLocation": "20013:15:0",
                         "parameters": {
-                            "id": 960,
+                            "id": 992,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 959,
+                                    "id": 991,
                                     "mutability": "mutable",
                                     "name": "_deployConfig",
-                                    "nameLocation": "19874:13:0",
+                                    "nameLocation": "20074:13:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 1057,
-                                    "src": "19838:49:0",
+                                    "scope": 1089,
+                                    "src": "20038:49:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 958,
+                                        "id": 990,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 957,
+                                            "id": 989,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
-                                                "19838:11:0",
-                                                "19850:16:0"
+                                                "20038:11:0",
+                                                "20050:16:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10424,
-                                            "src": "19838:28:0"
+                                            "referencedDeclaration": 10254,
+                                            "src": "20038:28:0"
                                         },
-                                        "referencedDeclaration": 10424,
-                                        "src": "19838:28:0",
+                                        "referencedDeclaration": 10254,
+                                        "src": "20038:28:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10424_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "19828:65:0"
+                            "src": "20028:65:0"
                         },
                         "returnParameters": {
-                            "id": 964,
+                            "id": 996,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 963,
+                                    "id": 995,
                                     "mutability": "mutable",
                                     "name": "_config",
-                                    "nameLocation": "19947:7:0",
+                                    "nameLocation": "20147:7:0",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 1057,
-                                    "src": "19917:37:0",
+                                    "scope": 1089,
+                                    "src": "20117:37:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolConfig_$10470_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolConfig"
                                     },
                                     "typeName": {
-                                        "id": 962,
+                                        "id": 994,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 961,
+                                            "id": 993,
                                             "name": "IHyperdrive.PoolConfig",
                                             "nameLocations": [
-                                                "19917:11:0",
-                                                "19929:10:0"
+                                                "20117:11:0",
+                                                "20129:10:0"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10470,
-                                            "src": "19917:22:0"
+                                            "referencedDeclaration": 10300,
+                                            "src": "20117:22:0"
                                         },
-                                        "referencedDeclaration": 10470,
-                                        "src": "19917:22:0",
+                                        "referencedDeclaration": 10300,
+                                        "src": "20117:22:0",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$10470_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "19916:39:0"
+                            "src": "20116:39:0"
                         },
-                        "scope": 1058,
+                        "scope": 1090,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -14578,7 +15122,7 @@ export const HyperdriveDeployerCoordinator = {
                                 "1001:30:0"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11004,
+                            "referencedDeclaration": 10834,
                             "src": "1001:30:0"
                         },
                         "id": 14,
@@ -14597,32 +15141,32 @@ export const HyperdriveDeployerCoordinator = {
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    1058,
-                    11004
+                    1090,
+                    10834
                 ],
                 "name": "HyperdriveDeployerCoordinator",
                 "nameLocation": "964:29:0",
-                "scope": 1059,
+                "scope": 1091,
                 "usedErrors": [
-                    10900,
-                    10903,
-                    10906,
-                    10909,
-                    10912,
-                    10915,
-                    10918,
-                    10921,
-                    10924,
-                    10927,
-                    10930,
-                    10933,
-                    10936,
-                    10939,
-                    10942,
-                    10945,
-                    10948,
-                    10951,
-                    10954
+                    10730,
+                    10733,
+                    10736,
+                    10739,
+                    10742,
+                    10745,
+                    10748,
+                    10751,
+                    10754,
+                    10757,
+                    10760,
+                    10763,
+                    10766,
+                    10769,
+                    10772,
+                    10775,
+                    10778,
+                    10781,
+                    10784
                 ],
                 "usedEvents": []
             }

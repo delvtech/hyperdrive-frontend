@@ -302,24 +302,24 @@ export declare const IRocketDepositPool: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRocketDepositPool.sol";
-        readonly id: 12066;
+        readonly id: 11898;
         readonly exportedSymbols: {
-            readonly IRocketDepositPool: readonly [12065];
+            readonly IRocketDepositPool: readonly [11897];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:891:105";
         readonly nodes: readonly [{
-            readonly id: 12004;
+            readonly id: 11836;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:105";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12065;
+            readonly id: 11897;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:865:105";
             readonly nodes: readonly [{
-                readonly id: 12009;
+                readonly id: 11841;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "99:54:105";
                 readonly nodes: readonly [];
@@ -330,22 +330,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "getBalance";
                 readonly nameLocation: "108:10:105";
                 readonly parameters: {
-                    readonly id: 12005;
+                    readonly id: 11837;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "118:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12008;
+                    readonly id: 11840;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12007;
+                        readonly id: 11839;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12009;
+                        readonly scope: 11841;
                         readonly src: "144:7:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -354,7 +354,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12006;
+                            readonly id: 11838;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "144:7:105";
@@ -367,12 +367,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "143:9:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12014;
+                readonly id: 11846;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "159:58:105";
                 readonly nodes: readonly [];
@@ -383,22 +383,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "getNodeBalance";
                 readonly nameLocation: "168:14:105";
                 readonly parameters: {
-                    readonly id: 12010;
+                    readonly id: 11842;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "182:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12013;
+                    readonly id: 11845;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12012;
+                        readonly id: 11844;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12014;
+                        readonly scope: 11846;
                         readonly src: "208:7:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -407,7 +407,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12011;
+                            readonly id: 11843;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "208:7:105";
@@ -420,12 +420,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "207:9:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12019;
+                readonly id: 11851;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "223:57:105";
                 readonly nodes: readonly [];
@@ -436,22 +436,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "getUserBalance";
                 readonly nameLocation: "232:14:105";
                 readonly parameters: {
-                    readonly id: 12015;
+                    readonly id: 11847;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "246:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12018;
+                    readonly id: 11850;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12017;
+                        readonly id: 11849;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12019;
+                        readonly scope: 11851;
                         readonly src: "272:6:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -460,7 +460,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 12016;
+                            readonly id: 11848;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "272:6:105";
@@ -473,12 +473,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "271:8:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12024;
+                readonly id: 11856;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "286:60:105";
                 readonly nodes: readonly [];
@@ -489,22 +489,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "getExcessBalance";
                 readonly nameLocation: "295:16:105";
                 readonly parameters: {
-                    readonly id: 12020;
+                    readonly id: 11852;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "311:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12023;
+                    readonly id: 11855;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12022;
+                        readonly id: 11854;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12024;
+                        readonly scope: 11856;
                         readonly src: "337:7:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -513,7 +513,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12021;
+                            readonly id: 11853;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "337:7:105";
@@ -526,12 +526,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "336:9:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12027;
+                readonly id: 11859;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "352:36:105";
                 readonly nodes: readonly [];
@@ -542,23 +542,23 @@ export declare const IRocketDepositPool: {
                 readonly name: "deposit";
                 readonly nameLocation: "361:7:105";
                 readonly parameters: {
-                    readonly id: 12025;
+                    readonly id: 11857;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "368:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12026;
+                    readonly id: 11858;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "387:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12032;
+                readonly id: 11864;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "394:67:105";
                 readonly nodes: readonly [];
@@ -569,22 +569,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "getMaximumDepositAmount";
                 readonly nameLocation: "403:23:105";
                 readonly parameters: {
-                    readonly id: 12028;
+                    readonly id: 11860;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "426:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12031;
+                    readonly id: 11863;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12030;
+                        readonly id: 11862;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12032;
+                        readonly scope: 11864;
                         readonly src: "452:7:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -593,7 +593,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12029;
+                            readonly id: 11861;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "452:7:105";
@@ -606,12 +606,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "451:9:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12037;
+                readonly id: 11869;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "467:60:105";
                 readonly nodes: readonly [];
@@ -622,16 +622,16 @@ export declare const IRocketDepositPool: {
                 readonly name: "nodeDeposit";
                 readonly nameLocation: "476:11:105";
                 readonly parameters: {
-                    readonly id: 12035;
+                    readonly id: 11867;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12034;
+                        readonly id: 11866;
                         readonly mutability: "mutable";
                         readonly name: "_totalAmount";
                         readonly nameLocation: "496:12:105";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12037;
+                        readonly scope: 11869;
                         readonly src: "488:20:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -640,7 +640,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12033;
+                            readonly id: 11865;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "488:7:105";
@@ -654,17 +654,17 @@ export declare const IRocketDepositPool: {
                     readonly src: "487:22:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12036;
+                    readonly id: 11868;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "526:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12042;
+                readonly id: 11874;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "533:56:105";
                 readonly nodes: readonly [];
@@ -675,16 +675,16 @@ export declare const IRocketDepositPool: {
                 readonly name: "nodeCreditWithdrawal";
                 readonly nameLocation: "542:20:105";
                 readonly parameters: {
-                    readonly id: 12040;
+                    readonly id: 11872;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12039;
+                        readonly id: 11871;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
                         readonly nameLocation: "571:7:105";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12042;
+                        readonly scope: 11874;
                         readonly src: "563:15:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -693,7 +693,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12038;
+                            readonly id: 11870;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "563:7:105";
@@ -707,17 +707,17 @@ export declare const IRocketDepositPool: {
                     readonly src: "562:17:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12041;
+                    readonly id: 11873;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "588:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12045;
+                readonly id: 11877;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "595:52:105";
                 readonly nodes: readonly [];
@@ -728,23 +728,23 @@ export declare const IRocketDepositPool: {
                 readonly name: "recycleDissolvedDeposit";
                 readonly nameLocation: "604:23:105";
                 readonly parameters: {
-                    readonly id: 12043;
+                    readonly id: 11875;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "627:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12044;
+                    readonly id: 11876;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "646:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12048;
+                readonly id: 11880;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "653:52:105";
                 readonly nodes: readonly [];
@@ -755,23 +755,23 @@ export declare const IRocketDepositPool: {
                 readonly name: "recycleExcessCollateral";
                 readonly nameLocation: "662:23:105";
                 readonly parameters: {
-                    readonly id: 12046;
+                    readonly id: 11878;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "685:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12047;
+                    readonly id: 11879;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "704:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12051;
+                readonly id: 11883;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "711:51:105";
                 readonly nodes: readonly [];
@@ -782,23 +782,23 @@ export declare const IRocketDepositPool: {
                 readonly name: "recycleLiquidatedStake";
                 readonly nameLocation: "720:22:105";
                 readonly parameters: {
-                    readonly id: 12049;
+                    readonly id: 11881;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "742:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12050;
+                    readonly id: 11882;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "761:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12054;
+                readonly id: 11886;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "768:35:105";
                 readonly nodes: readonly [];
@@ -809,23 +809,23 @@ export declare const IRocketDepositPool: {
                 readonly name: "assignDeposits";
                 readonly nameLocation: "777:14:105";
                 readonly parameters: {
-                    readonly id: 12052;
+                    readonly id: 11884;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "791:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12053;
+                    readonly id: 11885;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "802:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12059;
+                readonly id: 11891;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "809:55:105";
                 readonly nodes: readonly [];
@@ -836,22 +836,22 @@ export declare const IRocketDepositPool: {
                 readonly name: "maybeAssignDeposits";
                 readonly nameLocation: "818:19:105";
                 readonly parameters: {
-                    readonly id: 12055;
+                    readonly id: 11887;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "837:2:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12058;
+                    readonly id: 11890;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12057;
+                        readonly id: 11889;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12059;
+                        readonly scope: 11891;
                         readonly src: "858:4:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -860,7 +860,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12056;
+                            readonly id: 11888;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "858:4:105";
@@ -873,12 +873,12 @@ export declare const IRocketDepositPool: {
                     }];
                     readonly src: "857:6:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12064;
+                readonly id: 11896;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "870:57:105";
                 readonly nodes: readonly [];
@@ -889,16 +889,16 @@ export declare const IRocketDepositPool: {
                 readonly name: "withdrawExcessBalance";
                 readonly nameLocation: "879:21:105";
                 readonly parameters: {
-                    readonly id: 12062;
+                    readonly id: 11894;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12061;
+                        readonly id: 11893;
                         readonly mutability: "mutable";
                         readonly name: "_amount";
                         readonly nameLocation: "909:7:105";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12064;
+                        readonly scope: 11896;
                         readonly src: "901:15:105";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -907,7 +907,7 @@ export declare const IRocketDepositPool: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12060;
+                            readonly id: 11892;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "901:7:105";
@@ -921,12 +921,12 @@ export declare const IRocketDepositPool: {
                     readonly src: "900:17:105";
                 };
                 readonly returnParameters: {
-                    readonly id: 12063;
+                    readonly id: 11895;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "926:0:105";
                 };
-                readonly scope: 12065;
+                readonly scope: 11897;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -937,10 +937,10 @@ export declare const IRocketDepositPool: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12065];
+            readonly linearizedBaseContracts: readonly [11897];
             readonly name: "IRocketDepositPool";
             readonly nameLocation: "74:18:105";
-            readonly scope: 12066;
+            readonly scope: 11898;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

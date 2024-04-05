@@ -55,24 +55,24 @@ export declare const stdMath: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/StdMath.sol";
-        readonly id: 35682;
+        readonly id: 35573;
         readonly exportedSymbols: {
-            readonly stdMath: readonly [35681];
+            readonly stdMath: readonly [35572];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:1328:151";
         readonly nodes: readonly [{
-            readonly id: 35541;
+            readonly id: 35432;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:151";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 35681;
+            readonly id: 35572;
             readonly nodeType: "ContractDefinition";
             readonly src: "65:1294:151";
             readonly nodes: readonly [{
-                readonly id: 35545;
+                readonly id: 35436;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "87:115:151";
                 readonly nodes: readonly [];
@@ -80,7 +80,7 @@ export declare const stdMath: {
                 readonly mutability: "constant";
                 readonly name: "INT256_MIN";
                 readonly nameLocation: "111:10:151";
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -88,7 +88,7 @@ export declare const stdMath: {
                     readonly typeString: "int256";
                 };
                 readonly typeName: {
-                    readonly id: 35542;
+                    readonly id: 35433;
                     readonly name: "int256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "87:6:151";
@@ -98,7 +98,7 @@ export declare const stdMath: {
                     };
                 };
                 readonly value: {
-                    readonly id: 35544;
+                    readonly id: 35435;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -109,7 +109,7 @@ export declare const stdMath: {
                     readonly src: "124:78:151";
                     readonly subExpression: {
                         readonly hexValue: "3537383936303434363138363538303937373131373835343932353034333433393533393236363334393932333332383230323832303139373238373932303033393536353634383139393638";
-                        readonly id: 35543;
+                        readonly id: 35434;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -130,12 +130,12 @@ export declare const stdMath: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35571;
+                readonly id: 35462;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "209:306:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35570;
+                    readonly id: 35461;
                     readonly nodeType: "Block";
                     readonly src: "264:251:151";
                     readonly nodes: readonly [];
@@ -145,17 +145,17 @@ export declare const stdMath: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
-                            readonly id: 35554;
+                            readonly id: 35445;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 35552;
+                                readonly id: 35443;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35547;
+                                readonly referencedDeclaration: 35438;
                                 readonly src: "342:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -165,11 +165,11 @@ export declare const stdMath: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "==";
                             readonly rightExpression: {
-                                readonly id: 35553;
+                                readonly id: 35444;
                                 readonly name: "INT256_MIN";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35545;
+                                readonly referencedDeclaration: 35436;
                                 readonly src: "347:10:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -182,17 +182,17 @@ export declare const stdMath: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 35558;
+                        readonly id: 35449;
                         readonly nodeType: "IfStatement";
                         readonly src: "338:130:151";
                         readonly trueBody: {
-                            readonly id: 35557;
+                            readonly id: 35448;
                             readonly nodeType: "Block";
                             readonly src: "359:109:151";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly hexValue: "3537383936303434363138363538303937373131373835343932353034333433393533393236363334393932333332383230323832303139373238373932303033393536353634383139393638";
-                                    readonly id: 35555;
+                                    readonly id: 35446;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -206,8 +206,8 @@ export declare const stdMath: {
                                     };
                                     readonly value: "57896044618658097711785492504343953926634992332820282019728792003956564819968";
                                 };
-                                readonly functionReturnParameters: 35551;
-                                readonly id: 35556;
+                                readonly functionReturnParameters: 35442;
+                                readonly id: 35447;
                                 readonly nodeType: "Return";
                                 readonly src: "373:84:151";
                             }];
@@ -220,17 +220,17 @@ export declare const stdMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 35563;
+                                    readonly id: 35454;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 35561;
+                                        readonly id: 35452;
                                         readonly name: "a";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35547;
+                                        readonly referencedDeclaration: 35438;
                                         readonly src: "493:1:151";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -241,7 +241,7 @@ export declare const stdMath: {
                                     readonly operator: ">";
                                     readonly rightExpression: {
                                         readonly hexValue: "30";
-                                        readonly id: 35562;
+                                        readonly id: 35453;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -262,7 +262,7 @@ export declare const stdMath: {
                                     };
                                 };
                                 readonly falseExpression: {
-                                    readonly id: 35566;
+                                    readonly id: 35457;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -272,11 +272,11 @@ export declare const stdMath: {
                                     readonly prefix: true;
                                     readonly src: "505:2:151";
                                     readonly subExpression: {
-                                        readonly id: 35565;
+                                        readonly id: 35456;
                                         readonly name: "a";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35547;
+                                        readonly referencedDeclaration: 35438;
                                         readonly src: "506:1:151";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -288,7 +288,7 @@ export declare const stdMath: {
                                         readonly typeString: "int256";
                                     };
                                 };
-                                readonly id: 35567;
+                                readonly id: 35458;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -296,11 +296,11 @@ export declare const stdMath: {
                                 readonly nodeType: "Conditional";
                                 readonly src: "493:14:151";
                                 readonly trueExpression: {
-                                    readonly id: 35564;
+                                    readonly id: 35455;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35547;
+                                    readonly referencedDeclaration: 35438;
                                     readonly src: "501:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -317,7 +317,7 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 }];
-                                readonly id: 35560;
+                                readonly id: 35451;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -329,14 +329,14 @@ export declare const stdMath: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 35559;
+                                    readonly id: 35450;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "485:7:151";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 35568;
+                            readonly id: 35459;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -352,8 +352,8 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35551;
-                        readonly id: 35569;
+                        readonly functionReturnParameters: 35442;
+                        readonly id: 35460;
                         readonly nodeType: "Return";
                         readonly src: "478:30:151";
                     }];
@@ -364,16 +364,16 @@ export declare const stdMath: {
                 readonly name: "abs";
                 readonly nameLocation: "218:3:151";
                 readonly parameters: {
-                    readonly id: 35548;
+                    readonly id: 35439;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35547;
+                        readonly id: 35438;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "229:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35571;
+                        readonly scope: 35462;
                         readonly src: "222:8:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -382,7 +382,7 @@ export declare const stdMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 35546;
+                            readonly id: 35437;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "222:6:151";
@@ -396,16 +396,16 @@ export declare const stdMath: {
                     readonly src: "221:10:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35551;
+                    readonly id: 35442;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35550;
+                        readonly id: 35441;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35571;
+                        readonly scope: 35462;
                         readonly src: "255:7:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -414,7 +414,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35549;
+                            readonly id: 35440;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "255:7:151";
@@ -427,17 +427,17 @@ export declare const stdMath: {
                     }];
                     readonly src: "254:9:151";
                 };
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35592;
+                readonly id: 35483;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "521:114:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35591;
+                    readonly id: 35482;
                     readonly nodeType: "Block";
                     readonly src: "590:45:151";
                     readonly nodes: readonly [];
@@ -448,17 +448,17 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35582;
+                                readonly id: 35473;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 35580;
+                                    readonly id: 35471;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35573;
+                                    readonly referencedDeclaration: 35464;
                                     readonly src: "607:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -468,11 +468,11 @@ export declare const stdMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: ">";
                                 readonly rightExpression: {
-                                    readonly id: 35581;
+                                    readonly id: 35472;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35575;
+                                    readonly referencedDeclaration: 35466;
                                     readonly src: "611:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -490,17 +490,17 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35588;
+                                readonly id: 35479;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 35586;
+                                    readonly id: 35477;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35575;
+                                    readonly referencedDeclaration: 35466;
                                     readonly src: "623:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -510,11 +510,11 @@ export declare const stdMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "-";
                                 readonly rightExpression: {
-                                    readonly id: 35587;
+                                    readonly id: 35478;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35573;
+                                    readonly referencedDeclaration: 35464;
                                     readonly src: "627:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -527,7 +527,7 @@ export declare const stdMath: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 35589;
+                            readonly id: 35480;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -539,17 +539,17 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35585;
+                                readonly id: 35476;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 35583;
+                                    readonly id: 35474;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35573;
+                                    readonly referencedDeclaration: 35464;
                                     readonly src: "615:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -559,11 +559,11 @@ export declare const stdMath: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "-";
                                 readonly rightExpression: {
-                                    readonly id: 35584;
+                                    readonly id: 35475;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35575;
+                                    readonly referencedDeclaration: 35466;
                                     readonly src: "619:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -581,8 +581,8 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35579;
-                        readonly id: 35590;
+                        readonly functionReturnParameters: 35470;
+                        readonly id: 35481;
                         readonly nodeType: "Return";
                         readonly src: "600:28:151";
                     }];
@@ -593,16 +593,16 @@ export declare const stdMath: {
                 readonly name: "delta";
                 readonly nameLocation: "530:5:151";
                 readonly parameters: {
-                    readonly id: 35576;
+                    readonly id: 35467;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35573;
+                        readonly id: 35464;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "544:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35592;
+                        readonly scope: 35483;
                         readonly src: "536:9:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -611,7 +611,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35572;
+                            readonly id: 35463;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "536:7:151";
@@ -623,12 +623,12 @@ export declare const stdMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35575;
+                        readonly id: 35466;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "555:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35592;
+                        readonly scope: 35483;
                         readonly src: "547:9:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -637,7 +637,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35574;
+                            readonly id: 35465;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "547:7:151";
@@ -651,16 +651,16 @@ export declare const stdMath: {
                     readonly src: "535:22:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35579;
+                    readonly id: 35470;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35578;
+                        readonly id: 35469;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35592;
+                        readonly scope: 35483;
                         readonly src: "581:7:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -669,7 +669,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35577;
+                            readonly id: 35468;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "581:7:151";
@@ -682,17 +682,17 @@ export declare const stdMath: {
                     }];
                     readonly src: "580:9:151";
                 };
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35628;
+                readonly id: 35519;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "641:352:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35627;
+                    readonly id: 35518;
                     readonly nodeType: "Block";
                     readonly src: "708:285:151";
                     readonly nodes: readonly [];
@@ -702,7 +702,7 @@ export declare const stdMath: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
-                            readonly id: 35607;
+                            readonly id: 35498;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -713,17 +713,17 @@ export declare const stdMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
-                                    readonly id: 35603;
+                                    readonly id: 35494;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 35601;
+                                        readonly id: 35492;
                                         readonly name: "a";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35594;
+                                        readonly referencedDeclaration: 35485;
                                         readonly src: "847:1:151";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -733,11 +733,11 @@ export declare const stdMath: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "^";
                                     readonly rightExpression: {
-                                        readonly id: 35602;
+                                        readonly id: 35493;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35596;
+                                        readonly referencedDeclaration: 35487;
                                         readonly src: "851:1:151";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -750,7 +750,7 @@ export declare const stdMath: {
                                         readonly typeString: "int256";
                                     };
                                 }];
-                                readonly id: 35604;
+                                readonly id: 35495;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -766,7 +766,7 @@ export declare const stdMath: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: ">";
                             readonly rightExpression: {
-                                readonly id: 35606;
+                                readonly id: 35497;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -777,7 +777,7 @@ export declare const stdMath: {
                                 readonly src: "856:2:151";
                                 readonly subExpression: {
                                     readonly hexValue: "31";
-                                    readonly id: 35605;
+                                    readonly id: 35496;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -802,22 +802,22 @@ export declare const stdMath: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 35618;
+                        readonly id: 35509;
                         readonly nodeType: "IfStatement";
                         readonly src: "842:71:151";
                         readonly trueBody: {
-                            readonly id: 35617;
+                            readonly id: 35508;
                             readonly nodeType: "Block";
                             readonly src: "860:53:151";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 35610;
+                                            readonly id: 35501;
                                             readonly name: "a";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35594;
+                                            readonly referencedDeclaration: 35485;
                                             readonly src: "891:1:151";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -829,18 +829,18 @@ export declare const stdMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             }];
-                                            readonly id: 35609;
+                                            readonly id: 35500;
                                             readonly name: "abs";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35571;
+                                            readonly referencedDeclaration: 35462;
                                             readonly src: "887:3:151";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_uint256_$";
                                                 readonly typeString: "function (int256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 35611;
+                                        readonly id: 35502;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -857,11 +857,11 @@ export declare const stdMath: {
                                         };
                                     }, {
                                         readonly arguments: readonly [{
-                                            readonly id: 35613;
+                                            readonly id: 35504;
                                             readonly name: "b";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35596;
+                                            readonly referencedDeclaration: 35487;
                                             readonly src: "899:1:151";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_int256";
@@ -873,18 +873,18 @@ export declare const stdMath: {
                                                 readonly typeIdentifier: "t_int256";
                                                 readonly typeString: "int256";
                                             }];
-                                            readonly id: 35612;
+                                            readonly id: 35503;
                                             readonly name: "abs";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35571;
+                                            readonly referencedDeclaration: 35462;
                                             readonly src: "895:3:151";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_uint256_$";
                                                 readonly typeString: "function (int256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 35614;
+                                        readonly id: 35505;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -908,18 +908,18 @@ export declare const stdMath: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 35608;
+                                        readonly id: 35499;
                                         readonly name: "delta";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [35592, 35628];
-                                        readonly referencedDeclaration: 35592;
+                                        readonly overloadedDeclarations: readonly [35483, 35519];
+                                        readonly referencedDeclaration: 35483;
                                         readonly src: "881:5:151";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                         };
                                     };
-                                    readonly id: 35615;
+                                    readonly id: 35506;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -935,8 +935,8 @@ export declare const stdMath: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly functionReturnParameters: 35600;
-                                readonly id: 35616;
+                                readonly functionReturnParameters: 35491;
+                                readonly id: 35507;
                                 readonly nodeType: "Return";
                                 readonly src: "874:28:151";
                             }];
@@ -947,18 +947,18 @@ export declare const stdMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 35625;
+                            readonly id: 35516;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 35620;
+                                    readonly id: 35511;
                                     readonly name: "a";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35594;
+                                    readonly referencedDeclaration: 35485;
                                     readonly src: "975:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -970,18 +970,18 @@ export declare const stdMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     }];
-                                    readonly id: 35619;
+                                    readonly id: 35510;
                                     readonly name: "abs";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35571;
+                                    readonly referencedDeclaration: 35462;
                                     readonly src: "971:3:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_uint256_$";
                                         readonly typeString: "function (int256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 35621;
+                                readonly id: 35512;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1001,11 +1001,11 @@ export declare const stdMath: {
                             readonly operator: "+";
                             readonly rightExpression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 35623;
+                                    readonly id: 35514;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35596;
+                                    readonly referencedDeclaration: 35487;
                                     readonly src: "984:1:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -1017,18 +1017,18 @@ export declare const stdMath: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     }];
-                                    readonly id: 35622;
+                                    readonly id: 35513;
                                     readonly name: "abs";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35571;
+                                    readonly referencedDeclaration: 35462;
                                     readonly src: "980:3:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_uint256_$";
                                         readonly typeString: "function (int256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 35624;
+                                readonly id: 35515;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1050,8 +1050,8 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35600;
-                        readonly id: 35626;
+                        readonly functionReturnParameters: 35491;
+                        readonly id: 35517;
                         readonly nodeType: "Return";
                         readonly src: "964:22:151";
                     }];
@@ -1062,16 +1062,16 @@ export declare const stdMath: {
                 readonly name: "delta";
                 readonly nameLocation: "650:5:151";
                 readonly parameters: {
-                    readonly id: 35597;
+                    readonly id: 35488;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35594;
+                        readonly id: 35485;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "663:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35628;
+                        readonly scope: 35519;
                         readonly src: "656:8:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1080,7 +1080,7 @@ export declare const stdMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 35593;
+                            readonly id: 35484;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "656:6:151";
@@ -1092,12 +1092,12 @@ export declare const stdMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35596;
+                        readonly id: 35487;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "673:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35628;
+                        readonly scope: 35519;
                         readonly src: "666:8:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1106,7 +1106,7 @@ export declare const stdMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 35595;
+                            readonly id: 35486;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "666:6:151";
@@ -1120,16 +1120,16 @@ export declare const stdMath: {
                     readonly src: "655:20:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35600;
+                    readonly id: 35491;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35599;
+                        readonly id: 35490;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35628;
+                        readonly scope: 35519;
                         readonly src: "699:7:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1138,7 +1138,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35598;
+                            readonly id: 35489;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "699:7:151";
@@ -1151,30 +1151,30 @@ export declare const stdMath: {
                     }];
                     readonly src: "698:9:151";
                 };
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35651;
+                readonly id: 35542;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "999:160:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35650;
+                    readonly id: 35541;
                     readonly nodeType: "Block";
                     readonly src: "1075:84:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [35638];
+                        readonly assignments: readonly [35529];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35638;
+                            readonly id: 35529;
                             readonly mutability: "mutable";
                             readonly name: "absDelta";
                             readonly nameLocation: "1093:8:151";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 35650;
+                            readonly scope: 35541;
                             readonly src: "1085:16:151";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1183,7 +1183,7 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 35637;
+                                readonly id: 35528;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1085:7:151";
@@ -1194,25 +1194,25 @@ export declare const stdMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35643;
+                        readonly id: 35534;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 35640;
+                                readonly id: 35531;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35630;
+                                readonly referencedDeclaration: 35521;
                                 readonly src: "1110:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 35641;
+                                readonly id: 35532;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35632;
+                                readonly referencedDeclaration: 35523;
                                 readonly src: "1113:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1227,18 +1227,18 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 35639;
+                                readonly id: 35530;
                                 readonly name: "delta";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [35592, 35628];
-                                readonly referencedDeclaration: 35592;
+                                readonly overloadedDeclarations: readonly [35483, 35519];
+                                readonly referencedDeclaration: 35483;
                                 readonly src: "1104:5:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 35642;
+                            readonly id: 35533;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1262,7 +1262,7 @@ export declare const stdMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 35648;
+                            readonly id: 35539;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1272,17 +1272,17 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35646;
+                                readonly id: 35537;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 35644;
+                                    readonly id: 35535;
                                     readonly name: "absDelta";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35638;
+                                    readonly referencedDeclaration: 35529;
                                     readonly src: "1133:8:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1293,7 +1293,7 @@ export declare const stdMath: {
                                 readonly operator: "*";
                                 readonly rightExpression: {
                                     readonly hexValue: "31653138";
-                                    readonly id: 35645;
+                                    readonly id: 35536;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1316,11 +1316,11 @@ export declare const stdMath: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "/";
                             readonly rightExpression: {
-                                readonly id: 35647;
+                                readonly id: 35538;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35632;
+                                readonly referencedDeclaration: 35523;
                                 readonly src: "1151:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1333,8 +1333,8 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35636;
-                        readonly id: 35649;
+                        readonly functionReturnParameters: 35527;
+                        readonly id: 35540;
                         readonly nodeType: "Return";
                         readonly src: "1126:26:151";
                     }];
@@ -1345,16 +1345,16 @@ export declare const stdMath: {
                 readonly name: "percentDelta";
                 readonly nameLocation: "1008:12:151";
                 readonly parameters: {
-                    readonly id: 35633;
+                    readonly id: 35524;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35630;
+                        readonly id: 35521;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "1029:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35651;
+                        readonly scope: 35542;
                         readonly src: "1021:9:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1363,7 +1363,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35629;
+                            readonly id: 35520;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1021:7:151";
@@ -1375,12 +1375,12 @@ export declare const stdMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35632;
+                        readonly id: 35523;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "1040:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35651;
+                        readonly scope: 35542;
                         readonly src: "1032:9:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1389,7 +1389,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35631;
+                            readonly id: 35522;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1032:7:151";
@@ -1403,16 +1403,16 @@ export declare const stdMath: {
                     readonly src: "1020:22:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35636;
+                    readonly id: 35527;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35635;
+                        readonly id: 35526;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35651;
+                        readonly scope: 35542;
                         readonly src: "1066:7:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1421,7 +1421,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35634;
+                            readonly id: 35525;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1066:7:151";
@@ -1434,30 +1434,30 @@ export declare const stdMath: {
                     }];
                     readonly src: "1065:9:151";
                 };
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 35680;
+                readonly id: 35571;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1165:192:151";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35679;
+                    readonly id: 35570;
                     readonly nodeType: "Block";
                     readonly src: "1239:118:151";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [35661];
+                        readonly assignments: readonly [35552];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35661;
+                            readonly id: 35552;
                             readonly mutability: "mutable";
                             readonly name: "absDelta";
                             readonly nameLocation: "1257:8:151";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 35679;
+                            readonly scope: 35570;
                             readonly src: "1249:16:151";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1466,7 +1466,7 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 35660;
+                                readonly id: 35551;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1249:7:151";
@@ -1477,25 +1477,25 @@ export declare const stdMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35666;
+                        readonly id: 35557;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 35663;
+                                readonly id: 35554;
                                 readonly name: "a";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35653;
+                                readonly referencedDeclaration: 35544;
                                 readonly src: "1274:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 };
                             }, {
-                                readonly id: 35664;
+                                readonly id: 35555;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35655;
+                                readonly referencedDeclaration: 35546;
                                 readonly src: "1277:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -1510,18 +1510,18 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 }];
-                                readonly id: 35662;
+                                readonly id: 35553;
                                 readonly name: "delta";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [35592, 35628];
-                                readonly referencedDeclaration: 35628;
+                                readonly overloadedDeclarations: readonly [35483, 35519];
+                                readonly referencedDeclaration: 35519;
                                 readonly src: "1268:5:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$_t_int256_$returns$_t_uint256_$";
                                     readonly typeString: "function (int256,int256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 35665;
+                            readonly id: 35556;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1540,15 +1540,15 @@ export declare const stdMath: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1249:30:151";
                     }, {
-                        readonly assignments: readonly [35668];
+                        readonly assignments: readonly [35559];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35668;
+                            readonly id: 35559;
                             readonly mutability: "mutable";
                             readonly name: "absB";
                             readonly nameLocation: "1297:4:151";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 35679;
+                            readonly scope: 35570;
                             readonly src: "1289:12:151";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1557,7 +1557,7 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 35667;
+                                readonly id: 35558;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1289:7:151";
@@ -1568,14 +1568,14 @@ export declare const stdMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35672;
+                        readonly id: 35563;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 35670;
+                                readonly id: 35561;
                                 readonly name: "b";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35655;
+                                readonly referencedDeclaration: 35546;
                                 readonly src: "1308:1:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -1587,18 +1587,18 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_int256";
                                     readonly typeString: "int256";
                                 }];
-                                readonly id: 35669;
+                                readonly id: 35560;
                                 readonly name: "abs";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35571;
+                                readonly referencedDeclaration: 35462;
                                 readonly src: "1304:3:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_int256_$returns$_t_uint256_$";
                                     readonly typeString: "function (int256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 35671;
+                            readonly id: 35562;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1622,7 +1622,7 @@ export declare const stdMath: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 35677;
+                            readonly id: 35568;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1632,17 +1632,17 @@ export declare const stdMath: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35675;
+                                readonly id: 35566;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 35673;
+                                    readonly id: 35564;
                                     readonly name: "absDelta";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35661;
+                                    readonly referencedDeclaration: 35552;
                                     readonly src: "1328:8:151";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1653,7 +1653,7 @@ export declare const stdMath: {
                                 readonly operator: "*";
                                 readonly rightExpression: {
                                     readonly hexValue: "31653138";
-                                    readonly id: 35674;
+                                    readonly id: 35565;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1676,11 +1676,11 @@ export declare const stdMath: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "/";
                             readonly rightExpression: {
-                                readonly id: 35676;
+                                readonly id: 35567;
                                 readonly name: "absB";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35668;
+                                readonly referencedDeclaration: 35559;
                                 readonly src: "1346:4:151";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1693,8 +1693,8 @@ export declare const stdMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35659;
-                        readonly id: 35678;
+                        readonly functionReturnParameters: 35550;
+                        readonly id: 35569;
                         readonly nodeType: "Return";
                         readonly src: "1321:29:151";
                     }];
@@ -1705,16 +1705,16 @@ export declare const stdMath: {
                 readonly name: "percentDelta";
                 readonly nameLocation: "1174:12:151";
                 readonly parameters: {
-                    readonly id: 35656;
+                    readonly id: 35547;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35653;
+                        readonly id: 35544;
                         readonly mutability: "mutable";
                         readonly name: "a";
                         readonly nameLocation: "1194:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35680;
+                        readonly scope: 35571;
                         readonly src: "1187:8:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1723,7 +1723,7 @@ export declare const stdMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 35652;
+                            readonly id: 35543;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1187:6:151";
@@ -1735,12 +1735,12 @@ export declare const stdMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35655;
+                        readonly id: 35546;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "1204:1:151";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35680;
+                        readonly scope: 35571;
                         readonly src: "1197:8:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1749,7 +1749,7 @@ export declare const stdMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 35654;
+                            readonly id: 35545;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1197:6:151";
@@ -1763,16 +1763,16 @@ export declare const stdMath: {
                     readonly src: "1186:20:151";
                 };
                 readonly returnParameters: {
-                    readonly id: 35659;
+                    readonly id: 35550;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35658;
+                        readonly id: 35549;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35680;
+                        readonly scope: 35571;
                         readonly src: "1230:7:151";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1781,7 +1781,7 @@ export declare const stdMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35657;
+                            readonly id: 35548;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1230:7:151";
@@ -1794,7 +1794,7 @@ export declare const stdMath: {
                     }];
                     readonly src: "1229:9:151";
                 };
-                readonly scope: 35681;
+                readonly scope: 35572;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -1805,10 +1805,10 @@ export declare const stdMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [35681];
+            readonly linearizedBaseContracts: readonly [35572];
             readonly name: "stdMath";
             readonly nameLocation: "73:7:151";
-            readonly scope: 35682;
+            readonly scope: 35573;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

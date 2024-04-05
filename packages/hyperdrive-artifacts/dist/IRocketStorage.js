@@ -1092,17 +1092,17 @@ export const IRocketStorage = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IRocketStorage.sol",
-        "id": 12355,
+        "id": 12187,
         "exportedSymbols": {
             "IRocketStorage": [
-                12354
+                12186
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:2256:108",
         "nodes": [
             {
-                "id": 12160,
+                "id": 11992,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:108",
                 "nodes": [],
@@ -1113,12 +1113,12 @@ export const IRocketStorage = {
                 ]
             },
             {
-                "id": 12354,
+                "id": 12186,
                 "nodeType": "ContractDefinition",
                 "src": "64:2230:108",
                 "nodes": [
                     {
-                        "id": 12165,
+                        "id": 11997,
                         "nodeType": "FunctionDefinition",
                         "src": "116:58:108",
                         "nodes": [],
@@ -1129,23 +1129,23 @@ export const IRocketStorage = {
                         "name": "getDeployedStatus",
                         "nameLocation": "125:17:108",
                         "parameters": {
-                            "id": 12161,
+                            "id": 11993,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "142:2:108"
                         },
                         "returnParameters": {
-                            "id": 12164,
+                            "id": 11996,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12163,
+                                    "id": 11995,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12165,
+                                    "scope": 11997,
                                     "src": "168:4:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1154,7 +1154,7 @@ export const IRocketStorage = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12162,
+                                        "id": 11994,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "168:4:108",
@@ -1168,13 +1168,13 @@ export const IRocketStorage = {
                             ],
                             "src": "167:6:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12170,
+                        "id": 12002,
                         "nodeType": "FunctionDefinition",
                         "src": "196:55:108",
                         "nodes": [],
@@ -1185,23 +1185,23 @@ export const IRocketStorage = {
                         "name": "getGuardian",
                         "nameLocation": "205:11:108",
                         "parameters": {
-                            "id": 12166,
+                            "id": 11998,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "216:2:108"
                         },
                         "returnParameters": {
-                            "id": 12169,
+                            "id": 12001,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12168,
+                                    "id": 12000,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12170,
+                                    "scope": 12002,
                                     "src": "242:7:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1210,7 +1210,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12167,
+                                        "id": 11999,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "242:7:108",
@@ -1225,13 +1225,13 @@ export const IRocketStorage = {
                             ],
                             "src": "241:9:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12175,
+                        "id": 12007,
                         "nodeType": "FunctionDefinition",
                         "src": "257:51:108",
                         "nodes": [],
@@ -1242,17 +1242,17 @@ export const IRocketStorage = {
                         "name": "setGuardian",
                         "nameLocation": "266:11:108",
                         "parameters": {
-                            "id": 12173,
+                            "id": 12005,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12172,
+                                    "id": 12004,
                                     "mutability": "mutable",
                                     "name": "_newAddress",
                                     "nameLocation": "286:11:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12175,
+                                    "scope": 12007,
                                     "src": "278:19:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1261,7 +1261,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12171,
+                                        "id": 12003,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "278:7:108",
@@ -1277,18 +1277,18 @@ export const IRocketStorage = {
                             "src": "277:21:108"
                         },
                         "returnParameters": {
-                            "id": 12174,
+                            "id": 12006,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "307:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12178,
+                        "id": 12010,
                         "nodeType": "FunctionDefinition",
                         "src": "314:36:108",
                         "nodes": [],
@@ -1299,24 +1299,24 @@ export const IRocketStorage = {
                         "name": "confirmGuardian",
                         "nameLocation": "323:15:108",
                         "parameters": {
-                            "id": 12176,
+                            "id": 12008,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "338:2:108"
                         },
                         "returnParameters": {
-                            "id": 12177,
+                            "id": 12009,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "349:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12185,
+                        "id": 12017,
                         "nodeType": "FunctionDefinition",
                         "src": "371:66:108",
                         "nodes": [],
@@ -1327,17 +1327,17 @@ export const IRocketStorage = {
                         "name": "getAddress",
                         "nameLocation": "380:10:108",
                         "parameters": {
-                            "id": 12181,
+                            "id": 12013,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12180,
+                                    "id": 12012,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "399:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12185,
+                                    "scope": 12017,
                                     "src": "391:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1346,7 +1346,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12179,
+                                        "id": 12011,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "391:7:108",
@@ -1361,17 +1361,17 @@ export const IRocketStorage = {
                             "src": "390:14:108"
                         },
                         "returnParameters": {
-                            "id": 12184,
+                            "id": 12016,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12183,
+                                    "id": 12015,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12185,
+                                    "scope": 12017,
                                     "src": "428:7:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1380,7 +1380,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12182,
+                                        "id": 12014,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "428:7:108",
@@ -1395,13 +1395,13 @@ export const IRocketStorage = {
                             ],
                             "src": "427:9:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12192,
+                        "id": 12024,
                         "nodeType": "FunctionDefinition",
                         "src": "443:60:108",
                         "nodes": [],
@@ -1412,17 +1412,17 @@ export const IRocketStorage = {
                         "name": "getUint",
                         "nameLocation": "452:7:108",
                         "parameters": {
-                            "id": 12188,
+                            "id": 12020,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12187,
+                                    "id": 12019,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "468:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12192,
+                                    "scope": 12024,
                                     "src": "460:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1431,7 +1431,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12186,
+                                        "id": 12018,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "460:7:108",
@@ -1446,17 +1446,17 @@ export const IRocketStorage = {
                             "src": "459:14:108"
                         },
                         "returnParameters": {
-                            "id": 12191,
+                            "id": 12023,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12190,
+                                    "id": 12022,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12192,
+                                    "scope": 12024,
                                     "src": "497:4:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1465,7 +1465,7 @@ export const IRocketStorage = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12189,
+                                        "id": 12021,
                                         "name": "uint",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "497:4:108",
@@ -1479,13 +1479,13 @@ export const IRocketStorage = {
                             ],
                             "src": "496:6:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12199,
+                        "id": 12031,
                         "nodeType": "FunctionDefinition",
                         "src": "509:71:108",
                         "nodes": [],
@@ -1496,17 +1496,17 @@ export const IRocketStorage = {
                         "name": "getString",
                         "nameLocation": "518:9:108",
                         "parameters": {
-                            "id": 12195,
+                            "id": 12027,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12194,
+                                    "id": 12026,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "536:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12199,
+                                    "scope": 12031,
                                     "src": "528:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1515,7 +1515,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12193,
+                                        "id": 12025,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "528:7:108",
@@ -1530,17 +1530,17 @@ export const IRocketStorage = {
                             "src": "527:14:108"
                         },
                         "returnParameters": {
-                            "id": 12198,
+                            "id": 12030,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12197,
+                                    "id": 12029,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12199,
+                                    "scope": 12031,
                                     "src": "565:13:108",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1549,7 +1549,7 @@ export const IRocketStorage = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 12196,
+                                        "id": 12028,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "565:6:108",
@@ -1563,13 +1563,13 @@ export const IRocketStorage = {
                             ],
                             "src": "564:15:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12206,
+                        "id": 12038,
                         "nodeType": "FunctionDefinition",
                         "src": "586:69:108",
                         "nodes": [],
@@ -1580,17 +1580,17 @@ export const IRocketStorage = {
                         "name": "getBytes",
                         "nameLocation": "595:8:108",
                         "parameters": {
-                            "id": 12202,
+                            "id": 12034,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12201,
+                                    "id": 12033,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "612:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12206,
+                                    "scope": 12038,
                                     "src": "604:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1599,7 +1599,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12200,
+                                        "id": 12032,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "604:7:108",
@@ -1614,17 +1614,17 @@ export const IRocketStorage = {
                             "src": "603:14:108"
                         },
                         "returnParameters": {
-                            "id": 12205,
+                            "id": 12037,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12204,
+                                    "id": 12036,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12206,
+                                    "scope": 12038,
                                     "src": "641:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1633,7 +1633,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 12203,
+                                        "id": 12035,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "641:5:108",
@@ -1647,13 +1647,13 @@ export const IRocketStorage = {
                             ],
                             "src": "640:14:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12213,
+                        "id": 12045,
                         "nodeType": "FunctionDefinition",
                         "src": "661:60:108",
                         "nodes": [],
@@ -1664,17 +1664,17 @@ export const IRocketStorage = {
                         "name": "getBool",
                         "nameLocation": "670:7:108",
                         "parameters": {
-                            "id": 12209,
+                            "id": 12041,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12208,
+                                    "id": 12040,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "686:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12213,
+                                    "scope": 12045,
                                     "src": "678:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1683,7 +1683,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12207,
+                                        "id": 12039,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "678:7:108",
@@ -1698,17 +1698,17 @@ export const IRocketStorage = {
                             "src": "677:14:108"
                         },
                         "returnParameters": {
-                            "id": 12212,
+                            "id": 12044,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12211,
+                                    "id": 12043,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12213,
+                                    "scope": 12045,
                                     "src": "715:4:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1717,7 +1717,7 @@ export const IRocketStorage = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12210,
+                                        "id": 12042,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "715:4:108",
@@ -1731,13 +1731,13 @@ export const IRocketStorage = {
                             ],
                             "src": "714:6:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12220,
+                        "id": 12052,
                         "nodeType": "FunctionDefinition",
                         "src": "727:58:108",
                         "nodes": [],
@@ -1748,17 +1748,17 @@ export const IRocketStorage = {
                         "name": "getInt",
                         "nameLocation": "736:6:108",
                         "parameters": {
-                            "id": 12216,
+                            "id": 12048,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12215,
+                                    "id": 12047,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "751:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12220,
+                                    "scope": 12052,
                                     "src": "743:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1767,7 +1767,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12214,
+                                        "id": 12046,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "743:7:108",
@@ -1782,17 +1782,17 @@ export const IRocketStorage = {
                             "src": "742:14:108"
                         },
                         "returnParameters": {
-                            "id": 12219,
+                            "id": 12051,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12218,
+                                    "id": 12050,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12220,
+                                    "scope": 12052,
                                     "src": "780:3:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1801,7 +1801,7 @@ export const IRocketStorage = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 12217,
+                                        "id": 12049,
                                         "name": "int",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "780:3:108",
@@ -1815,13 +1815,13 @@ export const IRocketStorage = {
                             ],
                             "src": "779:5:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12227,
+                        "id": 12059,
                         "nodeType": "FunctionDefinition",
                         "src": "791:66:108",
                         "nodes": [],
@@ -1832,17 +1832,17 @@ export const IRocketStorage = {
                         "name": "getBytes32",
                         "nameLocation": "800:10:108",
                         "parameters": {
-                            "id": 12223,
+                            "id": 12055,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12222,
+                                    "id": 12054,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "819:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12227,
+                                    "scope": 12059,
                                     "src": "811:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1851,7 +1851,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12221,
+                                        "id": 12053,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "811:7:108",
@@ -1866,17 +1866,17 @@ export const IRocketStorage = {
                             "src": "810:14:108"
                         },
                         "returnParameters": {
-                            "id": 12226,
+                            "id": 12058,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12225,
+                                    "id": 12057,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12227,
+                                    "scope": 12059,
                                     "src": "848:7:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1885,7 +1885,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12224,
+                                        "id": 12056,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "848:7:108",
@@ -1899,13 +1899,13 @@ export const IRocketStorage = {
                             ],
                             "src": "847:9:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12234,
+                        "id": 12066,
                         "nodeType": "FunctionDefinition",
                         "src": "878:59:108",
                         "nodes": [],
@@ -1916,17 +1916,17 @@ export const IRocketStorage = {
                         "name": "setAddress",
                         "nameLocation": "887:10:108",
                         "parameters": {
-                            "id": 12232,
+                            "id": 12064,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12229,
+                                    "id": 12061,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "906:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12234,
+                                    "scope": 12066,
                                     "src": "898:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1935,7 +1935,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12228,
+                                        "id": 12060,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "898:7:108",
@@ -1948,12 +1948,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12231,
+                                    "id": 12063,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "920:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12234,
+                                    "scope": 12066,
                                     "src": "912:14:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1962,7 +1962,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12230,
+                                        "id": 12062,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "912:7:108",
@@ -1978,18 +1978,18 @@ export const IRocketStorage = {
                             "src": "897:30:108"
                         },
                         "returnParameters": {
-                            "id": 12233,
+                            "id": 12065,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "936:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12241,
+                        "id": 12073,
                         "nodeType": "FunctionDefinition",
                         "src": "943:53:108",
                         "nodes": [],
@@ -2000,17 +2000,17 @@ export const IRocketStorage = {
                         "name": "setUint",
                         "nameLocation": "952:7:108",
                         "parameters": {
-                            "id": 12239,
+                            "id": 12071,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12236,
+                                    "id": 12068,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "968:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12241,
+                                    "scope": 12073,
                                     "src": "960:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2019,7 +2019,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12235,
+                                        "id": 12067,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "960:7:108",
@@ -2032,12 +2032,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12238,
+                                    "id": 12070,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "979:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12241,
+                                    "scope": 12073,
                                     "src": "974:11:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2046,7 +2046,7 @@ export const IRocketStorage = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12237,
+                                        "id": 12069,
                                         "name": "uint",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "974:4:108",
@@ -2061,18 +2061,18 @@ export const IRocketStorage = {
                             "src": "959:27:108"
                         },
                         "returnParameters": {
-                            "id": 12240,
+                            "id": 12072,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "995:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12248,
+                        "id": 12080,
                         "nodeType": "FunctionDefinition",
                         "src": "1002:66:108",
                         "nodes": [],
@@ -2083,17 +2083,17 @@ export const IRocketStorage = {
                         "name": "setString",
                         "nameLocation": "1011:9:108",
                         "parameters": {
-                            "id": 12246,
+                            "id": 12078,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12243,
+                                    "id": 12075,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1029:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12248,
+                                    "scope": 12080,
                                     "src": "1021:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2102,7 +2102,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12242,
+                                        "id": 12074,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1021:7:108",
@@ -2115,12 +2115,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12245,
+                                    "id": 12077,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1051:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12248,
+                                    "scope": 12080,
                                     "src": "1035:22:108",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2129,7 +2129,7 @@ export const IRocketStorage = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 12244,
+                                        "id": 12076,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1035:6:108",
@@ -2144,18 +2144,18 @@ export const IRocketStorage = {
                             "src": "1020:38:108"
                         },
                         "returnParameters": {
-                            "id": 12247,
+                            "id": 12079,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1067:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12255,
+                        "id": 12087,
                         "nodeType": "FunctionDefinition",
                         "src": "1074:64:108",
                         "nodes": [],
@@ -2166,17 +2166,17 @@ export const IRocketStorage = {
                         "name": "setBytes",
                         "nameLocation": "1083:8:108",
                         "parameters": {
-                            "id": 12253,
+                            "id": 12085,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12250,
+                                    "id": 12082,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1100:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12255,
+                                    "scope": 12087,
                                     "src": "1092:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2185,7 +2185,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12249,
+                                        "id": 12081,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1092:7:108",
@@ -2198,12 +2198,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12252,
+                                    "id": 12084,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1121:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12255,
+                                    "scope": 12087,
                                     "src": "1106:21:108",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2212,7 +2212,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 12251,
+                                        "id": 12083,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1106:5:108",
@@ -2227,18 +2227,18 @@ export const IRocketStorage = {
                             "src": "1091:37:108"
                         },
                         "returnParameters": {
-                            "id": 12254,
+                            "id": 12086,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1137:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12262,
+                        "id": 12094,
                         "nodeType": "FunctionDefinition",
                         "src": "1144:53:108",
                         "nodes": [],
@@ -2249,17 +2249,17 @@ export const IRocketStorage = {
                         "name": "setBool",
                         "nameLocation": "1153:7:108",
                         "parameters": {
-                            "id": 12260,
+                            "id": 12092,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12257,
+                                    "id": 12089,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1169:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12262,
+                                    "scope": 12094,
                                     "src": "1161:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2268,7 +2268,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12256,
+                                        "id": 12088,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1161:7:108",
@@ -2281,12 +2281,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12259,
+                                    "id": 12091,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1180:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12262,
+                                    "scope": 12094,
                                     "src": "1175:11:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2295,7 +2295,7 @@ export const IRocketStorage = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12258,
+                                        "id": 12090,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1175:4:108",
@@ -2310,18 +2310,18 @@ export const IRocketStorage = {
                             "src": "1160:27:108"
                         },
                         "returnParameters": {
-                            "id": 12261,
+                            "id": 12093,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1196:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12269,
+                        "id": 12101,
                         "nodeType": "FunctionDefinition",
                         "src": "1203:51:108",
                         "nodes": [],
@@ -2332,17 +2332,17 @@ export const IRocketStorage = {
                         "name": "setInt",
                         "nameLocation": "1212:6:108",
                         "parameters": {
-                            "id": 12267,
+                            "id": 12099,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12264,
+                                    "id": 12096,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1227:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12269,
+                                    "scope": 12101,
                                     "src": "1219:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2351,7 +2351,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12263,
+                                        "id": 12095,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1219:7:108",
@@ -2364,12 +2364,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12266,
+                                    "id": 12098,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1237:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12269,
+                                    "scope": 12101,
                                     "src": "1233:10:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2378,7 +2378,7 @@ export const IRocketStorage = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 12265,
+                                        "id": 12097,
                                         "name": "int",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1233:3:108",
@@ -2393,18 +2393,18 @@ export const IRocketStorage = {
                             "src": "1218:26:108"
                         },
                         "returnParameters": {
-                            "id": 12268,
+                            "id": 12100,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1253:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12276,
+                        "id": 12108,
                         "nodeType": "FunctionDefinition",
                         "src": "1260:59:108",
                         "nodes": [],
@@ -2415,17 +2415,17 @@ export const IRocketStorage = {
                         "name": "setBytes32",
                         "nameLocation": "1269:10:108",
                         "parameters": {
-                            "id": 12274,
+                            "id": 12106,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12271,
+                                    "id": 12103,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1288:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12276,
+                                    "scope": 12108,
                                     "src": "1280:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2434,7 +2434,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12270,
+                                        "id": 12102,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1280:7:108",
@@ -2447,12 +2447,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12273,
+                                    "id": 12105,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "1302:6:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12276,
+                                    "scope": 12108,
                                     "src": "1294:14:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2461,7 +2461,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12272,
+                                        "id": 12104,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1294:7:108",
@@ -2476,18 +2476,18 @@ export const IRocketStorage = {
                             "src": "1279:30:108"
                         },
                         "returnParameters": {
-                            "id": 12275,
+                            "id": 12107,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1318:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12281,
+                        "id": 12113,
                         "nodeType": "FunctionDefinition",
                         "src": "1341:46:108",
                         "nodes": [],
@@ -2498,17 +2498,17 @@ export const IRocketStorage = {
                         "name": "deleteAddress",
                         "nameLocation": "1350:13:108",
                         "parameters": {
-                            "id": 12279,
+                            "id": 12111,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12278,
+                                    "id": 12110,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1372:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12281,
+                                    "scope": 12113,
                                     "src": "1364:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2517,7 +2517,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12277,
+                                        "id": 12109,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1364:7:108",
@@ -2532,18 +2532,18 @@ export const IRocketStorage = {
                             "src": "1363:14:108"
                         },
                         "returnParameters": {
-                            "id": 12280,
+                            "id": 12112,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1386:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12286,
+                        "id": 12118,
                         "nodeType": "FunctionDefinition",
                         "src": "1393:43:108",
                         "nodes": [],
@@ -2554,17 +2554,17 @@ export const IRocketStorage = {
                         "name": "deleteUint",
                         "nameLocation": "1402:10:108",
                         "parameters": {
-                            "id": 12284,
+                            "id": 12116,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12283,
+                                    "id": 12115,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1421:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12286,
+                                    "scope": 12118,
                                     "src": "1413:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2573,7 +2573,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12282,
+                                        "id": 12114,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1413:7:108",
@@ -2588,18 +2588,18 @@ export const IRocketStorage = {
                             "src": "1412:14:108"
                         },
                         "returnParameters": {
-                            "id": 12285,
+                            "id": 12117,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1435:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12291,
+                        "id": 12123,
                         "nodeType": "FunctionDefinition",
                         "src": "1442:45:108",
                         "nodes": [],
@@ -2610,17 +2610,17 @@ export const IRocketStorage = {
                         "name": "deleteString",
                         "nameLocation": "1451:12:108",
                         "parameters": {
-                            "id": 12289,
+                            "id": 12121,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12288,
+                                    "id": 12120,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1472:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12291,
+                                    "scope": 12123,
                                     "src": "1464:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2629,7 +2629,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12287,
+                                        "id": 12119,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1464:7:108",
@@ -2644,18 +2644,18 @@ export const IRocketStorage = {
                             "src": "1463:14:108"
                         },
                         "returnParameters": {
-                            "id": 12290,
+                            "id": 12122,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1486:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12296,
+                        "id": 12128,
                         "nodeType": "FunctionDefinition",
                         "src": "1493:44:108",
                         "nodes": [],
@@ -2666,17 +2666,17 @@ export const IRocketStorage = {
                         "name": "deleteBytes",
                         "nameLocation": "1502:11:108",
                         "parameters": {
-                            "id": 12294,
+                            "id": 12126,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12293,
+                                    "id": 12125,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1522:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12296,
+                                    "scope": 12128,
                                     "src": "1514:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2685,7 +2685,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12292,
+                                        "id": 12124,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1514:7:108",
@@ -2700,18 +2700,18 @@ export const IRocketStorage = {
                             "src": "1513:14:108"
                         },
                         "returnParameters": {
-                            "id": 12295,
+                            "id": 12127,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1536:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12301,
+                        "id": 12133,
                         "nodeType": "FunctionDefinition",
                         "src": "1543:43:108",
                         "nodes": [],
@@ -2722,17 +2722,17 @@ export const IRocketStorage = {
                         "name": "deleteBool",
                         "nameLocation": "1552:10:108",
                         "parameters": {
-                            "id": 12299,
+                            "id": 12131,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12298,
+                                    "id": 12130,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1571:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12301,
+                                    "scope": 12133,
                                     "src": "1563:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2741,7 +2741,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12297,
+                                        "id": 12129,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1563:7:108",
@@ -2756,18 +2756,18 @@ export const IRocketStorage = {
                             "src": "1562:14:108"
                         },
                         "returnParameters": {
-                            "id": 12300,
+                            "id": 12132,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1585:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12306,
+                        "id": 12138,
                         "nodeType": "FunctionDefinition",
                         "src": "1592:42:108",
                         "nodes": [],
@@ -2778,17 +2778,17 @@ export const IRocketStorage = {
                         "name": "deleteInt",
                         "nameLocation": "1601:9:108",
                         "parameters": {
-                            "id": 12304,
+                            "id": 12136,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12303,
+                                    "id": 12135,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1619:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12306,
+                                    "scope": 12138,
                                     "src": "1611:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2797,7 +2797,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12302,
+                                        "id": 12134,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1611:7:108",
@@ -2812,18 +2812,18 @@ export const IRocketStorage = {
                             "src": "1610:14:108"
                         },
                         "returnParameters": {
-                            "id": 12305,
+                            "id": 12137,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1633:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12311,
+                        "id": 12143,
                         "nodeType": "FunctionDefinition",
                         "src": "1640:46:108",
                         "nodes": [],
@@ -2834,17 +2834,17 @@ export const IRocketStorage = {
                         "name": "deleteBytes32",
                         "nameLocation": "1649:13:108",
                         "parameters": {
-                            "id": 12309,
+                            "id": 12141,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12308,
+                                    "id": 12140,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1671:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12311,
+                                    "scope": 12143,
                                     "src": "1663:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2853,7 +2853,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12307,
+                                        "id": 12139,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1663:7:108",
@@ -2868,18 +2868,18 @@ export const IRocketStorage = {
                             "src": "1662:14:108"
                         },
                         "returnParameters": {
-                            "id": 12310,
+                            "id": 12142,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1685:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12318,
+                        "id": 12150,
                         "nodeType": "FunctionDefinition",
                         "src": "1710:57:108",
                         "nodes": [],
@@ -2890,17 +2890,17 @@ export const IRocketStorage = {
                         "name": "addUint",
                         "nameLocation": "1719:7:108",
                         "parameters": {
-                            "id": 12316,
+                            "id": 12148,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12313,
+                                    "id": 12145,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1735:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12318,
+                                    "scope": 12150,
                                     "src": "1727:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2909,7 +2909,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12312,
+                                        "id": 12144,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1727:7:108",
@@ -2922,12 +2922,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12315,
+                                    "id": 12147,
                                     "mutability": "mutable",
                                     "name": "_amount",
                                     "nameLocation": "1749:7:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12318,
+                                    "scope": 12150,
                                     "src": "1741:15:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2936,7 +2936,7 @@ export const IRocketStorage = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12314,
+                                        "id": 12146,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1741:7:108",
@@ -2951,18 +2951,18 @@ export const IRocketStorage = {
                             "src": "1726:31:108"
                         },
                         "returnParameters": {
-                            "id": 12317,
+                            "id": 12149,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1766:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12325,
+                        "id": 12157,
                         "nodeType": "FunctionDefinition",
                         "src": "1773:57:108",
                         "nodes": [],
@@ -2973,17 +2973,17 @@ export const IRocketStorage = {
                         "name": "subUint",
                         "nameLocation": "1782:7:108",
                         "parameters": {
-                            "id": 12323,
+                            "id": 12155,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12320,
+                                    "id": 12152,
                                     "mutability": "mutable",
                                     "name": "_key",
                                     "nameLocation": "1798:4:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12325,
+                                    "scope": 12157,
                                     "src": "1790:12:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2992,7 +2992,7 @@ export const IRocketStorage = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 12319,
+                                        "id": 12151,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1790:7:108",
@@ -3005,12 +3005,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12322,
+                                    "id": 12154,
                                     "mutability": "mutable",
                                     "name": "_amount",
                                     "nameLocation": "1812:7:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12325,
+                                    "scope": 12157,
                                     "src": "1804:15:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3019,7 +3019,7 @@ export const IRocketStorage = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12321,
+                                        "id": 12153,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1804:7:108",
@@ -3034,18 +3034,18 @@ export const IRocketStorage = {
                             "src": "1789:31:108"
                         },
                         "returnParameters": {
-                            "id": 12324,
+                            "id": 12156,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1829:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12332,
+                        "id": 12164,
                         "nodeType": "FunctionDefinition",
                         "src": "1861:102:108",
                         "nodes": [],
@@ -3056,17 +3056,17 @@ export const IRocketStorage = {
                         "name": "getNodeWithdrawalAddress",
                         "nameLocation": "1870:24:108",
                         "parameters": {
-                            "id": 12328,
+                            "id": 12160,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12327,
+                                    "id": 12159,
                                     "mutability": "mutable",
                                     "name": "_nodeAddress",
                                     "nameLocation": "1912:12:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12332,
+                                    "scope": 12164,
                                     "src": "1904:20:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3075,7 +3075,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12326,
+                                        "id": 12158,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1904:7:108",
@@ -3091,17 +3091,17 @@ export const IRocketStorage = {
                             "src": "1894:36:108"
                         },
                         "returnParameters": {
-                            "id": 12331,
+                            "id": 12163,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12330,
+                                    "id": 12162,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12332,
+                                    "scope": 12164,
                                     "src": "1954:7:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3110,7 +3110,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12329,
+                                        "id": 12161,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1954:7:108",
@@ -3125,13 +3125,13 @@ export const IRocketStorage = {
                             ],
                             "src": "1953:9:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12339,
+                        "id": 12171,
                         "nodeType": "FunctionDefinition",
                         "src": "1969:109:108",
                         "nodes": [],
@@ -3142,17 +3142,17 @@ export const IRocketStorage = {
                         "name": "getNodePendingWithdrawalAddress",
                         "nameLocation": "1978:31:108",
                         "parameters": {
-                            "id": 12335,
+                            "id": 12167,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12334,
+                                    "id": 12166,
                                     "mutability": "mutable",
                                     "name": "_nodeAddress",
                                     "nameLocation": "2027:12:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12339,
+                                    "scope": 12171,
                                     "src": "2019:20:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3161,7 +3161,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12333,
+                                        "id": 12165,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2019:7:108",
@@ -3177,17 +3177,17 @@ export const IRocketStorage = {
                             "src": "2009:36:108"
                         },
                         "returnParameters": {
-                            "id": 12338,
+                            "id": 12170,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12337,
+                                    "id": 12169,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12339,
+                                    "scope": 12171,
                                     "src": "2069:7:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3196,7 +3196,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12336,
+                                        "id": 12168,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2069:7:108",
@@ -3211,13 +3211,13 @@ export const IRocketStorage = {
                             ],
                             "src": "2068:9:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12348,
+                        "id": 12180,
                         "nodeType": "FunctionDefinition",
                         "src": "2084:137:108",
                         "nodes": [],
@@ -3228,17 +3228,17 @@ export const IRocketStorage = {
                         "name": "setWithdrawalAddress",
                         "nameLocation": "2093:20:108",
                         "parameters": {
-                            "id": 12346,
+                            "id": 12178,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12341,
+                                    "id": 12173,
                                     "mutability": "mutable",
                                     "name": "_nodeAddress",
                                     "nameLocation": "2131:12:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12348,
+                                    "scope": 12180,
                                     "src": "2123:20:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3247,7 +3247,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12340,
+                                        "id": 12172,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2123:7:108",
@@ -3261,12 +3261,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12343,
+                                    "id": 12175,
                                     "mutability": "mutable",
                                     "name": "_newWithdrawalAddress",
                                     "nameLocation": "2161:21:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12348,
+                                    "scope": 12180,
                                     "src": "2153:29:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3275,7 +3275,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12342,
+                                        "id": 12174,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2153:7:108",
@@ -3289,12 +3289,12 @@ export const IRocketStorage = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12345,
+                                    "id": 12177,
                                     "mutability": "mutable",
                                     "name": "_confirm",
                                     "nameLocation": "2197:8:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12348,
+                                    "scope": 12180,
                                     "src": "2192:13:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3303,7 +3303,7 @@ export const IRocketStorage = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12344,
+                                        "id": 12176,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2192:4:108",
@@ -3318,18 +3318,18 @@ export const IRocketStorage = {
                             "src": "2113:98:108"
                         },
                         "returnParameters": {
-                            "id": 12347,
+                            "id": 12179,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2220:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12353,
+                        "id": 12185,
                         "nodeType": "FunctionDefinition",
                         "src": "2227:65:108",
                         "nodes": [],
@@ -3340,17 +3340,17 @@ export const IRocketStorage = {
                         "name": "confirmWithdrawalAddress",
                         "nameLocation": "2236:24:108",
                         "parameters": {
-                            "id": 12351,
+                            "id": 12183,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12350,
+                                    "id": 12182,
                                     "mutability": "mutable",
                                     "name": "_nodeAddress",
                                     "nameLocation": "2269:12:108",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12353,
+                                    "scope": 12185,
                                     "src": "2261:20:108",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3359,7 +3359,7 @@ export const IRocketStorage = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12349,
+                                        "id": 12181,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2261:7:108",
@@ -3375,12 +3375,12 @@ export const IRocketStorage = {
                             "src": "2260:22:108"
                         },
                         "returnParameters": {
-                            "id": 12352,
+                            "id": 12184,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2291:0:108"
                         },
-                        "scope": 12354,
+                        "scope": 12186,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -3393,11 +3393,11 @@ export const IRocketStorage = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    12354
+                    12186
                 ],
                 "name": "IRocketStorage",
                 "nameLocation": "74:14:108",
-                "scope": 12355,
+                "scope": 12187,
                 "usedErrors": [],
                 "usedEvents": []
             }

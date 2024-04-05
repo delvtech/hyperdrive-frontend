@@ -231,17 +231,17 @@ export const IERC20Permit = {
     },
     "ast": {
         "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol",
-        "id": 71033,
+        "id": 70924,
         "exportedSymbols": {
             "IERC20Permit": [
-                71032
+                70923
             ]
         },
         "nodeType": "SourceUnit",
         "src": "123:3680:165",
         "nodes": [
             {
-                "id": 70998,
+                "id": 70889,
                 "nodeType": "PragmaDirective",
                 "src": "123:24:165",
                 "nodes": [],
@@ -253,17 +253,17 @@ export const IERC20Permit = {
                 ]
             },
             {
-                "id": 71032,
+                "id": 70923,
                 "nodeType": "ContractDefinition",
                 "src": "2113:1689:165",
                 "nodes": [
                     {
-                        "id": 71017,
+                        "id": 70908,
                         "nodeType": "FunctionDefinition",
                         "src": "2997:183:165",
                         "nodes": [],
                         "documentation": {
-                            "id": 71000,
+                            "id": 70891,
                             "nodeType": "StructuredDocumentation",
                             "src": "2142:850:165",
                             "text": " @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\n given ``owner``'s signed approval.\n IMPORTANT: The same issues {IERC20-approve} has related to transaction\n ordering also apply here.\n Emits an {Approval} event.\n Requirements:\n - `spender` cannot be the zero address.\n - `deadline` must be a timestamp in the future.\n - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\n over the EIP712-formatted function arguments.\n - the signature must use ``owner``'s current nonce (see {nonces}).\n For more information on the signature format, see the\n https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\n section].\n CAUTION: See Security Considerations above."
@@ -275,17 +275,17 @@ export const IERC20Permit = {
                         "name": "permit",
                         "nameLocation": "3006:6:165",
                         "parameters": {
-                            "id": 71015,
+                            "id": 70906,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71002,
+                                    "id": 70893,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "3030:5:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3022:13:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -294,7 +294,7 @@ export const IERC20Permit = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71001,
+                                        "id": 70892,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3022:7:165",
@@ -308,12 +308,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71004,
+                                    "id": 70895,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "3053:7:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3045:15:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -322,7 +322,7 @@ export const IERC20Permit = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71003,
+                                        "id": 70894,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3045:7:165",
@@ -336,12 +336,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71006,
+                                    "id": 70897,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3078:5:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3070:13:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -350,7 +350,7 @@ export const IERC20Permit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71005,
+                                        "id": 70896,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3070:7:165",
@@ -363,12 +363,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71008,
+                                    "id": 70899,
                                     "mutability": "mutable",
                                     "name": "deadline",
                                     "nameLocation": "3101:8:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3093:16:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -377,7 +377,7 @@ export const IERC20Permit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71007,
+                                        "id": 70898,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3093:7:165",
@@ -390,12 +390,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71010,
+                                    "id": 70901,
                                     "mutability": "mutable",
                                     "name": "v",
                                     "nameLocation": "3125:1:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3119:7:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -404,7 +404,7 @@ export const IERC20Permit = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 71009,
+                                        "id": 70900,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3119:5:165",
@@ -417,12 +417,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71012,
+                                    "id": 70903,
                                     "mutability": "mutable",
                                     "name": "r",
                                     "nameLocation": "3144:1:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3136:9:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -431,7 +431,7 @@ export const IERC20Permit = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 71011,
+                                        "id": 70902,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3136:7:165",
@@ -444,12 +444,12 @@ export const IERC20Permit = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71014,
+                                    "id": 70905,
                                     "mutability": "mutable",
                                     "name": "s",
                                     "nameLocation": "3163:1:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71017,
+                                    "scope": 70908,
                                     "src": "3155:9:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -458,7 +458,7 @@ export const IERC20Permit = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 71013,
+                                        "id": 70904,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3155:7:165",
@@ -473,23 +473,23 @@ export const IERC20Permit = {
                             "src": "3012:158:165"
                         },
                         "returnParameters": {
-                            "id": 71016,
+                            "id": 70907,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3179:0:165"
                         },
-                        "scope": 71032,
+                        "scope": 70923,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 71025,
+                        "id": 70916,
                         "nodeType": "FunctionDefinition",
                         "src": "3485:63:165",
                         "nodes": [],
                         "documentation": {
-                            "id": 71018,
+                            "id": 70909,
                             "nodeType": "StructuredDocumentation",
                             "src": "3186:294:165",
                             "text": " @dev Returns the current nonce for `owner`. This value must be\n included whenever a signature is generated for {permit}.\n Every successful call to {permit} increases ``owner``'s nonce by one. This\n prevents a signature from being used multiple times."
@@ -501,17 +501,17 @@ export const IERC20Permit = {
                         "name": "nonces",
                         "nameLocation": "3494:6:165",
                         "parameters": {
-                            "id": 71021,
+                            "id": 70912,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71020,
+                                    "id": 70911,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "3509:5:165",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71025,
+                                    "scope": 70916,
                                     "src": "3501:13:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -520,7 +520,7 @@ export const IERC20Permit = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71019,
+                                        "id": 70910,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3501:7:165",
@@ -536,17 +536,17 @@ export const IERC20Permit = {
                             "src": "3500:15:165"
                         },
                         "returnParameters": {
-                            "id": 71024,
+                            "id": 70915,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71023,
+                                    "id": 70914,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71025,
+                                    "scope": 70916,
                                     "src": "3539:7:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -555,7 +555,7 @@ export const IERC20Permit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71022,
+                                        "id": 70913,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3539:7:165",
@@ -569,18 +569,18 @@ export const IERC20Permit = {
                             ],
                             "src": "3538:9:165"
                         },
-                        "scope": 71032,
+                        "scope": 70923,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 71031,
+                        "id": 70922,
                         "nodeType": "FunctionDefinition",
                         "src": "3740:60:165",
                         "nodes": [],
                         "documentation": {
-                            "id": 71026,
+                            "id": 70917,
                             "nodeType": "StructuredDocumentation",
                             "src": "3554:128:165",
                             "text": " @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}."
@@ -592,23 +592,23 @@ export const IERC20Permit = {
                         "name": "DOMAIN_SEPARATOR",
                         "nameLocation": "3749:16:165",
                         "parameters": {
-                            "id": 71027,
+                            "id": 70918,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3765:2:165"
                         },
                         "returnParameters": {
-                            "id": 71030,
+                            "id": 70921,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71029,
+                                    "id": 70920,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71031,
+                                    "scope": 70922,
                                     "src": "3791:7:165",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -617,7 +617,7 @@ export const IERC20Permit = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 71028,
+                                        "id": 70919,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3791:7:165",
@@ -631,7 +631,7 @@ export const IERC20Permit = {
                             ],
                             "src": "3790:9:165"
                         },
-                        "scope": 71032,
+                        "scope": 70923,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -643,18 +643,18 @@ export const IERC20Permit = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 70999,
+                    "id": 70890,
                     "nodeType": "StructuredDocumentation",
                     "src": "149:1963:165",
                     "text": " @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in\n https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].\n Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by\n presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\n need to send a transaction, and thus is not required to hold Ether at all.\n ==== Security Considerations\n There are two important considerations concerning the use of `permit`. The first is that a valid permit signature\n expresses an allowance, and it should not be assumed to convey additional meaning. In particular, it should not be\n considered as an intention to spend the allowance in any specific way. The second is that because permits have\n built-in replay protection and can be submitted by anyone, they can be frontrun. A protocol that uses permits should\n take this into consideration and allow a `permit` call to fail. Combining these two aspects, a pattern that may be\n generally recommended is:\n ```solidity\n function doThingWithPermit(..., uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) public {\n     try token.permit(msg.sender, address(this), value, deadline, v, r, s) {} catch {}\n     doThing(..., value);\n }\n function doThing(..., uint256 value) public {\n     token.safeTransferFrom(msg.sender, address(this), value);\n     ...\n }\n ```\n Observe that: 1) `msg.sender` is used as the owner, leaving no ambiguity as to the signer intent, and 2) the use of\n `try/catch` allows the permit to fail and makes the code tolerant to frontrunning. (See also\n {SafeERC20-safeTransferFrom}).\n Additionally, note that smart contract wallets (such as Argent or Safe) are not able to produce permit signatures, so\n contracts should have entry points that don't rely on permit."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    71032
+                    70923
                 ],
                 "name": "IERC20Permit",
                 "nameLocation": "2123:12:165",
-                "scope": 71033,
+                "scope": 70924,
                 "usedErrors": [],
                 "usedEvents": []
             }

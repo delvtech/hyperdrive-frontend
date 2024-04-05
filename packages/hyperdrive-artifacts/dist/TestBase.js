@@ -82,32 +82,32 @@ export const TestBase = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/Base.sol",
-        "id": 29718,
+        "id": 29609,
         "exportedSymbols": {
             "CommonBase": [
-                29705
+                29596
             ],
             "ScriptBase": [
-                29717
+                29608
             ],
             "StdStorage": [
-                35713
+                35604
             ],
             "TestBase": [
-                29708
+                29599
             ],
             "Vm": [
-                40813
+                40704
             ],
             "VmSafe": [
-                40341
+                40232
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:1761:144",
         "nodes": [
             {
-                "id": 29644,
+                "id": 29535,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:144",
                 "nodes": [],
@@ -122,23 +122,23 @@ export const TestBase = {
                 ]
             },
             {
-                "id": 29646,
+                "id": 29537,
                 "nodeType": "ImportDirective",
                 "src": "65:44:144",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdStorage.sol",
                 "file": "./StdStorage.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 29718,
-                "sourceUnit": 37167,
+                "scope": 29609,
+                "sourceUnit": 37058,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 29645,
+                            "id": 29536,
                             "name": "StdStorage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35713,
+                            "referencedDeclaration": 35604,
                             "src": "73:10:144",
                             "typeDescriptions": {}
                         },
@@ -148,23 +148,23 @@ export const TestBase = {
                 "unitAlias": ""
             },
             {
-                "id": 29649,
+                "id": 29540,
                 "nodeType": "ImportDirective",
                 "src": "110:36:144",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 29718,
-                "sourceUnit": 40814,
+                "scope": 29609,
+                "sourceUnit": 40705,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 29647,
+                            "id": 29538,
                             "name": "Vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40813,
+                            "referencedDeclaration": 40704,
                             "src": "118:2:144",
                             "typeDescriptions": {}
                         },
@@ -172,11 +172,11 @@ export const TestBase = {
                     },
                     {
                         "foreign": {
-                            "id": 29648,
+                            "id": 29539,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40341,
+                            "referencedDeclaration": 40232,
                             "src": "122:6:144",
                             "typeDescriptions": {}
                         },
@@ -186,12 +186,12 @@ export const TestBase = {
                 "unitAlias": ""
             },
             {
-                "id": 29705,
+                "id": 29596,
                 "nodeType": "ContractDefinition",
                 "src": "148:1493:144",
                 "nodes": [
                     {
-                        "id": 29663,
+                        "id": 29554,
                         "nodeType": "VariableDeclaration",
                         "src": "254:94:144",
                         "nodes": [],
@@ -199,7 +199,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "VM_ADDRESS",
                         "nameLocation": "280:10:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -207,7 +207,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29650,
+                            "id": 29541,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "254:7:144",
@@ -227,7 +227,7 @@ export const TestBase = {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "6865766d20636865617420636f6465",
-                                                            "id": 29658,
+                                                            "id": 29549,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -249,7 +249,7 @@ export const TestBase = {
                                                                 "typeString": "literal_string \"hevm cheat code\""
                                                             }
                                                         ],
-                                                        "id": 29657,
+                                                        "id": 29548,
                                                         "name": "keccak256",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -260,7 +260,7 @@ export const TestBase = {
                                                             "typeString": "function (bytes memory) pure returns (bytes32)"
                                                         }
                                                     },
-                                                    "id": 29659,
+                                                    "id": 29550,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -284,7 +284,7 @@ export const TestBase = {
                                                         "typeString": "bytes32"
                                                     }
                                                 ],
-                                                "id": 29656,
+                                                "id": 29547,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -296,14 +296,14 @@ export const TestBase = {
                                                     "typeString": "type(uint256)"
                                                 },
                                                 "typeName": {
-                                                    "id": 29655,
+                                                    "id": 29546,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "309:7:144",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 29660,
+                                            "id": 29551,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -327,7 +327,7 @@ export const TestBase = {
                                                 "typeString": "uint256"
                                             }
                                         ],
-                                        "id": 29654,
+                                        "id": 29545,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -339,14 +339,14 @@ export const TestBase = {
                                             "typeString": "type(uint160)"
                                         },
                                         "typeName": {
-                                            "id": 29653,
+                                            "id": 29544,
                                             "name": "uint160",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "301:7:144",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 29661,
+                                    "id": 29552,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -370,7 +370,7 @@ export const TestBase = {
                                         "typeString": "uint160"
                                     }
                                 ],
-                                "id": 29652,
+                                "id": 29543,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -382,14 +382,14 @@ export const TestBase = {
                                     "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                    "id": 29651,
+                                    "id": 29542,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "293:7:144",
                                     "typeDescriptions": {}
                                 }
                             },
-                            "id": 29662,
+                            "id": 29553,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -408,7 +408,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29666,
+                        "id": 29557,
                         "nodeType": "VariableDeclaration",
                         "src": "438:78:144",
                         "nodes": [],
@@ -416,7 +416,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "CONSOLE",
                         "nameLocation": "464:7:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -424,7 +424,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29664,
+                            "id": 29555,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "438:7:144",
@@ -436,7 +436,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "307830303030303030303030303030303030303036333646366537333646366336353265366336663637",
-                            "id": 29665,
+                            "id": 29556,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -453,7 +453,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29669,
+                        "id": 29560,
                         "nodeType": "VariableDeclaration",
                         "src": "623:86:144",
                         "nodes": [],
@@ -461,7 +461,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "CREATE2_FACTORY",
                         "nameLocation": "649:15:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -469,7 +469,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29667,
+                            "id": 29558,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "623:7:144",
@@ -481,7 +481,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "307834653539623434383437623337393537383538383932306341373846624632366330423439353643",
-                            "id": 29668,
+                            "id": 29559,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -498,7 +498,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29683,
+                        "id": 29574,
                         "nodeType": "VariableDeclaration",
                         "src": "812:105:144",
                         "nodes": [],
@@ -506,7 +506,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "DEFAULT_SENDER",
                         "nameLocation": "838:14:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -514,7 +514,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29670,
+                            "id": 29561,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "812:7:144",
@@ -534,7 +534,7 @@ export const TestBase = {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "666f756e6472792064656661756c742063616c6c6572",
-                                                            "id": 29678,
+                                                            "id": 29569,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -556,7 +556,7 @@ export const TestBase = {
                                                                 "typeString": "literal_string \"foundry default caller\""
                                                             }
                                                         ],
-                                                        "id": 29677,
+                                                        "id": 29568,
                                                         "name": "keccak256",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -567,7 +567,7 @@ export const TestBase = {
                                                             "typeString": "function (bytes memory) pure returns (bytes32)"
                                                         }
                                                     },
-                                                    "id": 29679,
+                                                    "id": 29570,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -591,7 +591,7 @@ export const TestBase = {
                                                         "typeString": "bytes32"
                                                     }
                                                 ],
-                                                "id": 29676,
+                                                "id": 29567,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -603,14 +603,14 @@ export const TestBase = {
                                                     "typeString": "type(uint256)"
                                                 },
                                                 "typeName": {
-                                                    "id": 29675,
+                                                    "id": 29566,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "871:7:144",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 29680,
+                                            "id": 29571,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -634,7 +634,7 @@ export const TestBase = {
                                                 "typeString": "uint256"
                                             }
                                         ],
-                                        "id": 29674,
+                                        "id": 29565,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -646,14 +646,14 @@ export const TestBase = {
                                             "typeString": "type(uint160)"
                                         },
                                         "typeName": {
-                                            "id": 29673,
+                                            "id": 29564,
                                             "name": "uint160",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "863:7:144",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 29681,
+                                    "id": 29572,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -677,7 +677,7 @@ export const TestBase = {
                                         "typeString": "uint160"
                                     }
                                 ],
-                                "id": 29672,
+                                "id": 29563,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -689,14 +689,14 @@ export const TestBase = {
                                     "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                    "id": 29671,
+                                    "id": 29562,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "855:7:144",
                                     "typeDescriptions": {}
                                 }
                             },
-                            "id": 29682,
+                            "id": 29573,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -715,7 +715,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29686,
+                        "id": 29577,
                         "nodeType": "VariableDeclaration",
                         "src": "992:92:144",
                         "nodes": [],
@@ -723,7 +723,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "DEFAULT_TEST_CONTRACT",
                         "nameLocation": "1018:21:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -731,7 +731,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29684,
+                            "id": 29575,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "992:7:144",
@@ -743,7 +743,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "307835363135644542373938424233453464466130313339644661316233443433334363323362373266",
-                            "id": 29685,
+                            "id": 29576,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -760,7 +760,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29689,
+                        "id": 29580,
                         "nodeType": "VariableDeclaration",
                         "src": "1158:89:144",
                         "nodes": [],
@@ -768,7 +768,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "MULTICALL3_ADDRESS",
                         "nameLocation": "1184:18:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -776,7 +776,7 @@ export const TestBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29687,
+                            "id": 29578,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "1158:7:144",
@@ -788,7 +788,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "307863413131626465303539373762333633313136373032383836326245326131373339373643413131",
-                            "id": 29688,
+                            "id": 29579,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -805,7 +805,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29692,
+                        "id": 29583,
                         "nodeType": "VariableDeclaration",
                         "src": "1294:130:144",
                         "nodes": [],
@@ -813,7 +813,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "SECP256K1_ORDER",
                         "nameLocation": "1320:15:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -821,7 +821,7 @@ export const TestBase = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 29690,
+                            "id": 29581,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "1294:7:144",
@@ -832,7 +832,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "313135373932303839323337333136313935343233353730393835303038363837393037383532383337353634323739303734393034333832363035313633313431353138313631343934333337",
-                            "id": 29691,
+                            "id": 29582,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -849,7 +849,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29695,
+                        "id": 29586,
                         "nodeType": "VariableDeclaration",
                         "src": "1431:126:144",
                         "nodes": [],
@@ -857,7 +857,7 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "UINT256_MAX",
                         "nameLocation": "1457:11:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -865,7 +865,7 @@ export const TestBase = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 29693,
+                            "id": 29584,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "1431:7:144",
@@ -876,7 +876,7 @@ export const TestBase = {
                         },
                         "value": {
                             "hexValue": "313135373932303839323337333136313935343233353730393835303038363837393037383533323639393834363635363430353634303339343537353834303037393133313239363339393335",
-                            "id": 29694,
+                            "id": 29585,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -893,7 +893,7 @@ export const TestBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29701,
+                        "id": 29592,
                         "nodeType": "VariableDeclaration",
                         "src": "1564:40:144",
                         "nodes": [],
@@ -901,41 +901,41 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "vm",
                         "nameLocation": "1585:2:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Vm_$40813",
+                            "typeIdentifier": "t_contract$_Vm_$40704",
                             "typeString": "contract Vm"
                         },
                         "typeName": {
-                            "id": 29697,
+                            "id": 29588,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29696,
+                                "id": 29587,
                                 "name": "Vm",
                                 "nameLocations": [
                                     "1564:2:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40813,
+                                "referencedDeclaration": 40704,
                                 "src": "1564:2:144"
                             },
-                            "referencedDeclaration": 40813,
+                            "referencedDeclaration": 40704,
                             "src": "1564:2:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Vm_$40813",
+                                "typeIdentifier": "t_contract$_Vm_$40704",
                                 "typeString": "contract Vm"
                             }
                         },
                         "value": {
                             "arguments": [
                                 {
-                                    "id": 29699,
+                                    "id": 29590,
                                     "name": "VM_ADDRESS",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29663,
+                                    "referencedDeclaration": 29554,
                                     "src": "1593:10:144",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -950,18 +950,18 @@ export const TestBase = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 29698,
+                                "id": 29589,
                                 "name": "Vm",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40813,
+                                "referencedDeclaration": 40704,
                                 "src": "1590:2:144",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_Vm_$40813_$",
+                                    "typeIdentifier": "t_type$_t_contract$_Vm_$40704_$",
                                     "typeString": "type(contract Vm)"
                                 }
                             },
-                            "id": 29700,
+                            "id": 29591,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -973,14 +973,14 @@ export const TestBase = {
                             "src": "1590:14:144",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Vm_$40813",
+                                "typeIdentifier": "t_contract$_Vm_$40704",
                                 "typeString": "contract Vm"
                             }
                         },
                         "visibility": "internal"
                     },
                     {
-                        "id": 29704,
+                        "id": 29595,
                         "nodeType": "VariableDeclaration",
                         "src": "1610:28:144",
                         "nodes": [],
@@ -988,30 +988,30 @@ export const TestBase = {
                         "mutability": "mutable",
                         "name": "stdstore",
                         "nameLocation": "1630:8:144",
-                        "scope": 29705,
+                        "scope": 29596,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StdStorage_$35713_storage",
+                            "typeIdentifier": "t_struct$_StdStorage_$35604_storage",
                             "typeString": "struct StdStorage"
                         },
                         "typeName": {
-                            "id": 29703,
+                            "id": 29594,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29702,
+                                "id": 29593,
                                 "name": "StdStorage",
                                 "nameLocations": [
                                     "1610:10:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 35713,
+                                "referencedDeclaration": 35604,
                                 "src": "1610:10:144"
                             },
-                            "referencedDeclaration": 35713,
+                            "referencedDeclaration": 35604,
                             "src": "1610:10:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_StdStorage_$35713_storage_ptr",
+                                "typeIdentifier": "t_struct$_StdStorage_$35604_storage_ptr",
                                 "typeString": "struct StdStorage"
                             }
                         },
@@ -1025,16 +1025,16 @@ export const TestBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29705
+                    29596
                 ],
                 "name": "CommonBase",
                 "nameLocation": "166:10:144",
-                "scope": 29718,
+                "scope": 29609,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 29708,
+                "id": 29599,
                 "nodeType": "ContractDefinition",
                 "src": "1643:43:144",
                 "nodes": [],
@@ -1042,16 +1042,16 @@ export const TestBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 29706,
+                            "id": 29597,
                             "name": "CommonBase",
                             "nameLocations": [
                                 "1673:10:144"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29705,
+                            "referencedDeclaration": 29596,
                             "src": "1673:10:144"
                         },
-                        "id": 29707,
+                        "id": 29598,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1673:10:144"
                     }
@@ -1061,22 +1061,22 @@ export const TestBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29708,
-                    29705
+                    29599,
+                    29596
                 ],
                 "name": "TestBase",
                 "nameLocation": "1661:8:144",
-                "scope": 29718,
+                "scope": 29609,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 29717,
+                "id": 29608,
                 "nodeType": "ContractDefinition",
                 "src": "1688:104:144",
                 "nodes": [
                     {
-                        "id": 29716,
+                        "id": 29607,
                         "nodeType": "VariableDeclaration",
                         "src": "1737:52:144",
                         "nodes": [],
@@ -1084,41 +1084,41 @@ export const TestBase = {
                         "mutability": "constant",
                         "name": "vmSafe",
                         "nameLocation": "1762:6:144",
-                        "scope": 29717,
+                        "scope": 29608,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_VmSafe_$40341",
+                            "typeIdentifier": "t_contract$_VmSafe_$40232",
                             "typeString": "contract VmSafe"
                         },
                         "typeName": {
-                            "id": 29712,
+                            "id": 29603,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29711,
+                                "id": 29602,
                                 "name": "VmSafe",
                                 "nameLocations": [
                                     "1737:6:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40341,
+                                "referencedDeclaration": 40232,
                                 "src": "1737:6:144"
                             },
-                            "referencedDeclaration": 40341,
+                            "referencedDeclaration": 40232,
                             "src": "1737:6:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                "typeIdentifier": "t_contract$_VmSafe_$40232",
                                 "typeString": "contract VmSafe"
                             }
                         },
                         "value": {
                             "arguments": [
                                 {
-                                    "id": 29714,
+                                    "id": 29605,
                                     "name": "VM_ADDRESS",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29663,
+                                    "referencedDeclaration": 29554,
                                     "src": "1778:10:144",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -1133,18 +1133,18 @@ export const TestBase = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 29713,
+                                "id": 29604,
                                 "name": "VmSafe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40341,
+                                "referencedDeclaration": 40232,
                                 "src": "1771:6:144",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40341_$",
+                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40232_$",
                                     "typeString": "type(contract VmSafe)"
                                 }
                             },
-                            "id": 29715,
+                            "id": 29606,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1156,7 +1156,7 @@ export const TestBase = {
                             "src": "1771:18:144",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40341",
+                                "typeIdentifier": "t_contract$_VmSafe_$40232",
                                 "typeString": "contract VmSafe"
                             }
                         },
@@ -1167,16 +1167,16 @@ export const TestBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 29709,
+                            "id": 29600,
                             "name": "CommonBase",
                             "nameLocations": [
                                 "1720:10:144"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29705,
+                            "referencedDeclaration": 29596,
                             "src": "1720:10:144"
                         },
-                        "id": 29710,
+                        "id": 29601,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1720:10:144"
                     }
@@ -1186,12 +1186,12 @@ export const TestBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29717,
-                    29705
+                    29608,
+                    29596
                 ],
                 "name": "ScriptBase",
                 "nameLocation": "1706:10:144",
-                "scope": 29718,
+                "scope": 29609,
                 "usedErrors": [],
                 "usedEvents": []
             }

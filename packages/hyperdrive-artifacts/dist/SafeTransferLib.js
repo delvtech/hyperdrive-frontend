@@ -74,20 +74,20 @@ export const SafeTransferLib = {
     },
     "ast": {
         "absolutePath": "lib/solmate/src/utils/SafeTransferLib.sol",
-        "id": 73305,
+        "id": 73196,
         "exportedSymbols": {
             "ERC20": [
-                72539
+                72430
             ],
             "SafeTransferLib": [
-                73304
+                73195
             ]
         },
         "nodeType": "SourceUnit",
         "src": "42:6295:175",
         "nodes": [
             {
-                "id": 73221,
+                "id": 73112,
                 "nodeType": "PragmaDirective",
                 "src": "42:24:175",
                 "nodes": [],
@@ -99,23 +99,23 @@ export const SafeTransferLib = {
                 ]
             },
             {
-                "id": 73223,
+                "id": 73114,
                 "nodeType": "ImportDirective",
                 "src": "68:42:175",
                 "nodes": [],
                 "absolutePath": "lib/solmate/src/tokens/ERC20.sol",
                 "file": "../tokens/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 73305,
-                "sourceUnit": 72540,
+                "scope": 73196,
+                "sourceUnit": 72431,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 73222,
+                            "id": 73113,
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 72539,
+                            "referencedDeclaration": 72430,
                             "src": "76:5:175",
                             "typeDescriptions": {}
                         },
@@ -125,34 +125,34 @@ export const SafeTransferLib = {
                 "unitAlias": ""
             },
             {
-                "id": 73304,
+                "id": 73195,
                 "nodeType": "ContractDefinition",
                 "src": "586:5750:175",
                 "nodes": [
                     {
-                        "id": 73241,
+                        "id": 73132,
                         "nodeType": "FunctionDefinition",
                         "src": "799:339:175",
                         "nodes": [],
                         "body": {
-                            "id": 73240,
+                            "id": 73131,
                             "nodeType": "Block",
                             "src": "861:277:175",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        73232
+                                        73123
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 73232,
+                                            "id": 73123,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "876:7:175",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 73240,
+                                            "scope": 73131,
                                             "src": "871:12:175",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -161,7 +161,7 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 73231,
+                                                "id": 73122,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "871:4:175",
@@ -173,7 +173,7 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 73233,
+                                    "id": 73124,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "871:12:175"
                                 },
@@ -258,28 +258,28 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73228,
+                                            "declaration": 73119,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1053:6:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73232,
+                                            "declaration": 73123,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1026:7:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73226,
+                                            "declaration": 73117,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1049:2:175",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73234,
+                                    "id": 73125,
                                     "nodeType": "InlineAssembly",
                                     "src": "937:145:175"
                                 },
@@ -287,11 +287,11 @@ export const SafeTransferLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73236,
+                                                "id": 73127,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73232,
+                                                "referencedDeclaration": 73123,
                                                 "src": "1100:7:175",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -300,7 +300,7 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "4554485f5452414e534645525f4641494c4544",
-                                                "id": 73237,
+                                                "id": 73128,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -326,7 +326,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"ETH_TRANSFER_FAILED\""
                                                 }
                                             ],
-                                            "id": 73235,
+                                            "id": 73126,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -340,7 +340,7 @@ export const SafeTransferLib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 73238,
+                                        "id": 73129,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -356,7 +356,7 @@ export const SafeTransferLib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 73239,
+                                    "id": 73130,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1092:39:175"
                                 }
@@ -368,17 +368,17 @@ export const SafeTransferLib = {
                         "name": "safeTransferETH",
                         "nameLocation": "808:15:175",
                         "parameters": {
-                            "id": 73229,
+                            "id": 73120,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73226,
+                                    "id": 73117,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "832:2:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73241,
+                                    "scope": 73132,
                                     "src": "824:10:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -387,7 +387,7 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 73225,
+                                        "id": 73116,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "824:7:175",
@@ -401,12 +401,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73228,
+                                    "id": 73119,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "844:6:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73241,
+                                    "scope": 73132,
                                     "src": "836:14:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -415,7 +415,7 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73227,
+                                        "id": 73118,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "836:7:175",
@@ -430,40 +430,40 @@ export const SafeTransferLib = {
                             "src": "823:28:175"
                         },
                         "returnParameters": {
-                            "id": 73230,
+                            "id": 73121,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "861:0:175"
                         },
-                        "scope": 73304,
+                        "scope": 73195,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73263,
+                        "id": 73154,
                         "nodeType": "FunctionDefinition",
                         "src": "1328:1782:175",
                         "nodes": [],
                         "body": {
-                            "id": 73262,
+                            "id": 73153,
                             "nodeType": "Block",
                             "src": "1456:1654:175",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        73254
+                                        73145
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 73254,
+                                            "id": 73145,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "1471:7:175",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 73262,
+                                            "scope": 73153,
                                             "src": "1466:12:175",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -472,7 +472,7 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 73253,
+                                                "id": 73144,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1466:4:175",
@@ -484,7 +484,7 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 73255,
+                                    "id": 73146,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "1466:12:175"
                                 },
@@ -909,42 +909,42 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73250,
+                                            "declaration": 73141,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2172:6:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73246,
+                                            "declaration": 73137,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1896:4:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73254,
+                                            "declaration": 73145,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2276:7:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73248,
+                                            "declaration": 73139,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2038:2:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73244,
+                                            "declaration": 73135,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2989:5:175",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73256,
+                                    "id": 73147,
                                     "nodeType": "InlineAssembly",
                                     "src": "1532:1521:175"
                                 },
@@ -952,11 +952,11 @@ export const SafeTransferLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73258,
+                                                "id": 73149,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73254,
+                                                "referencedDeclaration": 73145,
                                                 "src": "3071:7:175",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -965,7 +965,7 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "5452414e534645525f46524f4d5f4641494c4544",
-                                                "id": 73259,
+                                                "id": 73150,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -991,7 +991,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"TRANSFER_FROM_FAILED\""
                                                 }
                                             ],
-                                            "id": 73257,
+                                            "id": 73148,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1005,7 +1005,7 @@ export const SafeTransferLib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 73260,
+                                        "id": 73151,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1021,7 +1021,7 @@ export const SafeTransferLib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 73261,
+                                    "id": 73152,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3063:40:175"
                                 }
@@ -1033,41 +1033,41 @@ export const SafeTransferLib = {
                         "name": "safeTransferFrom",
                         "nameLocation": "1337:16:175",
                         "parameters": {
-                            "id": 73251,
+                            "id": 73142,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73244,
+                                    "id": 73135,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "1369:5:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73263,
+                                    "scope": 73154,
                                     "src": "1363:11:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$72539",
+                                        "typeIdentifier": "t_contract$_ERC20_$72430",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 73243,
+                                        "id": 73134,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 73242,
+                                            "id": 73133,
                                             "name": "ERC20",
                                             "nameLocations": [
                                                 "1363:5:175"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 72539,
+                                            "referencedDeclaration": 72430,
                                             "src": "1363:5:175"
                                         },
-                                        "referencedDeclaration": 72539,
+                                        "referencedDeclaration": 72430,
                                         "src": "1363:5:175",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$72539",
+                                            "typeIdentifier": "t_contract$_ERC20_$72430",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -1075,12 +1075,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73246,
+                                    "id": 73137,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "1392:4:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73263,
+                                    "scope": 73154,
                                     "src": "1384:12:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1089,7 +1089,7 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 73245,
+                                        "id": 73136,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1384:7:175",
@@ -1103,12 +1103,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73248,
+                                    "id": 73139,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "1414:2:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73263,
+                                    "scope": 73154,
                                     "src": "1406:10:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1117,7 +1117,7 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 73247,
+                                        "id": 73138,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1406:7:175",
@@ -1131,12 +1131,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73250,
+                                    "id": 73141,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "1434:6:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73263,
+                                    "scope": 73154,
                                     "src": "1426:14:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1145,7 +1145,7 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73249,
+                                        "id": 73140,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1426:7:175",
@@ -1160,40 +1160,40 @@ export const SafeTransferLib = {
                             "src": "1353:93:175"
                         },
                         "returnParameters": {
-                            "id": 73252,
+                            "id": 73143,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1456:0:175"
                         },
-                        "scope": 73304,
+                        "scope": 73195,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73283,
+                        "id": 73174,
                         "nodeType": "FunctionDefinition",
                         "src": "3116:1607:175",
                         "nodes": [],
                         "body": {
-                            "id": 73282,
+                            "id": 73173,
                             "nodeType": "Block",
                             "src": "3218:1505:175",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        73274
+                                        73165
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 73274,
+                                            "id": 73165,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "3233:7:175",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 73282,
+                                            "scope": 73173,
                                             "src": "3228:12:175",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1202,7 +1202,7 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 73273,
+                                                "id": 73164,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3228:4:175",
@@ -1214,7 +1214,7 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 73275,
+                                    "id": 73166,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "3228:12:175"
                                 },
@@ -1578,35 +1578,35 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73270,
+                                            "declaration": 73161,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3792:6:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73274,
+                                            "declaration": 73165,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3896:7:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73268,
+                                            "declaration": 73159,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3658:2:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73266,
+                                            "declaration": 73157,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4608:5:175",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73276,
+                                    "id": 73167,
                                     "nodeType": "InlineAssembly",
                                     "src": "3294:1377:175"
                                 },
@@ -1614,11 +1614,11 @@ export const SafeTransferLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73278,
+                                                "id": 73169,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73274,
+                                                "referencedDeclaration": 73165,
                                                 "src": "4689:7:175",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -1627,7 +1627,7 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "5452414e534645525f4641494c4544",
-                                                "id": 73279,
+                                                "id": 73170,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1653,7 +1653,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"TRANSFER_FAILED\""
                                                 }
                                             ],
-                                            "id": 73277,
+                                            "id": 73168,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1667,7 +1667,7 @@ export const SafeTransferLib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 73280,
+                                        "id": 73171,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1683,7 +1683,7 @@ export const SafeTransferLib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 73281,
+                                    "id": 73172,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4681:35:175"
                                 }
@@ -1695,41 +1695,41 @@ export const SafeTransferLib = {
                         "name": "safeTransfer",
                         "nameLocation": "3125:12:175",
                         "parameters": {
-                            "id": 73271,
+                            "id": 73162,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73266,
+                                    "id": 73157,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "3153:5:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73283,
+                                    "scope": 73174,
                                     "src": "3147:11:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$72539",
+                                        "typeIdentifier": "t_contract$_ERC20_$72430",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 73265,
+                                        "id": 73156,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 73264,
+                                            "id": 73155,
                                             "name": "ERC20",
                                             "nameLocations": [
                                                 "3147:5:175"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 72539,
+                                            "referencedDeclaration": 72430,
                                             "src": "3147:5:175"
                                         },
-                                        "referencedDeclaration": 72539,
+                                        "referencedDeclaration": 72430,
                                         "src": "3147:5:175",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$72539",
+                                            "typeIdentifier": "t_contract$_ERC20_$72430",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -1737,12 +1737,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73268,
+                                    "id": 73159,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "3176:2:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73283,
+                                    "scope": 73174,
                                     "src": "3168:10:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1751,7 +1751,7 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 73267,
+                                        "id": 73158,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3168:7:175",
@@ -1765,12 +1765,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73270,
+                                    "id": 73161,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "3196:6:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73283,
+                                    "scope": 73174,
                                     "src": "3188:14:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1779,7 +1779,7 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73269,
+                                        "id": 73160,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3188:7:175",
@@ -1794,40 +1794,40 @@ export const SafeTransferLib = {
                             "src": "3137:71:175"
                         },
                         "returnParameters": {
-                            "id": 73272,
+                            "id": 73163,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3218:0:175"
                         },
-                        "scope": 73304,
+                        "scope": 73195,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73303,
+                        "id": 73194,
                         "nodeType": "FunctionDefinition",
                         "src": "4729:1605:175",
                         "nodes": [],
                         "body": {
-                            "id": 73302,
+                            "id": 73193,
                             "nodeType": "Block",
                             "src": "4830:1504:175",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        73294
+                                        73185
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 73294,
+                                            "id": 73185,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "4845:7:175",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 73302,
+                                            "scope": 73193,
                                             "src": "4840:12:175",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1836,7 +1836,7 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 73293,
+                                                "id": 73184,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4840:4:175",
@@ -1848,7 +1848,7 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 73295,
+                                    "id": 73186,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "4840:12:175"
                                 },
@@ -2212,35 +2212,35 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73290,
+                                            "declaration": 73181,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5404:6:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73294,
+                                            "declaration": 73185,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5508:7:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73288,
+                                            "declaration": 73179,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5270:2:175",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73286,
+                                            "declaration": 73177,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6220:5:175",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73296,
+                                    "id": 73187,
                                     "nodeType": "InlineAssembly",
                                     "src": "4906:1377:175"
                                 },
@@ -2248,11 +2248,11 @@ export const SafeTransferLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73298,
+                                                "id": 73189,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73294,
+                                                "referencedDeclaration": 73185,
                                                 "src": "6301:7:175",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -2261,7 +2261,7 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "415050524f56455f4641494c4544",
-                                                "id": 73299,
+                                                "id": 73190,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2287,7 +2287,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"APPROVE_FAILED\""
                                                 }
                                             ],
-                                            "id": 73297,
+                                            "id": 73188,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2301,7 +2301,7 @@ export const SafeTransferLib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 73300,
+                                        "id": 73191,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2317,7 +2317,7 @@ export const SafeTransferLib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 73301,
+                                    "id": 73192,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6293:34:175"
                                 }
@@ -2329,41 +2329,41 @@ export const SafeTransferLib = {
                         "name": "safeApprove",
                         "nameLocation": "4738:11:175",
                         "parameters": {
-                            "id": 73291,
+                            "id": 73182,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73286,
+                                    "id": 73177,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "4765:5:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73303,
+                                    "scope": 73194,
                                     "src": "4759:11:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$72539",
+                                        "typeIdentifier": "t_contract$_ERC20_$72430",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 73285,
+                                        "id": 73176,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 73284,
+                                            "id": 73175,
                                             "name": "ERC20",
                                             "nameLocations": [
                                                 "4759:5:175"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 72539,
+                                            "referencedDeclaration": 72430,
                                             "src": "4759:5:175"
                                         },
-                                        "referencedDeclaration": 72539,
+                                        "referencedDeclaration": 72430,
                                         "src": "4759:5:175",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$72539",
+                                            "typeIdentifier": "t_contract$_ERC20_$72430",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -2371,12 +2371,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73288,
+                                    "id": 73179,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "4788:2:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73303,
+                                    "scope": 73194,
                                     "src": "4780:10:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2385,7 +2385,7 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 73287,
+                                        "id": 73178,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4780:7:175",
@@ -2399,12 +2399,12 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73290,
+                                    "id": 73181,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "4808:6:175",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73303,
+                                    "scope": 73194,
                                     "src": "4800:14:175",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2413,7 +2413,7 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73289,
+                                        "id": 73180,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4800:7:175",
@@ -2428,12 +2428,12 @@ export const SafeTransferLib = {
                             "src": "4749:71:175"
                         },
                         "returnParameters": {
-                            "id": 73292,
+                            "id": 73183,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4830:0:175"
                         },
-                        "scope": 73304,
+                        "scope": 73195,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
@@ -2445,18 +2445,18 @@ export const SafeTransferLib = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 73224,
+                    "id": 73115,
                     "nodeType": "StructuredDocumentation",
                     "src": "112:474:175",
                     "text": "@notice Safe ETH and ERC20 transfer library that gracefully handles missing return values.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeTransferLib.sol)\n @dev Use with caution! Some functions in this library knowingly create dirty bits at the destination of the free memory pointer.\n @dev Note that none of the functions in this library check that a token has code at all! That responsibility is delegated to the caller."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    73304
+                    73195
                 ],
                 "name": "SafeTransferLib",
                 "nameLocation": "594:15:175",
-                "scope": 73305,
+                "scope": 73196,
                 "usedErrors": [],
                 "usedEvents": []
             }

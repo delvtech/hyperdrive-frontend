@@ -312,17 +312,17 @@ export const stdError = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdError.sol",
-        "id": 34740,
+        "id": 34631,
         "exportedSymbols": {
             "stdError": [
-                34739
+                34630
             ]
         },
         "nodeType": "SourceUnit",
         "src": "129:884:148",
         "nodes": [
             {
-                "id": 34675,
+                "id": 34566,
                 "nodeType": "PragmaDirective",
                 "src": "129:31:148",
                 "nodes": [],
@@ -337,12 +337,12 @@ export const stdError = {
                 ]
             },
             {
-                "id": 34739,
+                "id": 34630,
                 "nodeType": "ContractDefinition",
                 "src": "162:850:148",
                 "nodes": [
                     {
-                        "id": 34682,
+                        "id": 34573,
                         "nodeType": "VariableDeclaration",
                         "src": "185:86:148",
                         "nodes": [],
@@ -351,7 +351,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "assertionError",
                         "nameLocation": "207:14:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -359,7 +359,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34676,
+                            "id": 34567,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "185:5:148",
@@ -372,7 +372,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34679,
+                                    "id": 34570,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -388,7 +388,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783031",
-                                    "id": 34680,
+                                    "id": 34571,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -415,7 +415,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34677,
+                                    "id": 34568,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -426,7 +426,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34678,
+                                "id": 34569,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -440,7 +440,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34681,
+                            "id": 34572,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -459,7 +459,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34689,
+                        "id": 34580,
                         "nodeType": "VariableDeclaration",
                         "src": "277:87:148",
                         "nodes": [],
@@ -468,7 +468,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "arithmeticError",
                         "nameLocation": "299:15:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -476,7 +476,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34683,
+                            "id": 34574,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "277:5:148",
@@ -489,7 +489,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34686,
+                                    "id": 34577,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -505,7 +505,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783131",
-                                    "id": 34687,
+                                    "id": 34578,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -532,7 +532,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34684,
+                                    "id": 34575,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -543,7 +543,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34685,
+                                "id": 34576,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -557,7 +557,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34688,
+                            "id": 34579,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -576,7 +576,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34696,
+                        "id": 34587,
                         "nodeType": "VariableDeclaration",
                         "src": "370:85:148",
                         "nodes": [],
@@ -585,7 +585,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "divisionError",
                         "nameLocation": "392:13:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -593,7 +593,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34690,
+                            "id": 34581,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "370:5:148",
@@ -606,7 +606,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34693,
+                                    "id": 34584,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -622,7 +622,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783132",
-                                    "id": 34694,
+                                    "id": 34585,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -649,7 +649,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34691,
+                                    "id": 34582,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -660,7 +660,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34692,
+                                "id": 34583,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -674,7 +674,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34695,
+                            "id": 34586,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -693,7 +693,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34703,
+                        "id": 34594,
                         "nodeType": "VariableDeclaration",
                         "src": "461:91:148",
                         "nodes": [],
@@ -702,7 +702,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "enumConversionError",
                         "nameLocation": "483:19:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -710,7 +710,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34697,
+                            "id": 34588,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "461:5:148",
@@ -723,7 +723,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34700,
+                                    "id": 34591,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -739,7 +739,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783231",
-                                    "id": 34701,
+                                    "id": 34592,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -766,7 +766,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34698,
+                                    "id": 34589,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -777,7 +777,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34699,
+                                "id": 34590,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -791,7 +791,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34702,
+                            "id": 34593,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -810,7 +810,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34710,
+                        "id": 34601,
                         "nodeType": "VariableDeclaration",
                         "src": "558:90:148",
                         "nodes": [],
@@ -819,7 +819,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "encodeStorageError",
                         "nameLocation": "580:18:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -827,7 +827,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34704,
+                            "id": 34595,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "558:5:148",
@@ -840,7 +840,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34707,
+                                    "id": 34598,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -856,7 +856,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783232",
-                                    "id": 34708,
+                                    "id": 34599,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -883,7 +883,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34705,
+                                    "id": 34596,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -894,7 +894,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34706,
+                                "id": 34597,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -908,7 +908,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34709,
+                            "id": 34600,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -927,7 +927,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34717,
+                        "id": 34608,
                         "nodeType": "VariableDeclaration",
                         "src": "654:80:148",
                         "nodes": [],
@@ -936,7 +936,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "popError",
                         "nameLocation": "676:8:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -944,7 +944,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34711,
+                            "id": 34602,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "654:5:148",
@@ -957,7 +957,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34714,
+                                    "id": 34605,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -973,7 +973,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783331",
-                                    "id": 34715,
+                                    "id": 34606,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1000,7 +1000,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34712,
+                                    "id": 34603,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -1011,7 +1011,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34713,
+                                "id": 34604,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -1025,7 +1025,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34716,
+                            "id": 34607,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1044,7 +1044,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34724,
+                        "id": 34615,
                         "nodeType": "VariableDeclaration",
                         "src": "740:85:148",
                         "nodes": [],
@@ -1053,7 +1053,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "indexOOBError",
                         "nameLocation": "762:13:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1061,7 +1061,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34718,
+                            "id": 34609,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "740:5:148",
@@ -1074,7 +1074,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34721,
+                                    "id": 34612,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1090,7 +1090,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783332",
-                                    "id": 34722,
+                                    "id": 34613,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1117,7 +1117,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34719,
+                                    "id": 34610,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -1128,7 +1128,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34720,
+                                "id": 34611,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -1142,7 +1142,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34723,
+                            "id": 34614,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1161,7 +1161,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34731,
+                        "id": 34622,
                         "nodeType": "VariableDeclaration",
                         "src": "831:88:148",
                         "nodes": [],
@@ -1170,7 +1170,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "memOverflowError",
                         "nameLocation": "853:16:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1178,7 +1178,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34725,
+                            "id": 34616,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "831:5:148",
@@ -1191,7 +1191,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34728,
+                                    "id": 34619,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1207,7 +1207,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783431",
-                                    "id": 34729,
+                                    "id": 34620,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1234,7 +1234,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34726,
+                                    "id": 34617,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -1245,7 +1245,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34727,
+                                "id": 34618,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -1259,7 +1259,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34730,
+                            "id": 34621,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1278,7 +1278,7 @@ export const stdError = {
                         "visibility": "public"
                     },
                     {
-                        "id": 34738,
+                        "id": 34629,
                         "nodeType": "VariableDeclaration",
                         "src": "925:84:148",
                         "nodes": [],
@@ -1287,7 +1287,7 @@ export const stdError = {
                         "mutability": "constant",
                         "name": "zeroVarError",
                         "nameLocation": "947:12:148",
-                        "scope": 34739,
+                        "scope": 34630,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1295,7 +1295,7 @@ export const stdError = {
                             "typeString": "bytes"
                         },
                         "typeName": {
-                            "id": 34732,
+                            "id": 34623,
                             "name": "bytes",
                             "nodeType": "ElementaryTypeName",
                             "src": "925:5:148",
@@ -1308,7 +1308,7 @@ export const stdError = {
                             "arguments": [
                                 {
                                     "hexValue": "50616e69632875696e7432353629",
-                                    "id": 34735,
+                                    "id": 34626,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1324,7 +1324,7 @@ export const stdError = {
                                 },
                                 {
                                     "hexValue": "30783531",
-                                    "id": 34736,
+                                    "id": 34627,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -1351,7 +1351,7 @@ export const stdError = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 34733,
+                                    "id": 34624,
                                     "name": "abi",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -1362,7 +1362,7 @@ export const stdError = {
                                         "typeString": "abi"
                                     }
                                 },
-                                "id": 34734,
+                                "id": 34625,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -1376,7 +1376,7 @@ export const stdError = {
                                     "typeString": "function (string memory) pure returns (bytes memory)"
                                 }
                             },
-                            "id": 34737,
+                            "id": 34628,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1402,11 +1402,11 @@ export const stdError = {
                 "contractKind": "library",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    34739
+                    34630
                 ],
                 "name": "stdError",
                 "nameLocation": "170:8:148",
-                "scope": 34740,
+                "scope": 34631,
                 "usedErrors": [],
                 "usedEvents": []
             }

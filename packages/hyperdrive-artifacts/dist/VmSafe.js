@@ -5565,20 +5565,20 @@ export const VmSafe = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/Vm.sol",
-        "id": 40814,
+        "id": 40705,
         "exportedSymbols": {
             "Vm": [
-                40813
+                40704
             ],
             "VmSafe": [
-                40341
+                40232
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:33435:156",
         "nodes": [
             {
-                "id": 39278,
+                "id": 39169,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:156",
                 "nodes": [],
@@ -5593,7 +5593,7 @@ export const VmSafe = {
                 ]
             },
             {
-                "id": 39279,
+                "id": 39170,
                 "nodeType": "PragmaDirective",
                 "src": "65:33:156",
                 "nodes": [],
@@ -5603,47 +5603,47 @@ export const VmSafe = {
                 ]
             },
             {
-                "id": 40341,
+                "id": 40232,
                 "nodeType": "ContractDefinition",
                 "src": "571:21283:156",
                 "nodes": [
                     {
-                        "id": 39285,
+                        "id": 39176,
                         "nodeType": "EnumDefinition",
                         "src": "594:122:156",
                         "nodes": [],
                         "canonicalName": "VmSafe.CallerMode",
                         "members": [
                             {
-                                "id": 39280,
+                                "id": 39171,
                                 "name": "None",
                                 "nameLocation": "620:4:156",
                                 "nodeType": "EnumValue",
                                 "src": "620:4:156"
                             },
                             {
-                                "id": 39281,
+                                "id": 39172,
                                 "name": "Broadcast",
                                 "nameLocation": "634:9:156",
                                 "nodeType": "EnumValue",
                                 "src": "634:9:156"
                             },
                             {
-                                "id": 39282,
+                                "id": 39173,
                                 "name": "RecurrentBroadcast",
                                 "nameLocation": "653:18:156",
                                 "nodeType": "EnumValue",
                                 "src": "653:18:156"
                             },
                             {
-                                "id": 39283,
+                                "id": 39174,
                                 "name": "Prank",
                                 "nameLocation": "681:5:156",
                                 "nodeType": "EnumValue",
                                 "src": "681:5:156"
                             },
                             {
-                                "id": 39284,
+                                "id": 39175,
                                 "name": "RecurrentPrank",
                                 "nameLocation": "696:14:156",
                                 "nodeType": "EnumValue",
@@ -5654,7 +5654,7 @@ export const VmSafe = {
                         "nameLocation": "599:10:156"
                     },
                     {
-                        "id": 39293,
+                        "id": 39184,
                         "nodeType": "StructDefinition",
                         "src": "722:89:156",
                         "nodes": [],
@@ -5662,12 +5662,12 @@ export const VmSafe = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 39288,
+                                "id": 39179,
                                 "mutability": "mutable",
                                 "name": "topics",
                                 "nameLocation": "753:6:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39293,
+                                "scope": 39184,
                                 "src": "743:16:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5677,7 +5677,7 @@ export const VmSafe = {
                                 },
                                 "typeName": {
                                     "baseType": {
-                                        "id": 39286,
+                                        "id": 39177,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "743:7:156",
@@ -5686,7 +5686,7 @@ export const VmSafe = {
                                             "typeString": "bytes32"
                                         }
                                     },
-                                    "id": 39287,
+                                    "id": 39178,
                                     "nodeType": "ArrayTypeName",
                                     "src": "743:9:156",
                                     "typeDescriptions": {
@@ -5698,12 +5698,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39290,
+                                "id": 39181,
                                 "mutability": "mutable",
                                 "name": "data",
                                 "nameLocation": "775:4:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39293,
+                                "scope": 39184,
                                 "src": "769:10:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5712,7 +5712,7 @@ export const VmSafe = {
                                     "typeString": "bytes"
                                 },
                                 "typeName": {
-                                    "id": 39289,
+                                    "id": 39180,
                                     "name": "bytes",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "769:5:156",
@@ -5725,12 +5725,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39292,
+                                "id": 39183,
                                 "mutability": "mutable",
                                 "name": "emitter",
                                 "nameLocation": "797:7:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39293,
+                                "scope": 39184,
                                 "src": "789:15:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5739,7 +5739,7 @@ export const VmSafe = {
                                     "typeString": "address"
                                 },
                                 "typeName": {
-                                    "id": 39291,
+                                    "id": 39182,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "789:7:156",
@@ -5754,11 +5754,11 @@ export const VmSafe = {
                         ],
                         "name": "Log",
                         "nameLocation": "729:3:156",
-                        "scope": 40341,
+                        "scope": 40232,
                         "visibility": "public"
                     },
                     {
-                        "id": 39298,
+                        "id": 39189,
                         "nodeType": "StructDefinition",
                         "src": "817:58:156",
                         "nodes": [],
@@ -5766,12 +5766,12 @@ export const VmSafe = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 39295,
+                                "id": 39186,
                                 "mutability": "mutable",
                                 "name": "key",
                                 "nameLocation": "845:3:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39298,
+                                "scope": 39189,
                                 "src": "838:10:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5780,7 +5780,7 @@ export const VmSafe = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 39294,
+                                    "id": 39185,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "838:6:156",
@@ -5793,12 +5793,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39297,
+                                "id": 39188,
                                 "mutability": "mutable",
                                 "name": "url",
                                 "nameLocation": "865:3:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39298,
+                                "scope": 39189,
                                 "src": "858:10:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5807,7 +5807,7 @@ export const VmSafe = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 39296,
+                                    "id": 39187,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "858:6:156",
@@ -5821,11 +5821,11 @@ export const VmSafe = {
                         ],
                         "name": "Rpc",
                         "nameLocation": "824:3:156",
-                        "scope": 40341,
+                        "scope": 40232,
                         "visibility": "public"
                     },
                     {
-                        "id": 39309,
+                        "id": 39200,
                         "nodeType": "StructDefinition",
                         "src": "881:139:156",
                         "nodes": [],
@@ -5833,12 +5833,12 @@ export const VmSafe = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 39300,
+                                "id": 39191,
                                 "mutability": "mutable",
                                 "name": "errorMessage",
                                 "nameLocation": "914:12:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39309,
+                                "scope": 39200,
                                 "src": "907:19:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5847,7 +5847,7 @@ export const VmSafe = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 39299,
+                                    "id": 39190,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "907:6:156",
@@ -5860,12 +5860,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39302,
+                                "id": 39193,
                                 "mutability": "mutable",
                                 "name": "path",
                                 "nameLocation": "943:4:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39309,
+                                "scope": 39200,
                                 "src": "936:11:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5874,7 +5874,7 @@ export const VmSafe = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 39301,
+                                    "id": 39192,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "936:6:156",
@@ -5887,12 +5887,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39304,
+                                "id": 39195,
                                 "mutability": "mutable",
                                 "name": "depth",
                                 "nameLocation": "964:5:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39309,
+                                "scope": 39200,
                                 "src": "957:12:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5901,7 +5901,7 @@ export const VmSafe = {
                                     "typeString": "uint64"
                                 },
                                 "typeName": {
-                                    "id": 39303,
+                                    "id": 39194,
                                     "name": "uint64",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "957:6:156",
@@ -5914,12 +5914,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39306,
+                                "id": 39197,
                                 "mutability": "mutable",
                                 "name": "isDir",
                                 "nameLocation": "984:5:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39309,
+                                "scope": 39200,
                                 "src": "979:10:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5928,7 +5928,7 @@ export const VmSafe = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 39305,
+                                    "id": 39196,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "979:4:156",
@@ -5941,12 +5941,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39308,
+                                "id": 39199,
                                 "mutability": "mutable",
                                 "name": "isSymlink",
                                 "nameLocation": "1004:9:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39309,
+                                "scope": 39200,
                                 "src": "999:14:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5955,7 +5955,7 @@ export const VmSafe = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 39307,
+                                    "id": 39198,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "999:4:156",
@@ -5969,11 +5969,11 @@ export const VmSafe = {
                         ],
                         "name": "DirEntry",
                         "nameLocation": "888:8:156",
-                        "scope": 40341,
+                        "scope": 40232,
                         "visibility": "public"
                     },
                     {
-                        "id": 39324,
+                        "id": 39215,
                         "nodeType": "StructDefinition",
                         "src": "1026:193:156",
                         "nodes": [],
@@ -5981,12 +5981,12 @@ export const VmSafe = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 39311,
+                                "id": 39202,
                                 "mutability": "mutable",
                                 "name": "isDir",
                                 "nameLocation": "1059:5:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1054:10:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -5995,7 +5995,7 @@ export const VmSafe = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 39310,
+                                    "id": 39201,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1054:4:156",
@@ -6008,12 +6008,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39313,
+                                "id": 39204,
                                 "mutability": "mutable",
                                 "name": "isSymlink",
                                 "nameLocation": "1079:9:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1074:14:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6022,7 +6022,7 @@ export const VmSafe = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 39312,
+                                    "id": 39203,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1074:4:156",
@@ -6035,12 +6035,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39315,
+                                "id": 39206,
                                 "mutability": "mutable",
                                 "name": "length",
                                 "nameLocation": "1106:6:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1098:14:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6049,7 +6049,7 @@ export const VmSafe = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 39314,
+                                    "id": 39205,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1098:7:156",
@@ -6062,12 +6062,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39317,
+                                "id": 39208,
                                 "mutability": "mutable",
                                 "name": "readOnly",
                                 "nameLocation": "1127:8:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1122:13:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6076,7 +6076,7 @@ export const VmSafe = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 39316,
+                                    "id": 39207,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1122:4:156",
@@ -6089,12 +6089,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39319,
+                                "id": 39210,
                                 "mutability": "mutable",
                                 "name": "modified",
                                 "nameLocation": "1153:8:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1145:16:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6103,7 +6103,7 @@ export const VmSafe = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 39318,
+                                    "id": 39209,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1145:7:156",
@@ -6116,12 +6116,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39321,
+                                "id": 39212,
                                 "mutability": "mutable",
                                 "name": "accessed",
                                 "nameLocation": "1179:8:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1171:16:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6130,7 +6130,7 @@ export const VmSafe = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 39320,
+                                    "id": 39211,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1171:7:156",
@@ -6143,12 +6143,12 @@ export const VmSafe = {
                             },
                             {
                                 "constant": false,
-                                "id": 39323,
+                                "id": 39214,
                                 "mutability": "mutable",
                                 "name": "created",
                                 "nameLocation": "1205:7:156",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 39324,
+                                "scope": 39215,
                                 "src": "1197:15:156",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -6157,7 +6157,7 @@ export const VmSafe = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 39322,
+                                    "id": 39213,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "1197:7:156",
@@ -6171,11 +6171,11 @@ export const VmSafe = {
                         ],
                         "name": "FsMetadata",
                         "nameLocation": "1033:10:156",
-                        "scope": 40341,
+                        "scope": 40232,
                         "visibility": "public"
                     },
                     {
-                        "id": 39333,
+                        "id": 39224,
                         "nodeType": "FunctionDefinition",
                         "src": "1269:81:156",
                         "nodes": [],
@@ -6186,17 +6186,17 @@ export const VmSafe = {
                         "name": "load",
                         "nameLocation": "1278:4:156",
                         "parameters": {
-                            "id": 39329,
+                            "id": 39220,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39326,
+                                    "id": 39217,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "1291:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39333,
+                                    "scope": 39224,
                                     "src": "1283:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6205,7 +6205,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39325,
+                                        "id": 39216,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1283:7:156",
@@ -6219,12 +6219,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39328,
+                                    "id": 39219,
                                     "mutability": "mutable",
                                     "name": "slot",
                                     "nameLocation": "1307:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39333,
+                                    "scope": 39224,
                                     "src": "1299:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6233,7 +6233,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39327,
+                                        "id": 39218,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1299:7:156",
@@ -6248,17 +6248,17 @@ export const VmSafe = {
                             "src": "1282:30:156"
                         },
                         "returnParameters": {
-                            "id": 39332,
+                            "id": 39223,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39331,
+                                    "id": 39222,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "1344:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39333,
+                                    "scope": 39224,
                                     "src": "1336:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6267,7 +6267,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39330,
+                                        "id": 39221,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1336:7:156",
@@ -6281,13 +6281,13 @@ export const VmSafe = {
                             ],
                             "src": "1335:14:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39346,
+                        "id": 39237,
                         "nodeType": "FunctionDefinition",
                         "src": "1373:104:156",
                         "nodes": [],
@@ -6298,17 +6298,17 @@ export const VmSafe = {
                         "name": "sign",
                         "nameLocation": "1382:4:156",
                         "parameters": {
-                            "id": 39338,
+                            "id": 39229,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39335,
+                                    "id": 39226,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "1395:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39346,
+                                    "scope": 39237,
                                     "src": "1387:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6317,7 +6317,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39334,
+                                        "id": 39225,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1387:7:156",
@@ -6330,12 +6330,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39337,
+                                    "id": 39228,
                                     "mutability": "mutable",
                                     "name": "digest",
                                     "nameLocation": "1415:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39346,
+                                    "scope": 39237,
                                     "src": "1407:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6344,7 +6344,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39336,
+                                        "id": 39227,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1407:7:156",
@@ -6359,17 +6359,17 @@ export const VmSafe = {
                             "src": "1386:36:156"
                         },
                         "returnParameters": {
-                            "id": 39345,
+                            "id": 39236,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39340,
+                                    "id": 39231,
                                     "mutability": "mutable",
                                     "name": "v",
                                     "nameLocation": "1452:1:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39346,
+                                    "scope": 39237,
                                     "src": "1446:7:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6378,7 +6378,7 @@ export const VmSafe = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 39339,
+                                        "id": 39230,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1446:5:156",
@@ -6391,12 +6391,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39342,
+                                    "id": 39233,
                                     "mutability": "mutable",
                                     "name": "r",
                                     "nameLocation": "1463:1:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39346,
+                                    "scope": 39237,
                                     "src": "1455:9:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6405,7 +6405,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39341,
+                                        "id": 39232,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1455:7:156",
@@ -6418,12 +6418,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39344,
+                                    "id": 39235,
                                     "mutability": "mutable",
                                     "name": "s",
                                     "nameLocation": "1474:1:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39346,
+                                    "scope": 39237,
                                     "src": "1466:9:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6432,7 +6432,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39343,
+                                        "id": 39234,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1466:7:156",
@@ -6446,13 +6446,13 @@ export const VmSafe = {
                             ],
                             "src": "1445:31:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39353,
+                        "id": 39244,
                         "nodeType": "FunctionDefinition",
                         "src": "1530:74:156",
                         "nodes": [],
@@ -6463,17 +6463,17 @@ export const VmSafe = {
                         "name": "addr",
                         "nameLocation": "1539:4:156",
                         "parameters": {
-                            "id": 39349,
+                            "id": 39240,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39348,
+                                    "id": 39239,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "1552:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39353,
+                                    "scope": 39244,
                                     "src": "1544:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6482,7 +6482,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39347,
+                                        "id": 39238,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1544:7:156",
@@ -6497,17 +6497,17 @@ export const VmSafe = {
                             "src": "1543:20:156"
                         },
                         "returnParameters": {
-                            "id": 39352,
+                            "id": 39243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39351,
+                                    "id": 39242,
                                     "mutability": "mutable",
                                     "name": "keyAddr",
                                     "nameLocation": "1595:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39353,
+                                    "scope": 39244,
                                     "src": "1587:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6516,7 +6516,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39350,
+                                        "id": 39241,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1587:7:156",
@@ -6531,13 +6531,13 @@ export const VmSafe = {
                             ],
                             "src": "1586:17:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39360,
+                        "id": 39251,
                         "nodeType": "FunctionDefinition",
                         "src": "1645:72:156",
                         "nodes": [],
@@ -6548,17 +6548,17 @@ export const VmSafe = {
                         "name": "getNonce",
                         "nameLocation": "1654:8:156",
                         "parameters": {
-                            "id": 39356,
+                            "id": 39247,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39355,
+                                    "id": 39246,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "1671:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39360,
+                                    "scope": 39251,
                                     "src": "1663:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6567,7 +6567,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39354,
+                                        "id": 39245,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1663:7:156",
@@ -6583,17 +6583,17 @@ export const VmSafe = {
                             "src": "1662:17:156"
                         },
                         "returnParameters": {
-                            "id": 39359,
+                            "id": 39250,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39358,
+                                    "id": 39249,
                                     "mutability": "mutable",
                                     "name": "nonce",
                                     "nameLocation": "1710:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39360,
+                                    "scope": 39251,
                                     "src": "1703:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6602,7 +6602,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 39357,
+                                        "id": 39248,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1703:6:156",
@@ -6616,13 +6616,13 @@ export const VmSafe = {
                             ],
                             "src": "1702:14:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39368,
+                        "id": 39259,
                         "nodeType": "FunctionDefinition",
                         "src": "1779:84:156",
                         "nodes": [],
@@ -6633,17 +6633,17 @@ export const VmSafe = {
                         "name": "ffi",
                         "nameLocation": "1788:3:156",
                         "parameters": {
-                            "id": 39364,
+                            "id": 39255,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39363,
+                                    "id": 39254,
                                     "mutability": "mutable",
                                     "name": "commandInput",
                                     "nameLocation": "1810:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39368,
+                                    "scope": 39259,
                                     "src": "1792:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6653,7 +6653,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39361,
+                                            "id": 39252,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1792:6:156",
@@ -6662,7 +6662,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 39362,
+                                        "id": 39253,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1792:8:156",
                                         "typeDescriptions": {
@@ -6676,17 +6676,17 @@ export const VmSafe = {
                             "src": "1791:32:156"
                         },
                         "returnParameters": {
-                            "id": 39367,
+                            "id": 39258,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39366,
+                                    "id": 39257,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "1855:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39368,
+                                    "scope": 39259,
                                     "src": "1842:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6695,7 +6695,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39365,
+                                        "id": 39256,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1842:5:156",
@@ -6709,13 +6709,13 @@ export const VmSafe = {
                             ],
                             "src": "1841:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39375,
+                        "id": 39266,
                         "nodeType": "FunctionDefinition",
                         "src": "1902:70:156",
                         "nodes": [],
@@ -6726,17 +6726,17 @@ export const VmSafe = {
                         "name": "setEnv",
                         "nameLocation": "1911:6:156",
                         "parameters": {
-                            "id": 39373,
+                            "id": 39264,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39370,
+                                    "id": 39261,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "1934:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39375,
+                                    "scope": 39266,
                                     "src": "1918:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6745,7 +6745,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39369,
+                                        "id": 39260,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1918:6:156",
@@ -6758,12 +6758,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39372,
+                                    "id": 39263,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "1956:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39375,
+                                    "scope": 39266,
                                     "src": "1940:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6772,7 +6772,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39371,
+                                        "id": 39262,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1940:6:156",
@@ -6787,18 +6787,18 @@ export const VmSafe = {
                             "src": "1917:45:156"
                         },
                         "returnParameters": {
-                            "id": 39374,
+                            "id": 39265,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1971:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39382,
+                        "id": 39273,
                         "nodeType": "FunctionDefinition",
                         "src": "2031:74:156",
                         "nodes": [],
@@ -6809,17 +6809,17 @@ export const VmSafe = {
                         "name": "envBool",
                         "nameLocation": "2040:7:156",
                         "parameters": {
-                            "id": 39378,
+                            "id": 39269,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39377,
+                                    "id": 39268,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2064:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39382,
+                                    "scope": 39273,
                                     "src": "2048:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6828,7 +6828,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39376,
+                                        "id": 39267,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2048:6:156",
@@ -6843,17 +6843,17 @@ export const VmSafe = {
                             "src": "2047:22:156"
                         },
                         "returnParameters": {
-                            "id": 39381,
+                            "id": 39272,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39380,
+                                    "id": 39271,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2098:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39382,
+                                    "scope": 39273,
                                     "src": "2093:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6862,7 +6862,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39379,
+                                        "id": 39270,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2093:4:156",
@@ -6876,13 +6876,13 @@ export const VmSafe = {
                             ],
                             "src": "2092:12:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39389,
+                        "id": 39280,
                         "nodeType": "FunctionDefinition",
                         "src": "2110:77:156",
                         "nodes": [],
@@ -6893,17 +6893,17 @@ export const VmSafe = {
                         "name": "envUint",
                         "nameLocation": "2119:7:156",
                         "parameters": {
-                            "id": 39385,
+                            "id": 39276,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39384,
+                                    "id": 39275,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2143:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39389,
+                                    "scope": 39280,
                                     "src": "2127:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6912,7 +6912,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39383,
+                                        "id": 39274,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2127:6:156",
@@ -6927,17 +6927,17 @@ export const VmSafe = {
                             "src": "2126:22:156"
                         },
                         "returnParameters": {
-                            "id": 39388,
+                            "id": 39279,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39387,
+                                    "id": 39278,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2180:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39389,
+                                    "scope": 39280,
                                     "src": "2172:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6946,7 +6946,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39386,
+                                        "id": 39277,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2172:7:156",
@@ -6960,13 +6960,13 @@ export const VmSafe = {
                             ],
                             "src": "2171:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39396,
+                        "id": 39287,
                         "nodeType": "FunctionDefinition",
                         "src": "2192:75:156",
                         "nodes": [],
@@ -6977,17 +6977,17 @@ export const VmSafe = {
                         "name": "envInt",
                         "nameLocation": "2201:6:156",
                         "parameters": {
-                            "id": 39392,
+                            "id": 39283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39391,
+                                    "id": 39282,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2224:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39396,
+                                    "scope": 39287,
                                     "src": "2208:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -6996,7 +6996,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39390,
+                                        "id": 39281,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2208:6:156",
@@ -7011,17 +7011,17 @@ export const VmSafe = {
                             "src": "2207:22:156"
                         },
                         "returnParameters": {
-                            "id": 39395,
+                            "id": 39286,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39394,
+                                    "id": 39285,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2260:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39396,
+                                    "scope": 39287,
                                     "src": "2253:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7030,7 +7030,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 39393,
+                                        "id": 39284,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2253:6:156",
@@ -7044,13 +7044,13 @@ export const VmSafe = {
                             ],
                             "src": "2252:14:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39403,
+                        "id": 39294,
                         "nodeType": "FunctionDefinition",
                         "src": "2272:80:156",
                         "nodes": [],
@@ -7061,17 +7061,17 @@ export const VmSafe = {
                         "name": "envAddress",
                         "nameLocation": "2281:10:156",
                         "parameters": {
-                            "id": 39399,
+                            "id": 39290,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39398,
+                                    "id": 39289,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2308:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39403,
+                                    "scope": 39294,
                                     "src": "2292:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7080,7 +7080,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39397,
+                                        "id": 39288,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2292:6:156",
@@ -7095,17 +7095,17 @@ export const VmSafe = {
                             "src": "2291:22:156"
                         },
                         "returnParameters": {
-                            "id": 39402,
+                            "id": 39293,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39401,
+                                    "id": 39292,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2345:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39403,
+                                    "scope": 39294,
                                     "src": "2337:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7114,7 +7114,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39400,
+                                        "id": 39291,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2337:7:156",
@@ -7129,13 +7129,13 @@ export const VmSafe = {
                             ],
                             "src": "2336:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39410,
+                        "id": 39301,
                         "nodeType": "FunctionDefinition",
                         "src": "2357:80:156",
                         "nodes": [],
@@ -7146,17 +7146,17 @@ export const VmSafe = {
                         "name": "envBytes32",
                         "nameLocation": "2366:10:156",
                         "parameters": {
-                            "id": 39406,
+                            "id": 39297,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39405,
+                                    "id": 39296,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2393:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39410,
+                                    "scope": 39301,
                                     "src": "2377:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7165,7 +7165,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39404,
+                                        "id": 39295,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2377:6:156",
@@ -7180,17 +7180,17 @@ export const VmSafe = {
                             "src": "2376:22:156"
                         },
                         "returnParameters": {
-                            "id": 39409,
+                            "id": 39300,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39408,
+                                    "id": 39299,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2430:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39410,
+                                    "scope": 39301,
                                     "src": "2422:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7199,7 +7199,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39407,
+                                        "id": 39298,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2422:7:156",
@@ -7213,13 +7213,13 @@ export const VmSafe = {
                             ],
                             "src": "2421:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39417,
+                        "id": 39308,
                         "nodeType": "FunctionDefinition",
                         "src": "2442:85:156",
                         "nodes": [],
@@ -7230,17 +7230,17 @@ export const VmSafe = {
                         "name": "envString",
                         "nameLocation": "2451:9:156",
                         "parameters": {
-                            "id": 39413,
+                            "id": 39304,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39412,
+                                    "id": 39303,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2477:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39417,
+                                    "scope": 39308,
                                     "src": "2461:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7249,7 +7249,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39411,
+                                        "id": 39302,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2461:6:156",
@@ -7264,17 +7264,17 @@ export const VmSafe = {
                             "src": "2460:22:156"
                         },
                         "returnParameters": {
-                            "id": 39416,
+                            "id": 39307,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39415,
+                                    "id": 39306,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2520:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39417,
+                                    "scope": 39308,
                                     "src": "2506:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7283,7 +7283,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39414,
+                                        "id": 39305,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2506:6:156",
@@ -7297,13 +7297,13 @@ export const VmSafe = {
                             ],
                             "src": "2505:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39424,
+                        "id": 39315,
                         "nodeType": "FunctionDefinition",
                         "src": "2532:83:156",
                         "nodes": [],
@@ -7314,17 +7314,17 @@ export const VmSafe = {
                         "name": "envBytes",
                         "nameLocation": "2541:8:156",
                         "parameters": {
-                            "id": 39420,
+                            "id": 39311,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39419,
+                                    "id": 39310,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2566:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39424,
+                                    "scope": 39315,
                                     "src": "2550:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7333,7 +7333,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39418,
+                                        "id": 39309,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2550:6:156",
@@ -7348,17 +7348,17 @@ export const VmSafe = {
                             "src": "2549:22:156"
                         },
                         "returnParameters": {
-                            "id": 39423,
+                            "id": 39314,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39422,
+                                    "id": 39313,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2608:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39424,
+                                    "scope": 39315,
                                     "src": "2595:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7367,7 +7367,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39421,
+                                        "id": 39312,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2595:5:156",
@@ -7381,13 +7381,13 @@ export const VmSafe = {
                             ],
                             "src": "2594:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39434,
+                        "id": 39325,
                         "nodeType": "FunctionDefinition",
                         "src": "2665:106:156",
                         "nodes": [],
@@ -7398,17 +7398,17 @@ export const VmSafe = {
                         "name": "envBool",
                         "nameLocation": "2674:7:156",
                         "parameters": {
-                            "id": 39429,
+                            "id": 39320,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39426,
+                                    "id": 39317,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2698:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39434,
+                                    "scope": 39325,
                                     "src": "2682:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7417,7 +7417,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39425,
+                                        "id": 39316,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2682:6:156",
@@ -7430,12 +7430,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39428,
+                                    "id": 39319,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "2720:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39434,
+                                    "scope": 39325,
                                     "src": "2704:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7444,7 +7444,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39427,
+                                        "id": 39318,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2704:6:156",
@@ -7459,17 +7459,17 @@ export const VmSafe = {
                             "src": "2681:45:156"
                         },
                         "returnParameters": {
-                            "id": 39433,
+                            "id": 39324,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39432,
+                                    "id": 39323,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2764:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39434,
+                                    "scope": 39325,
                                     "src": "2750:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7479,7 +7479,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39430,
+                                            "id": 39321,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2750:4:156",
@@ -7488,7 +7488,7 @@ export const VmSafe = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 39431,
+                                        "id": 39322,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2750:6:156",
                                         "typeDescriptions": {
@@ -7501,13 +7501,13 @@ export const VmSafe = {
                             ],
                             "src": "2749:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39444,
+                        "id": 39335,
                         "nodeType": "FunctionDefinition",
                         "src": "2776:109:156",
                         "nodes": [],
@@ -7518,17 +7518,17 @@ export const VmSafe = {
                         "name": "envUint",
                         "nameLocation": "2785:7:156",
                         "parameters": {
-                            "id": 39439,
+                            "id": 39330,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39436,
+                                    "id": 39327,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2809:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39444,
+                                    "scope": 39335,
                                     "src": "2793:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7537,7 +7537,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39435,
+                                        "id": 39326,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2793:6:156",
@@ -7550,12 +7550,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39438,
+                                    "id": 39329,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "2831:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39444,
+                                    "scope": 39335,
                                     "src": "2815:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7564,7 +7564,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39437,
+                                        "id": 39328,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2815:6:156",
@@ -7579,17 +7579,17 @@ export const VmSafe = {
                             "src": "2792:45:156"
                         },
                         "returnParameters": {
-                            "id": 39443,
+                            "id": 39334,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39442,
+                                    "id": 39333,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2878:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39444,
+                                    "scope": 39335,
                                     "src": "2861:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7599,7 +7599,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39440,
+                                            "id": 39331,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2861:7:156",
@@ -7608,7 +7608,7 @@ export const VmSafe = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 39441,
+                                        "id": 39332,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2861:9:156",
                                         "typeDescriptions": {
@@ -7621,13 +7621,13 @@ export const VmSafe = {
                             ],
                             "src": "2860:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39454,
+                        "id": 39345,
                         "nodeType": "FunctionDefinition",
                         "src": "2890:107:156",
                         "nodes": [],
@@ -7638,17 +7638,17 @@ export const VmSafe = {
                         "name": "envInt",
                         "nameLocation": "2899:6:156",
                         "parameters": {
-                            "id": 39449,
+                            "id": 39340,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39446,
+                                    "id": 39337,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "2922:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39454,
+                                    "scope": 39345,
                                     "src": "2906:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7657,7 +7657,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39445,
+                                        "id": 39336,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2906:6:156",
@@ -7670,12 +7670,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39448,
+                                    "id": 39339,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "2944:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39454,
+                                    "scope": 39345,
                                     "src": "2928:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7684,7 +7684,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39447,
+                                        "id": 39338,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2928:6:156",
@@ -7699,17 +7699,17 @@ export const VmSafe = {
                             "src": "2905:45:156"
                         },
                         "returnParameters": {
-                            "id": 39453,
+                            "id": 39344,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39452,
+                                    "id": 39343,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2990:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39454,
+                                    "scope": 39345,
                                     "src": "2974:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7719,7 +7719,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39450,
+                                            "id": 39341,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2974:6:156",
@@ -7728,7 +7728,7 @@ export const VmSafe = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 39451,
+                                        "id": 39342,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2974:8:156",
                                         "typeDescriptions": {
@@ -7741,13 +7741,13 @@ export const VmSafe = {
                             ],
                             "src": "2973:23:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39464,
+                        "id": 39355,
                         "nodeType": "FunctionDefinition",
                         "src": "3002:112:156",
                         "nodes": [],
@@ -7758,17 +7758,17 @@ export const VmSafe = {
                         "name": "envAddress",
                         "nameLocation": "3011:10:156",
                         "parameters": {
-                            "id": 39459,
+                            "id": 39350,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39456,
+                                    "id": 39347,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3038:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39464,
+                                    "scope": 39355,
                                     "src": "3022:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7777,7 +7777,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39455,
+                                        "id": 39346,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3022:6:156",
@@ -7790,12 +7790,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39458,
+                                    "id": 39349,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "3060:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39464,
+                                    "scope": 39355,
                                     "src": "3044:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7804,7 +7804,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39457,
+                                        "id": 39348,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3044:6:156",
@@ -7819,17 +7819,17 @@ export const VmSafe = {
                             "src": "3021:45:156"
                         },
                         "returnParameters": {
-                            "id": 39463,
+                            "id": 39354,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39462,
+                                    "id": 39353,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3107:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39464,
+                                    "scope": 39355,
                                     "src": "3090:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7839,7 +7839,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39460,
+                                            "id": 39351,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3090:7:156",
@@ -7849,7 +7849,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 39461,
+                                        "id": 39352,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3090:9:156",
                                         "typeDescriptions": {
@@ -7862,13 +7862,13 @@ export const VmSafe = {
                             ],
                             "src": "3089:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39474,
+                        "id": 39365,
                         "nodeType": "FunctionDefinition",
                         "src": "3119:112:156",
                         "nodes": [],
@@ -7879,17 +7879,17 @@ export const VmSafe = {
                         "name": "envBytes32",
                         "nameLocation": "3128:10:156",
                         "parameters": {
-                            "id": 39469,
+                            "id": 39360,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39466,
+                                    "id": 39357,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3155:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39474,
+                                    "scope": 39365,
                                     "src": "3139:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7898,7 +7898,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39465,
+                                        "id": 39356,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3139:6:156",
@@ -7911,12 +7911,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39468,
+                                    "id": 39359,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "3177:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39474,
+                                    "scope": 39365,
                                     "src": "3161:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -7925,7 +7925,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39467,
+                                        "id": 39358,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3161:6:156",
@@ -7940,17 +7940,17 @@ export const VmSafe = {
                             "src": "3138:45:156"
                         },
                         "returnParameters": {
-                            "id": 39473,
+                            "id": 39364,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39472,
+                                    "id": 39363,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3224:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39474,
+                                    "scope": 39365,
                                     "src": "3207:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7960,7 +7960,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39470,
+                                            "id": 39361,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3207:7:156",
@@ -7969,7 +7969,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 39471,
+                                        "id": 39362,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3207:9:156",
                                         "typeDescriptions": {
@@ -7982,13 +7982,13 @@ export const VmSafe = {
                             ],
                             "src": "3206:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39484,
+                        "id": 39375,
                         "nodeType": "FunctionDefinition",
                         "src": "3236:110:156",
                         "nodes": [],
@@ -7999,17 +7999,17 @@ export const VmSafe = {
                         "name": "envString",
                         "nameLocation": "3245:9:156",
                         "parameters": {
-                            "id": 39479,
+                            "id": 39370,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39476,
+                                    "id": 39367,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3271:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39484,
+                                    "scope": 39375,
                                     "src": "3255:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8018,7 +8018,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39475,
+                                        "id": 39366,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3255:6:156",
@@ -8031,12 +8031,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39478,
+                                    "id": 39369,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "3293:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39484,
+                                    "scope": 39375,
                                     "src": "3277:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8045,7 +8045,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39477,
+                                        "id": 39368,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3277:6:156",
@@ -8060,17 +8060,17 @@ export const VmSafe = {
                             "src": "3254:45:156"
                         },
                         "returnParameters": {
-                            "id": 39483,
+                            "id": 39374,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39482,
+                                    "id": 39373,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3339:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39484,
+                                    "scope": 39375,
                                     "src": "3323:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8080,7 +8080,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39480,
+                                            "id": 39371,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3323:6:156",
@@ -8089,7 +8089,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 39481,
+                                        "id": 39372,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3323:8:156",
                                         "typeDescriptions": {
@@ -8102,13 +8102,13 @@ export const VmSafe = {
                             ],
                             "src": "3322:23:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39494,
+                        "id": 39385,
                         "nodeType": "FunctionDefinition",
                         "src": "3351:108:156",
                         "nodes": [],
@@ -8119,17 +8119,17 @@ export const VmSafe = {
                         "name": "envBytes",
                         "nameLocation": "3360:8:156",
                         "parameters": {
-                            "id": 39489,
+                            "id": 39380,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39486,
+                                    "id": 39377,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3385:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39494,
+                                    "scope": 39385,
                                     "src": "3369:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8138,7 +8138,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39485,
+                                        "id": 39376,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3369:6:156",
@@ -8151,12 +8151,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39488,
+                                    "id": 39379,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "3407:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39494,
+                                    "scope": 39385,
                                     "src": "3391:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8165,7 +8165,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39487,
+                                        "id": 39378,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3391:6:156",
@@ -8180,17 +8180,17 @@ export const VmSafe = {
                             "src": "3368:45:156"
                         },
                         "returnParameters": {
-                            "id": 39493,
+                            "id": 39384,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39492,
+                                    "id": 39383,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3452:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39494,
+                                    "scope": 39385,
                                     "src": "3437:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8200,7 +8200,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39490,
+                                            "id": 39381,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3437:5:156",
@@ -8209,7 +8209,7 @@ export const VmSafe = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 39491,
+                                        "id": 39382,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3437:7:156",
                                         "typeDescriptions": {
@@ -8222,13 +8222,13 @@ export const VmSafe = {
                             ],
                             "src": "3436:22:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39503,
+                        "id": 39394,
                         "nodeType": "FunctionDefinition",
                         "src": "3517:86:156",
                         "nodes": [],
@@ -8239,17 +8239,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "3526:5:156",
                         "parameters": {
-                            "id": 39499,
+                            "id": 39390,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39496,
+                                    "id": 39387,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3548:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39503,
+                                    "scope": 39394,
                                     "src": "3532:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8258,7 +8258,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39495,
+                                        "id": 39386,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3532:6:156",
@@ -8271,12 +8271,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39498,
+                                    "id": 39389,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "3559:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39503,
+                                    "scope": 39394,
                                     "src": "3554:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8285,7 +8285,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39497,
+                                        "id": 39388,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3554:4:156",
@@ -8300,17 +8300,17 @@ export const VmSafe = {
                             "src": "3531:41:156"
                         },
                         "returnParameters": {
-                            "id": 39502,
+                            "id": 39393,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39501,
+                                    "id": 39392,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3596:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39503,
+                                    "scope": 39394,
                                     "src": "3591:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8319,7 +8319,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39500,
+                                        "id": 39391,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3591:4:156",
@@ -8333,13 +8333,13 @@ export const VmSafe = {
                             ],
                             "src": "3590:12:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39512,
+                        "id": 39403,
                         "nodeType": "FunctionDefinition",
                         "src": "3608:92:156",
                         "nodes": [],
@@ -8350,17 +8350,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "3617:5:156",
                         "parameters": {
-                            "id": 39508,
+                            "id": 39399,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39505,
+                                    "id": 39396,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3639:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39512,
+                                    "scope": 39403,
                                     "src": "3623:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8369,7 +8369,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39504,
+                                        "id": 39395,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3623:6:156",
@@ -8382,12 +8382,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39507,
+                                    "id": 39398,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "3653:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39512,
+                                    "scope": 39403,
                                     "src": "3645:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8396,7 +8396,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39506,
+                                        "id": 39397,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3645:7:156",
@@ -8411,17 +8411,17 @@ export const VmSafe = {
                             "src": "3622:44:156"
                         },
                         "returnParameters": {
-                            "id": 39511,
+                            "id": 39402,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39510,
+                                    "id": 39401,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3693:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39512,
+                                    "scope": 39403,
                                     "src": "3685:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8430,7 +8430,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39509,
+                                        "id": 39400,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3685:7:156",
@@ -8444,13 +8444,13 @@ export const VmSafe = {
                             ],
                             "src": "3684:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39521,
+                        "id": 39412,
                         "nodeType": "FunctionDefinition",
                         "src": "3705:90:156",
                         "nodes": [],
@@ -8461,17 +8461,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "3714:5:156",
                         "parameters": {
-                            "id": 39517,
+                            "id": 39408,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39514,
+                                    "id": 39405,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3736:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39521,
+                                    "scope": 39412,
                                     "src": "3720:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8480,7 +8480,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39513,
+                                        "id": 39404,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3720:6:156",
@@ -8493,12 +8493,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39516,
+                                    "id": 39407,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "3749:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39521,
+                                    "scope": 39412,
                                     "src": "3742:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8507,7 +8507,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 39515,
+                                        "id": 39406,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3742:6:156",
@@ -8522,17 +8522,17 @@ export const VmSafe = {
                             "src": "3719:43:156"
                         },
                         "returnParameters": {
-                            "id": 39520,
+                            "id": 39411,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39519,
+                                    "id": 39410,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3788:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39521,
+                                    "scope": 39412,
                                     "src": "3781:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8541,7 +8541,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 39518,
+                                        "id": 39409,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3781:6:156",
@@ -8555,13 +8555,13 @@ export const VmSafe = {
                             ],
                             "src": "3780:14:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39530,
+                        "id": 39421,
                         "nodeType": "FunctionDefinition",
                         "src": "3800:92:156",
                         "nodes": [],
@@ -8572,17 +8572,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "3809:5:156",
                         "parameters": {
-                            "id": 39526,
+                            "id": 39417,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39523,
+                                    "id": 39414,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3831:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39530,
+                                    "scope": 39421,
                                     "src": "3815:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8591,7 +8591,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39522,
+                                        "id": 39413,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3815:6:156",
@@ -8604,12 +8604,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39525,
+                                    "id": 39416,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "3845:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39530,
+                                    "scope": 39421,
                                     "src": "3837:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8618,7 +8618,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39524,
+                                        "id": 39415,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3837:7:156",
@@ -8634,17 +8634,17 @@ export const VmSafe = {
                             "src": "3814:44:156"
                         },
                         "returnParameters": {
-                            "id": 39529,
+                            "id": 39420,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39528,
+                                    "id": 39419,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3885:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39530,
+                                    "scope": 39421,
                                     "src": "3877:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8653,7 +8653,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39527,
+                                        "id": 39418,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3877:7:156",
@@ -8668,13 +8668,13 @@ export const VmSafe = {
                             ],
                             "src": "3876:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39539,
+                        "id": 39430,
                         "nodeType": "FunctionDefinition",
                         "src": "3897:92:156",
                         "nodes": [],
@@ -8685,17 +8685,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "3906:5:156",
                         "parameters": {
-                            "id": 39535,
+                            "id": 39426,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39532,
+                                    "id": 39423,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "3928:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39539,
+                                    "scope": 39430,
                                     "src": "3912:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8704,7 +8704,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39531,
+                                        "id": 39422,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3912:6:156",
@@ -8717,12 +8717,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39534,
+                                    "id": 39425,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "3942:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39539,
+                                    "scope": 39430,
                                     "src": "3934:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8731,7 +8731,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39533,
+                                        "id": 39424,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3934:7:156",
@@ -8746,17 +8746,17 @@ export const VmSafe = {
                             "src": "3911:44:156"
                         },
                         "returnParameters": {
-                            "id": 39538,
+                            "id": 39429,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39537,
+                                    "id": 39428,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3982:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39539,
+                                    "scope": 39430,
                                     "src": "3974:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8765,7 +8765,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39536,
+                                        "id": 39427,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3974:7:156",
@@ -8779,13 +8779,13 @@ export const VmSafe = {
                             ],
                             "src": "3973:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39548,
+                        "id": 39439,
                         "nodeType": "FunctionDefinition",
                         "src": "3994:106:156",
                         "nodes": [],
@@ -8796,17 +8796,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4003:5:156",
                         "parameters": {
-                            "id": 39544,
+                            "id": 39435,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39541,
+                                    "id": 39432,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4025:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39548,
+                                    "scope": 39439,
                                     "src": "4009:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8815,7 +8815,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39540,
+                                        "id": 39431,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4009:6:156",
@@ -8828,12 +8828,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39543,
+                                    "id": 39434,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4047:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39548,
+                                    "scope": 39439,
                                     "src": "4031:28:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8842,7 +8842,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39542,
+                                        "id": 39433,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4031:6:156",
@@ -8857,17 +8857,17 @@ export const VmSafe = {
                             "src": "4008:52:156"
                         },
                         "returnParameters": {
-                            "id": 39547,
+                            "id": 39438,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39546,
+                                    "id": 39437,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4093:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39548,
+                                    "scope": 39439,
                                     "src": "4079:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8876,7 +8876,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39545,
+                                        "id": 39436,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4079:6:156",
@@ -8890,13 +8890,13 @@ export const VmSafe = {
                             ],
                             "src": "4078:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39557,
+                        "id": 39448,
                         "nodeType": "FunctionDefinition",
                         "src": "4105:104:156",
                         "nodes": [],
@@ -8907,17 +8907,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4114:5:156",
                         "parameters": {
-                            "id": 39553,
+                            "id": 39444,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39550,
+                                    "id": 39441,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4136:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39557,
+                                    "scope": 39448,
                                     "src": "4120:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8926,7 +8926,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39549,
+                                        "id": 39440,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4120:6:156",
@@ -8939,12 +8939,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39552,
+                                    "id": 39443,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4157:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39557,
+                                    "scope": 39448,
                                     "src": "4142:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -8953,7 +8953,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39551,
+                                        "id": 39442,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4142:5:156",
@@ -8968,17 +8968,17 @@ export const VmSafe = {
                             "src": "4119:51:156"
                         },
                         "returnParameters": {
-                            "id": 39556,
+                            "id": 39447,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39555,
+                                    "id": 39446,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4202:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39557,
+                                    "scope": 39448,
                                     "src": "4189:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8987,7 +8987,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39554,
+                                        "id": 39445,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4189:5:156",
@@ -9001,13 +9001,13 @@ export const VmSafe = {
                             ],
                             "src": "4188:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39570,
+                        "id": 39461,
                         "nodeType": "FunctionDefinition",
                         "src": "4277:145:156",
                         "nodes": [],
@@ -9018,17 +9018,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4286:5:156",
                         "parameters": {
-                            "id": 39565,
+                            "id": 39456,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39559,
+                                    "id": 39450,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4308:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39570,
+                                    "scope": 39461,
                                     "src": "4292:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9037,7 +9037,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39558,
+                                        "id": 39449,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4292:6:156",
@@ -9050,12 +9050,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39561,
+                                    "id": 39452,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "4330:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39570,
+                                    "scope": 39461,
                                     "src": "4314:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9064,7 +9064,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39560,
+                                        "id": 39451,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4314:6:156",
@@ -9077,12 +9077,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39564,
+                                    "id": 39455,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4353:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39570,
+                                    "scope": 39461,
                                     "src": "4337:28:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9092,7 +9092,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39562,
+                                            "id": 39453,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4337:4:156",
@@ -9101,7 +9101,7 @@ export const VmSafe = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 39563,
+                                        "id": 39454,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4337:6:156",
                                         "typeDescriptions": {
@@ -9115,17 +9115,17 @@ export const VmSafe = {
                             "src": "4291:75:156"
                         },
                         "returnParameters": {
-                            "id": 39569,
+                            "id": 39460,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39568,
+                                    "id": 39459,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4415:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39570,
+                                    "scope": 39461,
                                     "src": "4401:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9135,7 +9135,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39566,
+                                            "id": 39457,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4401:4:156",
@@ -9144,7 +9144,7 @@ export const VmSafe = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 39567,
+                                        "id": 39458,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4401:6:156",
                                         "typeDescriptions": {
@@ -9157,13 +9157,13 @@ export const VmSafe = {
                             ],
                             "src": "4400:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39583,
+                        "id": 39474,
                         "nodeType": "FunctionDefinition",
                         "src": "4427:151:156",
                         "nodes": [],
@@ -9174,17 +9174,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4436:5:156",
                         "parameters": {
-                            "id": 39578,
+                            "id": 39469,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39572,
+                                    "id": 39463,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4458:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39583,
+                                    "scope": 39474,
                                     "src": "4442:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9193,7 +9193,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39571,
+                                        "id": 39462,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4442:6:156",
@@ -9206,12 +9206,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39574,
+                                    "id": 39465,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "4480:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39583,
+                                    "scope": 39474,
                                     "src": "4464:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9220,7 +9220,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39573,
+                                        "id": 39464,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4464:6:156",
@@ -9233,12 +9233,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39577,
+                                    "id": 39468,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4506:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39583,
+                                    "scope": 39474,
                                     "src": "4487:31:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9248,7 +9248,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39575,
+                                            "id": 39466,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4487:7:156",
@@ -9257,7 +9257,7 @@ export const VmSafe = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 39576,
+                                        "id": 39467,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4487:9:156",
                                         "typeDescriptions": {
@@ -9271,17 +9271,17 @@ export const VmSafe = {
                             "src": "4441:78:156"
                         },
                         "returnParameters": {
-                            "id": 39582,
+                            "id": 39473,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39581,
+                                    "id": 39472,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4571:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39583,
+                                    "scope": 39474,
                                     "src": "4554:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9291,7 +9291,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39579,
+                                            "id": 39470,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4554:7:156",
@@ -9300,7 +9300,7 @@ export const VmSafe = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 39580,
+                                        "id": 39471,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4554:9:156",
                                         "typeDescriptions": {
@@ -9313,13 +9313,13 @@ export const VmSafe = {
                             ],
                             "src": "4553:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39596,
+                        "id": 39487,
                         "nodeType": "FunctionDefinition",
                         "src": "4583:149:156",
                         "nodes": [],
@@ -9330,17 +9330,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4592:5:156",
                         "parameters": {
-                            "id": 39591,
+                            "id": 39482,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39585,
+                                    "id": 39476,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4614:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39596,
+                                    "scope": 39487,
                                     "src": "4598:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9349,7 +9349,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39584,
+                                        "id": 39475,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4598:6:156",
@@ -9362,12 +9362,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39587,
+                                    "id": 39478,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "4636:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39596,
+                                    "scope": 39487,
                                     "src": "4620:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9376,7 +9376,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39586,
+                                        "id": 39477,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4620:6:156",
@@ -9389,12 +9389,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39590,
+                                    "id": 39481,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4661:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39596,
+                                    "scope": 39487,
                                     "src": "4643:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9404,7 +9404,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39588,
+                                            "id": 39479,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4643:6:156",
@@ -9413,7 +9413,7 @@ export const VmSafe = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 39589,
+                                        "id": 39480,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4643:8:156",
                                         "typeDescriptions": {
@@ -9427,17 +9427,17 @@ export const VmSafe = {
                             "src": "4597:77:156"
                         },
                         "returnParameters": {
-                            "id": 39595,
+                            "id": 39486,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39594,
+                                    "id": 39485,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4725:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39596,
+                                    "scope": 39487,
                                     "src": "4709:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9447,7 +9447,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39592,
+                                            "id": 39483,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4709:6:156",
@@ -9456,7 +9456,7 @@ export const VmSafe = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 39593,
+                                        "id": 39484,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4709:8:156",
                                         "typeDescriptions": {
@@ -9469,13 +9469,13 @@ export const VmSafe = {
                             ],
                             "src": "4708:23:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39609,
+                        "id": 39500,
                         "nodeType": "FunctionDefinition",
                         "src": "4737:151:156",
                         "nodes": [],
@@ -9486,17 +9486,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4746:5:156",
                         "parameters": {
-                            "id": 39604,
+                            "id": 39495,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39598,
+                                    "id": 39489,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4768:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39609,
+                                    "scope": 39500,
                                     "src": "4752:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9505,7 +9505,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39597,
+                                        "id": 39488,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4752:6:156",
@@ -9518,12 +9518,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39600,
+                                    "id": 39491,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "4790:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39609,
+                                    "scope": 39500,
                                     "src": "4774:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9532,7 +9532,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39599,
+                                        "id": 39490,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4774:6:156",
@@ -9545,12 +9545,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39603,
+                                    "id": 39494,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4816:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39609,
+                                    "scope": 39500,
                                     "src": "4797:31:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9560,7 +9560,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39601,
+                                            "id": 39492,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4797:7:156",
@@ -9570,7 +9570,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 39602,
+                                        "id": 39493,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4797:9:156",
                                         "typeDescriptions": {
@@ -9584,17 +9584,17 @@ export const VmSafe = {
                             "src": "4751:78:156"
                         },
                         "returnParameters": {
-                            "id": 39608,
+                            "id": 39499,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39607,
+                                    "id": 39498,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4881:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39609,
+                                    "scope": 39500,
                                     "src": "4864:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9604,7 +9604,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39605,
+                                            "id": 39496,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4864:7:156",
@@ -9614,7 +9614,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 39606,
+                                        "id": 39497,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4864:9:156",
                                         "typeDescriptions": {
@@ -9627,13 +9627,13 @@ export const VmSafe = {
                             ],
                             "src": "4863:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39622,
+                        "id": 39513,
                         "nodeType": "FunctionDefinition",
                         "src": "4893:151:156",
                         "nodes": [],
@@ -9644,17 +9644,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "4902:5:156",
                         "parameters": {
-                            "id": 39617,
+                            "id": 39508,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39611,
+                                    "id": 39502,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "4924:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39622,
+                                    "scope": 39513,
                                     "src": "4908:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9663,7 +9663,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39610,
+                                        "id": 39501,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4908:6:156",
@@ -9676,12 +9676,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39613,
+                                    "id": 39504,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "4946:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39622,
+                                    "scope": 39513,
                                     "src": "4930:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9690,7 +9690,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39612,
+                                        "id": 39503,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4930:6:156",
@@ -9703,12 +9703,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39616,
+                                    "id": 39507,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "4972:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39622,
+                                    "scope": 39513,
                                     "src": "4953:31:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9718,7 +9718,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39614,
+                                            "id": 39505,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4953:7:156",
@@ -9727,7 +9727,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 39615,
+                                        "id": 39506,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4953:9:156",
                                         "typeDescriptions": {
@@ -9741,17 +9741,17 @@ export const VmSafe = {
                             "src": "4907:78:156"
                         },
                         "returnParameters": {
-                            "id": 39621,
+                            "id": 39512,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39620,
+                                    "id": 39511,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5037:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39622,
+                                    "scope": 39513,
                                     "src": "5020:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9761,7 +9761,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39618,
+                                            "id": 39509,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5020:7:156",
@@ -9770,7 +9770,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 39619,
+                                        "id": 39510,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5020:9:156",
                                         "typeDescriptions": {
@@ -9783,13 +9783,13 @@ export const VmSafe = {
                             ],
                             "src": "5019:24:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39635,
+                        "id": 39526,
                         "nodeType": "FunctionDefinition",
                         "src": "5049:149:156",
                         "nodes": [],
@@ -9800,17 +9800,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "5058:5:156",
                         "parameters": {
-                            "id": 39630,
+                            "id": 39521,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39624,
+                                    "id": 39515,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "5080:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39635,
+                                    "scope": 39526,
                                     "src": "5064:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9819,7 +9819,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39623,
+                                        "id": 39514,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5064:6:156",
@@ -9832,12 +9832,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39626,
+                                    "id": 39517,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "5102:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39635,
+                                    "scope": 39526,
                                     "src": "5086:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9846,7 +9846,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39625,
+                                        "id": 39516,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5086:6:156",
@@ -9859,12 +9859,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39629,
+                                    "id": 39520,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "5127:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39635,
+                                    "scope": 39526,
                                     "src": "5109:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9874,7 +9874,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39627,
+                                            "id": 39518,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5109:6:156",
@@ -9883,7 +9883,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 39628,
+                                        "id": 39519,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5109:8:156",
                                         "typeDescriptions": {
@@ -9897,17 +9897,17 @@ export const VmSafe = {
                             "src": "5063:77:156"
                         },
                         "returnParameters": {
-                            "id": 39634,
+                            "id": 39525,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39633,
+                                    "id": 39524,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5191:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39635,
+                                    "scope": 39526,
                                     "src": "5175:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -9917,7 +9917,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39631,
+                                            "id": 39522,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5175:6:156",
@@ -9926,7 +9926,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 39632,
+                                        "id": 39523,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5175:8:156",
                                         "typeDescriptions": {
@@ -9939,13 +9939,13 @@ export const VmSafe = {
                             ],
                             "src": "5174:23:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39648,
+                        "id": 39539,
                         "nodeType": "FunctionDefinition",
                         "src": "5203:147:156",
                         "nodes": [],
@@ -9956,17 +9956,17 @@ export const VmSafe = {
                         "name": "envOr",
                         "nameLocation": "5212:5:156",
                         "parameters": {
-                            "id": 39643,
+                            "id": 39534,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39637,
+                                    "id": 39528,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "5234:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39648,
+                                    "scope": 39539,
                                     "src": "5218:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -9975,7 +9975,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39636,
+                                        "id": 39527,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5218:6:156",
@@ -9988,12 +9988,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39639,
+                                    "id": 39530,
                                     "mutability": "mutable",
                                     "name": "delim",
                                     "nameLocation": "5256:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39648,
+                                    "scope": 39539,
                                     "src": "5240:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10002,7 +10002,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39638,
+                                        "id": 39529,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5240:6:156",
@@ -10015,12 +10015,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39642,
+                                    "id": 39533,
                                     "mutability": "mutable",
                                     "name": "defaultValue",
                                     "nameLocation": "5280:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39648,
+                                    "scope": 39539,
                                     "src": "5263:29:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10030,7 +10030,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39640,
+                                            "id": 39531,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5263:5:156",
@@ -10039,7 +10039,7 @@ export const VmSafe = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 39641,
+                                        "id": 39532,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5263:7:156",
                                         "typeDescriptions": {
@@ -10053,17 +10053,17 @@ export const VmSafe = {
                             "src": "5217:76:156"
                         },
                         "returnParameters": {
-                            "id": 39647,
+                            "id": 39538,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39646,
+                                    "id": 39537,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5343:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39648,
+                                    "scope": 39539,
                                     "src": "5328:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10073,7 +10073,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39644,
+                                            "id": 39535,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5328:5:156",
@@ -10082,7 +10082,7 @@ export const VmSafe = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 39645,
+                                        "id": 39536,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5328:7:156",
                                         "typeDescriptions": {
@@ -10095,13 +10095,13 @@ export const VmSafe = {
                             ],
                             "src": "5327:22:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39651,
+                        "id": 39542,
                         "nodeType": "FunctionDefinition",
                         "src": "5399:27:156",
                         "nodes": [],
@@ -10112,24 +10112,24 @@ export const VmSafe = {
                         "name": "record",
                         "nameLocation": "5408:6:156",
                         "parameters": {
-                            "id": 39649,
+                            "id": 39540,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5414:2:156"
                         },
                         "returnParameters": {
-                            "id": 39650,
+                            "id": 39541,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5425:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39662,
+                        "id": 39553,
                         "nodeType": "FunctionDefinition",
                         "src": "5523:109:156",
                         "nodes": [],
@@ -10140,17 +10140,17 @@ export const VmSafe = {
                         "name": "accesses",
                         "nameLocation": "5532:8:156",
                         "parameters": {
-                            "id": 39654,
+                            "id": 39545,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39653,
+                                    "id": 39544,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "5549:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39662,
+                                    "scope": 39553,
                                     "src": "5541:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10159,7 +10159,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39652,
+                                        "id": 39543,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5541:7:156",
@@ -10175,17 +10175,17 @@ export const VmSafe = {
                             "src": "5540:16:156"
                         },
                         "returnParameters": {
-                            "id": 39661,
+                            "id": 39552,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39657,
+                                    "id": 39548,
                                     "mutability": "mutable",
                                     "name": "readSlots",
                                     "nameLocation": "5592:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39662,
+                                    "scope": 39553,
                                     "src": "5575:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10195,7 +10195,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39655,
+                                            "id": 39546,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5575:7:156",
@@ -10204,7 +10204,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 39656,
+                                        "id": 39547,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5575:9:156",
                                         "typeDescriptions": {
@@ -10216,12 +10216,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39660,
+                                    "id": 39551,
                                     "mutability": "mutable",
                                     "name": "writeSlots",
                                     "nameLocation": "5620:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39662,
+                                    "scope": 39553,
                                     "src": "5603:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10231,7 +10231,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39658,
+                                            "id": 39549,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5603:7:156",
@@ -10240,7 +10240,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 39659,
+                                        "id": 39550,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5603:9:156",
                                         "typeDescriptions": {
@@ -10253,13 +10253,13 @@ export const VmSafe = {
                             ],
                             "src": "5574:57:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39669,
+                        "id": 39560,
                         "nodeType": "FunctionDefinition",
                         "src": "5740:101:156",
                         "nodes": [],
@@ -10270,17 +10270,17 @@ export const VmSafe = {
                         "name": "getCode",
                         "nameLocation": "5749:7:156",
                         "parameters": {
-                            "id": 39665,
+                            "id": 39556,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39664,
+                                    "id": 39555,
                                     "mutability": "mutable",
                                     "name": "artifactPath",
                                     "nameLocation": "5773:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39669,
+                                    "scope": 39560,
                                     "src": "5757:28:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10289,7 +10289,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39663,
+                                        "id": 39554,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5757:6:156",
@@ -10304,17 +10304,17 @@ export const VmSafe = {
                             "src": "5756:30:156"
                         },
                         "returnParameters": {
-                            "id": 39668,
+                            "id": 39559,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39667,
+                                    "id": 39558,
                                     "mutability": "mutable",
                                     "name": "creationBytecode",
                                     "nameLocation": "5823:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39669,
+                                    "scope": 39560,
                                     "src": "5810:29:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10323,7 +10323,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39666,
+                                        "id": 39557,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5810:5:156",
@@ -10337,13 +10337,13 @@ export const VmSafe = {
                             ],
                             "src": "5809:31:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39676,
+                        "id": 39567,
                         "nodeType": "FunctionDefinition",
                         "src": "5949:108:156",
                         "nodes": [],
@@ -10354,17 +10354,17 @@ export const VmSafe = {
                         "name": "getDeployedCode",
                         "nameLocation": "5958:15:156",
                         "parameters": {
-                            "id": 39672,
+                            "id": 39563,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39671,
+                                    "id": 39562,
                                     "mutability": "mutable",
                                     "name": "artifactPath",
                                     "nameLocation": "5990:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39676,
+                                    "scope": 39567,
                                     "src": "5974:28:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10373,7 +10373,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39670,
+                                        "id": 39561,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5974:6:156",
@@ -10388,17 +10388,17 @@ export const VmSafe = {
                             "src": "5973:30:156"
                         },
                         "returnParameters": {
-                            "id": 39675,
+                            "id": 39566,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39674,
+                                    "id": 39565,
                                     "mutability": "mutable",
                                     "name": "runtimeBytecode",
                                     "nameLocation": "6040:15:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39676,
+                                    "scope": 39567,
                                     "src": "6027:28:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10407,7 +10407,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39673,
+                                        "id": 39564,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6027:5:156",
@@ -10421,13 +10421,13 @@ export const VmSafe = {
                             ],
                             "src": "6026:30:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39683,
+                        "id": 39574,
                         "nodeType": "FunctionDefinition",
                         "src": "6102:67:156",
                         "nodes": [],
@@ -10438,17 +10438,17 @@ export const VmSafe = {
                         "name": "label",
                         "nameLocation": "6111:5:156",
                         "parameters": {
-                            "id": 39681,
+                            "id": 39572,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39678,
+                                    "id": 39569,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "6125:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39683,
+                                    "scope": 39574,
                                     "src": "6117:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10457,7 +10457,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39677,
+                                        "id": 39568,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6117:7:156",
@@ -10471,12 +10471,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39680,
+                                    "id": 39571,
                                     "mutability": "mutable",
                                     "name": "newLabel",
                                     "nameLocation": "6150:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39683,
+                                    "scope": 39574,
                                     "src": "6134:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10485,7 +10485,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39679,
+                                        "id": 39570,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6134:6:156",
@@ -10500,18 +10500,18 @@ export const VmSafe = {
                             "src": "6116:43:156"
                         },
                         "returnParameters": {
-                            "id": 39682,
+                            "id": 39573,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6168:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39690,
+                        "id": 39581,
                         "nodeType": "FunctionDefinition",
                         "src": "6222:81:156",
                         "nodes": [],
@@ -10522,17 +10522,17 @@ export const VmSafe = {
                         "name": "getLabel",
                         "nameLocation": "6231:8:156",
                         "parameters": {
-                            "id": 39686,
+                            "id": 39577,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39685,
+                                    "id": 39576,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "6248:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39690,
+                                    "scope": 39581,
                                     "src": "6240:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10541,7 +10541,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39684,
+                                        "id": 39575,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6240:7:156",
@@ -10557,17 +10557,17 @@ export const VmSafe = {
                             "src": "6239:17:156"
                         },
                         "returnParameters": {
-                            "id": 39689,
+                            "id": 39580,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39688,
+                                    "id": 39579,
                                     "mutability": "mutable",
                                     "name": "currentLabel",
                                     "nameLocation": "6289:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39690,
+                                    "scope": 39581,
                                     "src": "6275:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10576,7 +10576,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39687,
+                                        "id": 39578,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6275:6:156",
@@ -10590,13 +10590,13 @@ export const VmSafe = {
                             ],
                             "src": "6274:28:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39693,
+                        "id": 39584,
                         "nodeType": "FunctionDefinition",
                         "src": "6470:30:156",
                         "nodes": [],
@@ -10607,24 +10607,24 @@ export const VmSafe = {
                         "name": "broadcast",
                         "nameLocation": "6479:9:156",
                         "parameters": {
-                            "id": 39691,
+                            "id": 39582,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6488:2:156"
                         },
                         "returnParameters": {
-                            "id": 39692,
+                            "id": 39583,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6499:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39698,
+                        "id": 39589,
                         "nodeType": "FunctionDefinition",
                         "src": "6659:44:156",
                         "nodes": [],
@@ -10635,17 +10635,17 @@ export const VmSafe = {
                         "name": "broadcast",
                         "nameLocation": "6668:9:156",
                         "parameters": {
-                            "id": 39696,
+                            "id": 39587,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39695,
+                                    "id": 39586,
                                     "mutability": "mutable",
                                     "name": "signer",
                                     "nameLocation": "6686:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39698,
+                                    "scope": 39589,
                                     "src": "6678:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10654,7 +10654,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39694,
+                                        "id": 39585,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6678:7:156",
@@ -10670,18 +10670,18 @@ export const VmSafe = {
                             "src": "6677:16:156"
                         },
                         "returnParameters": {
-                            "id": 39697,
+                            "id": 39588,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6702:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39703,
+                        "id": 39594,
                         "nodeType": "FunctionDefinition",
                         "src": "6866:48:156",
                         "nodes": [],
@@ -10692,17 +10692,17 @@ export const VmSafe = {
                         "name": "broadcast",
                         "nameLocation": "6875:9:156",
                         "parameters": {
-                            "id": 39701,
+                            "id": 39592,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39700,
+                                    "id": 39591,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "6893:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39703,
+                                    "scope": 39594,
                                     "src": "6885:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10711,7 +10711,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39699,
+                                        "id": 39590,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6885:7:156",
@@ -10726,18 +10726,18 @@ export const VmSafe = {
                             "src": "6884:20:156"
                         },
                         "returnParameters": {
-                            "id": 39702,
+                            "id": 39593,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6913:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39706,
+                        "id": 39597,
                         "nodeType": "FunctionDefinition",
                         "src": "7087:35:156",
                         "nodes": [],
@@ -10748,24 +10748,24 @@ export const VmSafe = {
                         "name": "startBroadcast",
                         "nameLocation": "7096:14:156",
                         "parameters": {
-                            "id": 39704,
+                            "id": 39595,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7110:2:156"
                         },
                         "returnParameters": {
-                            "id": 39705,
+                            "id": 39596,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7121:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39711,
+                        "id": 39602,
                         "nodeType": "FunctionDefinition",
                         "src": "7273:49:156",
                         "nodes": [],
@@ -10776,17 +10776,17 @@ export const VmSafe = {
                         "name": "startBroadcast",
                         "nameLocation": "7282:14:156",
                         "parameters": {
-                            "id": 39709,
+                            "id": 39600,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39708,
+                                    "id": 39599,
                                     "mutability": "mutable",
                                     "name": "signer",
                                     "nameLocation": "7305:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39711,
+                                    "scope": 39602,
                                     "src": "7297:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10795,7 +10795,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39707,
+                                        "id": 39598,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7297:7:156",
@@ -10811,18 +10811,18 @@ export const VmSafe = {
                             "src": "7296:16:156"
                         },
                         "returnParameters": {
-                            "id": 39710,
+                            "id": 39601,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7321:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39716,
+                        "id": 39607,
                         "nodeType": "FunctionDefinition",
                         "src": "7477:53:156",
                         "nodes": [],
@@ -10833,17 +10833,17 @@ export const VmSafe = {
                         "name": "startBroadcast",
                         "nameLocation": "7486:14:156",
                         "parameters": {
-                            "id": 39714,
+                            "id": 39605,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39713,
+                                    "id": 39604,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "7509:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39716,
+                                    "scope": 39607,
                                     "src": "7501:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -10852,7 +10852,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39712,
+                                        "id": 39603,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7501:7:156",
@@ -10867,18 +10867,18 @@ export const VmSafe = {
                             "src": "7500:20:156"
                         },
                         "returnParameters": {
-                            "id": 39715,
+                            "id": 39606,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7529:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39719,
+                        "id": 39610,
                         "nodeType": "FunctionDefinition",
                         "src": "7580:34:156",
                         "nodes": [],
@@ -10889,24 +10889,24 @@ export const VmSafe = {
                         "name": "stopBroadcast",
                         "nameLocation": "7589:13:156",
                         "parameters": {
-                            "id": 39717,
+                            "id": 39608,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7602:2:156"
                         },
                         "returnParameters": {
-                            "id": 39718,
+                            "id": 39609,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7613:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39724,
+                        "id": 39615,
                         "nodeType": "FunctionDefinition",
                         "src": "7669:66:156",
                         "nodes": [],
@@ -10917,23 +10917,23 @@ export const VmSafe = {
                         "name": "projectRoot",
                         "nameLocation": "7678:11:156",
                         "parameters": {
-                            "id": 39720,
+                            "id": 39611,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7689:2:156"
                         },
                         "returnParameters": {
-                            "id": 39723,
+                            "id": 39614,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39722,
+                                    "id": 39613,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "7729:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39724,
+                                    "scope": 39615,
                                     "src": "7715:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10942,7 +10942,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39721,
+                                        "id": 39612,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7715:6:156",
@@ -10956,13 +10956,13 @@ export const VmSafe = {
                             ],
                             "src": "7714:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39731,
+                        "id": 39622,
                         "nodeType": "FunctionDefinition",
                         "src": "7831:83:156",
                         "nodes": [],
@@ -10973,17 +10973,17 @@ export const VmSafe = {
                         "name": "readFile",
                         "nameLocation": "7840:8:156",
                         "parameters": {
-                            "id": 39727,
+                            "id": 39618,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39726,
+                                    "id": 39617,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "7865:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39731,
+                                    "scope": 39622,
                                     "src": "7849:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -10992,7 +10992,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39725,
+                                        "id": 39616,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7849:6:156",
@@ -11007,17 +11007,17 @@ export const VmSafe = {
                             "src": "7848:22:156"
                         },
                         "returnParameters": {
-                            "id": 39730,
+                            "id": 39621,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39729,
+                                    "id": 39620,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "7908:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39731,
+                                    "scope": 39622,
                                     "src": "7894:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11026,7 +11026,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39728,
+                                        "id": 39619,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7894:6:156",
@@ -11040,13 +11040,13 @@ export const VmSafe = {
                             ],
                             "src": "7893:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39738,
+                        "id": 39629,
                         "nodeType": "FunctionDefinition",
                         "src": "8010:88:156",
                         "nodes": [],
@@ -11057,17 +11057,17 @@ export const VmSafe = {
                         "name": "readFileBinary",
                         "nameLocation": "8019:14:156",
                         "parameters": {
-                            "id": 39734,
+                            "id": 39625,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39733,
+                                    "id": 39624,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "8050:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39738,
+                                    "scope": 39629,
                                     "src": "8034:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11076,7 +11076,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39732,
+                                        "id": 39623,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8034:6:156",
@@ -11091,17 +11091,17 @@ export const VmSafe = {
                             "src": "8033:22:156"
                         },
                         "returnParameters": {
-                            "id": 39737,
+                            "id": 39628,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39736,
+                                    "id": 39627,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "8092:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39738,
+                                    "scope": 39629,
                                     "src": "8079:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11110,7 +11110,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39735,
+                                        "id": 39626,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8079:5:156",
@@ -11124,13 +11124,13 @@ export const VmSafe = {
                             ],
                             "src": "8078:19:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39745,
+                        "id": 39636,
                         "nodeType": "FunctionDefinition",
                         "src": "8145:83:156",
                         "nodes": [],
@@ -11141,17 +11141,17 @@ export const VmSafe = {
                         "name": "readLine",
                         "nameLocation": "8154:8:156",
                         "parameters": {
-                            "id": 39741,
+                            "id": 39632,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39740,
+                                    "id": 39631,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "8179:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39745,
+                                    "scope": 39636,
                                     "src": "8163:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11160,7 +11160,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39739,
+                                        "id": 39630,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8163:6:156",
@@ -11175,17 +11175,17 @@ export const VmSafe = {
                             "src": "8162:22:156"
                         },
                         "returnParameters": {
-                            "id": 39744,
+                            "id": 39635,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39743,
+                                    "id": 39634,
                                     "mutability": "mutable",
                                     "name": "line",
                                     "nameLocation": "8222:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39745,
+                                    "scope": 39636,
                                     "src": "8208:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -11194,7 +11194,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39742,
+                                        "id": 39633,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8208:6:156",
@@ -11208,13 +11208,13 @@ export const VmSafe = {
                             ],
                             "src": "8207:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39752,
+                        "id": 39643,
                         "nodeType": "FunctionDefinition",
                         "src": "8394:72:156",
                         "nodes": [],
@@ -11225,17 +11225,17 @@ export const VmSafe = {
                         "name": "writeFile",
                         "nameLocation": "8403:9:156",
                         "parameters": {
-                            "id": 39750,
+                            "id": 39641,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39747,
+                                    "id": 39638,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "8429:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39752,
+                                    "scope": 39643,
                                     "src": "8413:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11244,7 +11244,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39746,
+                                        "id": 39637,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8413:6:156",
@@ -11257,12 +11257,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39749,
+                                    "id": 39640,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "8451:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39752,
+                                    "scope": 39643,
                                     "src": "8435:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11271,7 +11271,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39748,
+                                        "id": 39639,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8435:6:156",
@@ -11286,18 +11286,18 @@ export const VmSafe = {
                             "src": "8412:44:156"
                         },
                         "returnParameters": {
-                            "id": 39751,
+                            "id": 39642,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8465:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39759,
+                        "id": 39650,
                         "nodeType": "FunctionDefinition",
                         "src": "8641:77:156",
                         "nodes": [],
@@ -11308,17 +11308,17 @@ export const VmSafe = {
                         "name": "writeFileBinary",
                         "nameLocation": "8650:15:156",
                         "parameters": {
-                            "id": 39757,
+                            "id": 39648,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39754,
+                                    "id": 39645,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "8682:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39759,
+                                    "scope": 39650,
                                     "src": "8666:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11327,7 +11327,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39753,
+                                        "id": 39644,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8666:6:156",
@@ -11340,12 +11340,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39756,
+                                    "id": 39647,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "8703:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39759,
+                                    "scope": 39650,
                                     "src": "8688:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11354,7 +11354,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39755,
+                                        "id": 39646,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8688:5:156",
@@ -11369,18 +11369,18 @@ export const VmSafe = {
                             "src": "8665:43:156"
                         },
                         "returnParameters": {
-                            "id": 39758,
+                            "id": 39649,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8717:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39766,
+                        "id": 39657,
                         "nodeType": "FunctionDefinition",
                         "src": "8836:72:156",
                         "nodes": [],
@@ -11391,17 +11391,17 @@ export const VmSafe = {
                         "name": "writeLine",
                         "nameLocation": "8845:9:156",
                         "parameters": {
-                            "id": 39764,
+                            "id": 39655,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39761,
+                                    "id": 39652,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "8871:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39766,
+                                    "scope": 39657,
                                     "src": "8855:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11410,7 +11410,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39760,
+                                        "id": 39651,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8855:6:156",
@@ -11423,12 +11423,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39763,
+                                    "id": 39654,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "8893:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39766,
+                                    "scope": 39657,
                                     "src": "8877:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11437,7 +11437,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39762,
+                                        "id": 39653,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "8877:6:156",
@@ -11452,18 +11452,18 @@ export const VmSafe = {
                             "src": "8854:44:156"
                         },
                         "returnParameters": {
-                            "id": 39765,
+                            "id": 39656,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8907:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39771,
+                        "id": 39662,
                         "nodeType": "FunctionDefinition",
                         "src": "9067:50:156",
                         "nodes": [],
@@ -11474,17 +11474,17 @@ export const VmSafe = {
                         "name": "closeFile",
                         "nameLocation": "9076:9:156",
                         "parameters": {
-                            "id": 39769,
+                            "id": 39660,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39768,
+                                    "id": 39659,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "9102:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39771,
+                                    "scope": 39662,
                                     "src": "9086:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11493,7 +11493,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39767,
+                                        "id": 39658,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9086:6:156",
@@ -11508,18 +11508,18 @@ export const VmSafe = {
                             "src": "9085:22:156"
                         },
                         "returnParameters": {
-                            "id": 39770,
+                            "id": 39661,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "9116:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39776,
+                        "id": 39667,
                         "nodeType": "FunctionDefinition",
                         "src": "9443:51:156",
                         "nodes": [],
@@ -11530,17 +11530,17 @@ export const VmSafe = {
                         "name": "removeFile",
                         "nameLocation": "9452:10:156",
                         "parameters": {
-                            "id": 39774,
+                            "id": 39665,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39773,
+                                    "id": 39664,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "9479:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39776,
+                                    "scope": 39667,
                                     "src": "9463:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11549,7 +11549,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39772,
+                                        "id": 39663,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9463:6:156",
@@ -11564,18 +11564,18 @@ export const VmSafe = {
                             "src": "9462:22:156"
                         },
                         "returnParameters": {
-                            "id": 39775,
+                            "id": 39666,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "9493:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39783,
+                        "id": 39674,
                         "nodeType": "FunctionDefinition",
                         "src": "9892:66:156",
                         "nodes": [],
@@ -11586,17 +11586,17 @@ export const VmSafe = {
                         "name": "createDir",
                         "nameLocation": "9901:9:156",
                         "parameters": {
-                            "id": 39781,
+                            "id": 39672,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39778,
+                                    "id": 39669,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "9927:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39783,
+                                    "scope": 39674,
                                     "src": "9911:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11605,7 +11605,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39777,
+                                        "id": 39668,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9911:6:156",
@@ -11618,12 +11618,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39780,
+                                    "id": 39671,
                                     "mutability": "mutable",
                                     "name": "recursive",
                                     "nameLocation": "9938:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39783,
+                                    "scope": 39674,
                                     "src": "9933:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11632,7 +11632,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39779,
+                                        "id": 39670,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9933:4:156",
@@ -11647,18 +11647,18 @@ export const VmSafe = {
                             "src": "9910:38:156"
                         },
                         "returnParameters": {
-                            "id": 39782,
+                            "id": 39673,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "9957:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39790,
+                        "id": 39681,
                         "nodeType": "FunctionDefinition",
                         "src": "10340:66:156",
                         "nodes": [],
@@ -11669,17 +11669,17 @@ export const VmSafe = {
                         "name": "removeDir",
                         "nameLocation": "10349:9:156",
                         "parameters": {
-                            "id": 39788,
+                            "id": 39679,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39785,
+                                    "id": 39676,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "10375:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39790,
+                                    "scope": 39681,
                                     "src": "10359:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11688,7 +11688,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39784,
+                                        "id": 39675,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10359:6:156",
@@ -11701,12 +11701,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39787,
+                                    "id": 39678,
                                     "mutability": "mutable",
                                     "name": "recursive",
                                     "nameLocation": "10386:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39790,
+                                    "scope": 39681,
                                     "src": "10381:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11715,7 +11715,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39786,
+                                        "id": 39677,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10381:4:156",
@@ -11730,18 +11730,18 @@ export const VmSafe = {
                             "src": "10358:38:156"
                         },
                         "returnParameters": {
-                            "id": 39789,
+                            "id": 39680,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "10405:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39799,
+                        "id": 39690,
                         "nodeType": "FunctionDefinition",
                         "src": "10653:89:156",
                         "nodes": [],
@@ -11752,17 +11752,17 @@ export const VmSafe = {
                         "name": "readDir",
                         "nameLocation": "10662:7:156",
                         "parameters": {
-                            "id": 39793,
+                            "id": 39684,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39792,
+                                    "id": 39683,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "10686:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39799,
+                                    "scope": 39690,
                                     "src": "10670:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11771,7 +11771,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39791,
+                                        "id": 39682,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10670:6:156",
@@ -11786,50 +11786,50 @@ export const VmSafe = {
                             "src": "10669:22:156"
                         },
                         "returnParameters": {
-                            "id": 39798,
+                            "id": 39689,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39797,
+                                    "id": 39688,
                                     "mutability": "mutable",
                                     "name": "entries",
                                     "nameLocation": "10733:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39799,
+                                    "scope": 39690,
                                     "src": "10715:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.DirEntry[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39795,
+                                            "id": 39686,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 39794,
+                                                "id": 39685,
                                                 "name": "DirEntry",
                                                 "nameLocations": [
                                                     "10715:8:156"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39309,
+                                                "referencedDeclaration": 39200,
                                                 "src": "10715:8:156"
                                             },
-                                            "referencedDeclaration": 39309,
+                                            "referencedDeclaration": 39200,
                                             "src": "10715:8:156",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_DirEntry_$39309_storage_ptr",
+                                                "typeIdentifier": "t_struct$_DirEntry_$39200_storage_ptr",
                                                 "typeString": "struct VmSafe.DirEntry"
                                             }
                                         },
-                                        "id": 39796,
+                                        "id": 39687,
                                         "nodeType": "ArrayTypeName",
                                         "src": "10715:10:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.DirEntry[]"
                                         }
                                     },
@@ -11838,13 +11838,13 @@ export const VmSafe = {
                             ],
                             "src": "10714:27:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39810,
+                        "id": 39701,
                         "nodeType": "FunctionDefinition",
                         "src": "10747:106:156",
                         "nodes": [],
@@ -11855,17 +11855,17 @@ export const VmSafe = {
                         "name": "readDir",
                         "nameLocation": "10756:7:156",
                         "parameters": {
-                            "id": 39804,
+                            "id": 39695,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39801,
+                                    "id": 39692,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "10780:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39810,
+                                    "scope": 39701,
                                     "src": "10764:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -11874,7 +11874,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39800,
+                                        "id": 39691,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10764:6:156",
@@ -11887,12 +11887,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39803,
+                                    "id": 39694,
                                     "mutability": "mutable",
                                     "name": "maxDepth",
                                     "nameLocation": "10793:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39810,
+                                    "scope": 39701,
                                     "src": "10786:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -11901,7 +11901,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 39802,
+                                        "id": 39693,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10786:6:156",
@@ -11916,50 +11916,50 @@ export const VmSafe = {
                             "src": "10763:39:156"
                         },
                         "returnParameters": {
-                            "id": 39809,
+                            "id": 39700,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39808,
+                                    "id": 39699,
                                     "mutability": "mutable",
                                     "name": "entries",
                                     "nameLocation": "10844:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39810,
+                                    "scope": 39701,
                                     "src": "10826:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.DirEntry[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39806,
+                                            "id": 39697,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 39805,
+                                                "id": 39696,
                                                 "name": "DirEntry",
                                                 "nameLocations": [
                                                     "10826:8:156"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39309,
+                                                "referencedDeclaration": 39200,
                                                 "src": "10826:8:156"
                                             },
-                                            "referencedDeclaration": 39309,
+                                            "referencedDeclaration": 39200,
                                             "src": "10826:8:156",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_DirEntry_$39309_storage_ptr",
+                                                "typeIdentifier": "t_struct$_DirEntry_$39200_storage_ptr",
                                                 "typeString": "struct VmSafe.DirEntry"
                                             }
                                         },
-                                        "id": 39807,
+                                        "id": 39698,
                                         "nodeType": "ArrayTypeName",
                                         "src": "10826:10:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.DirEntry[]"
                                         }
                                     },
@@ -11968,13 +11968,13 @@ export const VmSafe = {
                             ],
                             "src": "10825:27:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39823,
+                        "id": 39714,
                         "nodeType": "FunctionDefinition",
                         "src": "10858:148:156",
                         "nodes": [],
@@ -11985,17 +11985,17 @@ export const VmSafe = {
                         "name": "readDir",
                         "nameLocation": "10867:7:156",
                         "parameters": {
-                            "id": 39817,
+                            "id": 39708,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39812,
+                                    "id": 39703,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "10891:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39823,
+                                    "scope": 39714,
                                     "src": "10875:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12004,7 +12004,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39811,
+                                        "id": 39702,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10875:6:156",
@@ -12017,12 +12017,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39814,
+                                    "id": 39705,
                                     "mutability": "mutable",
                                     "name": "maxDepth",
                                     "nameLocation": "10904:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39823,
+                                    "scope": 39714,
                                     "src": "10897:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12031,7 +12031,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 39813,
+                                        "id": 39704,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10897:6:156",
@@ -12044,12 +12044,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39816,
+                                    "id": 39707,
                                     "mutability": "mutable",
                                     "name": "followLinks",
                                     "nameLocation": "10919:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39823,
+                                    "scope": 39714,
                                     "src": "10914:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12058,7 +12058,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39815,
+                                        "id": 39706,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10914:4:156",
@@ -12073,50 +12073,50 @@ export const VmSafe = {
                             "src": "10874:57:156"
                         },
                         "returnParameters": {
-                            "id": 39822,
+                            "id": 39713,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39821,
+                                    "id": 39712,
                                     "mutability": "mutable",
                                     "name": "entries",
                                     "nameLocation": "10997:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39823,
+                                    "scope": 39714,
                                     "src": "10979:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.DirEntry[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39819,
+                                            "id": 39710,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 39818,
+                                                "id": 39709,
                                                 "name": "DirEntry",
                                                 "nameLocations": [
                                                     "10979:8:156"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39309,
+                                                "referencedDeclaration": 39200,
                                                 "src": "10979:8:156"
                                             },
-                                            "referencedDeclaration": 39309,
+                                            "referencedDeclaration": 39200,
                                             "src": "10979:8:156",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_DirEntry_$39309_storage_ptr",
+                                                "typeIdentifier": "t_struct$_DirEntry_$39200_storage_ptr",
                                                 "typeString": "struct VmSafe.DirEntry"
                                             }
                                         },
-                                        "id": 39820,
+                                        "id": 39711,
                                         "nodeType": "ArrayTypeName",
                                         "src": "10979:10:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39309_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.DirEntry[]"
                                         }
                                     },
@@ -12125,13 +12125,13 @@ export const VmSafe = {
                             ],
                             "src": "10978:27:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39830,
+                        "id": 39721,
                         "nodeType": "FunctionDefinition",
                         "src": "11260:93:156",
                         "nodes": [],
@@ -12142,17 +12142,17 @@ export const VmSafe = {
                         "name": "readLink",
                         "nameLocation": "11269:8:156",
                         "parameters": {
-                            "id": 39826,
+                            "id": 39717,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39825,
+                                    "id": 39716,
                                     "mutability": "mutable",
                                     "name": "linkPath",
                                     "nameLocation": "11294:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39830,
+                                    "scope": 39721,
                                     "src": "11278:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12161,7 +12161,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39824,
+                                        "id": 39715,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11278:6:156",
@@ -12176,17 +12176,17 @@ export const VmSafe = {
                             "src": "11277:26:156"
                         },
                         "returnParameters": {
-                            "id": 39829,
+                            "id": 39720,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39828,
+                                    "id": 39719,
                                     "mutability": "mutable",
                                     "name": "targetPath",
                                     "nameLocation": "11341:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39830,
+                                    "scope": 39721,
                                     "src": "11327:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12195,7 +12195,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39827,
+                                        "id": 39718,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11327:6:156",
@@ -12209,13 +12209,13 @@ export const VmSafe = {
                             ],
                             "src": "11326:26:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39838,
+                        "id": 39729,
                         "nodeType": "FunctionDefinition",
                         "src": "11450:93:156",
                         "nodes": [],
@@ -12226,17 +12226,17 @@ export const VmSafe = {
                         "name": "fsMetadata",
                         "nameLocation": "11459:10:156",
                         "parameters": {
-                            "id": 39833,
+                            "id": 39724,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39832,
+                                    "id": 39723,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "11486:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39838,
+                                    "scope": 39729,
                                     "src": "11470:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12245,7 +12245,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39831,
+                                        "id": 39722,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11470:6:156",
@@ -12260,41 +12260,41 @@ export const VmSafe = {
                             "src": "11469:22:156"
                         },
                         "returnParameters": {
-                            "id": 39837,
+                            "id": 39728,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39836,
+                                    "id": 39727,
                                     "mutability": "mutable",
                                     "name": "metadata",
                                     "nameLocation": "11533:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39838,
+                                    "scope": 39729,
                                     "src": "11515:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_FsMetadata_$39324_memory_ptr",
+                                        "typeIdentifier": "t_struct$_FsMetadata_$39215_memory_ptr",
                                         "typeString": "struct VmSafe.FsMetadata"
                                     },
                                     "typeName": {
-                                        "id": 39835,
+                                        "id": 39726,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 39834,
+                                            "id": 39725,
                                             "name": "FsMetadata",
                                             "nameLocations": [
                                                 "11515:10:156"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 39324,
+                                            "referencedDeclaration": 39215,
                                             "src": "11515:10:156"
                                         },
-                                        "referencedDeclaration": 39324,
+                                        "referencedDeclaration": 39215,
                                         "src": "11515:10:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_FsMetadata_$39324_storage_ptr",
+                                            "typeIdentifier": "t_struct$_FsMetadata_$39215_storage_ptr",
                                             "typeString": "struct VmSafe.FsMetadata"
                                         }
                                     },
@@ -12303,13 +12303,13 @@ export const VmSafe = {
                             ],
                             "src": "11514:28:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39845,
+                        "id": 39736,
                         "nodeType": "FunctionDefinition",
                         "src": "11583:88:156",
                         "nodes": [],
@@ -12320,17 +12320,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "11592:8:156",
                         "parameters": {
-                            "id": 39841,
+                            "id": 39732,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39840,
+                                    "id": 39731,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "11609:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39845,
+                                    "scope": 39736,
                                     "src": "11601:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12339,7 +12339,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39839,
+                                        "id": 39730,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11601:7:156",
@@ -12355,17 +12355,17 @@ export const VmSafe = {
                             "src": "11600:15:156"
                         },
                         "returnParameters": {
-                            "id": 39844,
+                            "id": 39735,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39843,
+                                    "id": 39734,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "11653:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39845,
+                                    "scope": 39736,
                                     "src": "11639:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12374,7 +12374,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39842,
+                                        "id": 39733,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11639:6:156",
@@ -12388,13 +12388,13 @@ export const VmSafe = {
                             ],
                             "src": "11638:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39852,
+                        "id": 39743,
                         "nodeType": "FunctionDefinition",
                         "src": "11676:95:156",
                         "nodes": [],
@@ -12405,17 +12405,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "11685:8:156",
                         "parameters": {
-                            "id": 39848,
+                            "id": 39739,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39847,
+                                    "id": 39738,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "11709:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39852,
+                                    "scope": 39743,
                                     "src": "11694:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12424,7 +12424,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39846,
+                                        "id": 39737,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11694:5:156",
@@ -12439,17 +12439,17 @@ export const VmSafe = {
                             "src": "11693:22:156"
                         },
                         "returnParameters": {
-                            "id": 39851,
+                            "id": 39742,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39850,
+                                    "id": 39741,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "11753:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39852,
+                                    "scope": 39743,
                                     "src": "11739:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12458,7 +12458,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39849,
+                                        "id": 39740,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11739:6:156",
@@ -12472,13 +12472,13 @@ export const VmSafe = {
                             ],
                             "src": "11738:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39859,
+                        "id": 39750,
                         "nodeType": "FunctionDefinition",
                         "src": "11776:88:156",
                         "nodes": [],
@@ -12489,17 +12489,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "11785:8:156",
                         "parameters": {
-                            "id": 39855,
+                            "id": 39746,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39854,
+                                    "id": 39745,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "11802:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39859,
+                                    "scope": 39750,
                                     "src": "11794:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12508,7 +12508,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39853,
+                                        "id": 39744,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11794:7:156",
@@ -12523,17 +12523,17 @@ export const VmSafe = {
                             "src": "11793:15:156"
                         },
                         "returnParameters": {
-                            "id": 39858,
+                            "id": 39749,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39857,
+                                    "id": 39748,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "11846:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39859,
+                                    "scope": 39750,
                                     "src": "11832:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12542,7 +12542,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39856,
+                                        "id": 39747,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11832:6:156",
@@ -12556,13 +12556,13 @@ export const VmSafe = {
                             ],
                             "src": "11831:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39866,
+                        "id": 39757,
                         "nodeType": "FunctionDefinition",
                         "src": "11869:85:156",
                         "nodes": [],
@@ -12573,17 +12573,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "11878:8:156",
                         "parameters": {
-                            "id": 39862,
+                            "id": 39753,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39861,
+                                    "id": 39752,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "11892:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39866,
+                                    "scope": 39757,
                                     "src": "11887:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12592,7 +12592,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39860,
+                                        "id": 39751,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11887:4:156",
@@ -12607,17 +12607,17 @@ export const VmSafe = {
                             "src": "11886:12:156"
                         },
                         "returnParameters": {
-                            "id": 39865,
+                            "id": 39756,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39864,
+                                    "id": 39755,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "11936:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39866,
+                                    "scope": 39757,
                                     "src": "11922:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12626,7 +12626,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39863,
+                                        "id": 39754,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11922:6:156",
@@ -12640,13 +12640,13 @@ export const VmSafe = {
                             ],
                             "src": "11921:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39873,
+                        "id": 39764,
                         "nodeType": "FunctionDefinition",
                         "src": "11959:88:156",
                         "nodes": [],
@@ -12657,17 +12657,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "11968:8:156",
                         "parameters": {
-                            "id": 39869,
+                            "id": 39760,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39868,
+                                    "id": 39759,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "11985:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39873,
+                                    "scope": 39764,
                                     "src": "11977:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12676,7 +12676,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39867,
+                                        "id": 39758,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "11977:7:156",
@@ -12691,17 +12691,17 @@ export const VmSafe = {
                             "src": "11976:15:156"
                         },
                         "returnParameters": {
-                            "id": 39872,
+                            "id": 39763,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39871,
+                                    "id": 39762,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12029:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39873,
+                                    "scope": 39764,
                                     "src": "12015:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12710,7 +12710,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39870,
+                                        "id": 39761,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12015:6:156",
@@ -12724,13 +12724,13 @@ export const VmSafe = {
                             ],
                             "src": "12014:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39880,
+                        "id": 39771,
                         "nodeType": "FunctionDefinition",
                         "src": "12052:87:156",
                         "nodes": [],
@@ -12741,17 +12741,17 @@ export const VmSafe = {
                         "name": "toString",
                         "nameLocation": "12061:8:156",
                         "parameters": {
-                            "id": 39876,
+                            "id": 39767,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39875,
+                                    "id": 39766,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "12077:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39880,
+                                    "scope": 39771,
                                     "src": "12070:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12760,7 +12760,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 39874,
+                                        "id": 39765,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12070:6:156",
@@ -12775,17 +12775,17 @@ export const VmSafe = {
                             "src": "12069:14:156"
                         },
                         "returnParameters": {
-                            "id": 39879,
+                            "id": 39770,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39878,
+                                    "id": 39769,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12121:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39880,
+                                    "scope": 39771,
                                     "src": "12107:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12794,7 +12794,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39877,
+                                        "id": 39768,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12107:6:156",
@@ -12808,13 +12808,13 @@ export const VmSafe = {
                             ],
                             "src": "12106:32:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39887,
+                        "id": 39778,
                         "nodeType": "FunctionDefinition",
                         "src": "12180:103:156",
                         "nodes": [],
@@ -12825,17 +12825,17 @@ export const VmSafe = {
                         "name": "parseBytes",
                         "nameLocation": "12189:10:156",
                         "parameters": {
-                            "id": 39883,
+                            "id": 39774,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39882,
+                                    "id": 39773,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12216:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39887,
+                                    "scope": 39778,
                                     "src": "12200:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12844,7 +12844,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39881,
+                                        "id": 39772,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12200:6:156",
@@ -12859,17 +12859,17 @@ export const VmSafe = {
                             "src": "12199:34:156"
                         },
                         "returnParameters": {
-                            "id": 39886,
+                            "id": 39777,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39885,
+                                    "id": 39776,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12270:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39887,
+                                    "scope": 39778,
                                     "src": "12257:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -12878,7 +12878,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39884,
+                                        "id": 39775,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12257:5:156",
@@ -12892,13 +12892,13 @@ export const VmSafe = {
                             ],
                             "src": "12256:26:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39894,
+                        "id": 39785,
                         "nodeType": "FunctionDefinition",
                         "src": "12288:100:156",
                         "nodes": [],
@@ -12909,17 +12909,17 @@ export const VmSafe = {
                         "name": "parseAddress",
                         "nameLocation": "12297:12:156",
                         "parameters": {
-                            "id": 39890,
+                            "id": 39781,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39889,
+                                    "id": 39780,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12326:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39894,
+                                    "scope": 39785,
                                     "src": "12310:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -12928,7 +12928,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39888,
+                                        "id": 39779,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12310:6:156",
@@ -12943,17 +12943,17 @@ export const VmSafe = {
                             "src": "12309:34:156"
                         },
                         "returnParameters": {
-                            "id": 39893,
+                            "id": 39784,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39892,
+                                    "id": 39783,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12375:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39894,
+                                    "scope": 39785,
                                     "src": "12367:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -12962,7 +12962,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39891,
+                                        "id": 39782,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12367:7:156",
@@ -12977,13 +12977,13 @@ export const VmSafe = {
                             ],
                             "src": "12366:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39901,
+                        "id": 39792,
                         "nodeType": "FunctionDefinition",
                         "src": "12393:97:156",
                         "nodes": [],
@@ -12994,17 +12994,17 @@ export const VmSafe = {
                         "name": "parseUint",
                         "nameLocation": "12402:9:156",
                         "parameters": {
-                            "id": 39897,
+                            "id": 39788,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39896,
+                                    "id": 39787,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12428:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39901,
+                                    "scope": 39792,
                                     "src": "12412:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13013,7 +13013,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39895,
+                                        "id": 39786,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12412:6:156",
@@ -13028,17 +13028,17 @@ export const VmSafe = {
                             "src": "12411:34:156"
                         },
                         "returnParameters": {
-                            "id": 39900,
+                            "id": 39791,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39899,
+                                    "id": 39790,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12477:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39901,
+                                    "scope": 39792,
                                     "src": "12469:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13047,7 +13047,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39898,
+                                        "id": 39789,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12469:7:156",
@@ -13061,13 +13061,13 @@ export const VmSafe = {
                             ],
                             "src": "12468:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39908,
+                        "id": 39799,
                         "nodeType": "FunctionDefinition",
                         "src": "12495:95:156",
                         "nodes": [],
@@ -13078,17 +13078,17 @@ export const VmSafe = {
                         "name": "parseInt",
                         "nameLocation": "12504:8:156",
                         "parameters": {
-                            "id": 39904,
+                            "id": 39795,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39903,
+                                    "id": 39794,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12529:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39908,
+                                    "scope": 39799,
                                     "src": "12513:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13097,7 +13097,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39902,
+                                        "id": 39793,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12513:6:156",
@@ -13112,17 +13112,17 @@ export const VmSafe = {
                             "src": "12512:34:156"
                         },
                         "returnParameters": {
-                            "id": 39907,
+                            "id": 39798,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39906,
+                                    "id": 39797,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12577:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39908,
+                                    "scope": 39799,
                                     "src": "12570:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13131,7 +13131,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 39905,
+                                        "id": 39796,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12570:6:156",
@@ -13145,13 +13145,13 @@ export const VmSafe = {
                             ],
                             "src": "12569:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39915,
+                        "id": 39806,
                         "nodeType": "FunctionDefinition",
                         "src": "12595:100:156",
                         "nodes": [],
@@ -13162,17 +13162,17 @@ export const VmSafe = {
                         "name": "parseBytes32",
                         "nameLocation": "12604:12:156",
                         "parameters": {
-                            "id": 39911,
+                            "id": 39802,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39910,
+                                    "id": 39801,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12633:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39915,
+                                    "scope": 39806,
                                     "src": "12617:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13181,7 +13181,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39909,
+                                        "id": 39800,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12617:6:156",
@@ -13196,17 +13196,17 @@ export const VmSafe = {
                             "src": "12616:34:156"
                         },
                         "returnParameters": {
-                            "id": 39914,
+                            "id": 39805,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39913,
+                                    "id": 39804,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12682:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39915,
+                                    "scope": 39806,
                                     "src": "12674:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13215,7 +13215,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 39912,
+                                        "id": 39803,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12674:7:156",
@@ -13229,13 +13229,13 @@ export const VmSafe = {
                             ],
                             "src": "12673:21:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39922,
+                        "id": 39813,
                         "nodeType": "FunctionDefinition",
                         "src": "12700:94:156",
                         "nodes": [],
@@ -13246,17 +13246,17 @@ export const VmSafe = {
                         "name": "parseBool",
                         "nameLocation": "12709:9:156",
                         "parameters": {
-                            "id": 39918,
+                            "id": 39809,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39917,
+                                    "id": 39808,
                                     "mutability": "mutable",
                                     "name": "stringifiedValue",
                                     "nameLocation": "12735:16:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39922,
+                                    "scope": 39813,
                                     "src": "12719:32:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13265,7 +13265,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39916,
+                                        "id": 39807,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12719:6:156",
@@ -13280,17 +13280,17 @@ export const VmSafe = {
                             "src": "12718:34:156"
                         },
                         "returnParameters": {
-                            "id": 39921,
+                            "id": 39812,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39920,
+                                    "id": 39811,
                                     "mutability": "mutable",
                                     "name": "parsedValue",
                                     "nameLocation": "12781:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39922,
+                                    "scope": 39813,
                                     "src": "12776:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13299,7 +13299,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 39919,
+                                        "id": 39810,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "12776:4:156",
@@ -13313,13 +13313,13 @@ export const VmSafe = {
                             ],
                             "src": "12775:18:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39925,
+                        "id": 39816,
                         "nodeType": "FunctionDefinition",
                         "src": "12838:31:156",
                         "nodes": [],
@@ -13330,24 +13330,24 @@ export const VmSafe = {
                         "name": "recordLogs",
                         "nameLocation": "12847:10:156",
                         "parameters": {
-                            "id": 39923,
+                            "id": 39814,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "12857:2:156"
                         },
                         "returnParameters": {
-                            "id": 39924,
+                            "id": 39815,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "12868:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39932,
+                        "id": 39823,
                         "nodeType": "FunctionDefinition",
                         "src": "12908:64:156",
                         "nodes": [],
@@ -13358,56 +13358,56 @@ export const VmSafe = {
                         "name": "getRecordedLogs",
                         "nameLocation": "12917:15:156",
                         "parameters": {
-                            "id": 39926,
+                            "id": 39817,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "12932:2:156"
                         },
                         "returnParameters": {
-                            "id": 39931,
+                            "id": 39822,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39930,
+                                    "id": 39821,
                                     "mutability": "mutable",
                                     "name": "logs",
                                     "nameLocation": "12966:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39932,
+                                    "scope": 39823,
                                     "src": "12953:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Log_$39293_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Log_$39184_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.Log[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39928,
+                                            "id": 39819,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 39927,
+                                                "id": 39818,
                                                 "name": "Log",
                                                 "nameLocations": [
                                                     "12953:3:156"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39293,
+                                                "referencedDeclaration": 39184,
                                                 "src": "12953:3:156"
                                             },
-                                            "referencedDeclaration": 39293,
+                                            "referencedDeclaration": 39184,
                                             "src": "12953:3:156",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Log_$39293_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Log_$39184_storage_ptr",
                                                 "typeString": "struct VmSafe.Log"
                                             }
                                         },
-                                        "id": 39929,
+                                        "id": 39820,
                                         "nodeType": "ArrayTypeName",
                                         "src": "12953:5:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Log_$39293_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Log_$39184_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.Log[]"
                                         }
                                     },
@@ -13416,13 +13416,13 @@ export const VmSafe = {
                             ],
                             "src": "12952:19:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39941,
+                        "id": 39832,
                         "nodeType": "FunctionDefinition",
                         "src": "13107:102:156",
                         "nodes": [],
@@ -13433,17 +13433,17 @@ export const VmSafe = {
                         "name": "deriveKey",
                         "nameLocation": "13116:9:156",
                         "parameters": {
-                            "id": 39937,
+                            "id": 39828,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39934,
+                                    "id": 39825,
                                     "mutability": "mutable",
                                     "name": "mnemonic",
                                     "nameLocation": "13142:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39941,
+                                    "scope": 39832,
                                     "src": "13126:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13452,7 +13452,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39933,
+                                        "id": 39824,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13126:6:156",
@@ -13465,12 +13465,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39936,
+                                    "id": 39827,
                                     "mutability": "mutable",
                                     "name": "index",
                                     "nameLocation": "13159:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39941,
+                                    "scope": 39832,
                                     "src": "13152:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13479,7 +13479,7 @@ export const VmSafe = {
                                         "typeString": "uint32"
                                     },
                                     "typeName": {
-                                        "id": 39935,
+                                        "id": 39826,
                                         "name": "uint32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13152:6:156",
@@ -13494,17 +13494,17 @@ export const VmSafe = {
                             "src": "13125:40:156"
                         },
                         "returnParameters": {
-                            "id": 39940,
+                            "id": 39831,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39939,
+                                    "id": 39830,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "13197:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39941,
+                                    "scope": 39832,
                                     "src": "13189:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13513,7 +13513,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39938,
+                                        "id": 39829,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13189:7:156",
@@ -13527,13 +13527,13 @@ export const VmSafe = {
                             ],
                             "src": "13188:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39952,
+                        "id": 39843,
                         "nodeType": "FunctionDefinition",
                         "src": "13325:158:156",
                         "nodes": [],
@@ -13544,17 +13544,17 @@ export const VmSafe = {
                         "name": "deriveKey",
                         "nameLocation": "13334:9:156",
                         "parameters": {
-                            "id": 39948,
+                            "id": 39839,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39943,
+                                    "id": 39834,
                                     "mutability": "mutable",
                                     "name": "mnemonic",
                                     "nameLocation": "13360:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39952,
+                                    "scope": 39843,
                                     "src": "13344:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13563,7 +13563,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39942,
+                                        "id": 39833,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13344:6:156",
@@ -13576,12 +13576,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39945,
+                                    "id": 39836,
                                     "mutability": "mutable",
                                     "name": "derivationPath",
                                     "nameLocation": "13386:14:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39952,
+                                    "scope": 39843,
                                     "src": "13370:30:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13590,7 +13590,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39944,
+                                        "id": 39835,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13370:6:156",
@@ -13603,12 +13603,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39947,
+                                    "id": 39838,
                                     "mutability": "mutable",
                                     "name": "index",
                                     "nameLocation": "13409:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39952,
+                                    "scope": 39843,
                                     "src": "13402:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13617,7 +13617,7 @@ export const VmSafe = {
                                         "typeString": "uint32"
                                     },
                                     "typeName": {
-                                        "id": 39946,
+                                        "id": 39837,
                                         "name": "uint32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13402:6:156",
@@ -13632,17 +13632,17 @@ export const VmSafe = {
                             "src": "13343:72:156"
                         },
                         "returnParameters": {
-                            "id": 39951,
+                            "id": 39842,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39950,
+                                    "id": 39841,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "13471:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39952,
+                                    "scope": 39843,
                                     "src": "13463:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13651,7 +13651,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39949,
+                                        "id": 39840,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13463:7:156",
@@ -13665,13 +13665,13 @@ export const VmSafe = {
                             ],
                             "src": "13462:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39959,
+                        "id": 39850,
                         "nodeType": "FunctionDefinition",
                         "src": "13564:76:156",
                         "nodes": [],
@@ -13682,17 +13682,17 @@ export const VmSafe = {
                         "name": "rememberKey",
                         "nameLocation": "13573:11:156",
                         "parameters": {
-                            "id": 39955,
+                            "id": 39846,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39954,
+                                    "id": 39845,
                                     "mutability": "mutable",
                                     "name": "privateKey",
                                     "nameLocation": "13593:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39959,
+                                    "scope": 39850,
                                     "src": "13585:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13701,7 +13701,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39953,
+                                        "id": 39844,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13585:7:156",
@@ -13716,17 +13716,17 @@ export const VmSafe = {
                             "src": "13584:20:156"
                         },
                         "returnParameters": {
-                            "id": 39958,
+                            "id": 39849,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39957,
+                                    "id": 39848,
                                     "mutability": "mutable",
                                     "name": "keyAddr",
                                     "nameLocation": "13631:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39959,
+                                    "scope": 39850,
                                     "src": "13623:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -13735,7 +13735,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 39956,
+                                        "id": 39847,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "13623:7:156",
@@ -13750,13 +13750,13 @@ export const VmSafe = {
                             ],
                             "src": "13622:17:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39968,
+                        "id": 39859,
                         "nodeType": "FunctionDefinition",
                         "src": "14673:114:156",
                         "nodes": [],
@@ -13767,17 +13767,17 @@ export const VmSafe = {
                         "name": "parseJson",
                         "nameLocation": "14682:9:156",
                         "parameters": {
-                            "id": 39964,
+                            "id": 39855,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39961,
+                                    "id": 39852,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "14708:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39968,
+                                    "scope": 39859,
                                     "src": "14692:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13786,7 +13786,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39960,
+                                        "id": 39851,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14692:6:156",
@@ -13799,12 +13799,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39963,
+                                    "id": 39854,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "14730:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39968,
+                                    "scope": 39859,
                                     "src": "14714:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13813,7 +13813,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39962,
+                                        "id": 39853,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14714:6:156",
@@ -13828,17 +13828,17 @@ export const VmSafe = {
                             "src": "14691:43:156"
                         },
                         "returnParameters": {
-                            "id": 39967,
+                            "id": 39858,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39966,
+                                    "id": 39857,
                                     "mutability": "mutable",
                                     "name": "abiEncodedData",
                                     "nameLocation": "14771:14:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39968,
+                                    "scope": 39859,
                                     "src": "14758:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13847,7 +13847,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39965,
+                                        "id": 39856,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14758:5:156",
@@ -13861,13 +13861,13 @@ export const VmSafe = {
                             ],
                             "src": "14757:29:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39975,
+                        "id": 39866,
                         "nodeType": "FunctionDefinition",
                         "src": "14792:93:156",
                         "nodes": [],
@@ -13878,17 +13878,17 @@ export const VmSafe = {
                         "name": "parseJson",
                         "nameLocation": "14801:9:156",
                         "parameters": {
-                            "id": 39971,
+                            "id": 39862,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39970,
+                                    "id": 39861,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "14827:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39975,
+                                    "scope": 39866,
                                     "src": "14811:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13897,7 +13897,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39969,
+                                        "id": 39860,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14811:6:156",
@@ -13912,17 +13912,17 @@ export const VmSafe = {
                             "src": "14810:22:156"
                         },
                         "returnParameters": {
-                            "id": 39974,
+                            "id": 39865,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39973,
+                                    "id": 39864,
                                     "mutability": "mutable",
                                     "name": "abiEncodedData",
                                     "nameLocation": "14869:14:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39975,
+                                    "scope": 39866,
                                     "src": "14856:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -13931,7 +13931,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 39972,
+                                        "id": 39863,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "14856:5:156",
@@ -13945,13 +13945,13 @@ export const VmSafe = {
                             ],
                             "src": "14855:29:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39984,
+                        "id": 39875,
                         "nodeType": "FunctionDefinition",
                         "src": "15273:84:156",
                         "nodes": [],
@@ -13962,17 +13962,17 @@ export const VmSafe = {
                         "name": "parseJsonUint",
                         "nameLocation": "15282:13:156",
                         "parameters": {
-                            "id": 39980,
+                            "id": 39871,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39977,
+                                    "id": 39868,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39984,
+                                    "scope": 39875,
                                     "src": "15296:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -13981,7 +13981,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39976,
+                                        "id": 39867,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15296:6:156",
@@ -13994,12 +13994,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39979,
+                                    "id": 39870,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39984,
+                                    "scope": 39875,
                                     "src": "15313:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14008,7 +14008,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39978,
+                                        "id": 39869,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15313:6:156",
@@ -14023,17 +14023,17 @@ export const VmSafe = {
                             "src": "15295:34:156"
                         },
                         "returnParameters": {
-                            "id": 39983,
+                            "id": 39874,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39982,
+                                    "id": 39873,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39984,
+                                    "scope": 39875,
                                     "src": "15348:7:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14042,7 +14042,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 39981,
+                                        "id": 39872,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15348:7:156",
@@ -14056,13 +14056,13 @@ export const VmSafe = {
                             ],
                             "src": "15347:9:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 39994,
+                        "id": 39885,
                         "nodeType": "FunctionDefinition",
                         "src": "15362:98:156",
                         "nodes": [],
@@ -14073,17 +14073,17 @@ export const VmSafe = {
                         "name": "parseJsonUintArray",
                         "nameLocation": "15371:18:156",
                         "parameters": {
-                            "id": 39989,
+                            "id": 39880,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39986,
+                                    "id": 39877,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39994,
+                                    "scope": 39885,
                                     "src": "15390:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14092,7 +14092,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39985,
+                                        "id": 39876,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15390:6:156",
@@ -14105,12 +14105,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39988,
+                                    "id": 39879,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39994,
+                                    "scope": 39885,
                                     "src": "15407:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14119,7 +14119,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39987,
+                                        "id": 39878,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15407:6:156",
@@ -14134,17 +14134,17 @@ export const VmSafe = {
                             "src": "15389:34:156"
                         },
                         "returnParameters": {
-                            "id": 39993,
+                            "id": 39884,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39992,
+                                    "id": 39883,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 39994,
+                                    "scope": 39885,
                                     "src": "15442:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14154,7 +14154,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 39990,
+                                            "id": 39881,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "15442:7:156",
@@ -14163,7 +14163,7 @@ export const VmSafe = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 39991,
+                                        "id": 39882,
                                         "nodeType": "ArrayTypeName",
                                         "src": "15442:9:156",
                                         "typeDescriptions": {
@@ -14176,13 +14176,13 @@ export const VmSafe = {
                             ],
                             "src": "15441:18:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40003,
+                        "id": 39894,
                         "nodeType": "FunctionDefinition",
                         "src": "15465:82:156",
                         "nodes": [],
@@ -14193,17 +14193,17 @@ export const VmSafe = {
                         "name": "parseJsonInt",
                         "nameLocation": "15474:12:156",
                         "parameters": {
-                            "id": 39999,
+                            "id": 39890,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 39996,
+                                    "id": 39887,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40003,
+                                    "scope": 39894,
                                     "src": "15487:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14212,7 +14212,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39995,
+                                        "id": 39886,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15487:6:156",
@@ -14225,12 +14225,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 39998,
+                                    "id": 39889,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40003,
+                                    "scope": 39894,
                                     "src": "15504:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14239,7 +14239,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 39997,
+                                        "id": 39888,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15504:6:156",
@@ -14254,17 +14254,17 @@ export const VmSafe = {
                             "src": "15486:34:156"
                         },
                         "returnParameters": {
-                            "id": 40002,
+                            "id": 39893,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40001,
+                                    "id": 39892,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40003,
+                                    "scope": 39894,
                                     "src": "15539:6:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14273,7 +14273,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 40000,
+                                        "id": 39891,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15539:6:156",
@@ -14287,13 +14287,13 @@ export const VmSafe = {
                             ],
                             "src": "15538:8:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40013,
+                        "id": 39904,
                         "nodeType": "FunctionDefinition",
                         "src": "15552:96:156",
                         "nodes": [],
@@ -14304,17 +14304,17 @@ export const VmSafe = {
                         "name": "parseJsonIntArray",
                         "nameLocation": "15561:17:156",
                         "parameters": {
-                            "id": 40008,
+                            "id": 39899,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40005,
+                                    "id": 39896,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40013,
+                                    "scope": 39904,
                                     "src": "15579:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14323,7 +14323,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40004,
+                                        "id": 39895,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15579:6:156",
@@ -14336,12 +14336,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40007,
+                                    "id": 39898,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40013,
+                                    "scope": 39904,
                                     "src": "15596:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14350,7 +14350,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40006,
+                                        "id": 39897,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15596:6:156",
@@ -14365,17 +14365,17 @@ export const VmSafe = {
                             "src": "15578:34:156"
                         },
                         "returnParameters": {
-                            "id": 40012,
+                            "id": 39903,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40011,
+                                    "id": 39902,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40013,
+                                    "scope": 39904,
                                     "src": "15631:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14385,7 +14385,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40009,
+                                            "id": 39900,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "15631:6:156",
@@ -14394,7 +14394,7 @@ export const VmSafe = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 40010,
+                                        "id": 39901,
                                         "nodeType": "ArrayTypeName",
                                         "src": "15631:8:156",
                                         "typeDescriptions": {
@@ -14407,13 +14407,13 @@ export const VmSafe = {
                             ],
                             "src": "15630:17:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40022,
+                        "id": 39913,
                         "nodeType": "FunctionDefinition",
                         "src": "15653:81:156",
                         "nodes": [],
@@ -14424,17 +14424,17 @@ export const VmSafe = {
                         "name": "parseJsonBool",
                         "nameLocation": "15662:13:156",
                         "parameters": {
-                            "id": 40018,
+                            "id": 39909,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40015,
+                                    "id": 39906,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40022,
+                                    "scope": 39913,
                                     "src": "15676:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14443,7 +14443,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40014,
+                                        "id": 39905,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15676:6:156",
@@ -14456,12 +14456,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40017,
+                                    "id": 39908,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40022,
+                                    "scope": 39913,
                                     "src": "15693:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14470,7 +14470,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40016,
+                                        "id": 39907,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15693:6:156",
@@ -14485,17 +14485,17 @@ export const VmSafe = {
                             "src": "15675:34:156"
                         },
                         "returnParameters": {
-                            "id": 40021,
+                            "id": 39912,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40020,
+                                    "id": 39911,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40022,
+                                    "scope": 39913,
                                     "src": "15728:4:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14504,7 +14504,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40019,
+                                        "id": 39910,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15728:4:156",
@@ -14518,13 +14518,13 @@ export const VmSafe = {
                             ],
                             "src": "15727:6:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40032,
+                        "id": 39923,
                         "nodeType": "FunctionDefinition",
                         "src": "15739:95:156",
                         "nodes": [],
@@ -14535,17 +14535,17 @@ export const VmSafe = {
                         "name": "parseJsonBoolArray",
                         "nameLocation": "15748:18:156",
                         "parameters": {
-                            "id": 40027,
+                            "id": 39918,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40024,
+                                    "id": 39915,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40032,
+                                    "scope": 39923,
                                     "src": "15767:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14554,7 +14554,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40023,
+                                        "id": 39914,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15767:6:156",
@@ -14567,12 +14567,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40026,
+                                    "id": 39917,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40032,
+                                    "scope": 39923,
                                     "src": "15784:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14581,7 +14581,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40025,
+                                        "id": 39916,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15784:6:156",
@@ -14596,17 +14596,17 @@ export const VmSafe = {
                             "src": "15766:34:156"
                         },
                         "returnParameters": {
-                            "id": 40031,
+                            "id": 39922,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40030,
+                                    "id": 39921,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40032,
+                                    "scope": 39923,
                                     "src": "15819:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14616,7 +14616,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40028,
+                                            "id": 39919,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "15819:4:156",
@@ -14625,7 +14625,7 @@ export const VmSafe = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 40029,
+                                        "id": 39920,
                                         "nodeType": "ArrayTypeName",
                                         "src": "15819:6:156",
                                         "typeDescriptions": {
@@ -14638,13 +14638,13 @@ export const VmSafe = {
                             ],
                             "src": "15818:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40041,
+                        "id": 39932,
                         "nodeType": "FunctionDefinition",
                         "src": "15839:87:156",
                         "nodes": [],
@@ -14655,17 +14655,17 @@ export const VmSafe = {
                         "name": "parseJsonAddress",
                         "nameLocation": "15848:16:156",
                         "parameters": {
-                            "id": 40037,
+                            "id": 39928,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40034,
+                                    "id": 39925,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40041,
+                                    "scope": 39932,
                                     "src": "15865:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14674,7 +14674,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40033,
+                                        "id": 39924,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15865:6:156",
@@ -14687,12 +14687,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40036,
+                                    "id": 39927,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40041,
+                                    "scope": 39932,
                                     "src": "15882:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14701,7 +14701,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40035,
+                                        "id": 39926,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15882:6:156",
@@ -14716,17 +14716,17 @@ export const VmSafe = {
                             "src": "15864:34:156"
                         },
                         "returnParameters": {
-                            "id": 40040,
+                            "id": 39931,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40039,
+                                    "id": 39930,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40041,
+                                    "scope": 39932,
                                     "src": "15917:7:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -14735,7 +14735,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40038,
+                                        "id": 39929,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15917:7:156",
@@ -14750,13 +14750,13 @@ export const VmSafe = {
                             ],
                             "src": "15916:9:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40051,
+                        "id": 39942,
                         "nodeType": "FunctionDefinition",
                         "src": "15931:101:156",
                         "nodes": [],
@@ -14767,17 +14767,17 @@ export const VmSafe = {
                         "name": "parseJsonAddressArray",
                         "nameLocation": "15940:21:156",
                         "parameters": {
-                            "id": 40046,
+                            "id": 39937,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40043,
+                                    "id": 39934,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40051,
+                                    "scope": 39942,
                                     "src": "15962:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14786,7 +14786,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40042,
+                                        "id": 39933,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15962:6:156",
@@ -14799,12 +14799,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40045,
+                                    "id": 39936,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40051,
+                                    "scope": 39942,
                                     "src": "15979:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14813,7 +14813,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40044,
+                                        "id": 39935,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "15979:6:156",
@@ -14828,17 +14828,17 @@ export const VmSafe = {
                             "src": "15961:34:156"
                         },
                         "returnParameters": {
-                            "id": 40050,
+                            "id": 39941,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40049,
+                                    "id": 39940,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40051,
+                                    "scope": 39942,
                                     "src": "16014:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14848,7 +14848,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40047,
+                                            "id": 39938,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "16014:7:156",
@@ -14858,7 +14858,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 40048,
+                                        "id": 39939,
                                         "nodeType": "ArrayTypeName",
                                         "src": "16014:9:156",
                                         "typeDescriptions": {
@@ -14871,13 +14871,13 @@ export const VmSafe = {
                             ],
                             "src": "16013:18:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40060,
+                        "id": 39951,
                         "nodeType": "FunctionDefinition",
                         "src": "16037:92:156",
                         "nodes": [],
@@ -14888,17 +14888,17 @@ export const VmSafe = {
                         "name": "parseJsonString",
                         "nameLocation": "16046:15:156",
                         "parameters": {
-                            "id": 40056,
+                            "id": 39947,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40053,
+                                    "id": 39944,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40060,
+                                    "scope": 39951,
                                     "src": "16062:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14907,7 +14907,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40052,
+                                        "id": 39943,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16062:6:156",
@@ -14920,12 +14920,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40055,
+                                    "id": 39946,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40060,
+                                    "scope": 39951,
                                     "src": "16079:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -14934,7 +14934,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40054,
+                                        "id": 39945,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16079:6:156",
@@ -14949,17 +14949,17 @@ export const VmSafe = {
                             "src": "16061:34:156"
                         },
                         "returnParameters": {
-                            "id": 40059,
+                            "id": 39950,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40058,
+                                    "id": 39949,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40060,
+                                    "scope": 39951,
                                     "src": "16114:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -14968,7 +14968,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40057,
+                                        "id": 39948,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16114:6:156",
@@ -14982,13 +14982,13 @@ export const VmSafe = {
                             ],
                             "src": "16113:15:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40070,
+                        "id": 39961,
                         "nodeType": "FunctionDefinition",
                         "src": "16134:99:156",
                         "nodes": [],
@@ -14999,17 +14999,17 @@ export const VmSafe = {
                         "name": "parseJsonStringArray",
                         "nameLocation": "16143:20:156",
                         "parameters": {
-                            "id": 40065,
+                            "id": 39956,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40062,
+                                    "id": 39953,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40070,
+                                    "scope": 39961,
                                     "src": "16164:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15018,7 +15018,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40061,
+                                        "id": 39952,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16164:6:156",
@@ -15031,12 +15031,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40064,
+                                    "id": 39955,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40070,
+                                    "scope": 39961,
                                     "src": "16181:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15045,7 +15045,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40063,
+                                        "id": 39954,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16181:6:156",
@@ -15060,17 +15060,17 @@ export const VmSafe = {
                             "src": "16163:34:156"
                         },
                         "returnParameters": {
-                            "id": 40069,
+                            "id": 39960,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40068,
+                                    "id": 39959,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40070,
+                                    "scope": 39961,
                                     "src": "16216:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15080,7 +15080,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40066,
+                                            "id": 39957,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "16216:6:156",
@@ -15089,7 +15089,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 40067,
+                                        "id": 39958,
                                         "nodeType": "ArrayTypeName",
                                         "src": "16216:8:156",
                                         "typeDescriptions": {
@@ -15102,13 +15102,13 @@ export const VmSafe = {
                             ],
                             "src": "16215:17:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40079,
+                        "id": 39970,
                         "nodeType": "FunctionDefinition",
                         "src": "16238:90:156",
                         "nodes": [],
@@ -15119,17 +15119,17 @@ export const VmSafe = {
                         "name": "parseJsonBytes",
                         "nameLocation": "16247:14:156",
                         "parameters": {
-                            "id": 40075,
+                            "id": 39966,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40072,
+                                    "id": 39963,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40079,
+                                    "scope": 39970,
                                     "src": "16262:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15138,7 +15138,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40071,
+                                        "id": 39962,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16262:6:156",
@@ -15151,12 +15151,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40074,
+                                    "id": 39965,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40079,
+                                    "scope": 39970,
                                     "src": "16279:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15165,7 +15165,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40073,
+                                        "id": 39964,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16279:6:156",
@@ -15180,17 +15180,17 @@ export const VmSafe = {
                             "src": "16261:34:156"
                         },
                         "returnParameters": {
-                            "id": 40078,
+                            "id": 39969,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40077,
+                                    "id": 39968,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40079,
+                                    "scope": 39970,
                                     "src": "16314:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15199,7 +15199,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40076,
+                                        "id": 39967,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16314:5:156",
@@ -15213,13 +15213,13 @@ export const VmSafe = {
                             ],
                             "src": "16313:14:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40089,
+                        "id": 39980,
                         "nodeType": "FunctionDefinition",
                         "src": "16333:97:156",
                         "nodes": [],
@@ -15230,17 +15230,17 @@ export const VmSafe = {
                         "name": "parseJsonBytesArray",
                         "nameLocation": "16342:19:156",
                         "parameters": {
-                            "id": 40084,
+                            "id": 39975,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40081,
+                                    "id": 39972,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40089,
+                                    "scope": 39980,
                                     "src": "16362:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15249,7 +15249,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40080,
+                                        "id": 39971,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16362:6:156",
@@ -15262,12 +15262,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40083,
+                                    "id": 39974,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40089,
+                                    "scope": 39980,
                                     "src": "16379:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15276,7 +15276,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40082,
+                                        "id": 39973,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16379:6:156",
@@ -15291,17 +15291,17 @@ export const VmSafe = {
                             "src": "16361:34:156"
                         },
                         "returnParameters": {
-                            "id": 40088,
+                            "id": 39979,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40087,
+                                    "id": 39978,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40089,
+                                    "scope": 39980,
                                     "src": "16414:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15311,7 +15311,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40085,
+                                            "id": 39976,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "16414:5:156",
@@ -15320,7 +15320,7 @@ export const VmSafe = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 40086,
+                                        "id": 39977,
                                         "nodeType": "ArrayTypeName",
                                         "src": "16414:7:156",
                                         "typeDescriptions": {
@@ -15333,13 +15333,13 @@ export const VmSafe = {
                             ],
                             "src": "16413:16:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40098,
+                        "id": 39989,
                         "nodeType": "FunctionDefinition",
                         "src": "16435:87:156",
                         "nodes": [],
@@ -15350,17 +15350,17 @@ export const VmSafe = {
                         "name": "parseJsonBytes32",
                         "nameLocation": "16444:16:156",
                         "parameters": {
-                            "id": 40094,
+                            "id": 39985,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40091,
+                                    "id": 39982,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40098,
+                                    "scope": 39989,
                                     "src": "16461:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15369,7 +15369,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40090,
+                                        "id": 39981,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16461:6:156",
@@ -15382,12 +15382,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40093,
+                                    "id": 39984,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40098,
+                                    "scope": 39989,
                                     "src": "16478:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15396,7 +15396,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40092,
+                                        "id": 39983,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16478:6:156",
@@ -15411,17 +15411,17 @@ export const VmSafe = {
                             "src": "16460:34:156"
                         },
                         "returnParameters": {
-                            "id": 40097,
+                            "id": 39988,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40096,
+                                    "id": 39987,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40098,
+                                    "scope": 39989,
                                     "src": "16513:7:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15430,7 +15430,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40095,
+                                        "id": 39986,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16513:7:156",
@@ -15444,13 +15444,13 @@ export const VmSafe = {
                             ],
                             "src": "16512:9:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40108,
+                        "id": 39999,
                         "nodeType": "FunctionDefinition",
                         "src": "16527:101:156",
                         "nodes": [],
@@ -15461,17 +15461,17 @@ export const VmSafe = {
                         "name": "parseJsonBytes32Array",
                         "nameLocation": "16536:21:156",
                         "parameters": {
-                            "id": 40103,
+                            "id": 39994,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40100,
+                                    "id": 39991,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40108,
+                                    "scope": 39999,
                                     "src": "16558:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15480,7 +15480,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40099,
+                                        "id": 39990,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16558:6:156",
@@ -15493,12 +15493,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40102,
+                                    "id": 39993,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40108,
+                                    "scope": 39999,
                                     "src": "16575:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15507,7 +15507,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40101,
+                                        "id": 39992,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16575:6:156",
@@ -15522,17 +15522,17 @@ export const VmSafe = {
                             "src": "16557:34:156"
                         },
                         "returnParameters": {
-                            "id": 40107,
+                            "id": 39998,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40106,
+                                    "id": 39997,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40108,
+                                    "scope": 39999,
                                     "src": "16610:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15542,7 +15542,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40104,
+                                            "id": 39995,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "16610:7:156",
@@ -15551,7 +15551,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 40105,
+                                        "id": 39996,
                                         "nodeType": "ArrayTypeName",
                                         "src": "16610:9:156",
                                         "typeDescriptions": {
@@ -15564,13 +15564,13 @@ export const VmSafe = {
                             ],
                             "src": "16609:18:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40118,
+                        "id": 40009,
                         "nodeType": "FunctionDefinition",
                         "src": "16681:106:156",
                         "nodes": [],
@@ -15581,17 +15581,17 @@ export const VmSafe = {
                         "name": "parseJsonKeys",
                         "nameLocation": "16690:13:156",
                         "parameters": {
-                            "id": 40113,
+                            "id": 40004,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40110,
+                                    "id": 40001,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "16720:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40118,
+                                    "scope": 40009,
                                     "src": "16704:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15600,7 +15600,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40109,
+                                        "id": 40000,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16704:6:156",
@@ -15613,12 +15613,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40112,
+                                    "id": 40003,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "16742:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40118,
+                                    "scope": 40009,
                                     "src": "16726:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15627,7 +15627,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40111,
+                                        "id": 40002,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "16726:6:156",
@@ -15642,17 +15642,17 @@ export const VmSafe = {
                             "src": "16703:43:156"
                         },
                         "returnParameters": {
-                            "id": 40117,
+                            "id": 40008,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40116,
+                                    "id": 40007,
                                     "mutability": "mutable",
                                     "name": "keys",
                                     "nameLocation": "16781:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40118,
+                                    "scope": 40009,
                                     "src": "16765:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15662,7 +15662,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40114,
+                                            "id": 40005,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "16765:6:156",
@@ -15671,7 +15671,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 40115,
+                                        "id": 40006,
                                         "nodeType": "ArrayTypeName",
                                         "src": "16765:8:156",
                                         "typeDescriptions": {
@@ -15684,13 +15684,13 @@ export const VmSafe = {
                             ],
                             "src": "16764:22:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40129,
+                        "id": 40020,
                         "nodeType": "FunctionDefinition",
                         "src": "16983:142:156",
                         "nodes": [],
@@ -15701,17 +15701,17 @@ export const VmSafe = {
                         "name": "serializeBool",
                         "nameLocation": "16992:13:156",
                         "parameters": {
-                            "id": 40125,
+                            "id": 40016,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40120,
+                                    "id": 40011,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17022:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40129,
+                                    "scope": 40020,
                                     "src": "17006:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15720,7 +15720,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40119,
+                                        "id": 40010,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17006:6:156",
@@ -15733,12 +15733,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40122,
+                                    "id": 40013,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17049:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40129,
+                                    "scope": 40020,
                                     "src": "17033:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15747,7 +15747,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40121,
+                                        "id": 40012,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17033:6:156",
@@ -15760,12 +15760,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40124,
+                                    "id": 40015,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17064:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40129,
+                                    "scope": 40020,
                                     "src": "17059:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15774,7 +15774,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40123,
+                                        "id": 40014,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17059:4:156",
@@ -15789,17 +15789,17 @@ export const VmSafe = {
                             "src": "17005:65:156"
                         },
                         "returnParameters": {
-                            "id": 40128,
+                            "id": 40019,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40127,
+                                    "id": 40018,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17119:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40129,
+                                    "scope": 40020,
                                     "src": "17105:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15808,7 +15808,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40126,
+                                        "id": 40017,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17105:6:156",
@@ -15822,13 +15822,13 @@ export const VmSafe = {
                             ],
                             "src": "17104:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40140,
+                        "id": 40031,
                         "nodeType": "FunctionDefinition",
                         "src": "17130:145:156",
                         "nodes": [],
@@ -15839,17 +15839,17 @@ export const VmSafe = {
                         "name": "serializeUint",
                         "nameLocation": "17139:13:156",
                         "parameters": {
-                            "id": 40136,
+                            "id": 40027,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40131,
+                                    "id": 40022,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17169:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40140,
+                                    "scope": 40031,
                                     "src": "17153:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15858,7 +15858,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40130,
+                                        "id": 40021,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17153:6:156",
@@ -15871,12 +15871,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40133,
+                                    "id": 40024,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17196:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40140,
+                                    "scope": 40031,
                                     "src": "17180:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15885,7 +15885,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40132,
+                                        "id": 40023,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17180:6:156",
@@ -15898,12 +15898,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40135,
+                                    "id": 40026,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17214:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40140,
+                                    "scope": 40031,
                                     "src": "17206:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -15912,7 +15912,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40134,
+                                        "id": 40025,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17206:7:156",
@@ -15927,17 +15927,17 @@ export const VmSafe = {
                             "src": "17152:68:156"
                         },
                         "returnParameters": {
-                            "id": 40139,
+                            "id": 40030,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40138,
+                                    "id": 40029,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17269:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40140,
+                                    "scope": 40031,
                                     "src": "17255:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -15946,7 +15946,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40137,
+                                        "id": 40028,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17255:6:156",
@@ -15960,13 +15960,13 @@ export const VmSafe = {
                             ],
                             "src": "17254:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40151,
+                        "id": 40042,
                         "nodeType": "FunctionDefinition",
                         "src": "17280:143:156",
                         "nodes": [],
@@ -15977,17 +15977,17 @@ export const VmSafe = {
                         "name": "serializeInt",
                         "nameLocation": "17289:12:156",
                         "parameters": {
-                            "id": 40147,
+                            "id": 40038,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40142,
+                                    "id": 40033,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17318:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40151,
+                                    "scope": 40042,
                                     "src": "17302:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -15996,7 +15996,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40141,
+                                        "id": 40032,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17302:6:156",
@@ -16009,12 +16009,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40144,
+                                    "id": 40035,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17345:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40151,
+                                    "scope": 40042,
                                     "src": "17329:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16023,7 +16023,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40143,
+                                        "id": 40034,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17329:6:156",
@@ -16036,12 +16036,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40146,
+                                    "id": 40037,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17362:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40151,
+                                    "scope": 40042,
                                     "src": "17355:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -16050,7 +16050,7 @@ export const VmSafe = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 40145,
+                                        "id": 40036,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17355:6:156",
@@ -16065,17 +16065,17 @@ export const VmSafe = {
                             "src": "17301:67:156"
                         },
                         "returnParameters": {
-                            "id": 40150,
+                            "id": 40041,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40149,
+                                    "id": 40040,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17417:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40151,
+                                    "scope": 40042,
                                     "src": "17403:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16084,7 +16084,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40148,
+                                        "id": 40039,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17403:6:156",
@@ -16098,13 +16098,13 @@ export const VmSafe = {
                             ],
                             "src": "17402:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40162,
+                        "id": 40053,
                         "nodeType": "FunctionDefinition",
                         "src": "17428:148:156",
                         "nodes": [],
@@ -16115,17 +16115,17 @@ export const VmSafe = {
                         "name": "serializeAddress",
                         "nameLocation": "17437:16:156",
                         "parameters": {
-                            "id": 40158,
+                            "id": 40049,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40153,
+                                    "id": 40044,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17470:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40162,
+                                    "scope": 40053,
                                     "src": "17454:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16134,7 +16134,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40152,
+                                        "id": 40043,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17454:6:156",
@@ -16147,12 +16147,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40155,
+                                    "id": 40046,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17497:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40162,
+                                    "scope": 40053,
                                     "src": "17481:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16161,7 +16161,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40154,
+                                        "id": 40045,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17481:6:156",
@@ -16174,12 +16174,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40157,
+                                    "id": 40048,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17515:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40162,
+                                    "scope": 40053,
                                     "src": "17507:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -16188,7 +16188,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40156,
+                                        "id": 40047,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17507:7:156",
@@ -16204,17 +16204,17 @@ export const VmSafe = {
                             "src": "17453:68:156"
                         },
                         "returnParameters": {
-                            "id": 40161,
+                            "id": 40052,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40160,
+                                    "id": 40051,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17570:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40162,
+                                    "scope": 40053,
                                     "src": "17556:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16223,7 +16223,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40159,
+                                        "id": 40050,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17556:6:156",
@@ -16237,13 +16237,13 @@ export const VmSafe = {
                             ],
                             "src": "17555:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40173,
+                        "id": 40064,
                         "nodeType": "FunctionDefinition",
                         "src": "17581:148:156",
                         "nodes": [],
@@ -16254,17 +16254,17 @@ export const VmSafe = {
                         "name": "serializeBytes32",
                         "nameLocation": "17590:16:156",
                         "parameters": {
-                            "id": 40169,
+                            "id": 40060,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40164,
+                                    "id": 40055,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17623:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40173,
+                                    "scope": 40064,
                                     "src": "17607:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16273,7 +16273,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40163,
+                                        "id": 40054,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17607:6:156",
@@ -16286,12 +16286,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40166,
+                                    "id": 40057,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17650:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40173,
+                                    "scope": 40064,
                                     "src": "17634:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16300,7 +16300,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40165,
+                                        "id": 40056,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17634:6:156",
@@ -16313,12 +16313,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40168,
+                                    "id": 40059,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17668:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40173,
+                                    "scope": 40064,
                                     "src": "17660:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -16327,7 +16327,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40167,
+                                        "id": 40058,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17660:7:156",
@@ -16342,17 +16342,17 @@ export const VmSafe = {
                             "src": "17606:68:156"
                         },
                         "returnParameters": {
-                            "id": 40172,
+                            "id": 40063,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40171,
+                                    "id": 40062,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17723:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40173,
+                                    "scope": 40064,
                                     "src": "17709:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16361,7 +16361,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40170,
+                                        "id": 40061,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17709:6:156",
@@ -16375,13 +16375,13 @@ export const VmSafe = {
                             ],
                             "src": "17708:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40184,
+                        "id": 40075,
                         "nodeType": "FunctionDefinition",
                         "src": "17734:155:156",
                         "nodes": [],
@@ -16392,17 +16392,17 @@ export const VmSafe = {
                         "name": "serializeString",
                         "nameLocation": "17743:15:156",
                         "parameters": {
-                            "id": 40180,
+                            "id": 40071,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40175,
+                                    "id": 40066,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17775:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40184,
+                                    "scope": 40075,
                                     "src": "17759:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16411,7 +16411,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40174,
+                                        "id": 40065,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17759:6:156",
@@ -16424,12 +16424,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40177,
+                                    "id": 40068,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17802:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40184,
+                                    "scope": 40075,
                                     "src": "17786:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16438,7 +16438,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40176,
+                                        "id": 40067,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17786:6:156",
@@ -16451,12 +16451,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40179,
+                                    "id": 40070,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17828:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40184,
+                                    "scope": 40075,
                                     "src": "17812:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16465,7 +16465,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40178,
+                                        "id": 40069,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17812:6:156",
@@ -16480,17 +16480,17 @@ export const VmSafe = {
                             "src": "17758:76:156"
                         },
                         "returnParameters": {
-                            "id": 40183,
+                            "id": 40074,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40182,
+                                    "id": 40073,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "17883:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40184,
+                                    "scope": 40075,
                                     "src": "17869:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16499,7 +16499,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40181,
+                                        "id": 40072,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17869:6:156",
@@ -16513,13 +16513,13 @@ export const VmSafe = {
                             ],
                             "src": "17868:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40195,
+                        "id": 40086,
                         "nodeType": "FunctionDefinition",
                         "src": "17894:153:156",
                         "nodes": [],
@@ -16530,17 +16530,17 @@ export const VmSafe = {
                         "name": "serializeBytes",
                         "nameLocation": "17903:14:156",
                         "parameters": {
-                            "id": 40191,
+                            "id": 40082,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40186,
+                                    "id": 40077,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "17934:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40195,
+                                    "scope": 40086,
                                     "src": "17918:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16549,7 +16549,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40185,
+                                        "id": 40076,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17918:6:156",
@@ -16562,12 +16562,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40188,
+                                    "id": 40079,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "17961:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40195,
+                                    "scope": 40086,
                                     "src": "17945:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16576,7 +16576,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40187,
+                                        "id": 40078,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17945:6:156",
@@ -16589,12 +16589,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40190,
+                                    "id": 40081,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "17986:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40195,
+                                    "scope": 40086,
                                     "src": "17971:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16603,7 +16603,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40189,
+                                        "id": 40080,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "17971:5:156",
@@ -16618,17 +16618,17 @@ export const VmSafe = {
                             "src": "17917:75:156"
                         },
                         "returnParameters": {
-                            "id": 40194,
+                            "id": 40085,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40193,
+                                    "id": 40084,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18041:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40195,
+                                    "scope": 40086,
                                     "src": "18027:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16637,7 +16637,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40192,
+                                        "id": 40083,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18027:6:156",
@@ -16651,13 +16651,13 @@ export const VmSafe = {
                             ],
                             "src": "18026:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40207,
+                        "id": 40098,
                         "nodeType": "FunctionDefinition",
                         "src": "18053:154:156",
                         "nodes": [],
@@ -16668,17 +16668,17 @@ export const VmSafe = {
                         "name": "serializeBool",
                         "nameLocation": "18062:13:156",
                         "parameters": {
-                            "id": 40203,
+                            "id": 40094,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40197,
+                                    "id": 40088,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18092:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40207,
+                                    "scope": 40098,
                                     "src": "18076:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16687,7 +16687,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40196,
+                                        "id": 40087,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18076:6:156",
@@ -16700,12 +16700,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40199,
+                                    "id": 40090,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18119:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40207,
+                                    "scope": 40098,
                                     "src": "18103:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16714,7 +16714,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40198,
+                                        "id": 40089,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18103:6:156",
@@ -16727,12 +16727,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40202,
+                                    "id": 40093,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18145:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40207,
+                                    "scope": 40098,
                                     "src": "18129:22:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16742,7 +16742,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40200,
+                                            "id": 40091,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18129:4:156",
@@ -16751,7 +16751,7 @@ export const VmSafe = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 40201,
+                                        "id": 40092,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18129:6:156",
                                         "typeDescriptions": {
@@ -16765,17 +16765,17 @@ export const VmSafe = {
                             "src": "18075:77:156"
                         },
                         "returnParameters": {
-                            "id": 40206,
+                            "id": 40097,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40205,
+                                    "id": 40096,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18201:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40207,
+                                    "scope": 40098,
                                     "src": "18187:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16784,7 +16784,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40204,
+                                        "id": 40095,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18187:6:156",
@@ -16798,13 +16798,13 @@ export const VmSafe = {
                             ],
                             "src": "18186:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40219,
+                        "id": 40110,
                         "nodeType": "FunctionDefinition",
                         "src": "18212:157:156",
                         "nodes": [],
@@ -16815,17 +16815,17 @@ export const VmSafe = {
                         "name": "serializeUint",
                         "nameLocation": "18221:13:156",
                         "parameters": {
-                            "id": 40215,
+                            "id": 40106,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40209,
+                                    "id": 40100,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18251:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40219,
+                                    "scope": 40110,
                                     "src": "18235:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16834,7 +16834,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40208,
+                                        "id": 40099,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18235:6:156",
@@ -16847,12 +16847,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40211,
+                                    "id": 40102,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18278:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40219,
+                                    "scope": 40110,
                                     "src": "18262:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16861,7 +16861,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40210,
+                                        "id": 40101,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18262:6:156",
@@ -16874,12 +16874,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40214,
+                                    "id": 40105,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18307:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40219,
+                                    "scope": 40110,
                                     "src": "18288:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16889,7 +16889,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40212,
+                                            "id": 40103,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18288:7:156",
@@ -16898,7 +16898,7 @@ export const VmSafe = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 40213,
+                                        "id": 40104,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18288:9:156",
                                         "typeDescriptions": {
@@ -16912,17 +16912,17 @@ export const VmSafe = {
                             "src": "18234:80:156"
                         },
                         "returnParameters": {
-                            "id": 40218,
+                            "id": 40109,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40217,
+                                    "id": 40108,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18363:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40219,
+                                    "scope": 40110,
                                     "src": "18349:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -16931,7 +16931,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40216,
+                                        "id": 40107,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18349:6:156",
@@ -16945,13 +16945,13 @@ export const VmSafe = {
                             ],
                             "src": "18348:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40231,
+                        "id": 40122,
                         "nodeType": "FunctionDefinition",
                         "src": "18374:155:156",
                         "nodes": [],
@@ -16962,17 +16962,17 @@ export const VmSafe = {
                         "name": "serializeInt",
                         "nameLocation": "18383:12:156",
                         "parameters": {
-                            "id": 40227,
+                            "id": 40118,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40221,
+                                    "id": 40112,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18412:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40231,
+                                    "scope": 40122,
                                     "src": "18396:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -16981,7 +16981,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40220,
+                                        "id": 40111,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18396:6:156",
@@ -16994,12 +16994,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40223,
+                                    "id": 40114,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18439:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40231,
+                                    "scope": 40122,
                                     "src": "18423:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17008,7 +17008,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40222,
+                                        "id": 40113,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18423:6:156",
@@ -17021,12 +17021,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40226,
+                                    "id": 40117,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18467:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40231,
+                                    "scope": 40122,
                                     "src": "18449:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17036,7 +17036,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40224,
+                                            "id": 40115,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18449:6:156",
@@ -17045,7 +17045,7 @@ export const VmSafe = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 40225,
+                                        "id": 40116,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18449:8:156",
                                         "typeDescriptions": {
@@ -17059,17 +17059,17 @@ export const VmSafe = {
                             "src": "18395:79:156"
                         },
                         "returnParameters": {
-                            "id": 40230,
+                            "id": 40121,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40229,
+                                    "id": 40120,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18523:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40231,
+                                    "scope": 40122,
                                     "src": "18509:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17078,7 +17078,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40228,
+                                        "id": 40119,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18509:6:156",
@@ -17092,13 +17092,13 @@ export const VmSafe = {
                             ],
                             "src": "18508:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40243,
+                        "id": 40134,
                         "nodeType": "FunctionDefinition",
                         "src": "18534:160:156",
                         "nodes": [],
@@ -17109,17 +17109,17 @@ export const VmSafe = {
                         "name": "serializeAddress",
                         "nameLocation": "18543:16:156",
                         "parameters": {
-                            "id": 40239,
+                            "id": 40130,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40233,
+                                    "id": 40124,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18576:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40243,
+                                    "scope": 40134,
                                     "src": "18560:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17128,7 +17128,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40232,
+                                        "id": 40123,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18560:6:156",
@@ -17141,12 +17141,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40235,
+                                    "id": 40126,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18603:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40243,
+                                    "scope": 40134,
                                     "src": "18587:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17155,7 +17155,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40234,
+                                        "id": 40125,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18587:6:156",
@@ -17168,12 +17168,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40238,
+                                    "id": 40129,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18632:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40243,
+                                    "scope": 40134,
                                     "src": "18613:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17183,7 +17183,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40236,
+                                            "id": 40127,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18613:7:156",
@@ -17193,7 +17193,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 40237,
+                                        "id": 40128,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18613:9:156",
                                         "typeDescriptions": {
@@ -17207,17 +17207,17 @@ export const VmSafe = {
                             "src": "18559:80:156"
                         },
                         "returnParameters": {
-                            "id": 40242,
+                            "id": 40133,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40241,
+                                    "id": 40132,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18688:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40243,
+                                    "scope": 40134,
                                     "src": "18674:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17226,7 +17226,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40240,
+                                        "id": 40131,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18674:6:156",
@@ -17240,13 +17240,13 @@ export const VmSafe = {
                             ],
                             "src": "18673:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40255,
+                        "id": 40146,
                         "nodeType": "FunctionDefinition",
                         "src": "18699:160:156",
                         "nodes": [],
@@ -17257,17 +17257,17 @@ export const VmSafe = {
                         "name": "serializeBytes32",
                         "nameLocation": "18708:16:156",
                         "parameters": {
-                            "id": 40251,
+                            "id": 40142,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40245,
+                                    "id": 40136,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18741:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40255,
+                                    "scope": 40146,
                                     "src": "18725:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17276,7 +17276,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40244,
+                                        "id": 40135,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18725:6:156",
@@ -17289,12 +17289,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40247,
+                                    "id": 40138,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18768:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40255,
+                                    "scope": 40146,
                                     "src": "18752:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17303,7 +17303,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40246,
+                                        "id": 40137,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18752:6:156",
@@ -17316,12 +17316,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40250,
+                                    "id": 40141,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18797:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40255,
+                                    "scope": 40146,
                                     "src": "18778:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17331,7 +17331,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40248,
+                                            "id": 40139,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18778:7:156",
@@ -17340,7 +17340,7 @@ export const VmSafe = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 40249,
+                                        "id": 40140,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18778:9:156",
                                         "typeDescriptions": {
@@ -17354,17 +17354,17 @@ export const VmSafe = {
                             "src": "18724:80:156"
                         },
                         "returnParameters": {
-                            "id": 40254,
+                            "id": 40145,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40253,
+                                    "id": 40144,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "18853:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40255,
+                                    "scope": 40146,
                                     "src": "18839:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17373,7 +17373,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40252,
+                                        "id": 40143,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18839:6:156",
@@ -17387,13 +17387,13 @@ export const VmSafe = {
                             ],
                             "src": "18838:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40267,
+                        "id": 40158,
                         "nodeType": "FunctionDefinition",
                         "src": "18864:158:156",
                         "nodes": [],
@@ -17404,17 +17404,17 @@ export const VmSafe = {
                         "name": "serializeString",
                         "nameLocation": "18873:15:156",
                         "parameters": {
-                            "id": 40263,
+                            "id": 40154,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40257,
+                                    "id": 40148,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "18905:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40267,
+                                    "scope": 40158,
                                     "src": "18889:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17423,7 +17423,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40256,
+                                        "id": 40147,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18889:6:156",
@@ -17436,12 +17436,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40259,
+                                    "id": 40150,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "18932:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40267,
+                                    "scope": 40158,
                                     "src": "18916:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17450,7 +17450,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40258,
+                                        "id": 40149,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "18916:6:156",
@@ -17463,12 +17463,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40262,
+                                    "id": 40153,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "18960:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40267,
+                                    "scope": 40158,
                                     "src": "18942:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17478,7 +17478,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40260,
+                                            "id": 40151,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "18942:6:156",
@@ -17487,7 +17487,7 @@ export const VmSafe = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 40261,
+                                        "id": 40152,
                                         "nodeType": "ArrayTypeName",
                                         "src": "18942:8:156",
                                         "typeDescriptions": {
@@ -17501,17 +17501,17 @@ export const VmSafe = {
                             "src": "18888:79:156"
                         },
                         "returnParameters": {
-                            "id": 40266,
+                            "id": 40157,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40265,
+                                    "id": 40156,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "19016:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40267,
+                                    "scope": 40158,
                                     "src": "19002:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17520,7 +17520,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40264,
+                                        "id": 40155,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "19002:6:156",
@@ -17534,13 +17534,13 @@ export const VmSafe = {
                             ],
                             "src": "19001:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40279,
+                        "id": 40170,
                         "nodeType": "FunctionDefinition",
                         "src": "19027:156:156",
                         "nodes": [],
@@ -17551,17 +17551,17 @@ export const VmSafe = {
                         "name": "serializeBytes",
                         "nameLocation": "19036:14:156",
                         "parameters": {
-                            "id": 40275,
+                            "id": 40166,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40269,
+                                    "id": 40160,
                                     "mutability": "mutable",
                                     "name": "objectKey",
                                     "nameLocation": "19067:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40279,
+                                    "scope": 40170,
                                     "src": "19051:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17570,7 +17570,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40268,
+                                        "id": 40159,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "19051:6:156",
@@ -17583,12 +17583,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40271,
+                                    "id": 40162,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "19094:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40279,
+                                    "scope": 40170,
                                     "src": "19078:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17597,7 +17597,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40270,
+                                        "id": 40161,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "19078:6:156",
@@ -17610,12 +17610,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40274,
+                                    "id": 40165,
                                     "mutability": "mutable",
                                     "name": "values",
                                     "nameLocation": "19121:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40279,
+                                    "scope": 40170,
                                     "src": "19104:23:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17625,7 +17625,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40272,
+                                            "id": 40163,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "19104:5:156",
@@ -17634,7 +17634,7 @@ export const VmSafe = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 40273,
+                                        "id": 40164,
                                         "nodeType": "ArrayTypeName",
                                         "src": "19104:7:156",
                                         "typeDescriptions": {
@@ -17648,17 +17648,17 @@ export const VmSafe = {
                             "src": "19050:78:156"
                         },
                         "returnParameters": {
-                            "id": 40278,
+                            "id": 40169,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40277,
+                                    "id": 40168,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "19177:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40279,
+                                    "scope": 40170,
                                     "src": "19163:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17667,7 +17667,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40276,
+                                        "id": 40167,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "19163:6:156",
@@ -17681,13 +17681,13 @@ export const VmSafe = {
                             ],
                             "src": "19162:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40286,
+                        "id": 40177,
                         "nodeType": "FunctionDefinition",
                         "src": "20424:72:156",
                         "nodes": [],
@@ -17698,17 +17698,17 @@ export const VmSafe = {
                         "name": "writeJson",
                         "nameLocation": "20433:9:156",
                         "parameters": {
-                            "id": 40284,
+                            "id": 40175,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40281,
+                                    "id": 40172,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "20459:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40286,
+                                    "scope": 40177,
                                     "src": "20443:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17717,7 +17717,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40280,
+                                        "id": 40171,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20443:6:156",
@@ -17730,12 +17730,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40283,
+                                    "id": 40174,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "20481:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40286,
+                                    "scope": 40177,
                                     "src": "20465:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17744,7 +17744,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40282,
+                                        "id": 40173,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20465:6:156",
@@ -17759,18 +17759,18 @@ export const VmSafe = {
                             "src": "20442:44:156"
                         },
                         "returnParameters": {
-                            "id": 40285,
+                            "id": 40176,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "20495:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40295,
+                        "id": 40186,
                         "nodeType": "FunctionDefinition",
                         "src": "20717:98:156",
                         "nodes": [],
@@ -17781,17 +17781,17 @@ export const VmSafe = {
                         "name": "writeJson",
                         "nameLocation": "20726:9:156",
                         "parameters": {
-                            "id": 40293,
+                            "id": 40184,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40288,
+                                    "id": 40179,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "20752:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40295,
+                                    "scope": 40186,
                                     "src": "20736:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17800,7 +17800,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40287,
+                                        "id": 40178,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20736:6:156",
@@ -17813,12 +17813,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40290,
+                                    "id": 40181,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "20774:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40295,
+                                    "scope": 40186,
                                     "src": "20758:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17827,7 +17827,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40289,
+                                        "id": 40180,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20758:6:156",
@@ -17840,12 +17840,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40292,
+                                    "id": 40183,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "20796:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40295,
+                                    "scope": 40186,
                                     "src": "20780:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17854,7 +17854,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40291,
+                                        "id": 40182,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20780:6:156",
@@ -17869,18 +17869,18 @@ export const VmSafe = {
                             "src": "20735:70:156"
                         },
                         "returnParameters": {
-                            "id": 40294,
+                            "id": 40185,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "20814:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40302,
+                        "id": 40193,
                         "nodeType": "FunctionDefinition",
                         "src": "20867:85:156",
                         "nodes": [],
@@ -17891,17 +17891,17 @@ export const VmSafe = {
                         "name": "rpcUrl",
                         "nameLocation": "20876:6:156",
                         "parameters": {
-                            "id": 40298,
+                            "id": 40189,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40297,
+                                    "id": 40188,
                                     "mutability": "mutable",
                                     "name": "rpcAlias",
                                     "nameLocation": "20899:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40302,
+                                    "scope": 40193,
                                     "src": "20883:24:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -17910,7 +17910,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40296,
+                                        "id": 40187,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20883:6:156",
@@ -17925,17 +17925,17 @@ export const VmSafe = {
                             "src": "20882:26:156"
                         },
                         "returnParameters": {
-                            "id": 40301,
+                            "id": 40192,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40300,
+                                    "id": 40191,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "20946:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40302,
+                                    "scope": 40193,
                                     "src": "20932:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -17944,7 +17944,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40299,
+                                        "id": 40190,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "20932:6:156",
@@ -17958,13 +17958,13 @@ export const VmSafe = {
                             ],
                             "src": "20931:20:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40310,
+                        "id": 40201,
                         "nodeType": "FunctionDefinition",
                         "src": "21020:67:156",
                         "nodes": [],
@@ -17975,23 +17975,23 @@ export const VmSafe = {
                         "name": "rpcUrls",
                         "nameLocation": "21029:7:156",
                         "parameters": {
-                            "id": 40303,
+                            "id": 40194,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21036:2:156"
                         },
                         "returnParameters": {
-                            "id": 40309,
+                            "id": 40200,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40308,
+                                    "id": 40199,
                                     "mutability": "mutable",
                                     "name": "urls",
                                     "nameLocation": "21081:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40310,
+                                    "scope": 40201,
                                     "src": "21062:23:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -18002,7 +18002,7 @@ export const VmSafe = {
                                     "typeName": {
                                         "baseType": {
                                             "baseType": {
-                                                "id": 40304,
+                                                "id": 40195,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "21062:6:156",
@@ -18011,10 +18011,10 @@ export const VmSafe = {
                                                     "typeString": "string"
                                                 }
                                             },
-                                            "id": 40306,
+                                            "id": 40197,
                                             "length": {
                                                 "hexValue": "32",
-                                                "id": 40305,
+                                                "id": 40196,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -18035,7 +18035,7 @@ export const VmSafe = {
                                                 "typeString": "string[2]"
                                             }
                                         },
-                                        "id": 40307,
+                                        "id": 40198,
                                         "nodeType": "ArrayTypeName",
                                         "src": "21062:11:156",
                                         "typeDescriptions": {
@@ -18048,13 +18048,13 @@ export const VmSafe = {
                             ],
                             "src": "21061:25:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40317,
+                        "id": 40208,
                         "nodeType": "FunctionDefinition",
                         "src": "21150:67:156",
                         "nodes": [],
@@ -18065,56 +18065,56 @@ export const VmSafe = {
                         "name": "rpcUrlStructs",
                         "nameLocation": "21159:13:156",
                         "parameters": {
-                            "id": 40311,
+                            "id": 40202,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21172:2:156"
                         },
                         "returnParameters": {
-                            "id": 40316,
+                            "id": 40207,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40315,
+                                    "id": 40206,
                                     "mutability": "mutable",
                                     "name": "urls",
                                     "nameLocation": "21211:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40317,
+                                    "scope": 40208,
                                     "src": "21198:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Rpc_$39298_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Rpc_$39189_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.Rpc[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40313,
+                                            "id": 40204,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 40312,
+                                                "id": 40203,
                                                 "name": "Rpc",
                                                 "nameLocations": [
                                                     "21198:3:156"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39298,
+                                                "referencedDeclaration": 39189,
                                                 "src": "21198:3:156"
                                             },
-                                            "referencedDeclaration": 39298,
+                                            "referencedDeclaration": 39189,
                                             "src": "21198:3:156",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Rpc_$39298_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Rpc_$39189_storage_ptr",
                                                 "typeString": "struct VmSafe.Rpc"
                                             }
                                         },
-                                        "id": 40314,
+                                        "id": 40205,
                                         "nodeType": "ArrayTypeName",
                                         "src": "21198:5:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Rpc_$39298_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Rpc_$39189_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.Rpc[]"
                                         }
                                     },
@@ -18123,13 +18123,13 @@ export const VmSafe = {
                             ],
                             "src": "21197:19:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40322,
+                        "id": 40213,
                         "nodeType": "FunctionDefinition",
                         "src": "21310:46:156",
                         "nodes": [],
@@ -18140,17 +18140,17 @@ export const VmSafe = {
                         "name": "assume",
                         "nameLocation": "21319:6:156",
                         "parameters": {
-                            "id": 40320,
+                            "id": 40211,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40319,
+                                    "id": 40210,
                                     "mutability": "mutable",
                                     "name": "condition",
                                     "nameLocation": "21331:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40322,
+                                    "scope": 40213,
                                     "src": "21326:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18159,7 +18159,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40318,
+                                        "id": 40209,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "21326:4:156",
@@ -18174,18 +18174,18 @@ export const VmSafe = {
                             "src": "21325:16:156"
                         },
                         "returnParameters": {
-                            "id": 40321,
+                            "id": 40212,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21355:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40325,
+                        "id": 40216,
                         "nodeType": "FunctionDefinition",
                         "src": "21445:37:156",
                         "nodes": [],
@@ -18196,24 +18196,24 @@ export const VmSafe = {
                         "name": "pauseGasMetering",
                         "nameLocation": "21454:16:156",
                         "parameters": {
-                            "id": 40323,
+                            "id": 40214,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21470:2:156"
                         },
                         "returnParameters": {
-                            "id": 40324,
+                            "id": 40215,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21481:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40328,
+                        "id": 40219,
                         "nodeType": "FunctionDefinition",
                         "src": "21570:38:156",
                         "nodes": [],
@@ -18224,24 +18224,24 @@ export const VmSafe = {
                         "name": "resumeGasMetering",
                         "nameLocation": "21579:17:156",
                         "parameters": {
-                            "id": 40326,
+                            "id": 40217,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21596:2:156"
                         },
                         "returnParameters": {
-                            "id": 40327,
+                            "id": 40218,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21607:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40333,
+                        "id": 40224,
                         "nodeType": "FunctionDefinition",
                         "src": "21667:51:156",
                         "nodes": [],
@@ -18252,17 +18252,17 @@ export const VmSafe = {
                         "name": "breakpoint",
                         "nameLocation": "21676:10:156",
                         "parameters": {
-                            "id": 40331,
+                            "id": 40222,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40330,
+                                    "id": 40221,
                                     "mutability": "mutable",
                                     "name": "char",
                                     "nameLocation": "21703:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40333,
+                                    "scope": 40224,
                                     "src": "21687:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -18271,7 +18271,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40329,
+                                        "id": 40220,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "21687:6:156",
@@ -18286,18 +18286,18 @@ export const VmSafe = {
                             "src": "21686:22:156"
                         },
                         "returnParameters": {
-                            "id": 40332,
+                            "id": 40223,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21717:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40340,
+                        "id": 40231,
                         "nodeType": "FunctionDefinition",
                         "src": "21789:63:156",
                         "nodes": [],
@@ -18308,17 +18308,17 @@ export const VmSafe = {
                         "name": "breakpoint",
                         "nameLocation": "21798:10:156",
                         "parameters": {
-                            "id": 40338,
+                            "id": 40229,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40335,
+                                    "id": 40226,
                                     "mutability": "mutable",
                                     "name": "char",
                                     "nameLocation": "21825:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40340,
+                                    "scope": 40231,
                                     "src": "21809:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -18327,7 +18327,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40334,
+                                        "id": 40225,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "21809:6:156",
@@ -18340,12 +18340,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40337,
+                                    "id": 40228,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "21836:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40340,
+                                    "scope": 40231,
                                     "src": "21831:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18354,7 +18354,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40336,
+                                        "id": 40227,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "21831:4:156",
@@ -18369,12 +18369,12 @@ export const VmSafe = {
                             "src": "21808:34:156"
                         },
                         "returnParameters": {
-                            "id": 40339,
+                            "id": 40230,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21851:0:156"
                         },
-                        "scope": 40341,
+                        "scope": 40232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -18387,21 +18387,21 @@ export const VmSafe = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    40341
+                    40232
                 ],
                 "name": "VmSafe",
                 "nameLocation": "581:6:156",
-                "scope": 40814,
+                "scope": 40705,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 40813,
+                "id": 40704,
                 "nodeType": "ContractDefinition",
                 "src": "21856:11610:156",
                 "nodes": [
                     {
-                        "id": 40348,
+                        "id": 40239,
                         "nodeType": "FunctionDefinition",
                         "src": "21913:45:156",
                         "nodes": [],
@@ -18412,17 +18412,17 @@ export const VmSafe = {
                         "name": "warp",
                         "nameLocation": "21922:4:156",
                         "parameters": {
-                            "id": 40346,
+                            "id": 40237,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40345,
+                                    "id": 40236,
                                     "mutability": "mutable",
                                     "name": "newTimestamp",
                                     "nameLocation": "21935:12:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40348,
+                                    "scope": 40239,
                                     "src": "21927:20:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18431,7 +18431,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40344,
+                                        "id": 40235,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "21927:7:156",
@@ -18446,18 +18446,18 @@ export const VmSafe = {
                             "src": "21926:22:156"
                         },
                         "returnParameters": {
-                            "id": 40347,
+                            "id": 40238,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "21957:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40353,
+                        "id": 40244,
                         "nodeType": "FunctionDefinition",
                         "src": "21988:42:156",
                         "nodes": [],
@@ -18468,17 +18468,17 @@ export const VmSafe = {
                         "name": "roll",
                         "nameLocation": "21997:4:156",
                         "parameters": {
-                            "id": 40351,
+                            "id": 40242,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40350,
+                                    "id": 40241,
                                     "mutability": "mutable",
                                     "name": "newHeight",
                                     "nameLocation": "22010:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40353,
+                                    "scope": 40244,
                                     "src": "22002:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18487,7 +18487,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40349,
+                                        "id": 40240,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22002:7:156",
@@ -18502,18 +18502,18 @@ export const VmSafe = {
                             "src": "22001:19:156"
                         },
                         "returnParameters": {
-                            "id": 40352,
+                            "id": 40243,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22029:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40358,
+                        "id": 40249,
                         "nodeType": "FunctionDefinition",
                         "src": "22061:42:156",
                         "nodes": [],
@@ -18524,17 +18524,17 @@ export const VmSafe = {
                         "name": "fee",
                         "nameLocation": "22070:3:156",
                         "parameters": {
-                            "id": 40356,
+                            "id": 40247,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40355,
+                                    "id": 40246,
                                     "mutability": "mutable",
                                     "name": "newBasefee",
                                     "nameLocation": "22082:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40358,
+                                    "scope": 40249,
                                     "src": "22074:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18543,7 +18543,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40354,
+                                        "id": 40245,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22074:7:156",
@@ -18558,18 +18558,18 @@ export const VmSafe = {
                             "src": "22073:20:156"
                         },
                         "returnParameters": {
-                            "id": 40357,
+                            "id": 40248,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22102:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40363,
+                        "id": 40254,
                         "nodeType": "FunctionDefinition",
                         "src": "22279:52:156",
                         "nodes": [],
@@ -18580,17 +18580,17 @@ export const VmSafe = {
                         "name": "difficulty",
                         "nameLocation": "22288:10:156",
                         "parameters": {
-                            "id": 40361,
+                            "id": 40252,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40360,
+                                    "id": 40251,
                                     "mutability": "mutable",
                                     "name": "newDifficulty",
                                     "nameLocation": "22307:13:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40363,
+                                    "scope": 40254,
                                     "src": "22299:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18599,7 +18599,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40359,
+                                        "id": 40250,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22299:7:156",
@@ -18614,18 +18614,18 @@ export const VmSafe = {
                             "src": "22298:23:156"
                         },
                         "returnParameters": {
-                            "id": 40362,
+                            "id": 40253,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22330:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40368,
+                        "id": 40259,
                         "nodeType": "FunctionDefinition",
                         "src": "22501:52:156",
                         "nodes": [],
@@ -18636,17 +18636,17 @@ export const VmSafe = {
                         "name": "prevrandao",
                         "nameLocation": "22510:10:156",
                         "parameters": {
-                            "id": 40366,
+                            "id": 40257,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40365,
+                                    "id": 40256,
                                     "mutability": "mutable",
                                     "name": "newPrevrandao",
                                     "nameLocation": "22529:13:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40368,
+                                    "scope": 40259,
                                     "src": "22521:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18655,7 +18655,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40364,
+                                        "id": 40255,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22521:7:156",
@@ -18670,18 +18670,18 @@ export const VmSafe = {
                             "src": "22520:23:156"
                         },
                         "returnParameters": {
-                            "id": 40367,
+                            "id": 40258,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22552:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40373,
+                        "id": 40264,
                         "nodeType": "FunctionDefinition",
                         "src": "22584:46:156",
                         "nodes": [],
@@ -18692,17 +18692,17 @@ export const VmSafe = {
                         "name": "chainId",
                         "nameLocation": "22593:7:156",
                         "parameters": {
-                            "id": 40371,
+                            "id": 40262,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40370,
+                                    "id": 40261,
                                     "mutability": "mutable",
                                     "name": "newChainId",
                                     "nameLocation": "22609:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40373,
+                                    "scope": 40264,
                                     "src": "22601:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18711,7 +18711,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40369,
+                                        "id": 40260,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22601:7:156",
@@ -18726,18 +18726,18 @@ export const VmSafe = {
                             "src": "22600:20:156"
                         },
                         "returnParameters": {
-                            "id": 40372,
+                            "id": 40263,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22629:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40378,
+                        "id": 40269,
                         "nodeType": "FunctionDefinition",
                         "src": "22659:50:156",
                         "nodes": [],
@@ -18748,17 +18748,17 @@ export const VmSafe = {
                         "name": "txGasPrice",
                         "nameLocation": "22668:10:156",
                         "parameters": {
-                            "id": 40376,
+                            "id": 40267,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40375,
+                                    "id": 40266,
                                     "mutability": "mutable",
                                     "name": "newGasPrice",
                                     "nameLocation": "22687:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40378,
+                                    "scope": 40269,
                                     "src": "22679:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18767,7 +18767,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40374,
+                                        "id": 40265,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22679:7:156",
@@ -18782,18 +18782,18 @@ export const VmSafe = {
                             "src": "22678:21:156"
                         },
                         "returnParameters": {
-                            "id": 40377,
+                            "id": 40268,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22708:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40387,
+                        "id": 40278,
                         "nodeType": "FunctionDefinition",
                         "src": "22765:69:156",
                         "nodes": [],
@@ -18804,17 +18804,17 @@ export const VmSafe = {
                         "name": "store",
                         "nameLocation": "22774:5:156",
                         "parameters": {
-                            "id": 40385,
+                            "id": 40276,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40380,
+                                    "id": 40271,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "22788:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40387,
+                                    "scope": 40278,
                                     "src": "22780:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18823,7 +18823,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40379,
+                                        "id": 40270,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22780:7:156",
@@ -18837,12 +18837,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40382,
+                                    "id": 40273,
                                     "mutability": "mutable",
                                     "name": "slot",
                                     "nameLocation": "22804:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40387,
+                                    "scope": 40278,
                                     "src": "22796:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18851,7 +18851,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40381,
+                                        "id": 40272,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22796:7:156",
@@ -18864,12 +18864,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40384,
+                                    "id": 40275,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "22818:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40387,
+                                    "scope": 40278,
                                     "src": "22810:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18878,7 +18878,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40383,
+                                        "id": 40274,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22810:7:156",
@@ -18893,18 +18893,18 @@ export const VmSafe = {
                             "src": "22779:45:156"
                         },
                         "returnParameters": {
-                            "id": 40386,
+                            "id": 40277,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22833:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40394,
+                        "id": 40285,
                         "nodeType": "FunctionDefinition",
                         "src": "22929:61:156",
                         "nodes": [],
@@ -18915,17 +18915,17 @@ export const VmSafe = {
                         "name": "setNonce",
                         "nameLocation": "22938:8:156",
                         "parameters": {
-                            "id": 40392,
+                            "id": 40283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40389,
+                                    "id": 40280,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "22955:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40394,
+                                    "scope": 40285,
                                     "src": "22947:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18934,7 +18934,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40388,
+                                        "id": 40279,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22947:7:156",
@@ -18948,12 +18948,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40391,
+                                    "id": 40282,
                                     "mutability": "mutable",
                                     "name": "newNonce",
                                     "nameLocation": "22971:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40394,
+                                    "scope": 40285,
                                     "src": "22964:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -18962,7 +18962,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40390,
+                                        "id": 40281,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "22964:6:156",
@@ -18977,18 +18977,18 @@ export const VmSafe = {
                             "src": "22946:34:156"
                         },
                         "returnParameters": {
-                            "id": 40393,
+                            "id": 40284,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "22989:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40401,
+                        "id": 40292,
                         "nodeType": "FunctionDefinition",
                         "src": "23053:67:156",
                         "nodes": [],
@@ -18999,17 +18999,17 @@ export const VmSafe = {
                         "name": "setNonceUnsafe",
                         "nameLocation": "23062:14:156",
                         "parameters": {
-                            "id": 40399,
+                            "id": 40290,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40396,
+                                    "id": 40287,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "23085:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40401,
+                                    "scope": 40292,
                                     "src": "23077:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19018,7 +19018,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40395,
+                                        "id": 40286,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23077:7:156",
@@ -19032,12 +19032,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40398,
+                                    "id": 40289,
                                     "mutability": "mutable",
                                     "name": "newNonce",
                                     "nameLocation": "23101:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40401,
+                                    "scope": 40292,
                                     "src": "23094:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19046,7 +19046,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40397,
+                                        "id": 40288,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23094:6:156",
@@ -19061,18 +19061,18 @@ export const VmSafe = {
                             "src": "23076:34:156"
                         },
                         "returnParameters": {
-                            "id": 40400,
+                            "id": 40291,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23119:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40406,
+                        "id": 40297,
                         "nodeType": "FunctionDefinition",
                         "src": "23205:46:156",
                         "nodes": [],
@@ -19083,17 +19083,17 @@ export const VmSafe = {
                         "name": "resetNonce",
                         "nameLocation": "23214:10:156",
                         "parameters": {
-                            "id": 40404,
+                            "id": 40295,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40403,
+                                    "id": 40294,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "23233:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40406,
+                                    "scope": 40297,
                                     "src": "23225:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19102,7 +19102,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40402,
+                                        "id": 40293,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23225:7:156",
@@ -19118,18 +19118,18 @@ export const VmSafe = {
                             "src": "23224:17:156"
                         },
                         "returnParameters": {
-                            "id": 40405,
+                            "id": 40296,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23250:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40411,
+                        "id": 40302,
                         "nodeType": "FunctionDefinition",
                         "src": "23321:43:156",
                         "nodes": [],
@@ -19140,17 +19140,17 @@ export const VmSafe = {
                         "name": "prank",
                         "nameLocation": "23330:5:156",
                         "parameters": {
-                            "id": 40409,
+                            "id": 40300,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40408,
+                                    "id": 40299,
                                     "mutability": "mutable",
                                     "name": "msgSender",
                                     "nameLocation": "23344:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40411,
+                                    "scope": 40302,
                                     "src": "23336:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19159,7 +19159,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40407,
+                                        "id": 40298,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23336:7:156",
@@ -19175,18 +19175,18 @@ export const VmSafe = {
                             "src": "23335:19:156"
                         },
                         "returnParameters": {
-                            "id": 40410,
+                            "id": 40301,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23363:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40416,
+                        "id": 40307,
                         "nodeType": "FunctionDefinition",
                         "src": "23466:48:156",
                         "nodes": [],
@@ -19197,17 +19197,17 @@ export const VmSafe = {
                         "name": "startPrank",
                         "nameLocation": "23475:10:156",
                         "parameters": {
-                            "id": 40414,
+                            "id": 40305,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40413,
+                                    "id": 40304,
                                     "mutability": "mutable",
                                     "name": "msgSender",
                                     "nameLocation": "23494:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40416,
+                                    "scope": 40307,
                                     "src": "23486:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19216,7 +19216,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40412,
+                                        "id": 40303,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23486:7:156",
@@ -19232,18 +19232,18 @@ export const VmSafe = {
                             "src": "23485:19:156"
                         },
                         "returnParameters": {
-                            "id": 40415,
+                            "id": 40306,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23513:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40423,
+                        "id": 40314,
                         "nodeType": "FunctionDefinition",
                         "src": "23626:61:156",
                         "nodes": [],
@@ -19254,17 +19254,17 @@ export const VmSafe = {
                         "name": "prank",
                         "nameLocation": "23635:5:156",
                         "parameters": {
-                            "id": 40421,
+                            "id": 40312,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40418,
+                                    "id": 40309,
                                     "mutability": "mutable",
                                     "name": "msgSender",
                                     "nameLocation": "23649:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40423,
+                                    "scope": 40314,
                                     "src": "23641:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19273,7 +19273,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40417,
+                                        "id": 40308,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23641:7:156",
@@ -19287,12 +19287,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40420,
+                                    "id": 40311,
                                     "mutability": "mutable",
                                     "name": "txOrigin",
                                     "nameLocation": "23668:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40423,
+                                    "scope": 40314,
                                     "src": "23660:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19301,7 +19301,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40419,
+                                        "id": 40310,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23660:7:156",
@@ -19317,18 +19317,18 @@ export const VmSafe = {
                             "src": "23640:37:156"
                         },
                         "returnParameters": {
-                            "id": 40422,
+                            "id": 40313,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23686:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40430,
+                        "id": 40321,
                         "nodeType": "FunctionDefinition",
                         "src": "23831:66:156",
                         "nodes": [],
@@ -19339,17 +19339,17 @@ export const VmSafe = {
                         "name": "startPrank",
                         "nameLocation": "23840:10:156",
                         "parameters": {
-                            "id": 40428,
+                            "id": 40319,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40425,
+                                    "id": 40316,
                                     "mutability": "mutable",
                                     "name": "msgSender",
                                     "nameLocation": "23859:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40430,
+                                    "scope": 40321,
                                     "src": "23851:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19358,7 +19358,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40424,
+                                        "id": 40315,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23851:7:156",
@@ -19372,12 +19372,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40427,
+                                    "id": 40318,
                                     "mutability": "mutable",
                                     "name": "txOrigin",
                                     "nameLocation": "23878:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40430,
+                                    "scope": 40321,
                                     "src": "23870:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19386,7 +19386,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40426,
+                                        "id": 40317,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "23870:7:156",
@@ -19402,18 +19402,18 @@ export const VmSafe = {
                             "src": "23850:37:156"
                         },
                         "returnParameters": {
-                            "id": 40429,
+                            "id": 40320,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23896:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40433,
+                        "id": 40324,
                         "nodeType": "FunctionDefinition",
                         "src": "23967:30:156",
                         "nodes": [],
@@ -19424,24 +19424,24 @@ export const VmSafe = {
                         "name": "stopPrank",
                         "nameLocation": "23976:9:156",
                         "parameters": {
-                            "id": 40431,
+                            "id": 40322,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23985:2:156"
                         },
                         "returnParameters": {
-                            "id": 40432,
+                            "id": 40323,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "23996:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40443,
+                        "id": 40334,
                         "nodeType": "FunctionDefinition",
                         "src": "24122:101:156",
                         "nodes": [],
@@ -19452,47 +19452,47 @@ export const VmSafe = {
                         "name": "readCallers",
                         "nameLocation": "24131:11:156",
                         "parameters": {
-                            "id": 40434,
+                            "id": 40325,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24142:2:156"
                         },
                         "returnParameters": {
-                            "id": 40442,
+                            "id": 40333,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40437,
+                                    "id": 40328,
                                     "mutability": "mutable",
                                     "name": "callerMode",
                                     "nameLocation": "24174:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40443,
+                                    "scope": 40334,
                                     "src": "24163:21:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_enum$_CallerMode_$39285",
+                                        "typeIdentifier": "t_enum$_CallerMode_$39176",
                                         "typeString": "enum VmSafe.CallerMode"
                                     },
                                     "typeName": {
-                                        "id": 40436,
+                                        "id": 40327,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 40435,
+                                            "id": 40326,
                                             "name": "CallerMode",
                                             "nameLocations": [
                                                 "24163:10:156"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 39285,
+                                            "referencedDeclaration": 39176,
                                             "src": "24163:10:156"
                                         },
-                                        "referencedDeclaration": 39285,
+                                        "referencedDeclaration": 39176,
                                         "src": "24163:10:156",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_enum$_CallerMode_$39285",
+                                            "typeIdentifier": "t_enum$_CallerMode_$39176",
                                             "typeString": "enum VmSafe.CallerMode"
                                         }
                                     },
@@ -19500,12 +19500,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40439,
+                                    "id": 40330,
                                     "mutability": "mutable",
                                     "name": "msgSender",
                                     "nameLocation": "24194:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40443,
+                                    "scope": 40334,
                                     "src": "24186:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19514,7 +19514,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40438,
+                                        "id": 40329,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24186:7:156",
@@ -19528,12 +19528,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40441,
+                                    "id": 40332,
                                     "mutability": "mutable",
                                     "name": "txOrigin",
                                     "nameLocation": "24213:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40443,
+                                    "scope": 40334,
                                     "src": "24205:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19542,7 +19542,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40440,
+                                        "id": 40331,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24205:7:156",
@@ -19557,13 +19557,13 @@ export const VmSafe = {
                             ],
                             "src": "24162:60:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40450,
+                        "id": 40341,
                         "nodeType": "FunctionDefinition",
                         "src": "24260:60:156",
                         "nodes": [],
@@ -19574,17 +19574,17 @@ export const VmSafe = {
                         "name": "deal",
                         "nameLocation": "24269:4:156",
                         "parameters": {
-                            "id": 40448,
+                            "id": 40339,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40445,
+                                    "id": 40336,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "24282:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40450,
+                                    "scope": 40341,
                                     "src": "24274:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19593,7 +19593,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40444,
+                                        "id": 40335,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24274:7:156",
@@ -19607,12 +19607,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40447,
+                                    "id": 40338,
                                     "mutability": "mutable",
                                     "name": "newBalance",
                                     "nameLocation": "24299:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40450,
+                                    "scope": 40341,
                                     "src": "24291:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19621,7 +19621,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40446,
+                                        "id": 40337,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24291:7:156",
@@ -19636,18 +19636,18 @@ export const VmSafe = {
                             "src": "24273:37:156"
                         },
                         "returnParameters": {
-                            "id": 40449,
+                            "id": 40340,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24319:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40457,
+                        "id": 40348,
                         "nodeType": "FunctionDefinition",
                         "src": "24354:74:156",
                         "nodes": [],
@@ -19658,17 +19658,17 @@ export const VmSafe = {
                         "name": "etch",
                         "nameLocation": "24363:4:156",
                         "parameters": {
-                            "id": 40455,
+                            "id": 40346,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40452,
+                                    "id": 40343,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "24376:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40457,
+                                    "scope": 40348,
                                     "src": "24368:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19677,7 +19677,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40451,
+                                        "id": 40342,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24368:7:156",
@@ -19691,12 +19691,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40454,
+                                    "id": 40345,
                                     "mutability": "mutable",
                                     "name": "newRuntimeBytecode",
                                     "nameLocation": "24399:18:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40457,
+                                    "scope": 40348,
                                     "src": "24384:33:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -19705,7 +19705,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40453,
+                                        "id": 40344,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24384:5:156",
@@ -19720,18 +19720,18 @@ export const VmSafe = {
                             "src": "24367:51:156"
                         },
                         "returnParameters": {
-                            "id": 40456,
+                            "id": 40347,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24427:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40462,
+                        "id": 40353,
                         "nodeType": "FunctionDefinition",
                         "src": "24504:38:156",
                         "nodes": [],
@@ -19742,17 +19742,17 @@ export const VmSafe = {
                         "name": "skip",
                         "nameLocation": "24513:4:156",
                         "parameters": {
-                            "id": 40460,
+                            "id": 40351,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40459,
+                                    "id": 40350,
                                     "mutability": "mutable",
                                     "name": "skipTest",
                                     "nameLocation": "24523:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40462,
+                                    "scope": 40353,
                                     "src": "24518:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19761,7 +19761,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40458,
+                                        "id": 40349,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24518:4:156",
@@ -19776,18 +19776,18 @@ export const VmSafe = {
                             "src": "24517:15:156"
                         },
                         "returnParameters": {
-                            "id": 40461,
+                            "id": 40352,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24541:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40467,
+                        "id": 40358,
                         "nodeType": "FunctionDefinition",
                         "src": "24584:58:156",
                         "nodes": [],
@@ -19798,17 +19798,17 @@ export const VmSafe = {
                         "name": "expectRevert",
                         "nameLocation": "24593:12:156",
                         "parameters": {
-                            "id": 40465,
+                            "id": 40356,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40464,
+                                    "id": 40355,
                                     "mutability": "mutable",
                                     "name": "revertData",
                                     "nameLocation": "24621:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40467,
+                                    "scope": 40358,
                                     "src": "24606:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -19817,7 +19817,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40463,
+                                        "id": 40354,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24606:5:156",
@@ -19832,18 +19832,18 @@ export const VmSafe = {
                             "src": "24605:27:156"
                         },
                         "returnParameters": {
-                            "id": 40466,
+                            "id": 40357,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24641:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40472,
+                        "id": 40363,
                         "nodeType": "FunctionDefinition",
                         "src": "24647:50:156",
                         "nodes": [],
@@ -19854,17 +19854,17 @@ export const VmSafe = {
                         "name": "expectRevert",
                         "nameLocation": "24656:12:156",
                         "parameters": {
-                            "id": 40470,
+                            "id": 40361,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40469,
+                                    "id": 40360,
                                     "mutability": "mutable",
                                     "name": "revertData",
                                     "nameLocation": "24676:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40472,
+                                    "scope": 40363,
                                     "src": "24669:17:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19873,7 +19873,7 @@ export const VmSafe = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 40468,
+                                        "id": 40359,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "24669:6:156",
@@ -19888,18 +19888,18 @@ export const VmSafe = {
                             "src": "24668:19:156"
                         },
                         "returnParameters": {
-                            "id": 40471,
+                            "id": 40362,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24696:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40475,
+                        "id": 40366,
                         "nodeType": "FunctionDefinition",
                         "src": "24702:33:156",
                         "nodes": [],
@@ -19910,24 +19910,24 @@ export const VmSafe = {
                         "name": "expectRevert",
                         "nameLocation": "24711:12:156",
                         "parameters": {
-                            "id": 40473,
+                            "id": 40364,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24723:2:156"
                         },
                         "returnParameters": {
-                            "id": 40474,
+                            "id": 40365,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "24734:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40478,
+                        "id": 40369,
                         "nodeType": "FunctionDefinition",
                         "src": "25067:31:156",
                         "nodes": [],
@@ -19938,24 +19938,24 @@ export const VmSafe = {
                         "name": "expectEmit",
                         "nameLocation": "25076:10:156",
                         "parameters": {
-                            "id": 40476,
+                            "id": 40367,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "25086:2:156"
                         },
                         "returnParameters": {
-                            "id": 40477,
+                            "id": 40368,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "25097:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40483,
+                        "id": 40374,
                         "nodeType": "FunctionDefinition",
                         "src": "25103:46:156",
                         "nodes": [],
@@ -19966,17 +19966,17 @@ export const VmSafe = {
                         "name": "expectEmit",
                         "nameLocation": "25112:10:156",
                         "parameters": {
-                            "id": 40481,
+                            "id": 40372,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40480,
+                                    "id": 40371,
                                     "mutability": "mutable",
                                     "name": "emitter",
                                     "nameLocation": "25131:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40483,
+                                    "scope": 40374,
                                     "src": "25123:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -19985,7 +19985,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40479,
+                                        "id": 40370,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25123:7:156",
@@ -20001,18 +20001,18 @@ export const VmSafe = {
                             "src": "25122:17:156"
                         },
                         "returnParameters": {
-                            "id": 40482,
+                            "id": 40373,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "25148:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40494,
+                        "id": 40385,
                         "nodeType": "FunctionDefinition",
                         "src": "25559:99:156",
                         "nodes": [],
@@ -20023,17 +20023,17 @@ export const VmSafe = {
                         "name": "expectEmit",
                         "nameLocation": "25568:10:156",
                         "parameters": {
-                            "id": 40492,
+                            "id": 40383,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40485,
+                                    "id": 40376,
                                     "mutability": "mutable",
                                     "name": "checkTopic1",
                                     "nameLocation": "25584:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40494,
+                                    "scope": 40385,
                                     "src": "25579:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20042,7 +20042,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40484,
+                                        "id": 40375,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25579:4:156",
@@ -20055,12 +20055,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40487,
+                                    "id": 40378,
                                     "mutability": "mutable",
                                     "name": "checkTopic2",
                                     "nameLocation": "25602:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40494,
+                                    "scope": 40385,
                                     "src": "25597:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20069,7 +20069,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40486,
+                                        "id": 40377,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25597:4:156",
@@ -20082,12 +20082,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40489,
+                                    "id": 40380,
                                     "mutability": "mutable",
                                     "name": "checkTopic3",
                                     "nameLocation": "25620:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40494,
+                                    "scope": 40385,
                                     "src": "25615:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20096,7 +20096,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40488,
+                                        "id": 40379,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25615:4:156",
@@ -20109,12 +20109,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40491,
+                                    "id": 40382,
                                     "mutability": "mutable",
                                     "name": "checkData",
                                     "nameLocation": "25638:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40494,
+                                    "scope": 40385,
                                     "src": "25633:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20123,7 +20123,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40490,
+                                        "id": 40381,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25633:4:156",
@@ -20138,18 +20138,18 @@ export const VmSafe = {
                             "src": "25578:70:156"
                         },
                         "returnParameters": {
-                            "id": 40493,
+                            "id": 40384,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "25657:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40507,
+                        "id": 40398,
                         "nodeType": "FunctionDefinition",
                         "src": "25663:124:156",
                         "nodes": [],
@@ -20160,17 +20160,17 @@ export const VmSafe = {
                         "name": "expectEmit",
                         "nameLocation": "25672:10:156",
                         "parameters": {
-                            "id": 40505,
+                            "id": 40396,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40496,
+                                    "id": 40387,
                                     "mutability": "mutable",
                                     "name": "checkTopic1",
                                     "nameLocation": "25688:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40507,
+                                    "scope": 40398,
                                     "src": "25683:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20179,7 +20179,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40495,
+                                        "id": 40386,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25683:4:156",
@@ -20192,12 +20192,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40498,
+                                    "id": 40389,
                                     "mutability": "mutable",
                                     "name": "checkTopic2",
                                     "nameLocation": "25706:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40507,
+                                    "scope": 40398,
                                     "src": "25701:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20206,7 +20206,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40497,
+                                        "id": 40388,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25701:4:156",
@@ -20219,12 +20219,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40500,
+                                    "id": 40391,
                                     "mutability": "mutable",
                                     "name": "checkTopic3",
                                     "nameLocation": "25724:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40507,
+                                    "scope": 40398,
                                     "src": "25719:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20233,7 +20233,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40499,
+                                        "id": 40390,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25719:4:156",
@@ -20246,12 +20246,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40502,
+                                    "id": 40393,
                                     "mutability": "mutable",
                                     "name": "checkData",
                                     "nameLocation": "25742:9:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40507,
+                                    "scope": 40398,
                                     "src": "25737:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20260,7 +20260,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40501,
+                                        "id": 40392,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25737:4:156",
@@ -20273,12 +20273,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40504,
+                                    "id": 40395,
                                     "mutability": "mutable",
                                     "name": "emitter",
                                     "nameLocation": "25761:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40507,
+                                    "scope": 40398,
                                     "src": "25753:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20287,7 +20287,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40503,
+                                        "id": 40394,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "25753:7:156",
@@ -20303,18 +20303,18 @@ export const VmSafe = {
                             "src": "25682:87:156"
                         },
                         "returnParameters": {
-                            "id": 40506,
+                            "id": 40397,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "25786:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40516,
+                        "id": 40407,
                         "nodeType": "FunctionDefinition",
                         "src": "26043:91:156",
                         "nodes": [],
@@ -20325,17 +20325,17 @@ export const VmSafe = {
                         "name": "mockCall",
                         "nameLocation": "26052:8:156",
                         "parameters": {
-                            "id": 40514,
+                            "id": 40405,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40509,
+                                    "id": 40400,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "26069:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40516,
+                                    "scope": 40407,
                                     "src": "26061:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20344,7 +20344,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40508,
+                                        "id": 40399,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26061:7:156",
@@ -20358,12 +20358,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40511,
+                                    "id": 40402,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "26092:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40516,
+                                    "scope": 40407,
                                     "src": "26077:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20372,7 +20372,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40510,
+                                        "id": 40401,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26077:5:156",
@@ -20385,12 +20385,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40513,
+                                    "id": 40404,
                                     "mutability": "mutable",
                                     "name": "returnData",
                                     "nameLocation": "26113:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40516,
+                                    "scope": 40407,
                                     "src": "26098:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20399,7 +20399,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40512,
+                                        "id": 40403,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26098:5:156",
@@ -20414,18 +20414,18 @@ export const VmSafe = {
                             "src": "26060:64:156"
                         },
                         "returnParameters": {
-                            "id": 40515,
+                            "id": 40406,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26133:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40527,
+                        "id": 40418,
                         "nodeType": "FunctionDefinition",
                         "src": "26302:109:156",
                         "nodes": [],
@@ -20436,17 +20436,17 @@ export const VmSafe = {
                         "name": "mockCall",
                         "nameLocation": "26311:8:156",
                         "parameters": {
-                            "id": 40525,
+                            "id": 40416,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40518,
+                                    "id": 40409,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "26328:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40527,
+                                    "scope": 40418,
                                     "src": "26320:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20455,7 +20455,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40517,
+                                        "id": 40408,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26320:7:156",
@@ -20469,12 +20469,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40520,
+                                    "id": 40411,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "26344:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40527,
+                                    "scope": 40418,
                                     "src": "26336:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20483,7 +20483,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40519,
+                                        "id": 40410,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26336:7:156",
@@ -20496,12 +20496,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40522,
+                                    "id": 40413,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "26369:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40527,
+                                    "scope": 40418,
                                     "src": "26354:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20510,7 +20510,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40521,
+                                        "id": 40412,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26354:5:156",
@@ -20523,12 +20523,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40524,
+                                    "id": 40415,
                                     "mutability": "mutable",
                                     "name": "returnData",
                                     "nameLocation": "26390:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40527,
+                                    "scope": 40418,
                                     "src": "26375:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20537,7 +20537,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40523,
+                                        "id": 40414,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26375:5:156",
@@ -20552,18 +20552,18 @@ export const VmSafe = {
                             "src": "26319:82:156"
                         },
                         "returnParameters": {
-                            "id": 40526,
+                            "id": 40417,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26410:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40536,
+                        "id": 40427,
                         "nodeType": "FunctionDefinition",
                         "src": "26480:97:156",
                         "nodes": [],
@@ -20574,17 +20574,17 @@ export const VmSafe = {
                         "name": "mockCallRevert",
                         "nameLocation": "26489:14:156",
                         "parameters": {
-                            "id": 40534,
+                            "id": 40425,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40529,
+                                    "id": 40420,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "26512:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40536,
+                                    "scope": 40427,
                                     "src": "26504:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20593,7 +20593,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40528,
+                                        "id": 40419,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26504:7:156",
@@ -20607,12 +20607,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40531,
+                                    "id": 40422,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "26535:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40536,
+                                    "scope": 40427,
                                     "src": "26520:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20621,7 +20621,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40530,
+                                        "id": 40421,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26520:5:156",
@@ -20634,12 +20634,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40533,
+                                    "id": 40424,
                                     "mutability": "mutable",
                                     "name": "revertData",
                                     "nameLocation": "26556:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40536,
+                                    "scope": 40427,
                                     "src": "26541:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20648,7 +20648,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40532,
+                                        "id": 40423,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26541:5:156",
@@ -20663,18 +20663,18 @@ export const VmSafe = {
                             "src": "26503:64:156"
                         },
                         "returnParameters": {
-                            "id": 40535,
+                            "id": 40426,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26576:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40547,
+                        "id": 40438,
                         "nodeType": "FunctionDefinition",
                         "src": "26673:123:156",
                         "nodes": [],
@@ -20685,17 +20685,17 @@ export const VmSafe = {
                         "name": "mockCallRevert",
                         "nameLocation": "26682:14:156",
                         "parameters": {
-                            "id": 40545,
+                            "id": 40436,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40538,
+                                    "id": 40429,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "26705:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40547,
+                                    "scope": 40438,
                                     "src": "26697:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20704,7 +20704,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40537,
+                                        "id": 40428,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26697:7:156",
@@ -20718,12 +20718,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40540,
+                                    "id": 40431,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "26721:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40547,
+                                    "scope": 40438,
                                     "src": "26713:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20732,7 +20732,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40539,
+                                        "id": 40430,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26713:7:156",
@@ -20745,12 +20745,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40542,
+                                    "id": 40433,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "26746:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40547,
+                                    "scope": 40438,
                                     "src": "26731:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20759,7 +20759,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40541,
+                                        "id": 40432,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26731:5:156",
@@ -20772,12 +20772,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40544,
+                                    "id": 40435,
                                     "mutability": "mutable",
                                     "name": "revertData",
                                     "nameLocation": "26767:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40547,
+                                    "scope": 40438,
                                     "src": "26752:25:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20786,7 +20786,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40543,
+                                        "id": 40434,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "26752:5:156",
@@ -20801,18 +20801,18 @@ export const VmSafe = {
                             "src": "26696:82:156"
                         },
                         "returnParameters": {
-                            "id": 40546,
+                            "id": 40437,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26795:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40550,
+                        "id": 40441,
                         "nodeType": "FunctionDefinition",
                         "src": "26832:37:156",
                         "nodes": [],
@@ -20823,24 +20823,24 @@ export const VmSafe = {
                         "name": "clearMockedCalls",
                         "nameLocation": "26841:16:156",
                         "parameters": {
-                            "id": 40548,
+                            "id": 40439,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26857:2:156"
                         },
                         "returnParameters": {
-                            "id": 40549,
+                            "id": 40440,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "26868:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40557,
+                        "id": 40448,
                         "nodeType": "FunctionDefinition",
                         "src": "26997:66:156",
                         "nodes": [],
@@ -20851,17 +20851,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27006:10:156",
                         "parameters": {
-                            "id": 40555,
+                            "id": 40446,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40552,
+                                    "id": 40443,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27025:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40557,
+                                    "scope": 40448,
                                     "src": "27017:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20870,7 +20870,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40551,
+                                        "id": 40442,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27017:7:156",
@@ -20884,12 +20884,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40554,
+                                    "id": 40445,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27048:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40557,
+                                    "scope": 40448,
                                     "src": "27033:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20898,7 +20898,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40553,
+                                        "id": 40444,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27033:5:156",
@@ -20913,18 +20913,18 @@ export const VmSafe = {
                             "src": "27016:37:156"
                         },
                         "returnParameters": {
-                            "id": 40556,
+                            "id": 40447,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27062:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40566,
+                        "id": 40457,
                         "nodeType": "FunctionDefinition",
                         "src": "27148:80:156",
                         "nodes": [],
@@ -20935,17 +20935,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27157:10:156",
                         "parameters": {
-                            "id": 40564,
+                            "id": 40455,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40559,
+                                    "id": 40450,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27176:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40566,
+                                    "scope": 40457,
                                     "src": "27168:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -20954,7 +20954,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40558,
+                                        "id": 40449,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27168:7:156",
@@ -20968,12 +20968,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40561,
+                                    "id": 40452,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27199:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40566,
+                                    "scope": 40457,
                                     "src": "27184:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -20982,7 +20982,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40560,
+                                        "id": 40451,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27184:5:156",
@@ -20995,12 +20995,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40563,
+                                    "id": 40454,
                                     "mutability": "mutable",
                                     "name": "count",
                                     "nameLocation": "27212:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40566,
+                                    "scope": 40457,
                                     "src": "27205:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21009,7 +21009,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40562,
+                                        "id": 40453,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27205:6:156",
@@ -21024,18 +21024,18 @@ export const VmSafe = {
                             "src": "27167:51:156"
                         },
                         "returnParameters": {
-                            "id": 40565,
+                            "id": 40456,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27227:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40575,
+                        "id": 40466,
                         "nodeType": "FunctionDefinition",
                         "src": "27311:84:156",
                         "nodes": [],
@@ -21046,17 +21046,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27320:10:156",
                         "parameters": {
-                            "id": 40573,
+                            "id": 40464,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40568,
+                                    "id": 40459,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27339:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40575,
+                                    "scope": 40466,
                                     "src": "27331:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21065,7 +21065,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40567,
+                                        "id": 40458,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27331:7:156",
@@ -21079,12 +21079,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40570,
+                                    "id": 40461,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "27355:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40575,
+                                    "scope": 40466,
                                     "src": "27347:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21093,7 +21093,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40569,
+                                        "id": 40460,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27347:7:156",
@@ -21106,12 +21106,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40572,
+                                    "id": 40463,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27380:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40575,
+                                    "scope": 40466,
                                     "src": "27365:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21120,7 +21120,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40571,
+                                        "id": 40462,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27365:5:156",
@@ -21135,18 +21135,18 @@ export const VmSafe = {
                             "src": "27330:55:156"
                         },
                         "returnParameters": {
-                            "id": 40574,
+                            "id": 40465,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27394:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40586,
+                        "id": 40477,
                         "nodeType": "FunctionDefinition",
                         "src": "27493:98:156",
                         "nodes": [],
@@ -21157,17 +21157,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27502:10:156",
                         "parameters": {
-                            "id": 40584,
+                            "id": 40475,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40577,
+                                    "id": 40468,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27521:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40586,
+                                    "scope": 40477,
                                     "src": "27513:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21176,7 +21176,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40576,
+                                        "id": 40467,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27513:7:156",
@@ -21190,12 +21190,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40579,
+                                    "id": 40470,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "27537:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40586,
+                                    "scope": 40477,
                                     "src": "27529:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21204,7 +21204,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40578,
+                                        "id": 40469,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27529:7:156",
@@ -21217,12 +21217,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40581,
+                                    "id": 40472,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27562:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40586,
+                                    "scope": 40477,
                                     "src": "27547:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21231,7 +21231,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40580,
+                                        "id": 40471,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27547:5:156",
@@ -21244,12 +21244,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40583,
+                                    "id": 40474,
                                     "mutability": "mutable",
                                     "name": "count",
                                     "nameLocation": "27575:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40586,
+                                    "scope": 40477,
                                     "src": "27568:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21258,7 +21258,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40582,
+                                        "id": 40473,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27568:6:156",
@@ -21273,18 +21273,18 @@ export const VmSafe = {
                             "src": "27512:69:156"
                         },
                         "returnParameters": {
-                            "id": 40585,
+                            "id": 40476,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27590:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40597,
+                        "id": 40488,
                         "nodeType": "FunctionDefinition",
                         "src": "27680:96:156",
                         "nodes": [],
@@ -21295,17 +21295,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27689:10:156",
                         "parameters": {
-                            "id": 40595,
+                            "id": 40486,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40588,
+                                    "id": 40479,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27708:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40597,
+                                    "scope": 40488,
                                     "src": "27700:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21314,7 +21314,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40587,
+                                        "id": 40478,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27700:7:156",
@@ -21328,12 +21328,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40590,
+                                    "id": 40481,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "27724:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40597,
+                                    "scope": 40488,
                                     "src": "27716:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21342,7 +21342,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40589,
+                                        "id": 40480,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27716:7:156",
@@ -21355,12 +21355,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40592,
+                                    "id": 40483,
                                     "mutability": "mutable",
                                     "name": "gas",
                                     "nameLocation": "27741:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40597,
+                                    "scope": 40488,
                                     "src": "27734:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21369,7 +21369,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40591,
+                                        "id": 40482,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27734:6:156",
@@ -21382,12 +21382,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40594,
+                                    "id": 40485,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27761:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40597,
+                                    "scope": 40488,
                                     "src": "27746:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21396,7 +21396,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40593,
+                                        "id": 40484,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27746:5:156",
@@ -21411,18 +21411,18 @@ export const VmSafe = {
                             "src": "27699:67:156"
                         },
                         "returnParameters": {
-                            "id": 40596,
+                            "id": 40487,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27775:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40610,
+                        "id": 40501,
                         "nodeType": "FunctionDefinition",
                         "src": "27881:110:156",
                         "nodes": [],
@@ -21433,17 +21433,17 @@ export const VmSafe = {
                         "name": "expectCall",
                         "nameLocation": "27890:10:156",
                         "parameters": {
-                            "id": 40608,
+                            "id": 40499,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40599,
+                                    "id": 40490,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "27909:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40610,
+                                    "scope": 40501,
                                     "src": "27901:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21452,7 +21452,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40598,
+                                        "id": 40489,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27901:7:156",
@@ -21466,12 +21466,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40601,
+                                    "id": 40492,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "27925:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40610,
+                                    "scope": 40501,
                                     "src": "27917:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21480,7 +21480,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40600,
+                                        "id": 40491,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27917:7:156",
@@ -21493,12 +21493,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40603,
+                                    "id": 40494,
                                     "mutability": "mutable",
                                     "name": "gas",
                                     "nameLocation": "27942:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40610,
+                                    "scope": 40501,
                                     "src": "27935:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21507,7 +21507,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40602,
+                                        "id": 40493,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27935:6:156",
@@ -21520,12 +21520,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40605,
+                                    "id": 40496,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "27962:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40610,
+                                    "scope": 40501,
                                     "src": "27947:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21534,7 +21534,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40604,
+                                        "id": 40495,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27947:5:156",
@@ -21547,12 +21547,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40607,
+                                    "id": 40498,
                                     "mutability": "mutable",
                                     "name": "count",
                                     "nameLocation": "27975:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40610,
+                                    "scope": 40501,
                                     "src": "27968:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21561,7 +21561,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40606,
+                                        "id": 40497,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "27968:6:156",
@@ -21576,18 +21576,18 @@ export const VmSafe = {
                             "src": "27900:81:156"
                         },
                         "returnParameters": {
-                            "id": 40609,
+                            "id": 40500,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "27990:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40621,
+                        "id": 40512,
                         "nodeType": "FunctionDefinition",
                         "src": "28105:105:156",
                         "nodes": [],
@@ -21598,17 +21598,17 @@ export const VmSafe = {
                         "name": "expectCallMinGas",
                         "nameLocation": "28114:16:156",
                         "parameters": {
-                            "id": 40619,
+                            "id": 40510,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40612,
+                                    "id": 40503,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "28139:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40621,
+                                    "scope": 40512,
                                     "src": "28131:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21617,7 +21617,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40611,
+                                        "id": 40502,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28131:7:156",
@@ -21631,12 +21631,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40614,
+                                    "id": 40505,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "28155:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40621,
+                                    "scope": 40512,
                                     "src": "28147:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21645,7 +21645,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40613,
+                                        "id": 40504,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28147:7:156",
@@ -21658,12 +21658,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40616,
+                                    "id": 40507,
                                     "mutability": "mutable",
                                     "name": "minGas",
                                     "nameLocation": "28172:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40621,
+                                    "scope": 40512,
                                     "src": "28165:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21672,7 +21672,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40615,
+                                        "id": 40506,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28165:6:156",
@@ -21685,12 +21685,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40618,
+                                    "id": 40509,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "28195:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40621,
+                                    "scope": 40512,
                                     "src": "28180:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21699,7 +21699,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40617,
+                                        "id": 40508,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28180:5:156",
@@ -21714,18 +21714,18 @@ export const VmSafe = {
                             "src": "28130:70:156"
                         },
                         "returnParameters": {
-                            "id": 40620,
+                            "id": 40511,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "28209:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40634,
+                        "id": 40525,
                         "nodeType": "FunctionDefinition",
                         "src": "28339:127:156",
                         "nodes": [],
@@ -21736,17 +21736,17 @@ export const VmSafe = {
                         "name": "expectCallMinGas",
                         "nameLocation": "28348:16:156",
                         "parameters": {
-                            "id": 40632,
+                            "id": 40523,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40623,
+                                    "id": 40514,
                                     "mutability": "mutable",
                                     "name": "callee",
                                     "nameLocation": "28373:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40634,
+                                    "scope": 40525,
                                     "src": "28365:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21755,7 +21755,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40622,
+                                        "id": 40513,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28365:7:156",
@@ -21769,12 +21769,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40625,
+                                    "id": 40516,
                                     "mutability": "mutable",
                                     "name": "msgValue",
                                     "nameLocation": "28389:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40634,
+                                    "scope": 40525,
                                     "src": "28381:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21783,7 +21783,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40624,
+                                        "id": 40515,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28381:7:156",
@@ -21796,12 +21796,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40627,
+                                    "id": 40518,
                                     "mutability": "mutable",
                                     "name": "minGas",
                                     "nameLocation": "28406:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40634,
+                                    "scope": 40525,
                                     "src": "28399:13:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21810,7 +21810,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40626,
+                                        "id": 40517,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28399:6:156",
@@ -21823,12 +21823,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40629,
+                                    "id": 40520,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "28429:4:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40634,
+                                    "scope": 40525,
                                     "src": "28414:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -21837,7 +21837,7 @@ export const VmSafe = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 40628,
+                                        "id": 40519,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28414:5:156",
@@ -21850,12 +21850,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40631,
+                                    "id": 40522,
                                     "mutability": "mutable",
                                     "name": "count",
                                     "nameLocation": "28442:5:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40634,
+                                    "scope": 40525,
                                     "src": "28435:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21864,7 +21864,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40630,
+                                        "id": 40521,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28435:6:156",
@@ -21879,18 +21879,18 @@ export const VmSafe = {
                             "src": "28364:84:156"
                         },
                         "returnParameters": {
-                            "id": 40633,
+                            "id": 40524,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "28465:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40641,
+                        "id": 40532,
                         "nodeType": "FunctionDefinition",
                         "src": "28692:59:156",
                         "nodes": [],
@@ -21901,17 +21901,17 @@ export const VmSafe = {
                         "name": "expectSafeMemory",
                         "nameLocation": "28701:16:156",
                         "parameters": {
-                            "id": 40639,
+                            "id": 40530,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40636,
+                                    "id": 40527,
                                     "mutability": "mutable",
                                     "name": "min",
                                     "nameLocation": "28725:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40641,
+                                    "scope": 40532,
                                     "src": "28718:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21920,7 +21920,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40635,
+                                        "id": 40526,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28718:6:156",
@@ -21933,12 +21933,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40638,
+                                    "id": 40529,
                                     "mutability": "mutable",
                                     "name": "max",
                                     "nameLocation": "28737:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40641,
+                                    "scope": 40532,
                                     "src": "28730:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -21947,7 +21947,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40637,
+                                        "id": 40528,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "28730:6:156",
@@ -21962,18 +21962,18 @@ export const VmSafe = {
                             "src": "28717:24:156"
                         },
                         "returnParameters": {
-                            "id": 40640,
+                            "id": 40531,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "28750:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40648,
+                        "id": 40539,
                         "nodeType": "FunctionDefinition",
                         "src": "28989:63:156",
                         "nodes": [],
@@ -21984,17 +21984,17 @@ export const VmSafe = {
                         "name": "expectSafeMemoryCall",
                         "nameLocation": "28998:20:156",
                         "parameters": {
-                            "id": 40646,
+                            "id": 40537,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40643,
+                                    "id": 40534,
                                     "mutability": "mutable",
                                     "name": "min",
                                     "nameLocation": "29026:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40648,
+                                    "scope": 40539,
                                     "src": "29019:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22003,7 +22003,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40642,
+                                        "id": 40533,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29019:6:156",
@@ -22016,12 +22016,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40645,
+                                    "id": 40536,
                                     "mutability": "mutable",
                                     "name": "max",
                                     "nameLocation": "29038:3:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40648,
+                                    "scope": 40539,
                                     "src": "29031:10:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22030,7 +22030,7 @@ export const VmSafe = {
                                         "typeString": "uint64"
                                     },
                                     "typeName": {
-                                        "id": 40644,
+                                        "id": 40535,
                                         "name": "uint64",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29031:6:156",
@@ -22045,18 +22045,18 @@ export const VmSafe = {
                             "src": "29018:24:156"
                         },
                         "returnParameters": {
-                            "id": 40647,
+                            "id": 40538,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "29051:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40653,
+                        "id": 40544,
                         "nodeType": "FunctionDefinition",
                         "src": "29084:48:156",
                         "nodes": [],
@@ -22067,17 +22067,17 @@ export const VmSafe = {
                         "name": "coinbase",
                         "nameLocation": "29093:8:156",
                         "parameters": {
-                            "id": 40651,
+                            "id": 40542,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40650,
+                                    "id": 40541,
                                     "mutability": "mutable",
                                     "name": "newCoinbase",
                                     "nameLocation": "29110:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40653,
+                                    "scope": 40544,
                                     "src": "29102:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22086,7 +22086,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40649,
+                                        "id": 40540,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29102:7:156",
@@ -22102,18 +22102,18 @@ export const VmSafe = {
                             "src": "29101:21:156"
                         },
                         "returnParameters": {
-                            "id": 40652,
+                            "id": 40543,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "29131:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40658,
+                        "id": 40549,
                         "nodeType": "FunctionDefinition",
                         "src": "29282:58:156",
                         "nodes": [],
@@ -22124,23 +22124,23 @@ export const VmSafe = {
                         "name": "snapshot",
                         "nameLocation": "29291:8:156",
                         "parameters": {
-                            "id": 40654,
+                            "id": 40545,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "29299:2:156"
                         },
                         "returnParameters": {
-                            "id": 40657,
+                            "id": 40548,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40656,
+                                    "id": 40547,
                                     "mutability": "mutable",
                                     "name": "snapshotId",
                                     "nameLocation": "29328:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40658,
+                                    "scope": 40549,
                                     "src": "29320:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22149,7 +22149,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40655,
+                                        "id": 40546,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29320:7:156",
@@ -22163,13 +22163,13 @@ export const VmSafe = {
                             ],
                             "src": "29319:20:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40665,
+                        "id": 40556,
                         "nodeType": "FunctionDefinition",
                         "src": "29532:70:156",
                         "nodes": [],
@@ -22180,17 +22180,17 @@ export const VmSafe = {
                         "name": "revertTo",
                         "nameLocation": "29541:8:156",
                         "parameters": {
-                            "id": 40661,
+                            "id": 40552,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40660,
+                                    "id": 40551,
                                     "mutability": "mutable",
                                     "name": "snapshotId",
                                     "nameLocation": "29558:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40665,
+                                    "scope": 40556,
                                     "src": "29550:18:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22199,7 +22199,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40659,
+                                        "id": 40550,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29550:7:156",
@@ -22214,17 +22214,17 @@ export const VmSafe = {
                             "src": "29549:20:156"
                         },
                         "returnParameters": {
-                            "id": 40664,
+                            "id": 40555,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40663,
+                                    "id": 40554,
                                     "mutability": "mutable",
                                     "name": "success",
                                     "nameLocation": "29593:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40665,
+                                    "scope": 40556,
                                     "src": "29588:12:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22233,7 +22233,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40662,
+                                        "id": 40553,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29588:4:156",
@@ -22247,13 +22247,13 @@ export const VmSafe = {
                             ],
                             "src": "29587:14:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40674,
+                        "id": 40565,
                         "nodeType": "FunctionDefinition",
                         "src": "29706:103:156",
                         "nodes": [],
@@ -22264,17 +22264,17 @@ export const VmSafe = {
                         "name": "createFork",
                         "nameLocation": "29715:10:156",
                         "parameters": {
-                            "id": 40670,
+                            "id": 40561,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40667,
+                                    "id": 40558,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "29742:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40674,
+                                    "scope": 40565,
                                     "src": "29726:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22283,7 +22283,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40666,
+                                        "id": 40557,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29726:6:156",
@@ -22296,12 +22296,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40669,
+                                    "id": 40560,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "29762:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40674,
+                                    "scope": 40565,
                                     "src": "29754:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22310,7 +22310,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40668,
+                                        "id": 40559,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29754:7:156",
@@ -22325,17 +22325,17 @@ export const VmSafe = {
                             "src": "29725:49:156"
                         },
                         "returnParameters": {
-                            "id": 40673,
+                            "id": 40564,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40672,
+                                    "id": 40563,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "29801:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40674,
+                                    "scope": 40565,
                                     "src": "29793:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22344,7 +22344,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40671,
+                                        "id": 40562,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29793:7:156",
@@ -22358,13 +22358,13 @@ export const VmSafe = {
                             ],
                             "src": "29792:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40681,
+                        "id": 40572,
                         "nodeType": "FunctionDefinition",
                         "src": "29926:82:156",
                         "nodes": [],
@@ -22375,17 +22375,17 @@ export const VmSafe = {
                         "name": "createFork",
                         "nameLocation": "29935:10:156",
                         "parameters": {
-                            "id": 40677,
+                            "id": 40568,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40676,
+                                    "id": 40567,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "29962:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40681,
+                                    "scope": 40572,
                                     "src": "29946:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22394,7 +22394,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40675,
+                                        "id": 40566,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29946:6:156",
@@ -22409,17 +22409,17 @@ export const VmSafe = {
                             "src": "29945:28:156"
                         },
                         "returnParameters": {
-                            "id": 40680,
+                            "id": 40571,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40679,
+                                    "id": 40570,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "30000:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40681,
+                                    "scope": 40572,
                                     "src": "29992:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22428,7 +22428,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40678,
+                                        "id": 40569,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "29992:7:156",
@@ -22442,13 +22442,13 @@ export const VmSafe = {
                             ],
                             "src": "29991:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40690,
+                        "id": 40581,
                         "nodeType": "FunctionDefinition",
                         "src": "30229:98:156",
                         "nodes": [],
@@ -22459,17 +22459,17 @@ export const VmSafe = {
                         "name": "createFork",
                         "nameLocation": "30238:10:156",
                         "parameters": {
-                            "id": 40686,
+                            "id": 40577,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40683,
+                                    "id": 40574,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "30265:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40690,
+                                    "scope": 40581,
                                     "src": "30249:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22478,7 +22478,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40682,
+                                        "id": 40573,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30249:6:156",
@@ -22491,12 +22491,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40685,
+                                    "id": 40576,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "30285:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40690,
+                                    "scope": 40581,
                                     "src": "30277:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22505,7 +22505,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40684,
+                                        "id": 40575,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30277:7:156",
@@ -22520,17 +22520,17 @@ export const VmSafe = {
                             "src": "30248:44:156"
                         },
                         "returnParameters": {
-                            "id": 40689,
+                            "id": 40580,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40688,
+                                    "id": 40579,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "30319:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40690,
+                                    "scope": 40581,
                                     "src": "30311:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22539,7 +22539,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40687,
+                                        "id": 40578,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30311:7:156",
@@ -22553,13 +22553,13 @@ export const VmSafe = {
                             ],
                             "src": "30310:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40699,
+                        "id": 40590,
                         "nodeType": "FunctionDefinition",
                         "src": "30450:109:156",
                         "nodes": [],
@@ -22570,17 +22570,17 @@ export const VmSafe = {
                         "name": "createSelectFork",
                         "nameLocation": "30459:16:156",
                         "parameters": {
-                            "id": 40695,
+                            "id": 40586,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40692,
+                                    "id": 40583,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "30492:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40699,
+                                    "scope": 40590,
                                     "src": "30476:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22589,7 +22589,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40691,
+                                        "id": 40582,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30476:6:156",
@@ -22602,12 +22602,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40694,
+                                    "id": 40585,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "30512:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40699,
+                                    "scope": 40590,
                                     "src": "30504:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22616,7 +22616,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40693,
+                                        "id": 40584,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30504:7:156",
@@ -22631,17 +22631,17 @@ export const VmSafe = {
                             "src": "30475:49:156"
                         },
                         "returnParameters": {
-                            "id": 40698,
+                            "id": 40589,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40697,
+                                    "id": 40588,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "30551:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40699,
+                                    "scope": 40590,
                                     "src": "30543:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22650,7 +22650,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40696,
+                                        "id": 40587,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30543:7:156",
@@ -22664,13 +22664,13 @@ export const VmSafe = {
                             ],
                             "src": "30542:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40708,
+                        "id": 40599,
                         "nodeType": "FunctionDefinition",
                         "src": "30793:104:156",
                         "nodes": [],
@@ -22681,17 +22681,17 @@ export const VmSafe = {
                         "name": "createSelectFork",
                         "nameLocation": "30802:16:156",
                         "parameters": {
-                            "id": 40704,
+                            "id": 40595,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40701,
+                                    "id": 40592,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "30835:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40708,
+                                    "scope": 40599,
                                     "src": "30819:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22700,7 +22700,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40700,
+                                        "id": 40591,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30819:6:156",
@@ -22713,12 +22713,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40703,
+                                    "id": 40594,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "30855:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40708,
+                                    "scope": 40599,
                                     "src": "30847:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22727,7 +22727,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40702,
+                                        "id": 40593,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30847:7:156",
@@ -22742,17 +22742,17 @@ export const VmSafe = {
                             "src": "30818:44:156"
                         },
                         "returnParameters": {
-                            "id": 40707,
+                            "id": 40598,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40706,
+                                    "id": 40597,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "30889:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40708,
+                                    "scope": 40599,
                                     "src": "30881:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22761,7 +22761,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40705,
+                                        "id": 40596,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "30881:7:156",
@@ -22775,13 +22775,13 @@ export const VmSafe = {
                             ],
                             "src": "30880:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40715,
+                        "id": 40606,
                         "nodeType": "FunctionDefinition",
                         "src": "31031:88:156",
                         "nodes": [],
@@ -22792,17 +22792,17 @@ export const VmSafe = {
                         "name": "createSelectFork",
                         "nameLocation": "31040:16:156",
                         "parameters": {
-                            "id": 40711,
+                            "id": 40602,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40710,
+                                    "id": 40601,
                                     "mutability": "mutable",
                                     "name": "urlOrAlias",
                                     "nameLocation": "31073:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40715,
+                                    "scope": 40606,
                                     "src": "31057:26:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -22811,7 +22811,7 @@ export const VmSafe = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 40709,
+                                        "id": 40600,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31057:6:156",
@@ -22826,17 +22826,17 @@ export const VmSafe = {
                             "src": "31056:28:156"
                         },
                         "returnParameters": {
-                            "id": 40714,
+                            "id": 40605,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40713,
+                                    "id": 40604,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "31111:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40715,
+                                    "scope": 40606,
                                     "src": "31103:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22845,7 +22845,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40712,
+                                        "id": 40603,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31103:7:156",
@@ -22859,13 +22859,13 @@ export const VmSafe = {
                             ],
                             "src": "31102:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40720,
+                        "id": 40611,
                         "nodeType": "FunctionDefinition",
                         "src": "31230:45:156",
                         "nodes": [],
@@ -22876,17 +22876,17 @@ export const VmSafe = {
                         "name": "selectFork",
                         "nameLocation": "31239:10:156",
                         "parameters": {
-                            "id": 40718,
+                            "id": 40609,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40717,
+                                    "id": 40608,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "31258:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40720,
+                                    "scope": 40611,
                                     "src": "31250:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22895,7 +22895,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40716,
+                                        "id": 40607,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31250:7:156",
@@ -22910,23 +22910,23 @@ export const VmSafe = {
                             "src": "31249:16:156"
                         },
                         "returnParameters": {
-                            "id": 40719,
+                            "id": 40610,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "31274:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40726,
+                        "id": 40617,
                         "nodeType": "FunctionDefinition",
                         "src": "31381:61:156",
                         "nodes": [],
                         "documentation": {
-                            "id": 40721,
+                            "id": 40612,
                             "nodeType": "StructuredDocumentation",
                             "src": "31280:96:156",
                             "text": "Returns the identifier of the currently active fork. Reverts if no fork is currently active."
@@ -22938,23 +22938,23 @@ export const VmSafe = {
                         "name": "activeFork",
                         "nameLocation": "31390:10:156",
                         "parameters": {
-                            "id": 40722,
+                            "id": 40613,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "31400:2:156"
                         },
                         "returnParameters": {
-                            "id": 40725,
+                            "id": 40616,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40724,
+                                    "id": 40615,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "31434:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40726,
+                                    "scope": 40617,
                                     "src": "31426:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -22963,7 +22963,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40723,
+                                        "id": 40614,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31426:7:156",
@@ -22977,13 +22977,13 @@ export const VmSafe = {
                             ],
                             "src": "31425:16:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40731,
+                        "id": 40622,
                         "nodeType": "FunctionDefinition",
                         "src": "31577:48:156",
                         "nodes": [],
@@ -22994,17 +22994,17 @@ export const VmSafe = {
                         "name": "rollFork",
                         "nameLocation": "31586:8:156",
                         "parameters": {
-                            "id": 40729,
+                            "id": 40620,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40728,
+                                    "id": 40619,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "31603:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40731,
+                                    "scope": 40622,
                                     "src": "31595:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23013,7 +23013,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40727,
+                                        "id": 40618,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31595:7:156",
@@ -23028,18 +23028,18 @@ export const VmSafe = {
                             "src": "31594:21:156"
                         },
                         "returnParameters": {
-                            "id": 40730,
+                            "id": 40621,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "31624:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40736,
+                        "id": 40627,
                         "nodeType": "FunctionDefinition",
                         "src": "31835:43:156",
                         "nodes": [],
@@ -23050,17 +23050,17 @@ export const VmSafe = {
                         "name": "rollFork",
                         "nameLocation": "31844:8:156",
                         "parameters": {
-                            "id": 40734,
+                            "id": 40625,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40733,
+                                    "id": 40624,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "31861:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40736,
+                                    "scope": 40627,
                                     "src": "31853:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23069,7 +23069,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40732,
+                                        "id": 40623,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31853:7:156",
@@ -23084,18 +23084,18 @@ export const VmSafe = {
                             "src": "31852:16:156"
                         },
                         "returnParameters": {
-                            "id": 40735,
+                            "id": 40626,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "31877:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40743,
+                        "id": 40634,
                         "nodeType": "FunctionDefinition",
                         "src": "31935:64:156",
                         "nodes": [],
@@ -23106,17 +23106,17 @@ export const VmSafe = {
                         "name": "rollFork",
                         "nameLocation": "31944:8:156",
                         "parameters": {
-                            "id": 40741,
+                            "id": 40632,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40738,
+                                    "id": 40629,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "31961:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40743,
+                                    "scope": 40634,
                                     "src": "31953:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23125,7 +23125,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40737,
+                                        "id": 40628,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31953:7:156",
@@ -23138,12 +23138,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40740,
+                                    "id": 40631,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "31977:11:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40743,
+                                    "scope": 40634,
                                     "src": "31969:19:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23152,7 +23152,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40739,
+                                        "id": 40630,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "31969:7:156",
@@ -23167,18 +23167,18 @@ export const VmSafe = {
                             "src": "31952:37:156"
                         },
                         "returnParameters": {
-                            "id": 40742,
+                            "id": 40633,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "31998:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40750,
+                        "id": 40641,
                         "nodeType": "FunctionDefinition",
                         "src": "32132:59:156",
                         "nodes": [],
@@ -23189,17 +23189,17 @@ export const VmSafe = {
                         "name": "rollFork",
                         "nameLocation": "32141:8:156",
                         "parameters": {
-                            "id": 40748,
+                            "id": 40639,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40745,
+                                    "id": 40636,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "32158:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40750,
+                                    "scope": 40641,
                                     "src": "32150:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23208,7 +23208,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40744,
+                                        "id": 40635,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32150:7:156",
@@ -23221,12 +23221,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40747,
+                                    "id": 40638,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "32174:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40750,
+                                    "scope": 40641,
                                     "src": "32166:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23235,7 +23235,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40746,
+                                        "id": 40637,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32166:7:156",
@@ -23250,18 +23250,18 @@ export const VmSafe = {
                             "src": "32149:32:156"
                         },
                         "returnParameters": {
-                            "id": 40749,
+                            "id": 40640,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32190:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40755,
+                        "id": 40646,
                         "nodeType": "FunctionDefinition",
                         "src": "32390:50:156",
                         "nodes": [],
@@ -23272,17 +23272,17 @@ export const VmSafe = {
                         "name": "makePersistent",
                         "nameLocation": "32399:14:156",
                         "parameters": {
-                            "id": 40753,
+                            "id": 40644,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40752,
+                                    "id": 40643,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "32422:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40755,
+                                    "scope": 40646,
                                     "src": "32414:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23291,7 +23291,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40751,
+                                        "id": 40642,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32414:7:156",
@@ -23307,18 +23307,18 @@ export const VmSafe = {
                             "src": "32413:17:156"
                         },
                         "returnParameters": {
-                            "id": 40754,
+                            "id": 40645,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32439:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40762,
+                        "id": 40653,
                         "nodeType": "FunctionDefinition",
                         "src": "32445:69:156",
                         "nodes": [],
@@ -23329,17 +23329,17 @@ export const VmSafe = {
                         "name": "makePersistent",
                         "nameLocation": "32454:14:156",
                         "parameters": {
-                            "id": 40760,
+                            "id": 40651,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40757,
+                                    "id": 40648,
                                     "mutability": "mutable",
                                     "name": "account0",
                                     "nameLocation": "32477:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40762,
+                                    "scope": 40653,
                                     "src": "32469:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23348,7 +23348,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40756,
+                                        "id": 40647,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32469:7:156",
@@ -23362,12 +23362,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40759,
+                                    "id": 40650,
                                     "mutability": "mutable",
                                     "name": "account1",
                                     "nameLocation": "32495:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40762,
+                                    "scope": 40653,
                                     "src": "32487:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23376,7 +23376,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40758,
+                                        "id": 40649,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32487:7:156",
@@ -23392,18 +23392,18 @@ export const VmSafe = {
                             "src": "32468:36:156"
                         },
                         "returnParameters": {
-                            "id": 40761,
+                            "id": 40652,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32513:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40771,
+                        "id": 40662,
                         "nodeType": "FunctionDefinition",
                         "src": "32519:87:156",
                         "nodes": [],
@@ -23414,17 +23414,17 @@ export const VmSafe = {
                         "name": "makePersistent",
                         "nameLocation": "32528:14:156",
                         "parameters": {
-                            "id": 40769,
+                            "id": 40660,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40764,
+                                    "id": 40655,
                                     "mutability": "mutable",
                                     "name": "account0",
                                     "nameLocation": "32551:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40771,
+                                    "scope": 40662,
                                     "src": "32543:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23433,7 +23433,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40763,
+                                        "id": 40654,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32543:7:156",
@@ -23447,12 +23447,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40766,
+                                    "id": 40657,
                                     "mutability": "mutable",
                                     "name": "account1",
                                     "nameLocation": "32569:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40771,
+                                    "scope": 40662,
                                     "src": "32561:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23461,7 +23461,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40765,
+                                        "id": 40656,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32561:7:156",
@@ -23475,12 +23475,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40768,
+                                    "id": 40659,
                                     "mutability": "mutable",
                                     "name": "account2",
                                     "nameLocation": "32587:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40771,
+                                    "scope": 40662,
                                     "src": "32579:16:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23489,7 +23489,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40767,
+                                        "id": 40658,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32579:7:156",
@@ -23505,18 +23505,18 @@ export const VmSafe = {
                             "src": "32542:54:156"
                         },
                         "returnParameters": {
-                            "id": 40770,
+                            "id": 40661,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32605:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40777,
+                        "id": 40668,
                         "nodeType": "FunctionDefinition",
                         "src": "32611:62:156",
                         "nodes": [],
@@ -23527,17 +23527,17 @@ export const VmSafe = {
                         "name": "makePersistent",
                         "nameLocation": "32620:14:156",
                         "parameters": {
-                            "id": 40775,
+                            "id": 40666,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40774,
+                                    "id": 40665,
                                     "mutability": "mutable",
                                     "name": "accounts",
                                     "nameLocation": "32654:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40777,
+                                    "scope": 40668,
                                     "src": "32635:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -23547,7 +23547,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40772,
+                                            "id": 40663,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "32635:7:156",
@@ -23557,7 +23557,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 40773,
+                                        "id": 40664,
                                         "nodeType": "ArrayTypeName",
                                         "src": "32635:9:156",
                                         "typeDescriptions": {
@@ -23571,18 +23571,18 @@ export const VmSafe = {
                             "src": "32634:29:156"
                         },
                         "returnParameters": {
-                            "id": 40776,
+                            "id": 40667,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32672:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40782,
+                        "id": 40673,
                         "nodeType": "FunctionDefinition",
                         "src": "32767:52:156",
                         "nodes": [],
@@ -23593,17 +23593,17 @@ export const VmSafe = {
                         "name": "revokePersistent",
                         "nameLocation": "32776:16:156",
                         "parameters": {
-                            "id": 40780,
+                            "id": 40671,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40779,
+                                    "id": 40670,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "32801:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40782,
+                                    "scope": 40673,
                                     "src": "32793:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23612,7 +23612,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40778,
+                                        "id": 40669,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32793:7:156",
@@ -23628,18 +23628,18 @@ export const VmSafe = {
                             "src": "32792:17:156"
                         },
                         "returnParameters": {
-                            "id": 40781,
+                            "id": 40672,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32818:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40788,
+                        "id": 40679,
                         "nodeType": "FunctionDefinition",
                         "src": "32824:64:156",
                         "nodes": [],
@@ -23650,17 +23650,17 @@ export const VmSafe = {
                         "name": "revokePersistent",
                         "nameLocation": "32833:16:156",
                         "parameters": {
-                            "id": 40786,
+                            "id": 40677,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40785,
+                                    "id": 40676,
                                     "mutability": "mutable",
                                     "name": "accounts",
                                     "nameLocation": "32869:8:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40788,
+                                    "scope": 40679,
                                     "src": "32850:27:156",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -23670,7 +23670,7 @@ export const VmSafe = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 40783,
+                                            "id": 40674,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "32850:7:156",
@@ -23680,7 +23680,7 @@ export const VmSafe = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 40784,
+                                        "id": 40675,
                                         "nodeType": "ArrayTypeName",
                                         "src": "32850:9:156",
                                         "typeDescriptions": {
@@ -23694,18 +23694,18 @@ export const VmSafe = {
                             "src": "32849:29:156"
                         },
                         "returnParameters": {
-                            "id": 40787,
+                            "id": 40678,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "32887:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40795,
+                        "id": 40686,
                         "nodeType": "FunctionDefinition",
                         "src": "32952:79:156",
                         "nodes": [],
@@ -23716,17 +23716,17 @@ export const VmSafe = {
                         "name": "isPersistent",
                         "nameLocation": "32961:12:156",
                         "parameters": {
-                            "id": 40791,
+                            "id": 40682,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40790,
+                                    "id": 40681,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "32982:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40795,
+                                    "scope": 40686,
                                     "src": "32974:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23735,7 +23735,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40789,
+                                        "id": 40680,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "32974:7:156",
@@ -23751,17 +23751,17 @@ export const VmSafe = {
                             "src": "32973:17:156"
                         },
                         "returnParameters": {
-                            "id": 40794,
+                            "id": 40685,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40793,
+                                    "id": 40684,
                                     "mutability": "mutable",
                                     "name": "persistent",
                                     "nameLocation": "33019:10:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40795,
+                                    "scope": 40686,
                                     "src": "33014:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23770,7 +23770,7 @@ export const VmSafe = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 40792,
+                                        "id": 40683,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "33014:4:156",
@@ -23784,13 +23784,13 @@ export const VmSafe = {
                             ],
                             "src": "33013:17:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40800,
+                        "id": 40691,
                         "nodeType": "FunctionDefinition",
                         "src": "33112:51:156",
                         "nodes": [],
@@ -23801,17 +23801,17 @@ export const VmSafe = {
                         "name": "allowCheatcodes",
                         "nameLocation": "33121:15:156",
                         "parameters": {
-                            "id": 40798,
+                            "id": 40689,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40797,
+                                    "id": 40688,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "33145:7:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40800,
+                                    "scope": 40691,
                                     "src": "33137:15:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23820,7 +23820,7 @@ export const VmSafe = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 40796,
+                                        "id": 40687,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "33137:7:156",
@@ -23836,18 +23836,18 @@ export const VmSafe = {
                             "src": "33136:17:156"
                         },
                         "returnParameters": {
-                            "id": 40799,
+                            "id": 40690,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "33162:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40805,
+                        "id": 40696,
                         "nodeType": "FunctionDefinition",
                         "src": "33263:43:156",
                         "nodes": [],
@@ -23858,17 +23858,17 @@ export const VmSafe = {
                         "name": "transact",
                         "nameLocation": "33272:8:156",
                         "parameters": {
-                            "id": 40803,
+                            "id": 40694,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40802,
+                                    "id": 40693,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "33289:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40805,
+                                    "scope": 40696,
                                     "src": "33281:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23877,7 +23877,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40801,
+                                        "id": 40692,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "33281:7:156",
@@ -23892,18 +23892,18 @@ export const VmSafe = {
                             "src": "33280:16:156"
                         },
                         "returnParameters": {
-                            "id": 40804,
+                            "id": 40695,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "33305:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 40812,
+                        "id": 40703,
                         "nodeType": "FunctionDefinition",
                         "src": "33405:59:156",
                         "nodes": [],
@@ -23914,17 +23914,17 @@ export const VmSafe = {
                         "name": "transact",
                         "nameLocation": "33414:8:156",
                         "parameters": {
-                            "id": 40810,
+                            "id": 40701,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 40807,
+                                    "id": 40698,
                                     "mutability": "mutable",
                                     "name": "forkId",
                                     "nameLocation": "33431:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40812,
+                                    "scope": 40703,
                                     "src": "33423:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23933,7 +23933,7 @@ export const VmSafe = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 40806,
+                                        "id": 40697,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "33423:7:156",
@@ -23946,12 +23946,12 @@ export const VmSafe = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 40809,
+                                    "id": 40700,
                                     "mutability": "mutable",
                                     "name": "txHash",
                                     "nameLocation": "33447:6:156",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 40812,
+                                    "scope": 40703,
                                     "src": "33439:14:156",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -23960,7 +23960,7 @@ export const VmSafe = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 40808,
+                                        "id": 40699,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "33439:7:156",
@@ -23975,12 +23975,12 @@ export const VmSafe = {
                             "src": "33422:32:156"
                         },
                         "returnParameters": {
-                            "id": 40811,
+                            "id": 40702,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "33463:0:156"
                         },
-                        "scope": 40813,
+                        "scope": 40704,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -23990,16 +23990,16 @@ export const VmSafe = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 40342,
+                            "id": 40233,
                             "name": "VmSafe",
                             "nameLocations": [
                                 "21872:6:156"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 40341,
+                            "referencedDeclaration": 40232,
                             "src": "21872:6:156"
                         },
-                        "id": 40343,
+                        "id": 40234,
                         "nodeType": "InheritanceSpecifier",
                         "src": "21872:6:156"
                     }
@@ -24009,12 +24009,12 @@ export const VmSafe = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    40813,
-                    40341
+                    40704,
+                    40232
                 ],
                 "name": "Vm",
                 "nameLocation": "21866:2:156",
-                "scope": 40814,
+                "scope": 40705,
                 "usedErrors": [],
                 "usedEvents": []
             }

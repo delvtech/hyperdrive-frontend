@@ -1016,39 +1016,39 @@ export declare const IMultiToken: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiToken.sol";
-        readonly id: 11653;
+        readonly id: 11485;
         readonly exportedSymbols: {
-            readonly IMultiToken: readonly [11652];
-            readonly IMultiTokenCore: readonly [11743];
-            readonly IMultiTokenEvents: readonly [11777];
-            readonly IMultiTokenMetadata: readonly [11792];
-            readonly IMultiTokenRead: readonly [11865];
+            readonly IMultiToken: readonly [11484];
+            readonly IMultiTokenCore: readonly [11575];
+            readonly IMultiTokenEvents: readonly [11609];
+            readonly IMultiTokenMetadata: readonly [11624];
+            readonly IMultiTokenRead: readonly [11697];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:383:96";
         readonly nodes: readonly [{
-            readonly id: 11635;
+            readonly id: 11467;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:96";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11637;
+            readonly id: 11469;
             readonly nodeType: "ImportDirective";
             readonly src: "64:56:96";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenCore.sol";
             readonly file: "./IMultiTokenCore.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11653;
-            readonly sourceUnit: 11744;
+            readonly scope: 11485;
+            readonly sourceUnit: 11576;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11636;
+                    readonly id: 11468;
                     readonly name: "IMultiTokenCore";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11743;
+                    readonly referencedDeclaration: 11575;
                     readonly src: "73:15:96";
                     readonly typeDescriptions: {};
                 };
@@ -1056,22 +1056,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11639;
+            readonly id: 11471;
             readonly nodeType: "ImportDirective";
             readonly src: "121:60:96";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenEvents.sol";
             readonly file: "./IMultiTokenEvents.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11653;
-            readonly sourceUnit: 11778;
+            readonly scope: 11485;
+            readonly sourceUnit: 11610;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11638;
+                    readonly id: 11470;
                     readonly name: "IMultiTokenEvents";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11777;
+                    readonly referencedDeclaration: 11609;
                     readonly src: "130:17:96";
                     readonly typeDescriptions: {};
                 };
@@ -1079,22 +1079,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11641;
+            readonly id: 11473;
             readonly nodeType: "ImportDirective";
             readonly src: "182:64:96";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenMetadata.sol";
             readonly file: "./IMultiTokenMetadata.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11653;
-            readonly sourceUnit: 11793;
+            readonly scope: 11485;
+            readonly sourceUnit: 11625;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11640;
+                    readonly id: 11472;
                     readonly name: "IMultiTokenMetadata";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11792;
+                    readonly referencedDeclaration: 11624;
                     readonly src: "191:19:96";
                     readonly typeDescriptions: {};
                 };
@@ -1102,22 +1102,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11643;
+            readonly id: 11475;
             readonly nodeType: "ImportDirective";
             readonly src: "247:56:96";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenRead.sol";
             readonly file: "./IMultiTokenRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11653;
-            readonly sourceUnit: 11866;
+            readonly scope: 11485;
+            readonly sourceUnit: 11698;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11642;
+                    readonly id: 11474;
                     readonly name: "IMultiTokenRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11865;
+                    readonly referencedDeclaration: 11697;
                     readonly src: "256:15:96";
                     readonly typeDescriptions: {};
                 };
@@ -1125,57 +1125,57 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11652;
+            readonly id: 11484;
             readonly nodeType: "ContractDefinition";
             readonly src: "305:116:96";
             readonly nodes: readonly [];
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 11644;
+                    readonly id: 11476;
                     readonly name: "IMultiTokenEvents";
                     readonly nameLocations: readonly ["334:17:96"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11777;
+                    readonly referencedDeclaration: 11609;
                     readonly src: "334:17:96";
                 };
-                readonly id: 11645;
+                readonly id: 11477;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "334:17:96";
             }, {
                 readonly baseName: {
-                    readonly id: 11646;
+                    readonly id: 11478;
                     readonly name: "IMultiTokenRead";
                     readonly nameLocations: readonly ["357:15:96"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11865;
+                    readonly referencedDeclaration: 11697;
                     readonly src: "357:15:96";
                 };
-                readonly id: 11647;
+                readonly id: 11479;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "357:15:96";
             }, {
                 readonly baseName: {
-                    readonly id: 11648;
+                    readonly id: 11480;
                     readonly name: "IMultiTokenCore";
                     readonly nameLocations: readonly ["378:15:96"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11743;
+                    readonly referencedDeclaration: 11575;
                     readonly src: "378:15:96";
                 };
-                readonly id: 11649;
+                readonly id: 11481;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "378:15:96";
             }, {
                 readonly baseName: {
-                    readonly id: 11650;
+                    readonly id: 11482;
                     readonly name: "IMultiTokenMetadata";
                     readonly nameLocations: readonly ["399:19:96"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11792;
+                    readonly referencedDeclaration: 11624;
                     readonly src: "399:19:96";
                 };
-                readonly id: 11651;
+                readonly id: 11483;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "399:19:96";
             }];
@@ -1183,12 +1183,12 @@ export declare const IMultiToken: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11652, 11792, 11743, 11865, 11777];
+            readonly linearizedBaseContracts: readonly [11484, 11624, 11575, 11697, 11609];
             readonly name: "IMultiToken";
             readonly nameLocation: "315:11:96";
-            readonly scope: 11653;
+            readonly scope: 11485;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [11758, 11767, 11776];
+            readonly usedEvents: readonly [11590, 11599, 11608];
         }];
         readonly license: "Apache-2.0";
     };

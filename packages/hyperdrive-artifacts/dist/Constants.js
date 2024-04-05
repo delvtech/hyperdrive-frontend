@@ -10,17 +10,17 @@ export const Constants = {
     },
     "ast": {
         "absolutePath": "contracts/src/libraries/Constants.sol",
-        "id": 18272,
+        "id": 18175,
         "exportedSymbols": {
             "ETH": [
-                18271
+                18174
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:134:120",
         "nodes": [
             {
-                "id": 18267,
+                "id": 18170,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:120",
                 "nodes": [],
@@ -31,7 +31,7 @@ export const Constants = {
                 ]
             },
             {
-                "id": 18271,
+                "id": 18174,
                 "nodeType": "VariableDeclaration",
                 "src": "106:65:120",
                 "nodes": [],
@@ -39,7 +39,7 @@ export const Constants = {
                 "mutability": "constant",
                 "name": "ETH",
                 "nameLocation": "123:3:120",
-                "scope": 18272,
+                "scope": 18175,
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -47,7 +47,7 @@ export const Constants = {
                     "typeString": "address"
                 },
                 "typeName": {
-                    "id": 18269,
+                    "id": 18172,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "106:7:120",
@@ -59,7 +59,7 @@ export const Constants = {
                 },
                 "value": {
                     "hexValue": "307845656565654565656545654565654565456545656545454565656565456565656565656545456545",
-                    "id": 18270,
+                    "id": 18173,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,

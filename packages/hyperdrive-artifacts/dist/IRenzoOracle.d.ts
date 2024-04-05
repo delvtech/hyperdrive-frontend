@@ -262,38 +262,38 @@ export declare const IRenzoOracle: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRenzo.sol";
-        readonly id: 11995;
+        readonly id: 11827;
         readonly exportedSymbols: {
-            readonly IDepositQueue: readonly [11994];
-            readonly IERC20: readonly [9980];
-            readonly IRenzoOracle: readonly [11983];
-            readonly IRestakeManager: readonly [11928];
+            readonly IDepositQueue: readonly [11826];
+            readonly IERC20: readonly [9810];
+            readonly IRenzoOracle: readonly [11815];
+            readonly IRestakeManager: readonly [11760];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:2264:103";
         readonly nodes: readonly [{
-            readonly id: 11896;
+            readonly id: 11728;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:103";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11898;
+            readonly id: 11730;
             readonly nodeType: "ImportDirective";
             readonly src: "64:38:103";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20.sol";
             readonly file: "./IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11995;
-            readonly sourceUnit: 9981;
+            readonly scope: 11827;
+            readonly sourceUnit: 9811;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11897;
+                    readonly id: 11729;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 9980;
+                    readonly referencedDeclaration: 9810;
                     readonly src: "73:6:103";
                     readonly typeDescriptions: {};
                 };
@@ -301,16 +301,16 @@ export declare const IRenzoOracle: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11928;
+            readonly id: 11760;
             readonly nodeType: "ContractDefinition";
             readonly src: "104:1246:103";
             readonly nodes: readonly [{
-                readonly id: 11904;
+                readonly id: 11736;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "289:49:103";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11899;
+                    readonly id: 11731;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "136:148:103";
                     readonly text: " @notice Returns the ezETH token contract address\n @dev Getter for public state variable of the ezETH token contract address";
@@ -322,22 +322,22 @@ export declare const IRenzoOracle: {
                 readonly name: "ezETH";
                 readonly nameLocation: "298:5:103";
                 readonly parameters: {
-                    readonly id: 11900;
+                    readonly id: 11732;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "303:2:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11903;
+                    readonly id: 11735;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11902;
+                        readonly id: 11734;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11904;
+                        readonly scope: 11736;
                         readonly src: "329:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -346,7 +346,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11901;
+                            readonly id: 11733;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "329:7:103";
@@ -360,17 +360,17 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "328:9:103";
                 };
-                readonly scope: 11928;
+                readonly scope: 11760;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11910;
+                readonly id: 11742;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "499:55:103";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11905;
+                    readonly id: 11737;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "344:150:103";
                     readonly text: " @notice Returns the renzo oracle contract address\n @dev Getter for public state variable of the renzo oracle contract address";
@@ -382,22 +382,22 @@ export declare const IRenzoOracle: {
                 readonly name: "renzoOracle";
                 readonly nameLocation: "508:11:103";
                 readonly parameters: {
-                    readonly id: 11906;
+                    readonly id: 11738;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "519:2:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11909;
+                    readonly id: 11741;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11908;
+                        readonly id: 11740;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11910;
+                        readonly scope: 11742;
                         readonly src: "545:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -406,7 +406,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11907;
+                            readonly id: 11739;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "545:7:103";
@@ -420,17 +420,17 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "544:9:103";
                 };
-                readonly scope: 11928;
+                readonly scope: 11760;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11914;
+                readonly id: 11746;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "756:39:103";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11911;
+                    readonly id: 11743;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "560:191:103";
                     readonly text: " @notice  Allows a user to deposit ETH into the protocol and get back ezETH\n @dev     Convenience function to deposit without a referral ID and backwards compatibility";
@@ -442,28 +442,28 @@ export declare const IRenzoOracle: {
                 readonly name: "depositETH";
                 readonly nameLocation: "765:10:103";
                 readonly parameters: {
-                    readonly id: 11912;
+                    readonly id: 11744;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "775:2:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11913;
+                    readonly id: 11745;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "794:0:103";
                 };
-                readonly scope: 11928;
+                readonly scope: 11760;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11927;
+                readonly id: 11759;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1229:119:103";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11915;
+                    readonly id: 11747;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "801:423:103";
                     readonly text: "@dev This function calculates the TVLs for each operator delegator by individual token, total for each OD, and total for the protocol.\n @return operatorDelegatorTokenTVLs Each OD's TVL indexed by operatorDelegators array by collateralTokens array\n @return operatorDelegatorTVLs Each OD's Total TVL in order of operatorDelegators array\n @return totalTVL The total TVL across all operator delegators.";
@@ -475,22 +475,22 @@ export declare const IRenzoOracle: {
                 readonly name: "calculateTVLs";
                 readonly nameLocation: "1238:13:103";
                 readonly parameters: {
-                    readonly id: 11916;
+                    readonly id: 11748;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1251:2:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11926;
+                    readonly id: 11758;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11920;
+                        readonly id: 11752;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11927;
+                        readonly scope: 11759;
                         readonly src: "1301:18:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -501,7 +501,7 @@ export declare const IRenzoOracle: {
                         readonly typeName: {
                             readonly baseType: {
                                 readonly baseType: {
-                                    readonly id: 11917;
+                                    readonly id: 11749;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "1301:7:103";
@@ -510,7 +510,7 @@ export declare const IRenzoOracle: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 11918;
+                                readonly id: 11750;
                                 readonly nodeType: "ArrayTypeName";
                                 readonly src: "1301:9:103";
                                 readonly typeDescriptions: {
@@ -518,7 +518,7 @@ export declare const IRenzoOracle: {
                                     readonly typeString: "uint256[]";
                                 };
                             };
-                            readonly id: 11919;
+                            readonly id: 11751;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1301:11:103";
                             readonly typeDescriptions: {
@@ -529,12 +529,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11923;
+                        readonly id: 11755;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11927;
+                        readonly scope: 11759;
                         readonly src: "1321:16:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -544,7 +544,7 @@ export declare const IRenzoOracle: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 11921;
+                                readonly id: 11753;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1321:7:103";
@@ -553,7 +553,7 @@ export declare const IRenzoOracle: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 11922;
+                            readonly id: 11754;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1321:9:103";
                             readonly typeDescriptions: {
@@ -564,12 +564,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11925;
+                        readonly id: 11757;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11927;
+                        readonly scope: 11759;
                         readonly src: "1339:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -578,7 +578,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11924;
+                            readonly id: 11756;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1339:7:103";
@@ -591,7 +591,7 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "1300:47:103";
                 };
-                readonly scope: 11928;
+                readonly scope: 11760;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -602,18 +602,18 @@ export declare const IRenzoOracle: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11928];
+            readonly linearizedBaseContracts: readonly [11760];
             readonly name: "IRestakeManager";
             readonly nameLocation: "114:15:103";
-            readonly scope: 11995;
+            readonly scope: 11827;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 11983;
+            readonly id: 11815;
             readonly nodeType: "ContractDefinition";
             readonly src: "1352:784:103";
             readonly nodes: readonly [{
-                readonly id: 11938;
+                readonly id: 11770;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1381:113:103";
                 readonly nodes: readonly [];
@@ -624,50 +624,50 @@ export declare const IRenzoOracle: {
                 readonly name: "lookupTokenValue";
                 readonly nameLocation: "1390:16:103";
                 readonly parameters: {
-                    readonly id: 11934;
+                    readonly id: 11766;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11931;
+                        readonly id: 11763;
                         readonly mutability: "mutable";
                         readonly name: "_token";
                         readonly nameLocation: "1423:6:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11938;
+                        readonly scope: 11770;
                         readonly src: "1416:13:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$9980";
+                            readonly typeIdentifier: "t_contract$_IERC20_$9810";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
-                            readonly id: 11930;
+                            readonly id: 11762;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11929;
+                                readonly id: 11761;
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["1416:6:103"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 9980;
+                                readonly referencedDeclaration: 9810;
                                 readonly src: "1416:6:103";
                             };
-                            readonly referencedDeclaration: 9980;
+                            readonly referencedDeclaration: 9810;
                             readonly src: "1416:6:103";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$9980";
+                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
                                 readonly typeString: "contract IERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11933;
+                        readonly id: 11765;
                         readonly mutability: "mutable";
                         readonly name: "_balance";
                         readonly nameLocation: "1447:8:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11938;
+                        readonly scope: 11770;
                         readonly src: "1439:16:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -676,7 +676,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11932;
+                            readonly id: 11764;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1439:7:103";
@@ -690,16 +690,16 @@ export declare const IRenzoOracle: {
                     readonly src: "1406:55:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11937;
+                    readonly id: 11769;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11936;
+                        readonly id: 11768;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11938;
+                        readonly scope: 11770;
                         readonly src: "1485:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -708,7 +708,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11935;
+                            readonly id: 11767;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1485:7:103";
@@ -721,12 +721,12 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "1484:9:103";
                 };
-                readonly scope: 11983;
+                readonly scope: 11815;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11948;
+                readonly id: 11780;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1500:121:103";
                 readonly nodes: readonly [];
@@ -737,50 +737,50 @@ export declare const IRenzoOracle: {
                 readonly name: "lookupTokenAmountFromValue";
                 readonly nameLocation: "1509:26:103";
                 readonly parameters: {
-                    readonly id: 11944;
+                    readonly id: 11776;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11941;
+                        readonly id: 11773;
                         readonly mutability: "mutable";
                         readonly name: "_token";
                         readonly nameLocation: "1552:6:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11948;
+                        readonly scope: 11780;
                         readonly src: "1545:13:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC20_$9980";
+                            readonly typeIdentifier: "t_contract$_IERC20_$9810";
                             readonly typeString: "contract IERC20";
                         };
                         readonly typeName: {
-                            readonly id: 11940;
+                            readonly id: 11772;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 11939;
+                                readonly id: 11771;
                                 readonly name: "IERC20";
                                 readonly nameLocations: readonly ["1545:6:103"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 9980;
+                                readonly referencedDeclaration: 9810;
                                 readonly src: "1545:6:103";
                             };
-                            readonly referencedDeclaration: 9980;
+                            readonly referencedDeclaration: 9810;
                             readonly src: "1545:6:103";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC20_$9980";
+                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
                                 readonly typeString: "contract IERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11943;
+                        readonly id: 11775;
                         readonly mutability: "mutable";
                         readonly name: "_value";
                         readonly nameLocation: "1576:6:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11948;
+                        readonly scope: 11780;
                         readonly src: "1568:14:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -789,7 +789,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11942;
+                            readonly id: 11774;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1568:7:103";
@@ -803,16 +803,16 @@ export declare const IRenzoOracle: {
                     readonly src: "1535:53:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11947;
+                    readonly id: 11779;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11946;
+                        readonly id: 11778;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11948;
+                        readonly scope: 11780;
                         readonly src: "1612:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -821,7 +821,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11945;
+                            readonly id: 11777;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1612:7:103";
@@ -834,12 +834,12 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "1611:9:103";
                 };
-                readonly scope: 11983;
+                readonly scope: 11815;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11960;
+                readonly id: 11792;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1627:134:103";
                 readonly nodes: readonly [];
@@ -850,59 +850,59 @@ export declare const IRenzoOracle: {
                 readonly name: "lookupTokenValues";
                 readonly nameLocation: "1636:17:103";
                 readonly parameters: {
-                    readonly id: 11956;
+                    readonly id: 11788;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11952;
+                        readonly id: 11784;
                         readonly mutability: "mutable";
                         readonly name: "_tokens";
                         readonly nameLocation: "1679:7:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11960;
+                        readonly scope: 11792;
                         readonly src: "1663:23:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_contract$_IERC20_$9980_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_contract$_IERC20_$9810_$dyn_memory_ptr";
                             readonly typeString: "contract IERC20[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 11950;
+                                readonly id: 11782;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 11949;
+                                    readonly id: 11781;
                                     readonly name: "IERC20";
                                     readonly nameLocations: readonly ["1663:6:103"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 9980;
+                                    readonly referencedDeclaration: 9810;
                                     readonly src: "1663:6:103";
                                 };
-                                readonly referencedDeclaration: 9980;
+                                readonly referencedDeclaration: 9810;
                                 readonly src: "1663:6:103";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC20_$9980";
+                                    readonly typeIdentifier: "t_contract$_IERC20_$9810";
                                     readonly typeString: "contract IERC20";
                                 };
                             };
-                            readonly id: 11951;
+                            readonly id: 11783;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1663:8:103";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_contract$_IERC20_$9980_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_contract$_IERC20_$9810_$dyn_storage_ptr";
                                 readonly typeString: "contract IERC20[]";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11955;
+                        readonly id: 11787;
                         readonly mutability: "mutable";
                         readonly name: "_balances";
                         readonly nameLocation: "1713:9:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11960;
+                        readonly scope: 11792;
                         readonly src: "1696:26:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -912,7 +912,7 @@ export declare const IRenzoOracle: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 11953;
+                                readonly id: 11785;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1696:7:103";
@@ -921,7 +921,7 @@ export declare const IRenzoOracle: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 11954;
+                            readonly id: 11786;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1696:9:103";
                             readonly typeDescriptions: {
@@ -934,16 +934,16 @@ export declare const IRenzoOracle: {
                     readonly src: "1653:75:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11959;
+                    readonly id: 11791;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11958;
+                        readonly id: 11790;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11960;
+                        readonly scope: 11792;
                         readonly src: "1752:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -952,7 +952,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11957;
+                            readonly id: 11789;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1752:7:103";
@@ -965,12 +965,12 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "1751:9:103";
                 };
-                readonly scope: 11983;
+                readonly scope: 11815;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11971;
+                readonly id: 11803;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1767:178:103";
                 readonly nodes: readonly [];
@@ -981,16 +981,16 @@ export declare const IRenzoOracle: {
                 readonly name: "calculateMintAmount";
                 readonly nameLocation: "1776:19:103";
                 readonly parameters: {
-                    readonly id: 11967;
+                    readonly id: 11799;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11962;
+                        readonly id: 11794;
                         readonly mutability: "mutable";
                         readonly name: "_currentValueInProtocol";
                         readonly nameLocation: "1813:23:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11971;
+                        readonly scope: 11803;
                         readonly src: "1805:31:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -999,7 +999,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11961;
+                            readonly id: 11793;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1805:7:103";
@@ -1011,12 +1011,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11964;
+                        readonly id: 11796;
                         readonly mutability: "mutable";
                         readonly name: "_newValueAdded";
                         readonly nameLocation: "1854:14:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11971;
+                        readonly scope: 11803;
                         readonly src: "1846:22:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1025,7 +1025,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11963;
+                            readonly id: 11795;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1846:7:103";
@@ -1037,12 +1037,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11966;
+                        readonly id: 11798;
                         readonly mutability: "mutable";
                         readonly name: "_existingEzETHSupply";
                         readonly nameLocation: "1886:20:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11971;
+                        readonly scope: 11803;
                         readonly src: "1878:28:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1051,7 +1051,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11965;
+                            readonly id: 11797;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1878:7:103";
@@ -1065,16 +1065,16 @@ export declare const IRenzoOracle: {
                     readonly src: "1795:117:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11970;
+                    readonly id: 11802;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11969;
+                        readonly id: 11801;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11971;
+                        readonly scope: 11803;
                         readonly src: "1936:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1083,7 +1083,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11968;
+                            readonly id: 11800;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1936:7:103";
@@ -1096,12 +1096,12 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "1935:9:103";
                 };
-                readonly scope: 11983;
+                readonly scope: 11815;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11982;
+                readonly id: 11814;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1951:183:103";
                 readonly nodes: readonly [];
@@ -1112,16 +1112,16 @@ export declare const IRenzoOracle: {
                 readonly name: "calculateRedeemAmount";
                 readonly nameLocation: "1960:21:103";
                 readonly parameters: {
-                    readonly id: 11978;
+                    readonly id: 11810;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11973;
+                        readonly id: 11805;
                         readonly mutability: "mutable";
                         readonly name: "_ezETHBeingBurned";
                         readonly nameLocation: "1999:17:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11982;
+                        readonly scope: 11814;
                         readonly src: "1991:25:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1130,7 +1130,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11972;
+                            readonly id: 11804;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1991:7:103";
@@ -1142,12 +1142,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11975;
+                        readonly id: 11807;
                         readonly mutability: "mutable";
                         readonly name: "_existingEzETHSupply";
                         readonly nameLocation: "2034:20:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11982;
+                        readonly scope: 11814;
                         readonly src: "2026:28:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1156,7 +1156,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11974;
+                            readonly id: 11806;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2026:7:103";
@@ -1168,12 +1168,12 @@ export declare const IRenzoOracle: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11977;
+                        readonly id: 11809;
                         readonly mutability: "mutable";
                         readonly name: "_currentValueInProtocol";
                         readonly nameLocation: "2072:23:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11982;
+                        readonly scope: 11814;
                         readonly src: "2064:31:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1182,7 +1182,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11976;
+                            readonly id: 11808;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2064:7:103";
@@ -1196,16 +1196,16 @@ export declare const IRenzoOracle: {
                     readonly src: "1981:120:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11981;
+                    readonly id: 11813;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11980;
+                        readonly id: 11812;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11982;
+                        readonly scope: 11814;
                         readonly src: "2125:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1214,7 +1214,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11979;
+                            readonly id: 11811;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2125:7:103";
@@ -1227,7 +1227,7 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "2124:9:103";
                 };
-                readonly scope: 11983;
+                readonly scope: 11815;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1238,18 +1238,18 @@ export declare const IRenzoOracle: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11983];
+            readonly linearizedBaseContracts: readonly [11815];
             readonly name: "IRenzoOracle";
             readonly nameLocation: "1362:12:103";
-            readonly scope: 11995;
+            readonly scope: 11827;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 11994;
+            readonly id: 11826;
             readonly nodeType: "ContractDefinition";
             readonly src: "2138:164:103";
             readonly nodes: readonly [{
-                readonly id: 11986;
+                readonly id: 11818;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2168:51:103";
                 readonly nodes: readonly [];
@@ -1260,23 +1260,23 @@ export declare const IRenzoOracle: {
                 readonly name: "depositETHFromProtocol";
                 readonly nameLocation: "2177:22:103";
                 readonly parameters: {
-                    readonly id: 11984;
+                    readonly id: 11816;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2199:2:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11985;
+                    readonly id: 11817;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2218:0:103";
                 };
-                readonly scope: 11994;
+                readonly scope: 11826;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11993;
+                readonly id: 11825;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2225:75:103";
                 readonly nodes: readonly [];
@@ -1287,16 +1287,16 @@ export declare const IRenzoOracle: {
                 readonly name: "totalEarned";
                 readonly nameLocation: "2234:11:103";
                 readonly parameters: {
-                    readonly id: 11989;
+                    readonly id: 11821;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11988;
+                        readonly id: 11820;
                         readonly mutability: "mutable";
                         readonly name: "tokenAddress";
                         readonly nameLocation: "2254:12:103";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11993;
+                        readonly scope: 11825;
                         readonly src: "2246:20:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1305,7 +1305,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11987;
+                            readonly id: 11819;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2246:7:103";
@@ -1320,16 +1320,16 @@ export declare const IRenzoOracle: {
                     readonly src: "2245:22:103";
                 };
                 readonly returnParameters: {
-                    readonly id: 11992;
+                    readonly id: 11824;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11991;
+                        readonly id: 11823;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11993;
+                        readonly scope: 11825;
                         readonly src: "2291:7:103";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1338,7 +1338,7 @@ export declare const IRenzoOracle: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11990;
+                            readonly id: 11822;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2291:7:103";
@@ -1351,7 +1351,7 @@ export declare const IRenzoOracle: {
                     }];
                     readonly src: "2290:9:103";
                 };
-                readonly scope: 11994;
+                readonly scope: 11826;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1362,10 +1362,10 @@ export declare const IRenzoOracle: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11994];
+            readonly linearizedBaseContracts: readonly [11826];
             readonly name: "IDepositQueue";
             readonly nameLocation: "2148:13:103";
-            readonly scope: 11995;
+            readonly scope: 11827;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

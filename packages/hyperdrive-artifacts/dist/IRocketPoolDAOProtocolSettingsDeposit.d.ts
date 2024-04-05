@@ -203,24 +203,24 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRocketPoolDAOProtocolSettingsDeposit.sol";
-        readonly id: 12159;
+        readonly id: 11991;
         readonly exportedSymbols: {
-            readonly IRocketPoolDAOProtocolSettingsDeposit: readonly [12158];
+            readonly IRocketPoolDAOProtocolSettingsDeposit: readonly [11990];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:606:107";
         readonly nodes: readonly [{
-            readonly id: 12122;
+            readonly id: 11954;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:107";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 12158;
+            readonly id: 11990;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:580:107";
             readonly nodes: readonly [{
-                readonly id: 12127;
+                readonly id: 11959;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "118:58:107";
                 readonly nodes: readonly [];
@@ -231,22 +231,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getDepositEnabled";
                 readonly nameLocation: "127:17:107";
                 readonly parameters: {
-                    readonly id: 12123;
+                    readonly id: 11955;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "144:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12126;
+                    readonly id: 11958;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12125;
+                        readonly id: 11957;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12127;
+                        readonly scope: 11959;
                         readonly src: "170:4:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -255,7 +255,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12124;
+                            readonly id: 11956;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "170:4:107";
@@ -268,12 +268,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "169:6:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12132;
+                readonly id: 11964;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "182:65:107";
                 readonly nodes: readonly [];
@@ -284,22 +284,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getAssignDepositsEnabled";
                 readonly nameLocation: "191:24:107";
                 readonly parameters: {
-                    readonly id: 12128;
+                    readonly id: 11960;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "215:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12131;
+                    readonly id: 11963;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12130;
+                        readonly id: 11962;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12132;
+                        readonly scope: 11964;
                         readonly src: "241:4:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -308,7 +308,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 12129;
+                            readonly id: 11961;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "241:4:107";
@@ -321,12 +321,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "240:6:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12137;
+                readonly id: 11969;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "253:61:107";
                 readonly nodes: readonly [];
@@ -337,22 +337,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getMinimumDeposit";
                 readonly nameLocation: "262:17:107";
                 readonly parameters: {
-                    readonly id: 12133;
+                    readonly id: 11965;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "279:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12136;
+                    readonly id: 11968;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12135;
+                        readonly id: 11967;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12137;
+                        readonly scope: 11969;
                         readonly src: "305:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -361,7 +361,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12134;
+                            readonly id: 11966;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "305:7:107";
@@ -374,12 +374,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "304:9:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12142;
+                readonly id: 11974;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "320:69:107";
                 readonly nodes: readonly [];
@@ -390,22 +390,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getMaximumDepositPoolSize";
                 readonly nameLocation: "329:25:107";
                 readonly parameters: {
-                    readonly id: 12138;
+                    readonly id: 11970;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "354:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12141;
+                    readonly id: 11973;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12140;
+                        readonly id: 11972;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12142;
+                        readonly scope: 11974;
                         readonly src: "380:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -414,7 +414,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12139;
+                            readonly id: 11971;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "380:7:107";
@@ -427,12 +427,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "379:9:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12147;
+                readonly id: 11979;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "395:72:107";
                 readonly nodes: readonly [];
@@ -443,22 +443,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getMaximumDepositAssignments";
                 readonly nameLocation: "404:28:107";
                 readonly parameters: {
-                    readonly id: 12143;
+                    readonly id: 11975;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "432:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12146;
+                    readonly id: 11978;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12145;
+                        readonly id: 11977;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12147;
+                        readonly scope: 11979;
                         readonly src: "458:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -467,7 +467,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12144;
+                            readonly id: 11976;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "458:7:107";
@@ -480,12 +480,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "457:9:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12152;
+                readonly id: 11984;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "473:106:107";
                 readonly nodes: readonly [];
@@ -496,22 +496,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getMaximumDepositSocialisedAssignments";
                 readonly nameLocation: "482:38:107";
                 readonly parameters: {
-                    readonly id: 12148;
+                    readonly id: 11980;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "520:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12151;
+                    readonly id: 11983;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12150;
+                        readonly id: 11982;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12152;
+                        readonly scope: 11984;
                         readonly src: "570:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -520,7 +520,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12149;
+                            readonly id: 11981;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "570:7:107";
@@ -533,12 +533,12 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "569:9:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 12157;
+                readonly id: 11989;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "585:57:107";
                 readonly nodes: readonly [];
@@ -549,22 +549,22 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                 readonly name: "getDepositFee";
                 readonly nameLocation: "594:13:107";
                 readonly parameters: {
-                    readonly id: 12153;
+                    readonly id: 11985;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "607:2:107";
                 };
                 readonly returnParameters: {
-                    readonly id: 12156;
+                    readonly id: 11988;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 12155;
+                        readonly id: 11987;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 12157;
+                        readonly scope: 11989;
                         readonly src: "633:7:107";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -573,7 +573,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 12154;
+                            readonly id: 11986;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "633:7:107";
@@ -586,7 +586,7 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
                     }];
                     readonly src: "632:9:107";
                 };
-                readonly scope: 12158;
+                readonly scope: 11990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -597,10 +597,10 @@ export declare const IRocketPoolDAOProtocolSettingsDeposit: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [12158];
+            readonly linearizedBaseContracts: readonly [11990];
             readonly name: "IRocketPoolDAOProtocolSettingsDeposit";
             readonly nameLocation: "74:37:107";
-            readonly scope: 12159;
+            readonly scope: 11991;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
