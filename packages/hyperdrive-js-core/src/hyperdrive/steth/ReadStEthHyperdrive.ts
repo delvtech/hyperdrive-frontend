@@ -1,13 +1,9 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import {
-  StEthHyperdriveAbi,
-  stEthHyperdriveAbi,
-} from "src/hyperdrive/steth/abi";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
 
@@ -40,8 +36,6 @@ export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
  * @internal
  */
 export interface ReadStEthHyperdriveMixin {
-  stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
-
   /**
    * `true` if arguments and return values should be treated as shares, `false`
    * if they should be treated as stETH public balances.
@@ -73,7 +67,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadStEthHyperdriveMixin> & T {
   return class extends Base implements ReadStEthHyperdriveMixin {
-    stEthHyperdriveContract: CachedReadContract<StEthHyperdriveAbi>;
     private _useSharesAccounting: boolean;
 
     constructor(...[options]: any[]) {
@@ -87,12 +80,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         useSharesAccounting = false,
       } = options as ReadStEthHyperdriveOptions;
       super({ address, contractFactory, network, cache, name, namespace });
-      this.stEthHyperdriveContract = contractFactory({
-        abi: stEthHyperdriveAbi,
-        address,
-        cache,
-        namespace,
-      });
       this._useSharesAccounting = useSharesAccounting;
     }
 

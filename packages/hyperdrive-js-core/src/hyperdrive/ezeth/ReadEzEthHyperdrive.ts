@@ -64,10 +64,9 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getSharesToken(): Promise<ReadErc20> {
-      const address =
-        await this.ezEthHyperdriveContract.read("vaultSharesToken");
+      const { vaultSharesToken } = await this.getPoolConfig();
       return new ReadErc20({
-        address,
+        address: vaultSharesToken,
         contractFactory: this.contractFactory,
         namespace: this.contract.namespace,
         network: this.network,

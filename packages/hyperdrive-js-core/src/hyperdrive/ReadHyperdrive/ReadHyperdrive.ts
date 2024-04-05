@@ -429,6 +429,10 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
+    if (checkpointEvents.length) {
+      return { lpApy: 0 };
+    }
+
     // The starting lp share price comes from the first checkpoint in our events
     const {
       args: { lpSharePrice: startingCheckpointLpSharePrice },

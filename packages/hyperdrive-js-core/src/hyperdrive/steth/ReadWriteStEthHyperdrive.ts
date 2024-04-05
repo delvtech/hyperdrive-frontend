@@ -4,11 +4,11 @@ import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
+import { HyperdriveAbi } from "src/hyperdrive/abi";
 import {
   ReadStEthHyperdriveOptions,
   readStEthHyperdriveMixin,
 } from "src/hyperdrive/steth/ReadStEthHyperdrive";
-import { StEthHyperdriveAbi } from "src/hyperdrive/steth/abi";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
@@ -18,7 +18,7 @@ export interface ReadWriteStEthHyperdriveOptions
 export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadWriteHyperdrive,
 ) {
-  declare stEthHyperdriveContract: CachedReadWriteContract<StEthHyperdriveAbi>;
+  declare stEthHyperdriveContract: CachedReadWriteContract<HyperdriveAbi>;
 
   async getSharesToken(): Promise<ReadWriteStEth> {
     const { vaultSharesToken } = await this.getPoolConfig();

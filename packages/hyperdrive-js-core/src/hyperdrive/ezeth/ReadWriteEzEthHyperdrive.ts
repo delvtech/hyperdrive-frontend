@@ -14,13 +14,9 @@ export class ReadWriteEzEthHyperdrive extends readEzEthHyperdriveMixin(
   declare ezEthHyperdriveContract: CachedReadWriteContract<EzEthHyperdriveAbi>;
 
   async getSharesToken(options?: ContractReadOptions): Promise<ReadWriteErc20> {
-    const address = await this.ezEthHyperdriveContract.read(
-      "vaultSharesToken",
-      {},
-      options,
-    );
+    const { vaultSharesToken } = await this.getPoolConfig(options);
     return new ReadWriteErc20({
-      address,
+      address: vaultSharesToken,
       contractFactory: this.contractFactory,
       namespace: this.contract.namespace,
       network: this.network,
