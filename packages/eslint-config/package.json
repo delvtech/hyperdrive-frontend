@@ -4,7 +4,7 @@
   "private": true,
   "main": ".eslintrc",
   "type": "module",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",

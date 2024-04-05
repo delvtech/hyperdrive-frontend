@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "main": ".prettierrc.js",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "type": "module",
   "dependencies": {
     "prettier": "3.2.5"

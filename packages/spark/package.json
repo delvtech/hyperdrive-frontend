@@ -2,7 +2,7 @@
   "name": "@hyperdrive/spark",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
