@@ -1,6 +1,7 @@
 {
   "name": "@hyperdrive/eslint-config",
   "version": "0.0.0",
+  "private": true,
   "main": ".eslintrc",
   "type": "module",
   "license": "MIT",
