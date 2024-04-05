@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-artifacts",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "type": "module",
   "files": [
@@ -21,7 +21,6 @@
     "build:src": "sh scripts/build_src.sh v0.12.0",
     "build:dist": "npm run build:src && tsc --build --force",
     "build:new": "rm -rf src && npm run build:dist"
-
   },
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",
