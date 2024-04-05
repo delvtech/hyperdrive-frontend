@@ -19,7 +19,6 @@ interface UsePreviewAddLiquidityOptions {
 interface UsePreviewAddLiquidityResult {
   status: "error" | "idle" | "loading" | "success";
   lpSharesOut: bigint | undefined;
-  slippagePaid: bigint | undefined;
 }
 
 export function usePreviewAddLiquidity({
@@ -87,6 +86,5 @@ export function usePreviewAddLiquidity({
   return {
     status,
     lpSharesOut: data?.lpSharesOut,
-    slippagePaid: data?.slippagePaid,
   };
 }

@@ -76,7 +76,7 @@ export function OpenLpSharesCard({
           <>
             <span className="daisy-card-title font-bold">Your Liquidity</span>
             <LabelValue
-              label="Pool share"
+              label="Pool Share"
               value={
                 <p
                   className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current before:border"
@@ -91,20 +91,23 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label="Value deposited"
+              label="LP Shares"
               value={
                 <p>
-                  {formatBalance({
-                    balance: baseAmountPaid,
-                    decimals: baseToken.decimals,
-                    places: 4,
-                  })}{" "}
-                  {baseToken.symbol}
+                  {lpShares !== undefined ? (
+                    `${formatBalance({
+                      balance: lpShares || 0n,
+                      decimals: hyperdrive.decimals,
+                      places: 4,
+                    })} ${baseToken.symbol}-LP`
+                  ) : (
+                    <Skeleton />
+                  )}
                 </p>
               }
             />
             <LabelValue
-              label="Current value"
+              label="Current Value"
               value={
                 <p>
                   {!!poolInfo && !!lpShares ? (
@@ -146,7 +149,7 @@ export function OpenLpSharesCard({
                     className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content before:border"
                     data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts."
                   >
-                    Utilization ratio
+                    Utilization Ratio
                   </p>
                   <p>
                     {!!utilizationRatio

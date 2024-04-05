@@ -9,6 +9,7 @@ import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/markets/YourBalanceWell/YourBalanceWell";
+import { useAccount } from "wagmi";
 
 interface PositionsTableProps {
   hyperdrive: HyperdriveConfig;
@@ -17,6 +18,7 @@ export function MarketDetailsBody({
   hyperdrive,
 }: PositionsTableProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
+  const { address: account } = useAccount();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
     <div className="flex flex-col gap-12 xl:w-[1200px]">
@@ -25,7 +27,7 @@ export function MarketDetailsBody({
           <MarketBreadcrumbs />
           <MarketHeader hyperdrive={hyperdrive} />
         </div>
-        {isTailwindSmallScreen ? undefined : (
+        {isTailwindSmallScreen || !account ? undefined : (
           <YourBalanceWell hyperdrive={hyperdrive} />
         )}
       </div>
