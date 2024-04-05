@@ -21,7 +21,6 @@ Packages
 - [@delvtech/hyperdrive-viem](packages/hyperdrive-viem/) - Viem bindings for `@delvtech/hyperdrive-js-core`
 - [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts
 - [@hyperdrive/appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
-- [@hyperdrive/cli](packages/hyperdrive-cli/) - Use Hyperdrive from the command line. (Experimental)
 
 ### Installation
 
