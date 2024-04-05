@@ -9,13 +9,9 @@ export class ReadWriteMockErc4626Hyperdrive extends readMockErc4626HyperdriveMix
   async getSharesToken(
     options?: ContractReadOptions,
   ): Promise<ReadWriteMockErc4626> {
-    const address = await this.erc4626HyperdriveContract.read(
-      "vault",
-      {},
-      options,
-    );
+    const { vaultSharesToken } = await this.getPoolConfig(options);
     return new ReadWriteMockErc4626({
-      address,
+      address: vaultSharesToken,
       contractFactory: this.contractFactory,
       namespace: this.contract.namespace,
       network: this.network,

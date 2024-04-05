@@ -54,14 +54,10 @@ export function readErc4626HyperdriveMixin<
     }
 
     async getSharesToken(options?: ContractReadOptions): Promise<ReadErc4626> {
-      const address = await this.erc4626HyperdriveContract.read(
-        "vault",
-        {},
-        options,
-      );
+      const { vaultSharesToken } = await this.getPoolConfig(options);
 
       return new ReadErc4626({
-        address,
+        address: vaultSharesToken,
         contractFactory: this.contractFactory,
         namespace: this.contract.namespace,
         network: this.network,
