@@ -3,7 +3,7 @@
   "description": "Trading interface for the hyperdrive protocol.",
   "version": "0.0.1",
   "private": true,
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "author": {
     "name": "Element Labs",
     "email": "contact@element.fi",
