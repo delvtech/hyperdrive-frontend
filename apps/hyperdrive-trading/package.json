@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-trading",
   "description": "Trading interface for the hyperdrive protocol.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "license": "AGPL-3.0",
   "author": {
@@ -28,8 +28,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
-    "@delvtech/hyperdrive-artifacts": "^0.0.1",
-    "@delvtech/hyperdrive-viem": "^0.0.1",
+    "@delvtech/hyperdrive-artifacts": "^0.0.2",
+    "@delvtech/hyperdrive-viem": "^0.0.2",
     "@rainbow-me/rainbowkit": "^2.0.0",
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-router": "^1.9.0",
