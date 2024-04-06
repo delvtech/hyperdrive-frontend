@@ -4,19 +4,22 @@ import { Address, parseAbi } from "abitype";
 import {} from "dnum";
 import { RegistryAddresses } from "src/addresses/RegistryAddresses";
 import { PublicClient, getContract } from "viem";
+
 /// @notice Gets the number of instances deployed by this factory.
 /// @return The number of instances deployed by this factory.
-const abi = [
+const minimalFactoryAbi = [
   "function getNumberOfInstances() external view returns (uint256)",
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
 ] as const;
 
-const parsedAbi = parseAbi(abi);
+const parsedAbi = parseAbi(minimalFactoryAbi);
+
 export async function fetchRegistryAddresses(
   registryAddress: Address,
   publicClient: PublicClient,
 ): Promise<RegistryAddresses> {
   const factory = getContract({
+    // TODO: Replace this with the deployed HyperdriveFactory address
     address: "0x036b75a3e29f174544e12941853e02cc422ef8d3",
     abi: parsedAbi,
     client: publicClient,
@@ -32,27 +35,26 @@ export async function fetchRegistryAddresses(
     stethHyperdrive: [] as Address[],
     erc4626Hyperdrive: [] as Address[],
   };
-  Array.from({
-    length: Number(numInstances),
-  }).map(async (_, i) => {
-    const instance = await factory.read.getInstanceAtIndex([BigInt(i)]);
-    const exists = await registryContract.read.getHyperdriveInfo([instance]);
+  for (let i = 0; i < numInstances; i++) {
+    const hyperdriveInstance = await factory.read.getInstanceAtIndex([
+      BigInt(i),
+    ]);
+    const hyperdriveInstanceExists =
+      await registryContract.read.getHyperdriveInfo([hyperdriveInstance]);
 
-    if (exists) {
+    if (hyperdriveInstanceExists.toString() === "1") {
       const hyperdrive = new ReadHyperdrive({
-        address: instance,
-        publicClient: publicClient,
+        address: hyperdriveInstance,
+        publicClient,
       });
       const baseToken = await hyperdrive.getBaseToken();
-      const symbol = await baseToken.getSymbol();
-      if (symbol === "ETH") {
-        hyperdrives.stethHyperdrive.push(instance);
+      const baseTokenSymbol = await baseToken.getSymbol();
+      if (baseTokenSymbol === "ETH") {
+        hyperdrives.stethHyperdrive.push(hyperdriveInstance);
       } else {
-        hyperdrives.erc4626Hyperdrive.push(instance);
+        hyperdrives.erc4626Hyperdrive.push(hyperdriveInstance);
       }
-      console.log(hyperdrives, "hyperdrives");
     }
-  });
-
+  }
   return hyperdrives;
 }

@@ -1,9 +1,8 @@
 import "dotenv/config";
 
-import { RegistryAddresses } from "src/addresses/RegistryAddresses";
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { fetchJson } from "src/base/fetchJson";
+import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
@@ -16,7 +15,11 @@ const publicClient = createPublicClient({
   transport: http(sepoliaNodeRpcUrl),
 });
 
-fetchJson<RegistryAddresses>(sepoliaAddressesUrl).then(async (addresses) => {
+fetchRegistryAddresses(
+  // TODO: Replace this with the deployed HyperdriveRegistry address
+  "0x68bf6b6131e9c784eab5747ba08cc903a679b6de",
+  publicClient,
+).then(async (addresses) => {
   const appConfig = await getAppConfigFromRegistryAddresses({
     addresses,
     chainId: sepoliaChainId,
@@ -26,6 +29,6 @@ fetchJson<RegistryAddresses>(sepoliaAddressesUrl).then(async (addresses) => {
   writeAppConfigToFile({
     filename: `./src/generated/${sepoliaChainId}.appconfig.ts`,
     appConfig,
-    appConfigName: "sepoliaAppConfig",
+    appConfigName: "localChainAppConfig",
   });
 });
