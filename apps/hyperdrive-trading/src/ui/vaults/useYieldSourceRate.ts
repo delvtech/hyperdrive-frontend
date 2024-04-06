@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
+import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -16,7 +16,7 @@ export function useYieldSourceRate({
   vaultRateStatus: "error" | "success" | "loading";
 } {
   const publicClient = usePublicClient();
-  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
 
   const queryEnabled =
     !!hyperdriveAddress && !!hyperdriveModel && !!publicClient;
