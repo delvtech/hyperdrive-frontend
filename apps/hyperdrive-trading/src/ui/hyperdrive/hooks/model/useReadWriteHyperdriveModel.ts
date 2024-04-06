@@ -4,24 +4,24 @@ import {
 } from "@hyperdrive/appconfig";
 import { useMemo } from "react";
 import {
-  BaseHyperdriveModel,
-  IHyperdriveModel,
-} from "src/hyperdrive/BaseHyperdriveModel";
-import { StethHyperdriveModel } from "src/hyperdrive/steth/StethHyperdriveModel";
+  IReadWriteHyperdriveModel,
+  ReadWriteHyperdriveModel,
+} from "src/hyperdrive/model/ReadWriteHyperdriveModel";
+import { ReadWriteStethHyperdriveModel } from "src/hyperdrive/model/steth/ReadWriteStethHyperdriveModel";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { getIsSteth } from "src/vaults/isSteth";
 import { Address } from "viem";
 import { usePublicClient, useWalletClient } from "wagmi";
 
-export function useHyperdriveModel(
+export function useReadWriteHyperdriveModel(
   hyperdriveAddress: Address | undefined,
-): IHyperdriveModel | undefined {
+): IReadWriteHyperdriveModel | undefined {
   const publicClient = usePublicClient();
   const { data: walletClient } = useWalletClient();
   const appConfig = useAppConfig();
 
   return useMemo(() => {
-    if (!hyperdriveAddress || !publicClient || !walletClient || !appConfig) {
+    if (!hyperdriveAddress || !publicClient || !appConfig || !walletClient) {
       return undefined;
     }
     const hyperdriveConfig = findHyperdriveConfig({
@@ -34,7 +34,7 @@ export function useHyperdriveModel(
     });
     const isSteth = getIsSteth(sharesToken);
     if (isSteth) {
-      return new StethHyperdriveModel({
+      return new ReadWriteStethHyperdriveModel({
         hyperdriveAddress,
         appConfig,
         publicClient,
@@ -42,7 +42,7 @@ export function useHyperdriveModel(
       });
     }
 
-    return new BaseHyperdriveModel({
+    return new ReadWriteHyperdriveModel({
       hyperdriveAddress,
       appConfig,
       publicClient,

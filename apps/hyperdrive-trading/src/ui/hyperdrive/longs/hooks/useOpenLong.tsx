@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
+import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -42,7 +42,7 @@ export function useOpenLong({
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
-  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
 
   const mutationEnabled =
     !!amount &&

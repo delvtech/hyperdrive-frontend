@@ -1,7 +1,8 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
+import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
 import { Address } from "viem";
+import { useAccount } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
   hyperdriveAddress: Address;
@@ -27,8 +28,10 @@ export function usePreviewCloseShort({
   asBase = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
+  const { address: account } = useAccount();
   const queryEnabled =
+    !!account &&
     !!hyperdriveModel &&
     !!maturityTime &&
     !!shortAmountIn &&
@@ -50,12 +53,14 @@ export function usePreviewCloseShort({
       ? async () =>
           asBase
             ? hyperdriveModel.previewCloseShortWithBase({
+                account,
                 destination,
                 maturityTime,
                 minAmountOut,
                 shortAmountIn,
               })
             : hyperdriveModel.previewCloseShortWithShares({
+                account,
                 destination,
                 maturityTime,
                 minAmountOut,
