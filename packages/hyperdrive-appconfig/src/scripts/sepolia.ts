@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import { AddressesJson } from "src/addresses/AddressesJson";
-import { getAppConfigFromAddressesJson } from "src/appconfig/getAppConfigFromAddressesJson";
+import { RegistryAddresses } from "src/addresses/RegistryAddresses";
+import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
 import { createPublicClient, http } from "viem";
@@ -16,8 +16,8 @@ const publicClient = createPublicClient({
   transport: http(sepoliaNodeRpcUrl),
 });
 
-fetchJson<AddressesJson>(sepoliaAddressesUrl).then(async (addresses) => {
-  const appConfig = await getAppConfigFromAddressesJson({
+fetchJson<RegistryAddresses>(sepoliaAddressesUrl).then(async (addresses) => {
+  const appConfig = await getAppConfigFromRegistryAddresses({
     addresses,
     chainId: sepoliaChainId,
     publicClient,
