@@ -29,6 +29,6 @@ fetchRegistryAddresses(
   writeAppConfigToFile({
     filename: `./src/generated/${sepoliaChainId}.appconfig.ts`,
     appConfig,
-    appConfigName: "localChainAppConfig",
+    appConfigName: "sepolaChainAppConfig",
   });
 });

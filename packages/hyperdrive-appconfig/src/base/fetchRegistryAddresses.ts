@@ -12,8 +12,6 @@ const minimalFactoryAbi = [
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
 ] as const;
 
-const parsedAbi = parseAbi(minimalFactoryAbi);
-
 export async function fetchRegistryAddresses(
   registryAddress: Address,
   publicClient: PublicClient,
@@ -21,7 +19,7 @@ export async function fetchRegistryAddresses(
   const factory = getContract({
     // TODO: Replace this with the deployed HyperdriveFactory address
     address: "0x036b75a3e29f174544e12941853e02cc422ef8d3",
-    abi: parsedAbi,
+    abi: parseAbi(minimalFactoryAbi),
     client: publicClient,
   });
   const registryContract = getContract({

@@ -4,7 +4,6 @@ import { RegistryAddresses } from "src/addresses/RegistryAddresses";
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
-import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
 import { localChain } from "src/chains/local";
 import { Address, createPublicClient, http } from "viem";
 
@@ -16,11 +15,6 @@ const publicClient = createPublicClient({
   chain: localChain,
   transport: http(localNodeRpcUrl),
 });
-
-fetchRegistryAddresses(
-  "0x68bf6b6131e9c784eab5747ba08cc903a679b6de",
-  publicClient,
-);
 
 fetchJson<{ stethHyperdrive: Address; erc4626Hyperdrive: Address }>(
   localAddressesUrl,
